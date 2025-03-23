@@ -27,9 +27,10 @@ My research interest includes **multimodal language models for 3D scene understa
 
 
 # 🔥 News
-- *2024.03*: &nbsp;🎉🎉 GPT4Point has been accept by [CVPR 2024]. 
-- *2023.10*: &nbsp;🎉🎉 OCBEV has been accept by 3DV 2024. 
-- *2022.07*: Got bachelor's degree from HIT with *Top Ten Outstanding Students* and *Outstanding Graduate*.
+- *2024.03*: &nbsp;🎉🎉 GPT4Point has been accept by [CVPR 2024](https://cvpr.thecvf.com/Conferences/2024/AcceptedPapers). 
+- *2023.10*: &nbsp;🎉🎉 OCBEV has been accept by [3DV 2024](https://3dvconf.github.io/2024/).
+- *2022.09*: &nbsp;🎉🎉 Join HKU as a Ph.D. student.
+- *2022.07*: &nbsp;🎉🎉 Got bachelor's degree from HIT with *Top Ten Outstanding Students* and *Outstanding Graduate*.
 
 # 📖 Educations
 - *2022.09 - present*, Ph.D. in Computer Science, The University of Hong Kong(HKU). 
