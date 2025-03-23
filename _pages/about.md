@@ -53,8 +53,11 @@ My research interest includes **multimodal language models for 3D scene understa
 - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
 
 # 🎖 Awards
-- *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- Hong Kong PhD Fellowship Scheme (HKPFS), 2022.
+- HKU Presidential Scholarship (HKUPS), 2022.
+- Top Ten Students of Harbin Institute of Technology, 2021.
+- National Scholarship, 2020.
 
-# 💻 Experiences
-- *2019.05 - 2020.02*, [Lorem](https://github.com/), China.
+# 💻 Professional Services
+- Conference reviewer: CVPR’24,25,  ICCV'25.
+- Teaching assistant: _DASC7606: Deep Learning_ (Graduate course @ HKU), 2023 Spring, 2024 Spring, 2024 Fall.
