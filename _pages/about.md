@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am Zhangyang Qi (Alex Chi), a Ph.D. Candidate in Computer Science at The University of Hong Kong (HKU) since Sep 2022, advised by Prof. [Hengshuang Zhao](https://hszhao.github.io/) and Prof. [Yizhou Yu](https://scholar.google.com/citations?user=e38fTZQAAAAJ&hl=en).
+I am Zhangyang Qi (Alex Chi), a third-year Ph.D. student in computer science at The University of Hong Kong (HKU) since Sep 2022, advised by Prof. [Hengshuang Zhao](https://hszhao.github.io/) and Prof. [Yizhou Yu](https://scholar.google.com/citations?user=e38fTZQAAAAJ&hl=en). I also work closely with [Jiaqi Wang](https://myownskyw7.github.io/) and [Tong Wu](https://wutong16.github.io/).
 
 My research interest includes **multimodal language models for 3D scene understanding and interactions**.
 - Video language models
