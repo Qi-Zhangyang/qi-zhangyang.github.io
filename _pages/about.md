@@ -33,7 +33,7 @@ My research interest includes **multimodal language models for 3D scene understa
 - *2022.07*: &nbsp;🎉🎉 Got bachelor's degree from HIT with *Top Ten Outstanding Students* and *Outstanding Graduate*.
 
 # 📖 Educations
-- *2022.09 - present*, Ph.D. in Computer Science, The University of Hong Kong(HKU). 
+- *2022.09 - present*, Ph.D. in Computer Science, The University of Hong Kong (HKU). 
 - *2018.08 - 2022.07*, Bachelor in Information Engineering, Harbin Institute of Technology (HIT).
 
 # 📝 Publications 
