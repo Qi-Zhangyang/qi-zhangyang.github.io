@@ -27,7 +27,7 @@ My research interest includes neural machine translation and computer vision. I 
 - *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 
 # 📖 Educations
-- *2022.09 - now*, Ph.D. in Computer Science, The University of Hong Kong(HKU). 
+- *2022.09 - present*, Ph.D. in Computer Science, The University of Hong Kong(HKU). 
 - *2018.08 - 2022.07*, Bachelor in Information Engineering, Harbin Institute of Technology (HIT).
 
 
