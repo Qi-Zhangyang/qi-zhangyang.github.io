@@ -21,9 +21,9 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Zhangyang Qi\n\n戚张扬"
-  avatar           : "images/Qi-Zhangyang.jpg"
-  bio              : "Ph.D Student @ HKU \n Research Intern@Shanghai AI Lab"
+  name             : "Zhangyang Qi"
+  avatar           : "images/Qi-Zhangyang.png"
+  bio              : "戚张扬 \n Ph.D Student @ HKU \n Research Intern@Shanghai AI Lab"
   location         : "Hong Kong"
   employer         :
   pubmed           : 
