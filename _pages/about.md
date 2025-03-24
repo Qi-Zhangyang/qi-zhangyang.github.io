@@ -57,15 +57,13 @@ My research interest includes **multimodal language models for 3D scene understa
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2024 Highlight</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[GPT4Point: A Unified Framework for Point-Language Understanding and Generation](https://gpt4point.github.io/)
+[OCBEV: Object-Centric BEV Transformer for Multi-View 3D Object Detection](https://arxiv.org/abs/2306.01738)
 
-**Zhangyang Qi**, Ye Fang, Zeyi Sun, Xiaoyang Wu, Tong Wu, Jiaqi Wang, Dahua Lin, Hengshuang Zhao
+**Zhangyang Qi**, Jiaqi Wang, Xiaoyang Wu, Hengshuang Zhao
 
-- The first object-level 3D point cloud multimodal large language model, unifying both point cloud understanding and generation tasks.
+- An object-centric BEV (Bird's Eye View) autonomous driving 3D object detection framework, achieving performance improvements on the nuScenes dataset with half the training data.
 
-[**[Project]**](https://gpt4point.github.io/)&nbsp;
-[**[Paper]**](https://arxiv.org/abs/2312.02980)&nbsp;
-[**[Code]**](https://github.com/Pointcept/GPT4Point)&nbsp;
+[**[Paper]**](https://arxiv.org/abs/2306.01738)&nbsp;
 
 </div>
 </div>
