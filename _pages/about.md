@@ -45,15 +45,14 @@ My research interest includes **multimodal language models for 3D scene understa
 
 **Zhangyang Qi**, Ye Fang, Zeyi Sun, Xiaoyang Wu, Tong Wu, Jiaqi Wang, Dahua Lin, Hengshuang Zhao
 
+- The first object-level 3D point cloud multimodal large language model, unifying both point cloud understanding and generation tasks.
+
 [**[Project]**](https://gpt4point.github.io/)&nbsp;
 [**[Paper]**](https://arxiv.org/abs/2312.02980)&nbsp;
 [**[Code]**](https://github.com/Pointcept/GPT4Point)&nbsp;
 
-
 </div>
 </div>
-
-- [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
 
 # 🌐 Experience
 
