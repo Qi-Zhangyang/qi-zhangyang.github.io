@@ -56,7 +56,7 @@ My research interest includes **multimodal language models for 3D scene understa
 
 # 🌐 Experience
 
-### **Research Intern**, Shanghai AI Laboratory, Shanghai, China (2022.07 - present)
+**Research Intern**, Shanghai AI Laboratory, Shanghai, China (2022.07 - present)
 with Zheng Zhang and Fanzi Wu
 
 
