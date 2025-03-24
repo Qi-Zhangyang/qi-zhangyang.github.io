@@ -25,7 +25,7 @@ My research interest includes **multimodal language models for 3D scene understa
 - Large language models
 - 3D scene understanding
 
-I am set to graduate in August 2026 and am actively exploring opportunities in my career. I welcome any inquiries to reach out to me via <span style="color:red;">**WeChat: openainvidia**</span>. Attached are my **CV** <a href="images/Zhangyang_Qi_Eng_Resume_20250310.pdf"> and [Chinese](https://arxiv.org/abs/2306.01738) resumes for your reference.
+I am set to graduate in August 2026 and am actively exploring opportunities in my career. I welcome any inquiries to reach out to me via <span style="color:red;">**WeChat: openainvidia**</span>. Attached are my **CV** <a href="images/resume.pdf"> and [Chinese](https://arxiv.org/abs/2306.01738) resumes for your reference.
 
 # 🔥 News
 - *2024.03*: &nbsp;🎉🎉 GPT4Point has been accept by [CVPR 2024](https://cvpr.thecvf.com/Conferences/2024/AcceptedPapers). 
@@ -107,7 +107,7 @@ I am set to graduate in August 2026 and am actively exploring opportunities in m
 **Shanghai AI Laboratory**, Shanghai, China  
 *2022.07 – Present*  
 - ​**Research Intern, Supervisors**: [Jiaqi Wang](https://myownskyw7.github.io/), [Tong Wu](https://wutong16.github.io/) 
-- Research on 3D & video language models, developing the GPT4Point, GPT4Point++, and GPT4Scene.
+- Research on 3D and video language models, developing the GPT4Point, GPT4Point++, and GPT4Scene.
 - Curated training data for [InternLM-XComposer](https://github.com/InternLM/InternLM-XComposer) series and [V3Det](https://v3det.openxlab.org.cn) dataset.
   
 **Tencent PCG**, Shenzhen, China  
