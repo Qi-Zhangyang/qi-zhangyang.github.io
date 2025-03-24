@@ -59,9 +59,15 @@ My research interest includes **multimodal language models for 3D scene understa
 ### Research Intern  
 **Shanghai AI Laboratory**, Shanghai, China  
 *2022.07 – Present*  
-- ​**Supervisors**: Zheng Zhang, Fanzi Wu  
-- Conduct research in [specific area, e.g., computer vision, natural language processing, etc.].  
-- [Add specific responsibilities or achievements, e.g., "Developed novel algorithms for 3D point cloud processing."]  
+- ​**Supervisors**: Jiaqi Wang, Tong Wu  
+- Research on 3D & video language models, developing the GPT4Point, GPT4Point++, and GPT4Scene.
+- Curated training data for [InternLM-XComposer](https://github.com/InternLM/InternLM-XComposer) series and [V3Det](https://v3det.openxlab.org.cn) dataset.
+
+### Research Intern  
+**Tencent PCG**, Shenzhen, China  
+*2021.12 – 2022.05*  
+- Built CLIP-based cross-modal alignment via contrastive learning for image-text matching.
+- Designed joint training paradigms enhancing embedding alignment in multimodal retrieval.
 
 
 # 🎖 Awards
