@@ -55,17 +55,16 @@ My research interest includes **multimodal language models for 3D scene understa
 </div>
 
 # 🌐 Experience
-
-### Research Intern  
+  
 **Shanghai AI Laboratory**, Shanghai, China  
 *2022.07 – Present*  
-- ​**Supervisors**: Jiaqi Wang, Tong Wu  
+- ​**Research Intern, Supervisors**: Jiaqi Wang, Tong Wu  
 - Research on 3D & video language models, developing the GPT4Point, GPT4Point++, and GPT4Scene.
 - Curated training data for [InternLM-XComposer](https://github.com/InternLM/InternLM-XComposer) series and [V3Det](https://v3det.openxlab.org.cn) dataset.
-
-### Research Intern  
+  
 **Tencent PCG**, Shenzhen, China  
 *2021.12 – 2022.05*  
+- ​**Research Intern**
 - Built CLIP-based cross-modal alignment via contrastive learning for image-text matching.
 - Designed joint training paradigms enhancing embedding alignment in multimodal retrieval.
 
