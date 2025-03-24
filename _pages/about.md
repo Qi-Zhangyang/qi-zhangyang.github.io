@@ -68,7 +68,7 @@ My research interest includes **multimodal language models for 3D scene understa
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2024 Highlight</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv 2025</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [GPT4Scene: Understand 3D Scenes from Videos with Vision-Language Models](https://gpt4scene.github.io/)
