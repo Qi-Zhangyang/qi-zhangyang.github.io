@@ -22,7 +22,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 # Site Author
 author:
   name             : "Zhangyang Qi"
-  avatar           : "images/Qi_Zhangyang.png"
+  avatar           : "images/favicon-32x32.png"
   bio              : "Ph.D. Student @ HKU"
   location         : "Hong Kong"
   employer         :
