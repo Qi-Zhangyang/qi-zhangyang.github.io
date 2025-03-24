@@ -39,7 +39,7 @@ I am set to graduate in August 2026 and am actively exploring opportunities in m
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2024 Highlight</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2024 Highlight</div><img src='images/GPT4Point.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [GPT4Point: A Unified Framework for Point-Language Understanding and Generation](https://gpt4point.github.io/)
@@ -55,7 +55,7 @@ I am set to graduate in August 2026 and am actively exploring opportunities in m
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">3DV 2024</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">3DV 2024</div><img src='images/OCBEV.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [OCBEV: Object-Centric BEV Transformer for Multi-View 3D Object Detection](https://arxiv.org/abs/2306.01738)
@@ -85,7 +85,7 @@ I am set to graduate in August 2026 and am actively exploring opportunities in m
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv 2025</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv 2025</div><img src='images/Tailor3D.gif' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Tailor3D: Customized 3D Assets Editing and Generation with Dual-Side Images](https://tailor3d-2024.github.io/)
