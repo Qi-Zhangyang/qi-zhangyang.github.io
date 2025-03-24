@@ -25,7 +25,9 @@ My research interest includes **multimodal language models for 3D scene understa
 - Large language models
 - 3D scene understanding
 
-I am set to graduate in August 2026 and am actively exploring opportunities in my career. I welcome any inquiries to reach out to me via <span style="color:red;">**WeChat: openainvidia**</span>. Attached are my **CV** <a href="images/resume.pdf"> and resumes for your reference.
+I am set to graduate in August 2026 and am actively exploring opportunities in my career. I welcome any inquiries to reach out to me via <span style="color:red;">**WeChat: openainvidia**</span>. Attached are my **CV** <a href="images/Zhangyang_Qi_Eng_Resume_20250310.pdf"> and resumes for your reference.
+
+This is my Chinese <a href="images/Qi_Zhangyang_CHN_CV_20250310.pdf"> CV.
 
 # 🔥 News
 - *2024.03*: &nbsp;🎉🎉 GPT4Point has been accept by [CVPR 2024](https://cvpr.thecvf.com/Conferences/2024/AcceptedPapers). 
