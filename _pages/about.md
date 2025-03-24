@@ -54,6 +54,55 @@ My research interest includes **multimodal language models for 3D scene understa
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2024 Highlight</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[GPT4Point: A Unified Framework for Point-Language Understanding and Generation](https://gpt4point.github.io/)
+
+**Zhangyang Qi**, Ye Fang, Zeyi Sun, Xiaoyang Wu, Tong Wu, Jiaqi Wang, Dahua Lin, Hengshuang Zhao
+
+- The first object-level 3D point cloud multimodal large language model, unifying both point cloud understanding and generation tasks.
+
+[**[Project]**](https://gpt4point.github.io/)&nbsp;
+[**[Paper]**](https://arxiv.org/abs/2312.02980)&nbsp;
+[**[Code]**](https://github.com/Pointcept/GPT4Point)&nbsp;
+
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2024 Highlight</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[GPT4Point: A Unified Framework for Point-Language Understanding and Generation](https://gpt4point.github.io/)
+
+**Zhangyang Qi**, Ye Fang, Zeyi Sun, Xiaoyang Wu, Tong Wu, Jiaqi Wang, Dahua Lin, Hengshuang Zhao
+
+- The first object-level 3D point cloud multimodal large language model, unifying both point cloud understanding and generation tasks.
+
+[**[Project]**](https://gpt4point.github.io/)&nbsp;
+[**[Paper]**](https://arxiv.org/abs/2312.02980)&nbsp;
+[**[Code]**](https://github.com/Pointcept/GPT4Point)&nbsp;
+
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2024 Highlight</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[GPT4Point: A Unified Framework for Point-Language Understanding and Generation](https://gpt4point.github.io/)
+
+**Zhangyang Qi**, Ye Fang, Zeyi Sun, Xiaoyang Wu, Tong Wu, Jiaqi Wang, Dahua Lin, Hengshuang Zhao
+
+- The first object-level 3D point cloud multimodal large language model, unifying both point cloud understanding and generation tasks.
+
+[**[Project]**](https://gpt4point.github.io/)&nbsp;
+[**[Paper]**](https://arxiv.org/abs/2312.02980)&nbsp;
+[**[Code]**](https://github.com/Pointcept/GPT4Point)&nbsp;
+
+</div>
+</div>
+
+
 # 🌐 Experience
   
 **Shanghai AI Laboratory**, Shanghai, China  
