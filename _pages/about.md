@@ -84,18 +84,18 @@ My research interest includes **multimodal language models for 3D scene understa
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2024 Highlight</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv 2025</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[GPT4Point: A Unified Framework for Point-Language Understanding and Generation](https://gpt4point.github.io/)
+[Tailor3D: Customized 3D Assets Editing and Generation with Dual-Side Images](https://tailor3d-2024.github.io/)
 
-**Zhangyang Qi**, Ye Fang, Zeyi Sun, Xiaoyang Wu, Tong Wu, Jiaqi Wang, Dahua Lin, Hengshuang Zhao
+**Zhangyang Qi**, Yunhan Yang, Mengchen Zhang, Long Xing, Xiaoyang Wu, Tong Wu, Dahua Lin, Xihui Liu, Jiaqi Wang, Hengshuang Zhao
 
-- The first object-level 3D point cloud multimodal large language model, unifying both point cloud understanding and generation tasks.
+- Our work introduces a novel framework for 3D object generation and editing, leveraging dual-view image manipulation.
 
-[**[Project]**](https://gpt4scene.github.io/)&nbsp;
-[**[Paper]**](https://arxiv.org/abs/2312.02980)&nbsp;
-[**[Code]**](https://github.com/Qi-Zhangyang/GPT4Scene)&nbsp;
+[**[Project]**](https://tailor3d-2024.github.io/)&nbsp;
+[**[Paper]**](https://arxiv.org/abs/2407.06191)&nbsp;
+[**[Code]**](https://github.com/Qi-Zhangyang/Tailor3D)&nbsp;
 
 </div>
 </div>
