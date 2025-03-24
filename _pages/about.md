@@ -69,7 +69,7 @@ I am set to graduate in August 2026 and am actively exploring opportunities in m
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv 2025</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv 2025</div><img src='images/500x300GPT4Scene.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [GPT4Scene: Understand 3D Scenes from Videos with Vision-Language Models](https://gpt4scene.github.io/)
