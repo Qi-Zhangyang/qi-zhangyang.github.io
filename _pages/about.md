@@ -102,7 +102,7 @@ I am set to graduate in August 2026 and am actively exploring opportunities in m
 </div>
 
 
-# 🌐 Experience
+# 🌐 Experiences
   
 **Shanghai AI Laboratory**, Shanghai, China  
 *2022.07 – Present*  
