@@ -56,8 +56,12 @@ My research interest includes **multimodal language models for 3D scene understa
 
 # 🌐 Experience
 
-**Research Intern**, Shanghai AI Laboratory, Shanghai, China (2022.07 - present)
-with Zheng Zhang and Fanzi Wu
+### Research Intern  
+**Shanghai AI Laboratory**, Shanghai, China  
+*2022.07 – Present*  
+- ​**Supervisors**: Zheng Zhang, Fanzi Wu  
+- Conduct research in [specific area, e.g., computer vision, natural language processing, etc.].  
+- [Add specific responsibilities or achievements, e.g., "Developed novel algorithms for 3D point cloud processing."]  
 
 
 # 🎖 Awards
