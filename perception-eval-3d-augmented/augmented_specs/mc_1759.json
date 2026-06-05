@@ -1,0 +1,314 @@
+{
+  "title": "Cylinder · augmented",
+  "meta": "rule-based auxiliary construction: center/section/diagonal/axis overlays",
+  "camera": {
+    "position": [
+      3.2,
+      2.4,
+      5.2
+    ],
+    "target": [
+      0,
+      0,
+      0
+    ],
+    "orthoSize": 3.2
+  },
+  "vertices": {
+    "D0": [
+      1.0,
+      0.0,
+      1.25
+    ],
+    "D1": [
+      0.809,
+      0.588,
+      1.25
+    ],
+    "D2": [
+      0.309,
+      0.951,
+      1.25
+    ],
+    "D3": [
+      -0.309,
+      0.951,
+      1.25
+    ],
+    "D4": [
+      -0.809,
+      0.588,
+      1.25
+    ],
+    "D5": [
+      -1.0,
+      0.0,
+      1.25
+    ],
+    "D6": [
+      -0.809,
+      -0.588,
+      1.25
+    ],
+    "D7": [
+      -0.309,
+      -0.951,
+      1.25
+    ],
+    "D8": [
+      0.309,
+      -0.951,
+      1.25
+    ],
+    "D9": [
+      0.809,
+      -0.588,
+      1.25
+    ],
+    "O": [
+      0.0,
+      0.0,
+      1.25
+    ],
+    "M": [
+      0.0,
+      0.0,
+      1.25
+    ],
+    "S1": [
+      0.0,
+      -0.951,
+      1.25
+    ],
+    "S2": [
+      0.0,
+      0.951,
+      1.25
+    ],
+    "S3": [
+      0.0,
+      0.951,
+      1.25
+    ],
+    "S4": [
+      0.0,
+      -0.951,
+      1.25
+    ]
+  },
+  "faces": [],
+  "edges": [],
+  "aux_lines": [
+    {
+      "points": [
+        "D0",
+        "D1"
+      ],
+      "color": "#111111",
+      "dash": true,
+      "depthTest": false
+    },
+    {
+      "points": [
+        "D1",
+        "D2"
+      ],
+      "color": "#111111",
+      "dash": true,
+      "depthTest": false
+    },
+    {
+      "points": [
+        "D2",
+        "D3"
+      ],
+      "color": "#111111",
+      "dash": true,
+      "depthTest": false
+    },
+    {
+      "points": [
+        "D3",
+        "D4"
+      ],
+      "color": "#111111",
+      "dash": true,
+      "depthTest": false
+    },
+    {
+      "points": [
+        "D4",
+        "D5"
+      ],
+      "color": "#111111",
+      "dash": true,
+      "depthTest": false
+    },
+    {
+      "points": [
+        "D5",
+        "D6"
+      ],
+      "color": "#111111",
+      "dash": true,
+      "depthTest": false
+    },
+    {
+      "points": [
+        "D6",
+        "D7"
+      ],
+      "color": "#111111",
+      "dash": true,
+      "depthTest": false
+    },
+    {
+      "points": [
+        "D7",
+        "D8"
+      ],
+      "color": "#111111",
+      "dash": true,
+      "depthTest": false
+    },
+    {
+      "points": [
+        "D8",
+        "D9"
+      ],
+      "color": "#111111",
+      "dash": true,
+      "depthTest": false
+    },
+    {
+      "points": [
+        "D9",
+        "D0"
+      ],
+      "color": "#111111",
+      "dash": true,
+      "depthTest": false
+    },
+    {
+      "points": [
+        "D4",
+        "D9"
+      ],
+      "color": "#d03030",
+      "dash": true,
+      "depthTest": false,
+      "width": 4.2
+    },
+    {
+      "points": [
+        "O",
+        "M"
+      ],
+      "color": "#d97400",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "S1",
+        "S2"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    },
+    {
+      "points": [
+        "S2",
+        "S3"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    },
+    {
+      "points": [
+        "S3",
+        "S4"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    },
+    {
+      "points": [
+        "S4",
+        "S1"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    }
+  ],
+  "aux_faces": [
+    {
+      "points": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.26
+    }
+  ],
+  "labels": [
+    {
+      "text": "O",
+      "point": "O",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "M",
+      "point": "M",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    }
+  ],
+  "primitives": [
+    {
+      "type": "cylinder",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "radius": 1,
+      "height": 2.5,
+      "axis": "z",
+      "color": "#f0f0f0",
+      "opacity": 0.05
+    }
+  ],
+  "_id": "mc_1759",
+  "_model": "kimi-k2.6",
+  "_augmentation": "rule_v1",
+  "_hide_meta_panel": true,
+  "aux_points": [
+    "O",
+    "M",
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+  ]
+}

@@ -1,0 +1,446 @@
+{
+  "title": "圆锥 · augmented",
+  "meta": "rule-based auxiliary construction: center/section/diagonal/axis overlays",
+  "camera": {
+    "position": [
+      3.2,
+      2.4,
+      5.2
+    ],
+    "target": [
+      0,
+      1,
+      0
+    ],
+    "orthoSize": 3.2
+  },
+  "vertices": {
+    "V": [
+      0,
+      2,
+      0
+    ],
+    "B0": [
+      1.0,
+      0,
+      0
+    ],
+    "B1": [
+      0.9239,
+      0,
+      0.3827
+    ],
+    "B2": [
+      0.7071,
+      0,
+      0.7071
+    ],
+    "B3": [
+      0.3827,
+      0,
+      0.9239
+    ],
+    "B4": [
+      0,
+      0,
+      1.0
+    ],
+    "B5": [
+      -0.3827,
+      0,
+      0.9239
+    ],
+    "B6": [
+      -0.7071,
+      0,
+      0.7071
+    ],
+    "B7": [
+      -0.9239,
+      0,
+      0.3827
+    ],
+    "B8": [
+      -1.0,
+      0,
+      0
+    ],
+    "B9": [
+      -0.9239,
+      0,
+      -0.3827
+    ],
+    "B10": [
+      -0.7071,
+      0,
+      -0.7071
+    ],
+    "B11": [
+      -0.3827,
+      0,
+      -0.9239
+    ],
+    "B12": [
+      0,
+      0,
+      -1.0
+    ],
+    "B13": [
+      0.3827,
+      0,
+      -0.9239
+    ],
+    "B14": [
+      0.7071,
+      0,
+      -0.7071
+    ],
+    "B15": [
+      0.9239,
+      0,
+      -0.3827
+    ],
+    "O": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "M": [
+      -0.462,
+      1.0,
+      -0.1913
+    ],
+    "N": [
+      0.5,
+      1.0,
+      0.0
+    ],
+    "P": [
+      -0.962,
+      0.0,
+      0.1913
+    ],
+    "S1": [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    "S2": [
+      0.0,
+      2.0,
+      -1.0
+    ],
+    "S3": [
+      0.0,
+      2.0,
+      1.0
+    ],
+    "S4": [
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "faces": [],
+  "edges": [
+    {
+      "points": [
+        "V",
+        "B0"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "V",
+        "B8"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "B0",
+        "B1"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "B1",
+        "B2"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "B2",
+        "B3"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "B3",
+        "B4"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "B4",
+        "B5"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "B5",
+        "B6"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "B6",
+        "B7"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "B7",
+        "B8"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "B8",
+        "B9"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "B9",
+        "B10"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "B10",
+        "B11"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "B11",
+        "B12"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "B12",
+        "B13"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "B13",
+        "B14"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "B14",
+        "B15"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "B15",
+        "B0"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    }
+  ],
+  "aux_lines": [
+    {
+      "points": [
+        "V",
+        "B9"
+      ],
+      "color": "#d03030",
+      "dash": true,
+      "depthTest": false,
+      "width": 4.2
+    },
+    {
+      "points": [
+        "O",
+        "M"
+      ],
+      "color": "#d97400",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "N",
+        "P"
+      ],
+      "color": "#d97400",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "S1",
+        "S2"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    },
+    {
+      "points": [
+        "S2",
+        "S3"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    },
+    {
+      "points": [
+        "S3",
+        "S4"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    },
+    {
+      "points": [
+        "S4",
+        "S1"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    }
+  ],
+  "aux_faces": [
+    {
+      "points": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.26
+    }
+  ],
+  "labels": [
+    {
+      "text": "O",
+      "point": "O",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "M",
+      "point": "M",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "N",
+      "point": "N",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "P",
+      "point": "P",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    }
+  ],
+  "primitives": [
+    {
+      "type": "cone",
+      "center": [
+        0,
+        1,
+        0
+      ],
+      "radius": 1,
+      "height": 2,
+      "axis": "y",
+      "color": "#4a90e2",
+      "opacity": 0.1
+    }
+  ],
+  "_id": "mc_1754",
+  "_model": "kimi-k2.6",
+  "_augmentation": "rule_v1",
+  "_hide_meta_panel": true,
+  "aux_points": [
+    "O",
+    "M",
+    "N",
+    "P",
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+  ]
+}

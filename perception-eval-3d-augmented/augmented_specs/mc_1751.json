@@ -1,0 +1,355 @@
+{
+  "title": "圆锥 · augmented",
+  "meta": "rule-based auxiliary construction: center/section/diagonal/axis overlays",
+  "camera": {
+    "position": [
+      3.2,
+      2.4,
+      5.2
+    ],
+    "target": [
+      0,
+      1,
+      0
+    ],
+    "orthoSize": 3.5
+  },
+  "vertices": {
+    "V": [
+      0,
+      2,
+      0
+    ],
+    "O": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "P0": [
+      1.5,
+      0,
+      0
+    ],
+    "P1": [
+      1.06066,
+      0,
+      1.06066
+    ],
+    "P2": [
+      0,
+      0,
+      1.5
+    ],
+    "P3": [
+      -1.06066,
+      0,
+      1.06066
+    ],
+    "P4": [
+      -1.5,
+      0,
+      0
+    ],
+    "P5": [
+      -1.06066,
+      0,
+      -1.06066
+    ],
+    "P6": [
+      0,
+      0,
+      -1.5
+    ],
+    "P7": [
+      1.06066,
+      0,
+      -1.06066
+    ],
+    "M": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "N": [
+      0.75,
+      1.0,
+      0.0
+    ],
+    "P": [
+      0.5303,
+      0.0,
+      1.2803
+    ],
+    "S1": [
+      0.0,
+      0.0,
+      -1.5
+    ],
+    "S2": [
+      0.0,
+      2.0,
+      -1.5
+    ],
+    "S3": [
+      0.0,
+      2.0,
+      1.5
+    ],
+    "S4": [
+      0.0,
+      0.0,
+      1.5
+    ]
+  },
+  "faces": [],
+  "edges": [
+    {
+      "points": [
+        "V",
+        "P0"
+      ],
+      "color": "#cc0000",
+      "width": 2.0
+    },
+    {
+      "points": [
+        "V",
+        "P4"
+      ],
+      "color": "#cc0000",
+      "width": 2.0
+    },
+    {
+      "points": [
+        "P0",
+        "P1"
+      ],
+      "color": "#cc0000",
+      "width": 2.0
+    },
+    {
+      "points": [
+        "P1",
+        "P2"
+      ],
+      "color": "#cc0000",
+      "width": 2.0
+    },
+    {
+      "points": [
+        "P2",
+        "P3"
+      ],
+      "color": "#cc0000",
+      "width": 2.0
+    },
+    {
+      "points": [
+        "P3",
+        "P4"
+      ],
+      "color": "#cc0000",
+      "width": 2.0
+    }
+  ],
+  "aux_lines": [
+    {
+      "points": [
+        "V",
+        "O"
+      ],
+      "color": "#cc0000",
+      "dash": true,
+      "depthTest": false
+    },
+    {
+      "points": [
+        "P4",
+        "P5"
+      ],
+      "color": "#cc0000",
+      "dash": true,
+      "depthTest": false
+    },
+    {
+      "points": [
+        "P5",
+        "P6"
+      ],
+      "color": "#cc0000",
+      "dash": true,
+      "depthTest": false
+    },
+    {
+      "points": [
+        "P6",
+        "P7"
+      ],
+      "color": "#cc0000",
+      "dash": true,
+      "depthTest": false
+    },
+    {
+      "points": [
+        "P7",
+        "P0"
+      ],
+      "color": "#cc0000",
+      "dash": true,
+      "depthTest": false
+    },
+    {
+      "points": [
+        "P3",
+        "P7"
+      ],
+      "color": "#d03030",
+      "dash": true,
+      "depthTest": false,
+      "width": 4.2
+    },
+    {
+      "points": [
+        "O",
+        "M"
+      ],
+      "color": "#d97400",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "N",
+        "P"
+      ],
+      "color": "#d97400",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "S1",
+        "S2"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    },
+    {
+      "points": [
+        "S2",
+        "S3"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    },
+    {
+      "points": [
+        "S3",
+        "S4"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    },
+    {
+      "points": [
+        "S4",
+        "S1"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    }
+  ],
+  "aux_faces": [
+    {
+      "points": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.26
+    }
+  ],
+  "labels": [
+    {
+      "text": "O",
+      "point": "O",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "M",
+      "point": "M",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "N",
+      "point": "N",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "P",
+      "point": "P",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    }
+  ],
+  "primitives": [
+    {
+      "type": "cone",
+      "center": [
+        0,
+        1,
+        0
+      ],
+      "radius": 1.5,
+      "height": 2,
+      "axis": "y",
+      "color": "#cc0000",
+      "opacity": 0.08
+    }
+  ],
+  "_id": "mc_1751",
+  "_model": "kimi-k2.6",
+  "_augmentation": "rule_v1",
+  "_hide_meta_panel": true,
+  "aux_points": [
+    "O",
+    "M",
+    "N",
+    "P",
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+  ]
+}

@@ -1,0 +1,400 @@
+{
+  "title": "长方体 · augmented",
+  "meta": "rule-based auxiliary construction: center/section/diagonal/axis overlays",
+  "camera": {
+    "position": [
+      3.0,
+      2.5,
+      4.0
+    ],
+    "target": [
+      0,
+      0.6,
+      0
+    ],
+    "orthoSize": 3.2
+  },
+  "vertices": {
+    "A": [
+      -1.2,
+      0,
+      0.5
+    ],
+    "B": [
+      1.2,
+      0,
+      0.5
+    ],
+    "C": [
+      1.2,
+      1.2,
+      0.5
+    ],
+    "D": [
+      -1.2,
+      1.2,
+      0.5
+    ],
+    "E": [
+      -1.2,
+      0,
+      -0.5
+    ],
+    "F": [
+      1.2,
+      0,
+      -0.5
+    ],
+    "G": [
+      1.2,
+      1.2,
+      -0.5
+    ],
+    "H": [
+      -1.2,
+      1.2,
+      -0.5
+    ],
+    "O": [
+      0.0,
+      0.6,
+      0.0
+    ],
+    "M": [
+      0.0,
+      0.6,
+      0.0
+    ],
+    "N": [
+      0.0,
+      0.0,
+      0.5
+    ],
+    "P": [
+      0.0,
+      1.2,
+      -0.5
+    ],
+    "S1": [
+      0.0,
+      0.0,
+      -0.5
+    ],
+    "S2": [
+      0.0,
+      1.2,
+      -0.5
+    ],
+    "S3": [
+      0.0,
+      1.2,
+      0.5
+    ],
+    "S4": [
+      0.0,
+      0.0,
+      0.5
+    ]
+  },
+  "faces": [
+    {
+      "points": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.1
+    },
+    {
+      "points": [
+        "E",
+        "H",
+        "G",
+        "F"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.1
+    },
+    {
+      "points": [
+        "B",
+        "F",
+        "G",
+        "C"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.1
+    },
+    {
+      "points": [
+        "A",
+        "D",
+        "H",
+        "E"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.1
+    },
+    {
+      "points": [
+        "D",
+        "C",
+        "G",
+        "H"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.1
+    },
+    {
+      "points": [
+        "A",
+        "E",
+        "F",
+        "B"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.1
+    }
+  ],
+  "edges": [
+    {
+      "points": [
+        "A",
+        "B"
+      ],
+      "color": "#111111",
+      "width": 2.5
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ],
+      "color": "#111111",
+      "width": 2.5
+    },
+    {
+      "points": [
+        "C",
+        "D"
+      ],
+      "color": "#111111",
+      "width": 2.5
+    },
+    {
+      "points": [
+        "D",
+        "A"
+      ],
+      "color": "#111111",
+      "width": 2.5
+    },
+    {
+      "points": [
+        "E",
+        "F"
+      ],
+      "color": "#111111",
+      "width": 2.5
+    },
+    {
+      "points": [
+        "F",
+        "G"
+      ],
+      "color": "#111111",
+      "width": 2.5
+    },
+    {
+      "points": [
+        "G",
+        "H"
+      ],
+      "color": "#111111",
+      "width": 2.5
+    },
+    {
+      "points": [
+        "H",
+        "E"
+      ],
+      "color": "#111111",
+      "width": 2.5
+    },
+    {
+      "points": [
+        "A",
+        "E"
+      ],
+      "color": "#111111",
+      "width": 2.5
+    },
+    {
+      "points": [
+        "B",
+        "F"
+      ],
+      "color": "#111111",
+      "width": 2.5
+    },
+    {
+      "points": [
+        "C",
+        "G"
+      ],
+      "color": "#111111",
+      "width": 2.5
+    },
+    {
+      "points": [
+        "D",
+        "H"
+      ],
+      "color": "#111111",
+      "width": 2.5
+    }
+  ],
+  "aux_lines": [
+    {
+      "points": [
+        "D",
+        "F"
+      ],
+      "color": "#d03030",
+      "dash": true,
+      "depthTest": false,
+      "width": 4.2
+    },
+    {
+      "points": [
+        "O",
+        "M"
+      ],
+      "color": "#d97400",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "N",
+        "P"
+      ],
+      "color": "#d97400",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "S1",
+        "S2"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    },
+    {
+      "points": [
+        "S2",
+        "S3"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    },
+    {
+      "points": [
+        "S3",
+        "S4"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    },
+    {
+      "points": [
+        "S4",
+        "S1"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    }
+  ],
+  "aux_faces": [
+    {
+      "points": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.26
+    }
+  ],
+  "labels": [
+    {
+      "text": "O",
+      "point": "O",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "M",
+      "point": "M",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "N",
+      "point": "N",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "P",
+      "point": "P",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    }
+  ],
+  "primitives": [],
+  "_id": "mc_1756",
+  "_model": "kimi-k2.6",
+  "_augmentation": "rule_v1",
+  "_hide_meta_panel": true,
+  "aux_points": [
+    "O",
+    "M",
+    "N",
+    "P",
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+  ]
+}

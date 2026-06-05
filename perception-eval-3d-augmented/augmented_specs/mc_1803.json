@@ -1,0 +1,584 @@
+{
+  "title": "六棱柱上底面识别 · augmented",
+  "meta": "rule-based auxiliary construction: center/section/diagonal/axis overlays",
+  "camera": {
+    "position": [
+      3.5,
+      3.0,
+      4.5
+    ],
+    "target": [
+      0.2,
+      0.0,
+      -0.2
+    ],
+    "orthoSize": 3.6
+  },
+  "vertices": {
+    "A": [
+      -1.8,
+      1.0,
+      0.8
+    ],
+    "B": [
+      -0.6,
+      1.0,
+      0.8
+    ],
+    "C": [
+      0.4,
+      1.0,
+      0.8
+    ],
+    "D": [
+      1.4,
+      1.0,
+      0.4
+    ],
+    "E": [
+      1.8,
+      1.0,
+      -0.8
+    ],
+    "F": [
+      -0.6,
+      1.0,
+      -1.0
+    ],
+    "M": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "G": [
+      -0.6,
+      -1.0,
+      0.8
+    ],
+    "H": [
+      0.4,
+      -1.0,
+      0.8
+    ],
+    "N": [
+      -1.2,
+      1.0,
+      0.8
+    ],
+    "J": [
+      1.8,
+      -1.0,
+      -0.8
+    ],
+    "K": [
+      -0.6,
+      -1.0,
+      -1.0
+    ],
+    "L": [
+      0.6,
+      -1.0,
+      -0.9
+    ],
+    "O": [
+      0.0,
+      0.0,
+      -0.1
+    ],
+    "P": [
+      1.6,
+      -1.0,
+      -0.2
+    ],
+    "S1": [
+      0.0,
+      -1.0,
+      -1.0
+    ],
+    "S2": [
+      0.0,
+      1.0,
+      -1.0
+    ],
+    "S3": [
+      0.0,
+      1.0,
+      0.8
+    ],
+    "S4": [
+      0.0,
+      -1.0,
+      0.8
+    ]
+  },
+  "faces": [
+    {
+      "points": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.1
+    },
+    {
+      "points": [
+        "M",
+        "K",
+        "J",
+        "N",
+        "H",
+        "G"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.1
+    },
+    {
+      "points": [
+        "A",
+        "M",
+        "G",
+        "B"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.1
+    },
+    {
+      "points": [
+        "B",
+        "G",
+        "H",
+        "C"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.1
+    },
+    {
+      "points": [
+        "C",
+        "H",
+        "N",
+        "D"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.1
+    },
+    {
+      "points": [
+        "D",
+        "N",
+        "J",
+        "E"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.1
+    },
+    {
+      "points": [
+        "E",
+        "J",
+        "K",
+        "F"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.1
+    },
+    {
+      "points": [
+        "F",
+        "K",
+        "M",
+        "A"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.1
+    }
+  ],
+  "edges": [
+    {
+      "points": [
+        "A",
+        "B"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "C",
+        "D"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "D",
+        "E"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "E",
+        "F"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "F",
+        "A"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "M",
+        "G"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "G",
+        "H"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "H",
+        "N"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "N",
+        "J"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "J",
+        "K"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "K",
+        "M"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "A",
+        "M"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "B",
+        "G"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "C",
+        "H"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "D",
+        "N"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "E",
+        "J"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "F",
+        "K"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    }
+  ],
+  "aux_lines": [
+    {
+      "points": [
+        "E",
+        "M"
+      ],
+      "color": "#d03030",
+      "dash": true,
+      "depthTest": false,
+      "width": 4.2
+    },
+    {
+      "points": [
+        "O",
+        "M"
+      ],
+      "color": "#d97400",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "N",
+        "P"
+      ],
+      "color": "#d97400",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "S1",
+        "S2"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    },
+    {
+      "points": [
+        "S2",
+        "S3"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    },
+    {
+      "points": [
+        "S3",
+        "S4"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    },
+    {
+      "points": [
+        "S4",
+        "S1"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    }
+  ],
+  "labels": [
+    {
+      "text": "A",
+      "point": "A",
+      "offset": [
+        -0.18,
+        0.12,
+        0.1
+      ]
+    },
+    {
+      "text": "B",
+      "point": "B",
+      "offset": [
+        -0.06,
+        0.12,
+        0.1
+      ]
+    },
+    {
+      "text": "C",
+      "point": "C",
+      "offset": [
+        0.0,
+        0.12,
+        0.1
+      ]
+    },
+    {
+      "text": "D",
+      "point": "D",
+      "offset": [
+        0.12,
+        0.12,
+        0.08
+      ]
+    },
+    {
+      "text": "E",
+      "point": "E",
+      "offset": [
+        0.18,
+        0.12,
+        -0.12
+      ]
+    },
+    {
+      "text": "F",
+      "point": "F",
+      "offset": [
+        -0.06,
+        0.16,
+        -0.16
+      ]
+    },
+    {
+      "text": "G",
+      "point": "G",
+      "offset": [
+        -0.06,
+        -0.16,
+        0.12
+      ]
+    },
+    {
+      "text": "H",
+      "point": "H",
+      "offset": [
+        0.0,
+        -0.16,
+        0.12
+      ]
+    },
+    {
+      "text": "J",
+      "point": "J",
+      "offset": [
+        0.18,
+        -0.16,
+        -0.12
+      ]
+    },
+    {
+      "text": "K",
+      "point": "K",
+      "offset": [
+        -0.18,
+        -0.16,
+        -0.16
+      ]
+    },
+    {
+      "text": "L",
+      "point": "L",
+      "offset": [
+        0.0,
+        -0.2,
+        -0.14
+      ]
+    },
+    {
+      "text": "M",
+      "point": "M",
+      "offset": [
+        -0.18,
+        -0.16,
+        0.12
+      ]
+    },
+    {
+      "text": "N",
+      "point": "N",
+      "offset": [
+        0.12,
+        -0.16,
+        0.1
+      ]
+    },
+    {
+      "text": "O",
+      "point": "O",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "P",
+      "point": "P",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    }
+  ],
+  "primitives": [],
+  "aux_faces": [
+    {
+      "points": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.26
+    }
+  ],
+  "_id": "mc_1803",
+  "_model": "kimi-k2.6",
+  "_augmentation": "rule_v1",
+  "_hide_meta_panel": true,
+  "aux_points": [
+    "O",
+    "M",
+    "N",
+    "P",
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+  ]
+}

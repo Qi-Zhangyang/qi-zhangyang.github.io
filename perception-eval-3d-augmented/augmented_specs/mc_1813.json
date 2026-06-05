@@ -1,0 +1,233 @@
+{
+  "title": "Cylinder with Green Top Face · augmented",
+  "meta": "rule-based auxiliary construction: center/section/diagonal/axis overlays",
+  "camera": {
+    "position": [
+      2.5,
+      2.0,
+      3.5
+    ],
+    "target": [
+      0,
+      1.0,
+      0
+    ],
+    "orthoSize": 2.5
+  },
+  "vertices": {
+    "O": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "O1": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "O2": [
+      0.0,
+      2.0,
+      0.0
+    ],
+    "A": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "B": [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    "C": [
+      1.0,
+      2.0,
+      0.0
+    ],
+    "D": [
+      -1.0,
+      2.0,
+      0.0
+    ]
+  },
+  "faces": [],
+  "edges": [],
+  "aux_lines": [
+    {
+      "points": [
+        "O1",
+        "O2"
+      ],
+      "color": "#d03030",
+      "dash": true,
+      "depthTest": false,
+      "width": 4.0
+    },
+    {
+      "points": [
+        "A",
+        "B"
+      ],
+      "color": "#d97400",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "C",
+        "D"
+      ],
+      "color": "#d97400",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ],
+      "color": "#d97400",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "B",
+        "D"
+      ],
+      "color": "#d97400",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.8
+    }
+  ],
+  "aux_faces": [
+    {
+      "points": [
+        "A",
+        "C",
+        "D",
+        "B"
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.26
+    }
+  ],
+  "labels": [
+    {
+      "text": "O",
+      "point": "O",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "O1",
+      "point": "O1",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "O2",
+      "point": "O2",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "A",
+      "point": "A",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "B",
+      "point": "B",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "C",
+      "point": "C",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "D",
+      "point": "D",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    }
+  ],
+  "primitives": [
+    {
+      "type": "cylinder",
+      "center": [
+        0,
+        1.0,
+        0
+      ],
+      "radius": 1,
+      "height": 2,
+      "axis": "y",
+      "color": "#f0f0f0",
+      "opacity": 0.2
+    },
+    {
+      "type": "cylinder",
+      "center": [
+        0,
+        1.99,
+        0
+      ],
+      "radius": 1,
+      "height": 0.02,
+      "axis": "y",
+      "color": "#8ec500",
+      "opacity": 0.95
+    }
+  ],
+  "_id": "mc_1813",
+  "_model": "kimi-k2.6",
+  "_augmentation": "rule_v1",
+  "_hide_meta_panel": true,
+  "aux_points": [
+    "O",
+    "O1",
+    "O2",
+    "A",
+    "B",
+    "C",
+    "D"
+  ]
+}

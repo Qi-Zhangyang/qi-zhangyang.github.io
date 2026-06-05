@@ -1,0 +1,492 @@
+{
+  "title": "Hexagonal Prism with Green Face · augmented",
+  "meta": "rule-based auxiliary construction: center/section/diagonal/axis overlays",
+  "camera": {
+    "position": [
+      3.5,
+      2.5,
+      4.0
+    ],
+    "target": [
+      0,
+      0,
+      0
+    ],
+    "orthoSize": 3.0
+  },
+  "vertices": {
+    "T1": [
+      1.0,
+      1.0,
+      0.0
+    ],
+    "T2": [
+      0.5,
+      1.0,
+      0.866
+    ],
+    "T3": [
+      -0.5,
+      1.0,
+      0.866
+    ],
+    "T4": [
+      -1.0,
+      1.0,
+      0.0
+    ],
+    "T5": [
+      -0.5,
+      1.0,
+      -0.866
+    ],
+    "T6": [
+      0.5,
+      1.0,
+      -0.866
+    ],
+    "B1": [
+      1.0,
+      -1.0,
+      0.0
+    ],
+    "B2": [
+      0.5,
+      -1.0,
+      0.866
+    ],
+    "B3": [
+      -0.5,
+      -1.0,
+      0.866
+    ],
+    "B4": [
+      -1.0,
+      -1.0,
+      0.0
+    ],
+    "B5": [
+      -0.5,
+      -1.0,
+      -0.866
+    ],
+    "B6": [
+      0.5,
+      -1.0,
+      -0.866
+    ],
+    "O": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "M": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "N": [
+      0.75,
+      1.0,
+      0.433
+    ],
+    "P": [
+      -0.75,
+      -1.0,
+      -0.433
+    ],
+    "S1": [
+      0.0,
+      -1.0,
+      -0.866
+    ],
+    "S2": [
+      0.0,
+      1.0,
+      -0.866
+    ],
+    "S3": [
+      0.0,
+      1.0,
+      0.866
+    ],
+    "S4": [
+      0.0,
+      -1.0,
+      0.866
+    ]
+  },
+  "faces": [
+    {
+      "points": [
+        "T1",
+        "T2",
+        "T3",
+        "T4",
+        "T5",
+        "T6"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.25
+    },
+    {
+      "points": [
+        "B1",
+        "B6",
+        "B5",
+        "B4",
+        "B3",
+        "B2"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.25
+    },
+    {
+      "points": [
+        "T1",
+        "T2",
+        "B2",
+        "B1"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.25
+    },
+    {
+      "points": [
+        "T2",
+        "T3",
+        "B3",
+        "B2"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.25
+    },
+    {
+      "points": [
+        "T3",
+        "T4",
+        "B4",
+        "B3"
+      ],
+      "color": "#2ecc71",
+      "opacity": 0.35
+    },
+    {
+      "points": [
+        "T4",
+        "T5",
+        "B5",
+        "B4"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.25
+    },
+    {
+      "points": [
+        "T5",
+        "T6",
+        "B6",
+        "B5"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.25
+    },
+    {
+      "points": [
+        "T6",
+        "T1",
+        "B1",
+        "B6"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.25
+    }
+  ],
+  "edges": [
+    {
+      "points": [
+        "T1",
+        "T2"
+      ],
+      "color": "#111111",
+      "width": 2.2
+    },
+    {
+      "points": [
+        "T2",
+        "T3"
+      ],
+      "color": "#111111",
+      "width": 2.2
+    },
+    {
+      "points": [
+        "T3",
+        "T4"
+      ],
+      "color": "#111111",
+      "width": 2.2
+    },
+    {
+      "points": [
+        "T4",
+        "T5"
+      ],
+      "color": "#111111",
+      "width": 2.2
+    },
+    {
+      "points": [
+        "T5",
+        "T6"
+      ],
+      "color": "#111111",
+      "width": 2.2
+    },
+    {
+      "points": [
+        "T6",
+        "T1"
+      ],
+      "color": "#111111",
+      "width": 2.2
+    },
+    {
+      "points": [
+        "B1",
+        "B2"
+      ],
+      "color": "#111111",
+      "width": 2.2
+    },
+    {
+      "points": [
+        "B2",
+        "B3"
+      ],
+      "color": "#111111",
+      "width": 2.2
+    },
+    {
+      "points": [
+        "B3",
+        "B4"
+      ],
+      "color": "#111111",
+      "width": 2.2
+    },
+    {
+      "points": [
+        "B4",
+        "B5"
+      ],
+      "color": "#111111",
+      "width": 2.2
+    },
+    {
+      "points": [
+        "B5",
+        "B6"
+      ],
+      "color": "#111111",
+      "width": 2.2
+    },
+    {
+      "points": [
+        "B6",
+        "B1"
+      ],
+      "color": "#111111",
+      "width": 2.2
+    },
+    {
+      "points": [
+        "T1",
+        "B1"
+      ],
+      "color": "#111111",
+      "width": 2.2
+    },
+    {
+      "points": [
+        "T2",
+        "B2"
+      ],
+      "color": "#111111",
+      "width": 2.2
+    },
+    {
+      "points": [
+        "T3",
+        "B3"
+      ],
+      "color": "#111111",
+      "width": 2.2
+    },
+    {
+      "points": [
+        "T4",
+        "B4"
+      ],
+      "color": "#111111",
+      "width": 2.2
+    },
+    {
+      "points": [
+        "T5",
+        "B5"
+      ],
+      "color": "#111111",
+      "width": 2.2
+    },
+    {
+      "points": [
+        "T6",
+        "B6"
+      ],
+      "color": "#111111",
+      "width": 2.2
+    }
+  ],
+  "aux_lines": [
+    {
+      "points": [
+        "T4",
+        "B1"
+      ],
+      "color": "#d03030",
+      "dash": true,
+      "depthTest": false,
+      "width": 4.2
+    },
+    {
+      "points": [
+        "O",
+        "M"
+      ],
+      "color": "#d97400",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "N",
+        "P"
+      ],
+      "color": "#d97400",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "S1",
+        "S2"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    },
+    {
+      "points": [
+        "S2",
+        "S3"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    },
+    {
+      "points": [
+        "S3",
+        "S4"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    },
+    {
+      "points": [
+        "S4",
+        "S1"
+      ],
+      "color": "#b7791f",
+      "dash": true,
+      "depthTest": false,
+      "width": 3.4
+    }
+  ],
+  "aux_faces": [
+    {
+      "points": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.26
+    }
+  ],
+  "labels": [
+    {
+      "text": "O",
+      "point": "O",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "M",
+      "point": "M",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "N",
+      "point": "N",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "P",
+      "point": "P",
+      "offset": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "kind": "aux"
+    }
+  ],
+  "primitives": [],
+  "_id": "mc_1810",
+  "_model": "kimi-k2.6",
+  "_augmentation": "rule_v1",
+  "_hide_meta_panel": true,
+  "aux_points": [
+    "O",
+    "M",
+    "N",
+    "P",
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+  ]
+}
