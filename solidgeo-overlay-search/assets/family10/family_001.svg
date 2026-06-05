@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="260" viewBox="0 0 360 260" role="img" aria-label="family_001 · 四棱锥">
+<rect width="360" height="260" fill="#ffffff"/>
+<polygon points="21.0,189.5 254.0,189.5 339.0,235.5 106.0,235.5" fill="#dcecf2" fill-opacity="0.62" stroke="none"/>
+<polygon points="179.8,24.5 21.0,189.5 254.0,189.5" fill="#e8f3eb" fill-opacity="0.62" stroke="none"/>
+<polygon points="179.8,24.5 254.0,189.5 339.0,235.5" fill="#f6eadf" fill-opacity="0.62" stroke="none"/>
+<polygon points="179.8,24.5 339.0,235.5 106.0,235.5" fill="#eee8f6" fill-opacity="0.62" stroke="none"/>
+<polygon points="179.8,24.5 106.0,235.5 21.0,189.5" fill="#eef0f3" fill-opacity="0.62" stroke="none"/>
+<line x1="21.0" y1="189.5" x2="254.0" y2="189.5" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="254.0" y1="189.5" x2="339.0" y2="235.5" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="339.0" y1="235.5" x2="106.0" y2="235.5" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="106.0" y1="235.5" x2="21.0" y2="189.5" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="179.8" y1="24.5" x2="21.0" y2="189.5" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="179.8" y1="24.5" x2="254.0" y2="189.5" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="179.8" y1="24.5" x2="339.0" y2="235.5" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="179.8" y1="24.5" x2="106.0" y2="235.5" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<circle cx="21.0" cy="189.5" r="3.2" fill="#d97400"/>
+<text x="26.0" y="184.5" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#111">A</text>
+<circle cx="254.0" cy="189.5" r="3.2" fill="#d97400"/>
+<text x="259.0" y="184.5" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#111">B</text>
+<circle cx="339.0" cy="235.5" r="3.2" fill="#d97400"/>
+<text x="344.0" y="230.5" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#111">C</text>
+<circle cx="106.0" cy="235.5" r="3.2" fill="#d97400"/>
+<text x="111.0" y="230.5" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#111">D</text>
+<circle cx="179.8" cy="24.5" r="3.2" fill="#d97400"/>
+<text x="184.8" y="19.5" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#111">S</text>
+</svg>

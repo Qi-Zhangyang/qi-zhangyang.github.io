@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>10 类 Base Geometry 的多增广构造</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f7fa;color:#111}
+    main{max-width:1180px;margin:0 auto;padding:28px 18px 42px}
+    h1{font-size:30px;line-height:1.16;margin:0 0 10px;letter-spacing:0}
+    p{max-width:940px;margin:0;color:#5f6875;line-height:1.55}
+    .stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+    .stats span{display:inline-flex;align-items:center;min-height:28px;padding:0 10px;border:1px solid #d8dde5;border-radius:999px;background:#fff;color:#44505f;font-size:13px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:24px}
+    .card{display:block;min-height:280px;padding:11px;border:1px solid #d8dde5;border-radius:8px;background:#fff;color:#111;text-decoration:none;box-shadow:0 8px 20px rgba(15,23,42,.06)}
+    .card img{display:block;width:100%;aspect-ratio:360/260;object-fit:contain;background:#fff;border:1px solid #edf0f3;border-radius:6px}
+    .card span{display:block;font-weight:700;margin:11px 2px 5px;line-height:1.25}
+    .card small{display:block;color:#5f6875;margin-left:2px;line-height:1.38}
+    code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
+    @media(max-width:640px){main{padding:20px 12px 32px}h1{font-size:24px}.card{min-height:250px}}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>10 类 Base Geometry 的 B / B+ / B++ / B+++ 多增广 demo</h1>
+    <p>每张卡片只固定一个代表 <code>base_geometry</code>。打开后，底部不是每档一个按钮，而是同一个 base 下枚举多套 B、B+、B++、B+++ 辅助点/线/面构造。四边形类和组合体每类 32 个 overlay，三角类每类 24 个 overlay；全部为规则生成，没有模型调用。</p>
+    <div class="stats">
+      <span>10 个固定 base</span>
+      <span>288 个 overlay variants</span>
+      <span>B/B+/B++/B+++ 按档分组</span>
+      <span>同一 base 多方向、多锚面、多剖面</span>
+    </div>
+    <div class="grid">
+      <a class="card" href="renderer.html?spec=./specs/family10/family_001.json">
+        <img src="./assets/family10/family_001.svg" alt="family_001 · 四棱锥">
+        <span>family_001 · 四棱锥</span>
+        <small>四棱锥 · Bx8 / B+x8 / B++x8 / B+++x8 · 同一 base 多增广</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/family10/family_002.json">
+        <img src="./assets/family10/family_002.svg" alt="family_002 · 偏顶四棱锥">
+        <span>family_002 · 偏顶四棱锥</span>
+        <small>偏顶四棱锥 · Bx8 / B+x8 / B++x8 / B+++x8 · 同一 base 多增广</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/family10/family_003.json">
+        <img src="./assets/family10/family_003.svg" alt="family_003 · 三棱锥">
+        <span>family_003 · 三棱锥</span>
+        <small>三棱锥 · Bx6 / B+x6 / B++x6 / B+++x6 · 同一 base 多增广</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/family10/family_004.json">
+        <img src="./assets/family10/family_004.svg" alt="family_004 · 长方体">
+        <span>family_004 · 长方体</span>
+        <small>长方体 · Bx8 / B+x8 / B++x8 / B+++x8 · 同一 base 多增广</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/family10/family_005.json">
+        <img src="./assets/family10/family_005.svg" alt="family_005 · 斜四棱柱">
+        <span>family_005 · 斜四棱柱</span>
+        <small>斜四棱柱 · Bx8 / B+x8 / B++x8 / B+++x8 · 同一 base 多增广</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/family10/family_006.json">
+        <img src="./assets/family10/family_006.svg" alt="family_006 · 四棱台">
+        <span>family_006 · 四棱台</span>
+        <small>四棱台 · Bx8 / B+x8 / B++x8 / B+++x8 · 同一 base 多增广</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/family10/family_007.json">
+        <img src="./assets/family10/family_007.svg" alt="family_007 · 三棱柱">
+        <span>family_007 · 三棱柱</span>
+        <small>三棱柱 · Bx6 / B+x6 / B++x6 / B+++x6 · 同一 base 多增广</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/family10/family_008.json">
+        <img src="./assets/family10/family_008.svg" alt="family_008 · 三棱台">
+        <span>family_008 · 三棱台</span>
+        <small>三棱台 · Bx6 / B+x6 / B++x6 / B+++x6 · 同一 base 多增广</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/family10/family_009.json">
+        <img src="./assets/family10/family_009.svg" alt="family_009 · 楔形体">
+        <span>family_009 · 楔形体</span>
+        <small>楔形体 · Bx6 / B+x6 / B++x6 / B+++x6 · 同一 base 多增广</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/family10/family_010.json">
+        <img src="./assets/family10/family_010.svg" alt="family_010 · 长方体叠四棱锥">
+        <span>family_010 · 长方体叠四棱锥</span>
+        <small>长方体叠四棱锥 · Bx8 / B+x8 / B++x8 / B+++x8 · 同一 base 多增广</small>
+      </a>
+    </div>
+  </main>
+</body>
+</html>
