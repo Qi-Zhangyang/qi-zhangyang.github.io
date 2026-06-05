@@ -10,7 +10,7 @@
       "B++": "two-layer construction, usually projection plus hinge/section comparison",
       "B+++": "one small step harder: double section, transfer lattice, or stacked component relation"
     },
-    "generation": "deterministic rule templates; no model call"
+    "generation": "deterministic rule templates with per-base orientation rotation; no model call"
   },
   "view": {
     "camera_offset": [
@@ -222,19 +222,19 @@
       "focus": "mid-section triangle",
       "aux_points": {
         "P": [
-          -1.47,
-          1.225,
-          -1.075
-        ],
-        "Q": [
           1.39,
           1.225,
           -1.075
         ],
-        "R": [
+        "Q": [
           -0.02,
           1.225,
           1.025
+        ],
+        "R": [
+          -1.47,
+          1.225,
+          -1.075
         ]
       },
       "aux_lines": [
@@ -270,16 +270,6 @@
         },
         {
           "points": [
-            "A",
-            "A1"
-          ],
-          "color": "#111111",
-          "dashed": true,
-          "opacity": 0.32,
-          "depthTest": false
-        },
-        {
-          "points": [
             "B",
             "B1"
           ],
@@ -292,6 +282,16 @@
           "points": [
             "C",
             "C1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A",
+            "A1"
           ],
           "color": "#111111",
           "dashed": true,
@@ -314,9 +314,9 @@
         },
         {
           "points": [
-            "A",
             "B",
-            "C"
+            "C",
+            "A"
           ],
           "color": "#1971c2",
           "opacity": 0.05,
@@ -347,14 +347,14 @@
       "focus": "median section plus center transfer",
       "aux_points": {
         "M": [
+          -0.705,
           0.0,
-          0.0,
-          -1.05
+          0.0
         ],
         "N": [
-          -0.08,
+          -0.785,
           2.45,
-          -1.1
+          -0.05
         ],
         "O": [
           0.007,
@@ -370,7 +370,7 @@
       "aux_lines": [
         {
           "points": [
-            "C",
+            "B",
             "M"
           ],
           "color": "#c2255c",
@@ -380,7 +380,7 @@
         },
         {
           "points": [
-            "C1",
+            "B1",
             "N"
           ],
           "color": "#c2255c",
@@ -430,8 +430,8 @@
         },
         {
           "points": [
-            "C",
-            "C1"
+            "B",
+            "B1"
           ],
           "color": "#111111",
           "dashed": true,
@@ -442,10 +442,10 @@
       "aux_faces": [
         {
           "points": [
-            "C",
+            "B",
             "M",
             "N",
-            "C1"
+            "B1"
           ],
           "color": "#7048e8",
           "opacity": 0.1,
@@ -455,9 +455,9 @@
         },
         {
           "points": [
+            "C",
             "A",
-            "B",
-            "C"
+            "B"
           ],
           "color": "#1971c2",
           "opacity": 0.05,
@@ -467,9 +467,9 @@
         },
         {
           "points": [
+            "C1",
             "A1",
-            "B1",
-            "C1"
+            "B1"
           ],
           "color": "#d9480f",
           "opacity": 0.05,
@@ -481,7 +481,7 @@
       "qa_seeds": [
         {
           "type": "section",
-          "answer": "CMNC1"
+          "answer": "BMNB1"
         }
       ],
       "exam_note": "中线剖面再接端面中心轴，形成两层可读结构。",
@@ -505,14 +505,14 @@
           -1.067
         ],
         "Q": [
-          1.403,
-          0.833,
-          -1.067
-        ],
-        "R": [
           -0.007,
           0.833,
           1.033
+        ],
+        "R": [
+          1.403,
+          0.833,
+          -1.067
         ],
         "U": [
           -1.484,
@@ -520,14 +520,14 @@
           -1.084
         ],
         "V": [
-          1.376,
-          1.666,
-          -1.084
-        ],
-        "W": [
           -0.034,
           1.666,
           1.016
+        ],
+        "W": [
+          1.376,
+          1.666,
+          -1.084
         ],
         "X": [
           -0.021,

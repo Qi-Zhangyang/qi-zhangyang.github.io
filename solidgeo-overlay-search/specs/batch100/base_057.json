@@ -10,7 +10,7 @@
       "B++": "two-layer construction, usually projection plus hinge/section comparison",
       "B+++": "one small step harder: double section, transfer lattice, or stacked component relation"
     },
-    "generation": "deterministic rule templates; no model call"
+    "generation": "deterministic rule templates with per-base orientation rotation; no model call"
   },
   "view": {
     "camera_offset": [
@@ -262,37 +262,27 @@
       "focus": "same-ratio section with diagonal witnesses",
       "aux_points": {
         "P": [
-          -1.18,
+          1.26,
           1.275,
           -0.806
         ],
         "Q": [
           1.26,
           1.275,
-          -0.806
+          0.746
         ],
         "R": [
-          1.26,
+          -1.18,
           1.275,
           0.746
         ],
         "T": [
           -1.18,
           1.275,
-          0.746
+          -0.806
         ]
       },
       "aux_lines": [
-        {
-          "points": [
-            "A",
-            "A1"
-          ],
-          "color": "#111111",
-          "dashed": true,
-          "opacity": 0.32,
-          "depthTest": false
-        },
         {
           "points": [
             "B",
@@ -317,6 +307,16 @@
           "points": [
             "D",
             "D1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A",
+            "A1"
           ],
           "color": "#111111",
           "dashed": true,
@@ -360,10 +360,10 @@
         },
         {
           "points": [
-            "A1",
             "B1",
             "C1",
-            "D1"
+            "D1",
+            "A1"
           ],
           "color": "#1971c2",
           "opacity": 0.05,
@@ -394,12 +394,12 @@
       "focus": "side-face hinge plus projection web",
       "aux_points": {
         "M": [
-          1.61,
+          -1.61,
           0.0,
           0.0
         ],
         "N": [
-          0.909,
+          -0.749,
           2.55,
           -0.06
         ],
@@ -409,7 +409,7 @@
           0.0
         ],
         "H": [
-          0.805,
+          -0.805,
           0.0,
           0.0
         ]
@@ -417,8 +417,8 @@
       "aux_lines": [
         {
           "points": [
-            "B",
-            "C"
+            "D",
+            "A"
           ],
           "color": "#111111",
           "dashed": false,
@@ -448,7 +448,7 @@
         {
           "points": [
             "O",
-            "C"
+            "A"
           ],
           "color": "#d97400",
           "dashed": false,
@@ -468,7 +468,7 @@
         {
           "points": [
             "H",
-            "C"
+            "A"
           ],
           "color": "#7048e8",
           "dashed": true,
@@ -477,8 +477,8 @@
         },
         {
           "points": [
-            "C",
-            "C1"
+            "A",
+            "A1"
           ],
           "color": "#111111",
           "dashed": true,
@@ -489,10 +489,10 @@
       "aux_faces": [
         {
           "points": [
-            "B",
-            "C",
-            "C1",
-            "B1"
+            "D",
+            "A",
+            "A1",
+            "D1"
           ],
           "color": "#d9480f",
           "opacity": 0.09,
@@ -502,10 +502,10 @@
         },
         {
           "points": [
-            "A",
-            "B",
             "C",
-            "D"
+            "D",
+            "A",
+            "B"
           ],
           "color": "#1971c2",
           "opacity": 0.06,
@@ -529,7 +529,7 @@
       "qa_seeds": [
         {
           "type": "dihedral_hinge",
-          "answer": "BC"
+          "answer": "DA"
         }
       ],
       "exam_note": "在侧面和底面之间加二面角 witness，再补一个面内投影点 H。",
@@ -550,40 +550,40 @@
         "P": [
           -1.317,
           0.867,
-          -0.876
+          0.836
         ],
         "Q": [
-          1.372,
+          -1.317,
           0.867,
           -0.876
         ],
         "R": [
           1.372,
           0.867,
-          0.836
+          -0.876
         ],
         "T": [
-          -1.317,
+          1.372,
           0.867,
           0.836
         ],
         "U": [
           -1.025,
           1.734,
-          -0.728
+          0.646
         ],
         "V": [
-          1.133,
+          -1.025,
           1.734,
           -0.728
         ],
         "W": [
           1.133,
           1.734,
-          0.646
+          -0.728
         ],
         "Z": [
-          -1.025,
+          1.133,
           1.734,
           0.646
         ],
@@ -765,10 +765,10 @@
         },
         {
           "points": [
+            "D",
             "A",
             "B",
-            "C",
-            "D"
+            "C"
           ],
           "color": "#1971c2",
           "opacity": 0.04,

@@ -10,7 +10,7 @@
       "B++": "two-layer construction, usually projection plus hinge/section comparison",
       "B+++": "one small step harder: double section, transfer lattice, or stacked component relation"
     },
-    "generation": "deterministic rule templates; no model call"
+    "generation": "deterministic rule templates with per-base orientation rotation; no model call"
   },
   "view": {
     "camera_offset": [
@@ -108,9 +108,9 @@
           -0.358
         ],
         "M": [
+          -0.798,
           0.0,
-          0.0,
-          -1.075
+          0.0
         ]
       },
       "aux_lines": [
@@ -127,7 +127,7 @@
         {
           "points": [
             "A",
-            "C"
+            "B"
           ],
           "color": "#d97400",
           "dashed": true,
@@ -136,8 +136,8 @@
         },
         {
           "points": [
-            "B",
-            "C"
+            "C",
+            "B"
           ],
           "color": "#d97400",
           "dashed": true,
@@ -159,8 +159,8 @@
         {
           "points": [
             "A",
-            "B",
-            "C"
+            "C",
+            "B"
           ],
           "color": "#1971c2",
           "opacity": 0.08,
@@ -191,12 +191,12 @@
       "focus": "mid-edge triangular section",
       "aux_points": {
         "P": [
-          -0.698,
+          0.797,
           1.205,
           -0.613
         ],
         "Q": [
-          0.797,
+          -0.698,
           1.205,
           -0.613
         ],
@@ -278,8 +278,8 @@
         },
         {
           "points": [
-            "A",
             "B",
+            "A",
             "C"
           ],
           "color": "#1971c2",
@@ -311,9 +311,9 @@
       "focus": "edge hinge with base projection",
       "aux_points": {
         "M": [
+          0.698,
           0.0,
-          0.0,
-          -1.075
+          0.0
         ],
         "N": [
           -0.798,
@@ -329,7 +329,7 @@
       "aux_lines": [
         {
           "points": [
-            "A",
+            "C",
             "B"
           ],
           "color": "#111111",
@@ -380,7 +380,7 @@
         {
           "points": [
             "N",
-            "C"
+            "A"
           ],
           "color": "#7048e8",
           "dashed": true,
@@ -392,7 +392,7 @@
         {
           "points": [
             "S",
-            "A",
+            "C",
             "B"
           ],
           "color": "#d9480f",
@@ -403,9 +403,9 @@
         },
         {
           "points": [
-            "A",
+            "C",
             "B",
-            "C"
+            "A"
           ],
           "color": "#1971c2",
           "opacity": 0.06,
@@ -429,7 +429,7 @@
       "qa_seeds": [
         {
           "type": "dihedral_hinge",
-          "answer": "AB"
+          "answer": "CB"
         }
       ],
       "exam_note": "二面角 witness 加底面投影，再补一条底面内中位参考线。",

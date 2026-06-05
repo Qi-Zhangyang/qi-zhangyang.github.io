@@ -10,7 +10,7 @@
       "B++": "two-layer construction, usually projection plus hinge/section comparison",
       "B+++": "one small step harder: double section, transfer lattice, or stacked component relation"
     },
-    "generation": "deterministic rule templates; no model call"
+    "generation": "deterministic rule templates with per-base orientation rotation; no model call"
   },
   "view": {
     "camera_offset": [
@@ -231,8 +231,8 @@
         },
         {
           "points": [
-            "A",
-            "C"
+            "B",
+            "D"
           ],
           "color": "#d97400",
           "dashed": true,
@@ -241,8 +241,8 @@
         },
         {
           "points": [
-            "A1",
-            "C1"
+            "B1",
+            "D1"
           ],
           "color": "#7048e8",
           "dashed": true,
@@ -264,8 +264,8 @@
         {
           "points": [
             "S",
-            "A1",
-            "C1"
+            "B1",
+            "D1"
           ],
           "color": "#1971c2",
           "opacity": 0.1,
@@ -275,10 +275,10 @@
         },
         {
           "points": [
-            "A",
-            "C",
-            "C1",
-            "A1"
+            "B",
+            "D",
+            "D1",
+            "B1"
           ],
           "color": "#7048e8",
           "opacity": 0.06,
@@ -309,9 +309,9 @@
       "focus": "roof same-ratio section",
       "aux_points": {
         "P": [
-          -0.698,
+          0.728,
           1.995,
-          -0.473
+          0.553
         ],
         "Q": [
           0.728,
@@ -319,9 +319,9 @@
           -0.473
         ],
         "R": [
-          0.728,
+          -0.698,
           1.995,
-          0.553
+          -0.473
         ],
         "T": [
           -0.698,
@@ -368,7 +368,7 @@
         {
           "points": [
             "S",
-            "A1"
+            "C1"
           ],
           "color": "#111111",
           "dashed": true,
@@ -378,7 +378,7 @@
         {
           "points": [
             "S",
-            "C1"
+            "A1"
           ],
           "color": "#111111",
           "dashed": true,
@@ -412,9 +412,9 @@
         },
         {
           "points": [
-            "A1",
-            "B1",
             "C1",
+            "B1",
+            "A1",
             "D1"
           ],
           "color": "#1971c2",
@@ -448,27 +448,27 @@
         "E": [
           -1.425,
           0.56,
-          -1.025
+          1.025
         ],
         "F": [
           1.425,
           0.56,
-          -1.025
+          1.025
         ],
         "G": [
           1.425,
           0.56,
-          1.025
+          -1.025
         ],
         "H": [
           -1.425,
           0.56,
-          1.025
+          -1.025
         ],
         "M": [
           0.0,
           1.12,
-          -1.025
+          1.025
         ],
         "O1": [
           0.0,
@@ -499,8 +499,8 @@
         },
         {
           "points": [
-            "A1",
-            "B1"
+            "D1",
+            "C1"
           ],
           "color": "#111111",
           "dashed": false,
@@ -575,8 +575,8 @@
         {
           "points": [
             "S",
-            "A1",
-            "B1"
+            "D1",
+            "C1"
           ],
           "color": "#d9480f",
           "opacity": 0.1,
@@ -586,10 +586,10 @@
         },
         {
           "points": [
-            "A1",
-            "B1",
+            "D1",
             "C1",
-            "D1"
+            "B1",
+            "A1"
           ],
           "color": "#1971c2",
           "opacity": 0.06,

@@ -10,7 +10,7 @@
       "B++": "two-layer construction, usually projection plus hinge/section comparison",
       "B+++": "one small step harder: double section, transfer lattice, or stacked component relation"
     },
-    "generation": "deterministic rule templates; no model call"
+    "generation": "deterministic rule templates with per-base orientation rotation; no model call"
   },
   "view": {
     "camera_offset": [
@@ -231,8 +231,8 @@
         },
         {
           "points": [
-            "A",
-            "C"
+            "C",
+            "A"
           ],
           "color": "#d97400",
           "dashed": true,
@@ -241,8 +241,8 @@
         },
         {
           "points": [
-            "A1",
-            "C1"
+            "C1",
+            "A1"
           ],
           "color": "#7048e8",
           "dashed": true,
@@ -264,8 +264,8 @@
         {
           "points": [
             "S",
-            "A1",
-            "C1"
+            "C1",
+            "A1"
           ],
           "color": "#1971c2",
           "opacity": 0.1,
@@ -275,10 +275,10 @@
         },
         {
           "points": [
-            "A",
             "C",
-            "C1",
-            "A1"
+            "A",
+            "A1",
+            "C1"
           ],
           "color": "#7048e8",
           "opacity": 0.06,
@@ -311,20 +311,20 @@
         "P": [
           -0.768,
           1.975,
-          -0.588
+          0.537
         ],
         "Q": [
-          0.708,
+          -0.768,
           1.975,
           -0.588
         ],
         "R": [
           0.708,
           1.975,
-          0.537
+          -0.588
         ],
         "T": [
-          -0.768,
+          0.708,
           1.975,
           0.537
         ],
@@ -368,7 +368,7 @@
         {
           "points": [
             "S",
-            "A1"
+            "D1"
           ],
           "color": "#111111",
           "dashed": true,
@@ -378,7 +378,7 @@
         {
           "points": [
             "S",
-            "C1"
+            "B1"
           ],
           "color": "#111111",
           "dashed": true,
@@ -412,10 +412,10 @@
         },
         {
           "points": [
+            "D1",
             "A1",
             "B1",
-            "C1",
-            "D1"
+            "C1"
           ],
           "color": "#1971c2",
           "opacity": 0.05,
@@ -451,9 +451,9 @@
           -1.125
         ],
         "F": [
-          1.475,
+          -1.475,
           0.61,
-          -1.125
+          1.125
         ],
         "G": [
           1.475,
@@ -461,14 +461,14 @@
           1.125
         ],
         "H": [
-          -1.475,
+          1.475,
           0.61,
-          1.125
+          -1.125
         ],
         "M": [
-          0.0,
+          -1.475,
           1.22,
-          -1.125
+          0.0
         ],
         "O1": [
           0.0,
@@ -500,7 +500,7 @@
         {
           "points": [
             "A1",
-            "B1"
+            "D1"
           ],
           "color": "#111111",
           "dashed": false,
@@ -576,7 +576,7 @@
           "points": [
             "S",
             "A1",
-            "B1"
+            "D1"
           ],
           "color": "#d9480f",
           "opacity": 0.1,
@@ -587,9 +587,9 @@
         {
           "points": [
             "A1",
-            "B1",
+            "D1",
             "C1",
-            "D1"
+            "B1"
           ],
           "color": "#1971c2",
           "opacity": 0.06,
@@ -620,42 +620,42 @@
       "focus": "lower midplane plus roof section transfer lattice",
       "aux_points": {
         "E": [
-          -1.475,
+          1.475,
           0.61,
           -1.125
         ],
         "F": [
-          1.475,
+          -1.475,
           0.61,
           -1.125
         ],
         "G": [
-          1.475,
-          0.61,
-          1.125
-        ],
-        "H": [
           -1.475,
           0.61,
           1.125
         ],
+        "H": [
+          1.475,
+          0.61,
+          1.125
+        ],
         "P": [
-          -0.768,
+          0.708,
           1.975,
           -0.588
         ],
         "Q": [
-          0.708,
+          -0.768,
           1.975,
           -0.588
         ],
         "R": [
-          0.708,
+          -0.768,
           1.975,
           0.537
         ],
         "T": [
-          -0.768,
+          0.708,
           1.975,
           0.537
         ],
@@ -837,10 +837,10 @@
         },
         {
           "points": [
-            "A1",
             "B1",
-            "C1",
-            "D1"
+            "A1",
+            "D1",
+            "C1"
           ],
           "color": "#1971c2",
           "opacity": 0.04,

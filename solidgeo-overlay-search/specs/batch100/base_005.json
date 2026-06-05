@@ -10,7 +10,7 @@
       "B++": "two-layer construction, usually projection plus hinge/section comparison",
       "B+++": "one small step harder: double section, transfer lattice, or stacked component relation"
     },
-    "generation": "deterministic rule templates; no model call"
+    "generation": "deterministic rule templates with per-base orientation rotation; no model call"
   },
   "view": {
     "camera_offset": [
@@ -150,8 +150,8 @@
         },
         {
           "points": [
-            "B",
-            "D"
+            "D",
+            "B"
           ],
           "color": "#d97400",
           "dashed": true,
@@ -173,9 +173,9 @@
         {
           "points": [
             "A",
-            "B",
+            "D",
             "C",
-            "D"
+            "B"
           ],
           "color": "#1971c2",
           "opacity": 0.08,
@@ -206,22 +206,22 @@
       "focus": "mid-edge parallel section with center",
       "aux_points": {
         "P": [
-          -0.71,
+          0.69,
           1.345,
           -0.54
         ],
         "Q": [
-          0.69,
+          -0.71,
           1.345,
           -0.54
         ],
         "R": [
-          0.69,
+          -0.71,
           1.345,
           0.46
         ],
         "T": [
-          -0.71,
+          0.69,
           1.345,
           0.46
         ],
@@ -265,7 +265,7 @@
         {
           "points": [
             "S",
-            "A"
+            "B"
           ],
           "color": "#111111",
           "dashed": true,
@@ -275,7 +275,7 @@
         {
           "points": [
             "S",
-            "C"
+            "D"
           ],
           "color": "#111111",
           "dashed": true,
@@ -309,10 +309,10 @@
         },
         {
           "points": [
-            "A",
             "B",
-            "C",
-            "D"
+            "A",
+            "D",
+            "C"
           ],
           "color": "#1971c2",
           "opacity": 0.05,
@@ -343,14 +343,14 @@
       "focus": "dihedral hinge plus median section",
       "aux_points": {
         "M": [
+          1.4,
           0.0,
-          0.0,
-          -1.0
+          0.0
         ],
         "N": [
+          -1.4,
           0.0,
-          0.0,
-          1.0
+          0.0
         ],
         "O": [
           0.0,
@@ -361,7 +361,7 @@
       "aux_lines": [
         {
           "points": [
-            "A",
+            "C",
             "B"
           ],
           "color": "#111111",
@@ -371,7 +371,7 @@
         },
         {
           "points": [
-            "C",
+            "A",
             "D"
           ],
           "color": "#111111",
@@ -434,7 +434,7 @@
         {
           "points": [
             "S",
-            "A",
+            "C",
             "B"
           ],
           "color": "#d9480f",
@@ -445,9 +445,9 @@
         },
         {
           "points": [
-            "A",
-            "B",
             "C",
+            "B",
+            "A",
             "D"
           ],
           "color": "#1971c2",
@@ -472,7 +472,7 @@
       "qa_seeds": [
         {
           "type": "dihedral_hinge",
-          "answer": "AB"
+          "answer": "CB"
         }
       ],
       "exam_note": "把侧面二面角和穿过棱锥的中剖面同时摆出来。",
@@ -493,42 +493,42 @@
         "P": [
           -0.489,
           1.775,
-          -0.393
+          0.287
         ],
         "Q": [
           0.463,
           1.775,
-          -0.393
+          0.287
         ],
         "R": [
           0.463,
           1.775,
-          0.287
+          -0.393
         ],
         "T": [
           -0.489,
           1.775,
-          0.287
+          -0.393
         ],
         "U": [
           -0.958,
           0.861,
-          -0.706
+          0.654
         ],
         "V": [
           0.946,
           0.861,
-          -0.706
+          0.654
         ],
         "W": [
           0.946,
           0.861,
-          0.654
+          -0.706
         ],
         "Z": [
           -0.958,
           0.861,
-          0.654
+          -0.706
         ],
         "X": [
           -0.013,
@@ -708,10 +708,10 @@
         },
         {
           "points": [
-            "A",
-            "B",
+            "D",
             "C",
-            "D"
+            "B",
+            "A"
           ],
           "color": "#1971c2",
           "opacity": 0.04,

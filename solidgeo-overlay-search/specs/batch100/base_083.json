@@ -10,7 +10,7 @@
       "B++": "two-layer construction, usually projection plus hinge/section comparison",
       "B+++": "one small step harder: double section, transfer lattice, or stacked component relation"
     },
-    "generation": "deterministic rule templates; no model call"
+    "generation": "deterministic rule templates with per-base orientation rotation; no model call"
   },
   "view": {
     "camera_offset": [
@@ -156,7 +156,7 @@
         },
         {
           "points": [
-            "A",
+            "D",
             "A1"
           ],
           "color": "#d97400",
@@ -166,7 +166,7 @@
         },
         {
           "points": [
-            "B",
+            "C",
             "B1"
           ],
           "color": "#7048e8",
@@ -176,8 +176,8 @@
         },
         {
           "points": [
-            "D",
-            "C"
+            "A",
+            "B"
           ],
           "color": "#d97400",
           "dashed": true,
@@ -188,10 +188,10 @@
       "aux_faces": [
         {
           "points": [
-            "A",
+            "D",
             "A1",
             "B1",
-            "B"
+            "C"
           ],
           "color": "#1971c2",
           "opacity": 0.08,
@@ -222,9 +222,9 @@
       "focus": "mid-section triangle",
       "aux_points": {
         "P": [
-          0.0,
-          0.0,
-          -1.135
+          -0.1,
+          1.85,
+          -0.18
         ],
         "Q": [
           0.0,
@@ -232,9 +232,9 @@
           1.135
         ],
         "R": [
-          -0.1,
-          1.85,
-          -0.18
+          0.0,
+          0.0,
+          -1.135
         ]
       },
       "aux_lines": [
@@ -270,8 +270,8 @@
         },
         {
           "points": [
-            "A",
-            "B"
+            "A1",
+            "B1"
           ],
           "color": "#111111",
           "dashed": true,
@@ -290,8 +290,8 @@
         },
         {
           "points": [
-            "A1",
-            "B1"
+            "A",
+            "B"
           ],
           "color": "#111111",
           "dashed": true,
@@ -314,9 +314,9 @@
         },
         {
           "points": [
-            "A",
+            "A1",
             "D",
-            "A1"
+            "A"
           ],
           "color": "#1971c2",
           "opacity": 0.05,
@@ -502,32 +502,32 @@
         "P": [
           -0.488,
           0.0,
-          -1.135
-        ],
-        "Q": [
-          -0.488,
-          0.0,
           1.135
         ],
-        "R": [
+        "Q": [
           -0.588,
           1.85,
           -0.18
         ],
-        "U": [
-          0.549,
+        "R": [
+          -0.488,
           0.0,
           -1.135
         ],
-        "V": [
+        "U": [
           0.549,
           0.0,
           1.135
         ],
-        "W": [
+        "V": [
           0.449,
           1.85,
           -0.18
+        ],
+        "W": [
+          0.549,
+          0.0,
+          -1.135
         ],
         "X": [
           -0.521,

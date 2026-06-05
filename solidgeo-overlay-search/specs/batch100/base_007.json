@@ -10,7 +10,7 @@
       "B++": "two-layer construction, usually projection plus hinge/section comparison",
       "B+++": "one small step harder: double section, transfer lattice, or stacked component relation"
     },
-    "generation": "deterministic rule templates; no model call"
+    "generation": "deterministic rule templates with per-base orientation rotation; no model call"
   },
   "view": {
     "camera_offset": [
@@ -140,8 +140,8 @@
         },
         {
           "points": [
-            "A",
-            "C"
+            "C",
+            "A"
           ],
           "color": "#d97400",
           "dashed": true,
@@ -161,7 +161,7 @@
         {
           "points": [
             "O",
-            "A"
+            "C"
           ],
           "color": "#d97400",
           "dashed": false,
@@ -172,9 +172,9 @@
       "aux_faces": [
         {
           "points": [
-            "A",
-            "B",
             "C",
+            "B",
+            "A",
             "D"
           ],
           "color": "#1971c2",
@@ -208,22 +208,22 @@
         "P": [
           -0.73,
           1.455,
-          -0.59
+          0.51
         ],
         "Q": [
           0.79,
           1.455,
-          -0.59
+          0.51
         ],
         "R": [
           0.79,
           1.455,
-          0.51
+          -0.59
         ],
         "T": [
           -0.73,
           1.455,
-          0.51
+          -0.59
         ],
         "X": [
           0.03,
@@ -265,7 +265,7 @@
         {
           "points": [
             "S",
-            "A"
+            "D"
           ],
           "color": "#111111",
           "dashed": true,
@@ -275,7 +275,7 @@
         {
           "points": [
             "S",
-            "C"
+            "B"
           ],
           "color": "#111111",
           "dashed": true,
@@ -309,10 +309,10 @@
         },
         {
           "points": [
-            "A",
-            "B",
+            "D",
             "C",
-            "D"
+            "B",
+            "A"
           ],
           "color": "#1971c2",
           "opacity": 0.05,
@@ -491,44 +491,44 @@
       "focus": "two same-ratio sections and diagonal transfer planes",
       "aux_points": {
         "P": [
-          -0.477,
+          0.556,
           1.921,
           -0.427
         ],
         "Q": [
           0.556,
           1.921,
-          -0.427
+          0.321
         ],
         "R": [
-          0.556,
+          -0.477,
           1.921,
           0.321
         ],
         "T": [
           -0.477,
           1.921,
-          0.321
+          -0.427
         ],
         "U": [
-          -1.014,
+          1.053,
           0.931,
           -0.774
         ],
         "V": [
           1.053,
           0.931,
-          -0.774
+          0.722
         ],
         "W": [
-          1.053,
+          -1.014,
           0.931,
           0.722
         ],
         "Z": [
           -1.014,
           0.931,
-          0.722
+          -0.774
         ],
         "X": [
           0.04,
@@ -708,10 +708,10 @@
         },
         {
           "points": [
-            "A",
             "B",
             "C",
-            "D"
+            "D",
+            "A"
           ],
           "color": "#1971c2",
           "opacity": 0.04,

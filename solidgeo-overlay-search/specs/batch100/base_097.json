@@ -10,7 +10,7 @@
       "B++": "two-layer construction, usually projection plus hinge/section comparison",
       "B+++": "one small step harder: double section, transfer lattice, or stacked component relation"
     },
-    "generation": "deterministic rule templates; no model call"
+    "generation": "deterministic rule templates with per-base orientation rotation; no model call"
   },
   "view": {
     "camera_offset": [
@@ -231,8 +231,8 @@
         },
         {
           "points": [
-            "A",
-            "C"
+            "C",
+            "A"
           ],
           "color": "#d97400",
           "dashed": true,
@@ -241,8 +241,8 @@
         },
         {
           "points": [
-            "A1",
-            "C1"
+            "C1",
+            "A1"
           ],
           "color": "#7048e8",
           "dashed": true,
@@ -264,8 +264,8 @@
         {
           "points": [
             "S",
-            "A1",
-            "C1"
+            "C1",
+            "A1"
           ],
           "color": "#1971c2",
           "opacity": 0.1,
@@ -275,10 +275,10 @@
         },
         {
           "points": [
-            "A",
             "C",
-            "C1",
-            "A1"
+            "A",
+            "A1",
+            "C1"
           ],
           "color": "#7048e8",
           "opacity": 0.06,
@@ -311,22 +311,22 @@
         "P": [
           -0.708,
           2.085,
-          -0.563
+          0.513
         ],
         "Q": [
           0.768,
           2.085,
-          -0.563
+          0.513
         ],
         "R": [
           0.768,
           2.085,
-          0.513
+          -0.563
         ],
         "T": [
           -0.708,
           2.085,
-          0.513
+          -0.563
         ],
         "X": [
           0.03,
@@ -368,7 +368,7 @@
         {
           "points": [
             "S",
-            "A1"
+            "D1"
           ],
           "color": "#111111",
           "dashed": true,
@@ -378,7 +378,7 @@
         {
           "points": [
             "S",
-            "C1"
+            "B1"
           ],
           "color": "#111111",
           "dashed": true,
@@ -412,10 +412,10 @@
         },
         {
           "points": [
-            "A1",
-            "B1",
+            "D1",
             "C1",
-            "D1"
+            "B1",
+            "A1"
           ],
           "color": "#1971c2",
           "opacity": 0.05,
@@ -620,44 +620,44 @@
       "focus": "lower midplane plus roof section transfer lattice",
       "aux_points": {
         "E": [
-          -1.475,
+          1.475,
           0.585,
           -1.075
         ],
         "F": [
           1.475,
           0.585,
-          -1.075
+          1.075
         ],
         "G": [
-          1.475,
+          -1.475,
           0.585,
           1.075
         ],
         "H": [
           -1.475,
           0.585,
-          1.075
+          -1.075
         ],
         "P": [
-          -0.708,
+          0.768,
           2.085,
           -0.563
         ],
         "Q": [
           0.768,
           2.085,
-          -0.563
+          0.513
         ],
         "R": [
-          0.768,
+          -0.708,
           2.085,
           0.513
         ],
         "T": [
           -0.708,
           2.085,
-          0.513
+          -0.563
         ],
         "X": [
           0.0,
@@ -837,10 +837,10 @@
         },
         {
           "points": [
-            "A1",
             "B1",
             "C1",
-            "D1"
+            "D1",
+            "A1"
           ],
           "color": "#1971c2",
           "opacity": 0.04,

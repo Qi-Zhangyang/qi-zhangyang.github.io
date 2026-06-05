@@ -10,7 +10,7 @@
       "B++": "two-layer construction, usually projection plus hinge/section comparison",
       "B+++": "one small step harder: double section, transfer lattice, or stacked component relation"
     },
-    "generation": "deterministic rule templates; no model call"
+    "generation": "deterministic rule templates with per-base orientation rotation; no model call"
   },
   "view": {
     "camera_offset": [
@@ -156,8 +156,8 @@
         },
         {
           "points": [
-            "A",
-            "A1"
+            "A1",
+            "D"
           ],
           "color": "#d97400",
           "dashed": true,
@@ -166,8 +166,8 @@
         },
         {
           "points": [
-            "B",
-            "B1"
+            "B1",
+            "C"
           ],
           "color": "#7048e8",
           "dashed": true,
@@ -176,8 +176,8 @@
         },
         {
           "points": [
-            "D",
-            "C"
+            "A",
+            "B"
           ],
           "color": "#d97400",
           "dashed": true,
@@ -188,10 +188,10 @@
       "aux_faces": [
         {
           "points": [
-            "A",
             "A1",
-            "B1",
-            "B"
+            "D",
+            "C",
+            "B1"
           ],
           "color": "#1971c2",
           "opacity": 0.08,
@@ -227,14 +227,14 @@
           -1.09
         ],
         "Q": [
-          0.0,
-          0.0,
-          1.09
-        ],
-        "R": [
           0.06,
           2.25,
           -0.18
+        ],
+        "R": [
+          0.0,
+          0.0,
+          1.09
         ]
       },
       "aux_lines": [
@@ -280,8 +280,8 @@
         },
         {
           "points": [
-            "D",
-            "C"
+            "A1",
+            "B1"
           ],
           "color": "#111111",
           "dashed": true,
@@ -290,8 +290,8 @@
         },
         {
           "points": [
-            "A1",
-            "B1"
+            "D",
+            "C"
           ],
           "color": "#111111",
           "dashed": true,
@@ -315,8 +315,8 @@
         {
           "points": [
             "A",
-            "D",
-            "A1"
+            "A1",
+            "D"
           ],
           "color": "#1971c2",
           "opacity": 0.05,
@@ -347,14 +347,14 @@
       "focus": "median section plus center transfer",
       "aux_points": {
         "M": [
-          -1.525,
-          0.0,
-          0.0
+          -1.495,
+          1.125,
+          0.455
         ],
         "N": [
-          1.525,
-          0.0,
-          0.0
+          1.555,
+          1.125,
+          0.455
         ],
         "O": [
           -1.505,
@@ -370,7 +370,7 @@
       "aux_lines": [
         {
           "points": [
-            "A1",
+            "A",
             "M"
           ],
           "color": "#c2255c",
@@ -380,7 +380,7 @@
         },
         {
           "points": [
-            "B1",
+            "B",
             "N"
           ],
           "color": "#c2255c",
@@ -430,8 +430,8 @@
         },
         {
           "points": [
-            "A1",
-            "B1"
+            "A",
+            "B"
           ],
           "color": "#111111",
           "dashed": true,
@@ -442,10 +442,10 @@
       "aux_faces": [
         {
           "points": [
-            "A1",
+            "A",
             "M",
             "N",
-            "B1"
+            "B"
           ],
           "color": "#7048e8",
           "opacity": 0.1,
@@ -455,9 +455,9 @@
         },
         {
           "points": [
-            "A",
+            "A1",
             "D",
-            "A1"
+            "A"
           ],
           "color": "#1971c2",
           "opacity": 0.05,
@@ -467,9 +467,9 @@
         },
         {
           "points": [
-            "B",
+            "B1",
             "C",
-            "B1"
+            "B"
           ],
           "color": "#d9480f",
           "opacity": 0.05,
@@ -481,7 +481,7 @@
       "qa_seeds": [
         {
           "type": "section",
-          "answer": "A1MNB1"
+          "answer": "AMNB"
         }
       ],
       "exam_note": "中线剖面再接端面中心轴，形成两层可读结构。",
@@ -500,9 +500,9 @@
       "focus": "two triangular sections with transfer lattice",
       "aux_points": {
         "P": [
-          -0.488,
-          0.0,
-          -1.09
+          -0.428,
+          2.25,
+          -0.18
         ],
         "Q": [
           -0.488,
@@ -510,14 +510,14 @@
           1.09
         ],
         "R": [
-          -0.428,
-          2.25,
-          -0.18
-        ],
-        "U": [
-          0.549,
+          -0.488,
           0.0,
           -1.09
+        ],
+        "U": [
+          0.609,
+          2.25,
+          -0.18
         ],
         "V": [
           0.549,
@@ -525,9 +525,9 @@
           1.09
         ],
         "W": [
-          0.609,
-          2.25,
-          -0.18
+          0.549,
+          0.0,
+          -1.09
         ],
         "X": [
           -0.468,

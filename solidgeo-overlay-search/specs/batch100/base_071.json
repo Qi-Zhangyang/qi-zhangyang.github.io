@@ -10,7 +10,7 @@
       "B++": "two-layer construction, usually projection plus hinge/section comparison",
       "B+++": "one small step harder: double section, transfer lattice, or stacked component relation"
     },
-    "generation": "deterministic rule templates; no model call"
+    "generation": "deterministic rule templates with per-base orientation rotation; no model call"
   },
   "view": {
     "camera_offset": [
@@ -156,8 +156,8 @@
         },
         {
           "points": [
-            "A",
-            "C"
+            "B",
+            "A"
           ],
           "color": "#d97400",
           "dashed": true,
@@ -166,8 +166,8 @@
         },
         {
           "points": [
-            "A1",
-            "C1"
+            "B1",
+            "A1"
           ],
           "color": "#7048e8",
           "dashed": true,
@@ -176,8 +176,8 @@
         },
         {
           "points": [
-            "B",
-            "B1"
+            "C",
+            "C1"
           ],
           "color": "#d97400",
           "dashed": true,
@@ -188,10 +188,10 @@
       "aux_faces": [
         {
           "points": [
+            "B",
             "A",
-            "C",
-            "C1",
-            "A1"
+            "A1",
+            "B1"
           ],
           "color": "#1971c2",
           "opacity": 0.08,
@@ -222,19 +222,19 @@
       "focus": "mid-section triangle",
       "aux_points": {
         "P": [
+          -0.153,
+          0.95,
+          0.85
+        ],
+        "Q": [
           -1.175,
           0.95,
           -0.91
         ],
-        "Q": [
+        "R": [
           1.015,
           0.95,
           -0.91
-        ],
-        "R": [
-          -0.153,
-          0.95,
-          0.85
         ]
       },
       "aux_lines": [
@@ -270,6 +270,16 @@
         },
         {
           "points": [
+            "C",
+            "C1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        },
+        {
+          "points": [
             "A",
             "A1"
           ],
@@ -282,16 +292,6 @@
           "points": [
             "B",
             "B1"
-          ],
-          "color": "#111111",
-          "dashed": true,
-          "opacity": 0.32,
-          "depthTest": false
-        },
-        {
-          "points": [
-            "C",
-            "C1"
           ],
           "color": "#111111",
           "dashed": true,
@@ -314,9 +314,9 @@
         },
         {
           "points": [
+            "C",
             "A",
-            "B",
-            "C"
+            "B"
           ],
           "color": "#1971c2",
           "opacity": 0.05,
@@ -455,8 +455,8 @@
         },
         {
           "points": [
-            "A",
             "B",
+            "A",
             "C"
           ],
           "color": "#1971c2",
@@ -467,8 +467,8 @@
         },
         {
           "points": [
-            "A1",
             "B1",
+            "A1",
             "C1"
           ],
           "color": "#d9480f",
@@ -500,12 +500,12 @@
       "focus": "two triangular sections with transfer lattice",
       "aux_points": {
         "P": [
-          -1.279,
+          1.17,
           0.646,
           -1.004
         ],
         "Q": [
-          1.17,
+          -1.279,
           0.646,
           -1.004
         ],
@@ -515,12 +515,12 @@
           0.963
         ],
         "U": [
-          -1.058,
+          0.84,
           1.292,
           -0.803
         ],
         "V": [
-          0.84,
+          -1.058,
           1.292,
           -0.803
         ],

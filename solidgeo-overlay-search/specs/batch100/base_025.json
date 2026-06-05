@@ -10,7 +10,7 @@
       "B++": "two-layer construction, usually projection plus hinge/section comparison",
       "B+++": "one small step harder: double section, transfer lattice, or stacked component relation"
     },
-    "generation": "deterministic rule templates; no model call"
+    "generation": "deterministic rule templates with per-base orientation rotation; no model call"
   },
   "view": {
     "camera_offset": [
@@ -126,7 +126,7 @@
         },
         {
           "points": [
-            "A",
+            "B",
             "C"
           ],
           "color": "#d97400",
@@ -136,7 +136,7 @@
         },
         {
           "points": [
-            "B",
+            "A",
             "C"
           ],
           "color": "#d97400",
@@ -158,8 +158,8 @@
       "aux_faces": [
         {
           "points": [
-            "A",
             "B",
+            "A",
             "C"
           ],
           "color": "#1971c2",
@@ -191,9 +191,9 @@
       "focus": "mid-edge triangular section",
       "aux_points": {
         "P": [
-          -0.68,
+          0.075,
           1.265,
-          -0.657
+          0.457
         ],
         "Q": [
           0.88,
@@ -201,9 +201,9 @@
           -0.617
         ],
         "R": [
-          0.075,
+          -0.68,
           1.265,
-          0.457
+          -0.657
         ],
         "X": [
           0.092,
@@ -278,9 +278,9 @@
         },
         {
           "points": [
-            "A",
+            "C",
             "B",
-            "C"
+            "A"
           ],
           "color": "#1971c2",
           "opacity": 0.05,
@@ -448,34 +448,34 @@
       "focus": "two triangular sections with transfer faces",
       "aux_points": {
         "P": [
-          -0.434,
-          1.619,
-          -0.529
-        ],
-        "Q": [
           0.69,
           1.619,
           -0.501
         ],
-        "R": [
+        "Q": [
           0.11,
           1.619,
           0.273
         ],
-        "U": [
-          -1.032,
-          0.759,
-          -0.841
+        "R": [
+          -0.434,
+          1.619,
+          -0.529
         ],
-        "V": [
+        "U": [
           1.152,
           0.759,
           -0.784
         ],
-        "W": [
+        "V": [
           0.025,
           0.759,
           0.72
+        ],
+        "W": [
+          -1.032,
+          0.759,
+          -0.841
         ],
         "X": [
           0.122,

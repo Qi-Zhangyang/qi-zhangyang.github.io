@@ -10,7 +10,7 @@
       "B++": "two-layer construction, usually projection plus hinge/section comparison",
       "B+++": "one small step harder: double section, transfer lattice, or stacked component relation"
     },
-    "generation": "deterministic rule templates; no model call"
+    "generation": "deterministic rule templates with per-base orientation rotation; no model call"
   },
   "view": {
     "camera_offset": [
@@ -206,24 +206,24 @@
       "focus": "mid-edge parallel section with center",
       "aux_points": {
         "P": [
-          -0.618,
+          0.797,
           1.425,
           -0.625
         ],
         "Q": [
           0.797,
           1.425,
-          -0.625
+          0.385
         ],
         "R": [
-          0.797,
+          -0.618,
           1.425,
           0.385
         ],
         "T": [
           -0.618,
           1.425,
-          0.385
+          -0.625
         ],
         "X": [
           0.09,
@@ -265,7 +265,7 @@
         {
           "points": [
             "S",
-            "A"
+            "B"
           ],
           "color": "#111111",
           "dashed": true,
@@ -275,7 +275,7 @@
         {
           "points": [
             "S",
-            "C"
+            "D"
           ],
           "color": "#111111",
           "dashed": true,
@@ -309,10 +309,10 @@
         },
         {
           "points": [
-            "A",
             "B",
             "C",
-            "D"
+            "D",
+            "A"
           ],
           "color": "#1971c2",
           "opacity": 0.05,
@@ -345,12 +345,12 @@
         "M": [
           0.0,
           0.0,
-          -1.01
+          1.01
         ],
         "N": [
           0.0,
           0.0,
-          1.01
+          -1.01
         ],
         "O": [
           0.0,
@@ -361,8 +361,8 @@
       "aux_lines": [
         {
           "points": [
-            "A",
-            "B"
+            "C",
+            "D"
           ],
           "color": "#111111",
           "dashed": false,
@@ -371,8 +371,8 @@
         },
         {
           "points": [
-            "C",
-            "D"
+            "A",
+            "B"
           ],
           "color": "#111111",
           "dashed": true,
@@ -434,8 +434,8 @@
         {
           "points": [
             "S",
-            "A",
-            "B"
+            "C",
+            "D"
           ],
           "color": "#d9480f",
           "opacity": 0.1,
@@ -445,10 +445,10 @@
         },
         {
           "points": [
-            "A",
-            "B",
             "C",
-            "D"
+            "D",
+            "A",
+            "B"
           ],
           "color": "#1971c2",
           "opacity": 0.06,
@@ -472,7 +472,7 @@
       "qa_seeds": [
         {
           "type": "dihedral_hinge",
-          "answer": "AB"
+          "answer": "CD"
         }
       ],
       "exam_note": "把侧面二面角和穿过棱锥的中剖面同时摆出来。",
@@ -493,40 +493,40 @@
         "P": [
           -0.362,
           1.881,
-          -0.502
+          0.185
         ],
         "Q": [
-          0.6,
+          -0.362,
           1.881,
           -0.502
         ],
         "R": [
           0.6,
           1.881,
-          0.185
+          -0.502
         ],
         "T": [
-          -0.362,
+          0.6,
           1.881,
           0.185
         ],
         "U": [
           -0.905,
           0.912,
-          -0.764
+          0.61
         ],
         "V": [
-          1.02,
+          -0.905,
           0.912,
           -0.764
         ],
         "W": [
           1.02,
           0.912,
-          0.61
+          -0.764
         ],
         "Z": [
-          -0.905,
+          1.02,
           0.912,
           0.61
         ],
@@ -708,10 +708,10 @@
         },
         {
           "points": [
+            "D",
             "A",
             "B",
-            "C",
-            "D"
+            "C"
           ],
           "color": "#1971c2",
           "opacity": 0.04,
