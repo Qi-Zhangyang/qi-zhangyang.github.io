@@ -232,15 +232,15 @@
           这是一个基于规则搜索的立体几何增广口子。底层几何保持不变；
           辅助点、辅助线、辅助面由构造语法枚举，再按可读性、考题价值和多样性打分，
           最后选出不同类型的辅助构造变体。这里同时展示保守版 B、更复杂的 B+，
-          以及比 B+ 再多一层推理的 B++。
+          比 B+ 再多一层推理的 B++，以及继续上探一小步的 B+++。
         </p>
         <div class="stats" aria-label="概要">
-          <div class="stat"><strong>16</strong><span>公开展示变体</span></div>
-          <div class="stat"><strong>8</strong><span>B+ 复杂规则变体</span></div>
+          <div class="stat"><strong>20</strong><span>公开展示变体</span></div>
           <div class="stat"><strong>4</strong><span>B++ 稍难变体</span></div>
+          <div class="stat"><strong>4</strong><span>B+++ 上探变体</span></div>
         </div>
       </div>
-      <img src="assets/bplus-section-diagonals.png" alt="四棱锥 B+ 截面内辅助线构造">
+      <img src="assets/bppp-section-axis-lattice.png" alt="四棱锥 B+++ 双截面中心轴格构造">
     </div>
   </header>
 
@@ -405,6 +405,51 @@
             <span class="eyebrow">角度比较</span>
             <h3>相邻二面角</h3>
             <p>同时标出两组相邻二面角的参考面和角线，用来比较共享顶点附近的面面角关系。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap section-block">
+      <div class="section-title">
+        <h2>B+++：再上一个小台阶</h2>
+        <p>
+          B+++ 继续保持规则生成，但允许第三层结构必须有明确用途：
+          中心轴转移、双侧面比较、提升二面角或斜截面投影。它比 B++ 更复杂，
+          但仍避免只靠堆线制造难度。
+        </p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <img src="assets/bppp-section-axis-lattice.png" alt="双截面中心轴格辅助构造">
+          <div class="card-body">
+            <span class="eyebrow">中心轴格</span>
+            <h3>双截面中心轴格</h3>
+            <p>在两层平行截面中加入中心点和中心轴，并用两组对角辅助面组织层间关系。</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/bppp-dual-side-projection-compare.png" alt="双侧面投影比较辅助构造">
+          <div class="card-body">
+            <span class="eyebrow">双侧面距离</span>
+            <h3>双侧面投影比较</h3>
+            <p>同一个侧棱点分别投到两个相邻侧面，再在各自面内继续落到边上，形成距离比较链。</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/bppp-lifted-dihedral-transfer.png" alt="提升二面角转移辅助构造">
+          <div class="card-body">
+            <span class="eyebrow">二面角转移</span>
+            <h3>提升二面角</h3>
+            <p>把底边上的二面角 witness 转移到平行截面边上，再用中心轴把两套角线对应起来。</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/bppp-oblique-section-projection-net.png" alt="斜截面中心投影网辅助构造">
+          <div class="card-body">
+            <span class="eyebrow">斜截面投影</span>
+            <h3>斜截面投影网</h3>
+            <p>不等比例斜截面先取中心，再投到底面并对齐两组底面对角线，让不对称截面也可读。</p>
           </div>
         </article>
       </div>
