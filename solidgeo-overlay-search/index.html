@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Solid Geometry Overlay Search</title>
+  <title>立体几何辅助构造搜索</title>
   <style>
     :root {
       --ink: #151515;
@@ -20,8 +20,9 @@
     }
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", Arial, sans-serif;
+      font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", Inter,
+        ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Arial, sans-serif;
       color: var(--ink);
       background: var(--wash);
     }
@@ -223,85 +224,85 @@
   <header>
     <div class="wrap hero">
       <div>
-        <h1>Solid Geometry Overlay Search</h1>
+        <h1>立体几何辅助构造搜索</h1>
         <p class="lead">
-          A rule-based augmentation route for solid geometry diagrams. The base geometry stays fixed;
-          auxiliary points, lines, and faces are generated from a construction grammar, scored for
-          readability and problem value, then selected as diverse overlay variants.
+          这是一个基于规则搜索的立体几何增广口子。底层几何保持不变；
+          辅助点、辅助线、辅助面由构造语法枚举，再按可读性、考题价值和多样性打分，
+          最后选出不同类型的辅助构造变体。
         </p>
-        <div class="stats" aria-label="summary">
-          <div class="stat"><strong>17</strong><span>candidate overlays</span></div>
-          <div class="stat"><strong>4</strong><span>selected families</span></div>
-          <div class="stat"><strong>1</strong><span>fixed base geometry</span></div>
+        <div class="stats" aria-label="概要">
+          <div class="stat"><strong>17</strong><span>候选辅助构造</span></div>
+          <div class="stat"><strong>4</strong><span>选中构造类型</span></div>
+          <div class="stat"><strong>1</strong><span>固定底层几何</span></div>
         </div>
       </div>
-      <img src="assets/midpoint-drop.png" alt="Square pyramid overlay with a midpoint projection drop">
+      <img src="assets/midpoint-drop.png" alt="四棱锥中点投影辅助构造">
     </div>
   </header>
 
   <main>
     <section class="wrap">
       <div class="section-title">
-        <h2>Selected Variants</h2>
+        <h2>选中的辅助构造</h2>
         <p>
-          These examples target projection distance, section cuts, dihedral witnesses, and skew-line
-          relations while keeping the diagram compact enough for visual QA data generation.
+          这组例子覆盖投影距离、截面构造、二面角辅助标记和异面直线关系，
+          同时控制图面复杂度，方便后续做视觉问答数据增广。
         </p>
       </div>
       <div class="grid">
         <article class="card">
-          <img src="assets/midpoint-drop.png" alt="Midpoint projection drop overlay">
+          <img src="assets/midpoint-drop.png" alt="中点投影辅助构造">
           <div class="card-body">
-            <span class="eyebrow">Projection Distance</span>
-            <h3>Midpoint Drop</h3>
-            <p>Uses a midpoint on a side edge and drops it to the base plane, creating a clean height or distance cue.</p>
+            <span class="eyebrow">投影距离</span>
+            <h3>中点垂落</h3>
+            <p>在侧棱上取中点，再向底面作垂落，形成清楚的高线或距离线索。</p>
           </div>
         </article>
         <article class="card">
-          <img src="assets/vertex-oblique-section.png" alt="Oblique section through a base vertex">
+          <img src="assets/vertex-oblique-section.png" alt="过底面顶点的斜截面辅助构造">
           <div class="card-body">
-            <span class="eyebrow">Section Cut</span>
-            <h3>Vertex Oblique Section</h3>
-            <p>Adds an oblique cutting face through stable reference points, suitable for cross-section reasoning.</p>
+            <span class="eyebrow">截面构造</span>
+            <h3>过顶点斜截面</h3>
+            <p>通过稳定参考点加入一个斜截面，适合生成截面形状、平行关系和面积类问题。</p>
           </div>
         </article>
         <article class="card">
-          <img src="assets/bc-dihedral.png" alt="Dihedral angle witness on a base edge">
+          <img src="assets/bc-dihedral.png" alt="底边 BC 上的二面角辅助构造">
           <div class="card-body">
-            <span class="eyebrow">Angle Witness</span>
-            <h3>BC Dihedral</h3>
-            <p>Constructs a readable witness for a face-to-face angle around the base edge BC.</p>
+            <span class="eyebrow">角度辅助</span>
+            <h3>BC 二面角</h3>
+            <p>围绕底边 BC 构造二面角的可读辅助标记，便于把面面角问题落到图上。</p>
           </div>
         </article>
         <article class="card">
-          <img src="assets/skew-side-point.png" alt="Skew-line relation with side-edge point">
+          <img src="assets/skew-side-point.png" alt="侧棱点参与的异面直线辅助构造">
           <div class="card-body">
-            <span class="eyebrow">Line Relation</span>
-            <h3>Skew With Side Point</h3>
-            <p>Places a side-edge point and relation lines that expose non-coplanar line reasoning without cluttering the base shape.</p>
+            <span class="eyebrow">直线关系</span>
+            <h3>侧棱点异面线</h3>
+            <p>加入侧棱点和关系线，在不明显增加拥挤感的前提下暴露异面直线推理。</p>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="wrap method" aria-label="method">
+    <section class="wrap method" aria-label="方法">
       <div class="method-item">
-        <strong>1. Generate</strong>
-        <p>Enumerate legal auxiliary constructions from a small geometry grammar instead of hand-picking one overlay at a time.</p>
+        <strong>1. 枚举</strong>
+        <p>用小型几何构造语法批量枚举合法的辅助点、线、面，而不是每次手写一个构造。</p>
       </div>
       <div class="method-item">
-        <strong>2. Score</strong>
-        <p>Rank candidates by regularity, readability, exam-likeness, and visual simplicity.</p>
+        <strong>2. 打分</strong>
+        <p>按规则性、可读性、考题感和图面简洁度对候选构造排序。</p>
       </div>
       <div class="method-item">
-        <strong>3. Select</strong>
-        <p>Choose top variants across different construction families to improve coverage without repeating the same visual pattern.</p>
+        <strong>3. 选择</strong>
+        <p>从不同构造家族里选高分候选，提升覆盖面，同时避免重复同一种视觉模式。</p>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">Self-contained static preview page with rendered images and method notes.</div>
+    <div class="wrap">自包含静态预览页：只包含渲染图片和方法说明。</div>
   </footer>
 </body>
 </html>
