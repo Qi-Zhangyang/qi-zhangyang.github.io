@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solid Geometry Variants</title>
+  <style>
+    :root {
+      --ink: #111111;
+      --muted: #5f6875;
+      --line: #d8dde5;
+      --panel: rgba(255, 255, 255, 0.94);
+      --aux: #d97400;
+      --active: #0b7285;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; }
+    body {
+      font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB",
+        "Source Han Sans CN", "Noto Sans CJK SC", Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: #f6f7f9;
+    }
+    #stage { position: fixed; inset: 0; }
+    .source {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      width: min(210px, calc(100vw - 24px));
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 8px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.10);
+      z-index: 5;
+    }
+    .source img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 360 / 260;
+      object-fit: contain;
+      background: #fff;
+      border: 1px solid #edf0f3;
+      border-radius: 6px;
+    }
+    .meta {
+      margin-top: 6px;
+      font-size: 11px;
+      line-height: 1.35;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .switcher {
+      position: fixed;
+      left: 12px;
+      bottom: 12px;
+      right: 12px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.10);
+      z-index: 5;
+      overflow-x: auto;
+    }
+    button.variant {
+      height: 32px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      padding: 0 12px;
+      font-size: 13px;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    button.variant[data-active="true"] {
+      border-color: var(--active);
+      color: #fff;
+      background: var(--active);
+    }
+    .focus {
+      margin-left: auto;
+      min-width: 96px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: right;
+      white-space: nowrap;
+    }
+    .label {
+      min-width: 20px;
+      height: 20px;
+      padding: 0 5px;
+      border: 1px solid rgba(17, 17, 17, 0.22);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      color: #111;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 18px;
+      text-align: center;
+      pointer-events: none;
+      box-shadow: 0 3px 12px rgba(15, 23, 42, 0.14);
+    }
+    .label.aux {
+      color: var(--aux);
+      border-color: rgba(217, 116, 0, 0.35);
+    }
+    @media (max-width: 640px) {
+      .source { width: 150px; }
+      .switcher {
+        gap: 6px;
+        padding: 6px;
+        flex-wrap: wrap;
+        overflow-x: visible;
+      }
+      button.variant { height: 30px; padding: 0 9px; font-size: 12px; }
+      .focus { display: none; }
+    }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="stage"></div>
+  <aside class="source">
+    <img id="sourceImage" alt="">
+    <div class="meta" id="titleText"></div>
+    <div class="meta">base_geometry fixed · overlay variants</div>
+  </aside>
+  <nav class="switcher" id="switcher"></nav>
+
+  <script type="module">
+    import * as THREE from "three";
+    import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+    import { CSS2DObject, CSS2DRenderer } from "three/addons/renderers/CSS2DRenderer.js";
+
+    const params = new URLSearchParams(window.location.search);
+    const specUrl = params.get("spec") || "./specs/smoke_frustum.json";
+    const stage = document.getElementById("stage");
+    const switcher = document.getElementById("switcher");
+    const sourceImage = document.getElementById("sourceImage");
+    const titleText = document.getElementById("titleText");
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xf6f7f9);
+
+    const camera = new THREE.OrthographicCamera(-3, 3, 2.4, -2.4, 0.1, 1000);
+    camera.position.set(3.2, 2.6, 5.2);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(stage.clientWidth, stage.clientHeight);
+    stage.appendChild(renderer.domElement);
+
+    const labelRenderer = new CSS2DRenderer();
+    labelRenderer.setSize(stage.clientWidth, stage.clientHeight);
+    labelRenderer.domElement.style.position = "fixed";
+    labelRenderer.domElement.style.inset = "0";
+    labelRenderer.domElement.style.pointerEvents = "none";
+    stage.appendChild(labelRenderer.domElement);
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.08;
+
+    const baseGroup = new THREE.Group();
+    const overlayGroup = new THREE.Group();
+    scene.add(baseGroup, overlayGroup);
+
+    const occluderMat = new THREE.MeshBasicMaterial({
+      colorWrite: false,
+      depthWrite: true,
+      side: THREE.DoubleSide,
+      polygonOffset: true,
+      polygonOffsetFactor: 1,
+      polygonOffsetUnits: 1
+    });
+    const faceMat = new THREE.MeshBasicMaterial({
+      color: 0x4a90e2,
+      transparent: true,
+      opacity: 0.08,
+      side: THREE.DoubleSide,
+      depthWrite: false
+    });
+
+    let spec = null;
+    let basePoints = {};
+    let allBaseVectors = [];
+
+    function vec(arr) {
+      return new THREE.Vector3(arr[0], arr[1], arr[2]);
+    }
+
+    function makeFace(pointNames, points, material) {
+      const verts = pointNames.map((name) => points[name]);
+      const positions = [];
+      for (let i = 1; i < verts.length - 1; i++) {
+        positions.push(...verts[0].toArray(), ...verts[i].toArray(), ...verts[i + 1].toArray());
+      }
+      const geometry = new THREE.BufferGeometry();
+      geometry.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
+      geometry.computeVertexNormals();
+      return new THREE.Mesh(geometry, material);
+    }
+
+    function addBaseEdge(a, b) {
+      const solidGeometry = new THREE.BufferGeometry().setFromPoints([basePoints[a], basePoints[b]]);
+      const solidMat = new THREE.LineBasicMaterial({
+        color: 0x111111,
+        transparent: true,
+        opacity: 0.98,
+        depthTest: true,
+        depthFunc: THREE.LessEqualDepth
+      });
+      const solid = new THREE.Line(solidGeometry, solidMat);
+      solid.renderOrder = 8;
+      baseGroup.add(solid);
+
+      const dashedGeometry = new THREE.BufferGeometry().setFromPoints([basePoints[a], basePoints[b]]);
+      const dashedMat = new THREE.LineDashedMaterial({
+        color: 0x111111,
+        dashSize: 0.10,
+        gapSize: 0.07,
+        transparent: true,
+        opacity: 0.42,
+        depthTest: true,
+        depthFunc: THREE.GreaterDepth
+      });
+      const dashed = new THREE.Line(dashedGeometry, dashedMat);
+      dashed.computeLineDistances();
+      dashed.renderOrder = 1;
+      baseGroup.add(dashed);
+    }
+
+    function parseLineSpec(lineSpec) {
+      if (Array.isArray(lineSpec)) {
+        return { points: lineSpec };
+      }
+      return lineSpec || {};
+    }
+
+    function makeAuxLine(a, b, points, options = {}) {
+      const color = new THREE.Color(options.color || "#d97400").getHex();
+      const dashed = options.dashed ?? true;
+      const geometry = new THREE.BufferGeometry().setFromPoints([points[a], points[b]]);
+      const material = dashed
+        ? new THREE.LineDashedMaterial({
+            color,
+            dashSize: options.dashSize ?? 0.11,
+            gapSize: options.gapSize ?? 0.06,
+            transparent: true,
+            opacity: options.opacity ?? 0.95,
+            depthTest: options.depthTest ?? false
+          })
+        : new THREE.LineBasicMaterial({
+            color,
+            transparent: true,
+            opacity: options.opacity ?? 0.95,
+            depthTest: options.depthTest ?? false
+          });
+      const line = new THREE.Line(geometry, material);
+      if (dashed) line.computeLineDistances();
+      line.renderOrder = options.renderOrder ?? 6;
+      return line;
+    }
+
+    function curvePoints(curveSpec, points) {
+      const count = curveSpec.segments || 96;
+      const center = points[curveSpec.center] || vec(curveSpec.center);
+      const u = curveSpec.u ? vec(curveSpec.u) : new THREE.Vector3(1, 0, 0);
+      const vdir = curveSpec.v ? vec(curveSpec.v) : new THREE.Vector3(0, 0, 1);
+      const start = curveSpec.start ?? 0;
+      const end = curveSpec.end ?? Math.PI * 2;
+      const out = [];
+      for (let i = 0; i <= count; i++) {
+        const t = start + (end - start) * i / count;
+        out.push(center.clone().add(u.clone().multiplyScalar(Math.cos(t))).add(vdir.clone().multiplyScalar(Math.sin(t))));
+      }
+      return out;
+    }
+
+    function makeCurve(curveSpec, points, dashed = false) {
+      const color = new THREE.Color(curveSpec.color || "#d97400").getHex();
+      const geometry = new THREE.BufferGeometry().setFromPoints(curvePoints(curveSpec, points));
+      const material = dashed
+        ? new THREE.LineDashedMaterial({
+            color,
+            dashSize: curveSpec.dashSize ?? 0.11,
+            gapSize: curveSpec.gapSize ?? 0.06,
+            transparent: true,
+            opacity: curveSpec.opacity ?? 0.9,
+            depthTest: curveSpec.depthTest ?? false
+          })
+        : new THREE.LineBasicMaterial({
+            color,
+            transparent: true,
+            opacity: curveSpec.opacity ?? 0.9,
+            depthTest: curveSpec.depthTest ?? false
+          });
+      const line = new THREE.Line(geometry, material);
+      if (dashed) line.computeLineDistances();
+      line.renderOrder = curveSpec.renderOrder ?? 5;
+      return line;
+    }
+
+    function addLabel(name, position, isAux = false) {
+      const el = document.createElement("div");
+      el.className = isAux ? "label aux" : "label";
+      el.textContent = name;
+      const label = new CSS2DObject(el);
+      const offset = isAux ? new THREE.Vector3(0.05, 0.09, 0.05) : new THREE.Vector3(0.06, 0.08, 0.06);
+      label.position.copy(position).add(offset);
+      label.renderOrder = 10;
+      return label;
+    }
+
+    function addDot(position, color = 0xd97400) {
+      const mesh = new THREE.Mesh(
+        new THREE.SphereGeometry(0.045, 16, 10),
+        new THREE.MeshBasicMaterial({ color, depthTest: false })
+      );
+      mesh.position.copy(position);
+      mesh.renderOrder = 6;
+      return mesh;
+    }
+
+    function clearGroup(group) {
+      while (group.children.length) {
+        const obj = group.children.pop();
+        obj.traverse((child) => {
+          if (child.element && child.element.parentNode) {
+            child.element.parentNode.removeChild(child.element);
+          }
+          if (child.geometry) child.geometry.dispose();
+          if (Array.isArray(child.material)) {
+            child.material.forEach((m) => m.dispose && m.dispose());
+          } else if (child.material) {
+            child.material.dispose();
+          }
+        });
+      }
+    }
+
+    function buildBase() {
+      clearGroup(baseGroup);
+      basePoints = {};
+      for (const [name, value] of Object.entries(spec.base_geometry.vertices)) {
+        basePoints[name] = vec(value);
+      }
+      allBaseVectors = Object.values(basePoints);
+
+      for (const face of spec.base_geometry.faces) {
+        baseGroup.add(makeFace(face, basePoints, occluderMat));
+        baseGroup.add(makeFace(face, basePoints, faceMat));
+      }
+      for (const [a, b] of spec.base_geometry.edges) addBaseEdge(a, b);
+      for (const curve of spec.base_geometry.curves || []) {
+        baseGroup.add(makeCurve(curve, basePoints, curve.dashed ?? false));
+      }
+      for (const [name, point] of Object.entries(basePoints)) baseGroup.add(addLabel(name, point, false));
+    }
+
+    function renderVariant(index) {
+      clearGroup(overlayGroup);
+      const variant = spec.variants[index];
+      const points = { ...basePoints };
+      for (const [name, value] of Object.entries(variant.aux_points || {})) {
+        points[name] = vec(value);
+      }
+
+      for (const faceSpec of variant.aux_faces || []) {
+        const faceColor = new THREE.Color(faceSpec.color || "#2f9e44");
+        const mat = new THREE.MeshBasicMaterial({
+          color: faceColor,
+          transparent: true,
+          opacity: faceSpec.opacity ?? 0.18,
+          side: THREE.DoubleSide,
+          depthWrite: false,
+          depthTest: false
+        });
+        const face = makeFace(faceSpec.points, points, mat);
+        face.renderOrder = 3;
+        overlayGroup.add(face);
+        for (let i = 0; i < faceSpec.points.length; i++) {
+          const a = faceSpec.points[i];
+          const b = faceSpec.points[(i + 1) % faceSpec.points.length];
+          overlayGroup.add(makeAuxLine(a, b, points, {
+            color: faceSpec.edge_color || faceSpec.color || "#2f9e44",
+            dashed: faceSpec.edge_dashed ?? false,
+            opacity: faceSpec.edge_opacity ?? 0.68,
+            renderOrder: 4
+          }));
+        }
+      }
+
+      for (const rawLine of variant.aux_lines || []) {
+        const lineSpec = parseLineSpec(rawLine);
+        const [a, b] = lineSpec.points || [];
+        if (a && b) overlayGroup.add(makeAuxLine(a, b, points, lineSpec));
+      }
+      for (const curve of variant.aux_curves || []) {
+        overlayGroup.add(makeCurve(curve, points, curve.dashed ?? true));
+      }
+      for (const [name, point] of Object.entries(points)) {
+        if (!basePoints[name]) {
+          overlayGroup.add(addDot(point));
+          overlayGroup.add(addLabel(name, point, true));
+        }
+      }
+
+      for (const button of switcher.querySelectorAll("button")) {
+        button.dataset.active = button.dataset.index === String(index);
+      }
+      const focus = switcher.querySelector(".focus");
+      if (focus) {
+        const taxonomy = variant.taxonomy;
+        const taxonomyText = taxonomy
+          ? `${taxonomy.content_type} · ${taxonomy.ability}/${taxonomy.difficulty}`
+          : "";
+        focus.textContent = [variant.focus, taxonomyText].filter(Boolean).join(" · ");
+      }
+    }
+
+    function buildSwitcher() {
+      switcher.innerHTML = "";
+      spec.variants.forEach((variant, index) => {
+        const button = document.createElement("button");
+        button.className = "variant";
+        button.type = "button";
+        button.dataset.index = String(index);
+        button.textContent = variant.name || variant.id;
+        button.addEventListener("click", () => renderVariant(index));
+        switcher.appendChild(button);
+      });
+      const focus = document.createElement("div");
+      focus.className = "focus";
+      switcher.appendChild(focus);
+    }
+
+    function fitCamera() {
+      const box = new THREE.Box3().setFromPoints(allBaseVectors);
+      const center = box.getCenter(new THREE.Vector3());
+      const size = box.getSize(new THREE.Vector3());
+      const aspect = stage.clientWidth / stage.clientHeight;
+      const baseRadius = Math.max(size.x / Math.max(aspect, 0.25), size.y, size.z) * (spec.view?.ortho_factor ?? 0.72);
+      let radius = baseRadius;
+      camera.left = -radius * aspect;
+      camera.right = radius * aspect;
+      camera.top = radius;
+      camera.bottom = -radius;
+      camera.near = 0.1;
+      camera.far = 1000;
+      camera.position.copy(center).add(vec(spec.view?.camera_offset || [3.2, 2.6, 5.2]));
+      controls.target.copy(center);
+      camera.updateProjectionMatrix();
+      camera.updateMatrixWorld();
+
+      const ndcBox = allBaseVectors.reduce((acc, point) => {
+        const projected = point.clone().project(camera);
+        acc.minX = Math.min(acc.minX, projected.x);
+        acc.maxX = Math.max(acc.maxX, projected.x);
+        acc.minY = Math.min(acc.minY, projected.y);
+        acc.maxY = Math.max(acc.maxY, projected.y);
+        return acc;
+      }, { minX: Infinity, maxX: -Infinity, minY: Infinity, maxY: -Infinity });
+      const spanX = ndcBox.maxX - ndcBox.minX;
+      const spanY = ndcBox.maxY - ndcBox.minY;
+      const scale = Math.max(spanX / 1.35, spanY / 1.35, 1);
+      if (scale > 1) {
+        radius *= scale;
+        camera.left = -radius * aspect;
+        camera.right = radius * aspect;
+        camera.top = radius;
+        camera.bottom = -radius;
+        camera.updateProjectionMatrix();
+      }
+      controls.update();
+    }
+
+    function resize() {
+      const w = stage.clientWidth;
+      const h = stage.clientHeight;
+      renderer.setSize(w, h);
+      labelRenderer.setSize(w, h);
+      fitCamera();
+    }
+
+    async function init() {
+      spec = await fetch(specUrl).then((r) => {
+        if (!r.ok) throw new Error(`failed to load ${specUrl}`);
+        return r.json();
+      });
+      titleText.textContent = spec.title || "Solid Geometry Variants";
+      sourceImage.src = spec.source_image || "";
+      buildBase();
+      buildSwitcher();
+      fitCamera();
+      renderVariant(0);
+      window.addEventListener("resize", resize);
+      animate();
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+      labelRenderer.render(scene, camera);
+    }
+
+    init().catch((err) => {
+      titleText.textContent = err.message;
+      console.error(err);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,747 @@
+{
+  "title": "base_085 · 楔形体 #05",
+  "source_image": "./assets/batch100/base_085.svg",
+  "quality_mode": "bplusplusplus_search_rules",
+  "batch100_rule_workflow": {
+    "contract": "One fixed base_geometry per file. The four variants only change auxiliary points, lines, faces, and labels.",
+    "levels": {
+      "B": "single clean witness or canonical section",
+      "B+": "roleful auxiliary face plus in-face witness lines",
+      "B++": "two-layer construction, usually projection plus hinge/section comparison",
+      "B+++": "one small step harder: double section, transfer lattice, or stacked component relation"
+    },
+    "generation": "deterministic rule templates; no model call"
+  },
+  "view": {
+    "camera_offset": [
+      3.4,
+      2.7,
+      5.1
+    ],
+    "ortho_factor": 0.76
+  },
+  "base_geometry": {
+    "id": "base_085",
+    "kind": "wedge_prism",
+    "vertices": {
+      "A": [
+        -1.425,
+        0.0,
+        -1.0
+      ],
+      "B": [
+        1.425,
+        0.0,
+        -1.0
+      ],
+      "C": [
+        1.425,
+        0.0,
+        1.0
+      ],
+      "D": [
+        -1.425,
+        0.0,
+        1.0
+      ],
+      "A1": [
+        -1.445,
+        2.05,
+        -0.18
+      ],
+      "B1": [
+        1.405,
+        2.05,
+        -0.18
+      ]
+    },
+    "edges": [
+      [
+        "A",
+        "B"
+      ],
+      [
+        "B",
+        "C"
+      ],
+      [
+        "C",
+        "D"
+      ],
+      [
+        "D",
+        "A"
+      ],
+      [
+        "A",
+        "A1"
+      ],
+      [
+        "B",
+        "B1"
+      ],
+      [
+        "A1",
+        "B1"
+      ],
+      [
+        "D",
+        "A1"
+      ],
+      [
+        "C",
+        "B1"
+      ]
+    ],
+    "faces": [
+      [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      [
+        "A",
+        "B",
+        "B1",
+        "A1"
+      ],
+      [
+        "D",
+        "C",
+        "B1",
+        "A1"
+      ],
+      [
+        "A",
+        "D",
+        "A1"
+      ],
+      [
+        "B",
+        "C",
+        "B1"
+      ]
+    ],
+    "curves": []
+  },
+  "variants": [
+    {
+      "level": "B",
+      "id": "b_tri_axis",
+      "name": "B · 三角面中心轴",
+      "focus": "triangle-center axis",
+      "aux_points": {
+        "O": [
+          -1.432,
+          0.683,
+          -0.06
+        ],
+        "O1": [
+          1.418,
+          0.683,
+          -0.06
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "O",
+            "O1"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A",
+            "A1"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B",
+            "B1"
+          ],
+          "color": "#7048e8",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "D",
+            "C"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "A",
+            "A1",
+            "B1",
+            "B"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.08,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "axis",
+          "answer": "OO1"
+        }
+      ],
+      "exam_note": "楔形体: 两个三角端面中心之间形成主轴。",
+      "taxonomy": {
+        "gq": "relation",
+        "content_type": "special_segment",
+        "ability": "D",
+        "difficulty": "L2",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+",
+      "id": "bp_tri_mid_section",
+      "name": "B+ · 三角中截面",
+      "focus": "mid-section triangle",
+      "aux_points": {
+        "P": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "Q": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "R": [
+          -0.02,
+          2.05,
+          -0.18
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "R"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "R",
+            "P"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A",
+            "B"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "D",
+            "C"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A1",
+            "B1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "P",
+            "Q",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.13,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A",
+            "D",
+            "A1"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "parallel_cut",
+          "answer": "PQR"
+        }
+      ],
+      "exam_note": "三条对应棱的中点构成端面平行截面。",
+      "taxonomy": {
+        "gq": "relation",
+        "content_type": "parallel",
+        "ability": "D",
+        "difficulty": "L2",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B++",
+      "id": "bpp_tri_median_plane",
+      "name": "B++ · 中线剖面",
+      "focus": "median section plus center transfer",
+      "aux_points": {
+        "M": [
+          -1.425,
+          0.0,
+          0.0
+        ],
+        "N": [
+          1.425,
+          0.0,
+          0.0
+        ],
+        "O": [
+          -1.432,
+          0.683,
+          -0.06
+        ],
+        "O1": [
+          1.418,
+          0.683,
+          -0.06
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "A1",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B1",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "O1"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "O"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "N",
+            "O1"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A1",
+            "B1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.35,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "A1",
+            "M",
+            "N",
+            "B1"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.1,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A",
+            "D",
+            "A1"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "B",
+            "C",
+            "B1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.05,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "section",
+          "answer": "A1MNB1"
+        }
+      ],
+      "exam_note": "中线剖面再接端面中心轴，形成两层可读结构。",
+      "taxonomy": {
+        "gq": "transformation",
+        "content_type": "section_cutting",
+        "ability": "E",
+        "difficulty": "L2",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
+      "id": "bppp_tri_double_section",
+      "name": "B+++ · 双三角截面格",
+      "focus": "two triangular sections with transfer lattice",
+      "aux_points": {
+        "P": [
+          -0.456,
+          0.0,
+          -1.0
+        ],
+        "Q": [
+          -0.456,
+          0.0,
+          1.0
+        ],
+        "R": [
+          -0.476,
+          2.05,
+          -0.18
+        ],
+        "U": [
+          0.513,
+          0.0,
+          -1.0
+        ],
+        "V": [
+          0.513,
+          0.0,
+          1.0
+        ],
+        "W": [
+          0.493,
+          2.05,
+          -0.18
+        ],
+        "X": [
+          -0.463,
+          0.683,
+          -0.06
+        ],
+        "Y": [
+          0.506,
+          0.683,
+          -0.06
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "R"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "R",
+            "P"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "U",
+            "V"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "V",
+            "W"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "W",
+            "U"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "U"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "V"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "R",
+            "W"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "P"
+          ],
+          "color": "#2f9e44",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "U"
+          ],
+          "color": "#2f9e44",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "P",
+            "Q",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.12,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "U",
+            "V",
+            "W"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.11,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "V",
+            "U"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.07,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "Q",
+            "R",
+            "W",
+            "V"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.07,
+          "edge_color": "#d9480f",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "R",
+            "P",
+            "U",
+            "W"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.06,
+          "edge_color": "#1971c2",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "section",
+          "answer": "PQR and UVW"
+        }
+      ],
+      "exam_note": "双截面和对应点连线把棱柱/棱台的相似传递显式画出。",
+      "taxonomy": {
+        "gq": "transformation",
+        "content_type": "section_cutting",
+        "ability": "E",
+        "difficulty": "L2",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    }
+  ],
+  "taxonomy_source": "solidgeo-benchmark-blueprint/700"
+}

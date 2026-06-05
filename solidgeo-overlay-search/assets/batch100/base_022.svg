@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="260" viewBox="0 0 360 260" role="img" aria-label="base_022 · 三棱锥 #02">
+<rect width="360" height="260" fill="#ffffff"/>
+<polygon points="58.5,186.3 301.5,188.1 258.1,239.0" fill="#dcecf2" fill-opacity="0.62" stroke="none"/>
+<polygon points="216.1,21.0 58.5,186.3 301.5,188.1" fill="#e8f3eb" fill-opacity="0.62" stroke="none"/>
+<polygon points="216.1,21.0 301.5,188.1 258.1,239.0" fill="#f6eadf" fill-opacity="0.62" stroke="none"/>
+<polygon points="216.1,21.0 258.1,239.0 58.5,186.3" fill="#eee8f6" fill-opacity="0.62" stroke="none"/>
+<line x1="58.5" y1="186.3" x2="301.5" y2="188.1" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="301.5" y1="188.1" x2="258.1" y2="239.0" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="258.1" y1="239.0" x2="58.5" y2="186.3" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="216.1" y1="21.0" x2="58.5" y2="186.3" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="216.1" y1="21.0" x2="301.5" y2="188.1" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="216.1" y1="21.0" x2="258.1" y2="239.0" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<circle cx="58.5" cy="186.3" r="3.2" fill="#d97400"/>
+<text x="63.5" y="181.3" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#111">A</text>
+<circle cx="301.5" cy="188.1" r="3.2" fill="#d97400"/>
+<text x="306.5" y="183.1" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#111">B</text>
+<circle cx="258.1" cy="239.0" r="3.2" fill="#d97400"/>
+<text x="263.1" y="234.0" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#111">C</text>
+<circle cx="216.1" cy="21.0" r="3.2" fill="#d97400"/>
+<text x="221.1" y="16.0" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#111">S</text>
+</svg>

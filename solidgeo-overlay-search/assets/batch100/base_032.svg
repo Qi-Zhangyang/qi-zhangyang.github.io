@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="260" viewBox="0 0 360 260" role="img" aria-label="base_032 · 长方体 #02">
+<rect width="360" height="260" fill="#ffffff"/>
+<polygon points="21.0,189.3 257.4,189.3 339.0,233.5 102.6,233.5" fill="#dcecf2" fill-opacity="0.62" stroke="none"/>
+<polygon points="21.0,26.5 257.4,26.5 339.0,70.7 102.6,70.7" fill="#e8f3eb" fill-opacity="0.62" stroke="none"/>
+<polygon points="21.0,189.3 257.4,189.3 257.4,26.5 21.0,26.5" fill="#f6eadf" fill-opacity="0.62" stroke="none"/>
+<polygon points="257.4,189.3 339.0,233.5 339.0,70.7 257.4,26.5" fill="#eee8f6" fill-opacity="0.62" stroke="none"/>
+<polygon points="339.0,233.5 102.6,233.5 102.6,70.7 339.0,70.7" fill="#eef0f3" fill-opacity="0.62" stroke="none"/>
+<polygon points="102.6,233.5 21.0,189.3 21.0,26.5 102.6,70.7" fill="#dcecf2" fill-opacity="0.62" stroke="none"/>
+<line x1="21.0" y1="189.3" x2="257.4" y2="189.3" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="257.4" y1="189.3" x2="339.0" y2="233.5" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="339.0" y1="233.5" x2="102.6" y2="233.5" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="102.6" y1="233.5" x2="21.0" y2="189.3" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="21.0" y1="26.5" x2="257.4" y2="26.5" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="257.4" y1="26.5" x2="339.0" y2="70.7" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="339.0" y1="70.7" x2="102.6" y2="70.7" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="102.6" y1="70.7" x2="21.0" y2="26.5" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="21.0" y1="189.3" x2="21.0" y2="26.5" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="257.4" y1="189.3" x2="257.4" y2="26.5" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="339.0" y1="233.5" x2="339.0" y2="70.7" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="102.6" y1="233.5" x2="102.6" y2="70.7" stroke="#111" stroke-width="1.7" stroke-linecap="round"/>
+<circle cx="21.0" cy="189.3" r="3.2" fill="#d97400"/>
+<text x="26.0" y="184.3" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#111">A</text>
+<circle cx="257.4" cy="189.3" r="3.2" fill="#d97400"/>
+<text x="262.4" y="184.3" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#111">B</text>
+<circle cx="339.0" cy="233.5" r="3.2" fill="#d97400"/>
+<text x="344.0" y="228.5" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#111">C</text>
+<circle cx="102.6" cy="233.5" r="3.2" fill="#d97400"/>
+<text x="107.6" y="228.5" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#111">D</text>
+<circle cx="21.0" cy="26.5" r="3.2" fill="#d97400"/>
+<text x="26.0" y="21.5" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#111">A1</text>
+<circle cx="257.4" cy="26.5" r="3.2" fill="#d97400"/>
+<text x="262.4" y="21.5" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#111">B1</text>
+<circle cx="339.0" cy="70.7" r="3.2" fill="#d97400"/>
+<text x="344.0" y="65.7" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#111">C1</text>
+<circle cx="102.6" cy="70.7" r="3.2" fill="#d97400"/>
+<text x="107.6" y="65.7" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#111">D1</text>
+</svg>

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>100 个 Base Geometry 的 B/B+/B++/B+++ 辅助构造</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f7fa;color:#111}
+    main{max-width:1180px;margin:0 auto;padding:28px 18px 42px}
+    h1{font-size:30px;line-height:1.16;margin:0 0 10px;letter-spacing:0}
+    p{max-width:920px;margin:0;color:#5f6875;line-height:1.55}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+    .chips span{display:inline-flex;align-items:center;min-height:28px;padding:0 10px;border:1px solid #d8dde5;border-radius:999px;background:#fff;color:#44505f;font-size:13px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:24px}
+    .card{display:block;min-height:270px;padding:11px;border:1px solid #d8dde5;border-radius:8px;background:#fff;color:#111;text-decoration:none;box-shadow:0 8px 20px rgba(15,23,42,.06)}
+    .card img{display:block;width:100%;aspect-ratio:360/260;object-fit:contain;background:#fff;border:1px solid #edf0f3;border-radius:6px}
+    .card span{display:block;font-weight:700;margin:11px 2px 5px;line-height:1.25}
+    .card small{display:block;color:#5f6875;margin-left:2px;line-height:1.38}
+    code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
+    @media(max-width:640px){main{padding:20px 12px 32px}h1{font-size:24px}.card{min-height:245px}}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>100 个 Base Geometry 的 B / B+ / B++ / B+++ 辅助构造 demo</h1>
+    <p>每张卡片对应一个固定 <code>base_geometry</code>，打开后底部可切换四档 overlay。B 是轻量 witness，B+ 增加有语义的辅助面和面内线，B++ 加一层投影/二面角/剖面联动，B+++ 再上一个小台阶做双截面或上下层转移格。全部为规则生成，没有模型调用。</p>
+    <div class="chips"><span>四棱锥 × 10</span>
+<span>偏顶四棱锥 × 10</span>
+<span>三棱锥 × 10</span>
+<span>长方体 × 10</span>
+<span>斜四棱柱 × 10</span>
+<span>四棱台 × 10</span>
+<span>三棱柱 × 10</span>
+<span>三棱台 × 10</span>
+<span>楔形体 × 10</span>
+<span>长方体叠四棱锥 × 10</span></div>
+    <div class="grid">
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_001.json">
+        <img src="./assets/batch100/base_001.svg" alt="base_001 · 四棱锥 #01">
+        <span>base_001 · 四棱锥 #01</span>
+        <small>四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_002.json">
+        <img src="./assets/batch100/base_002.svg" alt="base_002 · 四棱锥 #02">
+        <span>base_002 · 四棱锥 #02</span>
+        <small>四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_003.json">
+        <img src="./assets/batch100/base_003.svg" alt="base_003 · 四棱锥 #03">
+        <span>base_003 · 四棱锥 #03</span>
+        <small>四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_004.json">
+        <img src="./assets/batch100/base_004.svg" alt="base_004 · 四棱锥 #04">
+        <span>base_004 · 四棱锥 #04</span>
+        <small>四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_005.json">
+        <img src="./assets/batch100/base_005.svg" alt="base_005 · 四棱锥 #05">
+        <span>base_005 · 四棱锥 #05</span>
+        <small>四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_006.json">
+        <img src="./assets/batch100/base_006.svg" alt="base_006 · 四棱锥 #06">
+        <span>base_006 · 四棱锥 #06</span>
+        <small>四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_007.json">
+        <img src="./assets/batch100/base_007.svg" alt="base_007 · 四棱锥 #07">
+        <span>base_007 · 四棱锥 #07</span>
+        <small>四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_008.json">
+        <img src="./assets/batch100/base_008.svg" alt="base_008 · 四棱锥 #08">
+        <span>base_008 · 四棱锥 #08</span>
+        <small>四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_009.json">
+        <img src="./assets/batch100/base_009.svg" alt="base_009 · 四棱锥 #09">
+        <span>base_009 · 四棱锥 #09</span>
+        <small>四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_010.json">
+        <img src="./assets/batch100/base_010.svg" alt="base_010 · 四棱锥 #10">
+        <span>base_010 · 四棱锥 #10</span>
+        <small>四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_011.json">
+        <img src="./assets/batch100/base_011.svg" alt="base_011 · 偏顶四棱锥 #01">
+        <span>base_011 · 偏顶四棱锥 #01</span>
+        <small>偏顶四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_012.json">
+        <img src="./assets/batch100/base_012.svg" alt="base_012 · 偏顶四棱锥 #02">
+        <span>base_012 · 偏顶四棱锥 #02</span>
+        <small>偏顶四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_013.json">
+        <img src="./assets/batch100/base_013.svg" alt="base_013 · 偏顶四棱锥 #03">
+        <span>base_013 · 偏顶四棱锥 #03</span>
+        <small>偏顶四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_014.json">
+        <img src="./assets/batch100/base_014.svg" alt="base_014 · 偏顶四棱锥 #04">
+        <span>base_014 · 偏顶四棱锥 #04</span>
+        <small>偏顶四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_015.json">
+        <img src="./assets/batch100/base_015.svg" alt="base_015 · 偏顶四棱锥 #05">
+        <span>base_015 · 偏顶四棱锥 #05</span>
+        <small>偏顶四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_016.json">
+        <img src="./assets/batch100/base_016.svg" alt="base_016 · 偏顶四棱锥 #06">
+        <span>base_016 · 偏顶四棱锥 #06</span>
+        <small>偏顶四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_017.json">
+        <img src="./assets/batch100/base_017.svg" alt="base_017 · 偏顶四棱锥 #07">
+        <span>base_017 · 偏顶四棱锥 #07</span>
+        <small>偏顶四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_018.json">
+        <img src="./assets/batch100/base_018.svg" alt="base_018 · 偏顶四棱锥 #08">
+        <span>base_018 · 偏顶四棱锥 #08</span>
+        <small>偏顶四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_019.json">
+        <img src="./assets/batch100/base_019.svg" alt="base_019 · 偏顶四棱锥 #09">
+        <span>base_019 · 偏顶四棱锥 #09</span>
+        <small>偏顶四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_020.json">
+        <img src="./assets/batch100/base_020.svg" alt="base_020 · 偏顶四棱锥 #10">
+        <span>base_020 · 偏顶四棱锥 #10</span>
+        <small>偏顶四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_021.json">
+        <img src="./assets/batch100/base_021.svg" alt="base_021 · 三棱锥 #01">
+        <span>base_021 · 三棱锥 #01</span>
+        <small>三棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_022.json">
+        <img src="./assets/batch100/base_022.svg" alt="base_022 · 三棱锥 #02">
+        <span>base_022 · 三棱锥 #02</span>
+        <small>三棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_023.json">
+        <img src="./assets/batch100/base_023.svg" alt="base_023 · 三棱锥 #03">
+        <span>base_023 · 三棱锥 #03</span>
+        <small>三棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_024.json">
+        <img src="./assets/batch100/base_024.svg" alt="base_024 · 三棱锥 #04">
+        <span>base_024 · 三棱锥 #04</span>
+        <small>三棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_025.json">
+        <img src="./assets/batch100/base_025.svg" alt="base_025 · 三棱锥 #05">
+        <span>base_025 · 三棱锥 #05</span>
+        <small>三棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_026.json">
+        <img src="./assets/batch100/base_026.svg" alt="base_026 · 三棱锥 #06">
+        <span>base_026 · 三棱锥 #06</span>
+        <small>三棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_027.json">
+        <img src="./assets/batch100/base_027.svg" alt="base_027 · 三棱锥 #07">
+        <span>base_027 · 三棱锥 #07</span>
+        <small>三棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_028.json">
+        <img src="./assets/batch100/base_028.svg" alt="base_028 · 三棱锥 #08">
+        <span>base_028 · 三棱锥 #08</span>
+        <small>三棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_029.json">
+        <img src="./assets/batch100/base_029.svg" alt="base_029 · 三棱锥 #09">
+        <span>base_029 · 三棱锥 #09</span>
+        <small>三棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_030.json">
+        <img src="./assets/batch100/base_030.svg" alt="base_030 · 三棱锥 #10">
+        <span>base_030 · 三棱锥 #10</span>
+        <small>三棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_031.json">
+        <img src="./assets/batch100/base_031.svg" alt="base_031 · 长方体 #01">
+        <span>base_031 · 长方体 #01</span>
+        <small>长方体 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_032.json">
+        <img src="./assets/batch100/base_032.svg" alt="base_032 · 长方体 #02">
+        <span>base_032 · 长方体 #02</span>
+        <small>长方体 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_033.json">
+        <img src="./assets/batch100/base_033.svg" alt="base_033 · 长方体 #03">
+        <span>base_033 · 长方体 #03</span>
+        <small>长方体 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_034.json">
+        <img src="./assets/batch100/base_034.svg" alt="base_034 · 长方体 #04">
+        <span>base_034 · 长方体 #04</span>
+        <small>长方体 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_035.json">
+        <img src="./assets/batch100/base_035.svg" alt="base_035 · 长方体 #05">
+        <span>base_035 · 长方体 #05</span>
+        <small>长方体 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_036.json">
+        <img src="./assets/batch100/base_036.svg" alt="base_036 · 长方体 #06">
+        <span>base_036 · 长方体 #06</span>
+        <small>长方体 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_037.json">
+        <img src="./assets/batch100/base_037.svg" alt="base_037 · 长方体 #07">
+        <span>base_037 · 长方体 #07</span>
+        <small>长方体 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_038.json">
+        <img src="./assets/batch100/base_038.svg" alt="base_038 · 长方体 #08">
+        <span>base_038 · 长方体 #08</span>
+        <small>长方体 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_039.json">
+        <img src="./assets/batch100/base_039.svg" alt="base_039 · 长方体 #09">
+        <span>base_039 · 长方体 #09</span>
+        <small>长方体 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_040.json">
+        <img src="./assets/batch100/base_040.svg" alt="base_040 · 长方体 #10">
+        <span>base_040 · 长方体 #10</span>
+        <small>长方体 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_041.json">
+        <img src="./assets/batch100/base_041.svg" alt="base_041 · 斜四棱柱 #01">
+        <span>base_041 · 斜四棱柱 #01</span>
+        <small>斜四棱柱 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_042.json">
+        <img src="./assets/batch100/base_042.svg" alt="base_042 · 斜四棱柱 #02">
+        <span>base_042 · 斜四棱柱 #02</span>
+        <small>斜四棱柱 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_043.json">
+        <img src="./assets/batch100/base_043.svg" alt="base_043 · 斜四棱柱 #03">
+        <span>base_043 · 斜四棱柱 #03</span>
+        <small>斜四棱柱 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_044.json">
+        <img src="./assets/batch100/base_044.svg" alt="base_044 · 斜四棱柱 #04">
+        <span>base_044 · 斜四棱柱 #04</span>
+        <small>斜四棱柱 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_045.json">
+        <img src="./assets/batch100/base_045.svg" alt="base_045 · 斜四棱柱 #05">
+        <span>base_045 · 斜四棱柱 #05</span>
+        <small>斜四棱柱 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_046.json">
+        <img src="./assets/batch100/base_046.svg" alt="base_046 · 斜四棱柱 #06">
+        <span>base_046 · 斜四棱柱 #06</span>
+        <small>斜四棱柱 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_047.json">
+        <img src="./assets/batch100/base_047.svg" alt="base_047 · 斜四棱柱 #07">
+        <span>base_047 · 斜四棱柱 #07</span>
+        <small>斜四棱柱 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_048.json">
+        <img src="./assets/batch100/base_048.svg" alt="base_048 · 斜四棱柱 #08">
+        <span>base_048 · 斜四棱柱 #08</span>
+        <small>斜四棱柱 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_049.json">
+        <img src="./assets/batch100/base_049.svg" alt="base_049 · 斜四棱柱 #09">
+        <span>base_049 · 斜四棱柱 #09</span>
+        <small>斜四棱柱 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_050.json">
+        <img src="./assets/batch100/base_050.svg" alt="base_050 · 斜四棱柱 #10">
+        <span>base_050 · 斜四棱柱 #10</span>
+        <small>斜四棱柱 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_051.json">
+        <img src="./assets/batch100/base_051.svg" alt="base_051 · 四棱台 #01">
+        <span>base_051 · 四棱台 #01</span>
+        <small>四棱台 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_052.json">
+        <img src="./assets/batch100/base_052.svg" alt="base_052 · 四棱台 #02">
+        <span>base_052 · 四棱台 #02</span>
+        <small>四棱台 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_053.json">
+        <img src="./assets/batch100/base_053.svg" alt="base_053 · 四棱台 #03">
+        <span>base_053 · 四棱台 #03</span>
+        <small>四棱台 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_054.json">
+        <img src="./assets/batch100/base_054.svg" alt="base_054 · 四棱台 #04">
+        <span>base_054 · 四棱台 #04</span>
+        <small>四棱台 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_055.json">
+        <img src="./assets/batch100/base_055.svg" alt="base_055 · 四棱台 #05">
+        <span>base_055 · 四棱台 #05</span>
+        <small>四棱台 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_056.json">
+        <img src="./assets/batch100/base_056.svg" alt="base_056 · 四棱台 #06">
+        <span>base_056 · 四棱台 #06</span>
+        <small>四棱台 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_057.json">
+        <img src="./assets/batch100/base_057.svg" alt="base_057 · 四棱台 #07">
+        <span>base_057 · 四棱台 #07</span>
+        <small>四棱台 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_058.json">
+        <img src="./assets/batch100/base_058.svg" alt="base_058 · 四棱台 #08">
+        <span>base_058 · 四棱台 #08</span>
+        <small>四棱台 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_059.json">
+        <img src="./assets/batch100/base_059.svg" alt="base_059 · 四棱台 #09">
+        <span>base_059 · 四棱台 #09</span>
+        <small>四棱台 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_060.json">
+        <img src="./assets/batch100/base_060.svg" alt="base_060 · 四棱台 #10">
+        <span>base_060 · 四棱台 #10</span>
+        <small>四棱台 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_061.json">
+        <img src="./assets/batch100/base_061.svg" alt="base_061 · 三棱柱 #01">
+        <span>base_061 · 三棱柱 #01</span>
+        <small>三棱柱 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_062.json">
+        <img src="./assets/batch100/base_062.svg" alt="base_062 · 三棱柱 #02">
+        <span>base_062 · 三棱柱 #02</span>
+        <small>三棱柱 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_063.json">
+        <img src="./assets/batch100/base_063.svg" alt="base_063 · 三棱柱 #03">
+        <span>base_063 · 三棱柱 #03</span>
+        <small>三棱柱 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_064.json">
+        <img src="./assets/batch100/base_064.svg" alt="base_064 · 三棱柱 #04">
+        <span>base_064 · 三棱柱 #04</span>
+        <small>三棱柱 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_065.json">
+        <img src="./assets/batch100/base_065.svg" alt="base_065 · 三棱柱 #05">
+        <span>base_065 · 三棱柱 #05</span>
+        <small>三棱柱 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_066.json">
+        <img src="./assets/batch100/base_066.svg" alt="base_066 · 三棱柱 #06">
+        <span>base_066 · 三棱柱 #06</span>
+        <small>三棱柱 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_067.json">
+        <img src="./assets/batch100/base_067.svg" alt="base_067 · 三棱柱 #07">
+        <span>base_067 · 三棱柱 #07</span>
+        <small>三棱柱 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_068.json">
+        <img src="./assets/batch100/base_068.svg" alt="base_068 · 三棱柱 #08">
+        <span>base_068 · 三棱柱 #08</span>
+        <small>三棱柱 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_069.json">
+        <img src="./assets/batch100/base_069.svg" alt="base_069 · 三棱柱 #09">
+        <span>base_069 · 三棱柱 #09</span>
+        <small>三棱柱 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_070.json">
+        <img src="./assets/batch100/base_070.svg" alt="base_070 · 三棱柱 #10">
+        <span>base_070 · 三棱柱 #10</span>
+        <small>三棱柱 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_071.json">
+        <img src="./assets/batch100/base_071.svg" alt="base_071 · 三棱台 #01">
+        <span>base_071 · 三棱台 #01</span>
+        <small>三棱台 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_072.json">
+        <img src="./assets/batch100/base_072.svg" alt="base_072 · 三棱台 #02">
+        <span>base_072 · 三棱台 #02</span>
+        <small>三棱台 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_073.json">
+        <img src="./assets/batch100/base_073.svg" alt="base_073 · 三棱台 #03">
+        <span>base_073 · 三棱台 #03</span>
+        <small>三棱台 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_074.json">
+        <img src="./assets/batch100/base_074.svg" alt="base_074 · 三棱台 #04">
+        <span>base_074 · 三棱台 #04</span>
+        <small>三棱台 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_075.json">
+        <img src="./assets/batch100/base_075.svg" alt="base_075 · 三棱台 #05">
+        <span>base_075 · 三棱台 #05</span>
+        <small>三棱台 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_076.json">
+        <img src="./assets/batch100/base_076.svg" alt="base_076 · 三棱台 #06">
+        <span>base_076 · 三棱台 #06</span>
+        <small>三棱台 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_077.json">
+        <img src="./assets/batch100/base_077.svg" alt="base_077 · 三棱台 #07">
+        <span>base_077 · 三棱台 #07</span>
+        <small>三棱台 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_078.json">
+        <img src="./assets/batch100/base_078.svg" alt="base_078 · 三棱台 #08">
+        <span>base_078 · 三棱台 #08</span>
+        <small>三棱台 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_079.json">
+        <img src="./assets/batch100/base_079.svg" alt="base_079 · 三棱台 #09">
+        <span>base_079 · 三棱台 #09</span>
+        <small>三棱台 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_080.json">
+        <img src="./assets/batch100/base_080.svg" alt="base_080 · 三棱台 #10">
+        <span>base_080 · 三棱台 #10</span>
+        <small>三棱台 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_081.json">
+        <img src="./assets/batch100/base_081.svg" alt="base_081 · 楔形体 #01">
+        <span>base_081 · 楔形体 #01</span>
+        <small>楔形体 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_082.json">
+        <img src="./assets/batch100/base_082.svg" alt="base_082 · 楔形体 #02">
+        <span>base_082 · 楔形体 #02</span>
+        <small>楔形体 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_083.json">
+        <img src="./assets/batch100/base_083.svg" alt="base_083 · 楔形体 #03">
+        <span>base_083 · 楔形体 #03</span>
+        <small>楔形体 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_084.json">
+        <img src="./assets/batch100/base_084.svg" alt="base_084 · 楔形体 #04">
+        <span>base_084 · 楔形体 #04</span>
+        <small>楔形体 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_085.json">
+        <img src="./assets/batch100/base_085.svg" alt="base_085 · 楔形体 #05">
+        <span>base_085 · 楔形体 #05</span>
+        <small>楔形体 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_086.json">
+        <img src="./assets/batch100/base_086.svg" alt="base_086 · 楔形体 #06">
+        <span>base_086 · 楔形体 #06</span>
+        <small>楔形体 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_087.json">
+        <img src="./assets/batch100/base_087.svg" alt="base_087 · 楔形体 #07">
+        <span>base_087 · 楔形体 #07</span>
+        <small>楔形体 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_088.json">
+        <img src="./assets/batch100/base_088.svg" alt="base_088 · 楔形体 #08">
+        <span>base_088 · 楔形体 #08</span>
+        <small>楔形体 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_089.json">
+        <img src="./assets/batch100/base_089.svg" alt="base_089 · 楔形体 #09">
+        <span>base_089 · 楔形体 #09</span>
+        <small>楔形体 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_090.json">
+        <img src="./assets/batch100/base_090.svg" alt="base_090 · 楔形体 #10">
+        <span>base_090 · 楔形体 #10</span>
+        <small>楔形体 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_091.json">
+        <img src="./assets/batch100/base_091.svg" alt="base_091 · 长方体叠四棱锥 #01">
+        <span>base_091 · 长方体叠四棱锥 #01</span>
+        <small>长方体叠四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_092.json">
+        <img src="./assets/batch100/base_092.svg" alt="base_092 · 长方体叠四棱锥 #02">
+        <span>base_092 · 长方体叠四棱锥 #02</span>
+        <small>长方体叠四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_093.json">
+        <img src="./assets/batch100/base_093.svg" alt="base_093 · 长方体叠四棱锥 #03">
+        <span>base_093 · 长方体叠四棱锥 #03</span>
+        <small>长方体叠四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_094.json">
+        <img src="./assets/batch100/base_094.svg" alt="base_094 · 长方体叠四棱锥 #04">
+        <span>base_094 · 长方体叠四棱锥 #04</span>
+        <small>长方体叠四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_095.json">
+        <img src="./assets/batch100/base_095.svg" alt="base_095 · 长方体叠四棱锥 #05">
+        <span>base_095 · 长方体叠四棱锥 #05</span>
+        <small>长方体叠四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_096.json">
+        <img src="./assets/batch100/base_096.svg" alt="base_096 · 长方体叠四棱锥 #06">
+        <span>base_096 · 长方体叠四棱锥 #06</span>
+        <small>长方体叠四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_097.json">
+        <img src="./assets/batch100/base_097.svg" alt="base_097 · 长方体叠四棱锥 #07">
+        <span>base_097 · 长方体叠四棱锥 #07</span>
+        <small>长方体叠四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_098.json">
+        <img src="./assets/batch100/base_098.svg" alt="base_098 · 长方体叠四棱锥 #08">
+        <span>base_098 · 长方体叠四棱锥 #08</span>
+        <small>长方体叠四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_099.json">
+        <img src="./assets/batch100/base_099.svg" alt="base_099 · 长方体叠四棱锥 #09">
+        <span>base_099 · 长方体叠四棱锥 #09</span>
+        <small>长方体叠四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+
+      <a class="card" href="renderer.html?spec=./specs/batch100/base_100.json">
+        <img src="./assets/batch100/base_100.svg" alt="base_100 · 长方体叠四棱锥 #10">
+        <span>base_100 · 长方体叠四棱锥 #10</span>
+        <small>长方体叠四棱锥 · B / B+ / B++ / B+++ 四档辅助构造</small>
+      </a>
+    </div>
+  </main>
+</body>
+</html>

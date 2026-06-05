@@ -1,0 +1,685 @@
+{
+  "title": "base_030 · 三棱锥 #10",
+  "source_image": "./assets/batch100/base_030.svg",
+  "quality_mode": "bplusplusplus_search_rules",
+  "batch100_rule_workflow": {
+    "contract": "One fixed base_geometry per file. The four variants only change auxiliary points, lines, faces, and labels.",
+    "levels": {
+      "B": "single clean witness or canonical section",
+      "B+": "roleful auxiliary face plus in-face witness lines",
+      "B++": "two-layer construction, usually projection plus hinge/section comparison",
+      "B+++": "one small step harder: double section, transfer lattice, or stacked component relation"
+    },
+    "generation": "deterministic rule templates; no model call"
+  },
+  "view": {
+    "camera_offset": [
+      3.4,
+      2.7,
+      5.1
+    ],
+    "ortho_factor": 0.76
+  },
+  "base_geometry": {
+    "id": "base_030",
+    "kind": "tetrahedron",
+    "vertices": {
+      "A": [
+        -1.56,
+        0.0,
+        -1.155
+      ],
+      "B": [
+        1.56,
+        0.0,
+        -1.155
+      ],
+      "C": [
+        0.2,
+        0.0,
+        1.155
+      ],
+      "S": [
+        0.2,
+        3.13,
+        -0.45
+      ]
+    },
+    "edges": [
+      [
+        "A",
+        "B"
+      ],
+      [
+        "B",
+        "C"
+      ],
+      [
+        "C",
+        "A"
+      ],
+      [
+        "S",
+        "A"
+      ],
+      [
+        "S",
+        "B"
+      ],
+      [
+        "S",
+        "C"
+      ]
+    ],
+    "faces": [
+      [
+        "A",
+        "B",
+        "C"
+      ],
+      [
+        "S",
+        "A",
+        "B"
+      ],
+      [
+        "S",
+        "B",
+        "C"
+      ],
+      [
+        "S",
+        "C",
+        "A"
+      ]
+    ],
+    "curves": []
+  },
+  "variants": [
+    {
+      "level": "B",
+      "id": "b_tetra_height",
+      "name": "B · 底心高线",
+      "focus": "base centroid projection",
+      "aux_points": {
+        "O": [
+          0.067,
+          0.0,
+          -0.385
+        ],
+        "M": [
+          0.0,
+          0.0,
+          -1.155
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "S",
+            "O"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A",
+            "C"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B",
+            "C"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.82,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "A",
+            "B",
+            "C"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.08,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "point_plane_distance",
+          "answer": "SO"
+        }
+      ],
+      "exam_note": "三棱锥: 四面体先抓底面中心和顶点投影。",
+      "taxonomy": {
+        "gq": "measurement",
+        "content_type": "length_distance",
+        "ability": "C",
+        "difficulty": "L2",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+",
+      "id": "bp_tetra_mid_section",
+      "name": "B+ · 三角中截面",
+      "focus": "mid-edge triangular section",
+      "aux_points": {
+        "P": [
+          -0.68,
+          1.565,
+          -0.802
+        ],
+        "Q": [
+          0.88,
+          1.565,
+          -0.802
+        ],
+        "R": [
+          0.2,
+          1.565,
+          0.352
+        ],
+        "X": [
+          0.133,
+          1.565,
+          -0.417
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "R"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "R",
+            "P"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "X"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "P"
+          ],
+          "color": "#2f9e44",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "P",
+            "Q",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.13,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A",
+            "B",
+            "C"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "parallel_cut",
+          "answer": "PQR"
+        }
+      ],
+      "exam_note": "三条侧棱同比分点给出平行底面的三角截面。",
+      "taxonomy": {
+        "gq": "relation",
+        "content_type": "parallel",
+        "ability": "D",
+        "difficulty": "L2",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B++",
+      "id": "bpp_tetra_dihedral_witness",
+      "name": "B++ · 棱上二面角",
+      "focus": "edge hinge with base projection",
+      "aux_points": {
+        "M": [
+          0.0,
+          0.0,
+          -1.155
+        ],
+        "N": [
+          -0.68,
+          0.0,
+          0.0
+        ],
+        "O": [
+          0.067,
+          0.0,
+          -0.385
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "A",
+            "B"
+          ],
+          "color": "#111111",
+          "dashed": false,
+          "opacity": 0.72,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "O"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "O"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.82,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "N",
+            "C"
+          ],
+          "color": "#7048e8",
+          "dashed": true,
+          "opacity": 0.76,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "S",
+            "A",
+            "B"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.1,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A",
+            "B",
+            "C"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.06,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "M",
+            "O"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.08,
+          "edge_color": "#7048e8",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "dihedral_hinge",
+          "answer": "AB"
+        }
+      ],
+      "exam_note": "二面角 witness 加底面投影，再补一条底面内中位参考线。",
+      "taxonomy": {
+        "gq": "measurement",
+        "content_type": "angle",
+        "ability": "C",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
+      "id": "bppp_tetra_double_section",
+      "name": "B+++ · 双三角截面",
+      "focus": "two triangular sections with transfer faces",
+      "aux_points": {
+        "P": [
+          -0.434,
+          2.003,
+          -0.704
+        ],
+        "Q": [
+          0.69,
+          2.003,
+          -0.704
+        ],
+        "R": [
+          0.2,
+          2.003,
+          0.128
+        ],
+        "U": [
+          -1.032,
+          0.939,
+          -0.944
+        ],
+        "V": [
+          1.152,
+          0.939,
+          -0.944
+        ],
+        "W": [
+          0.2,
+          0.939,
+          0.673
+        ],
+        "X": [
+          0.152,
+          2.003,
+          -0.427
+        ],
+        "Y": [
+          0.107,
+          0.939,
+          -0.404
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "R"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "R",
+            "P"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "U",
+            "V"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "V",
+            "W"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "W",
+            "U"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "U"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "V"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "R",
+            "W"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "X"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.75,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "P",
+            "Q",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.12,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "U",
+            "V",
+            "W"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.11,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "V",
+            "U"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.07,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "Q",
+            "R",
+            "W",
+            "V"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.07,
+          "edge_color": "#d9480f",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "R",
+            "P",
+            "U",
+            "W"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.06,
+          "edge_color": "#1971c2",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "section",
+          "answer": "PQR and UVW"
+        }
+      ],
+      "exam_note": "双三角截面把四面体里的相似关系显式连接起来。",
+      "taxonomy": {
+        "gq": "transformation",
+        "content_type": "section_cutting",
+        "ability": "E",
+        "difficulty": "L2",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    }
+  ],
+  "taxonomy_source": "solidgeo-benchmark-blueprint/700"
+}

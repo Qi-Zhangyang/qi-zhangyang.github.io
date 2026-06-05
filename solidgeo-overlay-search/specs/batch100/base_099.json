@@ -1,0 +1,869 @@
+{
+  "title": "base_099 · 长方体叠四棱锥 #09",
+  "source_image": "./assets/batch100/base_099.svg",
+  "quality_mode": "bplusplusplus_search_rules",
+  "batch100_rule_workflow": {
+    "contract": "One fixed base_geometry per file. The four variants only change auxiliary points, lines, faces, and labels.",
+    "levels": {
+      "B": "single clean witness or canonical section",
+      "B+": "roleful auxiliary face plus in-face witness lines",
+      "B++": "two-layer construction, usually projection plus hinge/section comparison",
+      "B+++": "one small step harder: double section, transfer lattice, or stacked component relation"
+    },
+    "generation": "deterministic rule templates; no model call"
+  },
+  "view": {
+    "camera_offset": [
+      3.4,
+      2.7,
+      5.1
+    ],
+    "ortho_factor": 0.76
+  },
+  "base_geometry": {
+    "id": "base_099",
+    "kind": "cuboid_pyramid_composite",
+    "vertices": {
+      "A": [
+        -1.375,
+        0.0,
+        -0.925
+      ],
+      "B": [
+        1.375,
+        0.0,
+        -0.925
+      ],
+      "C": [
+        1.375,
+        0.0,
+        0.925
+      ],
+      "D": [
+        -1.375,
+        0.0,
+        0.925
+      ],
+      "A1": [
+        -1.375,
+        1.27,
+        -0.925
+      ],
+      "B1": [
+        1.375,
+        1.27,
+        -0.925
+      ],
+      "C1": [
+        1.375,
+        1.27,
+        0.925
+      ],
+      "D1": [
+        -1.375,
+        1.27,
+        0.925
+      ],
+      "S": [
+        0.12,
+        3.26,
+        -0.05
+      ]
+    },
+    "edges": [
+      [
+        "A",
+        "B"
+      ],
+      [
+        "B",
+        "C"
+      ],
+      [
+        "C",
+        "D"
+      ],
+      [
+        "D",
+        "A"
+      ],
+      [
+        "A1",
+        "B1"
+      ],
+      [
+        "B1",
+        "C1"
+      ],
+      [
+        "C1",
+        "D1"
+      ],
+      [
+        "D1",
+        "A1"
+      ],
+      [
+        "A",
+        "A1"
+      ],
+      [
+        "B",
+        "B1"
+      ],
+      [
+        "C",
+        "C1"
+      ],
+      [
+        "D",
+        "D1"
+      ],
+      [
+        "S",
+        "A1"
+      ],
+      [
+        "S",
+        "B1"
+      ],
+      [
+        "S",
+        "C1"
+      ],
+      [
+        "S",
+        "D1"
+      ]
+    ],
+    "faces": [
+      [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      [
+        "A",
+        "B",
+        "B1",
+        "A1"
+      ],
+      [
+        "B",
+        "C",
+        "C1",
+        "B1"
+      ],
+      [
+        "C",
+        "D",
+        "D1",
+        "C1"
+      ],
+      [
+        "D",
+        "A",
+        "A1",
+        "D1"
+      ],
+      [
+        "S",
+        "A1",
+        "B1"
+      ],
+      [
+        "S",
+        "B1",
+        "C1"
+      ],
+      [
+        "S",
+        "C1",
+        "D1"
+      ],
+      [
+        "S",
+        "D1",
+        "A1"
+      ]
+    ],
+    "curves": []
+  },
+  "variants": [
+    {
+      "level": "B",
+      "id": "b_shared_axis",
+      "name": "B · 共享轴",
+      "focus": "stacked center axis",
+      "aux_points": {
+        "O": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "O1": [
+          0.0,
+          1.27,
+          0.0
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "O",
+            "O1"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O1",
+            "S"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A",
+            "C"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A1",
+            "C1"
+          ],
+          "color": "#7048e8",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "O1"
+          ],
+          "color": "#d9480f",
+          "dashed": true,
+          "opacity": 0.82,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "S",
+            "A1",
+            "C1"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.1,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A",
+            "C",
+            "C1",
+            "A1"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.06,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "same_axis",
+          "answer": "O-O1-S"
+        }
+      ],
+      "exam_note": "长方体叠四棱锥: 先表达上下组合体的共享轴关系。",
+      "taxonomy": {
+        "gq": "relation",
+        "content_type": "composite_relation",
+        "ability": "D",
+        "difficulty": "L2",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+",
+      "id": "bp_roof_mid_section",
+      "name": "B+ · 屋顶中截面",
+      "focus": "roof same-ratio section",
+      "aux_points": {
+        "P": [
+          -0.628,
+          2.265,
+          -0.487
+        ],
+        "Q": [
+          0.747,
+          2.265,
+          -0.487
+        ],
+        "R": [
+          0.747,
+          2.265,
+          0.438
+        ],
+        "T": [
+          -0.628,
+          2.265,
+          0.438
+        ],
+        "X": [
+          0.06,
+          2.265,
+          -0.025
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "P",
+            "R"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "T"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "X"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "A1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "C1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "P",
+            "Q",
+            "R",
+            "T"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.13,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A1",
+            "B1",
+            "C1",
+            "D1"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "parallel_cut",
+          "answer": "PQRT"
+        }
+      ],
+      "exam_note": "只切上方棱锥，底座保持作为参照面。",
+      "taxonomy": {
+        "gq": "relation",
+        "content_type": "parallel",
+        "ability": "D",
+        "difficulty": "L2",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B++",
+      "id": "bpp_lower_midplane_roof_hinge",
+      "name": "B++ · 底座中截面 + 屋顶棱",
+      "focus": "base midplane and roof dihedral",
+      "aux_points": {
+        "E": [
+          -1.375,
+          0.635,
+          -0.925
+        ],
+        "F": [
+          1.375,
+          0.635,
+          -0.925
+        ],
+        "G": [
+          1.375,
+          0.635,
+          0.925
+        ],
+        "H": [
+          -1.375,
+          0.635,
+          0.925
+        ],
+        "M": [
+          0.0,
+          1.27,
+          -0.925
+        ],
+        "O1": [
+          0.0,
+          1.27,
+          0.0
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "E",
+            "G"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "F",
+            "H"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A1",
+            "B1"
+          ],
+          "color": "#111111",
+          "dashed": false,
+          "opacity": 0.72,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "M"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "O1"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "O1"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "E",
+            "F"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "G",
+            "H"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "E",
+            "F",
+            "G",
+            "H"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.1,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "A1",
+            "B1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.1,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A1",
+            "B1",
+            "C1",
+            "D1"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.06,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "composite_section",
+          "answer": "EFGH with roof hinge"
+        }
+      ],
+      "exam_note": "底座中截面和上方棱锥二面角同时出现，形成上下层联动。",
+      "taxonomy": {
+        "gq": "transformation",
+        "content_type": "section_cutting",
+        "ability": "E",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
+      "id": "bppp_stacked_transfer_lattice",
+      "name": "B+++ · 上下层转移格",
+      "focus": "lower midplane plus roof section transfer lattice",
+      "aux_points": {
+        "E": [
+          -1.375,
+          0.635,
+          -0.925
+        ],
+        "F": [
+          1.375,
+          0.635,
+          -0.925
+        ],
+        "G": [
+          1.375,
+          0.635,
+          0.925
+        ],
+        "H": [
+          -1.375,
+          0.635,
+          0.925
+        ],
+        "P": [
+          -0.628,
+          2.265,
+          -0.487
+        ],
+        "Q": [
+          0.747,
+          2.265,
+          -0.487
+        ],
+        "R": [
+          0.747,
+          2.265,
+          0.438
+        ],
+        "T": [
+          -0.628,
+          2.265,
+          0.438
+        ],
+        "X": [
+          0.0,
+          0.635,
+          0.0
+        ],
+        "Y": [
+          0.06,
+          2.265,
+          -0.025
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "E",
+            "G"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "F",
+            "H"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "R"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "T"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "E",
+            "P"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "F",
+            "Q"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "G",
+            "R"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "H",
+            "T"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "E"
+          ],
+          "color": "#2f9e44",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "E",
+            "F",
+            "G",
+            "H"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.1,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R",
+            "T"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.11,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "E",
+            "F",
+            "Q",
+            "P"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.07,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "G",
+            "H",
+            "T",
+            "R"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.07,
+          "edge_color": "#d9480f",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A1",
+            "B1",
+            "C1",
+            "D1"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.04,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "composite_section",
+          "answer": "EFGH and PQRT"
+        }
+      ],
+      "exam_note": "在组合体里同时画底座中截面、屋顶中截面和上下对应转移线。",
+      "taxonomy": {
+        "gq": "transformation",
+        "content_type": "section_cutting",
+        "ability": "E",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    }
+  ],
+  "taxonomy_source": "solidgeo-benchmark-blueprint/700"
+}

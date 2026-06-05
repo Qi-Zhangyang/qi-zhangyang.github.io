@@ -81,6 +81,30 @@
       font-size: 12px;
       line-height: 1.25;
     }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+    .action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .action.secondary {
+      background: #fff;
+      color: var(--accent);
+    }
     .hero img {
       display: block;
       width: 100%;
@@ -235,9 +259,13 @@
           比 B+ 再多一层推理的 B++，以及继续上探一小步的 B+++。
         </p>
         <div class="stats" aria-label="概要">
-          <div class="stat"><strong>20</strong><span>公开展示变体</span></div>
-          <div class="stat"><strong>4</strong><span>B++ 稍难变体</span></div>
-          <div class="stat"><strong>4</strong><span>B+++ 上探变体</span></div>
+          <div class="stat"><strong>100</strong><span>新增 base geometry</span></div>
+          <div class="stat"><strong>400</strong><span>B / B+ / B++ / B+++ 变体</span></div>
+          <div class="stat"><strong>10</strong><span>几何家族覆盖</span></div>
+        </div>
+        <div class="actions" aria-label="入口">
+          <a class="action" href="batch100.html">打开 100-base demo</a>
+          <a class="action secondary" href="#bplus">查看单 base 对比</a>
         </div>
       </div>
       <img src="assets/bppp-section-axis-lattice.png" alt="四棱锥 B+++ 双截面中心轴格构造">
@@ -289,7 +317,7 @@
       </div>
     </section>
 
-    <section class="wrap section-block">
+    <section class="wrap section-block" id="bplus">
       <div class="section-title">
         <h2>B+：复杂但有角色的辅助构造</h2>
         <p>
