@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="230" viewBox="0 0 320 230" role="img" aria-label="B+++08 · 双截面轴格">
+<rect width="320" height="230" fill="#fff"/>
+<polygon points="21.0,167.0 224.7,167.0 299.0,207.2 95.3,207.2" fill="#e9f0f4" fill-opacity="0.45" stroke="none"/>
+<polygon points="159.8,22.8 21.0,167.0 224.7,167.0" fill="#edf4ee" fill-opacity="0.45" stroke="none"/>
+<polygon points="159.8,22.8 224.7,167.0 299.0,207.2" fill="#f6eee5" fill-opacity="0.45" stroke="none"/>
+<polygon points="159.8,22.8 299.0,207.2 95.3,207.2" fill="#f0ecf8" fill-opacity="0.45" stroke="none"/>
+<polygon points="159.8,22.8 95.3,207.2 21.0,167.0" fill="#eef0f3" fill-opacity="0.45" stroke="none"/>
+<polygon points="207.2,85.5 137.9,85.5 112.6,71.8 181.9,71.8" fill="#2f9e44" fill-opacity="0.26" stroke="#2f9e44" stroke-width="1.4"/>
+<polygon points="254.4,148.2 115.9,148.2 65.4,120.8 203.9,120.8" fill="#7048e8" fill-opacity="0.24" stroke="#7048e8" stroke-width="1.4"/>
+<polygon points="207.2,85.5 112.6,71.8 65.4,120.8 254.4,148.2" fill="#c2255c" fill-opacity="0.15" stroke="#c2255c" stroke-width="1.4" stroke-dasharray="5 4"/>
+<polygon points="137.9,85.5 181.9,71.8 203.9,120.8 115.9,148.2" fill="#d9480f" fill-opacity="0.15" stroke="#d9480f" stroke-width="1.4" stroke-dasharray="5 4"/>
+<polygon points="299.0,207.2 95.3,207.2 21.0,167.0 224.7,167.0" fill="#1971c2" fill-opacity="0.09" stroke="#1971c2" stroke-width="1.4"/>
+<line x1="21.0" y1="167.0" x2="224.7" y2="167.0" stroke="#111" stroke-width="1.45" stroke-linecap="round"/>
+<line x1="224.7" y1="167.0" x2="299.0" y2="207.2" stroke="#111" stroke-width="1.45" stroke-linecap="round"/>
+<line x1="299.0" y1="207.2" x2="95.3" y2="207.2" stroke="#111" stroke-width="1.45" stroke-linecap="round"/>
+<line x1="95.3" y1="207.2" x2="21.0" y2="167.0" stroke="#111" stroke-width="1.45" stroke-linecap="round"/>
+<line x1="159.8" y1="22.8" x2="21.0" y2="167.0" stroke="#111" stroke-width="1.45" stroke-linecap="round"/>
+<line x1="159.8" y1="22.8" x2="224.7" y2="167.0" stroke="#111" stroke-width="1.45" stroke-linecap="round"/>
+<line x1="159.8" y1="22.8" x2="299.0" y2="207.2" stroke="#111" stroke-width="1.45" stroke-linecap="round"/>
+<line x1="159.8" y1="22.8" x2="95.3" y2="207.2" stroke="#111" stroke-width="1.45" stroke-linecap="round"/>
+<line x1="207.2" y1="85.5" x2="112.6" y2="71.8" stroke="#c2255c" stroke-width="2.15" stroke-linecap="round" stroke-opacity="0.88"/>
+<line x1="137.9" y1="85.5" x2="181.9" y2="71.8" stroke="#c2255c" stroke-width="2.15" stroke-linecap="round" stroke-opacity="0.88"/>
+<line x1="254.4" y1="148.2" x2="65.4" y2="120.8" stroke="#7048e8" stroke-width="2.15" stroke-linecap="round" stroke-opacity="0.88"/>
+<line x1="115.9" y1="148.2" x2="203.9" y2="120.8" stroke="#7048e8" stroke-width="2.15" stroke-linecap="round" stroke-opacity="0.88"/>
+<line x1="159.9" y1="78.6" x2="160.0" y2="134.5" stroke="#d9480f" stroke-width="2.15" stroke-linecap="round" stroke-opacity="0.88"/>
+<line x1="207.2" y1="85.5" x2="254.4" y2="148.2" stroke="#d97400" stroke-width="2.15" stroke-linecap="round" stroke-opacity="0.88" stroke-dasharray="6 4"/>
+<line x1="137.9" y1="85.5" x2="115.9" y2="148.2" stroke="#d97400" stroke-width="2.15" stroke-linecap="round" stroke-opacity="0.88" stroke-dasharray="6 4"/>
+<line x1="112.6" y1="71.8" x2="65.4" y2="120.8" stroke="#d97400" stroke-width="2.15" stroke-linecap="round" stroke-opacity="0.88" stroke-dasharray="6 4"/>
+<line x1="181.9" y1="71.8" x2="203.9" y2="120.8" stroke="#d97400" stroke-width="2.15" stroke-linecap="round" stroke-opacity="0.88" stroke-dasharray="6 4"/>
+<line x1="159.8" y1="22.8" x2="159.9" y2="78.6" stroke="#c2255c" stroke-width="2.15" stroke-linecap="round" stroke-opacity="0.75" stroke-dasharray="6 4"/>
+<line x1="160.0" y1="134.5" x2="254.4" y2="148.2" stroke="#2f9e44" stroke-width="2.15" stroke-linecap="round" stroke-opacity="0.75" stroke-dasharray="6 4"/>
+<circle cx="21.0" cy="167.0" r="3.4" fill="#111111"/>
+<text x="26.5" y="161.5" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="3" fill="#111111">A</text>
+<text x="26.5" y="161.5" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#111111">A</text>
+<circle cx="224.7" cy="167.0" r="3.4" fill="#111111"/>
+<text x="230.2" y="161.5" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="3" fill="#111111">B</text>
+<text x="230.2" y="161.5" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#111111">B</text>
+<circle cx="299.0" cy="207.2" r="3.4" fill="#111111"/>
+<text x="304.5" y="201.7" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="3" fill="#111111">C</text>
+<text x="304.5" y="201.7" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#111111">C</text>
+<circle cx="95.3" cy="207.2" r="3.4" fill="#111111"/>
+<text x="100.8" y="201.7" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="3" fill="#111111">D</text>
+<text x="100.8" y="201.7" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#111111">D</text>
+<circle cx="159.8" cy="22.8" r="3.4" fill="#111111"/>
+<text x="165.3" y="17.3" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="3" fill="#111111">S</text>
+<text x="165.3" y="17.3" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#111111">S</text>
+<circle cx="207.2" cy="85.5" r="3.4" fill="#d97400"/>
+<text x="212.7" y="80.0" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="3" fill="#d97400">P</text>
+<text x="212.7" y="80.0" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#d97400">P</text>
+<circle cx="137.9" cy="85.5" r="3.4" fill="#d97400"/>
+<text x="143.4" y="80.0" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="3" fill="#d97400">Q</text>
+<text x="143.4" y="80.0" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#d97400">Q</text>
+<circle cx="112.6" cy="71.8" r="3.4" fill="#d97400"/>
+<text x="118.1" y="66.3" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="3" fill="#d97400">R</text>
+<text x="118.1" y="66.3" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#d97400">R</text>
+<circle cx="181.9" cy="71.8" r="3.4" fill="#d97400"/>
+<text x="187.4" y="66.3" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="3" fill="#d97400">T</text>
+<text x="187.4" y="66.3" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#d97400">T</text>
+<circle cx="254.4" cy="148.2" r="3.4" fill="#d97400"/>
+<text x="259.9" y="142.7" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="3" fill="#d97400">U</text>
+<text x="259.9" y="142.7" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#d97400">U</text>
+<circle cx="115.9" cy="148.2" r="3.4" fill="#d97400"/>
+<text x="121.4" y="142.7" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="3" fill="#d97400">V</text>
+<text x="121.4" y="142.7" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#d97400">V</text>
+<circle cx="65.4" cy="120.8" r="3.4" fill="#d97400"/>
+<text x="70.9" y="115.3" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="3" fill="#d97400">W</text>
+<text x="70.9" y="115.3" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#d97400">W</text>
+<circle cx="159.9" cy="78.6" r="3.4" fill="#d97400"/>
+<text x="165.4" y="73.1" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="3" fill="#d97400">X</text>
+<text x="165.4" y="73.1" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#d97400">X</text>
+<circle cx="160.0" cy="134.5" r="3.4" fill="#d97400"/>
+<text x="165.5" y="129.0" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="3" fill="#d97400">Y</text>
+<text x="165.5" y="129.0" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#d97400">Y</text>
+<circle cx="203.9" cy="120.8" r="3.4" fill="#d97400"/>
+<text x="209.4" y="115.3" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="3" fill="#d97400">Z</text>
+<text x="209.4" y="115.3" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#d97400">Z</text>
+<text x="10" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" fill="#0b7285">B+++ · 10P/11L/5F</text>
+</svg>
