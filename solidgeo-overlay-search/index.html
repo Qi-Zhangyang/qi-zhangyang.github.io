@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solid Geometry Overlay Search</title>
+  <style>
+    :root {
+      --ink: #151515;
+      --muted: #5b6470;
+      --line: #d7dde5;
+      --paper: #ffffff;
+      --wash: #f5f7fa;
+      --accent: #0b7285;
+      --accent-soft: #e3f4f7;
+      --green: #2f7d4c;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--wash);
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+    }
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 430px);
+      gap: 32px;
+      align-items: center;
+      padding: 44px 0 38px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+    .lead {
+      margin: 18px 0 0;
+      max-width: 720px;
+      font-size: 17px;
+      line-height: 1.58;
+      color: var(--muted);
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 24px;
+      max-width: 600px;
+    }
+    .stat {
+      min-height: 78px;
+      padding: 14px 14px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfd;
+    }
+    .stat strong {
+      display: block;
+      color: var(--accent);
+      font-size: 25px;
+      line-height: 1;
+    }
+    .stat span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.25;
+    }
+    .hero img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1280 / 880;
+      object-fit: contain;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    main {
+      padding: 28px 0 42px;
+    }
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 14px;
+    }
+    h2 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+    .section-title p {
+      margin: 0;
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+      text-align: right;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      overflow: hidden;
+    }
+    .card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1280 / 880;
+      object-fit: contain;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+    .card-body {
+      padding: 16px 16px 18px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 0 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    h3 {
+      margin: 12px 0 8px;
+      font-size: 19px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.52;
+    }
+    .method {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .method-item {
+      min-height: 142px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      padding: 18px;
+    }
+    .method-item strong {
+      color: var(--green);
+      font-size: 14px;
+    }
+    .method-item p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    footer {
+      padding: 22px 0 28px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      background: var(--paper);
+    }
+    @media (max-width: 820px) {
+      .hero,
+      .grid,
+      .method {
+        grid-template-columns: 1fr;
+      }
+      .section-title {
+        display: block;
+      }
+      .section-title p {
+        margin-top: 8px;
+        text-align: left;
+      }
+    }
+    @media (max-width: 560px) {
+      .wrap {
+        width: min(100% - 24px, 1120px);
+      }
+      .hero {
+        padding: 30px 0 26px;
+        gap: 22px;
+      }
+      .stats {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <div>
+        <h1>Solid Geometry Overlay Search</h1>
+        <p class="lead">
+          A rule-based augmentation route for solid geometry diagrams. The base geometry stays fixed;
+          auxiliary points, lines, and faces are generated from a construction grammar, scored for
+          readability and problem value, then selected as diverse overlay variants.
+        </p>
+        <div class="stats" aria-label="summary">
+          <div class="stat"><strong>17</strong><span>candidate overlays</span></div>
+          <div class="stat"><strong>4</strong><span>selected families</span></div>
+          <div class="stat"><strong>1</strong><span>fixed base geometry</span></div>
+        </div>
+      </div>
+      <img src="assets/midpoint-drop.png" alt="Square pyramid overlay with a midpoint projection drop">
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap">
+      <div class="section-title">
+        <h2>Selected Variants</h2>
+        <p>
+          These examples target projection distance, section cuts, dihedral witnesses, and skew-line
+          relations while keeping the diagram compact enough for visual QA data generation.
+        </p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <img src="assets/midpoint-drop.png" alt="Midpoint projection drop overlay">
+          <div class="card-body">
+            <span class="eyebrow">Projection Distance</span>
+            <h3>Midpoint Drop</h3>
+            <p>Uses a midpoint on a side edge and drops it to the base plane, creating a clean height or distance cue.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/vertex-oblique-section.png" alt="Oblique section through a base vertex">
+          <div class="card-body">
+            <span class="eyebrow">Section Cut</span>
+            <h3>Vertex Oblique Section</h3>
+            <p>Adds an oblique cutting face through stable reference points, suitable for cross-section reasoning.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/bc-dihedral.png" alt="Dihedral angle witness on a base edge">
+          <div class="card-body">
+            <span class="eyebrow">Angle Witness</span>
+            <h3>BC Dihedral</h3>
+            <p>Constructs a readable witness for a face-to-face angle around the base edge BC.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/skew-side-point.png" alt="Skew-line relation with side-edge point">
+          <div class="card-body">
+            <span class="eyebrow">Line Relation</span>
+            <h3>Skew With Side Point</h3>
+            <p>Places a side-edge point and relation lines that expose non-coplanar line reasoning without cluttering the base shape.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap method" aria-label="method">
+      <div class="method-item">
+        <strong>1. Generate</strong>
+        <p>Enumerate legal auxiliary constructions from a small geometry grammar instead of hand-picking one overlay at a time.</p>
+      </div>
+      <div class="method-item">
+        <strong>2. Score</strong>
+        <p>Rank candidates by regularity, readability, exam-likeness, and visual simplicity.</p>
+      </div>
+      <div class="method-item">
+        <strong>3. Select</strong>
+        <p>Choose top variants across different construction families to improve coverage without repeating the same visual pattern.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Self-contained static preview page with rendered images and method notes.</div>
+  </footer>
+</body>
+</html>
