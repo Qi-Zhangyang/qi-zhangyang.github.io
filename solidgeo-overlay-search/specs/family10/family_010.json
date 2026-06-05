@@ -1,14 +1,14 @@
 {
   "title": "family_010 · 长方体叠四棱锥",
   "source_image": "./assets/family10/family_010.svg",
-  "quality_mode": "bplusplusplus_search_rules",
+  "quality_mode": "dense_family10_rules",
   "family10_rule_workflow": {
     "contract": "One fixed representative base_geometry per geometry family. All variants only change auxiliary overlays.",
     "levels": {
       "B": "many conservative witnesses on the same base",
       "B+": "many roleful auxiliary-face constructions on the same base",
       "B++": "many two-layer projection, hinge, section, or multi-face interaction constructions on the same base",
-      "B+++": "many dense multi-face, perpendicular-style projection, transfer-lattice, or stacked-relation constructions on the same base"
+      "B+++": "many dense multi-face, perpendicular-style projection, transfer-lattice, stacked-relation, or extra-point web constructions on the same base"
     },
     "generation": "deterministic rule templates enumerated across orientations; no model call"
   },
@@ -6030,6 +6030,350 @@
     },
     {
       "level": "B+++",
+      "id": "bppp_dense_stacked_point_web_o01",
+      "name": "B+++01 · 密集组合体点网",
+      "focus": "dense stacked body point web",
+      "aux_points": {
+        "E": [
+          -1.525,
+          0.635,
+          -0.925
+        ],
+        "F": [
+          1.525,
+          0.635,
+          -0.925
+        ],
+        "G": [
+          1.525,
+          0.635,
+          0.925
+        ],
+        "H": [
+          -1.525,
+          0.635,
+          0.925
+        ],
+        "P": [
+          -0.777,
+          2.065,
+          -0.423
+        ],
+        "Q": [
+          0.747,
+          2.065,
+          -0.423
+        ],
+        "R": [
+          0.747,
+          2.065,
+          0.503
+        ],
+        "T": [
+          -0.777,
+          2.065,
+          0.503
+        ],
+        "X": [
+          0.0,
+          0.635,
+          0.0
+        ],
+        "Y": [
+          -0.015,
+          2.065,
+          0.04
+        ],
+        "L": [
+          0.0,
+          0.635,
+          -0.925
+        ],
+        "K": [
+          -0.015,
+          2.065,
+          -0.423
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "E",
+            "G"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "F",
+            "H"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "R"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "T"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "E",
+            "P"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "F",
+            "Q"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "G",
+            "R"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "H",
+            "T"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "K"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "X"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "K",
+            "Y"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "E",
+            "F"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A1",
+            "B1"
+          ],
+          "color": "#111111",
+          "dashed": false,
+          "opacity": 0.72,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "A1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.35,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "B1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.35,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "E",
+            "F",
+            "G",
+            "H"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.09,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R",
+            "T"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.1,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "E",
+            "F",
+            "Q",
+            "P"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.06,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "A1",
+            "B1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.09,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A",
+            "B",
+            "B1",
+            "A1"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "L",
+            "K",
+            "Y",
+            "X"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.06,
+          "edge_color": "#d9480f",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "composite_section",
+          "answer": "dense stacked point web"
+        }
+      ],
+      "exam_note": "组合体高档图增加下层中点、屋顶中点和跨层连接，强调上下两个主体的共同结构。",
+      "family10_orientation": 0,
+      "taxonomy": {
+        "gq": "transformation",
+        "content_type": "section_cutting",
+        "ability": "E",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
       "id": "bppp_stacked_transfer_lattice_o02",
       "name": "B+++02 · 上下层转移格",
       "focus": "lower midplane plus roof section transfer lattice",
@@ -6552,6 +6896,350 @@
         }
       ],
       "exam_note": "比普通上下层转移格多加入屋顶侧面、底座侧面和跨层投影面互动。",
+      "family10_orientation": 1,
+      "taxonomy": {
+        "gq": "transformation",
+        "content_type": "section_cutting",
+        "ability": "E",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
+      "id": "bppp_dense_stacked_point_web_o02",
+      "name": "B+++02 · 密集组合体点网",
+      "focus": "dense stacked body point web",
+      "aux_points": {
+        "E": [
+          1.525,
+          0.635,
+          -0.925
+        ],
+        "F": [
+          1.525,
+          0.635,
+          0.925
+        ],
+        "G": [
+          -1.525,
+          0.635,
+          0.925
+        ],
+        "H": [
+          -1.525,
+          0.635,
+          -0.925
+        ],
+        "P": [
+          0.747,
+          2.065,
+          -0.423
+        ],
+        "Q": [
+          0.747,
+          2.065,
+          0.503
+        ],
+        "R": [
+          -0.777,
+          2.065,
+          0.503
+        ],
+        "T": [
+          -0.777,
+          2.065,
+          -0.423
+        ],
+        "X": [
+          0.0,
+          0.635,
+          0.0
+        ],
+        "Y": [
+          -0.015,
+          2.065,
+          0.04
+        ],
+        "L": [
+          1.525,
+          0.635,
+          0.0
+        ],
+        "K": [
+          0.747,
+          2.065,
+          0.04
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "E",
+            "G"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "F",
+            "H"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "R"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "T"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "E",
+            "P"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "F",
+            "Q"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "G",
+            "R"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "H",
+            "T"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "K"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "X"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "K",
+            "Y"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "E",
+            "F"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B1",
+            "C1"
+          ],
+          "color": "#111111",
+          "dashed": false,
+          "opacity": 0.72,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "B1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.35,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "C1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.35,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "E",
+            "F",
+            "G",
+            "H"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.09,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R",
+            "T"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.1,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "E",
+            "F",
+            "Q",
+            "P"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.06,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "B1",
+            "C1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.09,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "B",
+            "C",
+            "C1",
+            "B1"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "L",
+            "K",
+            "Y",
+            "X"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.06,
+          "edge_color": "#d9480f",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "composite_section",
+          "answer": "dense stacked point web"
+        }
+      ],
+      "exam_note": "组合体高档图增加下层中点、屋顶中点和跨层连接，强调上下两个主体的共同结构。",
       "family10_orientation": 1,
       "taxonomy": {
         "gq": "transformation",
@@ -7096,6 +7784,350 @@
     },
     {
       "level": "B+++",
+      "id": "bppp_dense_stacked_point_web_o03",
+      "name": "B+++03 · 密集组合体点网",
+      "focus": "dense stacked body point web",
+      "aux_points": {
+        "E": [
+          1.525,
+          0.635,
+          0.925
+        ],
+        "F": [
+          -1.525,
+          0.635,
+          0.925
+        ],
+        "G": [
+          -1.525,
+          0.635,
+          -0.925
+        ],
+        "H": [
+          1.525,
+          0.635,
+          -0.925
+        ],
+        "P": [
+          0.747,
+          2.065,
+          0.503
+        ],
+        "Q": [
+          -0.777,
+          2.065,
+          0.503
+        ],
+        "R": [
+          -0.777,
+          2.065,
+          -0.423
+        ],
+        "T": [
+          0.747,
+          2.065,
+          -0.423
+        ],
+        "X": [
+          0.0,
+          0.635,
+          0.0
+        ],
+        "Y": [
+          -0.015,
+          2.065,
+          0.04
+        ],
+        "L": [
+          0.0,
+          0.635,
+          0.925
+        ],
+        "K": [
+          -0.015,
+          2.065,
+          0.503
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "E",
+            "G"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "F",
+            "H"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "R"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "T"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "E",
+            "P"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "F",
+            "Q"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "G",
+            "R"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "H",
+            "T"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "K"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "X"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "K",
+            "Y"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "E",
+            "F"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "C1",
+            "D1"
+          ],
+          "color": "#111111",
+          "dashed": false,
+          "opacity": 0.72,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "C1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.35,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "D1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.35,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "E",
+            "F",
+            "G",
+            "H"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.09,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R",
+            "T"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.1,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "E",
+            "F",
+            "Q",
+            "P"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.06,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "C1",
+            "D1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.09,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "C",
+            "D",
+            "D1",
+            "C1"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "L",
+            "K",
+            "Y",
+            "X"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.06,
+          "edge_color": "#d9480f",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "composite_section",
+          "answer": "dense stacked point web"
+        }
+      ],
+      "exam_note": "组合体高档图增加下层中点、屋顶中点和跨层连接，强调上下两个主体的共同结构。",
+      "family10_orientation": 2,
+      "taxonomy": {
+        "gq": "transformation",
+        "content_type": "section_cutting",
+        "ability": "E",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
       "id": "bppp_stacked_transfer_lattice_o04",
       "name": "B+++04 · 上下层转移格",
       "focus": "lower midplane plus roof section transfer lattice",
@@ -7618,6 +8650,350 @@
         }
       ],
       "exam_note": "比普通上下层转移格多加入屋顶侧面、底座侧面和跨层投影面互动。",
+      "family10_orientation": 3,
+      "taxonomy": {
+        "gq": "transformation",
+        "content_type": "section_cutting",
+        "ability": "E",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
+      "id": "bppp_dense_stacked_point_web_o04",
+      "name": "B+++04 · 密集组合体点网",
+      "focus": "dense stacked body point web",
+      "aux_points": {
+        "E": [
+          -1.525,
+          0.635,
+          0.925
+        ],
+        "F": [
+          -1.525,
+          0.635,
+          -0.925
+        ],
+        "G": [
+          1.525,
+          0.635,
+          -0.925
+        ],
+        "H": [
+          1.525,
+          0.635,
+          0.925
+        ],
+        "P": [
+          -0.777,
+          2.065,
+          0.503
+        ],
+        "Q": [
+          -0.777,
+          2.065,
+          -0.423
+        ],
+        "R": [
+          0.747,
+          2.065,
+          -0.423
+        ],
+        "T": [
+          0.747,
+          2.065,
+          0.503
+        ],
+        "X": [
+          0.0,
+          0.635,
+          0.0
+        ],
+        "Y": [
+          -0.015,
+          2.065,
+          0.04
+        ],
+        "L": [
+          -1.525,
+          0.635,
+          0.0
+        ],
+        "K": [
+          -0.777,
+          2.065,
+          0.04
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "E",
+            "G"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "F",
+            "H"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "R"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "T"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "E",
+            "P"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "F",
+            "Q"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "G",
+            "R"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "H",
+            "T"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "K"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "X"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "K",
+            "Y"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "E",
+            "F"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "D1",
+            "A1"
+          ],
+          "color": "#111111",
+          "dashed": false,
+          "opacity": 0.72,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "D1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.35,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "A1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.35,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "E",
+            "F",
+            "G",
+            "H"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.09,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R",
+            "T"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.1,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "E",
+            "F",
+            "Q",
+            "P"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.06,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "D1",
+            "A1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.09,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "D",
+            "A",
+            "A1",
+            "D1"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "L",
+            "K",
+            "Y",
+            "X"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.06,
+          "edge_color": "#d9480f",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "composite_section",
+          "answer": "dense stacked point web"
+        }
+      ],
+      "exam_note": "组合体高档图增加下层中点、屋顶中点和跨层连接，强调上下两个主体的共同结构。",
       "family10_orientation": 3,
       "taxonomy": {
         "gq": "transformation",
@@ -8162,6 +9538,350 @@
     },
     {
       "level": "B+++",
+      "id": "bppp_dense_stacked_point_web_o05",
+      "name": "B+++05 · 密集组合体点网",
+      "focus": "dense stacked body point web",
+      "aux_points": {
+        "E": [
+          -1.525,
+          0.635,
+          -0.925
+        ],
+        "F": [
+          -1.525,
+          0.635,
+          0.925
+        ],
+        "G": [
+          1.525,
+          0.635,
+          0.925
+        ],
+        "H": [
+          1.525,
+          0.635,
+          -0.925
+        ],
+        "P": [
+          -0.777,
+          2.065,
+          -0.423
+        ],
+        "Q": [
+          -0.777,
+          2.065,
+          0.503
+        ],
+        "R": [
+          0.747,
+          2.065,
+          0.503
+        ],
+        "T": [
+          0.747,
+          2.065,
+          -0.423
+        ],
+        "X": [
+          0.0,
+          0.635,
+          0.0
+        ],
+        "Y": [
+          -0.015,
+          2.065,
+          0.04
+        ],
+        "L": [
+          -1.525,
+          0.635,
+          0.0
+        ],
+        "K": [
+          -0.777,
+          2.065,
+          0.04
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "E",
+            "G"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "F",
+            "H"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "R"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "T"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "E",
+            "P"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "F",
+            "Q"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "G",
+            "R"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "H",
+            "T"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "K"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "X"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "K",
+            "Y"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "E",
+            "F"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A1",
+            "D1"
+          ],
+          "color": "#111111",
+          "dashed": false,
+          "opacity": 0.72,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "A1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.35,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "D1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.35,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "E",
+            "F",
+            "G",
+            "H"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.09,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R",
+            "T"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.1,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "E",
+            "F",
+            "Q",
+            "P"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.06,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "A1",
+            "D1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.09,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A",
+            "D",
+            "D1",
+            "A1"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "L",
+            "K",
+            "Y",
+            "X"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.06,
+          "edge_color": "#d9480f",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "composite_section",
+          "answer": "dense stacked point web"
+        }
+      ],
+      "exam_note": "组合体高档图增加下层中点、屋顶中点和跨层连接，强调上下两个主体的共同结构。",
+      "family10_orientation": 4,
+      "taxonomy": {
+        "gq": "transformation",
+        "content_type": "section_cutting",
+        "ability": "E",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
       "id": "bppp_stacked_transfer_lattice_o06",
       "name": "B+++06 · 上下层转移格",
       "focus": "lower midplane plus roof section transfer lattice",
@@ -8684,6 +10404,350 @@
         }
       ],
       "exam_note": "比普通上下层转移格多加入屋顶侧面、底座侧面和跨层投影面互动。",
+      "family10_orientation": 5,
+      "taxonomy": {
+        "gq": "transformation",
+        "content_type": "section_cutting",
+        "ability": "E",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
+      "id": "bppp_dense_stacked_point_web_o06",
+      "name": "B+++06 · 密集组合体点网",
+      "focus": "dense stacked body point web",
+      "aux_points": {
+        "E": [
+          1.525,
+          0.635,
+          -0.925
+        ],
+        "F": [
+          -1.525,
+          0.635,
+          -0.925
+        ],
+        "G": [
+          -1.525,
+          0.635,
+          0.925
+        ],
+        "H": [
+          1.525,
+          0.635,
+          0.925
+        ],
+        "P": [
+          0.747,
+          2.065,
+          -0.423
+        ],
+        "Q": [
+          -0.777,
+          2.065,
+          -0.423
+        ],
+        "R": [
+          -0.777,
+          2.065,
+          0.503
+        ],
+        "T": [
+          0.747,
+          2.065,
+          0.503
+        ],
+        "X": [
+          0.0,
+          0.635,
+          0.0
+        ],
+        "Y": [
+          -0.015,
+          2.065,
+          0.04
+        ],
+        "L": [
+          0.0,
+          0.635,
+          -0.925
+        ],
+        "K": [
+          -0.015,
+          2.065,
+          -0.423
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "E",
+            "G"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "F",
+            "H"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "R"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "T"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "E",
+            "P"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "F",
+            "Q"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "G",
+            "R"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "H",
+            "T"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "K"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "X"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "K",
+            "Y"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "E",
+            "F"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B1",
+            "A1"
+          ],
+          "color": "#111111",
+          "dashed": false,
+          "opacity": 0.72,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "B1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.35,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "A1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.35,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "E",
+            "F",
+            "G",
+            "H"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.09,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R",
+            "T"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.1,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "E",
+            "F",
+            "Q",
+            "P"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.06,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "B1",
+            "A1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.09,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "B",
+            "A",
+            "A1",
+            "B1"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "L",
+            "K",
+            "Y",
+            "X"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.06,
+          "edge_color": "#d9480f",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "composite_section",
+          "answer": "dense stacked point web"
+        }
+      ],
+      "exam_note": "组合体高档图增加下层中点、屋顶中点和跨层连接，强调上下两个主体的共同结构。",
       "family10_orientation": 5,
       "taxonomy": {
         "gq": "transformation",
@@ -9228,6 +11292,350 @@
     },
     {
       "level": "B+++",
+      "id": "bppp_dense_stacked_point_web_o07",
+      "name": "B+++07 · 密集组合体点网",
+      "focus": "dense stacked body point web",
+      "aux_points": {
+        "E": [
+          1.525,
+          0.635,
+          0.925
+        ],
+        "F": [
+          1.525,
+          0.635,
+          -0.925
+        ],
+        "G": [
+          -1.525,
+          0.635,
+          -0.925
+        ],
+        "H": [
+          -1.525,
+          0.635,
+          0.925
+        ],
+        "P": [
+          0.747,
+          2.065,
+          0.503
+        ],
+        "Q": [
+          0.747,
+          2.065,
+          -0.423
+        ],
+        "R": [
+          -0.777,
+          2.065,
+          -0.423
+        ],
+        "T": [
+          -0.777,
+          2.065,
+          0.503
+        ],
+        "X": [
+          0.0,
+          0.635,
+          0.0
+        ],
+        "Y": [
+          -0.015,
+          2.065,
+          0.04
+        ],
+        "L": [
+          1.525,
+          0.635,
+          0.0
+        ],
+        "K": [
+          0.747,
+          2.065,
+          0.04
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "E",
+            "G"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "F",
+            "H"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "R"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "T"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "E",
+            "P"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "F",
+            "Q"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "G",
+            "R"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "H",
+            "T"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "K"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "X"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "K",
+            "Y"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "E",
+            "F"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "C1",
+            "B1"
+          ],
+          "color": "#111111",
+          "dashed": false,
+          "opacity": 0.72,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "C1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.35,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "B1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.35,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "E",
+            "F",
+            "G",
+            "H"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.09,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R",
+            "T"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.1,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "E",
+            "F",
+            "Q",
+            "P"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.06,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "C1",
+            "B1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.09,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "C",
+            "B",
+            "B1",
+            "C1"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "L",
+            "K",
+            "Y",
+            "X"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.06,
+          "edge_color": "#d9480f",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "composite_section",
+          "answer": "dense stacked point web"
+        }
+      ],
+      "exam_note": "组合体高档图增加下层中点、屋顶中点和跨层连接，强调上下两个主体的共同结构。",
+      "family10_orientation": 6,
+      "taxonomy": {
+        "gq": "transformation",
+        "content_type": "section_cutting",
+        "ability": "E",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
       "id": "bppp_stacked_transfer_lattice_o08",
       "name": "B+++08 · 上下层转移格",
       "focus": "lower midplane plus roof section transfer lattice",
@@ -9750,6 +12158,350 @@
         }
       ],
       "exam_note": "比普通上下层转移格多加入屋顶侧面、底座侧面和跨层投影面互动。",
+      "family10_orientation": 7,
+      "taxonomy": {
+        "gq": "transformation",
+        "content_type": "section_cutting",
+        "ability": "E",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
+      "id": "bppp_dense_stacked_point_web_o08",
+      "name": "B+++08 · 密集组合体点网",
+      "focus": "dense stacked body point web",
+      "aux_points": {
+        "E": [
+          -1.525,
+          0.635,
+          0.925
+        ],
+        "F": [
+          1.525,
+          0.635,
+          0.925
+        ],
+        "G": [
+          1.525,
+          0.635,
+          -0.925
+        ],
+        "H": [
+          -1.525,
+          0.635,
+          -0.925
+        ],
+        "P": [
+          -0.777,
+          2.065,
+          0.503
+        ],
+        "Q": [
+          0.747,
+          2.065,
+          0.503
+        ],
+        "R": [
+          0.747,
+          2.065,
+          -0.423
+        ],
+        "T": [
+          -0.777,
+          2.065,
+          -0.423
+        ],
+        "X": [
+          0.0,
+          0.635,
+          0.0
+        ],
+        "Y": [
+          -0.015,
+          2.065,
+          0.04
+        ],
+        "L": [
+          0.0,
+          0.635,
+          0.925
+        ],
+        "K": [
+          -0.015,
+          2.065,
+          0.503
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "E",
+            "G"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "F",
+            "H"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "R"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "T"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "E",
+            "P"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "F",
+            "Q"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "G",
+            "R"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "H",
+            "T"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "K"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "X"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "K",
+            "Y"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "E",
+            "F"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "D1",
+            "C1"
+          ],
+          "color": "#111111",
+          "dashed": false,
+          "opacity": 0.72,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "D1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.35,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "C1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.35,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "E",
+            "F",
+            "G",
+            "H"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.09,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R",
+            "T"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.1,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "E",
+            "F",
+            "Q",
+            "P"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.06,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "D1",
+            "C1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.09,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "D",
+            "C",
+            "C1",
+            "D1"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "L",
+            "K",
+            "Y",
+            "X"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.06,
+          "edge_color": "#d9480f",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "composite_section",
+          "answer": "dense stacked point web"
+        }
+      ],
+      "exam_note": "组合体高档图增加下层中点、屋顶中点和跨层连接，强调上下两个主体的共同结构。",
       "family10_orientation": 7,
       "taxonomy": {
         "gq": "transformation",

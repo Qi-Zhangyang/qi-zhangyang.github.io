@@ -1,14 +1,14 @@
 {
   "title": "family_002 · 偏顶四棱锥",
   "source_image": "./assets/family10/family_002.svg",
-  "quality_mode": "bplusplusplus_search_rules",
+  "quality_mode": "dense_family10_rules",
   "family10_rule_workflow": {
     "contract": "One fixed representative base_geometry per geometry family. All variants only change auxiliary overlays.",
     "levels": {
       "B": "many conservative witnesses on the same base",
       "B+": "many roleful auxiliary-face constructions on the same base",
       "B++": "many two-layer projection, hinge, section, or multi-face interaction constructions on the same base",
-      "B+++": "many dense multi-face, perpendicular-style projection, transfer-lattice, or stacked-relation constructions on the same base"
+      "B+++": "many dense multi-face, perpendicular-style projection, transfer-lattice, stacked-relation, or extra-point web constructions on the same base"
     },
     "generation": "deterministic rule templates enumerated across orientations; no model call"
   },
@@ -5472,6 +5472,347 @@
     },
     {
       "level": "B+++",
+      "id": "bppp_dense_adjacent_face_point_web_o01",
+      "name": "B+++01 · 密集相邻面点网",
+      "focus": "dense adjacent side-face and section point web",
+      "aux_points": {
+        "P": [
+          -0.745,
+          1.225,
+          -0.575
+        ],
+        "Q": [
+          0.605,
+          1.225,
+          -0.575
+        ],
+        "R": [
+          0.605,
+          1.225,
+          0.435
+        ],
+        "T": [
+          -0.745,
+          1.225,
+          0.435
+        ],
+        "O": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "M": [
+          0.0,
+          0.0,
+          -1.01
+        ],
+        "N": [
+          1.35,
+          0.0,
+          0.0
+        ],
+        "X": [
+          -0.047,
+          0.817,
+          -0.72
+        ],
+        "Y": [
+          0.853,
+          0.817,
+          -0.047
+        ],
+        "H": [
+          -0.07,
+          1.225,
+          -0.07
+        ],
+        "L": [
+          -0.07,
+          1.225,
+          -0.575
+        ],
+        "K": [
+          -0.07,
+          1.225,
+          0.435
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "S",
+            "O"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "N"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "H",
+            "Q"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "P"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "Q"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "K"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "O"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "K",
+            "H"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "R"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "T"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A",
+            "C"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.7,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "S",
+            "A",
+            "B"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.08,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "B",
+            "C"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.08,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "M",
+            "N"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.07,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R",
+            "T"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.09,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "L",
+            "K",
+            "H"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.06,
+          "edge_color": "#d9480f",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "dihedral_hinge",
+          "answer": "dense adjacent side-face point web"
+        }
+      ],
+      "exam_note": "在二面角相邻面链上加两处截面中点和投影脚连接，形成更密的可读辅助点组。",
+      "family10_orientation": 0,
+      "taxonomy": {
+        "gq": "measurement",
+        "content_type": "angle",
+        "ability": "C",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
       "id": "bppp_pyramid_double_section_lattice_o02",
       "name": "B+++02 · 双截面轴格",
       "focus": "two same-ratio sections and diagonal transfer planes",
@@ -5992,6 +6333,347 @@
         }
       ],
       "exam_note": "两张相邻侧面、中截面、底面和顶点投影链同时互动。",
+      "family10_orientation": 1,
+      "taxonomy": {
+        "gq": "measurement",
+        "content_type": "angle",
+        "ability": "C",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
+      "id": "bppp_dense_adjacent_face_point_web_o02",
+      "name": "B+++02 · 密集相邻面点网",
+      "focus": "dense adjacent side-face and section point web",
+      "aux_points": {
+        "P": [
+          0.605,
+          1.225,
+          -0.575
+        ],
+        "Q": [
+          0.605,
+          1.225,
+          0.435
+        ],
+        "R": [
+          -0.745,
+          1.225,
+          0.435
+        ],
+        "T": [
+          -0.745,
+          1.225,
+          -0.575
+        ],
+        "O": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "M": [
+          1.35,
+          0.0,
+          0.0
+        ],
+        "N": [
+          0.0,
+          0.0,
+          1.01
+        ],
+        "X": [
+          0.853,
+          0.817,
+          -0.047
+        ],
+        "Y": [
+          -0.047,
+          0.817,
+          0.627
+        ],
+        "H": [
+          -0.07,
+          1.225,
+          -0.07
+        ],
+        "L": [
+          0.605,
+          1.225,
+          -0.07
+        ],
+        "K": [
+          -0.745,
+          1.225,
+          -0.07
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "S",
+            "O"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "N"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "H",
+            "Q"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "P"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "Q"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "K"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "O"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "K",
+            "H"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "R"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "T"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B",
+            "D"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.7,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "S",
+            "B",
+            "C"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.08,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "C",
+            "D"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.08,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "M",
+            "N"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.07,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R",
+            "T"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.09,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "B",
+            "C",
+            "D",
+            "A"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "L",
+            "K",
+            "H"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.06,
+          "edge_color": "#d9480f",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "dihedral_hinge",
+          "answer": "dense adjacent side-face point web"
+        }
+      ],
+      "exam_note": "在二面角相邻面链上加两处截面中点和投影脚连接，形成更密的可读辅助点组。",
       "family10_orientation": 1,
       "taxonomy": {
         "gq": "measurement",
@@ -6534,6 +7216,347 @@
     },
     {
       "level": "B+++",
+      "id": "bppp_dense_adjacent_face_point_web_o03",
+      "name": "B+++03 · 密集相邻面点网",
+      "focus": "dense adjacent side-face and section point web",
+      "aux_points": {
+        "P": [
+          0.605,
+          1.225,
+          0.435
+        ],
+        "Q": [
+          -0.745,
+          1.225,
+          0.435
+        ],
+        "R": [
+          -0.745,
+          1.225,
+          -0.575
+        ],
+        "T": [
+          0.605,
+          1.225,
+          -0.575
+        ],
+        "O": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "M": [
+          0.0,
+          0.0,
+          1.01
+        ],
+        "N": [
+          -1.35,
+          0.0,
+          0.0
+        ],
+        "X": [
+          -0.047,
+          0.817,
+          0.627
+        ],
+        "Y": [
+          -0.947,
+          0.817,
+          -0.047
+        ],
+        "H": [
+          -0.07,
+          1.225,
+          -0.07
+        ],
+        "L": [
+          -0.07,
+          1.225,
+          0.435
+        ],
+        "K": [
+          -0.07,
+          1.225,
+          -0.575
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "S",
+            "O"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "N"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "H",
+            "Q"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "P"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "Q"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "K"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "O"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "K",
+            "H"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "R"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "T"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "C",
+            "A"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.7,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "S",
+            "C",
+            "D"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.08,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "D",
+            "A"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.08,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "M",
+            "N"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.07,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R",
+            "T"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.09,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "C",
+            "D",
+            "A",
+            "B"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "L",
+            "K",
+            "H"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.06,
+          "edge_color": "#d9480f",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "dihedral_hinge",
+          "answer": "dense adjacent side-face point web"
+        }
+      ],
+      "exam_note": "在二面角相邻面链上加两处截面中点和投影脚连接，形成更密的可读辅助点组。",
+      "family10_orientation": 2,
+      "taxonomy": {
+        "gq": "measurement",
+        "content_type": "angle",
+        "ability": "C",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
       "id": "bppp_pyramid_double_section_lattice_o04",
       "name": "B+++04 · 双截面轴格",
       "focus": "two same-ratio sections and diagonal transfer planes",
@@ -7054,6 +8077,347 @@
         }
       ],
       "exam_note": "两张相邻侧面、中截面、底面和顶点投影链同时互动。",
+      "family10_orientation": 3,
+      "taxonomy": {
+        "gq": "measurement",
+        "content_type": "angle",
+        "ability": "C",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
+      "id": "bppp_dense_adjacent_face_point_web_o04",
+      "name": "B+++04 · 密集相邻面点网",
+      "focus": "dense adjacent side-face and section point web",
+      "aux_points": {
+        "P": [
+          -0.745,
+          1.225,
+          0.435
+        ],
+        "Q": [
+          -0.745,
+          1.225,
+          -0.575
+        ],
+        "R": [
+          0.605,
+          1.225,
+          -0.575
+        ],
+        "T": [
+          0.605,
+          1.225,
+          0.435
+        ],
+        "O": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "M": [
+          -1.35,
+          0.0,
+          0.0
+        ],
+        "N": [
+          0.0,
+          0.0,
+          -1.01
+        ],
+        "X": [
+          -0.947,
+          0.817,
+          -0.047
+        ],
+        "Y": [
+          -0.047,
+          0.817,
+          -0.72
+        ],
+        "H": [
+          -0.07,
+          1.225,
+          -0.07
+        ],
+        "L": [
+          -0.745,
+          1.225,
+          -0.07
+        ],
+        "K": [
+          0.605,
+          1.225,
+          -0.07
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "S",
+            "O"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "N"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "H",
+            "Q"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "P"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "Q"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "K"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "O"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "K",
+            "H"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "R"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "T"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "D",
+            "B"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.7,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "S",
+            "D",
+            "A"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.08,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "A",
+            "B"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.08,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "M",
+            "N"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.07,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R",
+            "T"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.09,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "D",
+            "A",
+            "B",
+            "C"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "L",
+            "K",
+            "H"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.06,
+          "edge_color": "#d9480f",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "dihedral_hinge",
+          "answer": "dense adjacent side-face point web"
+        }
+      ],
+      "exam_note": "在二面角相邻面链上加两处截面中点和投影脚连接，形成更密的可读辅助点组。",
       "family10_orientation": 3,
       "taxonomy": {
         "gq": "measurement",
@@ -7596,6 +8960,347 @@
     },
     {
       "level": "B+++",
+      "id": "bppp_dense_adjacent_face_point_web_o05",
+      "name": "B+++05 · 密集相邻面点网",
+      "focus": "dense adjacent side-face and section point web",
+      "aux_points": {
+        "P": [
+          -0.745,
+          1.225,
+          -0.575
+        ],
+        "Q": [
+          -0.745,
+          1.225,
+          0.435
+        ],
+        "R": [
+          0.605,
+          1.225,
+          0.435
+        ],
+        "T": [
+          0.605,
+          1.225,
+          -0.575
+        ],
+        "O": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "M": [
+          -1.35,
+          0.0,
+          0.0
+        ],
+        "N": [
+          0.0,
+          0.0,
+          1.01
+        ],
+        "X": [
+          -0.947,
+          0.817,
+          -0.047
+        ],
+        "Y": [
+          -0.047,
+          0.817,
+          0.627
+        ],
+        "H": [
+          -0.07,
+          1.225,
+          -0.07
+        ],
+        "L": [
+          -0.745,
+          1.225,
+          -0.07
+        ],
+        "K": [
+          0.605,
+          1.225,
+          -0.07
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "S",
+            "O"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "N"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "H",
+            "Q"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "P"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "Q"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "K"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "O"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "K",
+            "H"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "R"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "T"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A",
+            "C"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.7,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "S",
+            "A",
+            "D"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.08,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "D",
+            "C"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.08,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "M",
+            "N"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.07,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R",
+            "T"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.09,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A",
+            "D",
+            "C",
+            "B"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "L",
+            "K",
+            "H"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.06,
+          "edge_color": "#d9480f",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "dihedral_hinge",
+          "answer": "dense adjacent side-face point web"
+        }
+      ],
+      "exam_note": "在二面角相邻面链上加两处截面中点和投影脚连接，形成更密的可读辅助点组。",
+      "family10_orientation": 4,
+      "taxonomy": {
+        "gq": "measurement",
+        "content_type": "angle",
+        "ability": "C",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
       "id": "bppp_pyramid_double_section_lattice_o06",
       "name": "B+++06 · 双截面轴格",
       "focus": "two same-ratio sections and diagonal transfer planes",
@@ -8116,6 +9821,347 @@
         }
       ],
       "exam_note": "两张相邻侧面、中截面、底面和顶点投影链同时互动。",
+      "family10_orientation": 5,
+      "taxonomy": {
+        "gq": "measurement",
+        "content_type": "angle",
+        "ability": "C",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
+      "id": "bppp_dense_adjacent_face_point_web_o06",
+      "name": "B+++06 · 密集相邻面点网",
+      "focus": "dense adjacent side-face and section point web",
+      "aux_points": {
+        "P": [
+          0.605,
+          1.225,
+          -0.575
+        ],
+        "Q": [
+          -0.745,
+          1.225,
+          -0.575
+        ],
+        "R": [
+          -0.745,
+          1.225,
+          0.435
+        ],
+        "T": [
+          0.605,
+          1.225,
+          0.435
+        ],
+        "O": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "M": [
+          0.0,
+          0.0,
+          -1.01
+        ],
+        "N": [
+          -1.35,
+          0.0,
+          0.0
+        ],
+        "X": [
+          -0.047,
+          0.817,
+          -0.72
+        ],
+        "Y": [
+          -0.947,
+          0.817,
+          -0.047
+        ],
+        "H": [
+          -0.07,
+          1.225,
+          -0.07
+        ],
+        "L": [
+          -0.07,
+          1.225,
+          -0.575
+        ],
+        "K": [
+          -0.07,
+          1.225,
+          0.435
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "S",
+            "O"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "N"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "H",
+            "Q"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "P"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "Q"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "K"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "O"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "K",
+            "H"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "R"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "T"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B",
+            "D"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.7,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "S",
+            "B",
+            "A"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.08,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "A",
+            "D"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.08,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "M",
+            "N"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.07,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R",
+            "T"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.09,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "B",
+            "A",
+            "D",
+            "C"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "L",
+            "K",
+            "H"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.06,
+          "edge_color": "#d9480f",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "dihedral_hinge",
+          "answer": "dense adjacent side-face point web"
+        }
+      ],
+      "exam_note": "在二面角相邻面链上加两处截面中点和投影脚连接，形成更密的可读辅助点组。",
       "family10_orientation": 5,
       "taxonomy": {
         "gq": "measurement",
@@ -8658,6 +10704,347 @@
     },
     {
       "level": "B+++",
+      "id": "bppp_dense_adjacent_face_point_web_o07",
+      "name": "B+++07 · 密集相邻面点网",
+      "focus": "dense adjacent side-face and section point web",
+      "aux_points": {
+        "P": [
+          0.605,
+          1.225,
+          0.435
+        ],
+        "Q": [
+          0.605,
+          1.225,
+          -0.575
+        ],
+        "R": [
+          -0.745,
+          1.225,
+          -0.575
+        ],
+        "T": [
+          -0.745,
+          1.225,
+          0.435
+        ],
+        "O": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "M": [
+          1.35,
+          0.0,
+          0.0
+        ],
+        "N": [
+          0.0,
+          0.0,
+          -1.01
+        ],
+        "X": [
+          0.853,
+          0.817,
+          -0.047
+        ],
+        "Y": [
+          -0.047,
+          0.817,
+          -0.72
+        ],
+        "H": [
+          -0.07,
+          1.225,
+          -0.07
+        ],
+        "L": [
+          0.605,
+          1.225,
+          -0.07
+        ],
+        "K": [
+          -0.745,
+          1.225,
+          -0.07
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "S",
+            "O"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "N"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "H",
+            "Q"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "P"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "Q"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "K"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "O"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "K",
+            "H"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "R"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "T"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "C",
+            "A"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.7,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "S",
+            "C",
+            "B"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.08,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "B",
+            "A"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.08,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "M",
+            "N"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.07,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R",
+            "T"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.09,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "C",
+            "B",
+            "A",
+            "D"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "L",
+            "K",
+            "H"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.06,
+          "edge_color": "#d9480f",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "dihedral_hinge",
+          "answer": "dense adjacent side-face point web"
+        }
+      ],
+      "exam_note": "在二面角相邻面链上加两处截面中点和投影脚连接，形成更密的可读辅助点组。",
+      "family10_orientation": 6,
+      "taxonomy": {
+        "gq": "measurement",
+        "content_type": "angle",
+        "ability": "C",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
       "id": "bppp_pyramid_double_section_lattice_o08",
       "name": "B+++08 · 双截面轴格",
       "focus": "two same-ratio sections and diagonal transfer planes",
@@ -9178,6 +11565,347 @@
         }
       ],
       "exam_note": "两张相邻侧面、中截面、底面和顶点投影链同时互动。",
+      "family10_orientation": 7,
+      "taxonomy": {
+        "gq": "measurement",
+        "content_type": "angle",
+        "ability": "C",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
+      "id": "bppp_dense_adjacent_face_point_web_o08",
+      "name": "B+++08 · 密集相邻面点网",
+      "focus": "dense adjacent side-face and section point web",
+      "aux_points": {
+        "P": [
+          -0.745,
+          1.225,
+          0.435
+        ],
+        "Q": [
+          0.605,
+          1.225,
+          0.435
+        ],
+        "R": [
+          0.605,
+          1.225,
+          -0.575
+        ],
+        "T": [
+          -0.745,
+          1.225,
+          -0.575
+        ],
+        "O": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "M": [
+          0.0,
+          0.0,
+          1.01
+        ],
+        "N": [
+          1.35,
+          0.0,
+          0.0
+        ],
+        "X": [
+          -0.047,
+          0.817,
+          0.627
+        ],
+        "Y": [
+          0.853,
+          0.817,
+          -0.047
+        ],
+        "H": [
+          -0.07,
+          1.225,
+          -0.07
+        ],
+        "L": [
+          -0.07,
+          1.225,
+          0.435
+        ],
+        "K": [
+          -0.07,
+          1.225,
+          -0.575
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "S",
+            "O"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "S",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "N"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "H",
+            "Q"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "P"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "Q"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "K"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "L",
+            "O"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "K",
+            "H"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "R"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "T"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "D",
+            "B"
+          ],
+          "color": "#d97400",
+          "dashed": true,
+          "opacity": 0.7,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "S",
+            "D",
+            "C"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.08,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "C",
+            "B"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.08,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "S",
+            "M",
+            "N"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.07,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R",
+            "T"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.09,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "D",
+            "C",
+            "B",
+            "A"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "L",
+            "K",
+            "H"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.06,
+          "edge_color": "#d9480f",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "dihedral_hinge",
+          "answer": "dense adjacent side-face point web"
+        }
+      ],
+      "exam_note": "在二面角相邻面链上加两处截面中点和投影脚连接，形成更密的可读辅助点组。",
       "family10_orientation": 7,
       "taxonomy": {
         "gq": "measurement",
