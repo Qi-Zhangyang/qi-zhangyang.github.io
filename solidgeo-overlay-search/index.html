@@ -119,6 +119,9 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
     }
+    .section-block {
+      margin-top: 34px;
+    }
     .card {
       border: 1px solid var(--line);
       border-radius: 8px;
@@ -228,25 +231,25 @@
         <p class="lead">
           这是一个基于规则搜索的立体几何增广口子。底层几何保持不变；
           辅助点、辅助线、辅助面由构造语法枚举，再按可读性、考题价值和多样性打分，
-          最后选出不同类型的辅助构造变体。
+          最后选出不同类型的辅助构造变体。这里同时展示保守版 B 和更复杂的 B+。
         </p>
         <div class="stats" aria-label="概要">
           <div class="stat"><strong>17</strong><span>候选辅助构造</span></div>
-          <div class="stat"><strong>4</strong><span>选中构造类型</span></div>
-          <div class="stat"><strong>1</strong><span>固定底层几何</span></div>
+          <div class="stat"><strong>8</strong><span>公开展示变体</span></div>
+          <div class="stat"><strong>2</strong><span>规则复杂度模式</span></div>
         </div>
       </div>
-      <img src="assets/midpoint-drop.png" alt="四棱锥中点投影辅助构造">
+      <img src="assets/bplus-section-diagonals.png" alt="四棱锥 B+ 截面内辅助线构造">
     </div>
   </header>
 
   <main>
     <section class="wrap">
       <div class="section-title">
-        <h2>选中的辅助构造</h2>
+        <h2>B：保守版辅助构造</h2>
         <p>
           这组例子覆盖投影距离、截面构造、二面角辅助标记和异面直线关系，
-          同时控制图面复杂度，方便后续做视觉问答数据增广。
+          每个变体控制在较轻的点线面预算内，方便作为稳定 baseline。
         </p>
       </div>
       <div class="grid">
@@ -280,6 +283,50 @@
             <span class="eyebrow">直线关系</span>
             <h3>侧棱点异面线</h3>
             <p>加入侧棱点和关系线，在不明显增加拥挤感的前提下暴露异面直线推理。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap section-block">
+      <div class="section-title">
+        <h2>B+：复杂但有角色的辅助构造</h2>
+        <p>
+          B+ 放宽辅助点线面预算，但要求每个辅助面都有明确角色：
+          目标面、参考面、截面或构造平面；新增线也尽量落在这些辅助面内。
+        </p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <img src="assets/bplus-section-diagonals.png" alt="截面内对角线和截面中心辅助构造">
+          <div class="card-body">
+            <span class="eyebrow">截面内辅助线</span>
+            <h3>截面对角线</h3>
+            <p>在平行截面内加入两条对角线和截面中心，让截面形状、中心和投影关系更清楚。</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/bplus-dihedral-slice.png" alt="BC 二面角垂直截面辅助构造">
+          <div class="card-body">
+            <span class="eyebrow">二面角构造面</span>
+            <h3>BC 垂直截面</h3>
+            <p>同时显示底面、侧面和垂直构造面，把二面角转化为构造面内的两条角线。</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/bplus-point-face-projection.png" alt="点到侧面投影距离辅助构造">
+          <div class="card-body">
+            <span class="eyebrow">点面距离</span>
+            <h3>侧面投影脚</h3>
+            <p>把点到侧面的距离、投影脚和局部构造平面画出来，避免只有一条孤立垂线。</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/bplus-dual-diagonal-planes.png" alt="双对角辅助面交线构造">
+          <div class="card-body">
+            <span class="eyebrow">面面关系</span>
+            <h3>双对角面交线</h3>
+            <p>用两个自然的对角辅助面展示它们的公共交线，并在面内加入连接线辅助阅读。</p>
           </div>
         </article>
       </div>
