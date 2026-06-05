@@ -7,8 +7,8 @@
     "levels": {
       "B": "many conservative witnesses on the same base",
       "B+": "many roleful auxiliary-face constructions on the same base",
-      "B++": "many two-layer projection, hinge, or section constructions on the same base",
-      "B+++": "many double-section, transfer-lattice, or stacked-relation constructions on the same base"
+      "B++": "many two-layer projection, hinge, section, or multi-face interaction constructions on the same base",
+      "B+++": "many dense multi-face, perpendicular-style projection, transfer-lattice, or stacked-relation constructions on the same base"
     },
     "generation": "deterministic rule templates enumerated across orientations; no model call"
   },
@@ -1578,6 +1578,237 @@
     },
     {
       "level": "B++",
+      "id": "bpp_complex_tri_side_median_mesh_o01",
+      "name": "B++01 · 端侧中线网",
+      "focus": "end-face median plus adjacent side-face mesh",
+      "aux_points": {
+        "P": [
+          -1.311,
+          1.085,
+          -0.84
+        ],
+        "Q": [
+          1.271,
+          1.085,
+          -0.84
+        ],
+        "R": [
+          -0.098,
+          1.085,
+          0.92
+        ],
+        "O": [
+          -0.033,
+          0.0,
+          -0.375
+        ],
+        "O1": [
+          -0.059,
+          2.17,
+          -0.132
+        ],
+        "M": [
+          0.0,
+          0.0,
+          -1.125
+        ],
+        "N": [
+          -0.04,
+          2.17,
+          -0.556
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "O",
+            "O1"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "C",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "C1",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O1",
+            "N"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "R"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "R",
+            "P"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A",
+            "A1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B",
+            "B1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "C",
+            "C1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "A",
+            "B",
+            "C"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A1",
+            "B1",
+            "C1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.05,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.1,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "C",
+            "M",
+            "N",
+            "C1"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.08,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "section",
+          "answer": "CMNC1"
+        }
+      ],
+      "exam_note": "两个端面、三角中截面和侧向中线剖面同时出现。",
+      "family10_orientation": 0,
+      "taxonomy": {
+        "gq": "transformation",
+        "content_type": "section_cutting",
+        "ability": "E",
+        "difficulty": "L2",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B++",
       "id": "bpp_tri_median_plane_o02",
       "name": "B++02 · 中线剖面",
       "focus": "median section plus center transfer",
@@ -1721,6 +1952,237 @@
         }
       ],
       "exam_note": "中线剖面再接端面中心轴，形成两层可读结构。",
+      "family10_orientation": 1,
+      "taxonomy": {
+        "gq": "transformation",
+        "content_type": "section_cutting",
+        "ability": "E",
+        "difficulty": "L2",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B++",
+      "id": "bpp_complex_tri_side_median_mesh_o02",
+      "name": "B++02 · 端侧中线网",
+      "focus": "end-face median plus adjacent side-face mesh",
+      "aux_points": {
+        "P": [
+          1.271,
+          1.085,
+          -0.84
+        ],
+        "Q": [
+          -0.098,
+          1.085,
+          0.92
+        ],
+        "R": [
+          -1.311,
+          1.085,
+          -0.84
+        ],
+        "O": [
+          -0.033,
+          0.0,
+          -0.375
+        ],
+        "O1": [
+          -0.059,
+          2.17,
+          -0.132
+        ],
+        "M": [
+          0.775,
+          0.0,
+          0.0
+        ],
+        "N": [
+          0.398,
+          2.17,
+          0.08
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "O",
+            "O1"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A1",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O1",
+            "N"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "R"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "R",
+            "P"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B",
+            "B1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "C",
+            "C1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A",
+            "A1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "B",
+            "C",
+            "A"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "B1",
+            "C1",
+            "A1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.05,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.1,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A",
+            "M",
+            "N",
+            "A1"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.08,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "section",
+          "answer": "AMNA1"
+        }
+      ],
+      "exam_note": "两个端面、三角中截面和侧向中线剖面同时出现。",
       "family10_orientation": 1,
       "taxonomy": {
         "gq": "transformation",
@@ -1886,6 +2348,237 @@
     },
     {
       "level": "B++",
+      "id": "bpp_complex_tri_side_median_mesh_o03",
+      "name": "B++03 · 端侧中线网",
+      "focus": "end-face median plus adjacent side-face mesh",
+      "aux_points": {
+        "P": [
+          -0.098,
+          1.085,
+          0.92
+        ],
+        "Q": [
+          -1.311,
+          1.085,
+          -0.84
+        ],
+        "R": [
+          1.271,
+          1.085,
+          -0.84
+        ],
+        "O": [
+          -0.033,
+          0.0,
+          -0.375
+        ],
+        "O1": [
+          -0.059,
+          2.17,
+          -0.132
+        ],
+        "M": [
+          -0.875,
+          0.0,
+          0.0
+        ],
+        "N": [
+          -0.534,
+          2.17,
+          0.08
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "O",
+            "O1"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B1",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O1",
+            "N"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "R"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "R",
+            "P"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "C",
+            "C1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A",
+            "A1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B",
+            "B1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "C",
+            "A",
+            "B"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "C1",
+            "A1",
+            "B1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.05,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.1,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "B",
+            "M",
+            "N",
+            "B1"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.08,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "section",
+          "answer": "BMNB1"
+        }
+      ],
+      "exam_note": "两个端面、三角中截面和侧向中线剖面同时出现。",
+      "family10_orientation": 2,
+      "taxonomy": {
+        "gq": "transformation",
+        "content_type": "section_cutting",
+        "ability": "E",
+        "difficulty": "L2",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B++",
       "id": "bpp_tri_median_plane_o04",
       "name": "B++04 · 中线剖面",
       "focus": "median section plus center transfer",
@@ -2029,6 +2722,237 @@
         }
       ],
       "exam_note": "中线剖面再接端面中心轴，形成两层可读结构。",
+      "family10_orientation": 3,
+      "taxonomy": {
+        "gq": "transformation",
+        "content_type": "section_cutting",
+        "ability": "E",
+        "difficulty": "L2",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B++",
+      "id": "bpp_complex_tri_side_median_mesh_o04",
+      "name": "B++04 · 端侧中线网",
+      "focus": "end-face median plus adjacent side-face mesh",
+      "aux_points": {
+        "P": [
+          -1.311,
+          1.085,
+          -0.84
+        ],
+        "Q": [
+          -0.098,
+          1.085,
+          0.92
+        ],
+        "R": [
+          1.271,
+          1.085,
+          -0.84
+        ],
+        "O": [
+          -0.033,
+          0.0,
+          -0.375
+        ],
+        "O1": [
+          -0.059,
+          2.17,
+          -0.132
+        ],
+        "M": [
+          -0.875,
+          0.0,
+          0.0
+        ],
+        "N": [
+          -0.534,
+          2.17,
+          0.08
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "O",
+            "O1"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B1",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O1",
+            "N"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "R"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "R",
+            "P"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A",
+            "A1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "C",
+            "C1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B",
+            "B1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "A",
+            "C",
+            "B"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A1",
+            "C1",
+            "B1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.05,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.1,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "B",
+            "M",
+            "N",
+            "B1"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.08,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "section",
+          "answer": "BMNB1"
+        }
+      ],
+      "exam_note": "两个端面、三角中截面和侧向中线剖面同时出现。",
       "family10_orientation": 3,
       "taxonomy": {
         "gq": "transformation",
@@ -2194,6 +3118,237 @@
     },
     {
       "level": "B++",
+      "id": "bpp_complex_tri_side_median_mesh_o05",
+      "name": "B++05 · 端侧中线网",
+      "focus": "end-face median plus adjacent side-face mesh",
+      "aux_points": {
+        "P": [
+          1.271,
+          1.085,
+          -0.84
+        ],
+        "Q": [
+          -1.311,
+          1.085,
+          -0.84
+        ],
+        "R": [
+          -0.098,
+          1.085,
+          0.92
+        ],
+        "O": [
+          -0.033,
+          0.0,
+          -0.375
+        ],
+        "O1": [
+          -0.059,
+          2.17,
+          -0.132
+        ],
+        "M": [
+          0.0,
+          0.0,
+          -1.125
+        ],
+        "N": [
+          -0.04,
+          2.17,
+          -0.556
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "O",
+            "O1"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "C",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "C1",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O1",
+            "N"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "R"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "R",
+            "P"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B",
+            "B1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A",
+            "A1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "C",
+            "C1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "B",
+            "A",
+            "C"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "B1",
+            "A1",
+            "C1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.05,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.1,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "C",
+            "M",
+            "N",
+            "C1"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.08,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "section",
+          "answer": "CMNC1"
+        }
+      ],
+      "exam_note": "两个端面、三角中截面和侧向中线剖面同时出现。",
+      "family10_orientation": 4,
+      "taxonomy": {
+        "gq": "transformation",
+        "content_type": "section_cutting",
+        "ability": "E",
+        "difficulty": "L2",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B++",
       "id": "bpp_tri_median_plane_o06",
       "name": "B++06 · 中线剖面",
       "focus": "median section plus center transfer",
@@ -2337,6 +3492,237 @@
         }
       ],
       "exam_note": "中线剖面再接端面中心轴，形成两层可读结构。",
+      "family10_orientation": 5,
+      "taxonomy": {
+        "gq": "transformation",
+        "content_type": "section_cutting",
+        "ability": "E",
+        "difficulty": "L2",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B++",
+      "id": "bpp_complex_tri_side_median_mesh_o06",
+      "name": "B++06 · 端侧中线网",
+      "focus": "end-face median plus adjacent side-face mesh",
+      "aux_points": {
+        "P": [
+          -0.098,
+          1.085,
+          0.92
+        ],
+        "Q": [
+          1.271,
+          1.085,
+          -0.84
+        ],
+        "R": [
+          -1.311,
+          1.085,
+          -0.84
+        ],
+        "O": [
+          -0.033,
+          0.0,
+          -0.375
+        ],
+        "O1": [
+          -0.059,
+          2.17,
+          -0.132
+        ],
+        "M": [
+          0.775,
+          0.0,
+          0.0
+        ],
+        "N": [
+          0.398,
+          2.17,
+          0.08
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "O",
+            "O1"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A1",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O1",
+            "N"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "R"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "R",
+            "P"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "C",
+            "C1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B",
+            "B1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A",
+            "A1"
+          ],
+          "color": "#111111",
+          "dashed": true,
+          "opacity": 0.32,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "C",
+            "B",
+            "A"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "C1",
+            "B1",
+            "A1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.05,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.1,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A",
+            "M",
+            "N",
+            "A1"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.08,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "section",
+          "answer": "AMNA1"
+        }
+      ],
+      "exam_note": "两个端面、三角中截面和侧向中线剖面同时出现。",
       "family10_orientation": 5,
       "taxonomy": {
         "gq": "transformation",
@@ -2598,6 +3984,280 @@
     },
     {
       "level": "B+++",
+      "id": "bppp_complex_tri_face_interaction_web_o01",
+      "name": "B+++01 · 端侧面互动网",
+      "focus": "end faces, adjacent side faces, and median projection web",
+      "aux_points": {
+        "P": [
+          -1.311,
+          1.085,
+          -0.84
+        ],
+        "Q": [
+          1.271,
+          1.085,
+          -0.84
+        ],
+        "R": [
+          -0.098,
+          1.085,
+          0.92
+        ],
+        "O": [
+          -0.033,
+          0.0,
+          -0.375
+        ],
+        "O1": [
+          -0.059,
+          2.17,
+          -0.132
+        ],
+        "M": [
+          0.0,
+          0.0,
+          -1.125
+        ],
+        "N": [
+          -0.04,
+          2.17,
+          -0.556
+        ],
+        "X": [
+          -0.02,
+          1.085,
+          -0.84
+        ],
+        "Y": [
+          0.586,
+          1.085,
+          0.04
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "O",
+            "O1"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "C",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "C1",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O1",
+            "N"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "P"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "Q"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "R"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "R",
+            "P"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "A",
+            "B",
+            "C"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A1",
+            "B1",
+            "C1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.05,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.1,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A",
+            "B",
+            "B1",
+            "A1"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.08,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "C",
+            "M",
+            "N",
+            "C1"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.08,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "line_plane_angle",
+          "answer": "triangular side-face interaction web"
+        }
+      ],
+      "exam_note": "端面、侧面、中截面和中线投影一起构成更密的互动网。",
+      "family10_orientation": 0,
+      "taxonomy": {
+        "gq": "measurement",
+        "content_type": "angle",
+        "ability": "C",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
       "id": "bppp_tri_double_section_o02",
       "name": "B+++02 · 双三角截面格",
       "focus": "two triangular sections with transfer lattice",
@@ -2843,6 +4503,280 @@
         "content_type": "section_cutting",
         "ability": "E",
         "difficulty": "L2",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
+      "id": "bppp_complex_tri_face_interaction_web_o02",
+      "name": "B+++02 · 端侧面互动网",
+      "focus": "end faces, adjacent side faces, and median projection web",
+      "aux_points": {
+        "P": [
+          1.271,
+          1.085,
+          -0.84
+        ],
+        "Q": [
+          -0.098,
+          1.085,
+          0.92
+        ],
+        "R": [
+          -1.311,
+          1.085,
+          -0.84
+        ],
+        "O": [
+          -0.033,
+          0.0,
+          -0.375
+        ],
+        "O1": [
+          -0.059,
+          2.17,
+          -0.132
+        ],
+        "M": [
+          0.775,
+          0.0,
+          0.0
+        ],
+        "N": [
+          0.398,
+          2.17,
+          0.08
+        ],
+        "X": [
+          0.586,
+          1.085,
+          0.04
+        ],
+        "Y": [
+          -0.705,
+          1.085,
+          0.04
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "O",
+            "O1"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A1",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O1",
+            "N"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "P"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "Q"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "R"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "R",
+            "P"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "B",
+            "C",
+            "A"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "B1",
+            "C1",
+            "A1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.05,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.1,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "B",
+            "C",
+            "C1",
+            "B1"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.08,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A",
+            "M",
+            "N",
+            "A1"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.08,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "line_plane_angle",
+          "answer": "triangular side-face interaction web"
+        }
+      ],
+      "exam_note": "端面、侧面、中截面和中线投影一起构成更密的互动网。",
+      "family10_orientation": 1,
+      "taxonomy": {
+        "gq": "measurement",
+        "content_type": "angle",
+        "ability": "C",
+        "difficulty": "L3",
         "source": "solidgeo-benchmark-blueprint/700"
       }
     },
@@ -3098,6 +5032,280 @@
     },
     {
       "level": "B+++",
+      "id": "bppp_complex_tri_face_interaction_web_o03",
+      "name": "B+++03 · 端侧面互动网",
+      "focus": "end faces, adjacent side faces, and median projection web",
+      "aux_points": {
+        "P": [
+          -0.098,
+          1.085,
+          0.92
+        ],
+        "Q": [
+          -1.311,
+          1.085,
+          -0.84
+        ],
+        "R": [
+          1.271,
+          1.085,
+          -0.84
+        ],
+        "O": [
+          -0.033,
+          0.0,
+          -0.375
+        ],
+        "O1": [
+          -0.059,
+          2.17,
+          -0.132
+        ],
+        "M": [
+          -0.875,
+          0.0,
+          0.0
+        ],
+        "N": [
+          -0.534,
+          2.17,
+          0.08
+        ],
+        "X": [
+          -0.705,
+          1.085,
+          0.04
+        ],
+        "Y": [
+          -0.02,
+          1.085,
+          -0.84
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "O",
+            "O1"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B1",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O1",
+            "N"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "P"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "Q"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "R"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "R",
+            "P"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "C",
+            "A",
+            "B"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "C1",
+            "A1",
+            "B1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.05,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.1,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "C",
+            "A",
+            "A1",
+            "C1"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.08,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "B",
+            "M",
+            "N",
+            "B1"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.08,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "line_plane_angle",
+          "answer": "triangular side-face interaction web"
+        }
+      ],
+      "exam_note": "端面、侧面、中截面和中线投影一起构成更密的互动网。",
+      "family10_orientation": 2,
+      "taxonomy": {
+        "gq": "measurement",
+        "content_type": "angle",
+        "ability": "C",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
       "id": "bppp_tri_double_section_o04",
       "name": "B+++04 · 双三角截面格",
       "focus": "two triangular sections with transfer lattice",
@@ -3343,6 +5551,280 @@
         "content_type": "section_cutting",
         "ability": "E",
         "difficulty": "L2",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
+      "id": "bppp_complex_tri_face_interaction_web_o04",
+      "name": "B+++04 · 端侧面互动网",
+      "focus": "end faces, adjacent side faces, and median projection web",
+      "aux_points": {
+        "P": [
+          -1.311,
+          1.085,
+          -0.84
+        ],
+        "Q": [
+          -0.098,
+          1.085,
+          0.92
+        ],
+        "R": [
+          1.271,
+          1.085,
+          -0.84
+        ],
+        "O": [
+          -0.033,
+          0.0,
+          -0.375
+        ],
+        "O1": [
+          -0.059,
+          2.17,
+          -0.132
+        ],
+        "M": [
+          -0.875,
+          0.0,
+          0.0
+        ],
+        "N": [
+          -0.534,
+          2.17,
+          0.08
+        ],
+        "X": [
+          -0.705,
+          1.085,
+          0.04
+        ],
+        "Y": [
+          0.586,
+          1.085,
+          0.04
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "O",
+            "O1"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "B1",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O1",
+            "N"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "P"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "Q"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "R"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "R",
+            "P"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "A",
+            "C",
+            "B"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A1",
+            "C1",
+            "B1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.05,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.1,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A",
+            "C",
+            "C1",
+            "A1"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.08,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "B",
+            "M",
+            "N",
+            "B1"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.08,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "line_plane_angle",
+          "answer": "triangular side-face interaction web"
+        }
+      ],
+      "exam_note": "端面、侧面、中截面和中线投影一起构成更密的互动网。",
+      "family10_orientation": 3,
+      "taxonomy": {
+        "gq": "measurement",
+        "content_type": "angle",
+        "ability": "C",
+        "difficulty": "L3",
         "source": "solidgeo-benchmark-blueprint/700"
       }
     },
@@ -3598,6 +6080,280 @@
     },
     {
       "level": "B+++",
+      "id": "bppp_complex_tri_face_interaction_web_o05",
+      "name": "B+++05 · 端侧面互动网",
+      "focus": "end faces, adjacent side faces, and median projection web",
+      "aux_points": {
+        "P": [
+          1.271,
+          1.085,
+          -0.84
+        ],
+        "Q": [
+          -1.311,
+          1.085,
+          -0.84
+        ],
+        "R": [
+          -0.098,
+          1.085,
+          0.92
+        ],
+        "O": [
+          -0.033,
+          0.0,
+          -0.375
+        ],
+        "O1": [
+          -0.059,
+          2.17,
+          -0.132
+        ],
+        "M": [
+          0.0,
+          0.0,
+          -1.125
+        ],
+        "N": [
+          -0.04,
+          2.17,
+          -0.556
+        ],
+        "X": [
+          -0.02,
+          1.085,
+          -0.84
+        ],
+        "Y": [
+          -0.705,
+          1.085,
+          0.04
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "O",
+            "O1"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "C",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "C1",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O1",
+            "N"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "P"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "Q"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "R"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "R",
+            "P"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "B",
+            "A",
+            "C"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "B1",
+            "A1",
+            "C1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.05,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.1,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "B",
+            "A",
+            "A1",
+            "B1"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.08,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "C",
+            "M",
+            "N",
+            "C1"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.08,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "line_plane_angle",
+          "answer": "triangular side-face interaction web"
+        }
+      ],
+      "exam_note": "端面、侧面、中截面和中线投影一起构成更密的互动网。",
+      "family10_orientation": 4,
+      "taxonomy": {
+        "gq": "measurement",
+        "content_type": "angle",
+        "ability": "C",
+        "difficulty": "L3",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
       "id": "bppp_tri_double_section_o06",
       "name": "B+++06 · 双三角截面格",
       "focus": "two triangular sections with transfer lattice",
@@ -3843,6 +6599,280 @@
         "content_type": "section_cutting",
         "ability": "E",
         "difficulty": "L2",
+        "source": "solidgeo-benchmark-blueprint/700"
+      }
+    },
+    {
+      "level": "B+++",
+      "id": "bppp_complex_tri_face_interaction_web_o06",
+      "name": "B+++06 · 端侧面互动网",
+      "focus": "end faces, adjacent side faces, and median projection web",
+      "aux_points": {
+        "P": [
+          -0.098,
+          1.085,
+          0.92
+        ],
+        "Q": [
+          1.271,
+          1.085,
+          -0.84
+        ],
+        "R": [
+          -1.311,
+          1.085,
+          -0.84
+        ],
+        "O": [
+          -0.033,
+          0.0,
+          -0.375
+        ],
+        "O1": [
+          -0.059,
+          2.17,
+          -0.132
+        ],
+        "M": [
+          0.775,
+          0.0,
+          0.0
+        ],
+        "N": [
+          0.398,
+          2.17,
+          0.08
+        ],
+        "X": [
+          0.586,
+          1.085,
+          0.04
+        ],
+        "Y": [
+          -0.02,
+          1.085,
+          -0.84
+        ]
+      },
+      "aux_lines": [
+        {
+          "points": [
+            "O",
+            "O1"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "M",
+            "N"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A",
+            "M"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "A1",
+            "N"
+          ],
+          "color": "#c2255c",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O",
+            "M"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "O1",
+            "N"
+          ],
+          "color": "#d97400",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Y"
+          ],
+          "color": "#d9480f",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "P"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "X",
+            "Q"
+          ],
+          "color": "#7048e8",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "Q"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Y",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "dashed": false,
+          "opacity": 0.88,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "P",
+            "Q"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "Q",
+            "R"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        },
+        {
+          "points": [
+            "R",
+            "P"
+          ],
+          "color": "#c2255c",
+          "dashed": true,
+          "opacity": 0.78,
+          "depthTest": false
+        }
+      ],
+      "aux_faces": [
+        {
+          "points": [
+            "C",
+            "B",
+            "A"
+          ],
+          "color": "#1971c2",
+          "opacity": 0.05,
+          "edge_color": "#1971c2",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "C1",
+            "B1",
+            "A1"
+          ],
+          "color": "#d9480f",
+          "opacity": 0.05,
+          "edge_color": "#d9480f",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "P",
+            "Q",
+            "R"
+          ],
+          "color": "#2f9e44",
+          "opacity": 0.1,
+          "edge_color": "#2f9e44",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "C",
+            "B",
+            "B1",
+            "C1"
+          ],
+          "color": "#7048e8",
+          "opacity": 0.08,
+          "edge_color": "#7048e8",
+          "edge_dashed": false,
+          "edge_opacity": 0.72
+        },
+        {
+          "points": [
+            "A",
+            "M",
+            "N",
+            "A1"
+          ],
+          "color": "#c2255c",
+          "opacity": 0.08,
+          "edge_color": "#c2255c",
+          "edge_dashed": true,
+          "edge_opacity": 0.72
+        }
+      ],
+      "qa_seeds": [
+        {
+          "type": "line_plane_angle",
+          "answer": "triangular side-face interaction web"
+        }
+      ],
+      "exam_note": "端面、侧面、中截面和中线投影一起构成更密的互动网。",
+      "family10_orientation": 5,
+      "taxonomy": {
+        "gq": "measurement",
+        "content_type": "angle",
+        "ability": "C",
+        "difficulty": "L3",
         "source": "solidgeo-benchmark-blueprint/700"
       }
     }
