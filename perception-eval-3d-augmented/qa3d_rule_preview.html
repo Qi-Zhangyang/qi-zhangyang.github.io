@@ -48,11 +48,11 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
   <h1>Rule-based 3D QA Preview</h1>
   <div class="summary">
     <span>47 samples</span>
-    <span>329 QA</span>
-    <span>329/329 validator pass</span>
+    <span>376 QA</span>
+    <span>376/376 validator pass</span>
     <span>source: code2gold-style rule builders</span>
   </div>
-  <div class="controls"><button class="filter active" data-task="all">All</button><button class="filter" data-task="GE3D_AUX_DIRECT_CONNECTIONS">GE3D_AUX_DIRECT_CONNECTIONS <span>45</span></button><button class="filter" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">GE3D_AUX_FACE_CONTAINS_CENTER <span>47</span></button><button class="filter" data-task="GE3D_AUX_FACE_SHAPE">GE3D_AUX_FACE_SHAPE <span>47</span></button><button class="filter" data-task="GE3D_AUX_FACE_SIDES">GE3D_AUX_FACE_SIDES <span>5</span></button><button class="filter" data-task="GE3D_AUX_LINE_COUNT">GE3D_AUX_LINE_COUNT <span>41</span></button><button class="filter" data-task="GE3D_AUX_ROLE">GE3D_AUX_ROLE <span>43</span></button><button class="filter" data-task="GE3D_EMPHASIS_LINE_THROUGH_CENTER">GE3D_EMPHASIS_LINE_THROUGH_CENTER <span>47</span></button><button class="filter" data-task="GE3D_IDENTIFY_SOLID">GE3D_IDENTIFY_SOLID <span>47</span></button><button class="filter" data-task="GE3D_SEGMENT_RELATION">GE3D_SEGMENT_RELATION <span>7</span></button><input id="search" placeholder="Search sample, question, answer" /></div>
+  <div class="controls"><button class="filter active" data-task="all">All</button><button class="filter" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">GE3D_AUX_CONNECTION_FACE_RELATION <span>45</span></button><button class="filter" data-task="GE3D_AUX_DIRECT_CONNECTIONS">GE3D_AUX_DIRECT_CONNECTIONS <span>45</span></button><button class="filter" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">GE3D_AUX_FACE_CONTAINS_CENTER <span>47</span></button><button class="filter" data-task="GE3D_AUX_FACE_SHAPE">GE3D_AUX_FACE_SHAPE <span>41</span></button><button class="filter" data-task="GE3D_AUX_FACE_SIDES">GE3D_AUX_FACE_SIDES <span>2</span></button><button class="filter" data-task="GE3D_AUX_LINE_COUNT">GE3D_AUX_LINE_COUNT <span>2</span></button><button class="filter" data-task="GE3D_AUX_LINE_FACE_RELATION">GE3D_AUX_LINE_FACE_RELATION <span>45</span></button><button class="filter" data-task="GE3D_AUX_POINTS_ON_FACE">GE3D_AUX_POINTS_ON_FACE <span>47</span></button><button class="filter" data-task="GE3D_AUX_ROLE">GE3D_AUX_ROLE <span>43</span></button><button class="filter" data-task="GE3D_EMPHASIS_LINE_THROUGH_CENTER">GE3D_EMPHASIS_LINE_THROUGH_CENTER <span>47</span></button><button class="filter" data-task="GE3D_IDENTIFY_SOLID">GE3D_IDENTIFY_SOLID <span>5</span></button><button class="filter" data-task="GE3D_SEGMENT_RELATION">GE3D_SEGMENT_RELATION <span>7</span></button><input id="search" placeholder="Search sample, question, answer" /></div>
 </header>
 <main>
             <article class="sample" data-sample="mc_1750">
@@ -65,6 +65,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1750.html">viewer</a><a href="augmented_specs/mc_1750.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M、N、P</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -119,28 +152,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">定位 · 面的角色/名称 · A 识别</div>
                   <div class="evidence">truth: O = 立体图形的中心点</div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_AUX_FACE_SHAPE">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_FACE_SHAPE</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
-                  <div class="a">答案：<strong>四边形</strong></div>
-                  <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>立方体</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 8, &quot;edges&quot;: 12, &quot;faces&quot;: 6}</div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -155,6 +166,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1751.html">viewer</a><a href="augmented_specs/mc_1751.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 OM 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -209,28 +253,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
                   <div class="evidence">truth: {&quot;faces&quot;: 2, &quot;edges&quot;: 1, &quot;vertices&quot;: 1}</div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>12</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_FACE_SIDES">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_FACE_SIDES</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中黄色半透明辅助面由几条边围成？</div>
-                  <div class="a">答案：<strong>4</strong></div>
-                  <div class="meta">检测 · 截面/辅助面边数 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -245,6 +267,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1752.html">viewer</a><a href="augmented_specs/mc_1752.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、O1、O2 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、O1、O2</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 AB 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -299,28 +354,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
                   <div class="evidence"></div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>圆柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;faces&quot;: 3, &quot;edges&quot;: 2, &quot;vertices&quot;: 0}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>5</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -335,6 +368,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1753.html">viewer</a><a href="augmented_specs/mc_1753.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -389,28 +455,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
                   <div class="evidence"></div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>长方体</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 8, &quot;edges&quot;: 12, &quot;faces&quot;: 6}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -425,6 +469,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1754.html">viewer</a><a href="augmented_specs/mc_1754.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -479,28 +556,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
                   <div class="evidence">truth: {&quot;faces&quot;: 2, &quot;edges&quot;: 1, &quot;vertices&quot;: 1}</div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_FACE_SIDES">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_FACE_SIDES</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中黄色半透明辅助面由几条边围成？</div>
-                  <div class="a">答案：<strong>4</strong></div>
-                  <div class="meta">检测 · 截面/辅助面边数 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -515,6 +570,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1755.html">viewer</a><a href="augmented_specs/mc_1755.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M、N、P</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -569,28 +657,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
                   <div class="evidence"></div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>球</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 8, &quot;edges&quot;: 12, &quot;faces&quot;: 6}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -605,6 +671,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1756.html">viewer</a><a href="augmented_specs/mc_1756.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M、N、P</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -657,28 +756,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
                   <div class="a">答案：<strong>四边形</strong></div>
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>长方体</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 8, &quot;edges&quot;: 12, &quot;faces&quot;: 6}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
                   <div class="evidence"></div>
                 </li>
                 </ol>
@@ -695,6 +772,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1757.html">viewer</a><a href="augmented_specs/mc_1757.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M、N、P</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -749,28 +859,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
                   <div class="evidence"></div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>立方体</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 8, &quot;edges&quot;: 12, &quot;faces&quot;: 6}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -785,6 +873,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1758.html">viewer</a><a href="augmented_specs/mc_1758.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、O1、O2 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、O1、O2</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 AB 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -839,28 +960,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
                   <div class="evidence"></div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>圆柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;faces&quot;: 3, &quot;edges&quot;: 2, &quot;vertices&quot;: 0}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>5</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -875,6 +974,17 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1759.html">viewer</a><a href="augmented_specs/mc_1759.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>没有这些标注点位于黄色辅助面上</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -965,6 +1075,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1760.html">viewer</a><a href="augmented_specs/mc_1760.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M、N、P</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -1017,28 +1160,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
                   <div class="a">答案：<strong>四边形</strong></div>
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>立方体</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 8, &quot;edges&quot;: 12, &quot;faces&quot;: 6}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
                   <div class="evidence"></div>
                 </li>
                 </ol>
@@ -1055,6 +1176,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1761.html">viewer</a><a href="augmented_specs/mc_1761.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M、N</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 OM 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -1107,28 +1261,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
                   <div class="a">答案：<strong>四边形</strong></div>
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>三棱锥</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 4, &quot;edges&quot;: 6, &quot;faces&quot;: 4}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
                   <div class="evidence"></div>
                 </li>
                 </ol>
@@ -1145,6 +1277,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1762.html">viewer</a><a href="augmented_specs/mc_1762.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M、P</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 OM 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -1199,28 +1364,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
                   <div class="evidence"></div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>四棱锥</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 5, &quot;edges&quot;: 8, &quot;faces&quot;: 5}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -1235,6 +1378,17 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1763.html">viewer</a><a href="augmented_specs/mc_1763.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>没有这些标注点位于黄色辅助面上</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -1325,6 +1479,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1764.html">viewer</a><a href="augmented_specs/mc_1764.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、O1、O2 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、O1、O2</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 AB 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -1379,28 +1566,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
                   <div class="evidence"></div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>圆柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;faces&quot;: 3, &quot;edges&quot;: 2, &quot;vertices&quot;: 0}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>5</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -1415,6 +1580,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1765.html">viewer</a><a href="augmented_specs/mc_1765.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 OM 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -1469,28 +1667,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">定位 · 面的角色/名称 · A 识别</div>
                   <div class="evidence">truth: O = 立体图形的中心点</div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_AUX_FACE_SHAPE">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_FACE_SHAPE</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
-                  <div class="a">答案：<strong>四边形</strong></div>
-                  <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>三棱柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 6, &quot;edges&quot;: 9, &quot;faces&quot;: 5}</div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -1505,6 +1681,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1766.html">viewer</a><a href="augmented_specs/mc_1766.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 OM 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -1557,28 +1766,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
                   <div class="a">答案：<strong>四边形</strong></div>
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>圆柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 10, &quot;edges&quot;: 15, &quot;faces&quot;: 7}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
                   <div class="evidence"></div>
                 </li>
                 </ol>
@@ -1595,6 +1782,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1767.html">viewer</a><a href="augmented_specs/mc_1767.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 OM 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -1647,28 +1867,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
                   <div class="a">答案：<strong>四边形</strong></div>
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>立方体</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 16, &quot;edges&quot;: 24, &quot;faces&quot;: 12}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
                   <div class="evidence"></div>
                 </li>
                 </ol>
@@ -1685,6 +1883,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1769.html">viewer</a><a href="augmented_specs/mc_1769.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -1737,28 +1968,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
                   <div class="a">答案：<strong>四边形</strong></div>
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>六棱柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 12, &quot;edges&quot;: 18, &quot;faces&quot;: 8}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>19</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
                   <div class="evidence"></div>
                 </li>
                 </ol>
@@ -1775,6 +1984,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1772.html">viewer</a><a href="augmented_specs/mc_1772.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M、N、P</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -1827,28 +2069,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
                   <div class="a">答案：<strong>四边形</strong></div>
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>长方体</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 8, &quot;edges&quot;: 12, &quot;faces&quot;: 5}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
                   <div class="evidence"></div>
                 </li>
                 </ol>
@@ -1865,6 +2085,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1773.html">viewer</a><a href="augmented_specs/mc_1773.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、N</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -1917,28 +2170,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
                   <div class="a">答案：<strong>四边形</strong></div>
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>五棱柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 10, &quot;edges&quot;: 15, &quot;faces&quot;: 7}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
                   <div class="evidence"></div>
                 </li>
                 </ol>
@@ -1955,6 +2186,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1774.html">viewer</a><a href="augmented_specs/mc_1774.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 OM 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -2007,28 +2271,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
                   <div class="a">答案：<strong>四边形</strong></div>
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>三棱柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 10, &quot;edges&quot;: 9, &quot;faces&quot;: 8}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>8</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
                   <div class="evidence"></div>
                 </li>
                 </ol>
@@ -2045,6 +2287,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1775.html">viewer</a><a href="augmented_specs/mc_1775.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -2099,28 +2374,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
                   <div class="evidence"></div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>四棱柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 8, &quot;edges&quot;: 12, &quot;faces&quot;: 6}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>10</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -2135,6 +2388,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1776.html">viewer</a><a href="augmented_specs/mc_1776.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 OM 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -2189,28 +2475,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
                   <div class="evidence"></div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>多面体</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 36, &quot;edges&quot;: 55, &quot;faces&quot;: 29}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -2225,6 +2489,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1777.html">viewer</a><a href="augmented_specs/mc_1777.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -2277,28 +2574,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
                   <div class="a">答案：<strong>四边形</strong></div>
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>长方体、球、圆锥组合体</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 12, &quot;edges&quot;: 18, &quot;faces&quot;: 8}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
                   <div class="evidence"></div>
                 </li>
                 </ol>
@@ -2315,6 +2590,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1778.html">viewer</a><a href="augmented_specs/mc_1778.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M、N、P</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -2367,28 +2675,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
                   <div class="a">答案：<strong>四边形</strong></div>
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>六棱柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 12, &quot;edges&quot;: 18, &quot;faces&quot;: 8}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
                   <div class="evidence"></div>
                 </li>
                 </ol>
@@ -2405,6 +2691,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1779.html">viewer</a><a href="augmented_specs/mc_1779.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M、N、P</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -2459,28 +2778,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
                   <div class="evidence"></div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>圆柱、圆锥组合体</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 8, &quot;edges&quot;: 12, &quot;faces&quot;: 6}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -2495,6 +2792,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1780.html">viewer</a><a href="augmented_specs/mc_1780.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M、P</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 ED 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -2549,28 +2879,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
                   <div class="evidence"></div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>多面体</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 6, &quot;edges&quot;: 9, &quot;faces&quot;: 6}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>11</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -2585,6 +2893,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1781.html">viewer</a><a href="augmented_specs/mc_1781.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -2639,28 +2980,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
                   <div class="evidence"></div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>四棱锥</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 6, &quot;edges&quot;: 12, &quot;faces&quot;: 8}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -2675,6 +2994,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1782.html">viewer</a><a href="augmented_specs/mc_1782.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 C1A 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -2729,28 +3081,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">定位 · 面的角色/名称 · A 识别</div>
                   <div class="evidence">truth: O = 立体图形的中心点</div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_AUX_FACE_SHAPE">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_FACE_SHAPE</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
-                  <div class="a">答案：<strong>四边形</strong></div>
-                  <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>三棱柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 6, &quot;edges&quot;: 9, &quot;faces&quot;: 4}</div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -2765,6 +3095,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1788.html">viewer</a><a href="augmented_specs/mc_1788.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>不相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 不相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -2817,28 +3180,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
                   <div class="a">答案：<strong>四边形</strong></div>
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>四棱锥</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 5, &quot;edges&quot;: 8, &quot;faces&quot;: 4}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
                   <div class="evidence"></div>
                 </li>
                 </ol>
@@ -2855,6 +3196,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1789.html">viewer</a><a href="augmented_specs/mc_1789.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M、N、P</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -2907,28 +3281,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
                   <div class="a">答案：<strong>四边形</strong></div>
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>正八面体</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 6, &quot;edges&quot;: 12, &quot;faces&quot;: 8}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>13</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
                   <div class="evidence"></div>
                 </li>
                 </ol>
@@ -2945,6 +3297,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1790.html">viewer</a><a href="augmented_specs/mc_1790.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -2997,28 +3382,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
                   <div class="a">答案：<strong>四边形</strong></div>
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>正八面体</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 6, &quot;edges&quot;: 6, &quot;faces&quot;: 8}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>13</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
                   <div class="evidence"></div>
                 </li>
                 </ol>
@@ -3035,6 +3398,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1793.html">viewer</a><a href="augmented_specs/mc_1793.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M、N</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -3087,28 +3483,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
                   <div class="a">答案：<strong>四边形</strong></div>
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>立方体</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 14, &quot;edges&quot;: 24, &quot;faces&quot;: 14}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
                   <div class="evidence"></div>
                 </li>
                 </ol>
@@ -3125,6 +3499,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1796.html">viewer</a><a href="augmented_specs/mc_1796.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -3177,28 +3584,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
                   <div class="a">答案：<strong>四边形</strong></div>
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>二十面体</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 12, &quot;edges&quot;: 30, &quot;faces&quot;: 20}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
                   <div class="evidence"></div>
                 </li>
                 </ol>
@@ -3215,6 +3600,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1798.html">viewer</a><a href="augmented_specs/mc_1798.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -3269,28 +3687,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
                   <div class="evidence"></div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>正八面体</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 6, &quot;edges&quot;: 12, &quot;faces&quot;: 8}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -3305,6 +3701,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1800.html">viewer</a><a href="augmented_specs/mc_1800.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>N</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>不相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 不相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -3359,28 +3788,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
                   <div class="evidence"></div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>八棱柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 16, &quot;edges&quot;: 24, &quot;faces&quot;: 10}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -3395,6 +3802,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1801.html">viewer</a><a href="augmented_specs/mc_1801.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 OM 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -3449,28 +3889,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">定位 · 面的角色/名称 · A 识别</div>
                   <div class="evidence">truth: O = 立体图形的中心点</div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_AUX_FACE_SHAPE">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_FACE_SHAPE</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
-                  <div class="a">答案：<strong>四边形</strong></div>
-                  <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>三棱柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 6, &quot;edges&quot;: 9, &quot;faces&quot;: 5}</div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -3485,6 +3903,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1803.html">viewer</a><a href="augmented_specs/mc_1803.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 OM 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -3539,28 +3990,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">定位 · 面的角色/名称 · A 识别</div>
                   <div class="evidence">truth: O = 立体图形的中心点</div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_AUX_FACE_SHAPE">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_FACE_SHAPE</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
-                  <div class="a">答案：<strong>四边形</strong></div>
-                  <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>六棱柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 11, &quot;edges&quot;: 12, &quot;faces&quot;: 3}</div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -3575,6 +4004,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1804.html">viewer</a><a href="augmented_specs/mc_1804.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 OM 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -3627,28 +4089,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
                   <div class="a">答案：<strong>四边形</strong></div>
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>三棱柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 6, &quot;edges&quot;: 9, &quot;faces&quot;: 5}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
                   <div class="evidence"></div>
                 </li>
                 </ol>
@@ -3665,6 +4105,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1805.html">viewer</a><a href="augmented_specs/mc_1805.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 OM 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -3719,28 +4192,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
                   <div class="evidence"></div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>三棱柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 6, &quot;edges&quot;: 9, &quot;faces&quot;: 5}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -3755,6 +4206,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1807.html">viewer</a><a href="augmented_specs/mc_1807.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -3809,28 +4293,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
                   <div class="evidence"></div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>圆柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 19, &quot;edges&quot;: 24, &quot;faces&quot;: 32}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -3845,6 +4307,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1808.html">viewer</a><a href="augmented_specs/mc_1808.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M、N</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 OM 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -3899,28 +4394,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">定位 · 面的角色/名称 · A 识别</div>
                   <div class="evidence">truth: O = 立体图形的中心点</div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_AUX_FACE_SHAPE">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_FACE_SHAPE</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
-                  <div class="a">答案：<strong>四边形</strong></div>
-                  <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>三棱柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 6, &quot;edges&quot;: 9, &quot;faces&quot;: 5}</div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -3935,6 +4408,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1809.html">viewer</a><a href="augmented_specs/mc_1809.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 OM 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -3987,28 +4493,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="q">图中黄色半透明辅助面呈现为什么形状？</div>
                   <div class="a">答案：<strong>四边形</strong></div>
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>三棱柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 13, &quot;edges&quot;: 9, &quot;faces&quot;: 5}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>13</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
                   <div class="evidence"></div>
                 </li>
                 </ol>
@@ -4025,6 +4509,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1810.html">viewer</a><a href="augmented_specs/mc_1810.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 NP 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -4079,28 +4596,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
                   <div class="evidence"></div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>六棱柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 12, &quot;edges&quot;: 18, &quot;faces&quot;: 8}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>7</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -4115,6 +4610,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1811.html">viewer</a><a href="augmented_specs/mc_1811.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、M、N、P 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、M</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>相交</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 相交</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 OM 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -4169,28 +4697,6 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 截面/辅助面形状 · A 识别</div>
                   <div class="evidence"></div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_IDENTIFY_SOLID">
-                  <div class="qa-head">
-                    <span class="task">GE3D_IDENTIFY_SOLID</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中这个立体图形是什么？</div>
-                  <div class="a">答案：<strong>五棱柱</strong></div>
-                  <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
-                  <div class="evidence">truth: {&quot;vertices&quot;: 12, &quot;edges&quot;: 15, &quot;faces&quot;: 7}</div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>8</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
@@ -4205,6 +4711,39 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="links"><a href="augmented_viewers/mc_1813.html">viewer</a><a href="augmented_specs/mc_1813.json">spec</a></div>
                 </div>
                 <ol>
+                <li class="qa" data-task="GE3D_AUX_POINTS_ON_FACE">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_POINTS_ON_FACE</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">在图中标注的辅助点 O、O1、O2 中，哪些位于黄色半透明辅助面上？</div>
+                  <div class="a">答案：<strong>O、O1、O2</strong></div>
+                  <div class="meta">关系 · 共面/点面位置关系 · D 关系推理</div>
+                  <div class="evidence"></div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_LINE_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_LINE_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中红色加粗辅助虚线与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
+                <li class="qa" data-task="GE3D_AUX_CONNECTION_FACE_RELATION">
+                  <div class="qa-head">
+                    <span class="task">GE3D_AUX_CONNECTION_FACE_RELATION</span>
+                    <span class="status ok">PASS</span>
+                  </div>
+                  <div class="q">图中彩色虚线 AB 与黄色半透明辅助面是什么位置关系？</div>
+                  <div class="a">答案：<strong>在面内</strong></div>
+                  <div class="meta">关系 · 线面位置关系 · D 关系推理</div>
+                  <div class="evidence">truth: None / None = 在面内</div>
+                </li>
+                
                 <li class="qa" data-task="GE3D_AUX_FACE_CONTAINS_CENTER">
                   <div class="qa-head">
                     <span class="task">GE3D_AUX_FACE_CONTAINS_CENTER</span>
@@ -4259,34 +4798,12 @@ ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
                   <div class="meta">分类 · 判断是什么立体图形 · A 识别</div>
                   <div class="evidence">truth: null</div>
                 </li>
-                
-                <li class="qa" data-task="GE3D_AUX_LINE_COUNT">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_LINE_COUNT</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中的彩色虚线辅助线一共有多少条？</div>
-                  <div class="a">答案：<strong>5</strong></div>
-                  <div class="meta">检测 · 辅助线数量 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
-                
-                <li class="qa" data-task="GE3D_AUX_FACE_SIDES">
-                  <div class="qa-head">
-                    <span class="task">GE3D_AUX_FACE_SIDES</span>
-                    <span class="status ok">PASS</span>
-                  </div>
-                  <div class="q">图中黄色半透明辅助面由几条边围成？</div>
-                  <div class="a">答案：<strong>4</strong></div>
-                  <div class="meta">检测 · 截面/辅助面边数 · B 计数</div>
-                  <div class="evidence"></div>
-                </li>
                 </ol>
               </div>
             </article>
             </main>
 <script>
-const DATA = {"samples": 47, "qa": 329, "valid": 329, "tasks": {"GE3D_AUX_FACE_CONTAINS_CENTER": 47, "GE3D_EMPHASIS_LINE_THROUGH_CENTER": 47, "GE3D_AUX_DIRECT_CONNECTIONS": 45, "GE3D_SEGMENT_RELATION": 7, "GE3D_AUX_ROLE": 43, "GE3D_AUX_FACE_SHAPE": 47, "GE3D_IDENTIFY_SOLID": 47, "GE3D_AUX_LINE_COUNT": 41, "GE3D_AUX_FACE_SIDES": 5}};
+const DATA = {"samples": 47, "qa": 376, "valid": 376, "tasks": {"GE3D_AUX_POINTS_ON_FACE": 47, "GE3D_AUX_LINE_FACE_RELATION": 45, "GE3D_AUX_CONNECTION_FACE_RELATION": 45, "GE3D_AUX_FACE_CONTAINS_CENTER": 47, "GE3D_EMPHASIS_LINE_THROUGH_CENTER": 47, "GE3D_AUX_DIRECT_CONNECTIONS": 45, "GE3D_SEGMENT_RELATION": 7, "GE3D_AUX_ROLE": 43, "GE3D_AUX_FACE_SHAPE": 41, "GE3D_IDENTIFY_SOLID": 5, "GE3D_AUX_LINE_COUNT": 2, "GE3D_AUX_FACE_SIDES": 2}};
 const buttons = Array.from(document.querySelectorAll('.filter'));
 const search = document.getElementById('search');
 let activeTask = 'all';
