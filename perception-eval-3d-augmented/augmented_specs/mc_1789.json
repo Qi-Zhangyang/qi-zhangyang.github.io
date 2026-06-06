@@ -452,5 +452,128 @@
     "S2",
     "S3",
     "S4"
+  ],
+  "augmentation_directions": [
+    "aux_overlay",
+    "solid_overlap"
+  ],
+  "overlap_primitives": [
+    {
+      "id": "overlap_solid_1",
+      "center": [
+        0.384,
+        0.192,
+        -0.336
+      ],
+      "color": "#8b5cf6",
+      "edgeColor": "#6d28d9",
+      "opacity": 0.18,
+      "width": 3.2,
+      "role": "solid_overlap",
+      "type": "cuboid",
+      "size": [
+        1.392,
+        1.296,
+        1.488
+      ],
+      "name": "紫色半透明长方体"
+    }
+  ],
+  "solid_overlap_relations": [
+    {
+      "overlay_id": "overlap_solid_1",
+      "overlay_name": "紫色半透明长方体",
+      "primary_name": "原立体图形",
+      "relation": "相交/交叠",
+      "augmentation_direction": "solid_overlap"
+    }
+  ],
+  "qa_seeds": [
+    {
+      "type": "solid_overlap_relation",
+      "primary_name": "原立体图形",
+      "overlay_id": "overlap_solid_1",
+      "overlay_name": "紫色半透明长方体",
+      "relation": "相交/交叠",
+      "augmentation_direction": "solid_overlap"
+    },
+    {
+      "type": "point_face_membership",
+      "face_id": "S1S2S3S4",
+      "face": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "candidate_points": [
+        "O",
+        "M",
+        "N",
+        "P"
+      ],
+      "on_face": [
+        "O",
+        "M",
+        "N",
+        "P"
+      ]
+    },
+    {
+      "type": "aux_line_face_relation",
+      "face_id": "S1S2S3S4",
+      "face": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "line": [
+        "N",
+        "P"
+      ],
+      "line_id": "NP",
+      "relation": "在面内"
+    },
+    {
+      "type": "aux_lines_through_point",
+      "point": "O",
+      "lines": [
+        {
+          "line": [
+            "N",
+            "P"
+          ],
+          "line_id": "NP"
+        },
+        {
+          "line": [
+            "O",
+            "M"
+          ],
+          "line_id": "OM"
+        }
+      ]
+    },
+    {
+      "type": "aux_lines_through_point",
+      "point": "M",
+      "lines": [
+        {
+          "line": [
+            "N",
+            "P"
+          ],
+          "line_id": "NP"
+        },
+        {
+          "line": [
+            "O",
+            "M"
+          ],
+          "line_id": "OM"
+        }
+      ]
+    }
   ]
 }

@@ -404,5 +404,408 @@
     "S2",
     "S3",
     "S4"
+  ],
+  "augmentation_directions": [
+    "aux_overlay",
+    "solid_overlap"
+  ],
+  "overlap_primitives": [
+    {
+      "id": "overlap_solid_1",
+      "center": [
+        0.448,
+        1.392,
+        -0.68
+      ],
+      "color": "#8b5cf6",
+      "edgeColor": "#6d28d9",
+      "opacity": 0.18,
+      "width": 3.2,
+      "role": "solid_overlap",
+      "type": "cuboid",
+      "size": [
+        1.624,
+        1.296,
+        1.24
+      ],
+      "name": "紫色半透明长方体"
+    }
+  ],
+  "solid_overlap_relations": [
+    {
+      "overlay_id": "overlap_solid_1",
+      "overlay_name": "紫色半透明长方体",
+      "primary_name": "原立体图形",
+      "relation": "相交/交叠",
+      "augmentation_direction": "solid_overlap"
+    }
+  ],
+  "qa_seeds": [
+    {
+      "type": "solid_overlap_relation",
+      "primary_name": "原立体图形",
+      "overlay_id": "overlap_solid_1",
+      "overlay_name": "紫色半透明长方体",
+      "relation": "相交/交叠",
+      "augmentation_direction": "solid_overlap"
+    },
+    {
+      "type": "point_face_membership",
+      "face_id": "S1S2S3S4",
+      "face": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "candidate_points": [
+        "O",
+        "M",
+        "N",
+        "P"
+      ],
+      "on_face": [
+        "O",
+        "M"
+      ]
+    },
+    {
+      "type": "aux_line_face_relation",
+      "face_id": "S1S2S3S4",
+      "face": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "line": [
+        "O",
+        "M"
+      ],
+      "line_id": "OM",
+      "relation": "在面内"
+    },
+    {
+      "type": "aux_line_face_relation",
+      "face_id": "S1S2S3S4",
+      "face": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "line": [
+        "C",
+        "A'"
+      ],
+      "line_id": "CA'",
+      "relation": "相交"
+    },
+    {
+      "type": "aux_line_face_relation",
+      "face_id": "S1S2S3S4",
+      "face": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "line": [
+        "N",
+        "P"
+      ],
+      "line_id": "NP",
+      "relation": "相交"
+    },
+    {
+      "type": "core_edge_face_relation",
+      "face_id": "S1S2S3S4",
+      "face": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "line": [
+        "B",
+        "B'"
+      ],
+      "line_id": "BB'",
+      "relation": "在面内"
+    },
+    {
+      "type": "core_edge_face_relation",
+      "face_id": "S1S2S3S4",
+      "face": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "line": [
+        "A'",
+        "C'"
+      ],
+      "line_id": "A'C'",
+      "relation": "垂直"
+    },
+    {
+      "type": "core_edge_face_relation",
+      "face_id": "S1S2S3S4",
+      "face": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "line": [
+        "A",
+        "C"
+      ],
+      "line_id": "AC",
+      "relation": "垂直"
+    },
+    {
+      "type": "core_edge_face_relation",
+      "face_id": "S1S2S3S4",
+      "face": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "line": [
+        "A'",
+        "B'"
+      ],
+      "line_id": "A'B'",
+      "relation": "相交"
+    },
+    {
+      "type": "core_edge_face_relation",
+      "face_id": "S1S2S3S4",
+      "face": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "line": [
+        "A",
+        "B"
+      ],
+      "line_id": "AB",
+      "relation": "相交"
+    },
+    {
+      "type": "core_edge_face_relation",
+      "face_id": "S1S2S3S4",
+      "face": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "line": [
+        "B'",
+        "C'"
+      ],
+      "line_id": "B'C'",
+      "relation": "相交"
+    },
+    {
+      "type": "core_edge_face_relation",
+      "face_id": "S1S2S3S4",
+      "face": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "line": [
+        "B",
+        "C"
+      ],
+      "line_id": "BC",
+      "relation": "相交"
+    },
+    {
+      "type": "core_edge_face_relation",
+      "face_id": "S1S2S3S4",
+      "face": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "line": [
+        "A",
+        "A'"
+      ],
+      "line_id": "AA'",
+      "relation": "平行"
+    },
+    {
+      "type": "core_edge_face_relation",
+      "face_id": "S1S2S3S4",
+      "face": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "line": [
+        "C",
+        "C'"
+      ],
+      "line_id": "CC'",
+      "relation": "平行"
+    },
+    {
+      "type": "core_face_aux_face_relation",
+      "aux_face_id": "S1S2S3S4",
+      "aux_face": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "core_face_id": "A'B'C'",
+      "core_face": [
+        "A'",
+        "B'",
+        "C'"
+      ],
+      "relation": "垂直"
+    },
+    {
+      "type": "core_face_aux_face_relation",
+      "aux_face_id": "S1S2S3S4",
+      "aux_face": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "core_face_id": "AA'C'C",
+      "core_face": [
+        "A",
+        "A'",
+        "C'",
+        "C"
+      ],
+      "relation": "垂直"
+    },
+    {
+      "type": "core_face_aux_face_relation",
+      "aux_face_id": "S1S2S3S4",
+      "aux_face": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "core_face_id": "ACB",
+      "core_face": [
+        "A",
+        "C",
+        "B"
+      ],
+      "relation": "垂直"
+    },
+    {
+      "type": "core_face_aux_face_relation",
+      "aux_face_id": "S1S2S3S4",
+      "aux_face": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "core_face_id": "ABB'A'",
+      "core_face": [
+        "A",
+        "B",
+        "B'",
+        "A'"
+      ],
+      "relation": "相交"
+    },
+    {
+      "type": "core_face_aux_face_relation",
+      "aux_face_id": "S1S2S3S4",
+      "aux_face": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "core_face_id": "BCC'B'",
+      "core_face": [
+        "B",
+        "C",
+        "C'",
+        "B'"
+      ],
+      "relation": "相交"
+    },
+    {
+      "type": "aux_lines_through_point",
+      "point": "O",
+      "lines": [
+        {
+          "line": [
+            "N",
+            "P"
+          ],
+          "line_id": "NP"
+        },
+        {
+          "line": [
+            "O",
+            "M"
+          ],
+          "line_id": "OM"
+        }
+      ]
+    },
+    {
+      "type": "aux_lines_through_point",
+      "point": "M",
+      "lines": [
+        {
+          "line": [
+            "C",
+            "A'"
+          ],
+          "line_id": "CA'"
+        },
+        {
+          "line": [
+            "O",
+            "M"
+          ],
+          "line_id": "OM"
+        }
+      ]
+    },
+    {
+      "type": "segment_relation",
+      "segment_1": {
+        "line": [
+          "A'",
+          "B'"
+        ],
+        "line_id": "A'B'"
+      },
+      "segment_2": {
+        "line": [
+          "A",
+          "B"
+        ],
+        "line_id": "AB"
+      },
+      "relation": "平行"
+    }
   ]
 }

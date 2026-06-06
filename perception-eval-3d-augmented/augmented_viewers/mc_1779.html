@@ -72,7 +72,7 @@ import { LineSegments2 } from 'three/addons/lines/LineSegments2.js';
 import { LineSegmentsGeometry } from 'three/addons/lines/LineSegmentsGeometry.js';
 import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
 
-const SPEC = {"title": "Composite Solid · augmented", "meta": "rule-based auxiliary construction: center/section/diagonal/axis overlays", "camera": {"position": [3.5, 3.0, 5.5], "target": [0, 2.0, 0], "orthoSize": 3.5}, "vertices": {"A": [1, 0, 1], "B": [-1, 0, 1], "C": [-1, 0, -1], "D": [1, 0, -1], "E": [1, 2, 1], "F": [-1, 2, 1], "G": [-1, 2, -1], "H": [1, 2, -1], "O": [0.0, 1.0, 0.0], "M": [0.0, 1.0, 0.0], "N": [0.0, 0.0, 1.0], "P": [0.0, 2.0, -1.0], "S1": [0.0, 0.0, -1.0], "S2": [0.0, 2.0, -1.0], "S3": [0.0, 2.0, 1.0], "S4": [0.0, 0.0, 1.0]}, "faces": [{"points": ["A", "B", "C", "D"], "color": "#f5a623", "opacity": 0.15}, {"points": ["E", "H", "G", "F"], "color": "#f5a623", "opacity": 0.15}, {"points": ["A", "E", "F", "B"], "color": "#f5a623", "opacity": 0.15}, {"points": ["D", "C", "G", "H"], "color": "#f5a623", "opacity": 0.15}, {"points": ["B", "F", "G", "C"], "color": "#f5a623", "opacity": 0.15}, {"points": ["A", "D", "H", "E"], "color": "#f5a623", "opacity": 0.15}], "edges": [{"points": ["A", "B"], "color": "#111111", "width": 2.0}, {"points": ["B", "C"], "color": "#111111", "width": 2.0}, {"points": ["C", "D"], "color": "#111111", "width": 2.0}, {"points": ["D", "A"], "color": "#111111", "width": 2.0}, {"points": ["E", "F"], "color": "#111111", "width": 2.0}, {"points": ["F", "G"], "color": "#111111", "width": 2.0}, {"points": ["G", "H"], "color": "#111111", "width": 2.0}, {"points": ["H", "E"], "color": "#111111", "width": 2.0}, {"points": ["A", "E"], "color": "#111111", "width": 2.0}, {"points": ["B", "F"], "color": "#111111", "width": 2.0}, {"points": ["C", "G"], "color": "#111111", "width": 2.0}, {"points": ["D", "H"], "color": "#111111", "width": 2.0}], "aux_lines": [{"points": ["D", "F"], "color": "#d03030", "dash": true, "depthTest": false, "width": 4.2}, {"points": ["O", "M"], "color": "#d97400", "dash": true, "depthTest": false, "width": 3.8}, {"points": ["N", "P"], "color": "#d97400", "dash": true, "depthTest": false, "width": 3.8}, {"points": ["S1", "S2"], "color": "#b7791f", "dash": true, "depthTest": false, "width": 3.4}, {"points": ["S2", "S3"], "color": "#b7791f", "dash": true, "depthTest": false, "width": 3.4}, {"points": ["S3", "S4"], "color": "#b7791f", "dash": true, "depthTest": false, "width": 3.4}, {"points": ["S4", "S1"], "color": "#b7791f", "dash": true, "depthTest": false, "width": 3.4}], "aux_faces": [{"points": ["S1", "S2", "S3", "S4"], "color": "#f2c94c", "opacity": 0.26}], "labels": [{"text": "O", "point": "O", "offset": [0.08, 0.08, 0.08], "kind": "aux"}, {"text": "M", "point": "M", "offset": [0.08, 0.08, 0.08], "kind": "aux"}, {"text": "N", "point": "N", "offset": [0.08, 0.08, 0.08], "kind": "aux"}, {"text": "P", "point": "P", "offset": [0.08, 0.08, 0.08], "kind": "aux"}], "primitives": [{"type": "cylinder", "center": [0, 2.5, 0], "radius": 0.6, "height": 1.0, "axis": "y", "color": "#f5a623", "opacity": 0.15}, {"type": "cone", "center": [0, 3.5, 0], "radius": 0.6, "height": 1.0, "axis": "y", "color": "#f5a623", "opacity": 0.15}], "_id": "mc_1779", "_model": "kimi-k2.6", "_augmentation": "rule_v1", "_hide_meta_panel": true, "aux_points": ["O", "M", "N", "P", "S1", "S2", "S3", "S4"]};
+const SPEC = {"title": "Composite Solid · augmented", "meta": "rule-based auxiliary construction: center/section/diagonal/axis overlays", "camera": {"position": [3.5, 3.0, 5.5], "target": [0, 2.0, 0], "orthoSize": 3.5}, "vertices": {"A": [1, 0, 1], "B": [-1, 0, 1], "C": [-1, 0, -1], "D": [1, 0, -1], "E": [1, 2, 1], "F": [-1, 2, 1], "G": [-1, 2, -1], "H": [1, 2, -1], "O": [0.0, 1.0, 0.0], "M": [0.0, 1.0, 0.0], "N": [0.0, 0.0, 1.0], "P": [0.0, 2.0, -1.0], "S1": [0.0, 0.0, -1.0], "S2": [0.0, 2.0, -1.0], "S3": [0.0, 2.0, 1.0], "S4": [0.0, 0.0, 1.0]}, "faces": [{"points": ["A", "B", "C", "D"], "color": "#f5a623", "opacity": 0.15}, {"points": ["E", "H", "G", "F"], "color": "#f5a623", "opacity": 0.15}, {"points": ["A", "E", "F", "B"], "color": "#f5a623", "opacity": 0.15}, {"points": ["D", "C", "G", "H"], "color": "#f5a623", "opacity": 0.15}, {"points": ["B", "F", "G", "C"], "color": "#f5a623", "opacity": 0.15}, {"points": ["A", "D", "H", "E"], "color": "#f5a623", "opacity": 0.15}], "edges": [{"points": ["A", "B"], "color": "#111111", "width": 2.0}, {"points": ["B", "C"], "color": "#111111", "width": 2.0}, {"points": ["C", "D"], "color": "#111111", "width": 2.0}, {"points": ["D", "A"], "color": "#111111", "width": 2.0}, {"points": ["E", "F"], "color": "#111111", "width": 2.0}, {"points": ["F", "G"], "color": "#111111", "width": 2.0}, {"points": ["G", "H"], "color": "#111111", "width": 2.0}, {"points": ["H", "E"], "color": "#111111", "width": 2.0}, {"points": ["A", "E"], "color": "#111111", "width": 2.0}, {"points": ["B", "F"], "color": "#111111", "width": 2.0}, {"points": ["C", "G"], "color": "#111111", "width": 2.0}, {"points": ["D", "H"], "color": "#111111", "width": 2.0}], "aux_lines": [{"points": ["D", "F"], "color": "#d03030", "dash": true, "depthTest": false, "width": 4.2}, {"points": ["O", "M"], "color": "#d97400", "dash": true, "depthTest": false, "width": 3.8}, {"points": ["N", "P"], "color": "#d97400", "dash": true, "depthTest": false, "width": 3.8}, {"points": ["S1", "S2"], "color": "#b7791f", "dash": true, "depthTest": false, "width": 3.4}, {"points": ["S2", "S3"], "color": "#b7791f", "dash": true, "depthTest": false, "width": 3.4}, {"points": ["S3", "S4"], "color": "#b7791f", "dash": true, "depthTest": false, "width": 3.4}, {"points": ["S4", "S1"], "color": "#b7791f", "dash": true, "depthTest": false, "width": 3.4}], "aux_faces": [{"points": ["S1", "S2", "S3", "S4"], "color": "#f2c94c", "opacity": 0.26}], "labels": [{"text": "O", "point": "O", "offset": [0.08, 0.08, 0.08], "kind": "aux"}, {"text": "M", "point": "M", "offset": [0.08, 0.08, 0.08], "kind": "aux"}, {"text": "N", "point": "N", "offset": [0.08, 0.08, 0.08], "kind": "aux"}, {"text": "P", "point": "P", "offset": [0.08, 0.08, 0.08], "kind": "aux"}], "primitives": [{"type": "cylinder", "center": [0, 2.5, 0], "radius": 0.6, "height": 1.0, "axis": "y", "color": "#f5a623", "opacity": 0.15}, {"type": "cone", "center": [0, 3.5, 0], "radius": 0.6, "height": 1.0, "axis": "y", "color": "#f5a623", "opacity": 0.15}], "_id": "mc_1779", "_model": "kimi-k2.6", "_augmentation": "rule_v1", "_hide_meta_panel": true, "aux_points": ["O", "M", "N", "P", "S1", "S2", "S3", "S4"], "augmentation_directions": ["aux_overlay", "solid_overlap"], "overlap_primitives": [{"id": "overlap_solid_1", "center": [0.32, 2.32, -0.28], "color": "#8b5cf6", "edgeColor": "#6d28d9", "opacity": 0.18, "width": 3.2, "role": "solid_overlap", "type": "sphere", "radius": 1.44, "name": "紫色半透明球"}], "solid_overlap_relations": [{"overlay_id": "overlap_solid_1", "overlay_name": "紫色半透明球", "primary_name": "原立体图形", "relation": "相交/交叠", "augmentation_direction": "solid_overlap"}], "qa_seeds": [{"type": "solid_overlap_relation", "primary_name": "原立体图形", "overlay_id": "overlap_solid_1", "overlay_name": "紫色半透明球", "relation": "相交/交叠", "augmentation_direction": "solid_overlap"}, {"type": "point_face_membership", "face_id": "S1S2S3S4", "face": ["S1", "S2", "S3", "S4"], "candidate_points": ["O", "M", "N", "P"], "on_face": ["O", "M", "N", "P"]}, {"type": "aux_line_face_relation", "face_id": "S1S2S3S4", "face": ["S1", "S2", "S3", "S4"], "line": ["N", "P"], "line_id": "NP", "relation": "在面内"}, {"type": "aux_lines_through_point", "point": "O", "lines": [{"line": ["N", "P"], "line_id": "NP"}, {"line": ["O", "M"], "line_id": "OM"}]}, {"type": "aux_lines_through_point", "point": "M", "lines": [{"line": ["N", "P"], "line_id": "NP"}, {"line": ["O", "M"], "line_id": "OM"}]}]};
 const stage = document.getElementById('stage');
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xf6f7f8);
@@ -197,7 +197,7 @@ const occluderMat = new THREE.MeshBasicMaterial({
   polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1,
 });
 
-function addPolygon(points, color = '#4a90e2', opacity = 0.10, depthWrite = false) {
+function addPolygon(points, color = '#4a90e2', opacity = 0.10, depthWrite = false, occlude = true) {
   if (points.length < 3) return;
   const positions = [];
   for (const p of points) positions.push(p.x, p.y, p.z);
@@ -211,9 +211,10 @@ function addPolygon(points, color = '#4a90e2', opacity = 0.10, depthWrite = fals
     const mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
   }
-  makeMesh(occluderMat);
+  if (occlude) makeMesh(occluderMat);
   makeMesh(new THREE.MeshBasicMaterial({
     color, transparent: true, opacity, side: THREE.DoubleSide, depthWrite,
+    depthTest: occlude,
   }));
 }
 
@@ -260,16 +261,20 @@ function addCircle(center, radius, axis, opts = {}) {
   addPolyline(circlePoints(center, radius, axis, Number(opts.segments || 96)), opts);
 }
 
-function meshPair(geometry, center, axis, color, opacity) {
-  const hidden = new THREE.Mesh(geometry.clone(), occluderMat);
-  hidden.position.copy(center);
-  orientAxis(hidden, axis);
-  scene.add(hidden);
+function meshPair(geometry, center, axis, color, opacity, occlude = true) {
+  if (occlude) {
+    const hidden = new THREE.Mesh(geometry.clone(), occluderMat);
+    hidden.position.copy(center);
+    orientAxis(hidden, axis);
+    scene.add(hidden);
+  }
   const visible = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({
     color, transparent: true, opacity, side: THREE.DoubleSide, depthWrite: false,
+    depthTest: occlude,
   }));
   visible.position.copy(center);
   orientAxis(visible, axis);
+  visible.renderOrder = occlude ? 1 : 7;
   scene.add(visible);
   return visible;
 }
@@ -277,6 +282,7 @@ function meshPair(geometry, center, axis, color, opacity) {
 function addBoxPrimitive(item) {
   const c = vec(item.center || [0, 0, 0]);
   const s = item.size || [1, 1, 1];
+  const isOverlay = item.role === 'solid_overlap';
   const x = s[0] / 2, y = s[1] / 2, z = s[2] / 2;
   const names = ['p000','p100','p110','p010','p001','p101','p111','p011'];
   const pts = [
@@ -284,9 +290,11 @@ function addBoxPrimitive(item) {
     [-x,-y,z],[x,-y,z],[x,y,z],[-x,y,z],
   ].map(p => new THREE.Vector3(c.x + p[0], c.y + p[1], c.z + p[2]));
   const faces = [[0,1,2,3],[4,5,6,7],[0,1,5,4],[1,2,6,5],[2,3,7,6],[3,0,4,7]];
-  faces.forEach(f => addPolygon(f.map(i => pts[i]), item.color || '#4a90e2', Number(item.opacity ?? 0.10)));
-  [[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]]
-    .forEach(([a,b]) => addHiddenAwareEdge(pts[a], pts[b], item.edgeColor || '#111111', Number(item.width || 2.6)));
+  faces.forEach(f => addPolygon(f.map(i => pts[i]), item.color || '#4a90e2', Number(item.opacity ?? 0.10), false, !isOverlay));
+  [[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]].forEach(([a,b]) => {
+    if (isOverlay) addSimpleLine(pts[a], pts[b], { color: item.edgeColor || '#111111', depthTest: false, width: Number(item.width || 2.8), opacity: 0.92 });
+    else addHiddenAwareEdge(pts[a], pts[b], item.edgeColor || '#111111', Number(item.width || 2.6));
+  });
 }
 
 function addPrimitive(item) {
@@ -295,39 +303,45 @@ function addPrimitive(item) {
   const color = item.color || '#4a90e2';
   const opacity = Number(item.opacity ?? 0.10);
   const axis = item.axis || 'y';
+  const isOverlay = item.role === 'solid_overlap';
+  const edgeColor = item.edgeColor || '#111111';
   if (type === 'box' || type === 'cuboid') return addBoxPrimitive(item);
   if (type === 'sphere') {
     const radius = Number(item.radius || 1);
-    meshPair(new THREE.SphereGeometry(radius, 48, 24), center, 'y', color, opacity);
-    addCircle(center, radius, 'x', { color: '#d94b4b', dash: true, depthTest: false });
-    addCircle(center, radius, 'y', { color: '#d94b4b', dash: true, depthTest: false });
-    addCircle(center, radius, 'z', { color: '#d94b4b', dash: true, depthTest: false });
+    meshPair(new THREE.SphereGeometry(radius, 48, 24), center, 'y', color, opacity, !isOverlay);
+    addCircle(center, radius, 'x', { color: edgeColor, dash: true, depthTest: false, width: item.width || 2.4 });
+    addCircle(center, radius, 'y', { color: edgeColor, dash: true, depthTest: false, width: item.width || 2.4 });
+    addCircle(center, radius, 'z', { color: edgeColor, dash: true, depthTest: false, width: item.width || 2.4 });
   } else if (type === 'cylinder') {
     const radius = Number(item.radius || 1);
     const height = Number(item.height || 2);
-    meshPair(new THREE.CylinderGeometry(radius, radius, height, 64, 1, false), center, axis, color, opacity);
+    meshPair(new THREE.CylinderGeometry(radius, radius, height, 64, 1, false), center, axis, color, opacity, !isOverlay);
     const d = height / 2;
     const c1 = center.clone(), c2 = center.clone();
     if (axis === 'x') { c1.x -= d; c2.x += d; }
     else if (axis === 'z') { c1.z -= d; c2.z += d; }
     else { c1.y -= d; c2.y += d; }
-    addCircle(c1, radius, axis, { color: '#111111', depthTest: true });
-    addCircle(c2, radius, axis, { color: '#111111', depthTest: true });
+    addCircle(c1, radius, axis, { color: edgeColor, depthTest: !isOverlay, width: item.width || 2.6 });
+    addCircle(c2, radius, axis, { color: edgeColor, depthTest: !isOverlay, width: item.width || 2.6 });
   } else if (type === 'cone') {
     const radius = Number(item.radius || 1);
     const height = Number(item.height || 2);
-    meshPair(new THREE.ConeGeometry(radius, height, 64, 1, false), center, axis, color, opacity);
+    meshPair(new THREE.ConeGeometry(radius, height, 64, 1, false), center, axis, color, opacity, !isOverlay);
     const base = center.clone(), apex = center.clone();
     if (axis === 'x') { base.x -= height / 2; apex.x += height / 2; }
     else if (axis === 'z') { base.z -= height / 2; apex.z += height / 2; }
     else { base.y -= height / 2; apex.y += height / 2; }
-    addCircle(base, radius, axis, { color: '#111111', depthTest: true });
+    addCircle(base, radius, axis, { color: edgeColor, depthTest: !isOverlay, width: item.width || 2.6 });
     const sidePts = circlePoints(base, radius, axis, 4).slice(0, 4);
-    sidePts.forEach(p => addHiddenAwareEdge(apex, p, '#111111', 2.4));
+    sidePts.forEach(p => {
+      if (isOverlay) addSimpleLine(apex, p, { color: edgeColor, depthTest: false, width: item.width || 2.6, opacity: 0.92 });
+      else addHiddenAwareEdge(apex, p, edgeColor, 2.4);
+    });
   }
 }
 
 (SPEC.primitives || []).forEach(addPrimitive);
+(SPEC.overlap_primitives || SPEC.overlapPrimitives || []).forEach(addPrimitive);
 (SPEC.faces || []).forEach(face => addPolygon(
   pointsOf(face.points || face.vertices),
   face.color || '#4a90e2',
