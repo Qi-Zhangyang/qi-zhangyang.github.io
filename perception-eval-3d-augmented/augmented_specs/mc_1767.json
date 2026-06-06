@@ -595,43 +595,217 @@
   ],
   "augmentation_directions": [
     "aux_overlay",
-    "solid_overlap"
+    "solid_stack"
   ],
-  "overlap_primitives": [
+  "stack_primitives": [
     {
-      "id": "overlap_solid_1",
+      "id": "stack_1_block_1",
+      "type": "cuboid",
       "center": [
-        2.32,
-        1.74,
-        1.72
+        3.3024,
+        0.36,
+        2.36
       ],
-      "color": "#8b5cf6",
-      "edgeColor": "#6d28d9",
-      "opacity": 0.18,
-      "width": 3.2,
-      "role": "solid_overlap",
-      "type": "sphere",
-      "radius": 1.08,
-      "name": "紫色半透明球"
+      "size": [
+        0.72,
+        0.72,
+        0.72
+      ],
+      "color": "#83b8d8",
+      "edgeColor": "#1f2933",
+      "opacity": 0.72,
+      "width": 2.8,
+      "role": "solid_stack",
+      "name": "小正方体1",
+      "stack_id": "stack_1",
+      "grid": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "stack_1_block_2",
+      "type": "cuboid",
+      "center": [
+        4.0224,
+        0.36,
+        2.36
+      ],
+      "size": [
+        0.72,
+        0.72,
+        0.72
+      ],
+      "color": "#83b8d8",
+      "edgeColor": "#1f2933",
+      "opacity": 0.72,
+      "width": 2.8,
+      "role": "solid_stack",
+      "name": "小正方体2",
+      "stack_id": "stack_1",
+      "grid": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "stack_1_block_3",
+      "type": "cuboid",
+      "center": [
+        3.3024,
+        0.36,
+        3.08
+      ],
+      "size": [
+        0.72,
+        0.72,
+        0.72
+      ],
+      "color": "#83b8d8",
+      "edgeColor": "#1f2933",
+      "opacity": 0.72,
+      "width": 2.8,
+      "role": "solid_stack",
+      "name": "小正方体3",
+      "stack_id": "stack_1",
+      "grid": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "stack_1_block_4",
+      "type": "cuboid",
+      "center": [
+        4.0224,
+        0.36,
+        3.08
+      ],
+      "size": [
+        0.72,
+        0.72,
+        0.72
+      ],
+      "color": "#83b8d8",
+      "edgeColor": "#1f2933",
+      "opacity": 0.72,
+      "width": 2.8,
+      "role": "solid_stack",
+      "name": "小正方体4",
+      "stack_id": "stack_1",
+      "grid": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "stack_1_block_5",
+      "type": "cuboid",
+      "center": [
+        3.3024,
+        1.08,
+        2.36
+      ],
+      "size": [
+        0.72,
+        0.72,
+        0.72
+      ],
+      "color": "#8ccf9f",
+      "edgeColor": "#1f2933",
+      "opacity": 0.72,
+      "width": 2.8,
+      "role": "solid_stack",
+      "name": "小正方体5",
+      "stack_id": "stack_1",
+      "grid": [
+        0,
+        1,
+        0
+      ]
     }
   ],
-  "solid_overlap_relations": [
+  "solid_stacks": [
     {
-      "overlay_id": "overlap_solid_1",
-      "overlay_name": "紫色半透明球",
-      "primary_name": "原立体图形",
-      "relation": "相交/交叠",
-      "augmentation_direction": "solid_overlap"
+      "stack_id": "stack_1",
+      "stack_name": "右侧堆叠的小正方体",
+      "unit_name": "小正方体",
+      "unit_count": 5,
+      "layer_count": 2,
+      "top_layer_count": 1,
+      "footprint_count": 4,
+      "pattern": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "augmentation_direction": "solid_stack"
     }
   ],
   "qa_seeds": [
     {
-      "type": "solid_overlap_relation",
-      "primary_name": "原立体图形",
-      "overlay_id": "overlap_solid_1",
-      "overlay_name": "紫色半透明球",
-      "relation": "相交/交叠",
-      "augmentation_direction": "solid_overlap"
+      "type": "solid_stack",
+      "stack_id": "stack_1",
+      "stack_name": "右侧堆叠的小正方体",
+      "unit_name": "小正方体",
+      "unit_count": 5,
+      "layer_count": 2,
+      "top_layer_count": 1,
+      "footprint_count": 4,
+      "pattern": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "augmentation_direction": "solid_stack"
     },
     {
       "type": "point_face_membership",
