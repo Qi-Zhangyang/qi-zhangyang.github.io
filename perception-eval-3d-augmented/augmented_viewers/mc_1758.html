@@ -35,8 +35,8 @@
     overflow-wrap: anywhere;
   }
   .label {
-    color: #111; font-size: 20px; font-weight: 900; line-height: 1;
-    text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 1px 0 #fff;
+    color: #111; font-size: 28px; font-weight: 900; line-height: 1;
+    text-shadow: 0 0 6px #fff, 0 0 6px #fff, 0 0 6px #fff, 0 1px 0 #fff;
     pointer-events: none; white-space: nowrap;
   }
   .label.aux { color: #a14900; }
@@ -45,7 +45,7 @@
     .source { width: 164px; }
     .source img { max-width: 148px; max-height: 136px; }
     .meta { font-size: 10px; }
-    .label { font-size: 17px; }
+    .label { font-size: 23px; }
   }
 </style>
 </head>
@@ -356,7 +356,7 @@ function addPrimitive(item) {
 
 const auxPointNames = SPEC.aux_points || SPEC.auxPoints || [];
 auxPointNames.forEach(name => {
-  if (V[name]) addPointMarker(V[name], name === 'O' ? '#b42318' : '#d97400', name === 'O' ? 0.05 : 0.043);
+  if (V[name]) addPointMarker(V[name], name === 'O' ? '#b42318' : '#d97400', name === 'O' ? 0.038 : 0.032);
 });
 
 const explicitLabels = SPEC.labels || [];
@@ -364,12 +364,13 @@ if (explicitLabels.length) {
   explicitLabels.forEach(label => {
     const base = vec(label.point || label.position);
     const off = label.offset || [0.08, 0.08, 0.08];
+    const offsetScale = Number(label.offsetScale || SPEC.labelOffsetScale || 1.25);
     const objText = label.text || label.name || '';
     const el = document.createElement('div');
     el.className = label.kind ? `label ${label.kind}` : 'label';
     el.textContent = objText;
     const obj = new CSS2DObject(el);
-    obj.position.copy(base.add(new THREE.Vector3(off[0] || 0, off[1] || 0, off[2] || 0)));
+    obj.position.copy(base.add(new THREE.Vector3((off[0] || 0) * offsetScale, (off[1] || 0) * offsetScale, (off[2] || 0) * offsetScale)));
     scene.add(obj);
   });
 } else {
