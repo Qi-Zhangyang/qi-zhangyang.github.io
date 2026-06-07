@@ -1,0 +1,1264 @@
+{
+  "title": "triangular-prism sparse stack · base stack v2",
+  "meta": "sparse stack using source base geometry: triangular_prism",
+  "camera": {
+    "position": [
+      5.2,
+      4.2,
+      6.3
+    ],
+    "target": [
+      0.0,
+      0.672,
+      0.0
+    ],
+    "orthoSize": 3.2
+  },
+  "vertices": {
+    "T0_A": [
+      -1.845,
+      0.0,
+      -0.66
+    ],
+    "T0_B": [
+      -0.795,
+      0.0,
+      -0.66
+    ],
+    "T0_C": [
+      -1.32,
+      0.0,
+      -1.58
+    ],
+    "T0_D": [
+      -1.845,
+      0.78,
+      -0.66
+    ],
+    "T0_E": [
+      -0.795,
+      0.78,
+      -0.66
+    ],
+    "T0_F": [
+      -1.32,
+      0.78,
+      -1.58
+    ],
+    "T1_A": [
+      -0.525,
+      0.0,
+      -0.66
+    ],
+    "T1_B": [
+      0.525,
+      0.0,
+      -0.66
+    ],
+    "T1_C": [
+      0.0,
+      0.0,
+      -1.58
+    ],
+    "T1_D": [
+      -0.525,
+      0.78,
+      -0.66
+    ],
+    "T1_E": [
+      0.525,
+      0.78,
+      -0.66
+    ],
+    "T1_F": [
+      0.0,
+      0.78,
+      -1.58
+    ],
+    "T2_A": [
+      -0.525,
+      0.0,
+      0.46
+    ],
+    "T2_B": [
+      0.525,
+      0.0,
+      0.46
+    ],
+    "T2_C": [
+      0.0,
+      0.0,
+      -0.46
+    ],
+    "T2_D": [
+      -0.525,
+      0.78,
+      0.46
+    ],
+    "T2_E": [
+      0.525,
+      0.78,
+      0.46
+    ],
+    "T2_F": [
+      0.0,
+      0.78,
+      -0.46
+    ],
+    "T3_A": [
+      -0.525,
+      0.8,
+      0.46
+    ],
+    "T3_B": [
+      0.525,
+      0.8,
+      0.46
+    ],
+    "T3_C": [
+      0.0,
+      0.8,
+      -0.46
+    ],
+    "T3_D": [
+      -0.525,
+      1.58,
+      0.46
+    ],
+    "T3_E": [
+      0.525,
+      1.58,
+      0.46
+    ],
+    "T3_F": [
+      0.0,
+      1.58,
+      -0.46
+    ],
+    "T4_A": [
+      0.795,
+      0.0,
+      0.46
+    ],
+    "T4_B": [
+      1.845,
+      0.0,
+      0.46
+    ],
+    "T4_C": [
+      1.32,
+      0.0,
+      -0.46
+    ],
+    "T4_D": [
+      0.795,
+      0.78,
+      0.46
+    ],
+    "T4_E": [
+      1.845,
+      0.78,
+      0.46
+    ],
+    "T4_F": [
+      1.32,
+      0.78,
+      -0.46
+    ],
+    "T5_A": [
+      -1.845,
+      0.0,
+      1.58
+    ],
+    "T5_B": [
+      -0.795,
+      0.0,
+      1.58
+    ],
+    "T5_C": [
+      -1.32,
+      0.0,
+      0.66
+    ],
+    "T5_D": [
+      -1.845,
+      0.78,
+      1.58
+    ],
+    "T5_E": [
+      -0.795,
+      0.78,
+      1.58
+    ],
+    "T5_F": [
+      -1.32,
+      0.78,
+      0.66
+    ],
+    "T6_A": [
+      0.795,
+      0.0,
+      1.58
+    ],
+    "T6_B": [
+      1.845,
+      0.0,
+      1.58
+    ],
+    "T6_C": [
+      1.32,
+      0.0,
+      0.66
+    ],
+    "T6_D": [
+      0.795,
+      0.78,
+      1.58
+    ],
+    "T6_E": [
+      1.845,
+      0.78,
+      1.58
+    ],
+    "T6_F": [
+      1.32,
+      0.78,
+      0.66
+    ],
+    "P0": [
+      0.0,
+      0.02,
+      0.0
+    ],
+    "P": [
+      0.0,
+      1.82,
+      0.0
+    ]
+  },
+  "faces": [
+    {
+      "points": [
+        "T0_A",
+        "T0_B",
+        "T0_C"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T0_D",
+        "T0_F",
+        "T0_E"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T0_A",
+        "T0_D",
+        "T0_E",
+        "T0_B"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T0_B",
+        "T0_E",
+        "T0_F",
+        "T0_C"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T0_C",
+        "T0_F",
+        "T0_D",
+        "T0_A"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T1_A",
+        "T1_B",
+        "T1_C"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T1_D",
+        "T1_F",
+        "T1_E"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T1_A",
+        "T1_D",
+        "T1_E",
+        "T1_B"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T1_B",
+        "T1_E",
+        "T1_F",
+        "T1_C"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T1_C",
+        "T1_F",
+        "T1_D",
+        "T1_A"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T2_A",
+        "T2_B",
+        "T2_C"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T2_D",
+        "T2_F",
+        "T2_E"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T2_A",
+        "T2_D",
+        "T2_E",
+        "T2_B"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T2_B",
+        "T2_E",
+        "T2_F",
+        "T2_C"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T2_C",
+        "T2_F",
+        "T2_D",
+        "T2_A"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T3_A",
+        "T3_B",
+        "T3_C"
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T3_D",
+        "T3_F",
+        "T3_E"
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T3_A",
+        "T3_D",
+        "T3_E",
+        "T3_B"
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T3_B",
+        "T3_E",
+        "T3_F",
+        "T3_C"
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T3_C",
+        "T3_F",
+        "T3_D",
+        "T3_A"
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T4_A",
+        "T4_B",
+        "T4_C"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T4_D",
+        "T4_F",
+        "T4_E"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T4_A",
+        "T4_D",
+        "T4_E",
+        "T4_B"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T4_B",
+        "T4_E",
+        "T4_F",
+        "T4_C"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T4_C",
+        "T4_F",
+        "T4_D",
+        "T4_A"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T5_A",
+        "T5_B",
+        "T5_C"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T5_D",
+        "T5_F",
+        "T5_E"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T5_A",
+        "T5_D",
+        "T5_E",
+        "T5_B"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T5_B",
+        "T5_E",
+        "T5_F",
+        "T5_C"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T5_C",
+        "T5_F",
+        "T5_D",
+        "T5_A"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T6_A",
+        "T6_B",
+        "T6_C"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T6_D",
+        "T6_F",
+        "T6_E"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T6_A",
+        "T6_D",
+        "T6_E",
+        "T6_B"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T6_B",
+        "T6_E",
+        "T6_F",
+        "T6_C"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T6_C",
+        "T6_F",
+        "T6_D",
+        "T6_A"
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "role": "base_stack"
+    }
+  ],
+  "edges": [
+    {
+      "points": [
+        "T0_A",
+        "T0_B"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T0_B",
+        "T0_C"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T0_C",
+        "T0_A"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T0_D",
+        "T0_E"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T0_E",
+        "T0_F"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T0_F",
+        "T0_D"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T0_A",
+        "T0_D"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T0_B",
+        "T0_E"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T0_C",
+        "T0_F"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T1_A",
+        "T1_B"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T1_B",
+        "T1_C"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T1_C",
+        "T1_A"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T1_D",
+        "T1_E"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T1_E",
+        "T1_F"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T1_F",
+        "T1_D"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T1_A",
+        "T1_D"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T1_B",
+        "T1_E"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T1_C",
+        "T1_F"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T2_A",
+        "T2_B"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T2_B",
+        "T2_C"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T2_C",
+        "T2_A"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T2_D",
+        "T2_E"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T2_E",
+        "T2_F"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T2_F",
+        "T2_D"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T2_A",
+        "T2_D"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T2_B",
+        "T2_E"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T2_C",
+        "T2_F"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T3_A",
+        "T3_B"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T3_B",
+        "T3_C"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T3_C",
+        "T3_A"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T3_D",
+        "T3_E"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T3_E",
+        "T3_F"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T3_F",
+        "T3_D"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T3_A",
+        "T3_D"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T3_B",
+        "T3_E"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T3_C",
+        "T3_F"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T4_A",
+        "T4_B"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T4_B",
+        "T4_C"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T4_C",
+        "T4_A"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T4_D",
+        "T4_E"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T4_E",
+        "T4_F"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T4_F",
+        "T4_D"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T4_A",
+        "T4_D"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T4_B",
+        "T4_E"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T4_C",
+        "T4_F"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T5_A",
+        "T5_B"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T5_B",
+        "T5_C"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T5_C",
+        "T5_A"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T5_D",
+        "T5_E"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T5_E",
+        "T5_F"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T5_F",
+        "T5_D"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T5_A",
+        "T5_D"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T5_B",
+        "T5_E"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T5_C",
+        "T5_F"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T6_A",
+        "T6_B"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T6_B",
+        "T6_C"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T6_C",
+        "T6_A"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T6_D",
+        "T6_E"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T6_E",
+        "T6_F"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T6_F",
+        "T6_D"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T6_A",
+        "T6_D"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T6_B",
+        "T6_E"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "points": [
+        "T6_C",
+        "T6_F"
+      ],
+      "color": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    }
+  ],
+  "aux_lines": [
+    {
+      "points": [
+        "P0",
+        "P"
+      ],
+      "color": "#d97400",
+      "dash": true,
+      "depthTest": false,
+      "width": 4.0
+    }
+  ],
+  "aux_faces": [],
+  "aux_points": [
+    "P"
+  ],
+  "labels": [
+    {
+      "text": "P",
+      "point": "P",
+      "offset": [
+        0.08,
+        0.12,
+        0.08
+      ],
+      "kind": "aux"
+    }
+  ],
+  "primitives": [],
+  "height_map": [
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      2,
+      1
+    ],
+    [
+      1,
+      0,
+      1
+    ]
+  ],
+  "base_unit": "triangular_prism",
+  "qa_seeds": [
+    {
+      "task": "GE3D_BASE_STACK_TOTAL_COUNT",
+      "question": "How many triangular prisms are in the stack?",
+      "answer": 7,
+      "evidence": "Sum all nonzero column heights in the sparse height map."
+    },
+    {
+      "task": "GE3D_BASE_STACK_MAX_HEIGHT",
+      "question": "What is the maximum number of base solids in a vertical column?",
+      "answer": 2,
+      "evidence": "Find the tallest stack column."
+    },
+    {
+      "task": "GE3D_BASE_STACK_TOP_COLUMN_COUNT",
+      "question": "How many columns reach the highest level?",
+      "answer": 1,
+      "evidence": "Count columns whose height equals the maximum height."
+    },
+    {
+      "task": "GE3D_BASE_STACK_OCCUPIED_POSITIONS",
+      "question": "How many ground positions are occupied by at least one base solid?",
+      "answer": 6,
+      "evidence": "Count nonzero cells in the height map."
+    },
+    {
+      "task": "GE3D_BASE_STACK_MARKED_COLUMN_HEIGHT",
+      "question": "How many base solids are in the marked column P?",
+      "answer": 2,
+      "evidence": "The orange dashed line and P label mark the selected column."
+    }
+  ],
+  "_augmentation": "base_stack_v2",
+  "_hide_meta_panel": true,
+  "_id": "base_stack_tri_prism",
+  "_model": "rule_base_stack_v2"
+}

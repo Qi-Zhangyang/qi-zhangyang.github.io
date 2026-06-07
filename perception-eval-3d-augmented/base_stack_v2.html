@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Base Geometry Stack V2</title>
+<style>
+html,body{margin:0;background:#f5f6f7;color:#202326;font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;}
+header{position:sticky;top:0;z-index:2;background:rgba(245,246,247,.96);border-bottom:1px solid #d9dde1;padding:14px 18px;}
+h1{font-size:18px;margin:0 0 6px;letter-spacing:0;}
+.meta{color:#66707a;font-size:13px;line-height:1.45;max-width:1080px;}
+main{padding:14px 18px 28px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:12px;}
+.card{background:#fff;border:1px solid #d9dde2;border-radius:7px;overflow:hidden;}
+.shot{display:block;background:#eef1f4;aspect-ratio:16/10;text-decoration:none;color:#66707a;}
+.shot img{width:100%;height:100%;object-fit:cover;display:block;}
+.body{padding:10px 12px;display:flex;flex-direction:column;gap:7px;font-size:13px;}
+.body span{color:#66707a;line-height:1.45;}
+.links{display:flex;gap:12px;}
+a{color:#174ea6;text-decoration:none;}
+a:hover{text-decoration:underline;}
+table{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed;}
+th,td{border-top:1px solid #e4e7eb;padding:6px 5px;text-align:left;vertical-align:top;overflow-wrap:anywhere;}
+th{color:#66707a;font-weight:700;}
+td:last-child{width:58px;font-weight:700;color:#202326;}
+</style>
+</head>
+<body>
+<header>
+  <h1>Base Geometry Stack V2</h1>
+  <div class="meta">5 sparse stacks. Each stack uses the source image's base geometry type instead of always using cubes. Height maps are intentionally sparse and low so the counting task stays visual.</div>
+</header>
+<main><section class="grid">
+            <article class="card">
+              <a class="shot" href="base_stack_v2_viewers/base_stack_cube.html?v=base-stack-v2" target="_blank" rel="noreferrer">
+                <img src="status/base_stack_v2_screenshots/base_stack_cube.png?v=base-stack-v2" alt="base_stack_cube screenshot" loading="lazy" />
+              </a>
+              <div class="body">
+                <strong>base_stack_cube</strong>
+                <span>source=mc_1750 · unit=cube · total=8 · max column=2</span>
+                <div class="links">
+                  <a href="base_stack_v2_viewers/base_stack_cube.html?v=base-stack-v2" target="_blank" rel="noreferrer">viewer</a>
+                  <a href="base_stack_v2_specs/base_stack_cube.json?v=base-stack-v2" target="_blank" rel="noreferrer">spec</a>
+                </div>
+                <table><thead><tr><th>task</th><th>question</th><th>answer</th></tr></thead><tbody><tr><td>GE3D_BASE_STACK_TOTAL_COUNT</td><td>How many cubes are in the stack?</td><td>8</td></tr><tr><td>GE3D_BASE_STACK_MAX_HEIGHT</td><td>What is the maximum number of base solids in a vertical column?</td><td>2</td></tr><tr><td>GE3D_BASE_STACK_TOP_COLUMN_COUNT</td><td>How many columns reach the highest level?</td><td>2</td></tr><tr><td>GE3D_BASE_STACK_OCCUPIED_POSITIONS</td><td>How many ground positions are occupied by at least one base solid?</td><td>6</td></tr></tbody></table>
+              </div>
+            </article>
+            
+            <article class="card">
+              <a class="shot" href="base_stack_v2_viewers/base_stack_cuboid.html?v=base-stack-v2" target="_blank" rel="noreferrer">
+                <img src="status/base_stack_v2_screenshots/base_stack_cuboid.png?v=base-stack-v2" alt="base_stack_cuboid screenshot" loading="lazy" />
+              </a>
+              <div class="body">
+                <strong>base_stack_cuboid</strong>
+                <span>source=mc_1753 · unit=cuboid · total=8 · max column=2</span>
+                <div class="links">
+                  <a href="base_stack_v2_viewers/base_stack_cuboid.html?v=base-stack-v2" target="_blank" rel="noreferrer">viewer</a>
+                  <a href="base_stack_v2_specs/base_stack_cuboid.json?v=base-stack-v2" target="_blank" rel="noreferrer">spec</a>
+                </div>
+                <table><thead><tr><th>task</th><th>question</th><th>answer</th></tr></thead><tbody><tr><td>GE3D_BASE_STACK_TOTAL_COUNT</td><td>How many cuboids are in the stack?</td><td>8</td></tr><tr><td>GE3D_BASE_STACK_MAX_HEIGHT</td><td>What is the maximum number of base solids in a vertical column?</td><td>2</td></tr><tr><td>GE3D_BASE_STACK_TOP_COLUMN_COUNT</td><td>How many columns reach the highest level?</td><td>2</td></tr><tr><td>GE3D_BASE_STACK_OCCUPIED_POSITIONS</td><td>How many ground positions are occupied by at least one base solid?</td><td>6</td></tr></tbody></table>
+              </div>
+            </article>
+            
+            <article class="card">
+              <a class="shot" href="base_stack_v2_viewers/base_stack_cylinder.html?v=base-stack-v2" target="_blank" rel="noreferrer">
+                <img src="status/base_stack_v2_screenshots/base_stack_cylinder.png?v=base-stack-v2" alt="base_stack_cylinder screenshot" loading="lazy" />
+              </a>
+              <div class="body">
+                <strong>base_stack_cylinder</strong>
+                <span>source=mc_1752 · unit=cylinder · total=6 · max column=2</span>
+                <div class="links">
+                  <a href="base_stack_v2_viewers/base_stack_cylinder.html?v=base-stack-v2" target="_blank" rel="noreferrer">viewer</a>
+                  <a href="base_stack_v2_specs/base_stack_cylinder.json?v=base-stack-v2" target="_blank" rel="noreferrer">spec</a>
+                </div>
+                <table><thead><tr><th>task</th><th>question</th><th>answer</th></tr></thead><tbody><tr><td>GE3D_BASE_STACK_TOTAL_COUNT</td><td>How many cylinders are in the stack?</td><td>6</td></tr><tr><td>GE3D_BASE_STACK_MAX_HEIGHT</td><td>What is the maximum number of base solids in a vertical column?</td><td>2</td></tr><tr><td>GE3D_BASE_STACK_TOP_COLUMN_COUNT</td><td>How many columns reach the highest level?</td><td>1</td></tr><tr><td>GE3D_BASE_STACK_OCCUPIED_POSITIONS</td><td>How many ground positions are occupied by at least one base solid?</td><td>5</td></tr></tbody></table>
+              </div>
+            </article>
+            
+            <article class="card">
+              <a class="shot" href="base_stack_v2_viewers/base_stack_cone.html?v=base-stack-v2" target="_blank" rel="noreferrer">
+                <img src="status/base_stack_v2_screenshots/base_stack_cone.png?v=base-stack-v2" alt="base_stack_cone screenshot" loading="lazy" />
+              </a>
+              <div class="body">
+                <strong>base_stack_cone</strong>
+                <span>source=mc_1751 · unit=cone · total=6 · max column=2</span>
+                <div class="links">
+                  <a href="base_stack_v2_viewers/base_stack_cone.html?v=base-stack-v2" target="_blank" rel="noreferrer">viewer</a>
+                  <a href="base_stack_v2_specs/base_stack_cone.json?v=base-stack-v2" target="_blank" rel="noreferrer">spec</a>
+                </div>
+                <table><thead><tr><th>task</th><th>question</th><th>answer</th></tr></thead><tbody><tr><td>GE3D_BASE_STACK_TOTAL_COUNT</td><td>How many cones are in the stack?</td><td>6</td></tr><tr><td>GE3D_BASE_STACK_MAX_HEIGHT</td><td>What is the maximum number of base solids in a vertical column?</td><td>2</td></tr><tr><td>GE3D_BASE_STACK_TOP_COLUMN_COUNT</td><td>How many columns reach the highest level?</td><td>1</td></tr><tr><td>GE3D_BASE_STACK_OCCUPIED_POSITIONS</td><td>How many ground positions are occupied by at least one base solid?</td><td>5</td></tr></tbody></table>
+              </div>
+            </article>
+            
+            <article class="card">
+              <a class="shot" href="base_stack_v2_viewers/base_stack_tri_prism.html?v=base-stack-v2" target="_blank" rel="noreferrer">
+                <img src="status/base_stack_v2_screenshots/base_stack_tri_prism.png?v=base-stack-v2" alt="base_stack_tri_prism screenshot" loading="lazy" />
+              </a>
+              <div class="body">
+                <strong>base_stack_tri_prism</strong>
+                <span>source=mc_1765 · unit=triangular_prism · total=7 · max column=2</span>
+                <div class="links">
+                  <a href="base_stack_v2_viewers/base_stack_tri_prism.html?v=base-stack-v2" target="_blank" rel="noreferrer">viewer</a>
+                  <a href="base_stack_v2_specs/base_stack_tri_prism.json?v=base-stack-v2" target="_blank" rel="noreferrer">spec</a>
+                </div>
+                <table><thead><tr><th>task</th><th>question</th><th>answer</th></tr></thead><tbody><tr><td>GE3D_BASE_STACK_TOTAL_COUNT</td><td>How many triangular prisms are in the stack?</td><td>7</td></tr><tr><td>GE3D_BASE_STACK_MAX_HEIGHT</td><td>What is the maximum number of base solids in a vertical column?</td><td>2</td></tr><tr><td>GE3D_BASE_STACK_TOP_COLUMN_COUNT</td><td>How many columns reach the highest level?</td><td>1</td></tr><tr><td>GE3D_BASE_STACK_OCCUPIED_POSITIONS</td><td>How many ground positions are occupied by at least one base solid?</td><td>6</td></tr></tbody></table>
+              </div>
+            </article>
+            </section></main>
+</body>
+</html>

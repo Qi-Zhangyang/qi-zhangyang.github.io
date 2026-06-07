@@ -1,0 +1,211 @@
+{
+  "title": "cone sparse stack · base stack v2",
+  "meta": "sparse stack using source base geometry: cone",
+  "camera": {
+    "position": [
+      5.2,
+      4.2,
+      6.3
+    ],
+    "target": [
+      0.0,
+      0.7055999999999999,
+      0.0
+    ],
+    "orthoSize": 3.2
+  },
+  "vertices": {
+    "P0": [
+      1.16,
+      0.02,
+      1.16
+    ],
+    "P": [
+      1.16,
+      1.9,
+      1.16
+    ]
+  },
+  "faces": [],
+  "edges": [],
+  "aux_lines": [
+    {
+      "points": [
+        "P0",
+        "P"
+      ],
+      "color": "#d97400",
+      "dash": true,
+      "depthTest": false,
+      "width": 4.0
+    }
+  ],
+  "aux_faces": [],
+  "aux_points": [
+    "P"
+  ],
+  "labels": [
+    {
+      "text": "P",
+      "point": "P",
+      "offset": [
+        0.08,
+        0.12,
+        0.08
+      ],
+      "kind": "aux"
+    }
+  ],
+  "primitives": [
+    {
+      "type": "cone",
+      "center": [
+        -1.16,
+        0.41,
+        -1.16
+      ],
+      "radius": 0.42,
+      "height": 0.82,
+      "axis": "y",
+      "color": "#8ecae6",
+      "opacity": 0.42,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "cone",
+      "center": [
+        1.16,
+        0.41,
+        -1.16
+      ],
+      "radius": 0.42,
+      "height": 0.82,
+      "axis": "y",
+      "color": "#8ecae6",
+      "opacity": 0.42,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "cone",
+      "center": [
+        0.0,
+        0.41,
+        0.0
+      ],
+      "radius": 0.42,
+      "height": 0.82,
+      "axis": "y",
+      "color": "#8ecae6",
+      "opacity": 0.42,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "cone",
+      "center": [
+        -1.16,
+        0.41,
+        1.16
+      ],
+      "radius": 0.42,
+      "height": 0.82,
+      "axis": "y",
+      "color": "#8ecae6",
+      "opacity": 0.42,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "cone",
+      "center": [
+        1.16,
+        0.41,
+        1.16
+      ],
+      "radius": 0.42,
+      "height": 0.82,
+      "axis": "y",
+      "color": "#8ecae6",
+      "opacity": 0.42,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "cone",
+      "center": [
+        1.16,
+        1.25,
+        1.16
+      ],
+      "radius": 0.42,
+      "height": 0.82,
+      "axis": "y",
+      "color": "#f2c94c",
+      "opacity": 0.42,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    }
+  ],
+  "height_map": [
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      2
+    ]
+  ],
+  "base_unit": "cone",
+  "qa_seeds": [
+    {
+      "task": "GE3D_BASE_STACK_TOTAL_COUNT",
+      "question": "How many cones are in the stack?",
+      "answer": 6,
+      "evidence": "Sum all nonzero column heights in the sparse height map."
+    },
+    {
+      "task": "GE3D_BASE_STACK_MAX_HEIGHT",
+      "question": "What is the maximum number of base solids in a vertical column?",
+      "answer": 2,
+      "evidence": "Find the tallest stack column."
+    },
+    {
+      "task": "GE3D_BASE_STACK_TOP_COLUMN_COUNT",
+      "question": "How many columns reach the highest level?",
+      "answer": 1,
+      "evidence": "Count columns whose height equals the maximum height."
+    },
+    {
+      "task": "GE3D_BASE_STACK_OCCUPIED_POSITIONS",
+      "question": "How many ground positions are occupied by at least one base solid?",
+      "answer": 5,
+      "evidence": "Count nonzero cells in the height map."
+    },
+    {
+      "task": "GE3D_BASE_STACK_MARKED_COLUMN_HEIGHT",
+      "question": "How many base solids are in the marked column P?",
+      "answer": 2,
+      "evidence": "The orange dashed line and P label mark the selected column."
+    }
+  ],
+  "_augmentation": "base_stack_v2",
+  "_hide_meta_panel": true,
+  "_id": "base_stack_cone",
+  "_model": "rule_base_stack_v2"
+}
