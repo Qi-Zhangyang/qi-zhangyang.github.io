@@ -1,0 +1,366 @@
+{
+  "title": "cylinder staggered stack · base stack v3",
+  "meta": "sparse stack using source base geometry: cylinder",
+  "camera": {
+    "position": [
+      5.2,
+      4.2,
+      6.3
+    ],
+    "target": [
+      0.0,
+      0.9323999999999999,
+      0.0
+    ],
+    "orthoSize": 3.2
+  },
+  "vertices": {
+    "P0": [
+      0.54,
+      0.02,
+      0.54
+    ],
+    "P": [
+      0.54,
+      2.44,
+      0.54
+    ]
+  },
+  "faces": [],
+  "edges": [],
+  "aux_lines": [
+    {
+      "points": [
+        "P0",
+        "P"
+      ],
+      "color": "#d97400",
+      "dash": true,
+      "depthTest": false,
+      "width": 4.0
+    }
+  ],
+  "aux_faces": [],
+  "aux_points": [
+    "P"
+  ],
+  "labels": [
+    {
+      "text": "P",
+      "point": "P",
+      "offset": [
+        0.08,
+        0.12,
+        0.08
+      ],
+      "kind": "aux"
+    }
+  ],
+  "primitives": [
+    {
+      "type": "cylinder",
+      "center": [
+        -1.62,
+        0.36,
+        -1.62
+      ],
+      "radius": 0.36,
+      "height": 0.72,
+      "axis": "y",
+      "color": "#8ecae6",
+      "opacity": 0.42,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "cylinder",
+      "center": [
+        0.54,
+        0.36,
+        -1.62
+      ],
+      "radius": 0.36,
+      "height": 0.72,
+      "axis": "y",
+      "color": "#8ecae6",
+      "opacity": 0.42,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "cylinder",
+      "center": [
+        0.54,
+        1.1,
+        -1.62
+      ],
+      "radius": 0.36,
+      "height": 0.72,
+      "axis": "y",
+      "color": "#f2c94c",
+      "opacity": 0.42,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "cylinder",
+      "center": [
+        -0.54,
+        0.36,
+        -0.54
+      ],
+      "radius": 0.36,
+      "height": 0.72,
+      "axis": "y",
+      "color": "#8ecae6",
+      "opacity": 0.42,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "cylinder",
+      "center": [
+        -0.54,
+        1.1,
+        -0.54
+      ],
+      "radius": 0.36,
+      "height": 0.72,
+      "axis": "y",
+      "color": "#f2c94c",
+      "opacity": 0.42,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "cylinder",
+      "center": [
+        0.54,
+        0.36,
+        -0.54
+      ],
+      "radius": 0.36,
+      "height": 0.72,
+      "axis": "y",
+      "color": "#8ecae6",
+      "opacity": 0.42,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "cylinder",
+      "center": [
+        1.62,
+        0.36,
+        -0.54
+      ],
+      "radius": 0.36,
+      "height": 0.72,
+      "axis": "y",
+      "color": "#8ecae6",
+      "opacity": 0.42,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "cylinder",
+      "center": [
+        1.62,
+        1.1,
+        -0.54
+      ],
+      "radius": 0.36,
+      "height": 0.72,
+      "axis": "y",
+      "color": "#f2c94c",
+      "opacity": 0.42,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "cylinder",
+      "center": [
+        -1.62,
+        0.36,
+        0.54
+      ],
+      "radius": 0.36,
+      "height": 0.72,
+      "axis": "y",
+      "color": "#8ecae6",
+      "opacity": 0.42,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "cylinder",
+      "center": [
+        0.54,
+        0.36,
+        0.54
+      ],
+      "radius": 0.36,
+      "height": 0.72,
+      "axis": "y",
+      "color": "#8ecae6",
+      "opacity": 0.42,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "cylinder",
+      "center": [
+        0.54,
+        1.1,
+        0.54
+      ],
+      "radius": 0.36,
+      "height": 0.72,
+      "axis": "y",
+      "color": "#f2c94c",
+      "opacity": 0.42,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "cylinder",
+      "center": [
+        0.54,
+        1.84,
+        0.54
+      ],
+      "radius": 0.36,
+      "height": 0.72,
+      "axis": "y",
+      "color": "#95d5b2",
+      "opacity": 0.42,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "cylinder",
+      "center": [
+        -0.54,
+        0.36,
+        1.62
+      ],
+      "radius": 0.36,
+      "height": 0.72,
+      "axis": "y",
+      "color": "#8ecae6",
+      "opacity": 0.42,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "cylinder",
+      "center": [
+        1.62,
+        0.36,
+        1.62
+      ],
+      "radius": 0.36,
+      "height": 0.72,
+      "axis": "y",
+      "color": "#8ecae6",
+      "opacity": 0.42,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    }
+  ],
+  "height_map": [
+    [
+      1,
+      0,
+      2,
+      0
+    ],
+    [
+      0,
+      2,
+      1,
+      2
+    ],
+    [
+      1,
+      0,
+      3,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      1
+    ]
+  ],
+  "base_unit": "cylinder",
+  "qa_seeds": [
+    {
+      "task": "GE3D_BASE_STACK_TOTAL_COUNT",
+      "question": "How many cylinders are in the stack?",
+      "answer": 14,
+      "evidence": "Sum all nonzero column heights in the sparse height map."
+    },
+    {
+      "task": "GE3D_BASE_STACK_MAX_HEIGHT",
+      "question": "What is the maximum number of base solids in a vertical column?",
+      "answer": 3,
+      "evidence": "Find the tallest stack column."
+    },
+    {
+      "task": "GE3D_BASE_STACK_TOP_COLUMN_COUNT",
+      "question": "How many columns reach the highest level?",
+      "answer": 1,
+      "evidence": "Count columns whose height equals the maximum height."
+    },
+    {
+      "task": "GE3D_BASE_STACK_OCCUPIED_POSITIONS",
+      "question": "How many ground positions are occupied by at least one base solid?",
+      "answer": 9,
+      "evidence": "Count nonzero cells in the height map."
+    },
+    {
+      "task": "GE3D_BASE_STACK_MARKED_COLUMN_HEIGHT",
+      "question": "How many base solids are in the marked column P?",
+      "answer": 3,
+      "evidence": "The orange dashed line and P label mark the selected column."
+    },
+    {
+      "task": "GE3D_BASE_STACK_TALL_COLUMN_COUNT",
+      "question": "How many occupied columns contain at least two base solids?",
+      "answer": 4,
+      "evidence": "Count columns whose height is two or more."
+    },
+    {
+      "task": "GE3D_BASE_STACK_EMPTY_POSITIONS",
+      "question": "How many ground positions are empty?",
+      "answer": 7,
+      "evidence": "Count cells in the sparse height map with height zero."
+    },
+    {
+      "task": "GE3D_BASE_STACK_ABOVE_GROUND_COUNT",
+      "question": "How many base solids are above the first layer?",
+      "answer": 5,
+      "evidence": "For each column, count all layers above the ground layer."
+    }
+  ],
+  "_augmentation": "base_stack_v3",
+  "_hide_meta_panel": true,
+  "_id": "base_stack_v3_cylinder",
+  "_model": "rule_base_stack_v3"
+}

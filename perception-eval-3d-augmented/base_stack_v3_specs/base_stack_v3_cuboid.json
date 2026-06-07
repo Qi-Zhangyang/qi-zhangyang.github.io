@@ -1,0 +1,503 @@
+{
+  "title": "cuboid stepped sparse stack · base stack v3",
+  "meta": "sparse stack using source base geometry: cuboid",
+  "camera": {
+    "position": [
+      5.2,
+      4.2,
+      6.3
+    ],
+    "target": [
+      0.0,
+      0.9323999999999999,
+      0.0
+    ],
+    "orthoSize": 4.1091999999999995
+  },
+  "vertices": {
+    "P0": [
+      -0.73,
+      0.02,
+      -0.54
+    ],
+    "P": [
+      -0.73,
+      2.44,
+      -0.54
+    ],
+    "P1": [
+      -1.34,
+      2.22,
+      -0.96
+    ],
+    "P2": [
+      -0.12,
+      2.22,
+      -0.96
+    ],
+    "P3": [
+      -0.12,
+      2.22,
+      -0.12
+    ],
+    "P4": [
+      -1.34,
+      2.22,
+      -0.12
+    ]
+  },
+  "faces": [],
+  "edges": [],
+  "aux_lines": [
+    {
+      "points": [
+        "P0",
+        "P"
+      ],
+      "color": "#d97400",
+      "dash": true,
+      "depthTest": false,
+      "width": 4.0
+    },
+    {
+      "points": [
+        "P1",
+        "P2"
+      ],
+      "color": "#d03030",
+      "dash": false,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "P2",
+        "P3"
+      ],
+      "color": "#d03030",
+      "dash": false,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "P3",
+        "P4"
+      ],
+      "color": "#d03030",
+      "dash": false,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "P4",
+        "P1"
+      ],
+      "color": "#d03030",
+      "dash": false,
+      "depthTest": false,
+      "width": 3.8
+    }
+  ],
+  "aux_faces": [
+    {
+      "points": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "color": "#d03030",
+      "opacity": 0.24,
+      "role": "base_geo_overlap",
+      "occlude": false
+    }
+  ],
+  "aux_points": [
+    "P"
+  ],
+  "labels": [
+    {
+      "text": "P",
+      "point": "P",
+      "offset": [
+        0.08,
+        0.12,
+        0.08
+      ],
+      "kind": "aux"
+    }
+  ],
+  "primitives": [
+    {
+      "type": "box",
+      "center": [
+        -0.73,
+        0.36,
+        -1.62
+      ],
+      "size": [
+        1.22,
+        0.72,
+        0.84
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        -0.73,
+        1.1,
+        -1.62
+      ],
+      "size": [
+        1.22,
+        0.72,
+        0.84
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        0.73,
+        0.36,
+        -1.62
+      ],
+      "size": [
+        1.22,
+        0.72,
+        0.84
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        -2.19,
+        0.36,
+        -0.54
+      ],
+      "size": [
+        1.22,
+        0.72,
+        0.84
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        -0.73,
+        0.36,
+        -0.54
+      ],
+      "size": [
+        1.22,
+        0.72,
+        0.84
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        -0.73,
+        1.1,
+        -0.54
+      ],
+      "size": [
+        1.22,
+        0.72,
+        0.84
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        -0.73,
+        1.84,
+        -0.54
+      ],
+      "size": [
+        1.22,
+        0.72,
+        0.84
+      ],
+      "color": "#95d5b2",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        2.19,
+        0.36,
+        -0.54
+      ],
+      "size": [
+        1.22,
+        0.72,
+        0.84
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        2.19,
+        1.1,
+        -0.54
+      ],
+      "size": [
+        1.22,
+        0.72,
+        0.84
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        -2.19,
+        0.36,
+        0.54
+      ],
+      "size": [
+        1.22,
+        0.72,
+        0.84
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        -2.19,
+        1.1,
+        0.54
+      ],
+      "size": [
+        1.22,
+        0.72,
+        0.84
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        0.73,
+        0.36,
+        0.54
+      ],
+      "size": [
+        1.22,
+        0.72,
+        0.84
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        2.19,
+        0.36,
+        0.54
+      ],
+      "size": [
+        1.22,
+        0.72,
+        0.84
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        -0.73,
+        0.36,
+        1.62
+      ],
+      "size": [
+        1.22,
+        0.72,
+        0.84
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        0.73,
+        0.36,
+        1.62
+      ],
+      "size": [
+        1.22,
+        0.72,
+        0.84
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        0.73,
+        1.1,
+        1.62
+      ],
+      "size": [
+        1.22,
+        0.72,
+        0.84
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    }
+  ],
+  "height_map": [
+    [
+      0,
+      2,
+      1,
+      0
+    ],
+    [
+      1,
+      3,
+      0,
+      2
+    ],
+    [
+      2,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      2,
+      0
+    ]
+  ],
+  "base_unit": "cuboid",
+  "qa_seeds": [
+    {
+      "task": "GE3D_BASE_STACK_TOTAL_COUNT",
+      "question": "How many cuboids are in the stack?",
+      "answer": 16,
+      "evidence": "Sum all nonzero column heights in the sparse height map."
+    },
+    {
+      "task": "GE3D_BASE_STACK_MAX_HEIGHT",
+      "question": "What is the maximum number of base solids in a vertical column?",
+      "answer": 3,
+      "evidence": "Find the tallest stack column."
+    },
+    {
+      "task": "GE3D_BASE_STACK_TOP_COLUMN_COUNT",
+      "question": "How many columns reach the highest level?",
+      "answer": 1,
+      "evidence": "Count columns whose height equals the maximum height."
+    },
+    {
+      "task": "GE3D_BASE_STACK_OCCUPIED_POSITIONS",
+      "question": "How many ground positions are occupied by at least one base solid?",
+      "answer": 10,
+      "evidence": "Count nonzero cells in the height map."
+    },
+    {
+      "task": "GE3D_BASE_STACK_MARKED_COLUMN_HEIGHT",
+      "question": "How many base solids are in the marked column P?",
+      "answer": 3,
+      "evidence": "The orange dashed line and P label mark the selected column."
+    },
+    {
+      "task": "GE3D_BASE_STACK_TALL_COLUMN_COUNT",
+      "question": "How many occupied columns contain at least two base solids?",
+      "answer": 5,
+      "evidence": "Count columns whose height is two or more."
+    },
+    {
+      "task": "GE3D_BASE_STACK_EMPTY_POSITIONS",
+      "question": "How many ground positions are empty?",
+      "answer": 6,
+      "evidence": "Count cells in the sparse height map with height zero."
+    },
+    {
+      "task": "GE3D_BASE_STACK_ABOVE_GROUND_COUNT",
+      "question": "How many base solids are above the first layer?",
+      "answer": 6,
+      "evidence": "For each column, count all layers above the ground layer."
+    }
+  ],
+  "_augmentation": "base_stack_v3",
+  "_hide_meta_panel": true,
+  "_id": "base_stack_v3_cuboid",
+  "_model": "rule_base_stack_v3"
+}
