@@ -1,0 +1,918 @@
+{
+  "title": "cube complex floating stack · base stack v4 floating",
+  "meta": "sparse stack using source base geometry: cube",
+  "camera": {
+    "position": [
+      5.2,
+      4.2,
+      6.3
+    ],
+    "target": [
+      0.0,
+      1.848,
+      0.0
+    ],
+    "orthoSize": 4.316000000000001
+  },
+  "vertices": {
+    "P0": [
+      1.08,
+      0.02,
+      0.54
+    ],
+    "P": [
+      1.08,
+      3.74,
+      0.54
+    ],
+    "P1": [
+      0.65,
+      3.52,
+      0.11
+    ],
+    "P2": [
+      1.51,
+      3.52,
+      0.11
+    ],
+    "P3": [
+      1.51,
+      3.52,
+      0.97
+    ],
+    "P4": [
+      0.65,
+      3.52,
+      0.97
+    ],
+    "F0_base": [
+      -1.08,
+      0.02,
+      -1.62
+    ],
+    "F0_top": [
+      -1.08,
+      3.66,
+      -1.62
+    ],
+    "F1_base": [
+      2.16,
+      0.02,
+      -1.62
+    ],
+    "F1_top": [
+      2.16,
+      2.78,
+      -1.62
+    ],
+    "F2_base": [
+      0.0,
+      0.02,
+      0.54
+    ],
+    "F2_top": [
+      0.0,
+      4.54,
+      0.54
+    ],
+    "F3_base": [
+      1.08,
+      0.02,
+      -0.54
+    ],
+    "F3_top": [
+      1.08,
+      4.54,
+      -0.54
+    ],
+    "F4_base": [
+      -2.16,
+      0.02,
+      1.62
+    ],
+    "F4_top": [
+      -2.16,
+      3.66,
+      1.62
+    ]
+  },
+  "faces": [],
+  "edges": [],
+  "aux_lines": [
+    {
+      "points": [
+        "P0",
+        "P"
+      ],
+      "color": "#d97400",
+      "dash": true,
+      "depthTest": false,
+      "width": 4.0
+    },
+    {
+      "points": [
+        "P1",
+        "P2"
+      ],
+      "color": "#d03030",
+      "dash": false,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "P2",
+        "P3"
+      ],
+      "color": "#d03030",
+      "dash": false,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "P3",
+        "P4"
+      ],
+      "color": "#d03030",
+      "dash": false,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "P4",
+        "P1"
+      ],
+      "color": "#d03030",
+      "dash": false,
+      "depthTest": false,
+      "width": 3.8
+    },
+    {
+      "points": [
+        "F0_base",
+        "F0_top"
+      ],
+      "color": "#6d2eb8",
+      "dash": true,
+      "depthTest": false,
+      "width": 2.2,
+      "opacity": 0.5
+    },
+    {
+      "points": [
+        "F1_base",
+        "F1_top"
+      ],
+      "color": "#6d2eb8",
+      "dash": true,
+      "depthTest": false,
+      "width": 2.2,
+      "opacity": 0.5
+    },
+    {
+      "points": [
+        "F2_base",
+        "F2_top"
+      ],
+      "color": "#6d2eb8",
+      "dash": true,
+      "depthTest": false,
+      "width": 2.2,
+      "opacity": 0.5
+    },
+    {
+      "points": [
+        "F3_base",
+        "F3_top"
+      ],
+      "color": "#6d2eb8",
+      "dash": true,
+      "depthTest": false,
+      "width": 2.2,
+      "opacity": 0.5
+    },
+    {
+      "points": [
+        "F4_base",
+        "F4_top"
+      ],
+      "color": "#6d2eb8",
+      "dash": true,
+      "depthTest": false,
+      "width": 2.2,
+      "opacity": 0.5
+    }
+  ],
+  "aux_faces": [
+    {
+      "points": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "color": "#d03030",
+      "opacity": 0.24,
+      "role": "base_geo_overlap",
+      "occlude": false
+    }
+  ],
+  "aux_points": [
+    "P",
+    "F0_top",
+    "F1_top",
+    "F2_top"
+  ],
+  "labels": [
+    {
+      "text": "P",
+      "point": "P",
+      "offset": [
+        0.08,
+        0.12,
+        0.08
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "F1",
+      "point": "F0_top",
+      "offset": [
+        0.07,
+        0.12,
+        0.07
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "F2",
+      "point": "F1_top",
+      "offset": [
+        0.07,
+        0.12,
+        0.07
+      ],
+      "kind": "aux"
+    },
+    {
+      "text": "F3",
+      "point": "F2_top",
+      "offset": [
+        0.07,
+        0.12,
+        0.07
+      ],
+      "kind": "aux"
+    }
+  ],
+  "primitives": [
+    {
+      "type": "box",
+      "center": [
+        -2.16,
+        0.43,
+        -1.62
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        0.0,
+        0.43,
+        -1.62
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        0.0,
+        1.31,
+        -1.62
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        1.08,
+        0.43,
+        -1.62
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        -1.08,
+        0.43,
+        -0.54
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        -1.08,
+        1.31,
+        -0.54
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        -1.08,
+        2.19,
+        -0.54
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#95d5b2",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        0.0,
+        0.43,
+        -0.54
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        2.16,
+        0.43,
+        -0.54
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        2.16,
+        1.31,
+        -0.54
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        -2.16,
+        0.43,
+        0.54
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        -2.16,
+        1.31,
+        0.54
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        -1.08,
+        0.43,
+        0.54
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        1.08,
+        0.43,
+        0.54
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        1.08,
+        1.31,
+        0.54
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        1.08,
+        2.19,
+        0.54
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#95d5b2",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        1.08,
+        3.07,
+        0.54
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#95d5b2",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        2.16,
+        0.43,
+        0.54
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        -1.08,
+        0.43,
+        1.62
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        -1.08,
+        1.31,
+        1.62
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        0.0,
+        0.43,
+        1.62
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        2.16,
+        0.43,
+        1.62
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#8ecae6",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        2.16,
+        1.31,
+        1.62
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.4,
+      "edgeColor": "#202326",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        -1.08,
+        3.07,
+        -1.62
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#c77dff",
+      "opacity": 0.48,
+      "edgeColor": "#6d2eb8",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        2.16,
+        2.19,
+        -1.62
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#56cfe1",
+      "opacity": 0.48,
+      "edgeColor": "#6d2eb8",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        0.0,
+        3.95,
+        0.54
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#f4a261",
+      "opacity": 0.48,
+      "edgeColor": "#6d2eb8",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        1.08,
+        3.95,
+        -0.54
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#ff7aa2",
+      "opacity": 0.48,
+      "edgeColor": "#6d2eb8",
+      "width": 2.1,
+      "role": "base_stack"
+    },
+    {
+      "type": "box",
+      "center": [
+        -2.16,
+        3.07,
+        1.62
+      ],
+      "size": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "color": "#c77dff",
+      "opacity": 0.48,
+      "edgeColor": "#6d2eb8",
+      "width": 2.1,
+      "role": "base_stack"
+    }
+  ],
+  "height_map": [
+    [
+      1,
+      0,
+      2,
+      1,
+      0
+    ],
+    [
+      0,
+      3,
+      1,
+      0,
+      2
+    ],
+    [
+      2,
+      1,
+      0,
+      4,
+      1
+    ],
+    [
+      0,
+      2,
+      1,
+      0,
+      2
+    ]
+  ],
+  "floating_units": [
+    {
+      "x": 1,
+      "z": 0,
+      "layer": 3
+    },
+    {
+      "x": 4,
+      "z": 0,
+      "layer": 2
+    },
+    {
+      "x": 2,
+      "z": 2,
+      "layer": 4
+    },
+    {
+      "x": 3,
+      "z": 1,
+      "layer": 4
+    },
+    {
+      "x": 0,
+      "z": 3,
+      "layer": 3
+    }
+  ],
+  "base_unit": "cube",
+  "qa_seeds": [
+    {
+      "task": "GE3D_BASE_STACK_TOTAL_COUNT",
+      "question": "How many cubes are in the stack?",
+      "answer": 28,
+      "evidence": "Sum all nonzero column heights and any explicitly floating solids."
+    },
+    {
+      "task": "GE3D_BASE_STACK_MAX_HEIGHT",
+      "question": "What is the maximum number of base solids in one vertical position?",
+      "answer": 4,
+      "evidence": "Count stacked and floating solids at each vertical grid position."
+    },
+    {
+      "task": "GE3D_BASE_STACK_TOP_COLUMN_COUNT",
+      "question": "How many vertical positions reach the highest occupied layer?",
+      "answer": 2,
+      "evidence": "Count positions whose highest occupied layer equals the scene maximum."
+    },
+    {
+      "task": "GE3D_BASE_STACK_HIGHEST_LAYER",
+      "question": "What is the highest occupied layer number if the ground layer is layer 1?",
+      "answer": 5,
+      "evidence": "Find the largest occupied layer index and convert it to one-based numbering."
+    },
+    {
+      "task": "GE3D_BASE_STACK_OCCUPIED_POSITIONS",
+      "question": "How many ground positions are occupied by at least one base solid?",
+      "answer": 13,
+      "evidence": "Count nonzero cells in the ground height map."
+    },
+    {
+      "task": "GE3D_BASE_STACK_MARKED_COLUMN_HEIGHT",
+      "question": "How many base solids are in the marked vertical position P?",
+      "answer": 4,
+      "evidence": "The orange dashed line and P label mark the selected column."
+    },
+    {
+      "task": "GE3D_BASE_STACK_TALL_COLUMN_COUNT",
+      "question": "How many occupied vertical positions contain at least two base solids?",
+      "answer": 7,
+      "evidence": "Count vertical positions with two or more occupied layers."
+    },
+    {
+      "task": "GE3D_BASE_STACK_EMPTY_POSITIONS",
+      "question": "How many ground positions are empty?",
+      "answer": 7,
+      "evidence": "Count cells in the sparse height map with height zero."
+    },
+    {
+      "task": "GE3D_BASE_STACK_ABOVE_GROUND_COUNT",
+      "question": "How many base solids are above the first layer?",
+      "answer": 15,
+      "evidence": "For each column, count all layers above the ground layer."
+    },
+    {
+      "task": "GE3D_BASE_STACK_THIRD_LEVEL_COLUMN_COUNT",
+      "question": "How many vertical positions have a solid on the third layer or higher?",
+      "answer": 7,
+      "evidence": "Count positions whose highest occupied layer is at least the third layer."
+    },
+    {
+      "task": "GE3D_BASE_STACK_FLOATING_COUNT",
+      "question": "How many base solids are floating above a gap or empty cell?",
+      "answer": 5,
+      "evidence": "Count solids listed in the nonphysical floating layer set."
+    },
+    {
+      "task": "GE3D_BASE_STACK_FLOATING_POSITION_COUNT",
+      "question": "How many grid positions contain at least one floating solid?",
+      "answer": 5,
+      "evidence": "Count distinct grid positions used by floating solids."
+    },
+    {
+      "task": "GE3D_BASE_STACK_HIGHEST_FLOATING_LAYER",
+      "question": "What is the highest layer number occupied by a floating solid?",
+      "answer": 5,
+      "evidence": "Find the maximum floating layer index and convert it to one-based numbering."
+    }
+  ],
+  "_augmentation": "base_stack_v4",
+  "_hide_meta_panel": true,
+  "_id": "base_stack_v4_cube",
+  "_model": "rule_base_stack_v4"
+}

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>base_stack_v4_tri_prism solid geometry viewer</title>
+<!-- 生成: rule_base_stack_v4 thinking API JSON spec + local Three.js renderer · perception-eval-700 -->
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #f6f7f8;
+    color: #202326;
+    font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", Arial, sans-serif;
+  }
+  #stage { position: fixed; inset: 0; width: 100vw; height: 100vh; }
+  .source {
+    position: fixed; top: 12px; left: 12px; z-index: 10;
+    width: 210px; max-width: calc(100vw - 24px);
+    background: rgba(255,255,255,0.94);
+    border: 1px solid #d7dade; border-radius: 6px; padding: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .source h1 {
+    margin: 0 0 6px 0; font-size: 11px; font-weight: 700;
+    color: #5a6169; letter-spacing: 0;
+  }
+  .source img {
+    display: block; max-width: 194px; max-height: 184px; object-fit: contain;
+    background: #fbfbfb; border: 1px solid #eef0f2;
+  }
+  .meta {
+    margin-top: 6px; font-size: 11px; line-height: 1.35; color: #5d6570;
+    overflow-wrap: anywhere;
+  }
+  .label {
+    color: #111; font-size: 28px; font-weight: 900; line-height: 1;
+    text-shadow: 0 0 6px #fff, 0 0 6px #fff, 0 0 6px #fff, 0 1px 0 #fff;
+    pointer-events: none; white-space: nowrap;
+  }
+  .label.aux { color: #a14900; }
+  .label.center { color: #b42318; }
+  @media (max-width: 520px) {
+    .source { width: 164px; }
+    .source img { max-width: 148px; max-height: 136px; }
+    .meta { font-size: 10px; }
+    .label { font-size: 23px; }
+  }
+</style>
+</head>
+<body>
+<section id="stage"></section>
+
+<aside class="source">
+  <h1>base_stack_v4_tri_prism</h1>
+  <img src="../assets/mc_1765.png" alt="source diagram" />
+</aside>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
+import { LineSegments2 } from 'three/addons/lines/LineSegments2.js';
+import { LineSegmentsGeometry } from 'three/addons/lines/LineSegmentsGeometry.js';
+import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
+
+const SPEC = {"title": "triangular-prism complex floating stack · base stack v4 floating", "meta": "sparse stack using source base geometry: triangular_prism", "camera": {"position": [5.2, 4.2, 6.3], "target": [0.0, 2.016, 0.0], "orthoSize": 5.148000000000001}, "vertices": {"T0_A": [-3.165, 0.0, -1.22], "T0_B": [-2.115, 0.0, -1.22], "T0_C": [-2.64, 0.0, -2.14], "T0_D": [-3.165, 0.78, -1.22], "T0_E": [-2.115, 0.78, -1.22], "T0_F": [-2.64, 0.78, -2.14], "T1_A": [-0.525, 0.0, -1.22], "T1_B": [0.525, 0.0, -1.22], "T1_C": [0.0, 0.0, -2.14], "T1_D": [-0.525, 0.78, -1.22], "T1_E": [0.525, 0.78, -1.22], "T1_F": [0.0, 0.78, -2.14], "T2_A": [-0.525, 0.8, -1.22], "T2_B": [0.525, 0.8, -1.22], "T2_C": [0.0, 0.8, -2.14], "T2_D": [-0.525, 1.58, -1.22], "T2_E": [0.525, 1.58, -1.22], "T2_F": [0.0, 1.58, -2.14], "T3_A": [0.795, 0.0, -1.22], "T3_B": [1.845, 0.0, -1.22], "T3_C": [1.32, 0.0, -2.14], "T3_D": [0.795, 0.78, -1.22], "T3_E": [1.845, 0.78, -1.22], "T3_F": [1.32, 0.78, -2.14], "T4_A": [-1.845, 0.0, -0.1], "T4_B": [-0.795, 0.0, -0.1], "T4_C": [-1.32, 0.0, -1.02], "T4_D": [-1.845, 0.78, -0.1], "T4_E": [-0.795, 0.78, -0.1], "T4_F": [-1.32, 0.78, -1.02], "T5_A": [-1.845, 0.8, -0.1], "T5_B": [-0.795, 0.8, -0.1], "T5_C": [-1.32, 0.8, -1.02], "T5_D": [-1.845, 1.58, -0.1], "T5_E": [-0.795, 1.58, -0.1], "T5_F": [-1.32, 1.58, -1.02], "T6_A": [-1.845, 1.6, -0.1], "T6_B": [-0.795, 1.6, -0.1], "T6_C": [-1.32, 1.6, -1.02], "T6_D": [-1.845, 2.38, -0.1], "T6_E": [-0.795, 2.38, -0.1], "T6_F": [-1.32, 2.38, -1.02], "T7_A": [-0.525, 0.0, -0.1], "T7_B": [0.525, 0.0, -0.1], "T7_C": [0.0, 0.0, -1.02], "T7_D": [-0.525, 0.78, -0.1], "T7_E": [0.525, 0.78, -0.1], "T7_F": [0.0, 0.78, -1.02], "T8_A": [2.115, 0.0, -0.1], "T8_B": [3.165, 0.0, -0.1], "T8_C": [2.64, 0.0, -1.02], "T8_D": [2.115, 0.78, -0.1], "T8_E": [3.165, 0.78, -0.1], "T8_F": [2.64, 0.78, -1.02], "T9_A": [2.115, 0.8, -0.1], "T9_B": [3.165, 0.8, -0.1], "T9_C": [2.64, 0.8, -1.02], "T9_D": [2.115, 1.58, -0.1], "T9_E": [3.165, 1.58, -0.1], "T9_F": [2.64, 1.58, -1.02], "T10_A": [-3.165, 0.0, 1.02], "T10_B": [-2.115, 0.0, 1.02], "T10_C": [-2.64, 0.0, 0.1], "T10_D": [-3.165, 0.78, 1.02], "T10_E": [-2.115, 0.78, 1.02], "T10_F": [-2.64, 0.78, 0.1], "T11_A": [-3.165, 0.8, 1.02], "T11_B": [-2.115, 0.8, 1.02], "T11_C": [-2.64, 0.8, 0.1], "T11_D": [-3.165, 1.58, 1.02], "T11_E": [-2.115, 1.58, 1.02], "T11_F": [-2.64, 1.58, 0.1], "T12_A": [-1.845, 0.0, 1.02], "T12_B": [-0.795, 0.0, 1.02], "T12_C": [-1.32, 0.0, 0.1], "T12_D": [-1.845, 0.78, 1.02], "T12_E": [-0.795, 0.78, 1.02], "T12_F": [-1.32, 0.78, 0.1], "T13_A": [-0.525, 0.0, 1.02], "T13_B": [0.525, 0.0, 1.02], "T13_C": [0.0, 0.0, 0.1], "T13_D": [-0.525, 0.78, 1.02], "T13_E": [0.525, 0.78, 1.02], "T13_F": [0.0, 0.78, 0.1], "T14_A": [-0.525, 0.8, 1.02], "T14_B": [0.525, 0.8, 1.02], "T14_C": [0.0, 0.8, 0.1], "T14_D": [-0.525, 1.58, 1.02], "T14_E": [0.525, 1.58, 1.02], "T14_F": [0.0, 1.58, 0.1], "T15_A": [-0.525, 1.6, 1.02], "T15_B": [0.525, 1.6, 1.02], "T15_C": [0.0, 1.6, 0.1], "T15_D": [-0.525, 2.38, 1.02], "T15_E": [0.525, 2.38, 1.02], "T15_F": [0.0, 2.38, 0.1], "T16_A": [-0.525, 2.4, 1.02], "T16_B": [0.525, 2.4, 1.02], "T16_C": [0.0, 2.4, 0.1], "T16_D": [-0.525, 3.18, 1.02], "T16_E": [0.525, 3.18, 1.02], "T16_F": [0.0, 3.18, 0.1], "T17_A": [2.115, 0.0, 1.02], "T17_B": [3.165, 0.0, 1.02], "T17_C": [2.64, 0.0, 0.1], "T17_D": [2.115, 0.78, 1.02], "T17_E": [3.165, 0.78, 1.02], "T17_F": [2.64, 0.78, 0.1], "T18_A": [-1.845, 0.0, 2.14], "T18_B": [-0.795, 0.0, 2.14], "T18_C": [-1.32, 0.0, 1.22], "T18_D": [-1.845, 0.78, 2.14], "T18_E": [-0.795, 0.78, 2.14], "T18_F": [-1.32, 0.78, 1.22], "T19_A": [-1.845, 0.8, 2.14], "T19_B": [-0.795, 0.8, 2.14], "T19_C": [-1.32, 0.8, 1.22], "T19_D": [-1.845, 1.58, 2.14], "T19_E": [-0.795, 1.58, 2.14], "T19_F": [-1.32, 1.58, 1.22], "T20_A": [0.795, 0.0, 2.14], "T20_B": [1.845, 0.0, 2.14], "T20_C": [1.32, 0.0, 1.22], "T20_D": [0.795, 0.78, 2.14], "T20_E": [1.845, 0.78, 2.14], "T20_F": [1.32, 0.78, 1.22], "T21_A": [2.115, 0.0, 2.14], "T21_B": [3.165, 0.0, 2.14], "T21_C": [2.64, 0.0, 1.22], "T21_D": [2.115, 0.78, 2.14], "T21_E": [3.165, 0.78, 2.14], "T21_F": [2.64, 0.78, 1.22], "T22_A": [2.115, 0.8, 2.14], "T22_B": [3.165, 0.8, 2.14], "T22_C": [2.64, 0.8, 1.22], "T22_D": [2.115, 1.58, 2.14], "T22_E": [3.165, 1.58, 2.14], "T22_F": [2.64, 1.58, 1.22], "F23_A": [-1.845, 2.4, -1.22], "F23_B": [-0.795, 2.4, -1.22], "F23_C": [-1.32, 2.4, -2.14], "F23_D": [-1.845, 3.18, -1.22], "F23_E": [-0.795, 3.18, -1.22], "F23_F": [-1.32, 3.18, -2.14], "F24_A": [2.115, 1.6, -1.22], "F24_B": [3.165, 1.6, -1.22], "F24_C": [2.64, 1.6, -2.14], "F24_D": [2.115, 2.38, -1.22], "F24_E": [3.165, 2.38, -1.22], "F24_F": [2.64, 2.38, -2.14], "F25_A": [0.795, 3.2, 1.02], "F25_B": [1.845, 3.2, 1.02], "F25_C": [1.32, 3.2, 0.1], "F25_D": [0.795, 3.98, 1.02], "F25_E": [1.845, 3.98, 1.02], "F25_F": [1.32, 3.98, 0.1], "F26_A": [-3.165, 2.4, 2.14], "F26_B": [-2.115, 2.4, 2.14], "F26_C": [-2.64, 2.4, 1.22], "F26_D": [-3.165, 3.18, 2.14], "F26_E": [-2.115, 3.18, 2.14], "F26_F": [-2.64, 3.18, 1.22], "F27_A": [0.795, 4.0, 2.14], "F27_B": [1.845, 4.0, 2.14], "F27_C": [1.32, 4.0, 1.22], "F27_D": [0.795, 4.78, 2.14], "F27_E": [1.845, 4.78, 2.14], "F27_F": [1.32, 4.78, 1.22], "P0": [0.0, 0.02, 0.56], "P": [0.0, 3.42, 0.56], "F0_base": [-1.32, 0.02, -1.68], "F0_top": [-1.32, 3.34, -1.68], "F1_base": [2.64, 0.02, -1.68], "F1_top": [2.64, 2.54, -1.68], "F2_base": [1.32, 0.02, 0.56], "F2_top": [1.32, 4.14, 0.56], "F3_base": [-2.64, 0.02, 1.68], "F3_top": [-2.64, 3.34, 1.68], "F4_base": [1.32, 0.02, 1.68], "F4_top": [1.32, 4.94, 1.68]}, "faces": [{"points": ["T0_A", "T0_B", "T0_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T0_D", "T0_F", "T0_E"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T0_A", "T0_D", "T0_E", "T0_B"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T0_B", "T0_E", "T0_F", "T0_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T0_C", "T0_F", "T0_D", "T0_A"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T1_A", "T1_B", "T1_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T1_D", "T1_F", "T1_E"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T1_A", "T1_D", "T1_E", "T1_B"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T1_B", "T1_E", "T1_F", "T1_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T1_C", "T1_F", "T1_D", "T1_A"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T2_A", "T2_B", "T2_C"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T2_D", "T2_F", "T2_E"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T2_A", "T2_D", "T2_E", "T2_B"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T2_B", "T2_E", "T2_F", "T2_C"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T2_C", "T2_F", "T2_D", "T2_A"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T3_A", "T3_B", "T3_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T3_D", "T3_F", "T3_E"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T3_A", "T3_D", "T3_E", "T3_B"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T3_B", "T3_E", "T3_F", "T3_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T3_C", "T3_F", "T3_D", "T3_A"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T4_A", "T4_B", "T4_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T4_D", "T4_F", "T4_E"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T4_A", "T4_D", "T4_E", "T4_B"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T4_B", "T4_E", "T4_F", "T4_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T4_C", "T4_F", "T4_D", "T4_A"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T5_A", "T5_B", "T5_C"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T5_D", "T5_F", "T5_E"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T5_A", "T5_D", "T5_E", "T5_B"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T5_B", "T5_E", "T5_F", "T5_C"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T5_C", "T5_F", "T5_D", "T5_A"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T6_A", "T6_B", "T6_C"], "color": "#95d5b2", "opacity": 0.4, "role": "base_stack"}, {"points": ["T6_D", "T6_F", "T6_E"], "color": "#95d5b2", "opacity": 0.4, "role": "base_stack"}, {"points": ["T6_A", "T6_D", "T6_E", "T6_B"], "color": "#95d5b2", "opacity": 0.4, "role": "base_stack"}, {"points": ["T6_B", "T6_E", "T6_F", "T6_C"], "color": "#95d5b2", "opacity": 0.4, "role": "base_stack"}, {"points": ["T6_C", "T6_F", "T6_D", "T6_A"], "color": "#95d5b2", "opacity": 0.4, "role": "base_stack"}, {"points": ["T7_A", "T7_B", "T7_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T7_D", "T7_F", "T7_E"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T7_A", "T7_D", "T7_E", "T7_B"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T7_B", "T7_E", "T7_F", "T7_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T7_C", "T7_F", "T7_D", "T7_A"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T8_A", "T8_B", "T8_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T8_D", "T8_F", "T8_E"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T8_A", "T8_D", "T8_E", "T8_B"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T8_B", "T8_E", "T8_F", "T8_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T8_C", "T8_F", "T8_D", "T8_A"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T9_A", "T9_B", "T9_C"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T9_D", "T9_F", "T9_E"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T9_A", "T9_D", "T9_E", "T9_B"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T9_B", "T9_E", "T9_F", "T9_C"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T9_C", "T9_F", "T9_D", "T9_A"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T10_A", "T10_B", "T10_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T10_D", "T10_F", "T10_E"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T10_A", "T10_D", "T10_E", "T10_B"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T10_B", "T10_E", "T10_F", "T10_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T10_C", "T10_F", "T10_D", "T10_A"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T11_A", "T11_B", "T11_C"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T11_D", "T11_F", "T11_E"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T11_A", "T11_D", "T11_E", "T11_B"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T11_B", "T11_E", "T11_F", "T11_C"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T11_C", "T11_F", "T11_D", "T11_A"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T12_A", "T12_B", "T12_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T12_D", "T12_F", "T12_E"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T12_A", "T12_D", "T12_E", "T12_B"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T12_B", "T12_E", "T12_F", "T12_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T12_C", "T12_F", "T12_D", "T12_A"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T13_A", "T13_B", "T13_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T13_D", "T13_F", "T13_E"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T13_A", "T13_D", "T13_E", "T13_B"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T13_B", "T13_E", "T13_F", "T13_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T13_C", "T13_F", "T13_D", "T13_A"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T14_A", "T14_B", "T14_C"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T14_D", "T14_F", "T14_E"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T14_A", "T14_D", "T14_E", "T14_B"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T14_B", "T14_E", "T14_F", "T14_C"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T14_C", "T14_F", "T14_D", "T14_A"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T15_A", "T15_B", "T15_C"], "color": "#95d5b2", "opacity": 0.4, "role": "base_stack"}, {"points": ["T15_D", "T15_F", "T15_E"], "color": "#95d5b2", "opacity": 0.4, "role": "base_stack"}, {"points": ["T15_A", "T15_D", "T15_E", "T15_B"], "color": "#95d5b2", "opacity": 0.4, "role": "base_stack"}, {"points": ["T15_B", "T15_E", "T15_F", "T15_C"], "color": "#95d5b2", "opacity": 0.4, "role": "base_stack"}, {"points": ["T15_C", "T15_F", "T15_D", "T15_A"], "color": "#95d5b2", "opacity": 0.4, "role": "base_stack"}, {"points": ["T16_A", "T16_B", "T16_C"], "color": "#95d5b2", "opacity": 0.4, "role": "base_stack"}, {"points": ["T16_D", "T16_F", "T16_E"], "color": "#95d5b2", "opacity": 0.4, "role": "base_stack"}, {"points": ["T16_A", "T16_D", "T16_E", "T16_B"], "color": "#95d5b2", "opacity": 0.4, "role": "base_stack"}, {"points": ["T16_B", "T16_E", "T16_F", "T16_C"], "color": "#95d5b2", "opacity": 0.4, "role": "base_stack"}, {"points": ["T16_C", "T16_F", "T16_D", "T16_A"], "color": "#95d5b2", "opacity": 0.4, "role": "base_stack"}, {"points": ["T17_A", "T17_B", "T17_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T17_D", "T17_F", "T17_E"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T17_A", "T17_D", "T17_E", "T17_B"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T17_B", "T17_E", "T17_F", "T17_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T17_C", "T17_F", "T17_D", "T17_A"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T18_A", "T18_B", "T18_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T18_D", "T18_F", "T18_E"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T18_A", "T18_D", "T18_E", "T18_B"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T18_B", "T18_E", "T18_F", "T18_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T18_C", "T18_F", "T18_D", "T18_A"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T19_A", "T19_B", "T19_C"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T19_D", "T19_F", "T19_E"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T19_A", "T19_D", "T19_E", "T19_B"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T19_B", "T19_E", "T19_F", "T19_C"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T19_C", "T19_F", "T19_D", "T19_A"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T20_A", "T20_B", "T20_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T20_D", "T20_F", "T20_E"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T20_A", "T20_D", "T20_E", "T20_B"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T20_B", "T20_E", "T20_F", "T20_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T20_C", "T20_F", "T20_D", "T20_A"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T21_A", "T21_B", "T21_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T21_D", "T21_F", "T21_E"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T21_A", "T21_D", "T21_E", "T21_B"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T21_B", "T21_E", "T21_F", "T21_C"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T21_C", "T21_F", "T21_D", "T21_A"], "color": "#8ecae6", "opacity": 0.4, "role": "base_stack"}, {"points": ["T22_A", "T22_B", "T22_C"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T22_D", "T22_F", "T22_E"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T22_A", "T22_D", "T22_E", "T22_B"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T22_B", "T22_E", "T22_F", "T22_C"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["T22_C", "T22_F", "T22_D", "T22_A"], "color": "#f2c94c", "opacity": 0.4, "role": "base_stack"}, {"points": ["F23_A", "F23_B", "F23_C"], "color": "#c77dff", "opacity": 0.48, "role": "base_stack"}, {"points": ["F23_D", "F23_F", "F23_E"], "color": "#c77dff", "opacity": 0.48, "role": "base_stack"}, {"points": ["F23_A", "F23_D", "F23_E", "F23_B"], "color": "#c77dff", "opacity": 0.48, "role": "base_stack"}, {"points": ["F23_B", "F23_E", "F23_F", "F23_C"], "color": "#c77dff", "opacity": 0.48, "role": "base_stack"}, {"points": ["F23_C", "F23_F", "F23_D", "F23_A"], "color": "#c77dff", "opacity": 0.48, "role": "base_stack"}, {"points": ["F24_A", "F24_B", "F24_C"], "color": "#56cfe1", "opacity": 0.48, "role": "base_stack"}, {"points": ["F24_D", "F24_F", "F24_E"], "color": "#56cfe1", "opacity": 0.48, "role": "base_stack"}, {"points": ["F24_A", "F24_D", "F24_E", "F24_B"], "color": "#56cfe1", "opacity": 0.48, "role": "base_stack"}, {"points": ["F24_B", "F24_E", "F24_F", "F24_C"], "color": "#56cfe1", "opacity": 0.48, "role": "base_stack"}, {"points": ["F24_C", "F24_F", "F24_D", "F24_A"], "color": "#56cfe1", "opacity": 0.48, "role": "base_stack"}, {"points": ["F25_A", "F25_B", "F25_C"], "color": "#f4a261", "opacity": 0.48, "role": "base_stack"}, {"points": ["F25_D", "F25_F", "F25_E"], "color": "#f4a261", "opacity": 0.48, "role": "base_stack"}, {"points": ["F25_A", "F25_D", "F25_E", "F25_B"], "color": "#f4a261", "opacity": 0.48, "role": "base_stack"}, {"points": ["F25_B", "F25_E", "F25_F", "F25_C"], "color": "#f4a261", "opacity": 0.48, "role": "base_stack"}, {"points": ["F25_C", "F25_F", "F25_D", "F25_A"], "color": "#f4a261", "opacity": 0.48, "role": "base_stack"}, {"points": ["F26_A", "F26_B", "F26_C"], "color": "#ff7aa2", "opacity": 0.48, "role": "base_stack"}, {"points": ["F26_D", "F26_F", "F26_E"], "color": "#ff7aa2", "opacity": 0.48, "role": "base_stack"}, {"points": ["F26_A", "F26_D", "F26_E", "F26_B"], "color": "#ff7aa2", "opacity": 0.48, "role": "base_stack"}, {"points": ["F26_B", "F26_E", "F26_F", "F26_C"], "color": "#ff7aa2", "opacity": 0.48, "role": "base_stack"}, {"points": ["F26_C", "F26_F", "F26_D", "F26_A"], "color": "#ff7aa2", "opacity": 0.48, "role": "base_stack"}, {"points": ["F27_A", "F27_B", "F27_C"], "color": "#c77dff", "opacity": 0.48, "role": "base_stack"}, {"points": ["F27_D", "F27_F", "F27_E"], "color": "#c77dff", "opacity": 0.48, "role": "base_stack"}, {"points": ["F27_A", "F27_D", "F27_E", "F27_B"], "color": "#c77dff", "opacity": 0.48, "role": "base_stack"}, {"points": ["F27_B", "F27_E", "F27_F", "F27_C"], "color": "#c77dff", "opacity": 0.48, "role": "base_stack"}, {"points": ["F27_C", "F27_F", "F27_D", "F27_A"], "color": "#c77dff", "opacity": 0.48, "role": "base_stack"}], "edges": [{"points": ["T0_A", "T0_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T0_B", "T0_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T0_C", "T0_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T0_D", "T0_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T0_E", "T0_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T0_F", "T0_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T0_A", "T0_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T0_B", "T0_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T0_C", "T0_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T1_A", "T1_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T1_B", "T1_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T1_C", "T1_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T1_D", "T1_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T1_E", "T1_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T1_F", "T1_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T1_A", "T1_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T1_B", "T1_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T1_C", "T1_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T2_A", "T2_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T2_B", "T2_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T2_C", "T2_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T2_D", "T2_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T2_E", "T2_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T2_F", "T2_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T2_A", "T2_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T2_B", "T2_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T2_C", "T2_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T3_A", "T3_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T3_B", "T3_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T3_C", "T3_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T3_D", "T3_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T3_E", "T3_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T3_F", "T3_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T3_A", "T3_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T3_B", "T3_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T3_C", "T3_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T4_A", "T4_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T4_B", "T4_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T4_C", "T4_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T4_D", "T4_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T4_E", "T4_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T4_F", "T4_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T4_A", "T4_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T4_B", "T4_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T4_C", "T4_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T5_A", "T5_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T5_B", "T5_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T5_C", "T5_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T5_D", "T5_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T5_E", "T5_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T5_F", "T5_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T5_A", "T5_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T5_B", "T5_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T5_C", "T5_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T6_A", "T6_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T6_B", "T6_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T6_C", "T6_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T6_D", "T6_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T6_E", "T6_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T6_F", "T6_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T6_A", "T6_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T6_B", "T6_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T6_C", "T6_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T7_A", "T7_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T7_B", "T7_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T7_C", "T7_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T7_D", "T7_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T7_E", "T7_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T7_F", "T7_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T7_A", "T7_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T7_B", "T7_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T7_C", "T7_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T8_A", "T8_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T8_B", "T8_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T8_C", "T8_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T8_D", "T8_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T8_E", "T8_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T8_F", "T8_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T8_A", "T8_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T8_B", "T8_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T8_C", "T8_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T9_A", "T9_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T9_B", "T9_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T9_C", "T9_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T9_D", "T9_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T9_E", "T9_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T9_F", "T9_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T9_A", "T9_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T9_B", "T9_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T9_C", "T9_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T10_A", "T10_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T10_B", "T10_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T10_C", "T10_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T10_D", "T10_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T10_E", "T10_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T10_F", "T10_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T10_A", "T10_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T10_B", "T10_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T10_C", "T10_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T11_A", "T11_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T11_B", "T11_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T11_C", "T11_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T11_D", "T11_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T11_E", "T11_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T11_F", "T11_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T11_A", "T11_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T11_B", "T11_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T11_C", "T11_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T12_A", "T12_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T12_B", "T12_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T12_C", "T12_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T12_D", "T12_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T12_E", "T12_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T12_F", "T12_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T12_A", "T12_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T12_B", "T12_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T12_C", "T12_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T13_A", "T13_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T13_B", "T13_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T13_C", "T13_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T13_D", "T13_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T13_E", "T13_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T13_F", "T13_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T13_A", "T13_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T13_B", "T13_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T13_C", "T13_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T14_A", "T14_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T14_B", "T14_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T14_C", "T14_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T14_D", "T14_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T14_E", "T14_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T14_F", "T14_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T14_A", "T14_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T14_B", "T14_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T14_C", "T14_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T15_A", "T15_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T15_B", "T15_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T15_C", "T15_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T15_D", "T15_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T15_E", "T15_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T15_F", "T15_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T15_A", "T15_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T15_B", "T15_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T15_C", "T15_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T16_A", "T16_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T16_B", "T16_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T16_C", "T16_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T16_D", "T16_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T16_E", "T16_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T16_F", "T16_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T16_A", "T16_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T16_B", "T16_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T16_C", "T16_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T17_A", "T17_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T17_B", "T17_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T17_C", "T17_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T17_D", "T17_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T17_E", "T17_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T17_F", "T17_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T17_A", "T17_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T17_B", "T17_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T17_C", "T17_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T18_A", "T18_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T18_B", "T18_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T18_C", "T18_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T18_D", "T18_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T18_E", "T18_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T18_F", "T18_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T18_A", "T18_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T18_B", "T18_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T18_C", "T18_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T19_A", "T19_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T19_B", "T19_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T19_C", "T19_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T19_D", "T19_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T19_E", "T19_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T19_F", "T19_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T19_A", "T19_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T19_B", "T19_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T19_C", "T19_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T20_A", "T20_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T20_B", "T20_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T20_C", "T20_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T20_D", "T20_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T20_E", "T20_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T20_F", "T20_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T20_A", "T20_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T20_B", "T20_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T20_C", "T20_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T21_A", "T21_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T21_B", "T21_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T21_C", "T21_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T21_D", "T21_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T21_E", "T21_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T21_F", "T21_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T21_A", "T21_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T21_B", "T21_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T21_C", "T21_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T22_A", "T22_B"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T22_B", "T22_C"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T22_C", "T22_A"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T22_D", "T22_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T22_E", "T22_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T22_F", "T22_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T22_A", "T22_D"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T22_B", "T22_E"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["T22_C", "T22_F"], "color": "#202326", "width": 2.1, "role": "base_stack"}, {"points": ["F23_A", "F23_B"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F23_B", "F23_C"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F23_C", "F23_A"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F23_D", "F23_E"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F23_E", "F23_F"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F23_F", "F23_D"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F23_A", "F23_D"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F23_B", "F23_E"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F23_C", "F23_F"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F24_A", "F24_B"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F24_B", "F24_C"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F24_C", "F24_A"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F24_D", "F24_E"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F24_E", "F24_F"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F24_F", "F24_D"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F24_A", "F24_D"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F24_B", "F24_E"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F24_C", "F24_F"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F25_A", "F25_B"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F25_B", "F25_C"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F25_C", "F25_A"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F25_D", "F25_E"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F25_E", "F25_F"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F25_F", "F25_D"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F25_A", "F25_D"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F25_B", "F25_E"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F25_C", "F25_F"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F26_A", "F26_B"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F26_B", "F26_C"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F26_C", "F26_A"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F26_D", "F26_E"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F26_E", "F26_F"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F26_F", "F26_D"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F26_A", "F26_D"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F26_B", "F26_E"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F26_C", "F26_F"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F27_A", "F27_B"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F27_B", "F27_C"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F27_C", "F27_A"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F27_D", "F27_E"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F27_E", "F27_F"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F27_F", "F27_D"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F27_A", "F27_D"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F27_B", "F27_E"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}, {"points": ["F27_C", "F27_F"], "color": "#6d2eb8", "width": 2.1, "role": "base_stack"}], "aux_lines": [{"points": ["P0", "P"], "color": "#d97400", "dash": true, "depthTest": false, "width": 4.0}, {"points": ["F0_base", "F0_top"], "color": "#6d2eb8", "dash": true, "depthTest": false, "width": 2.2, "opacity": 0.5}, {"points": ["F1_base", "F1_top"], "color": "#6d2eb8", "dash": true, "depthTest": false, "width": 2.2, "opacity": 0.5}, {"points": ["F2_base", "F2_top"], "color": "#6d2eb8", "dash": true, "depthTest": false, "width": 2.2, "opacity": 0.5}, {"points": ["F3_base", "F3_top"], "color": "#6d2eb8", "dash": true, "depthTest": false, "width": 2.2, "opacity": 0.5}, {"points": ["F4_base", "F4_top"], "color": "#6d2eb8", "dash": true, "depthTest": false, "width": 2.2, "opacity": 0.5}], "aux_faces": [], "aux_points": ["P", "F0_top", "F1_top", "F2_top"], "labels": [{"text": "P", "point": "P", "offset": [0.08, 0.12, 0.08], "kind": "aux"}, {"text": "F1", "point": "F0_top", "offset": [0.07, 0.12, 0.07], "kind": "aux"}, {"text": "F2", "point": "F1_top", "offset": [0.07, 0.12, 0.07], "kind": "aux"}, {"text": "F3", "point": "F2_top", "offset": [0.07, 0.12, 0.07], "kind": "aux"}], "primitives": [], "height_map": [[1, 0, 2, 1, 0], [0, 3, 1, 0, 2], [2, 1, 4, 0, 1], [0, 2, 0, 1, 2]], "floating_units": [{"x": 1, "z": 0, "layer": 3}, {"x": 4, "z": 0, "layer": 2}, {"x": 3, "z": 2, "layer": 4}, {"x": 0, "z": 3, "layer": 3}, {"x": 3, "z": 3, "layer": 5}], "base_unit": "triangular_prism", "qa_seeds": [{"task": "GE3D_BASE_STACK_TOTAL_COUNT", "question": "How many triangular prisms are in the stack?", "answer": 28, "evidence": "Sum all nonzero column heights and any explicitly floating solids."}, {"task": "GE3D_BASE_STACK_MAX_HEIGHT", "question": "What is the maximum number of base solids in one vertical position?", "answer": 4, "evidence": "Count stacked and floating solids at each vertical grid position."}, {"task": "GE3D_BASE_STACK_TOP_COLUMN_COUNT", "question": "How many vertical positions reach the highest occupied layer?", "answer": 1, "evidence": "Count positions whose highest occupied layer equals the scene maximum."}, {"task": "GE3D_BASE_STACK_HIGHEST_LAYER", "question": "What is the highest occupied layer number if the ground layer is layer 1?", "answer": 6, "evidence": "Find the largest occupied layer index and convert it to one-based numbering."}, {"task": "GE3D_BASE_STACK_OCCUPIED_POSITIONS", "question": "How many ground positions are occupied by at least one base solid?", "answer": 13, "evidence": "Count nonzero cells in the ground height map."}, {"task": "GE3D_BASE_STACK_MARKED_COLUMN_HEIGHT", "question": "How many base solids are in the marked vertical position P?", "answer": 4, "evidence": "The orange dashed line and P label mark the selected column."}, {"task": "GE3D_BASE_STACK_TALL_COLUMN_COUNT", "question": "How many occupied vertical positions contain at least two base solids?", "answer": 8, "evidence": "Count vertical positions with two or more occupied layers."}, {"task": "GE3D_BASE_STACK_EMPTY_POSITIONS", "question": "How many ground positions are empty?", "answer": 7, "evidence": "Count cells in the sparse height map with height zero."}, {"task": "GE3D_BASE_STACK_ABOVE_GROUND_COUNT", "question": "How many base solids are above the first layer?", "answer": 15, "evidence": "For each column, count all layers above the ground layer."}, {"task": "GE3D_BASE_STACK_THIRD_LEVEL_COLUMN_COUNT", "question": "How many vertical positions have a solid on the third layer or higher?", "answer": 7, "evidence": "Count positions whose highest occupied layer is at least the third layer."}, {"task": "GE3D_BASE_STACK_FLOATING_COUNT", "question": "How many base solids are floating above a gap or empty cell?", "answer": 5, "evidence": "Count solids listed in the nonphysical floating layer set."}, {"task": "GE3D_BASE_STACK_FLOATING_POSITION_COUNT", "question": "How many grid positions contain at least one floating solid?", "answer": 5, "evidence": "Count distinct grid positions used by floating solids."}, {"task": "GE3D_BASE_STACK_HIGHEST_FLOATING_LAYER", "question": "What is the highest layer number occupied by a floating solid?", "answer": 6, "evidence": "Find the maximum floating layer index and convert it to one-based numbering."}], "_augmentation": "base_stack_v4", "_hide_meta_panel": true, "_id": "base_stack_v4_tri_prism", "_model": "rule_base_stack_v4"};
+const stage = document.getElementById('stage');
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xf6f7f8);
+window.__renderedFrames = 0;
+
+const cameraCfg = SPEC.camera || {};
+const aspect0 = stage.clientWidth / Math.max(stage.clientHeight, 1);
+let orthoSize = Number(cameraCfg.orthoSize || cameraCfg.ortho_size || 3.2);
+const camera = new THREE.OrthographicCamera(
+  -orthoSize * aspect0, orthoSize * aspect0,
+  orthoSize, -orthoSize,
+  0.1, 1000
+);
+const camPos = cameraCfg.position || [3.2, 2.4, 5.2];
+camera.position.set(camPos[0] || 3.2, camPos[1] || 2.4, camPos[2] || 5.2);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(stage.clientWidth, stage.clientHeight);
+stage.appendChild(renderer.domElement);
+
+const labelRenderer = new CSS2DRenderer();
+labelRenderer.setSize(stage.clientWidth, stage.clientHeight);
+labelRenderer.domElement.style.position = 'absolute';
+labelRenderer.domElement.style.top = '0';
+labelRenderer.domElement.style.left = '0';
+labelRenderer.domElement.style.pointerEvents = 'none';
+stage.appendChild(labelRenderer.domElement);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+const target = cameraCfg.target || [0, 0.8, 0];
+controls.target.set(target[0] || 0, target[1] || 0, target[2] || 0);
+
+scene.add(new THREE.AmbientLight(0xffffff, 0.92));
+const light = new THREE.DirectionalLight(0xffffff, 0.45);
+light.position.set(5, 8, 6);
+scene.add(light);
+
+const V = {};
+for (const [name, value] of Object.entries(SPEC.vertices || {})) {
+  if (Array.isArray(value) && value.length >= 3) V[name] = new THREE.Vector3(value[0], value[1], value[2]);
+}
+
+const lineMaterials = [];
+function colorOf(value, fallback = '#111111') {
+  if (!value) return fallback;
+  return value;
+}
+
+function vec(value) {
+  if (value instanceof THREE.Vector3) return value.clone();
+  if (typeof value === 'string') return (V[value] || new THREE.Vector3()).clone();
+  if (Array.isArray(value)) return new THREE.Vector3(value[0] || 0, value[1] || 0, value[2] || 0);
+  if (value && Array.isArray(value.point)) return vec(value.point);
+  return new THREE.Vector3();
+}
+
+function pointsOf(values) {
+  return (values || []).map(vec).filter(p => Number.isFinite(p.x) && Number.isFinite(p.y) && Number.isFinite(p.z));
+}
+
+function makeFatLine(p1, p2, color = '#111111', linewidth = 2.6, depthFunc = THREE.LessEqualDepth, depthTest = true) {
+  const geometry = new LineSegmentsGeometry().setPositions([p1.x, p1.y, p1.z, p2.x, p2.y, p2.z]);
+  const material = new LineMaterial({
+    color, linewidth,
+    resolution: new THREE.Vector2(stage.clientWidth, stage.clientHeight),
+    depthTest,
+    transparent: true,
+    opacity: 0.96,
+  });
+  material.depthFunc = depthFunc;
+  lineMaterials.push(material);
+  const line = new LineSegments2(geometry, material);
+  line.computeLineDistances();
+  line.renderOrder = depthTest ? 2 : 8;
+  return line;
+}
+
+function makeDashedLine(p1, p2, color = '#111111', depthTest = true, depthFunc = THREE.GreaterDepth, linewidth = 1.6, dashSize = 0.14, gapSize = 0.09, opacity = 0.88) {
+  const delta = p2.clone().sub(p1);
+  const length = delta.length();
+  if (length <= 1e-6) return makeFatLine(p1, p2, color, linewidth, depthFunc, depthTest);
+  const dir = delta.normalize();
+  const positions = [];
+  for (let start = 0; start < length; start += dashSize + gapSize) {
+    const end = Math.min(start + dashSize, length);
+    const a = p1.clone().addScaledVector(dir, start);
+    const b = p1.clone().addScaledVector(dir, end);
+    positions.push(a.x, a.y, a.z, b.x, b.y, b.z);
+  }
+  const geometry = new LineSegmentsGeometry().setPositions(positions);
+  const material = new LineMaterial({
+    color, linewidth,
+    resolution: new THREE.Vector2(stage.clientWidth, stage.clientHeight),
+    depthTest,
+    transparent: true,
+    opacity,
+  });
+  material.depthFunc = depthFunc;
+  lineMaterials.push(material);
+  const line = new LineSegments2(geometry, material);
+  line.renderOrder = depthTest ? 3 : 9;
+  return line;
+}
+
+function addHiddenAwareEdge(p1, p2, color = '#111111', width = 2.6) {
+  scene.add(makeFatLine(p1, p2, color, width, THREE.LessEqualDepth, true));
+  scene.add(makeDashedLine(p1, p2, color, true, THREE.GreaterDepth, Math.max(1.4, width * 0.55), 0.14, 0.09, 0.82));
+}
+
+function addSimpleLine(p1, p2, opts = {}) {
+  const color = colorOf(opts.color, '#e67e22');
+  const depthTest = opts.depthTest !== false;
+  const width = Number(opts.width || 3.4);
+  if (opts.dash || opts.dashed) scene.add(makeDashedLine(p1, p2, color, depthTest, THREE.LessEqualDepth, width, Number(opts.dashSize || 0.18), Number(opts.gapSize || 0.11), Number(opts.opacity || 0.92)));
+  else scene.add(makeFatLine(p1, p2, color, width, THREE.LessEqualDepth, depthTest));
+}
+
+const occluderMat = new THREE.MeshBasicMaterial({
+  colorWrite: false, depthWrite: true, side: THREE.DoubleSide,
+  polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1,
+});
+
+function addPolygon(points, color = '#4a90e2', opacity = 0.10, depthWrite = false, occlude = true) {
+  if (points.length < 3) return;
+  const positions = [];
+  for (const p of points) positions.push(p.x, p.y, p.z);
+  const indices = [];
+  for (let i = 1; i < points.length - 1; i++) indices.push(0, i, i + 1);
+  function makeMesh(material) {
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+    geometry.setIndex(indices);
+    geometry.computeVertexNormals();
+    const mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
+  }
+  if (occlude) makeMesh(occluderMat);
+  makeMesh(new THREE.MeshBasicMaterial({
+    color, transparent: true, opacity, side: THREE.DoubleSide, depthWrite,
+    depthTest: occlude,
+  }));
+}
+
+function addLabel(text, position) {
+  const el = document.createElement('div');
+  el.className = 'label';
+  el.textContent = text;
+  const obj = new CSS2DObject(el);
+  obj.position.copy(position);
+  scene.add(obj);
+}
+
+function addPointMarker(position, color = '#d97400', radius = 0.042) {
+  const marker = new THREE.Mesh(
+    new THREE.SphereGeometry(radius, 18, 12),
+    new THREE.MeshBasicMaterial({ color, depthTest: false, depthWrite: false })
+  );
+  marker.position.copy(position);
+  marker.renderOrder = 10;
+  scene.add(marker);
+}
+
+function orientAxis(object, axis) {
+  if (axis === 'x') object.rotation.z = Math.PI / 2;
+  if (axis === 'z') object.rotation.x = Math.PI / 2;
+}
+
+function circlePoints(center, radius, axis = 'y', segments = 96) {
+  const pts = [];
+  for (let i = 0; i <= segments; i++) {
+    const t = Math.PI * 2 * i / segments;
+    if (axis === 'x') pts.push(new THREE.Vector3(center.x, center.y + radius * Math.cos(t), center.z + radius * Math.sin(t)));
+    else if (axis === 'z') pts.push(new THREE.Vector3(center.x + radius * Math.cos(t), center.y + radius * Math.sin(t), center.z));
+    else pts.push(new THREE.Vector3(center.x + radius * Math.cos(t), center.y, center.z + radius * Math.sin(t)));
+  }
+  return pts;
+}
+
+function addPolyline(points, opts = {}) {
+  for (let i = 0; i < points.length - 1; i++) addSimpleLine(points[i], points[i + 1], opts);
+}
+
+function addCircle(center, radius, axis, opts = {}) {
+  addPolyline(circlePoints(center, radius, axis, Number(opts.segments || 96)), opts);
+}
+
+function meshPair(geometry, center, axis, color, opacity, occlude = true) {
+  if (occlude) {
+    const hidden = new THREE.Mesh(geometry.clone(), occluderMat);
+    hidden.position.copy(center);
+    orientAxis(hidden, axis);
+    scene.add(hidden);
+  }
+  const visible = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({
+    color, transparent: true, opacity, side: THREE.DoubleSide, depthWrite: false,
+    depthTest: occlude,
+  }));
+  visible.position.copy(center);
+  orientAxis(visible, axis);
+  visible.renderOrder = occlude ? 1 : 7;
+  scene.add(visible);
+  return visible;
+}
+
+function addBoxPrimitive(item) {
+  const c = vec(item.center || [0, 0, 0]);
+  const s = item.size || [1, 1, 1];
+  const isVoxel = item.role === 'voxel_stack';
+  const isStack = item.role === 'base_stack';
+  const isOverlay = item.role === 'solid_overlap' || item.role === 'base_geo_overlap' || isVoxel;
+  const x = s[0] / 2, y = s[1] / 2, z = s[2] / 2;
+  const names = ['p000','p100','p110','p010','p001','p101','p111','p011'];
+  const pts = [
+    [-x,-y,-z],[x,-y,-z],[x,y,-z],[-x,y,-z],
+    [-x,-y,z],[x,-y,z],[x,y,z],[-x,y,z],
+  ].map(p => new THREE.Vector3(c.x + p[0], c.y + p[1], c.z + p[2]));
+  const faces = [[0,1,2,3],[4,5,6,7],[0,1,5,4],[1,2,6,5],[2,3,7,6],[3,0,4,7]];
+  faces.forEach(f => addPolygon(f.map(i => pts[i]), item.color || '#4a90e2', Number(item.opacity ?? 0.10), false, !isOverlay));
+  [[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]].forEach(([a,b]) => {
+    if (isOverlay) addSimpleLine(pts[a], pts[b], { color: item.edgeColor || '#111111', depthTest: false, width: Number(item.width || 2.8), opacity: isVoxel ? 0.78 : 0.92 });
+    else if (isStack) addSimpleLine(pts[a], pts[b], { color: item.edgeColor || '#111111', depthTest: true, width: Number(item.width || 2.6), opacity: 0.96 });
+    else addHiddenAwareEdge(pts[a], pts[b], item.edgeColor || '#111111', Number(item.width || 2.6));
+  });
+}
+
+function addPrimitive(item) {
+  const type = String(item.type || '').toLowerCase();
+  const center = vec(item.center || [0, 0, 0]);
+  const color = item.color || '#4a90e2';
+  const opacity = Number(item.opacity ?? 0.10);
+  const axis = item.axis || 'y';
+  const isStack = item.role === 'base_stack';
+  const isOverlay = item.role === 'solid_overlap' || item.role === 'base_geo_overlap';
+  const edgeColor = item.edgeColor || '#111111';
+  if (type === 'box' || type === 'cuboid') return addBoxPrimitive(item);
+  if (type === 'sphere') {
+    const radius = Number(item.radius || 1);
+    meshPair(new THREE.SphereGeometry(radius, 48, 24), center, 'y', color, opacity, !isOverlay);
+    addCircle(center, radius, 'x', { color: edgeColor, dash: true, depthTest: false, width: item.width || 2.4 });
+    addCircle(center, radius, 'y', { color: edgeColor, dash: true, depthTest: false, width: item.width || 2.4 });
+    addCircle(center, radius, 'z', { color: edgeColor, dash: true, depthTest: false, width: item.width || 2.4 });
+  } else if (type === 'cylinder') {
+    const radius = Number(item.radius || 1);
+    const height = Number(item.height || 2);
+    meshPair(new THREE.CylinderGeometry(radius, radius, height, 64, 1, false), center, axis, color, opacity, !isOverlay);
+    const d = height / 2;
+    const c1 = center.clone(), c2 = center.clone();
+    if (axis === 'x') { c1.x -= d; c2.x += d; }
+    else if (axis === 'z') { c1.z -= d; c2.z += d; }
+    else { c1.y -= d; c2.y += d; }
+    addCircle(c1, radius, axis, { color: edgeColor, depthTest: !isOverlay, width: item.width || 2.6 });
+    addCircle(c2, radius, axis, { color: edgeColor, depthTest: !isOverlay, width: item.width || 2.6 });
+    if (isStack) {
+      const sidePts1 = circlePoints(c1, radius, axis, 4).slice(0, 4);
+      const sidePts2 = circlePoints(c2, radius, axis, 4).slice(0, 4);
+      sidePts1.forEach((p, i) => addSimpleLine(p, sidePts2[i], { color: edgeColor, depthTest: true, width: item.width || 2.4, opacity: 0.96 }));
+    }
+  } else if (type === 'cone') {
+    const radius = Number(item.radius || 1);
+    const height = Number(item.height || 2);
+    meshPair(new THREE.ConeGeometry(radius, height, 64, 1, false), center, axis, color, opacity, !isOverlay);
+    const base = center.clone(), apex = center.clone();
+    if (axis === 'x') { base.x -= height / 2; apex.x += height / 2; }
+    else if (axis === 'z') { base.z -= height / 2; apex.z += height / 2; }
+    else { base.y -= height / 2; apex.y += height / 2; }
+    addCircle(base, radius, axis, { color: edgeColor, depthTest: !isOverlay, width: item.width || 2.6 });
+    const sidePts = circlePoints(base, radius, axis, 4).slice(0, 4);
+    sidePts.forEach(p => {
+      if (isOverlay) addSimpleLine(apex, p, { color: edgeColor, depthTest: false, width: item.width || 2.6, opacity: 0.92 });
+      else if (isStack) addSimpleLine(apex, p, { color: edgeColor, depthTest: true, width: item.width || 2.5, opacity: 0.96 });
+      else addHiddenAwareEdge(apex, p, edgeColor, 2.4);
+    });
+  }
+}
+
+(SPEC.primitives || []).forEach(addPrimitive);
+(SPEC.overlap_primitives || SPEC.overlapPrimitives || []).forEach(addPrimitive);
+(SPEC.stack_primitives || SPEC.stackPrimitives || []).forEach(addPrimitive);
+(SPEC.faces || []).forEach(face => {
+  const role = face.role || '';
+  const isOverlay = role === 'solid_overlap' || role === 'base_geo_overlap';
+  const occlude = face.occlude === false ? false : !isOverlay;
+  addPolygon(
+    pointsOf(face.points || face.vertices),
+    face.color || '#4a90e2',
+    Number(face.opacity ?? 0.10),
+    false,
+    occlude
+  );
+});
+
+(SPEC.edges || []).forEach(edge => {
+  const obj = Array.isArray(edge) ? { points: edge } : edge;
+  const pts = pointsOf(obj.points);
+  if (pts.length < 2) return;
+  const role = obj.role || '';
+  const isOverlay = role === 'solid_overlap' || role === 'base_geo_overlap';
+  const isStack = role === 'base_stack';
+  if (isOverlay) addSimpleLine(pts[0], pts[1], { color: obj.color || '#2f80ed', depthTest: false, width: obj.width || 3.2, opacity: obj.opacity || 0.96 });
+  else if (isStack) addSimpleLine(pts[0], pts[1], { color: obj.color || '#111111', depthTest: true, width: obj.width || 2.5, opacity: obj.opacity || 0.96 });
+  else if (obj.hiddenLine === false || obj.hidden_line === false || obj.dash || obj.dashed) addSimpleLine(pts[0], pts[1], obj);
+  else addHiddenAwareEdge(pts[0], pts[1], obj.color || '#111111', Number(obj.width || 2.6));
+});
+
+(SPEC.aux_faces || SPEC.auxFaces || []).forEach(face => {
+  const role = face.role || '';
+  const isOverlay = role === 'solid_overlap' || role === 'base_geo_overlap';
+  const occlude = face.occlude === false ? false : !isOverlay;
+  addPolygon(
+    pointsOf(face.points || face.vertices),
+    face.color || '#f2c94c',
+    Number(face.opacity ?? 0.18),
+    false,
+    occlude
+  );
+});
+(SPEC.aux_lines || SPEC.auxLines || []).forEach(line => {
+  const pts = pointsOf(line.points);
+  if (pts.length >= 2) addSimpleLine(pts[0], pts[1], { color: line.color || '#e67e22', dash: line.dash !== false, depthTest: line.depthTest === true ? true : false, width: line.width || 3.8, opacity: line.opacity || 0.94 });
+});
+
+const auxPointNames = SPEC.aux_points || SPEC.auxPoints || [];
+auxPointNames.forEach(name => {
+  if (V[name]) addPointMarker(V[name], name === 'O' ? '#b42318' : '#d97400', name === 'O' ? 0.038 : 0.032);
+});
+
+const explicitLabels = SPEC.labels || [];
+if (explicitLabels.length) {
+  explicitLabels.forEach(label => {
+    const base = vec(label.point || label.position);
+    const off = label.offset || [0.08, 0.08, 0.08];
+    const offsetScale = Number(label.offsetScale || SPEC.labelOffsetScale || 1.25);
+    const objText = label.text || label.name || '';
+    const el = document.createElement('div');
+    el.className = label.kind ? `label ${label.kind}` : 'label';
+    el.textContent = objText;
+    const obj = new CSS2DObject(el);
+    obj.position.copy(base.add(new THREE.Vector3((off[0] || 0) * offsetScale, (off[1] || 0) * offsetScale, (off[2] || 0) * offsetScale)));
+    scene.add(obj);
+  });
+} else {
+  Object.entries(V).slice(0, 32).forEach(([name, p]) => addLabel(name, p.clone().add(new THREE.Vector3(0.08, 0.08, 0.08))));
+}
+
+const ground = new THREE.GridHelper(6, 6, 0xd8dce0, 0xebedf0);
+ground.position.y = -0.015;
+ground.material.opacity = 0.35;
+ground.material.transparent = true;
+scene.add(ground);
+
+function resize() {
+  const w = stage.clientWidth;
+  const h = stage.clientHeight;
+  const aspect = w / Math.max(h, 1);
+  camera.left = -orthoSize * aspect;
+  camera.right = orthoSize * aspect;
+  camera.top = orthoSize;
+  camera.bottom = -orthoSize;
+  camera.updateProjectionMatrix();
+  renderer.setSize(w, h);
+  labelRenderer.setSize(w, h);
+  lineMaterials.forEach(mat => mat.resolution.set(w, h));
+}
+window.addEventListener('resize', resize);
+
+function installCenter3DView() {
+  scene.updateMatrixWorld(true);
+  const box = new THREE.Box3();
+  const objectBox = new THREE.Box3();
+  let found = false;
+  scene.traverse((object) => {
+    if (!object.visible || object.isCamera || object.isLight) return;
+    if (object.isGridHelper || object.type === 'GridHelper' || object.element) return;
+    if (!(object.isMesh || object.isLine || object.isLineSegments || object.isPoints || object.type === 'Line2' || object.type === 'LineSegments2')) return;
+    objectBox.setFromObject(object);
+    if (!Number.isFinite(objectBox.min.x) || objectBox.isEmpty()) return;
+    box.union(objectBox);
+    found = true;
+  });
+  if (!found || box.isEmpty()) return;
+  const center = box.getCenter(new THREE.Vector3());
+  const camOffset = camera.position.clone().sub(controls.target);
+  controls.target.copy(center);
+  camera.position.copy(center).add(camOffset);
+  camera.lookAt(center);
+  controls.update();
+  const size = box.getSize(new THREE.Vector3());
+  orthoSize = Math.max(1.6, Math.max(size.x, size.y, size.z) * 0.78);
+  resize();
+}
+installCenter3DView();
+
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+  labelRenderer.render(scene, camera);
+  window.__renderedFrames += 1;
+}
+animate();
+</script>
+</body>
+</html>
