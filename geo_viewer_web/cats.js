@@ -1,0 +1,1 @@
+const CATS=[{"cd": "danti", "cn": "单体", "total": 571406, "n": 10000, "pages": 100}, {"cd": "duoti", "cn": "多体", "total": 114754, "n": 10000, "pages": 100}, {"cd": "duidie", "cn": "堆叠", "total": 66759, "n": 10000, "pages": 100}, {"cd": "kongjian", "cn": "空间关系", "total": 126668, "n": 10000, "pages": 100}, {"cd": "wubiaoqian", "cn": "无标签", "total": 4637, "n": 4637, "pages": 47}];

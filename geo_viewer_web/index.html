@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>立体几何图集 · 在线预览</title><style>
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:#f4f5f7;margin:0;padding:14px;color:#222}
+h1{font-size:18px;margin:0 0 4px} .sub{color:#666;font-size:13px;margin-bottom:12px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.tab{padding:6px 14px;background:#fff;border:1px solid #d8dbe0;border-radius:6px;cursor:pointer;font-size:14px}
+.tab.on{background:#2a6fb0;color:#fff;border-color:#2a6fb0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.grid img{width:100%;height:150px;object-fit:contain;background:#fff;border:1px solid #eee;border-radius:4px}
+.nav{display:flex;gap:8px;align-items:center;margin:12px 0;font-size:14px;flex-wrap:wrap}
+.nav button,.nav input{padding:5px 10px;border:1px solid #d8dbe0;background:#fff;border-radius:6px}
+.nav button{cursor:pointer}
+</style></head><body>
+<h1>立体几何图集 · 去重分类(在线抽样预览)</h1>
+<div class="sub" id="sub"></div>
+<div class="tabs" id="tabs"></div>
+<div class="nav"><button onclick="pg(-1)">上一页</button><span id="pi"></span><button onclick="pg(1)">下一页</button>
+ 跳页<input id="jp" type="number" min="1" style="width:64px" onkeydown="if(event.key=='Enter')jump()"><button onclick="jump()">go</button></div>
+<div class="grid" id="grid"></div>
+<script src="cats.js"></script>
+<script>
+let cur=CATS[0].cd,page=0;
+function meta(){return CATS.find(c=>c.cd==cur)}
+function tabs(){document.getElementById('tabs').innerHTML=CATS.map(c=>`<div class="tab ${c.cd==cur?'on':''}" onclick="sel('${c.cd}')">${c.cn} (${c.total.toLocaleString()})</div>`).join('')}
+function sel(cd){cur=cd;page=0;render()}
+function pg(d){const m=meta();page=Math.max(0,Math.min(m.pages-1,page+d));render()}
+function jump(){const v=parseInt(document.getElementById('jp').value)-1,m=meta();if(v>=0&&v<m.pages){page=v;render()}}
+function render(){tabs();const m=meta();const id=cur+'_'+page;
+ document.getElementById('sub').textContent=`本类全量 ${m.total.toLocaleString()} 张,此在线预览抽样 ${m.n.toLocaleString()} 张(完整版见本地包)`;
+ document.getElementById('pi').textContent=`第 ${page+1}/${m.pages} 页`;
+ if(window.CH&&window.CH[id]){draw(window.CH[id]);return}
+ document.getElementById('grid').innerHTML='加载中…';
+ const s=document.createElement('script');s.src='chunk_'+id+'.js';s.onload=()=>draw(window.CH[id]);document.body.appendChild(s);}
+function draw(arr){document.getElementById('grid').innerHTML=arr.map(b=>`<img loading="lazy" src="data:image/jpeg;base64,${b}"/>`).join('')}
+render();
+</script></body></html>
