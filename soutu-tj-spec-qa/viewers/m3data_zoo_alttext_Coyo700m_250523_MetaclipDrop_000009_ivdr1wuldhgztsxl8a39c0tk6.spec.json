@@ -1,0 +1,309 @@
+{
+  "title": "平行六面体与矢量A",
+  "meta": "斜平行六面体，底面为平行四边形，展示基矢ea,eb,ec及矢量A=ea+ec",
+  "camera": {
+    "position": [
+      4,
+      3,
+      5
+    ],
+    "target": [
+      0.5,
+      1,
+      0.5
+    ],
+    "orthoSize": 4.5
+  },
+  "vertices": {
+    "O": [
+      0,
+      0,
+      0
+    ],
+    "A1": [
+      2.2,
+      0,
+      0.6
+    ],
+    "B1": [
+      0.8,
+      0,
+      1.8
+    ],
+    "C1": [
+      3.0,
+      0,
+      2.4
+    ],
+    "O2": [
+      0.3,
+      2.2,
+      0.4
+    ],
+    "A2": [
+      2.5,
+      2.2,
+      1.0
+    ],
+    "B2": [
+      1.1,
+      2.2,
+      2.2
+    ],
+    "C2": [
+      3.3,
+      2.2,
+      2.8
+    ],
+    "D": [
+      1.5,
+      1.1,
+      1.5
+    ]
+  },
+  "faces": [
+    {
+      "points": [
+        "O",
+        "A1",
+        "A2",
+        "O2"
+      ],
+      "color": "#f9d71c",
+      "opacity": 0.25
+    },
+    {
+      "points": [
+        "B1",
+        "C1",
+        "C2",
+        "B2"
+      ],
+      "color": "#f9d71c",
+      "opacity": 0.25
+    },
+    {
+      "points": [
+        "O",
+        "B1",
+        "B2",
+        "O2"
+      ],
+      "color": "#f9d71c",
+      "opacity": 0.25
+    },
+    {
+      "points": [
+        "A1",
+        "C1",
+        "C2",
+        "A2"
+      ],
+      "color": "#f9d71c",
+      "opacity": 0.25
+    },
+    {
+      "points": [
+        "O",
+        "A1",
+        "C1",
+        "B1"
+      ],
+      "color": "#f9d71c",
+      "opacity": 0.35
+    },
+    {
+      "points": [
+        "O2",
+        "A2",
+        "C2",
+        "B2"
+      ],
+      "color": "#f9d71c",
+      "opacity": 0.35
+    }
+  ],
+  "edges": [
+    {
+      "points": [
+        "O",
+        "A1"
+      ],
+      "color": "#111111",
+      "width": 2
+    },
+    {
+      "points": [
+        "O",
+        "B1"
+      ],
+      "color": "#111111",
+      "width": 2
+    },
+    {
+      "points": [
+        "A1",
+        "C1"
+      ],
+      "color": "#111111",
+      "width": 2
+    },
+    {
+      "points": [
+        "B1",
+        "C1"
+      ],
+      "color": "#111111",
+      "width": 2
+    },
+    {
+      "points": [
+        "O2",
+        "A2"
+      ],
+      "color": "#111111",
+      "width": 2
+    },
+    {
+      "points": [
+        "O2",
+        "B2"
+      ],
+      "color": "#111111",
+      "width": 2
+    },
+    {
+      "points": [
+        "A2",
+        "C2"
+      ],
+      "color": "#111111",
+      "width": 2
+    },
+    {
+      "points": [
+        "B2",
+        "C2"
+      ],
+      "color": "#111111",
+      "width": 2
+    },
+    {
+      "points": [
+        "O",
+        "O2"
+      ],
+      "color": "#111111",
+      "width": 2
+    },
+    {
+      "points": [
+        "A1",
+        "A2"
+      ],
+      "color": "#111111",
+      "width": 2
+    },
+    {
+      "points": [
+        "B1",
+        "B2"
+      ],
+      "color": "#111111",
+      "width": 2
+    },
+    {
+      "points": [
+        "C1",
+        "C2"
+      ],
+      "color": "#111111",
+      "width": 2
+    },
+    {
+      "points": [
+        "O",
+        "C2"
+      ],
+      "color": "#e74c3c",
+      "width": 3.2
+    }
+  ],
+  "aux_lines": [
+    {
+      "points": [
+        "O",
+        "A1"
+      ],
+      "color": "#2980b9",
+      "dash": true,
+      "depthTest": false
+    },
+    {
+      "points": [
+        "O",
+        "O2"
+      ],
+      "color": "#27ae60",
+      "dash": true,
+      "depthTest": false
+    },
+    {
+      "points": [
+        "O2",
+        "C2"
+      ],
+      "color": "#8e44ad",
+      "dash": true,
+      "depthTest": false
+    },
+    {
+      "points": [
+        "O",
+        "C2"
+      ],
+      "color": "#e74c3c",
+      "dash": false,
+      "depthTest": false
+    }
+  ],
+  "labels": [
+    {
+      "text": "a ea",
+      "point": "O",
+      "offset": [
+        -0.35,
+        -0.15,
+        -0.1
+      ]
+    },
+    {
+      "text": "b eb",
+      "point": "A1",
+      "offset": [
+        0.15,
+        -0.15,
+        0.15
+      ]
+    },
+    {
+      "text": "c ec",
+      "point": "C2",
+      "offset": [
+        0.2,
+        0.35,
+        0.2
+      ]
+    },
+    {
+      "text": "A",
+      "point": "D",
+      "offset": [
+        0.15,
+        0.05,
+        0.15
+      ]
+    }
+  ],
+  "_id": "m3data_zoo_alttext_Coyo700m_250523_MetaclipDrop_000009_ivdr1wuldhgztsxl8a39c0tk6"
+}

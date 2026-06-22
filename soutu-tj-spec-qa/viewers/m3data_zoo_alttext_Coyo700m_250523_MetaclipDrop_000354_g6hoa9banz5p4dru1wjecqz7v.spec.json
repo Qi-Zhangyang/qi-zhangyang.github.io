@@ -1,0 +1,323 @@
+{
+  "title": "圆柱与过轴截面",
+  "meta": "一个直圆柱被过一个底面直径的竖直平面所截，展示截面形成的长方形与圆柱的关系",
+  "camera": {
+    "position": [
+      3.5,
+      2.5,
+      4.0
+    ],
+    "target": [
+      0,
+      0.8,
+      0
+    ],
+    "orthoSize": 3.0
+  },
+  "vertices": {
+    "O1": [
+      0,
+      0,
+      0
+    ],
+    "O2": [
+      0,
+      2,
+      0
+    ],
+    "A": [
+      -1,
+      0,
+      0
+    ],
+    "B": [
+      1,
+      0,
+      0
+    ],
+    "C": [
+      1,
+      2,
+      0
+    ],
+    "D": [
+      -1,
+      2,
+      0
+    ],
+    "P": [
+      -0.707,
+      0,
+      0.707
+    ],
+    "Q": [
+      0.707,
+      0,
+      -0.707
+    ],
+    "R": [
+      0.707,
+      2,
+      -0.707
+    ],
+    "S": [
+      -0.707,
+      2,
+      0.707
+    ]
+  },
+  "faces": [
+    {
+      "points": [
+        "O1",
+        "B",
+        "C",
+        "O2"
+      ],
+      "color": "#d4af37",
+      "opacity": 0.25
+    },
+    {
+      "points": [
+        "O1",
+        "O2",
+        "D",
+        "A"
+      ],
+      "color": "#d4af37",
+      "opacity": 0.25
+    },
+    {
+      "points": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "color": "#d4af37",
+      "opacity": 0.1
+    },
+    {
+      "points": [
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "color": "#d4af37",
+      "opacity": 0.1
+    },
+    {
+      "points": [
+        "A",
+        "B",
+        "Q",
+        "P"
+      ],
+      "color": "#e74c3c",
+      "opacity": 0.15
+    },
+    {
+      "points": [
+        "D",
+        "C",
+        "R",
+        "S"
+      ],
+      "color": "#e74c3c",
+      "opacity": 0.15
+    }
+  ],
+  "edges": [
+    {
+      "points": [
+        "A",
+        "B"
+      ],
+      "color": "#111111",
+      "width": 2.0
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ],
+      "color": "#111111",
+      "width": 2.0
+    },
+    {
+      "points": [
+        "C",
+        "D"
+      ],
+      "color": "#111111",
+      "width": 2.0
+    },
+    {
+      "points": [
+        "D",
+        "A"
+      ],
+      "color": "#111111",
+      "width": 2.0
+    },
+    {
+      "points": [
+        "O1",
+        "O2"
+      ],
+      "color": "#111111",
+      "width": 2.0,
+      "dash": true
+    },
+    {
+      "points": [
+        "P",
+        "Q"
+      ],
+      "color": "#111111",
+      "width": 2.0
+    },
+    {
+      "points": [
+        "Q",
+        "R"
+      ],
+      "color": "#111111",
+      "width": 2.0
+    },
+    {
+      "points": [
+        "R",
+        "S"
+      ],
+      "color": "#111111",
+      "width": 2.0
+    },
+    {
+      "points": [
+        "S",
+        "P"
+      ],
+      "color": "#111111",
+      "width": 2.0
+    }
+  ],
+  "aux_lines": [
+    {
+      "points": [
+        "A",
+        "D"
+      ],
+      "color": "#e74c3c",
+      "width": 2.5,
+      "depthTest": true
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ],
+      "color": "#e74c3c",
+      "width": 2.5,
+      "depthTest": true
+    },
+    {
+      "points": [
+        "O1",
+        "B"
+      ],
+      "color": "#111111",
+      "width": 1.5,
+      "dash": true,
+      "depthTest": false
+    },
+    {
+      "points": [
+        "O1",
+        "Q"
+      ],
+      "color": "#111111",
+      "width": 1.5,
+      "dash": true,
+      "depthTest": false
+    }
+  ],
+  "aux_faces": [],
+  "labels": [
+    {
+      "text": "O",
+      "point": "O1",
+      "offset": [
+        -0.12,
+        -0.08,
+        0.08
+      ]
+    },
+    {
+      "text": "O'",
+      "point": "O2",
+      "offset": [
+        -0.15,
+        0.12,
+        0.08
+      ]
+    },
+    {
+      "text": "A",
+      "point": "A",
+      "offset": [
+        -0.15,
+        -0.08,
+        -0.02
+      ]
+    },
+    {
+      "text": "B",
+      "point": "B",
+      "offset": [
+        0.12,
+        -0.08,
+        0.02
+      ]
+    },
+    {
+      "text": "C",
+      "point": "C",
+      "offset": [
+        0.12,
+        0.08,
+        0.02
+      ]
+    },
+    {
+      "text": "D",
+      "point": "D",
+      "offset": [
+        -0.15,
+        0.08,
+        -0.02
+      ]
+    }
+  ],
+  "primitives": [
+    {
+      "type": "cylinder",
+      "start": [
+        0,
+        0,
+        0
+      ],
+      "end": [
+        0,
+        2,
+        0
+      ],
+      "radius": 1.0,
+      "color": "#c9a61a",
+      "opacity": 0.35,
+      "segments": 48
+    }
+  ],
+  "_id": "m3data_zoo_alttext_Coyo700m_250523_MetaclipDrop_000354_g6hoa9banz5p4dru1wjecqz7v"
+}

@@ -1,0 +1,253 @@
+{
+  "title": "立方体与空间对角线",
+  "meta": "边长为2的立方体，标注从顶点出发的空间对角线",
+  "camera": {
+    "position": [
+      3.5,
+      3.0,
+      4.5
+    ],
+    "target": [
+      0,
+      1,
+      0
+    ],
+    "orthoSize": 3.5
+  },
+  "vertices": {
+    "O": [
+      -1,
+      0,
+      -1
+    ],
+    "A": [
+      1,
+      0,
+      -1
+    ],
+    "B": [
+      1,
+      0,
+      1
+    ],
+    "C": [
+      -1,
+      0,
+      1
+    ],
+    "D": [
+      -1,
+      2,
+      -1
+    ],
+    "E": [
+      1,
+      2,
+      -1
+    ],
+    "F": [
+      1,
+      2,
+      1
+    ],
+    "G": [
+      -1,
+      2,
+      1
+    ]
+  },
+  "faces": [
+    {
+      "points": [
+        "O",
+        "A",
+        "B",
+        "C"
+      ],
+      "color": "#d4a373",
+      "opacity": 0.15
+    },
+    {
+      "points": [
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "color": "#d4a373",
+      "opacity": 0.15
+    },
+    {
+      "points": [
+        "O",
+        "A",
+        "E",
+        "D"
+      ],
+      "color": "#d4a373",
+      "opacity": 0.15
+    },
+    {
+      "points": [
+        "A",
+        "B",
+        "F",
+        "E"
+      ],
+      "color": "#d4a373",
+      "opacity": 0.15
+    },
+    {
+      "points": [
+        "B",
+        "C",
+        "G",
+        "F"
+      ],
+      "color": "#d4a373",
+      "opacity": 0.15
+    },
+    {
+      "points": [
+        "C",
+        "O",
+        "D",
+        "G"
+      ],
+      "color": "#d4a373",
+      "opacity": 0.15
+    }
+  ],
+  "edges": [
+    {
+      "points": [
+        "O",
+        "A"
+      ],
+      "color": "#5d4037",
+      "width": 1.5
+    },
+    {
+      "points": [
+        "A",
+        "B"
+      ],
+      "color": "#5d4037",
+      "width": 1.5
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ],
+      "color": "#5d4037",
+      "width": 1.5
+    },
+    {
+      "points": [
+        "C",
+        "O"
+      ],
+      "color": "#5d4037",
+      "width": 1.5
+    },
+    {
+      "points": [
+        "D",
+        "E"
+      ],
+      "color": "#5d4037",
+      "width": 1.5
+    },
+    {
+      "points": [
+        "E",
+        "F"
+      ],
+      "color": "#5d4037",
+      "width": 1.5
+    },
+    {
+      "points": [
+        "F",
+        "G"
+      ],
+      "color": "#5d4037",
+      "width": 1.5
+    },
+    {
+      "points": [
+        "G",
+        "D"
+      ],
+      "color": "#5d4037",
+      "width": 1.5
+    },
+    {
+      "points": [
+        "O",
+        "D"
+      ],
+      "color": "#5d4037",
+      "width": 1.5
+    },
+    {
+      "points": [
+        "A",
+        "E"
+      ],
+      "color": "#5d4037",
+      "width": 1.5
+    },
+    {
+      "points": [
+        "B",
+        "F"
+      ],
+      "color": "#5d4037",
+      "width": 1.5
+    },
+    {
+      "points": [
+        "C",
+        "G"
+      ],
+      "color": "#5d4037",
+      "width": 1.5
+    }
+  ],
+  "aux_lines": [
+    {
+      "points": [
+        "O",
+        "F"
+      ],
+      "color": "#c0392b",
+      "width": 2.0,
+      "dash": false,
+      "depthTest": true
+    }
+  ],
+  "labels": [
+    {
+      "text": "O",
+      "point": "O",
+      "offset": [
+        -0.15,
+        -0.12,
+        -0.15
+      ]
+    },
+    {
+      "text": "F",
+      "point": "F",
+      "offset": [
+        0.12,
+        0.12,
+        0.12
+      ]
+    }
+  ],
+  "primitives": [],
+  "_id": "m3data_zoo_alttext_Coyo700m_250523_MetaclipDrop_000301_y9caeh2m560xqoewlk8ztugo1"
+}

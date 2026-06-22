@@ -1,0 +1,347 @@
+{
+  "title": "长方体ABCD-EFGH",
+  "meta": "长方体，底面ABCD，顶面EFGH，长l沿x轴，宽b沿z轴，高h沿y轴",
+  "camera": {
+    "position": [
+      4.5,
+      3.5,
+      5.5
+    ],
+    "target": [
+      0.75,
+      0.5,
+      0.25
+    ],
+    "orthoSize": 3.5
+  },
+  "vertices": {
+    "A": [
+      0,
+      1,
+      0
+    ],
+    "B": [
+      0,
+      0,
+      0
+    ],
+    "C": [
+      2,
+      0,
+      1
+    ],
+    "D": [
+      2,
+      1,
+      1
+    ],
+    "E": [
+      0,
+      2,
+      0
+    ],
+    "F": [
+      0,
+      1,
+      0
+    ],
+    "G": [
+      2,
+      0,
+      1
+    ],
+    "H": [
+      2,
+      2,
+      1
+    ]
+  },
+  "faces": [
+    {
+      "points": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.1
+    },
+    {
+      "points": [
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.1
+    },
+    {
+      "points": [
+        "A",
+        "B",
+        "E",
+        "F"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.1
+    },
+    {
+      "points": [
+        "C",
+        "D",
+        "H",
+        "G"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.1
+    },
+    {
+      "points": [
+        "A",
+        "D",
+        "H",
+        "E"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.1
+    },
+    {
+      "points": [
+        "B",
+        "C",
+        "G",
+        "F"
+      ],
+      "color": "#4a90e2",
+      "opacity": 0.1
+    }
+  ],
+  "edges": [
+    {
+      "points": [
+        "A",
+        "B"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "C",
+        "D"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "D",
+        "A"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "E",
+        "F"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "F",
+        "G"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "G",
+        "H"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "H",
+        "E"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "A",
+        "E"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "B",
+        "F"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "C",
+        "G"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    },
+    {
+      "points": [
+        "D",
+        "H"
+      ],
+      "color": "#111111",
+      "width": 2.6
+    }
+  ],
+  "aux_lines": [],
+  "aux_faces": [
+    {
+      "points": [
+        "A",
+        "F",
+        "G",
+        "D"
+      ],
+      "color": "#f2c94c",
+      "opacity": 0.22
+    }
+  ],
+  "labels": [
+    {
+      "text": "A",
+      "point": "A",
+      "offset": [
+        -0.15,
+        0.12,
+        -0.05
+      ]
+    },
+    {
+      "text": "B",
+      "point": "B",
+      "offset": [
+        -0.15,
+        -0.08,
+        -0.15
+      ]
+    },
+    {
+      "text": "C",
+      "point": "C",
+      "offset": [
+        0.12,
+        -0.08,
+        0.15
+      ]
+    },
+    {
+      "text": "D",
+      "point": "D",
+      "offset": [
+        0.15,
+        0.12,
+        0.08
+      ]
+    },
+    {
+      "text": "E",
+      "point": "E",
+      "offset": [
+        -0.15,
+        0.15,
+        -0.05
+      ]
+    },
+    {
+      "text": "F",
+      "point": "F",
+      "offset": [
+        -0.12,
+        0,
+        -0.15
+      ]
+    },
+    {
+      "text": "G",
+      "point": "G",
+      "offset": [
+        0.12,
+        -0.15,
+        0.18
+      ]
+    },
+    {
+      "text": "H",
+      "point": "H",
+      "offset": [
+        0.15,
+        0.15,
+        0.08
+      ]
+    },
+    {
+      "text": "l",
+      "point": [
+        1,
+        -0.35,
+        0
+      ],
+      "offset": [
+        0,
+        -0.12,
+        0
+      ]
+    },
+    {
+      "text": "b",
+      "point": [
+        2.15,
+        0,
+        0.65
+      ],
+      "offset": [
+        0.15,
+        0,
+        0
+      ]
+    },
+    {
+      "text": "h",
+      "point": [
+        2.15,
+        1.5,
+        1
+      ],
+      "offset": [
+        0.15,
+        0,
+        0
+      ]
+    }
+  ],
+  "primitives": [],
+  "_id": "m3data_zoo_alttext_Coyo700m_250523_MetaclipDrop_000025_chr4s32dgdnamue90txesicb1"
+}
