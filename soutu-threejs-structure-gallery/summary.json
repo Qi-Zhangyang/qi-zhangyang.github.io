@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-06-23T08:37:44Z",
+  "elapsed_sec": 40.49,
+  "samples_requested": 500,
+  "samples_written": 500,
+  "source_manifest": "/home/qizhangyang/soutu_884k_render_pair_gallery/manifest.json",
+  "source_root": "/home/qizhangyang/soutu_884k_render_pair_gallery",
+  "source_spec_path": "/home/qizhangyang/soutu_792w_spec_qa_local/spec/soutu_792w_threejs_specs_merged_dedup.jsonl",
+  "missing_spec": 0,
+  "missing_original": 0,
+  "interaction_model": "single active Three.js viewer, sample list switches the current spec"
+}
