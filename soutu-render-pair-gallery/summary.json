@@ -1,0 +1,18 @@
+{
+  "manifest_records": 884224,
+  "eligible_local_images": 884224,
+  "generated_at": "2026-06-23T08:03:52Z",
+  "elapsed_sec": 149.84,
+  "keep_ids": 884224,
+  "sample_pool": 6000,
+  "specs_found": 5994,
+  "valid_records": 5994,
+  "render_checked": 509,
+  "blank_render_skipped": 9,
+  "render_error": 0,
+  "min_render_variance": 20.0,
+  "selected_before_extract": 500,
+  "samples_written": 500,
+  "source_spec_path": "/home/qizhangyang/soutu_792w_spec_qa_local/spec/soutu_792w_threejs_specs_merged_dedup.jsonl",
+  "source_image_root": "/home/qizhangyang/soutu_792w_clean_images_local"
+}
