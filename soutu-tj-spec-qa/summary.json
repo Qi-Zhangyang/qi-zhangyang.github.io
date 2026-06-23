@@ -1,0 +1,14 @@
+{
+  "records": 928318,
+  "eligible": 590039,
+  "generated_at": "2026-06-23T06:50:27Z",
+  "elapsed_sec": 79.99,
+  "keep_ids": 884224,
+  "qa_pool": 420,
+  "specs_found": 420,
+  "images_found": 420,
+  "samples_written": 80,
+  "source_qa_dir": "/home/qizhangyang/soutu_792w_spec_qa_local/qa",
+  "source_spec_path": "/home/qizhangyang/soutu_792w_spec_qa_local/spec/soutu_792w_threejs_specs_merged_dedup.jsonl",
+  "source_image_root": "/home/qizhangyang/soutu_792w_clean_images_local"
+}
