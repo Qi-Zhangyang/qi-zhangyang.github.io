@@ -1,0 +1,22 @@
+{
+  "source_url": "https://moonshot.feishu.cn/wiki/KUGKwMcSIiie2fkexFVc3KtpnTb?table=tblDO0Irpo6rvTKC&view=vewHi0qW3k",
+  "title": "立体几何数据交付情况 / 批量试标数据查看",
+  "app_token_prefix": "ClLUb7...",
+  "table_id": "tblDO0Irpo6rvTKC",
+  "downloaded_at_utc": "2026-06-23T11:12:09Z",
+  "record_count": 103,
+  "image_count": 103,
+  "error_count": 0,
+  "errors": [],
+  "field_types": {
+    "题目": 1,
+    "选项": 1,
+    "图片": 17,
+    "答案": 3,
+    "难度": 3,
+    "图片来源": 3,
+    "数据类型": 1,
+    "图片结构描述": 1,
+    "图片类型": 3
+  }
+}

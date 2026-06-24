@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>立体几何试标数据查看 · 逐图质检</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --ink: #17202a;
+      --muted: #64748b;
+      --line: #d8dee8;
+      --blue: #2364aa;
+      --green: #157f5f;
+      --red: #b33445;
+      --amber: #946200;
+      --chip: #eef2f7;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      letter-spacing: 0;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(246, 247, 249, 0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .topbar {
+      width: min(1560px, calc(100vw - 36px));
+      margin: 0 auto;
+      padding: 18px 0 14px;
+      display: grid;
+      grid-template-columns: minmax(280px, 1fr) auto;
+      gap: 18px;
+      align-items: end;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      line-height: 1.2;
+      font-weight: 760;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 26px;
+      padding: 0 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--panel);
+      white-space: nowrap;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+      align-items: center;
+    }
+
+    input, select, button {
+      height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--panel);
+      color: var(--ink);
+      font: inherit;
+      font-size: 14px;
+    }
+
+    input {
+      width: min(360px, 36vw);
+      padding: 0 12px;
+    }
+
+    select { padding: 0 34px 0 10px; }
+
+    button {
+      padding: 0 12px;
+      cursor: pointer;
+    }
+
+    button.active {
+      border-color: var(--blue);
+      color: var(--blue);
+      background: #edf5ff;
+      font-weight: 650;
+    }
+
+    main {
+      width: min(1560px, calc(100vw - 36px));
+      margin: 18px auto 44px;
+      display: grid;
+      grid-template-columns: 360px minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .side {
+      position: sticky;
+      top: 100px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+    }
+
+    .stat {
+      padding: 14px;
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .stat:nth-last-child(-n + 2) { border-bottom: 0; }
+    .stat strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .stat.err strong { color: var(--red); }
+    .stat.warn strong { color: var(--amber); }
+    .stat.ok strong { color: var(--green); }
+
+    .facet {
+      padding: 14px;
+    }
+    .facet h2 {
+      margin: 0 0 12px;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .facet-list {
+      display: grid;
+      gap: 7px;
+    }
+    .facet-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      font-size: 13px;
+      color: #334155;
+    }
+    .facet-row.clickable { cursor: pointer; }
+    .facet-row.clickable:hover > div:first-child { color: var(--blue); }
+    .bar {
+      height: 8px;
+      background: #e9edf3;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 5px;
+    }
+    .bar i {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--blue), var(--green));
+      border-radius: inherit;
+    }
+    .bar.err i { background: var(--red); }
+    .bar.warn i { background: var(--amber); }
+    .bar.ok i { background: var(--green); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 14px;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 18px rgba(15, 23, 42, 0.06);
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-width: 0;
+    }
+    .card.edge-error { border-color: #e3919f; box-shadow: 0 5px 18px rgba(179, 52, 69, 0.12); }
+    .card.edge-doubt { border-color: #e8cd86; box-shadow: 0 5px 18px rgba(148, 98, 0, 0.10); }
+
+    .image-wrap {
+      height: 242px;
+      background: #eef1f6;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .image-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .idx-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(23, 32, 42, 0.72);
+      color: #fff;
+      letter-spacing: 0.3px;
+    }
+
+    .content {
+      padding: 13px 14px 14px;
+      display: grid;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      max-width: 100%;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: var(--chip);
+      color: #334155;
+      font-size: 12px;
+      line-height: 1.2;
+      overflow-wrap: anywhere;
+    }
+    .tag.answer { color: #fff; background: var(--green); font-weight: 700; }
+    .tag.l1 { background: #e8f5ef; color: var(--green); }
+    .tag.l2 { background: #fff5db; color: var(--amber); }
+    .tag.l3 { background: #fdecef; color: var(--red); }
+    .tag.verdict { font-weight: 700; }
+    .tag.verdict.error { background: #fdecef; color: var(--red); }
+    .tag.verdict.doubt { background: #fff5db; color: var(--amber); }
+    .tag.verdict.ok { background: #e8f5ef; color: var(--green); }
+
+    .question {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.48;
+      font-weight: 650;
+      overflow-wrap: anywhere;
+    }
+
+    .options {
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 5px;
+      list-style: none;
+      color: #334155;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .options li {
+      border-left: 3px solid #c9d3df;
+      padding-left: 8px;
+      overflow-wrap: anywhere;
+    }
+
+    .desc {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    .qc {
+      border-radius: 7px;
+      padding: 9px 11px;
+      font-size: 12.5px;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+      border: 1px solid transparent;
+    }
+    .qc .qc-head { font-weight: 700; display: block; margin-bottom: 3px; }
+    .qc.error { background: #fdecef; color: #8f2233; border-color: #f2c2cc; }
+    .qc.doubt { background: #fff7e3; color: #7a5200; border-color: #efdca6; }
+    .qc.ok { background: #eef7f1; color: #246b51; border-color: #cfe7da; }
+
+    .empty {
+      display: none;
+      padding: 44px;
+      text-align: center;
+      color: var(--muted);
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 30;
+      display: none;
+      background: rgba(15, 23, 42, 0.82);
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: calc(100vw - 56px);
+      max-height: calc(100vh - 112px);
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+    .lightbox button {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      border-color: rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+    }
+
+    @media (max-width: 980px) {
+      .topbar { grid-template-columns: 1fr; align-items: stretch; }
+      .toolbar { justify-content: flex-start; }
+      input { width: min(100%, 520px); flex: 1 1 260px; }
+      main { grid-template-columns: 1fr; }
+      .side { position: static; }
+    }
+
+    @media (max-width: 560px) {
+      .topbar, main { width: min(100vw - 20px, 1560px); }
+      .toolbar { display: grid; grid-template-columns: 1fr 1fr; }
+      .toolbar input { grid-column: 1 / -1; width: 100%; }
+      .grid { grid-template-columns: 1fr; }
+      .image-wrap { height: 210px; }
+      h1 { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div>
+        <h1>立体几何试标数据查看 · 逐图质检</h1>
+        <div class="meta">
+          <span class="pill"><strong id="visibleCount">0</strong> / <span id="totalCount">0</span> 条</span>
+          <span class="pill">逐图质检(对照标注指南 N1KQdw8)</span>
+          <span class="pill">❌ <span id="pillErr">0</span> · ⚠️ <span id="pillWarn">0</span> · ✅ <span id="pillOk">0</span></span>
+        </div>
+      </div>
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="搜索题目、选项、质检说明、类型">
+        <select id="verdict" aria-label="质检判定筛选"></select>
+        <select id="difficulty" aria-label="难度筛选"></select>
+        <select id="imageType" aria-label="图片类型筛选"></select>
+        <button id="reset" type="button">重置</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <aside class="side">
+      <section class="panel stats">
+        <div class="stat"><strong id="statRecords">0</strong><span>记录</span></div>
+        <div class="stat"><strong id="statImages">0</strong><span>图片</span></div>
+        <div class="stat err"><strong id="statErr">0</strong><span>❌ 明确问题</span></div>
+        <div class="stat warn"><strong id="statWarn">0</strong><span>⚠️ 存疑</span></div>
+      </section>
+      <section class="panel facet">
+        <h2>质检判定(点击筛选)</h2>
+        <div id="verdictFacet" class="facet-list"></div>
+      </section>
+      <section class="panel facet">
+        <h2>难度分布</h2>
+        <div id="difficultyFacet" class="facet-list"></div>
+      </section>
+      <section class="panel facet">
+        <h2>数据类型</h2>
+        <div id="dataTypeFacet" class="facet-list"></div>
+      </section>
+    </aside>
+
+    <section>
+      <div id="grid" class="grid"></div>
+      <div id="empty" class="empty">没有匹配项</div>
+    </section>
+  </main>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+    <button id="closeLightbox" type="button">关闭</button>
+    <img id="lightboxImage" alt="">
+  </div>
+
+  <script>
+    const state = {
+      rows: [],
+      query: "",
+      verdict: "all",
+      difficulty: "all",
+      imageType: "all"
+    };
+
+    const el = {
+      grid: document.getElementById("grid"),
+      empty: document.getElementById("empty"),
+      search: document.getElementById("search"),
+      verdict: document.getElementById("verdict"),
+      difficulty: document.getElementById("difficulty"),
+      imageType: document.getElementById("imageType"),
+      reset: document.getElementById("reset"),
+      visibleCount: document.getElementById("visibleCount"),
+      totalCount: document.getElementById("totalCount"),
+      statRecords: document.getElementById("statRecords"),
+      statImages: document.getElementById("statImages"),
+      statErr: document.getElementById("statErr"),
+      statWarn: document.getElementById("statWarn"),
+      pillErr: document.getElementById("pillErr"),
+      pillWarn: document.getElementById("pillWarn"),
+      pillOk: document.getElementById("pillOk"),
+      verdictFacet: document.getElementById("verdictFacet"),
+      difficultyFacet: document.getElementById("difficultyFacet"),
+      dataTypeFacet: document.getElementById("dataTypeFacet"),
+      lightbox: document.getElementById("lightbox"),
+      lightboxImage: document.getElementById("lightboxImage"),
+      closeLightbox: document.getElementById("closeLightbox")
+    };
+
+    const VERDICTS = ["❌明确问题", "⚠️存疑", "✅无明显问题"];
+
+    const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, ch => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    }[ch]));
+
+    const normalize = (value) => String(value ?? "").toLowerCase().replace(/\s+/g, " ").trim();
+
+    function qc(row) { return row["质检"] || null; }
+    function verdictOf(row) { return (qc(row) && qc(row)["判定"]) || "✅无明显问题"; }
+    function qcClass(row) {
+      const j = verdictOf(row);
+      if (j.indexOf("❌") === 0) return "error";
+      if (j.indexOf("⚠") === 0) return "doubt";
+      return "ok";
+    }
+
+    function optionLines(text) {
+      return String(text || "")
+        .split(/\n+/)
+        .map(x => x.trim())
+        .filter(Boolean);
+    }
+
+    function uniqueValues(rows, key) {
+      return ["all", ...Array.from(new Set(rows.map(r => r[key]).filter(Boolean))).sort((a, b) => String(a).localeCompare(String(b), "zh-CN"))];
+    }
+
+    function fillSelect(select, values, allLabel) {
+      select.innerHTML = values.map(value => {
+        const label = value === "all" ? allLabel : value;
+        return `<option value="${escapeHtml(value)}">${escapeHtml(label)}</option>`;
+      }).join("");
+    }
+
+    function counter(rows, key) {
+      return rows.reduce((acc, row) => {
+        const value = row[key] || "未标注";
+        acc[value] = (acc[value] || 0) + 1;
+        return acc;
+      }, {});
+    }
+
+    function renderFacet(target, counts) {
+      const max = Math.max(1, ...Object.values(counts));
+      target.innerHTML = Object.entries(counts)
+        .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "zh-CN"))
+        .map(([name, count]) => `
+          <div class="facet-row">
+            <div>
+              <div>${escapeHtml(name)}</div>
+              <div class="bar"><i style="width:${Math.max(4, count / max * 100)}%"></i></div>
+            </div>
+            <strong>${count}</strong>
+          </div>
+        `).join("");
+    }
+
+    function renderVerdictFacet(rows) {
+      const counts = {};
+      VERDICTS.forEach(v => counts[v] = 0);
+      rows.forEach(r => { const v = verdictOf(r); counts[v] = (counts[v] || 0) + 1; });
+      const max = Math.max(1, ...Object.values(counts));
+      const clsOf = v => v.indexOf("❌") === 0 ? "err" : (v.indexOf("⚠") === 0 ? "warn" : "ok");
+      el.verdictFacet.innerHTML = VERDICTS.map(v => `
+        <div class="facet-row clickable" data-verdict="${escapeHtml(v)}">
+          <div>
+            <div>${escapeHtml(v)}</div>
+            <div class="bar ${clsOf(v)}"><i style="width:${Math.max(4, counts[v] / max * 100)}%"></i></div>
+          </div>
+          <strong>${counts[v]}</strong>
+        </div>
+      `).join("");
+    }
+
+    function matches(row) {
+      if (state.verdict !== "all" && verdictOf(row) !== state.verdict) return false;
+      if (state.difficulty !== "all" && row["难度"] !== state.difficulty) return false;
+      if (state.imageType !== "all" && row["图片类型"] !== state.imageType) return false;
+      if (!state.query) return true;
+      const q = qc(row) || {};
+      const haystack = normalize([
+        row["题目"], row["选项"], row["答案"], row["难度"], row["数据类型"],
+        row["图片结构描述"], row["图片类型"], row["图片来源"], row.record_id,
+        q["判定"], q["问题类型"], q["说明"]
+      ].join(" "));
+      return haystack.includes(state.query);
+    }
+
+    function renderCards(rows) {
+      el.grid.innerHTML = rows.map(row => {
+        const image = (row.local_images && row.local_images[0]) ? row.local_images[0].replace(/^.*\/images\//, "images/") : "";
+        const options = optionLines(row["选项"]).map(line => `<li>${escapeHtml(line)}</li>`).join("");
+        const difficultyClass = String(row["难度"] || "").toLowerCase();
+        const cls = qcClass(row);
+        const v = qc(row) || {};
+        const verdict = verdictOf(row);
+        const type = v["问题类型"] && v["问题类型"] !== "无" ? ` · ${escapeHtml(v["问题类型"])}` : "";
+        const note = v["说明"] ? escapeHtml(v["说明"]) : "";
+        return `
+          <article class="card ${cls === "ok" ? "" : "edge-" + cls}" data-index="${row.index}">
+            <button class="image-wrap" type="button" data-image="${escapeHtml(image)}" aria-label="打开图片 ${row.index}">
+              <span class="idx-badge">#${escapeHtml(row.index)}</span>
+              ${image ? `<img loading="lazy" src="${escapeHtml(image)}" alt="${escapeHtml(row["图片结构描述"] || row["题目"] || "样本图片")}">` : ""}
+            </button>
+            <div class="content">
+              <div class="chips">
+                <span class="tag verdict ${cls}">${escapeHtml(verdict)}</span>
+                <span class="tag answer">答案 ${escapeHtml(row["答案"] || "-")}</span>
+                <span class="tag ${difficultyClass}">${escapeHtml(row["难度"] || "未标注")}</span>
+                <span class="tag">${escapeHtml(row["图片类型"] || "未标注")}</span>
+                <span class="tag">${escapeHtml(row["数据类型"] || "未标注")}</span>
+              </div>
+              <p class="question">${escapeHtml(row["题目"] || "")}</p>
+              <ul class="options">${options}</ul>
+              <div class="desc">${escapeHtml(row["图片结构描述"] || "")}</div>
+              <div class="qc ${cls}"><span class="qc-head">质检：${escapeHtml(verdict)}${type}</span>${note}</div>
+            </div>
+          </article>
+        `;
+      }).join("");
+      el.empty.style.display = rows.length ? "none" : "block";
+      el.visibleCount.textContent = rows.length;
+    }
+
+    function render() {
+      const rows = state.rows.filter(matches);
+      renderCards(rows);
+      el.verdict.value = state.verdict;
+    }
+
+    function setupStats(rows) {
+      const imageCount = rows.reduce((n, r) => n + ((r.local_images || []).length), 0);
+      const vc = {};
+      VERDICTS.forEach(v => vc[v] = 0);
+      rows.forEach(r => { vc[verdictOf(r)] = (vc[verdictOf(r)] || 0) + 1; });
+      el.totalCount.textContent = rows.length;
+      el.statRecords.textContent = rows.length;
+      el.statImages.textContent = imageCount;
+      el.statErr.textContent = vc["❌明确问题"] || 0;
+      el.statWarn.textContent = vc["⚠️存疑"] || 0;
+      el.pillErr.textContent = vc["❌明确问题"] || 0;
+      el.pillWarn.textContent = vc["⚠️存疑"] || 0;
+      el.pillOk.textContent = vc["✅无明显问题"] || 0;
+      renderVerdictFacet(rows);
+      renderFacet(el.difficultyFacet, counter(rows, "难度"));
+      renderFacet(el.dataTypeFacet, counter(rows, "数据类型"));
+    }
+
+    async function init() {
+      const response = await fetch("records.json");
+      const rows = await response.json();
+      rows.sort((a, b) => (a.index || 0) - (b.index || 0));
+      state.rows = rows;
+      setupStats(rows);
+      fillSelect(el.verdict, ["all", ...VERDICTS], "全部判定");
+      fillSelect(el.difficulty, uniqueValues(rows, "难度"), "全部难度");
+      fillSelect(el.imageType, uniqueValues(rows, "图片类型"), "全部图片类型");
+      render();
+    }
+
+    el.search.addEventListener("input", event => {
+      state.query = normalize(event.target.value);
+      render();
+    });
+    el.verdict.addEventListener("change", event => {
+      state.verdict = event.target.value;
+      render();
+    });
+    el.difficulty.addEventListener("change", event => {
+      state.difficulty = event.target.value;
+      render();
+    });
+    el.imageType.addEventListener("change", event => {
+      state.imageType = event.target.value;
+      render();
+    });
+    el.verdictFacet.addEventListener("click", event => {
+      const row = event.target.closest(".facet-row");
+      if (!row) return;
+      const v = row.dataset.verdict;
+      state.verdict = (state.verdict === v) ? "all" : v;
+      render();
+    });
+    el.reset.addEventListener("click", () => {
+      state.query = "";
+      state.verdict = "all";
+      state.difficulty = "all";
+      state.imageType = "all";
+      el.search.value = "";
+      el.verdict.value = "all";
+      el.difficulty.value = "all";
+      el.imageType.value = "all";
+      render();
+    });
+    el.grid.addEventListener("click", event => {
+      const button = event.target.closest(".image-wrap");
+      if (!button) return;
+      const image = button.dataset.image;
+      if (!image) return;
+      el.lightboxImage.src = image;
+      el.lightbox.classList.add("open");
+    });
+    el.closeLightbox.addEventListener("click", () => {
+      el.lightbox.classList.remove("open");
+      el.lightboxImage.removeAttribute("src");
+    });
+    el.lightbox.addEventListener("click", event => {
+      if (event.target === el.lightbox) el.closeLightbox.click();
+    });
+    window.addEventListener("keydown", event => {
+      if (event.key === "Escape") el.closeLightbox.click();
+    });
+
+    init().catch(error => {
+      el.empty.textContent = `加载失败: ${error.message}`;
+      el.empty.style.display = "block";
+    });
+  </script>
+</body>
+</html>

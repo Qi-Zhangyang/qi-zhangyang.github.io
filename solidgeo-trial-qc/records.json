@@ -1,0 +1,2917 @@
+[
+  {
+    "index": 1,
+    "record_id": "rec27ExHB07APB",
+    "题目": "图中的点N、点S和点T哪个点位置最高？",
+    "选项": "A.点N\nB.点S\nC.点T\nD.点N、S、T高度相同",
+    "答案": "D",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ5",
+    "图片结构描述": "截角立方体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0001_rec27ExHB07APB_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 34740,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0001_rec27ExHB07APB_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "截角立方体N/S/T均在顶面、等高,答案D正确(透视陷阱:2D显得低≠3D低)。"
+    }
+  },
+  {
+    "index": 2,
+    "record_id": "rec27ExHB07GVT",
+    "题目": "红线、蓝线和绿线这三条线段中，哪一条最长？",
+    "选项": "A. 红线\nB. 蓝线\nC. 绿线\nD. 都一样长",
+    "答案": "B",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ5",
+    "图片结构描述": "标有数值的长方体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0002_rec27ExHB07GVT_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 40781,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0002_rec27ExHB07GVT_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "❌明确问题",
+      "问题类型": "G2可直读标签",
+      "说明": "【复核·维持并升级】红4/绿3/蓝6三个长度数字都印在图上,答B只需读数比6>4>3,纯读数非感知,违反G2(数值对)。",
+      "复核": true
+    }
+  },
+  {
+    "index": 3,
+    "record_id": "rec27ExHB07Jqd",
+    "题目": "立体图形里有三条颜色不是蓝色或黑色的线段，其中哪一条线段更长？",
+    "选项": "A. 红线\nB. 黄线\nC. 绿线\nD. 都一样长",
+    "答案": "D",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ5",
+    "图片结构描述": "正方体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0003_rec27ExHB07Jqd_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 139535,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0003_rec27ExHB07Jqd_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "正方体三条非蓝非黑棱视觉/坐标均等长,答案D正确。"
+    }
+  },
+  {
+    "index": 4,
+    "record_id": "rec27ExHB07LKm",
+    "题目": "图中哪条标有字母的线段最长？",
+    "选项": "A. a\nB. b\nC. c\nD. 都一样长",
+    "答案": "A",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ5",
+    "图片结构描述": "有刻度格的长方体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0004_rec27ExHB07LKm_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 38460,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0004_rec27ExHB07LKm_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "带单位小立方体的长方体,前底边a跨度最大,答案A正确。"
+    }
+  },
+  {
+    "index": 5,
+    "record_id": "rec27ExHB07O2J",
+    "题目": "在图中几何体的所有顶点中，哪个顶点是最高点？",
+    "选项": "A. C\nB. A\nC. G\nD. B",
+    "答案": "B",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ2",
+    "图片结构描述": "八棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0005_rec27ExHB07O2J_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 104859,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0005_rec27ExHB07O2J_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "八棱锥顶点A在最高处,答案B正确。"
+    }
+  },
+  {
+    "index": 6,
+    "record_id": "recvnmunMObAsj",
+    "题目": "该图显示了一个由六个立方体组成的堆叠物体，且给出了点T的坐标。点W的坐标是什么？",
+    "选项": "A. (1,-1,-1)\nB. (1,-1,0)\nC. (1,0,-1)\nD. (-1,0,1）",
+    "答案": "A",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ2",
+    "图片结构描述": "立方体堆叠体",
+    "图片类型": "堆叠",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0006_recvnmunMObAsj_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 58732,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0006_recvnmunMObAsj_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "【复核·改判合格】轴Z上/Y右/X前,以T(-1,-1,1)为锚,W=(1,-1,-1)一步坐标推断即得=答案A,GQ2坐标格允许,正确。",
+      "复核": true
+    }
+  },
+  {
+    "index": 7,
+    "record_id": "recvnmunMO2J1B",
+    "题目": "图中字母所标识的点中，哪个点是最靠前的？",
+    "选项": "A. V\nB. F\nC. G\nD. D",
+    "答案": "C",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ2",
+    "图片结构描述": "半球体、圆柱与圆锥组合体",
+    "图片类型": "多体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0007_recvnmunMO2J1B_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 399194,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0007_recvnmunMO2J1B_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "❌明确问题",
+      "问题类型": "G3答案不唯一",
+      "说明": "【复核·维持】半球+柱+锥,候选V/G/F全在竖直中轴、前后深度相同,'最靠前'无唯一解;D是坐标图例标记非实体点。",
+      "复核": true
+    }
+  },
+  {
+    "index": 8,
+    "record_id": "recvnmunMOwS2x",
+    "题目": "在如图所示的立体图形中，红色线段与蓝色线段的位置关系是？",
+    "选项": "A. 平行\nB. 相交但不垂直\nC. 相交且垂直\nD. 异面",
+    "答案": "B",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ6",
+    "图片结构描述": "四棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0008_recvnmunMOwS2x_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 69972,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0008_recvnmunMOwS2x_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "四棱锥CD与PC共点C相交且非直角,答案B正确。"
+    }
+  },
+  {
+    "index": 9,
+    "record_id": "recvnmunMOfH5f",
+    "题目": "在图上的长方体中，标记的两条红色线段具备怎样的位置关系？",
+    "选项": "A. 平行\nB. 相交\nC. 异面\nD. 无法判断",
+    "答案": "C",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ6",
+    "图片结构描述": "长方体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0009_recvnmunMOfH5f_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 32911,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0009_recvnmunMOfH5f_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "长方体两条红线分处上下、不共面,异面,答案C正确。"
+    }
+  },
+  {
+    "index": 10,
+    "record_id": "recvnmunMOBPSu",
+    "题目": "在如图所示的立体图形中，线段AC和线段BD的位置关系是怎样的？",
+    "选项": "A. 平行\nB. 相交且垂直\nC. 相交但不垂直\nD. 异面",
+    "答案": "D",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ6",
+    "图片结构描述": "三棱柱",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0010_recvnmunMOBPSu_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 178133,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0010_recvnmunMOBPSu_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "三棱柱AC与BD无公共点且不共面,异面,答案D正确。"
+    }
+  },
+  {
+    "index": 11,
+    "record_id": "recvnmunMO0E9a",
+    "题目": "图中哪条线段是这个圆台的高？",
+    "选项": "A. MN\nB. ML\nC. LK\nD. NK",
+    "答案": "C",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ2",
+    "图片结构描述": "圆台",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0011_recvnmunMO0E9a_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 99977,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0011_recvnmunMO0E9a_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "圆台LK为两底圆心连线即高,答案C正确。"
+    }
+  },
+  {
+    "index": 12,
+    "record_id": "recvnmunMOqBFq",
+    "题目": "图中哪条线段是这个长方体的体对角线？",
+    "选项": "A. VW\nB. RT\nC. VU\nD. YT",
+    "答案": "A",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ2",
+    "图片结构描述": "长方体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0012_recvnmunMOqBFq_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 60228,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0012_recvnmunMOqBFq_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "长方体VW贯穿内部连对顶点,体对角线,答案A正确。"
+    }
+  },
+  {
+    "index": 13,
+    "record_id": "recvnmunMOT2hZ",
+    "题目": "图中蓝色线段属于哪一类线段？",
+    "选项": "A. 侧棱\nB. 体对角线\nC. 面对角线\nD. 高",
+    "答案": "C",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ3",
+    "图片结构描述": "长方体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0013_recvnmunMOT2hZ_1_img_v3_0212t_cb8031ee-e35c-4c3c-b104-add.jpg"
+    ],
+    "image_meta": [
+      {
+        "name": "img_v3_0212t_cb8031ee-e35c-4c3c-b104-add75f31aa6g.jpg",
+        "type": "image/jpeg",
+        "size": 136656,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0013_recvnmunMOT2hZ_1_img_v3_0212t_cb8031ee-e35c-4c3c-b104-add.jpg"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "长方体蓝线为面对角线(未过体心),答案C正确。"
+    }
+  },
+  {
+    "index": 14,
+    "record_id": "recvnmunMOHcLx",
+    "题目": "图片中点H到点B的距离是多少？",
+    "选项": "A.2\nB.2√2\nC.2√3\nD.3",
+    "答案": "A",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ4",
+    "图片结构描述": "正方体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0014_recvnmunMOHcLx_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 609364,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0014_recvnmunMOHcLx_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "正方体HB为顶面一条棱=棱长2,直接读图,答案A正确。"
+    }
+  },
+  {
+    "index": 15,
+    "record_id": "recvnmunMOPSw3",
+    "题目": "图中点A到点C的距离是多少？",
+    "选项": "A.3\nB.4\nC.5\nD.√34",
+    "答案": "C",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ4",
+    "图片结构描述": "长方体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0015_recvnmunMOPSw3_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 739344,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0015_recvnmunMOPSw3_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无(GQ4一步计算)",
+      "说明": "【复核·改判合格】直角三角APC,AP=3 PC=4→AC=5(3-4-5),GQ4度量格允许一步勾股,答案C正确。",
+      "复核": true
+    }
+  },
+  {
+    "index": 16,
+    "record_id": "recvnmunMOFXNS",
+    "题目": "如图所示ABCD为平行四边形，AD长度等于多少？",
+    "选项": "A.3 B.2 C.√13 D.√5",
+    "答案": "B",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ4",
+    "图片结构描述": "四棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0016_recvnmunMOFXNS_1_20260622-165703.png"
+    ],
+    "image_meta": [
+      {
+        "name": "20260622-165703.png",
+        "type": "image/png",
+        "size": 17338,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0016_recvnmunMOFXNS_1_20260622-165703.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "【复核·改判合格】题干给ABCD平行四边形,AD=BC=2为对边相等一步常识,GQ4允许,答案B正确。",
+      "复核": true
+    }
+  },
+  {
+    "index": 17,
+    "record_id": "recvnmunMO5aSg",
+    "题目": "PC边长多少?",
+    "选项": "A.3 B.4 C.5 D.7",
+    "答案": "C",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ4",
+    "图片结构描述": "四棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0017_recvnmunMO5aSg_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 46772,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0017_recvnmunMO5aSg_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无(GQ4一步计算)",
+      "说明": "【复核·改判合格】D处直角,PD=4 DC=3→PC=5,GQ4度量格允许一步勾股,答案C正确。",
+      "复核": true
+    }
+  },
+  {
+    "index": 18,
+    "record_id": "recvnmunMO7FF3",
+    "题目": "P、S、D三点是否存在于图中立体图形的同一个面上吗？",
+    "选项": "A. 均在同一个面上\nB. 三个点各在不同面上\nC. 仅D点和S点在同一个面上\nD. 仅P点和S点在同一个面上",
+    "答案": "A",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ6",
+    "图片结构描述": "六棱柱",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0018_recvnmunMO7FF3_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 55671,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0018_recvnmunMO7FF3_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "六棱柱P/S/D均为底面六边形顶点、共面,答案A正确。"
+    }
+  },
+  {
+    "index": 19,
+    "record_id": "recvnmunMO3Tgw",
+    "题目": "点B在球的什么位置？",
+    "选项": "A. 球面上\nB. 球内（非球心）\nC. 球内且为球心\nD. 球外",
+    "答案": "D",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ6",
+    "图片结构描述": "球体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0019_recvnmunMO3Tgw_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 10733,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0019_recvnmunMO3Tgw_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "点B明显落在球轮廓圆外,答案D(球外)正确。"
+    }
+  },
+  {
+    "index": 20,
+    "record_id": "recvnmunMOgO27",
+    "题目": "点H在图中球体的什么位置？",
+    "选项": "A. 球面上\nB. 球内（非球心）\nC. 球内且为球心\nD. 球外",
+    "答案": "D",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ6",
+    "图片结构描述": "球体与平面",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0020_recvnmunMOgO27_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 32213,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0020_recvnmunMOgO27_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "点H明显落在球轮廓圆外,答案D(球外)正确。"
+    }
+  },
+  {
+    "index": 21,
+    "record_id": "recvnmunMOuZ2j",
+    "题目": "图中立体图形有几个顶点？",
+    "选项": "A. 8个　\nB. 7个\nC. 6个　\nD. 9个",
+    "答案": "A",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ1",
+    "图片结构描述": "正方体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0021_recvnmunMOuZ2j_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 62872,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0021_recvnmunMOuZ2j_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "正方体8个顶点,答案A正确(内部红线为干扰)。"
+    }
+  },
+  {
+    "index": 22,
+    "record_id": "recvnmunMOb9pF",
+    "题目": "图中的这个几何图形有多少个顶点？",
+    "选项": "A. 6个　\nB. 4个\nC. 5个　\nD. 3个",
+    "答案": "C",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ1",
+    "图片结构描述": "四棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0022_recvnmunMOb9pF_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 41878,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0022_recvnmunMOb9pF_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "四棱锥1顶+4底=5顶点,答案C正确。"
+    }
+  },
+  {
+    "index": 23,
+    "record_id": "recvnmunMOb21j",
+    "题目": "这个棱锥有几个顶点？",
+    "选项": "A. 6个\nB. 5个\nC. 4个\nD. 7个",
+    "答案": "B",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ1",
+    "图片结构描述": "四棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0023_recvnmunMOb21j_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 21413,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0023_recvnmunMOb21j_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "四棱锥5顶点,答案B正确(L3偏简单)。"
+    }
+  },
+  {
+    "index": 24,
+    "record_id": "recvnmunMO7VVd",
+    "题目": "这个棱柱有多少个顶点？",
+    "选项": "A. 8个\nB. 5个\nC. 6个　\nD. 7个",
+    "答案": "C",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ1",
+    "图片结构描述": "三棱柱",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0024_recvnmunMO7VVd_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 38292,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0024_recvnmunMO7VVd_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "三棱柱6个真实顶点,答案C正确;D/E为虚线交点干扰。"
+    }
+  },
+  {
+    "index": 25,
+    "record_id": "recvnmunMOaEfj",
+    "题目": "观察图中的这个立体图形，共有多少个顶点？",
+    "选项": "A. 14个　\nB. 15个\nC. 16个　\nD. 17个",
+    "答案": "C",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ1",
+    "图片结构描述": "立体几何轴测示意图",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0025_recvnmunMOaEfj_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 27505,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0025_recvnmunMOaEfj_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "⚠️存疑",
+      "问题类型": "顶点数非唯一可验证",
+      "说明": "【复核·维持存疑】L形阶梯块+底板,底板外凸使'是否与上块共顶点'不可判,顶点数16(共顶)或20(独立)两解并存,无法确认唯一16。",
+      "复核": true
+    }
+  },
+  {
+    "index": 26,
+    "record_id": "recvnmunMOJvsW",
+    "题目": "观察图中的多个立体图形，共有多少个顶点？",
+    "选项": "A. 16个　\nB. 15个\nC. 14个　\nD. 17个",
+    "答案": "A",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ1",
+    "图片结构描述": "长方体",
+    "图片类型": "多体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0026_recvnmunMOJvsW_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 12562,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0026_recvnmunMOJvsW_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "两个独立长方体不共顶点,8+8=16,答案A正确。"
+    }
+  },
+  {
+    "index": 27,
+    "record_id": "recvnmunMOtTOa",
+    "题目": "在这个数学立体几何图形中共存在多少个顶点？",
+    "选项": "A. 7个　\nB. 6个\nC. 5个　\nD. 4个",
+    "答案": "C",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ1",
+    "图片结构描述": "四棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0027_recvnmunMOtTOa_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 59021,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0027_recvnmunMOtTOa_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "四棱锥5顶点,答案C正确(左侧小黑点为投影非顶点)。"
+    }
+  },
+  {
+    "index": 28,
+    "record_id": "recvnmunMOpD3y",
+    "题目": "观察下图所示的空间几何体，总共有多少条棱？",
+    "选项": "A.4条\nB.5条\nC.7条\nD.8条",
+    "答案": "D",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ1",
+    "图片结构描述": "正四棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0028_recvnmunMOpD3y_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 62730,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0028_recvnmunMOpD3y_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "四棱锥4底棱+4侧棱=8,答案D正确。"
+    }
+  },
+  {
+    "index": 29,
+    "record_id": "recvnmunMOMSIk",
+    "题目": "图中的棱柱总共有多少条棱？",
+    "选项": "A. 9\nB. 10\nC. 12 \nD. 13",
+    "答案": "C",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ1",
+    "图片结构描述": "四棱柱",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0029_recvnmunMOMSIk_1_image_(1).png"
+    ],
+    "image_meta": [
+      {
+        "name": "image (1).png",
+        "type": "image/png",
+        "size": 58495,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0029_recvnmunMOMSIk_1_image_(1).png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "四棱柱4+4+4=12棱,答案C正确。"
+    }
+  },
+  {
+    "index": 30,
+    "record_id": "recvnmunMOLtCz",
+    "题目": "观察下图所示的空间几何体，其所有的侧棱总共有多少条？",
+    "选项": "A.5条\nB.6条\nC.7条\nD.8条",
+    "答案": "D",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ1",
+    "图片结构描述": "四棱柱的截角体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0030_recvnmunMOLtCz_1_image_(2).png"
+    ],
+    "image_meta": [
+      {
+        "name": "image (2).png",
+        "type": "image/png",
+        "size": 42477,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0030_recvnmunMOLtCz_1_image_(2).png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "【复核·改判合格】正四棱反棱柱,连接上下底的斜棱唯一8条(含3虚线)可逐条数出,答案D=8正确。",
+      "复核": true
+    }
+  },
+  {
+    "index": 31,
+    "record_id": "recvnmunMOsPus",
+    "题目": "这个棱锥的底面有多少条边？",
+    "选项": "A. 5\nB. 6\nC. 7\nD. 8",
+    "答案": "D",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ1",
+    "图片结构描述": "八棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0031_recvnmunMOsPus_1_image_(3).png"
+    ],
+    "image_meta": [
+      {
+        "name": "image (3).png",
+        "type": "image/png",
+        "size": 23014,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0031_recvnmunMOsPus_1_image_(3).png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "八棱锥底面八边形8条边,答案D正确。"
+    }
+  },
+  {
+    "index": 32,
+    "record_id": "recvnmunMOhFro",
+    "题目": "这个棱台一共有多少条棱？",
+    "选项": "A.13条\nB.15条\nC.17条\nD.18条",
+    "答案": "D",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ1",
+    "图片结构描述": "六棱台",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0032_recvnmunMOhFro_1_image_(4).png"
+    ],
+    "image_meta": [
+      {
+        "name": "image (4).png",
+        "type": "image/png",
+        "size": 104786,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0032_recvnmunMOhFro_1_image_(4).png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "六棱台6+6+6=18棱,答案D正确。"
+    }
+  },
+  {
+    "index": 33,
+    "record_id": "recvnmunMO5zAv",
+    "题目": "观察下图所示的空间几何体，这个几何体总共有多少条棱？",
+    "选项": "A. 8\nB. 10 \nC. 12\nD. 14",
+    "答案": "C",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ1",
+    "图片结构描述": "八面体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0033_recvnmunMO5zAv_1_image_(6).png"
+    ],
+    "image_meta": [
+      {
+        "name": "image (6).png",
+        "type": "image/png",
+        "size": 8347,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0033_recvnmunMO5zAv_1_image_(6).png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "正八面体12棱,答案C正确(中心红点为体心)。"
+    }
+  },
+  {
+    "index": 34,
+    "record_id": "recvnmunMOtp7L",
+    "题目": "观察图中的棱柱总共有多少条侧棱？",
+    "选项": "A.4条\nB.5条\nC.6条\nD.7条",
+    "答案": "C",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ1",
+    "图片结构描述": "六棱柱",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0034_recvnmunMOtp7L_1_image_(7).png"
+    ],
+    "image_meta": [
+      {
+        "name": "image (7).png",
+        "type": "image/png",
+        "size": 15764,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0034_recvnmunMOtp7L_1_image_(7).png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "六棱柱6条侧棱,答案C正确。"
+    }
+  },
+  {
+    "index": 35,
+    "record_id": "recvnmunMOXW2l",
+    "题目": "观察下图所示的空间几何体，整体总共有多少条棱？",
+    "选项": "A. 20\nB. 28\nC. 30 \nD. 32",
+    "答案": "C",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ1",
+    "图片结构描述": "十二面体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0035_recvnmunMOXW2l_1_image_(8).png"
+    ],
+    "image_meta": [
+      {
+        "name": "image (8).png",
+        "type": "image/png",
+        "size": 412355,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0035_recvnmunMOXW2l_1_image_(8).png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "正十二面体30棱,答案C正确。"
+    }
+  },
+  {
+    "index": 36,
+    "record_id": "recvnmunMOXsEt",
+    "题目": "观察图中的空间几何体，该几何体总共有多少条棱？",
+    "选项": "A.5条\nB.8条\nC.7条\nD.6条",
+    "答案": "B",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ1",
+    "图片结构描述": "四棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0036_recvnmunMOXsEt_1_image_(9).png"
+    ],
+    "image_meta": [
+      {
+        "name": "image (9).png",
+        "type": "image/png",
+        "size": 13719,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0036_recvnmunMOXsEt_1_image_(9).png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "【复核·改判合格】四棱锥结构棱=底4+侧4=8,PD及对角虚线为辅助截面线(非棱)属预期干扰,答案B=8正确。",
+      "复核": true
+    }
+  },
+  {
+    "index": 37,
+    "record_id": "recvnmunMOaoVk",
+    "题目": "图中的棱锥总共有多少条棱？",
+    "选项": "A.10\nB.5\nC.9\nD.11",
+    "答案": "A",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ1",
+    "图片结构描述": "五棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0037_recvnmunMOaoVk_1_image_(10).png"
+    ],
+    "image_meta": [
+      {
+        "name": "image (10).png",
+        "type": "image/png",
+        "size": 12931,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0037_recvnmunMOaoVk_1_image_(10).png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "【复核·改判合格】五棱锥结构棱=底5+侧5=10,E/G/H及截面虚线非棱,答案A=10正确,辅助线为预期干扰。",
+      "复核": true
+    }
+  },
+  {
+    "index": 38,
+    "record_id": "recvnmunMOE1YW",
+    "题目": "图片中绿色的面是几何体的什么面？",
+    "选项": "A.侧面\nB.底面\nC.截面\nD.对角面",
+    "答案": "B",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE2 X GQ3",
+    "图片结构描述": "五棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0038_recvnmunMOE1YW_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 568513,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0038_recvnmunMOE1YW_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "五棱锥绿色五边形=底面,答案B正确。"
+    }
+  },
+  {
+    "index": 39,
+    "record_id": "recvnmunMOWDH8",
+    "题目": "图片中橙色的面是这个几何体的哪个面？",
+    "选项": "A.侧面\nB.底面\nC.截面\nD.对角面",
+    "答案": "C",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE2 X GQ3",
+    "图片结构描述": "三棱柱",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0039_recvnmunMOWDH8_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 19794,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0039_recvnmunMOWDH8_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "三棱柱橙色面为内部截面(非侧面),答案C正确。"
+    }
+  },
+  {
+    "index": 40,
+    "record_id": "recvnmunMO8gXi",
+    "题目": "蓝色面实际上是什么形状？",
+    "选项": "A. 直角三角形\nB. 钝角三角形\nC. 等边三角形\nD. 等腰锐角三角形",
+    "答案": "C",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE2 X GQ3",
+    "图片结构描述": "正四棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0040_recvnmunMO8gXi_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 53185,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0040_recvnmunMO8gXi_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "正四棱锥标注底边=侧棱,各侧面为等边三角形,答案C正确。"
+    }
+  },
+  {
+    "index": 41,
+    "record_id": "recvnmunMOlT5A",
+    "题目": "几何体中蓝色截面实际是什么形状？",
+    "选项": "A.正五边形\nB.正六边形\nC.六边形（非正）\nD.五边形（非正）",
+    "答案": "B",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE2 X GQ3",
+    "图片结构描述": "正方体内接四面体",
+    "图片类型": "多体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0041_recvnmunMOlT5A_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 171550,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0041_recvnmunMOlT5A_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "正方体过各棱中点截面为正六边形,答案B正确。"
+    }
+  },
+  {
+    "index": 42,
+    "record_id": "recvnmunMOpOkY",
+    "题目": "这个立体几何中的蓝色部分实际上是什么形状？",
+    "选项": "A. 正方形\nB. 平行四边形\nC. 长方形\nD. 菱形",
+    "答案": "C",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE2 X GQ3",
+    "图片结构描述": "正方体截面",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0042_recvnmunMOpOkY_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 22355,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0042_recvnmunMOpOkY_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "正方体斜截面实为a×√2a矩形,答案C(长方形)正确。"
+    }
+  },
+  {
+    "index": 43,
+    "record_id": "recvnmunMO7kf8",
+    "题目": "黄色的面是几何体的什么面？",
+    "选项": "A.底面\nB.侧面\nC.截面\nD.对角面",
+    "答案": "A",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE2 X GQ3",
+    "图片结构描述": "三棱柱",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0043_recvnmunMO7kf8_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 130108,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0043_recvnmunMO7kf8_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "横放三棱柱黄色三角形面=底面,答案A正确。"
+    }
+  },
+  {
+    "index": 44,
+    "record_id": "recvnmunMOXRBH",
+    "题目": "将图中几何图形的面JBCN定为正面，数一数与该正面有公共棱的相邻面共有多少个？",
+    "选项": "A.4 B.5 C.6 D.3",
+    "答案": "A",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE2XGQ1",
+    "图片结构描述": "平行六面体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0044_recvnmunMOXRBH_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 1091351,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0044_recvnmunMOXRBH_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "【复核·改判合格】平行六面体面JBCN与上下左右4面共棱,答案A=4正确;重复的R/Q标号不在本题被问面上,仅图面瑕疵。",
+      "复核": true
+    }
+  },
+  {
+    "index": 45,
+    "record_id": "recvnmunMOUqu4",
+    "题目": "观察图中所有的立体图形，数一数共有多少个平面（其中不同立方体的底面需单独计算）？",
+    "选项": "A.2 B.4 C.5 D.3",
+    "答案": "D",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE2XGQ1",
+    "图片结构描述": "圆锥体、圆柱体",
+    "图片类型": "多体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0045_recvnmunMOUqu4_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 517229,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0045_recvnmunMOUqu4_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "圆锥1底+圆柱2底=3个平面,答案D正确。"
+    }
+  },
+  {
+    "index": 46,
+    "record_id": "recvnmunMOnuhR",
+    "题目": "从图示视角观察，该立体图形的可见面共有多少个？",
+    "选项": "A.3 B.4 C.6 D.5",
+    "答案": "B",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE2XGQ1",
+    "图片结构描述": "截角体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0046_recvnmunMOnuhR_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 24295,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0046_recvnmunMOnuhR_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "截角立方体此视角可见3面+切角三角面=4,答案B正确。"
+    }
+  },
+  {
+    "index": 47,
+    "record_id": "recvnmunMOdvir",
+    "题目": "图中的线段PQ是哪种类型的线段？",
+    "选项": "A. 侧棱  \nB. 斜高  \nC. 底面对角线  \nD. 高",
+    "答案": "D",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ3",
+    "图片结构描述": "四棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0047_recvnmunMOdvir_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 38622,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0047_recvnmunMOdvir_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "四棱锥PQ由顶点到底心=高,答案D正确。"
+    }
+  },
+  {
+    "index": 48,
+    "record_id": "recvnmunMOBFFK",
+    "题目": "图中蓝色虚线段属于这个立体图形哪一类型的线段？",
+    "选项": "A. 侧棱\nB. 体对角线\nC. 面对角线\nD. 高",
+    "答案": "B",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ3",
+    "图片结构描述": "正方体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0048_recvnmunMOBFFK_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 94378,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0048_recvnmunMOBFFK_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "正方体PG连对顶点穿体内=体对角线,答案B正确。"
+    }
+  },
+  {
+    "index": 49,
+    "record_id": "recvnmunMOTrnG",
+    "题目": "图中的线段PF是哪种类型的线段？",
+    "选项": "A. 侧棱  \nB. 斜高  \nC. 底面对角线  \nD. 高",
+    "答案": "A",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ3",
+    "图片结构描述": "六棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0049_recvnmunMOTrnG_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 22660,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0049_recvnmunMOTrnG_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "六棱锥PF为侧棱,答案A正确。"
+    }
+  },
+  {
+    "index": 50,
+    "record_id": "recvnmunMOpeWs",
+    "题目": "在如图所示的立体图形中，紫色线段JN属于哪一类线段？",
+    "选项": "A. 侧棱\nB. 底面的边\nC. 斜高\nD. 高",
+    "答案": "C",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ3",
+    "图片结构描述": "四棱台",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0050_recvnmunMOpeWs_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 84926,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0050_recvnmunMOpeWs_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "❌明确问题",
+      "问题类型": "标注重复(两个J)致答案不唯一",
+      "说明": "【复核·升级❌】图中确有两个'J'(上顶面近G/P/Q一个、大底前缘一个),'JN'在B(底面边)与C(斜高)间无法唯一确定,必须消歧。",
+      "复核": true
+    }
+  },
+  {
+    "index": 51,
+    "record_id": "recvnmunMOhOOg",
+    "题目": "如图所示的立体图形中，线段AB是什么类型的线段？",
+    "选项": "A. 底面的边 \nB. 侧棱  \nC. 底面对角线  \nD. 高",
+    "答案": "A",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ3",
+    "图片结构描述": "斜三棱柱",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0051_recvnmunMOhOOg_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 35016,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0051_recvnmunMOhOOg_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "斜三棱柱AB为底面三角形一条边,答案A正确。"
+    }
+  },
+  {
+    "index": 52,
+    "record_id": "recvnmunMOM6bt",
+    "题目": "图中哪个字母标记点所在位置是最高的？",
+    "选项": "A.点S\nB.点D\nC.点N\nD.点S与点D都是最高的",
+    "答案": "A",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ5",
+    "图片结构描述": "三棱柱",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0052_recvnmunMOM6bt_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 68597,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0052_recvnmunMOM6bt_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "竖三棱柱S在上底最高处,答案A正确。"
+    }
+  },
+  {
+    "index": 53,
+    "record_id": "recvnmunMOllIU",
+    "题目": "图中哪个字母标记点位置最低？",
+    "选项": "A.点A\nB.点G\nC.点E\nD.点F",
+    "答案": "D",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ5",
+    "图片结构描述": "三棱柱",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0053_recvnmunMOllIU_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 387892,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0053_recvnmunMOllIU_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "竖三棱柱F在右下最低处,答案D正确。"
+    }
+  },
+  {
+    "index": 54,
+    "record_id": "recvnmunMOpuSV",
+    "题目": "以下哪个点距离点M最远？",
+    "选项": "A.点N\nB.点T\nC.点W\nD.点N、T、W到点M的距离一样远",
+    "答案": "B",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ5",
+    "图片结构描述": "正方体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0054_recvnmunMOpuSV_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 416612,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0054_recvnmunMOpuSV_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "正方体体心M到底部顶点T最远,答案B正确(依赖刻度记号判读)。"
+    }
+  },
+  {
+    "index": 55,
+    "record_id": "recvnmunMOmVYk",
+    "题目": "关于图中字母标记点的位置，哪项说法正确？",
+    "选项": "A.只有点T位置最高\nB.只有点B位置最低\nC.点T、S、C高度相同且均为最高\nD.点E、B高度相同且均为最低",
+    "答案": "D",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ5",
+    "图片结构描述": "五棱台",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0055_recvnmunMOmVYk_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 84047,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0055_recvnmunMOmVYk_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "❌明确问题",
+      "问题类型": "答案不唯一(C/D并列为真)",
+      "说明": "【复核·维持】五棱台顶面T/S/C等高且最高→选项C真;底面E/B等高且最低→选项D真;C、D同真,答案不唯一。",
+      "复核": true
+    }
+  },
+  {
+    "index": 56,
+    "record_id": "recvnmunMO4IUl",
+    "题目": "在点H、点F、点K、点D四个点中，哪个点位置最高？",
+    "选项": "A.点H\nB.点D\nC.点K\nD.点F",
+    "答案": "A",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ5",
+    "图片结构描述": "三棱锥嵌套球体",
+    "图片类型": "多体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0056_recvnmunMO4IUl_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 182330,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0056_recvnmunMO4IUl_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "三棱锥H在左棱较高处,高于球心D/K/F,答案A正确。"
+    }
+  },
+  {
+    "index": 57,
+    "record_id": "recvnmunMOrn2M",
+    "题目": "点N、点Q和点C三个点中，哪个点在图中位置最低？",
+    "选项": "A.点N\nB.点Q\nC.点C\nD.点N、点Q和点C的高度相同",
+    "答案": "D",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ5",
+    "图片结构描述": "四棱台",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0057_recvnmunMOrn2M_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 76506,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0057_recvnmunMOrn2M_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "❌明确问题",
+      "问题类型": "标注重复(两个Q)",
+      "说明": "【复核·维持】图中确有两个'Q'(底面后右、前缘各一);虽N/Q/C同在底面z=0、答案D(等高)对任一Q都成立,但重复标号是真实标注缺陷需重绘。",
+      "复核": true
+    }
+  },
+  {
+    "index": 58,
+    "record_id": "recvnmunMOSZ32",
+    "题目": "图中哪个字母标记点位置最高？",
+    "选项": "A.点Q\nB.点P\nC.点S\nD.点N",
+    "答案": "A",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ5",
+    "图片结构描述": "堆叠小立方体",
+    "图片类型": "堆叠",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0058_recvnmunMOSZ32_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 785695,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0058_recvnmunMOSZ32_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "阶梯堆叠Q在最高层立方体上,答案A正确。"
+    }
+  },
+  {
+    "index": 59,
+    "record_id": "recvnmunMOLgSH",
+    "题目": "请比较点P、点N、点S三点到点A间的距离，选出正确的一项。",
+    "选项": "A.点P到点A的距离最远\nB.点N到点A的距离最远\nC.点P、点N、点S三点到点A的距离都相同\nD.点S到点A的距离最远",
+    "答案": "C",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ5",
+    "图片结构描述": "四棱锥和线条交叉",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0059_recvnmunMOLgSH_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 453833,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0059_recvnmunMOLgSH_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无(建议换更清晰的图)",
+      "说明": "【复核·改判合格】放大可辨P(0,0,1)/A原点/N/S,单位刻度显示PA=NA=SA=1=答案C正确;唯GeoGebra原图过密,建议换清晰图。",
+      "复核": true
+    }
+  },
+  {
+    "index": 60,
+    "record_id": "recvnmunMOqA0S",
+    "题目": "比较点S到点C、点P到点C和点N到点M间的距离，选出正确的一项。",
+    "选项": "A.点S到点C的距离比点N到点M的距离更近\nB.点S到点C的距离比点N到点M的距离更远\nC.点P到点C的距离比点S到点C的距离更远\nD.点P到点C的距离与点N到点M的距离相等",
+    "答案": "B",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ5",
+    "图片结构描述": "二十面体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0060_recvnmunMOqA0S_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 309212,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0060_recvnmunMOqA0S_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "⚠️存疑",
+      "问题类型": "图质量+量级难核验",
+      "说明": "【复核·维持存疑】二十面体SC标1、附近√2,N/M近中心且NM短,答案B(SC>NM)最可能,但NM/PC多未直标、需读极淡坐标,无法决定性确证。",
+      "复核": true
+    }
+  },
+  {
+    "index": 61,
+    "record_id": "recvnmunMOFOan",
+    "题目": "关于图中各点位置高低的说法，哪项正确？",
+    "选项": "A.只有点C位置最高\nB.只有点P位置最高\nC.点P与点Q高度相同且均为最高\nD.点P位置最低",
+    "答案": "B",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ5",
+    "图片结构描述": "八棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0061_recvnmunMOFOan_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 698963,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0061_recvnmunMOFOan_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "八棱锥只有顶点P最高,答案B正确。"
+    }
+  },
+  {
+    "index": 62,
+    "record_id": "recvnmunMOnXFd",
+    "题目": "图中所有小立方体大小一致，忽略图中小立方体之间的空隙，红线、蓝线、黄线之中，哪条是最短的？",
+    "选项": "A. 红线\nB. 蓝线\nC. 黄线\nD. 长度都一样",
+    "答案": "B",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ5",
+    "图片结构描述": "立方体堆叠",
+    "图片类型": "堆叠",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0062_recvnmunMOnXFd_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 241121,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0062_recvnmunMOnXFd_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "等大立方体阶梯,蓝线进深最短,答案B正确。"
+    }
+  },
+  {
+    "index": 63,
+    "record_id": "recvnmunMOG4tL",
+    "题目": "图中的四棱台由底面为正方形的四棱锥截取后形成，在该四棱台中，绿色线段与线段AD的位置关系是？",
+    "选项": "A. 平行\nB. 相交且垂直\nC. 异面\nD. 相交但不垂直",
+    "答案": "A",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ6",
+    "图片结构描述": "四棱台",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0063_recvnmunMOG4tL_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 33146,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0063_recvnmunMOG4tL_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "四棱台B₁C₁∥BC∥AD,绿段∥AD,答案A正确(内部构造线略杂)。"
+    }
+  },
+  {
+    "index": 64,
+    "record_id": "recvnmunMOR8QZ",
+    "题目": "图中线段EF和平面ABCD的位置关系是？",
+    "选项": "A. 线段EF平行于平面ABCD\nB. 线段EF相交于平面ABCD但不垂直\nC. 线段EF相交且垂直于平面ABCD\nD. 线段EF在平面ABCD内",
+    "答案": "C",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ6",
+    "图片结构描述": "正八面体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0064_recvnmunMOR8QZ_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 42326,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0064_recvnmunMOR8QZ_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "正八面体EF过中心、O处标直角,EF⊥平面ABCD,答案C正确。"
+    }
+  },
+  {
+    "index": 65,
+    "record_id": "recvnmunMOWU2y",
+    "题目": "在如图所示的立体图形中，线段AT与直线MB的位置关系是什么？",
+    "选项": "A. 相交且垂直\nB. 相交但不垂直\nC. 异面\nD. 平行",
+    "答案": "C",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ6",
+    "图片结构描述": "四棱柱的截角体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0065_recvnmunMOWU2y_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 44065,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0065_recvnmunMOWU2y_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "四棱柱截角体AT与MB异面,答案C正确。"
+    }
+  },
+  {
+    "index": 66,
+    "record_id": "recvnmunMObNZj",
+    "题目": "图中蓝色线段和线段PL之间的位置关系是？",
+    "选项": "A. 平行\nB. 异面\nC. 相交且垂直\nD. 相交但不垂直",
+    "答案": "D",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ6",
+    "图片结构描述": "四棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0066_recvnmunMObNZj_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 35362,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0066_recvnmunMObNZj_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "四棱锥蓝色侧棱与底对角线PL共点L相交、非垂直,答案D正确。"
+    }
+  },
+  {
+    "index": 67,
+    "record_id": "recvnmunMOvogu",
+    "题目": "在图上由三棱柱和圆柱嵌套形成的立体图形中，线段MP和线段SQ的位置关系是？",
+    "选项": "A. 相交\nB. 异面\nC. 平行\nD. 无法判断",
+    "答案": "C",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ6",
+    "图片结构描述": "圆柱内含于三棱柱",
+    "图片类型": "多体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0067_recvnmunMOvogu_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 70894,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0067_recvnmunMOvogu_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "三棱柱内圆柱MP∥SQ(两竖直母线),答案C正确。"
+    }
+  },
+  {
+    "index": 68,
+    "record_id": "recvnmunMOMvHv",
+    "题目": "图上由多个长方体堆叠而成的立体图形中，线段PT和线段DN的位置关系是？",
+    "选项": "A. 异面\nB. 平行\nC. 相交且垂直\nD. 相交但不垂直",
+    "答案": "A",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ6",
+    "图片结构描述": "长方体堆叠",
+    "图片类型": "堆叠",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0068_recvnmunMOMvHv_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 42649,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0068_recvnmunMOMvHv_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "【复核·改判合格】PT为前侧近竖直棱、DN为后侧水平隐藏棱,一竖一横、不同深度、无公共点→异面,答案A正确。",
+      "复核": true
+    }
+  },
+  {
+    "index": 69,
+    "record_id": "recvnmunMOwiPB",
+    "题目": "哪种颜色的面是顶面？",
+    "选项": "A. 蓝色\nB. 红色\nC. 绿色\nD. 白色",
+    "答案": "A",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE2 X GQ2",
+    "图片结构描述": "正方体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0069_recvnmunMOwiPB_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 8667,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0069_recvnmunMOwiPB_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "正方体顶面为蓝色,答案A正确(图虽小但顶面蓝色明确)。"
+    }
+  },
+  {
+    "index": 70,
+    "record_id": "recvnmunMOCIs8",
+    "题目": "以下选项中的哪条线段是图中这个棱柱的侧棱？",
+    "选项": "A. FG\nB. FK\nC. FH\nD. FE",
+    "答案": "D",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ2",
+    "图片结构描述": "直四棱柱",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0070_recvnmunMOCIs8_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 71705,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0070_recvnmunMOCIs8_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无(结构描述笔误:四棱柱→五棱柱)",
+      "说明": "【复核·改判合格】房形截面五棱柱,FE为连接上下底对应顶点的竖直侧棱=答案D正确;描述写'直四棱柱'是元数据笔误,不影响题答。",
+      "复核": true
+    }
+  },
+  {
+    "index": 71,
+    "record_id": "recvnmunMOxIUc",
+    "题目": "以下哪个选项中的线段表示这个棱台的高？",
+    "选项": "A. HB\nB. KZ\nC. ZB\nD. KH",
+    "答案": "A",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ2",
+    "图片结构描述": "四棱台",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0071_recvnmunMOxIUc_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 109500,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0071_recvnmunMOxIUc_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "四棱台BH竖直到下底=高,答案A正确。"
+    }
+  },
+  {
+    "index": 72,
+    "record_id": "recvnmunMOViYD",
+    "题目": "图中哪条线段是这个棱锥的侧棱？",
+    "选项": "A. MN\nB. MZ\nC. MQ\nD. MX",
+    "答案": "C",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ2",
+    "图片结构描述": "五棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0072_recvnmunMOViYD_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 60661,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0072_recvnmunMOViYD_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "五棱锥四选项中仅MQ连到顶点Q=侧棱,答案C正确。"
+    }
+  },
+  {
+    "index": 73,
+    "record_id": "recvnmunMOkg8M",
+    "题目": "这个三棱柱的红色线段长多少？",
+    "选项": "A.4 B.6 C.8 D.2√13",
+    "答案": "B",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ4",
+    "图片结构描述": "三棱柱",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0073_recvnmunMOkg8M_1_20260622-175923.png"
+    ],
+    "image_meta": [
+      {
+        "name": "20260622-175923.png",
+        "type": "image/png",
+        "size": 39411,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0073_recvnmunMOkg8M_1_20260622-175923.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "【复核·改判合格】棱柱上下底全等→红线A₁B₁=AB=6(一步常识),答案B正确;标的4=高、2√13=面对角线为干扰,符合GQ4边界。",
+      "复核": true
+    }
+  },
+  {
+    "index": 74,
+    "record_id": "recvnmunMObfcl",
+    "题目": "这条红色线段属于图中立体图形的哪种类型的线段？",
+    "选项": "A. 高\nB. 底面的边\nC. 面对角线\nD. 侧棱",
+    "答案": "D",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ3",
+    "图片结构描述": "四棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0074_recvnmunMObfcl_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 117436,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0074_recvnmunMObfcl_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "四棱锥红线P到底面顶点C=侧棱,答案D正确。"
+    }
+  },
+  {
+    "index": 75,
+    "record_id": "recvnmunMOh5l4",
+    "题目": "图中的线段MN是哪种类型的线段？",
+    "选项": "A. 上底面半径\nB. 下底面直径\nC. 高线\nD. 母线",
+    "答案": "C",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ3",
+    "图片结构描述": "圆台",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0075_recvnmunMOh5l4_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 109450,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0075_recvnmunMOh5l4_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "圆台MN为上下底圆心连线=高线,答案C正确。"
+    }
+  },
+  {
+    "index": 76,
+    "record_id": "recvnmunMOuSds",
+    "题目": "在图中用字母标记的点中，哪个点的位置最高？",
+    "选项": "A. T\nB. M\nC. B\nD. Q",
+    "答案": "D",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ2",
+    "图片结构描述": "斜六棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0076_recvnmunMOuSds_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 809081,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0076_recvnmunMOuSds_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "斜六棱锥顶点Q在全图最高处,答案D正确。"
+    }
+  },
+  {
+    "index": 77,
+    "record_id": "recvnmunMOMZ6z",
+    "题目": "如图所示，在所有标有字母的点中，哪个点是最右边的？",
+    "选项": "A. D\nB. C\nC. B\nD. A",
+    "答案": "C",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ2",
+    "图片结构描述": "球体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0077_recvnmunMOMZ6z_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 327650,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0077_recvnmunMOMZ6z_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "⚠️存疑",
+      "问题类型": "最右题B/C区分度不足",
+      "说明": "【复核·维持存疑】沿倾斜'右'轴投影,B略大于C但二者几近重合(差约4%在读图误差内),'最右'在B/C间难可靠分辨,建议拉开间距或加坐标。",
+      "复核": true
+    }
+  },
+  {
+    "index": 78,
+    "record_id": "recvnmunMOYLeR",
+    "题目": "该图展示了一个由长方体和三棱锥组成的组合体。点B₁的坐标是什么？",
+    "选项": "A. (3,4,0)\nB. (3,0,4)\nC. (3,4,4)\nD. (3,0,0）",
+    "答案": "C",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ2",
+    "图片结构描述": "三棱锥与长方体组合",
+    "图片类型": "多体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0078_recvnmunMOYLeR_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 181359,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0078_recvnmunMOYLeR_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "⚠️存疑",
+      "问题类型": "题型边界(多步坐标推算)",
+      "说明": "【复核·维持存疑】验算C₁=(0,4,4)→C=(0,4,0),P是BC中点→B=(3,4,0),B₁=(3,4,4)=答案C正确;但需'中点反推+借z'多步坐标推断,算题味偏重(SE0-GQ2宜一步)。",
+      "复核": true
+    }
+  },
+  {
+    "index": 79,
+    "record_id": "recvnmunMObZYV",
+    "题目": "图中字母所标识的点中，哪个点的空间位置是最高的？",
+    "选项": "A. R\nB. P\nC. U\nD. Q",
+    "答案": "B",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ2",
+    "图片结构描述": "四棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0079_recvnmunMObZYV_1_img_v3_0212u_714a1978-b559-448d-b2f2-6c5.jpg"
+    ],
+    "image_meta": [
+      {
+        "name": "img_v3_0212u_714a1978-b559-448d-b2f2-6c5345832eag.jpg",
+        "type": "image/jpeg",
+        "size": 71753,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0079_recvnmunMObZYV_1_img_v3_0212u_714a1978-b559-448d-b2f2-6c5.jpg"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "四棱锥顶点P最高,答案B正确。"
+    }
+  },
+  {
+    "index": 80,
+    "record_id": "recvnmunMOa8p4",
+    "题目": "在该组合体的顶点中，哪个点位于画面中的最靠右的位置？",
+    "选项": "A. R\nB. P\nC. D\nD. K",
+    "答案": "D",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ2",
+    "图片结构描述": "四棱锥与三棱锥的组合体",
+    "图片类型": "多体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0080_recvnmunMOa8p4_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 76229,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0080_recvnmunMOa8p4_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "组合体K在最右端,答案D正确。"
+    }
+  },
+  {
+    "index": 81,
+    "record_id": "recvnmunMOCx3Q",
+    "题目": "图中点P到其他三个字母点之间的距离，哪个最短？",
+    "选项": "A. 点P到点E的距离最短\nB. 点P到点F的距离最短\nC. 点P到点G的距离最短\nD. 点P到其他三个字母点的距离长度都一样",
+    "答案": "C",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ5",
+    "图片结构描述": "截角多面体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0081_recvnmunMOCx3Q_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 165934,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0081_recvnmunMOCx3Q_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "【复核·改判合格】截半截角立方体,P偏右与G同侧,P–G距离最短且与P–E差距可辨(约24%间隔),3D下P到G仍最短,答案C唯一,合格。",
+      "复核": true
+    }
+  },
+  {
+    "index": 82,
+    "record_id": "recvnmunMObTY4",
+    "题目": "观察图中所有的几何图形，总共有多少个面是四边形？",
+    "选项": "A.14 B.11 C.13 D.15",
+    "答案": "A",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE2XGQ1",
+    "图片结构描述": "四棱锥、五棱柱、五棱台",
+    "图片类型": "多体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0082_recvnmunMObTY4_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 59865,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0082_recvnmunMObTY4_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "❌明确问题",
+      "问题类型": "答案错误(A=14不可能)",
+      "说明": "【复核·维持】四棱锥(底1)+五棱柱(5矩形侧)+棱台(5或6梯形侧)=11~12个四边形面;即便柱、台都取六棱上限也仅13,A=14不可能;正确约11(按描述五棱台),若台为六棱则12无对应选项。建议核实各体棱数并改答案。",
+      "复核": true
+    }
+  },
+  {
+    "index": 83,
+    "record_id": "recvnmunMOVAor",
+    "题目": "求线段AC长多少？",
+    "选项": "A.5 B.12 C.13 D.6√5",
+    "答案": "C",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ4",
+    "图片结构描述": "三棱台",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0083_recvnmunMOVAor_1_20260623-172914.png"
+    ],
+    "image_meta": [
+      {
+        "name": "20260623-172914.png",
+        "type": "image/png",
+        "size": 77625,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0083_recvnmunMOVAor_1_20260623-172914.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无(GQ4一步计算)",
+      "说明": "【复核·改判合格】三棱台B处直角,AB=5 BC=12→AC=13(5-12-13),GQ4允许一步勾股,答案C正确。",
+      "复核": true
+    }
+  },
+  {
+    "index": 84,
+    "record_id": "recvnmunMOnk2u",
+    "题目": "这是一个正四棱台，红色线段长多少？",
+    "选项": "A.5 B.10 C.12 D.5√3",
+    "答案": "A",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ4",
+    "图片结构描述": "正四棱台",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0084_recvnmunMOnk2u_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 37715,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0084_recvnmunMOnk2u_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "正四棱台顶面正方形,红线D₁C₁=顶边=5,答案A正确。"
+    }
+  },
+  {
+    "index": 85,
+    "record_id": "recvnmunMOCWVj",
+    "题目": "三角形ABE是等腰三角形，请问AE的长度是？",
+    "选项": "A.5 B.7 C.3√5 D.5√3",
+    "答案": "A",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ4",
+    "图片结构描述": "十面体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0085_recvnmunMOCWVj_1_img_v3_0212u_b5a67c65-7443-4c36-9f04-a70.png"
+    ],
+    "image_meta": [
+      {
+        "name": "img_v3_0212u_b5a67c65-7443-4c36-9f04-a70ca3524ddg.png",
+        "type": "image/png",
+        "size": 55196,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0085_recvnmunMOCWVj_1_img_v3_0212u_b5a67c65-7443-4c36-9f04-a70.png"
+      }
+    ],
+    "质检": {
+      "判定": "⚠️存疑",
+      "问题类型": "标注归属不清",
+      "说明": "【复核·维持存疑】'5'标在E与C/D连线附近,未明确标在AE/BE腿上,归属含糊(疑EC/ED);题干虽给'等腰'使答案A=5很可能对,但'5'量哪条线无法确认。",
+      "复核": true
+    }
+  },
+  {
+    "index": 86,
+    "record_id": "recvnmunMO64L7",
+    "题目": "将图中的三条彩色线按长度从长到短排序，哪个选项的排序是正确的？",
+    "选项": "A. 黄、绿、蓝\nB. 蓝、黄、绿\nC. 绿、蓝、黄\nD. 蓝、绿、黄",
+    "答案": "D",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ5",
+    "图片结构描述": "五棱台",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0086_recvnmunMO64L7_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 173511,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0086_recvnmunMO64L7_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "五棱台蓝>绿>黄(与勾痕/投影一致),排序唯一,答案D正确。"
+    }
+  },
+  {
+    "index": 87,
+    "record_id": "recvnmuppMlFJy",
+    "题目": "点F属于哪一类几何点位？",
+    "选项": "A. 棱的中点\nB. 该内切球的球心\nC. 正方体的顶点\nD. 侧面上的普通点",
+    "答案": "B",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ3",
+    "图片结构描述": "正方体内切球体",
+    "图片类型": "多体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0087_recvnmuppMlFJy_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 49708,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0087_recvnmuppMlFJy_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "正方体内切球球心F在正中,答案B正确。"
+    }
+  },
+  {
+    "index": 88,
+    "record_id": "recvnmupYphjDk",
+    "题目": "比较图中线段QP、QS、QT之间的距离，哪个最长？",
+    "选项": "A. 线段QP最长\nB. 线段QS最长\nC. 线段QT最长\nD. 都一样长",
+    "答案": "B",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ5",
+    "图片结构描述": "六棱柱",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0088_recvnmupYphjDk_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 7907,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0088_recvnmupYphjDk_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "六棱柱QS为最长空间对角线,答案B正确。"
+    }
+  },
+  {
+    "index": 89,
+    "record_id": "recvnmupYpzArA",
+    "题目": "图中哪条线段是这个棱柱的底棱？",
+    "选项": "A. MP\nB. MN\nC. MQ\nD. MF",
+    "答案": "B",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ2",
+    "图片结构描述": "五棱柱",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0089_recvnmupYpzArA_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 36793,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0089_recvnmupYpzArA_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "五棱柱MN为底面相邻顶点的底棱,答案B正确(MP/MQ为干扰对角线)。"
+    }
+  },
+  {
+    "index": 90,
+    "record_id": "recvnmupYpB493",
+    "题目": "该图中唯一深色截面处于哪个位置？",
+    "选项": "A.中间\nB.下方\nC.左侧\nD.右侧",
+    "答案": "A",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE2 X GQ2",
+    "图片结构描述": "正方体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0090_recvnmupYpB493_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 6734,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0090_recvnmupYpB493_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "正方体竖直截面居中,答案A(中间)正确。"
+    }
+  },
+  {
+    "index": 91,
+    "record_id": "recvnmupYpp3vX",
+    "题目": "几何体绿色的面实际是什么形状？",
+    "选项": "A.正方形\nB.平行四边形\nC.梯形\nD.菱形",
+    "答案": "A",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE2 X GQ3",
+    "图片结构描述": "正四棱台",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0091_recvnmupYpp3vX_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 56575,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0091_recvnmupYpp3vX_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "正四棱台底面斜二测下看似平行四边形、实际是正方形,答案A正确。"
+    }
+  },
+  {
+    "index": 92,
+    "record_id": "recvnmupYp7CXP",
+    "题目": "橙色截面的实际形状是什么？",
+    "选项": "A. 圆形\nB. 拱形\nC. 正六边形\nD. 椭圆形",
+    "答案": "D",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE2 X GQ3",
+    "图片结构描述": "圆锥截面",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0092_recvnmupYp7CXP_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 23502,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0092_recvnmupYp7CXP_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "圆锥斜截面为完整椭圆,答案D正确。"
+    }
+  },
+  {
+    "index": 93,
+    "record_id": "recvnmupYpThbu",
+    "题目": "观察图中所有的立体图形，数一数总共有多少个面（不包含立方体内截面）？",
+    "选项": "A.9 B.11 C.13 D.10",
+    "答案": "D",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE2XGQ1",
+    "图片结构描述": "三棱柱、四棱锥",
+    "图片类型": "多体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0093_recvnmupYpThbu_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 1184803,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0093_recvnmupYpThbu_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "【复核·改判合格】左三棱柱5面(内部三角为截面排除);右体底为四边形(4底顶点+中间为垂足投影)=四棱锥5面;合计10=答案D正确(首轮误判右为四面体)。",
+      "复核": true
+    }
+  },
+  {
+    "index": 94,
+    "record_id": "recvnmupYp7Gl6",
+    "题目": "比较图中各点的位置高低，以下哪项说法正确？",
+    "选项": "A.点Q高于点S\nB.点S低于点D\nC.点M高于点F\nD.点G低于点S",
+    "答案": "D",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ5",
+    "图片结构描述": "斜棱柱",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0094_recvnmupYp7Gl6_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 124878,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0094_recvnmupYp7Gl6_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "⚠️存疑",
+      "问题类型": "高度(z)难核验",
+      "说明": "【复核·维持存疑】斜二测下screen-y≠z;S为顶面三角顶点,G偏左偏后,屏幕上G反比S高,深度修正后G/S的z高低无法决定性判读。",
+      "复核": true
+    }
+  },
+  {
+    "index": 95,
+    "record_id": "recvnmupYpnmaP",
+    "题目": "比较图中各点到点T的距离，下列哪项是正确的？",
+    "选项": "A.点H到点T的距离大于点M到点T的距离\nB.点H到点T的距离等于点M到点T的距离\nC.点G到点T的距离小于点M到点T的距离\nD.点M到点T的距离等于点G到点T的距离",
+    "答案": "C",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ5",
+    "图片结构描述": "四棱锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0095_recvnmupYpnmaP_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 387273,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0095_recvnmupYpnmaP_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "四棱锥M远T近,GT<MT(C)成立,D明显假,答案C正确。"
+    }
+  },
+  {
+    "index": 96,
+    "record_id": "recvnmupYpEiNE",
+    "题目": "关于图中各标记点高度比较的描述，哪项陈述是正确的？",
+    "选项": "A.点K低于其他所有标记点\nB.点D高于点S\nC.点K低于点E\nD.点E低于点Q",
+    "答案": "D",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ5",
+    "图片结构描述": "四棱锥和三棱锥",
+    "图片类型": "多体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0096_recvnmupYpEiNE_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 73955,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0096_recvnmupYpEiNE_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "❌明确问题",
+      "问题类型": "答案错误(E≈Q等高)",
+      "说明": "【复核·升级❌】红蓝两棱锥同立一个地平面,两底顶点全部z≈0共面;E、Q均为落地底顶点→等高,'E低于Q'(答案D)不成立,且四项无一唯一为真。",
+      "复核": true
+    }
+  },
+  {
+    "index": 97,
+    "record_id": "recvnmupYpTY8Z",
+    "题目": "观察图中点B位置判断其属于哪类空间点。",
+    "选项": "A. 顶点\n\nB. 面中心\n\nC. 棱中点\n\nD. 体中心",
+    "答案": "C",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ3",
+    "图片结构描述": "八面体嵌入正方体",
+    "图片类型": "多体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0097_recvnmupYpTY8Z_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 1196954,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0097_recvnmupYpTY8Z_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "正八面体B在棱上、'2×'刻度示其平分该棱=棱中点,答案C正确。"
+    }
+  },
+  {
+    "index": 98,
+    "record_id": "recvnmupYpF1zg",
+    "题目": "哪个选项中的线段是图中这个立体图形的面对角线？",
+    "选项": "A. EX\nB. EY\nC. EZ\nD. ED",
+    "答案": "B",
+    "难度": "L3",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ2",
+    "图片结构描述": "正方体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0098_recvnmupYpF1zg_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 58228,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0098_recvnmupYpF1zg_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "长方体EY连前下左与后下右=底面对角线,答案B唯一正确。"
+    }
+  },
+  {
+    "index": 99,
+    "record_id": "recvnmupYpR7JJ",
+    "题目": "图中哪条线段是这个圆锥的高？",
+    "选项": "A. AB\nB. SB\nC. AD\nD. SD",
+    "答案": "D",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ2",
+    "图片结构描述": "圆锥",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0099_recvnmupYpR7JJ_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 611050,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0099_recvnmupYpR7JJ_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "圆锥SD由顶点到底心=高,答案D正确。"
+    }
+  },
+  {
+    "index": 100,
+    "record_id": "recvnmupYpFYuj",
+    "题目": "红色线段长多少?",
+    "选项": "A.4 B.8 C.4√2 D.4√3",
+    "答案": "C",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ4",
+    "图片结构描述": "正方体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0100_recvnmupYpFYuj_1_20260622-180620.png"
+    ],
+    "image_meta": [
+      {
+        "name": "20260622-180620.png",
+        "type": "image/png",
+        "size": 88623,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0100_recvnmupYpFYuj_1_20260622-180620.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "棱长4正方体AC=底面对角线=4√2,答案C正确(GQ4长度题需一步勾股)。"
+    }
+  },
+  {
+    "index": 101,
+    "record_id": "recvnmupYp0RNj",
+    "题目": "根据该图，在所有标有字母的点中，哪一个点是最左边的？",
+    "选项": "A. N\nB. D\nC. G\nD. A",
+    "答案": "A",
+    "难度": "L2",
+    "图片来源": "网络",
+    "数据类型": "SE0 X GQ2",
+    "图片结构描述": "圆柱",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0101_recvnmupYp0RNj_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 260735,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0101_recvnmupYp0RNj_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无(投影陷阱·设计良好)",
+      "说明": "【复核·改判合格·纠正首轮误判】虚线N—O—右箭头共线→N在'右'轴−右(最左)端、3D右坐标=−R最小=真三维最左;G在另一直径G—O—C(深度轴)上、右坐标≈0,只是2D看着最左。答案A=N正确,首轮按2D屏幕左误判为G恰中陷阱。",
+      "复核": true
+    }
+  },
+  {
+    "index": 102,
+    "record_id": "recvnmupYpl4iG",
+    "题目": "红色线段长为多少？",
+    "选项": "A.5 B.10 C.13 D.5√13",
+    "答案": "B",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE1 X GQ4",
+    "图片结构描述": "正四棱柱",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0102_recvnmupYpl4iG_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 85691,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0102_recvnmupYpl4iG_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "❌明确问题",
+      "问题类型": "G2可直读标签",
+      "说明": "【复核·升级❌】红段就是顶棱D₁A₁,数字'10'正压在该红段上、直接标注其长度,读数即得,无需空间感知,违反G2(数值10对)。",
+      "复核": true
+    }
+  },
+  {
+    "index": 103,
+    "record_id": "recvnmupYprVcg",
+    "题目": "这个立体图形可见的黄色面共有多少个？",
+    "选项": "A.1 B.2 C.5 D.3",
+    "答案": "D",
+    "难度": "L1",
+    "图片来源": "网络",
+    "数据类型": "SE2XGQ1",
+    "图片结构描述": "截角截半立方体",
+    "图片类型": "单体",
+    "local_images": [
+      "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0103_recvnmupYprVcg_1_image.png"
+    ],
+    "image_meta": [
+      {
+        "name": "image.png",
+        "type": "image/png",
+        "size": 47744,
+        "local_path": "/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0103_recvnmupYprVcg_1_image.png"
+      }
+    ],
+    "质检": {
+      "判定": "✅无明显问题",
+      "问题类型": "无",
+      "说明": "【复核·改判合格】截角截半立方体,黄色按颜色分割得恰好3个独立八边形黄面(顶1+左下1+右下1)清晰隔开,可见黄面=3=答案D正确。",
+      "复核": true
+    }
+  }
+]

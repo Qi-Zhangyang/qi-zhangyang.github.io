@@ -1,0 +1,374 @@
+﻿index,record_id,题目,选项,答案,难度,图片来源,数据类型,图片结构描述,图片类型,local_images
+1,rec27ExHB07APB,图中的点N、点S和点T哪个点位置最高？,"A.点N
+B.点S
+C.点T
+D.点N、S、T高度相同",D,L2,网络,SE0 X GQ5,截角立方体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0001_rec27ExHB07APB_1_image.png
+2,rec27ExHB07GVT,红线、蓝线和绿线这三条线段中，哪一条最长？,"A. 红线
+B. 蓝线
+C. 绿线
+D. 都一样长",B,L1,网络,SE1 X GQ5,标有数值的长方体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0002_rec27ExHB07GVT_1_image.png
+3,rec27ExHB07Jqd,立体图形里有三条颜色不是蓝色或黑色的线段，其中哪一条线段更长？,"A. 红线
+B. 黄线
+C. 绿线
+D. 都一样长",D,L2,网络,SE1 X GQ5,正方体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0003_rec27ExHB07Jqd_1_image.png
+4,rec27ExHB07LKm,图中哪条标有字母的线段最长？,"A. a
+B. b
+C. c
+D. 都一样长",A,L1,网络,SE1 X GQ5,有刻度格的长方体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0004_rec27ExHB07LKm_1_image.png
+5,rec27ExHB07O2J,在图中几何体的所有顶点中，哪个顶点是最高点？,"A. C
+B. A
+C. G
+D. B",B,L1,网络,SE0 X GQ2,八棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0005_rec27ExHB07O2J_1_image.png
+6,recvnmunMObAsj,该图显示了一个由六个立方体组成的堆叠物体，且给出了点T的坐标。点W的坐标是什么？,"A. (1,-1,-1)
+B. (1,-1,0)
+C. (1,0,-1)
+D. (-1,0,1）",A,L3,网络,SE0 X GQ2,立方体堆叠体,堆叠,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0006_recvnmunMObAsj_1_image.png
+7,recvnmunMO2J1B,图中字母所标识的点中，哪个点是最靠前的？,"A. V
+B. F
+C. G
+D. D",C,L2,网络,SE0 X GQ2,半球体、圆柱与圆锥组合体,多体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0007_recvnmunMO2J1B_1_image.png
+8,recvnmunMOwS2x,在如图所示的立体图形中，红色线段与蓝色线段的位置关系是？,"A. 平行
+B. 相交但不垂直
+C. 相交且垂直
+D. 异面",B,L1,网络,SE1 X GQ6,四棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0008_recvnmunMOwS2x_1_image.png
+9,recvnmunMOfH5f,在图上的长方体中，标记的两条红色线段具备怎样的位置关系？,"A. 平行
+B. 相交
+C. 异面
+D. 无法判断",C,L1,网络,SE1 X GQ6,长方体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0009_recvnmunMOfH5f_1_image.png
+10,recvnmunMOBPSu,在如图所示的立体图形中，线段AC和线段BD的位置关系是怎样的？,"A. 平行
+B. 相交且垂直
+C. 相交但不垂直
+D. 异面",D,L2,网络,SE1 X GQ6,三棱柱,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0010_recvnmunMOBPSu_1_image.png
+11,recvnmunMO0E9a,图中哪条线段是这个圆台的高？,"A. MN
+B. ML
+C. LK
+D. NK",C,L2,网络,SE1 X GQ2,圆台,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0011_recvnmunMO0E9a_1_image.png
+12,recvnmunMOqBFq,图中哪条线段是这个长方体的体对角线？,"A. VW
+B. RT
+C. VU
+D. YT",A,L3,网络,SE1 X GQ2,长方体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0012_recvnmunMOqBFq_1_image.png
+13,recvnmunMOT2hZ,图中蓝色线段属于哪一类线段？,"A. 侧棱
+B. 体对角线
+C. 面对角线
+D. 高",C,L3,网络,SE1 X GQ3,长方体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0013_recvnmunMOT2hZ_1_img_v3_0212t_cb8031ee-e35c-4c3c-b104-add.jpg
+14,recvnmunMOHcLx,图片中点H到点B的距离是多少？,"A.2
+B.2√2
+C.2√3
+D.3",A,L1,网络,SE0 X GQ4,正方体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0014_recvnmunMOHcLx_1_image.png
+15,recvnmunMOPSw3,图中点A到点C的距离是多少？,"A.3
+B.4
+C.5
+D.√34",C,L2,网络,SE0 X GQ4,长方体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0015_recvnmunMOPSw3_1_image.png
+16,recvnmunMOFXNS,如图所示ABCD为平行四边形，AD长度等于多少？,A.3 B.2 C.√13 D.√5,B,L1,网络,SE1 X GQ4,四棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0016_recvnmunMOFXNS_1_20260622-165703.png
+17,recvnmunMO5aSg,PC边长多少?,A.3 B.4 C.5 D.7,C,L2,网络,SE1 X GQ4,四棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0017_recvnmunMO5aSg_1_image.png
+18,recvnmunMO7FF3,P、S、D三点是否存在于图中立体图形的同一个面上吗？,"A. 均在同一个面上
+B. 三个点各在不同面上
+C. 仅D点和S点在同一个面上
+D. 仅P点和S点在同一个面上",A,L1,网络,SE0 X GQ6,六棱柱,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0018_recvnmunMO7FF3_1_image.png
+19,recvnmunMO3Tgw,点B在球的什么位置？,"A. 球面上
+B. 球内（非球心）
+C. 球内且为球心
+D. 球外",D,L3,网络,SE0 X GQ6,球体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0019_recvnmunMO3Tgw_1_image.png
+20,recvnmunMOgO27,点H在图中球体的什么位置？,"A. 球面上
+B. 球内（非球心）
+C. 球内且为球心
+D. 球外",D,L3,网络,SE0 X GQ6,球体与平面,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0020_recvnmunMOgO27_1_image.png
+21,recvnmunMOuZ2j,图中立体图形有几个顶点？,"A. 8个　
+B. 7个
+C. 6个　
+D. 9个",A,L1,网络,SE0 X GQ1,正方体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0021_recvnmunMOuZ2j_1_image.png
+22,recvnmunMOb9pF,图中的这个几何图形有多少个顶点？,"A. 6个　
+B. 4个
+C. 5个　
+D. 3个",C,L2,网络,SE0 X GQ1,四棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0022_recvnmunMOb9pF_1_image.png
+23,recvnmunMOb21j,这个棱锥有几个顶点？,"A. 6个
+B. 5个
+C. 4个
+D. 7个",B,L3,网络,SE0 X GQ1,四棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0023_recvnmunMOb21j_1_image.png
+24,recvnmunMO7VVd,这个棱柱有多少个顶点？,"A. 8个
+B. 5个
+C. 6个　
+D. 7个",C,L1,网络,SE0 X GQ1,三棱柱,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0024_recvnmunMO7VVd_1_image.png
+25,recvnmunMOaEfj,观察图中的这个立体图形，共有多少个顶点？,"A. 14个　
+B. 15个
+C. 16个　
+D. 17个",C,L3,网络,SE0 X GQ1,立体几何轴测示意图,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0025_recvnmunMOaEfj_1_image.png
+26,recvnmunMOJvsW,观察图中的多个立体图形，共有多少个顶点？,"A. 16个　
+B. 15个
+C. 14个　
+D. 17个",A,L2,网络,SE0 X GQ1,长方体,多体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0026_recvnmunMOJvsW_1_image.png
+27,recvnmunMOtTOa,在这个数学立体几何图形中共存在多少个顶点？,"A. 7个　
+B. 6个
+C. 5个　
+D. 4个",C,L3,网络,SE0 X GQ1,四棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0027_recvnmunMOtTOa_1_image.png
+28,recvnmunMOpD3y,观察下图所示的空间几何体，总共有多少条棱？,"A.4条
+B.5条
+C.7条
+D.8条",D,L1,网络,SE1 X GQ1,正四棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0028_recvnmunMOpD3y_1_image.png
+29,recvnmunMOMSIk,图中的棱柱总共有多少条棱？,"A. 9
+B. 10
+C. 12 
+D. 13",C,L1,网络,SE1 X GQ1,四棱柱,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0029_recvnmunMOMSIk_1_image_(1).png
+30,recvnmunMOLtCz,观察下图所示的空间几何体，其所有的侧棱总共有多少条？,"A.5条
+B.6条
+C.7条
+D.8条",D,L2,网络,SE1 X GQ1,四棱柱的截角体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0030_recvnmunMOLtCz_1_image_(2).png
+31,recvnmunMOsPus,这个棱锥的底面有多少条边？,"A. 5
+B. 6
+C. 7
+D. 8",D,L2,网络,SE1 X GQ1,八棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0031_recvnmunMOsPus_1_image_(3).png
+32,recvnmunMOhFro,这个棱台一共有多少条棱？,"A.13条
+B.15条
+C.17条
+D.18条",D,L2,网络,SE1 X GQ1,六棱台,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0032_recvnmunMOhFro_1_image_(4).png
+33,recvnmunMO5zAv,观察下图所示的空间几何体，这个几何体总共有多少条棱？,"A. 8
+B. 10 
+C. 12
+D. 14",C,L2,网络,SE1 X GQ1,八面体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0033_recvnmunMO5zAv_1_image_(6).png
+34,recvnmunMOtp7L,观察图中的棱柱总共有多少条侧棱？,"A.4条
+B.5条
+C.6条
+D.7条",C,L2,网络,SE1 X GQ1,六棱柱,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0034_recvnmunMOtp7L_1_image_(7).png
+35,recvnmunMOXW2l,观察下图所示的空间几何体，整体总共有多少条棱？,"A. 20
+B. 28
+C. 30 
+D. 32",C,L2,网络,SE1 X GQ1,十二面体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0035_recvnmunMOXW2l_1_image_(8).png
+36,recvnmunMOXsEt,观察图中的空间几何体，该几何体总共有多少条棱？,"A.5条
+B.8条
+C.7条
+D.6条",B,L1,网络,SE1 X GQ1,四棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0036_recvnmunMOXsEt_1_image_(9).png
+37,recvnmunMOaoVk,图中的棱锥总共有多少条棱？,"A.10
+B.5
+C.9
+D.11",A,L2,网络,SE1 X GQ1,五棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0037_recvnmunMOaoVk_1_image_(10).png
+38,recvnmunMOE1YW,图片中绿色的面是几何体的什么面？,"A.侧面
+B.底面
+C.截面
+D.对角面",B,L1,网络,SE2 X GQ3,五棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0038_recvnmunMOE1YW_1_image.png
+39,recvnmunMOWDH8,图片中橙色的面是这个几何体的哪个面？,"A.侧面
+B.底面
+C.截面
+D.对角面",C,L1,网络,SE2 X GQ3,三棱柱,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0039_recvnmunMOWDH8_1_image.png
+40,recvnmunMO8gXi,蓝色面实际上是什么形状？,"A. 直角三角形
+B. 钝角三角形
+C. 等边三角形
+D. 等腰锐角三角形",C,L2,网络,SE2 X GQ3,正四棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0040_recvnmunMO8gXi_1_image.png
+41,recvnmunMOlT5A,几何体中蓝色截面实际是什么形状？,"A.正五边形
+B.正六边形
+C.六边形（非正）
+D.五边形（非正）",B,L3,网络,SE2 X GQ3,正方体内接四面体,多体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0041_recvnmunMOlT5A_1_image.png
+42,recvnmunMOpOkY,这个立体几何中的蓝色部分实际上是什么形状？,"A. 正方形
+B. 平行四边形
+C. 长方形
+D. 菱形",C,L3,网络,SE2 X GQ3,正方体截面,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0042_recvnmunMOpOkY_1_image.png
+43,recvnmunMO7kf8,黄色的面是几何体的什么面？,"A.底面
+B.侧面
+C.截面
+D.对角面",A,L2,网络,SE2 X GQ3,三棱柱,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0043_recvnmunMO7kf8_1_image.png
+44,recvnmunMOXRBH,将图中几何图形的面JBCN定为正面，数一数与该正面有公共棱的相邻面共有多少个？,A.4 B.5 C.6 D.3,A,L2,网络,SE2XGQ1,平行六面体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0044_recvnmunMOXRBH_1_image.png
+45,recvnmunMOUqu4,观察图中所有的立体图形，数一数共有多少个平面（其中不同立方体的底面需单独计算）？,A.2 B.4 C.5 D.3,D,L2,网络,SE2XGQ1,圆锥体、圆柱体,多体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0045_recvnmunMOUqu4_1_image.png
+46,recvnmunMOnuhR,从图示视角观察，该立体图形的可见面共有多少个？,A.3 B.4 C.6 D.5,B,L3,网络,SE2XGQ1,截角体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0046_recvnmunMOnuhR_1_image.png
+47,recvnmunMOdvir,图中的线段PQ是哪种类型的线段？,"A. 侧棱  
+B. 斜高  
+C. 底面对角线  
+D. 高",D,L2,网络,SE1 X GQ3,四棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0047_recvnmunMOdvir_1_image.png
+48,recvnmunMOBFFK,图中蓝色虚线段属于这个立体图形哪一类型的线段？,"A. 侧棱
+B. 体对角线
+C. 面对角线
+D. 高",B,L3,网络,SE1 X GQ3,正方体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0048_recvnmunMOBFFK_1_image.png
+49,recvnmunMOTrnG,图中的线段PF是哪种类型的线段？,"A. 侧棱  
+B. 斜高  
+C. 底面对角线  
+D. 高",A,L1,网络,SE1 X GQ3,六棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0049_recvnmunMOTrnG_1_image.png
+50,recvnmunMOpeWs,在如图所示的立体图形中，紫色线段JN属于哪一类线段？,"A. 侧棱
+B. 底面的边
+C. 斜高
+D. 高",C,L2,网络,SE1 X GQ3,四棱台,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0050_recvnmunMOpeWs_1_image.png
+51,recvnmunMOhOOg,如图所示的立体图形中，线段AB是什么类型的线段？,"A. 底面的边 
+B. 侧棱  
+C. 底面对角线  
+D. 高",A,L1,网络,SE1 X GQ3,斜三棱柱,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0051_recvnmunMOhOOg_1_image.png
+52,recvnmunMOM6bt,图中哪个字母标记点所在位置是最高的？,"A.点S
+B.点D
+C.点N
+D.点S与点D都是最高的",A,L1,网络,SE0 X GQ5,三棱柱,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0052_recvnmunMOM6bt_1_image.png
+53,recvnmunMOllIU,图中哪个字母标记点位置最低？,"A.点A
+B.点G
+C.点E
+D.点F",D,L1,网络,SE0 X GQ5,三棱柱,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0053_recvnmunMOllIU_1_image.png
+54,recvnmunMOpuSV,以下哪个点距离点M最远？,"A.点N
+B.点T
+C.点W
+D.点N、T、W到点M的距离一样远",B,L3,网络,SE0 X GQ5,正方体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0054_recvnmunMOpuSV_1_image.png
+55,recvnmunMOmVYk,关于图中字母标记点的位置，哪项说法正确？,"A.只有点T位置最高
+B.只有点B位置最低
+C.点T、S、C高度相同且均为最高
+D.点E、B高度相同且均为最低",D,L2,网络,SE0 X GQ5,五棱台,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0055_recvnmunMOmVYk_1_image.png
+56,recvnmunMO4IUl,在点H、点F、点K、点D四个点中，哪个点位置最高？,"A.点H
+B.点D
+C.点K
+D.点F",A,L1,网络,SE0 X GQ5,三棱锥嵌套球体,多体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0056_recvnmunMO4IUl_1_image.png
+57,recvnmunMOrn2M,点N、点Q和点C三个点中，哪个点在图中位置最低？,"A.点N
+B.点Q
+C.点C
+D.点N、点Q和点C的高度相同",D,L2,网络,SE0 X GQ5,四棱台,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0057_recvnmunMOrn2M_1_image.png
+58,recvnmunMOSZ32,图中哪个字母标记点位置最高？,"A.点Q
+B.点P
+C.点S
+D.点N",A,L1,网络,SE0 X GQ5,堆叠小立方体,堆叠,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0058_recvnmunMOSZ32_1_image.png
+59,recvnmunMOLgSH,请比较点P、点N、点S三点到点A间的距离，选出正确的一项。,"A.点P到点A的距离最远
+B.点N到点A的距离最远
+C.点P、点N、点S三点到点A的距离都相同
+D.点S到点A的距离最远",C,L3,网络,SE0 X GQ5,四棱锥和线条交叉,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0059_recvnmunMOLgSH_1_image.png
+60,recvnmunMOqA0S,比较点S到点C、点P到点C和点N到点M间的距离，选出正确的一项。,"A.点S到点C的距离比点N到点M的距离更近
+B.点S到点C的距离比点N到点M的距离更远
+C.点P到点C的距离比点S到点C的距离更远
+D.点P到点C的距离与点N到点M的距离相等",B,L3,网络,SE0 X GQ5,二十面体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0060_recvnmunMOqA0S_1_image.png
+61,recvnmunMOFOan,关于图中各点位置高低的说法，哪项正确？,"A.只有点C位置最高
+B.只有点P位置最高
+C.点P与点Q高度相同且均为最高
+D.点P位置最低",B,L1,网络,SE0 X GQ5,八棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0061_recvnmunMOFOan_1_image.png
+62,recvnmunMOnXFd,图中所有小立方体大小一致，忽略图中小立方体之间的空隙，红线、蓝线、黄线之中，哪条是最短的？,"A. 红线
+B. 蓝线
+C. 黄线
+D. 长度都一样",B,L1,网络,SE1 X GQ5,立方体堆叠,堆叠,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0062_recvnmunMOnXFd_1_image.png
+63,recvnmunMOG4tL,图中的四棱台由底面为正方形的四棱锥截取后形成，在该四棱台中，绿色线段与线段AD的位置关系是？,"A. 平行
+B. 相交且垂直
+C. 异面
+D. 相交但不垂直",A,L2,网络,SE1 X GQ6,四棱台,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0063_recvnmunMOG4tL_1_image.png
+64,recvnmunMOR8QZ,图中线段EF和平面ABCD的位置关系是？,"A. 线段EF平行于平面ABCD
+B. 线段EF相交于平面ABCD但不垂直
+C. 线段EF相交且垂直于平面ABCD
+D. 线段EF在平面ABCD内",C,L3,网络,SE1 X GQ6,正八面体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0064_recvnmunMOR8QZ_1_image.png
+65,recvnmunMOWU2y,在如图所示的立体图形中，线段AT与直线MB的位置关系是什么？,"A. 相交且垂直
+B. 相交但不垂直
+C. 异面
+D. 平行",C,L3,网络,SE1 X GQ6,四棱柱的截角体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0065_recvnmunMOWU2y_1_image.png
+66,recvnmunMObNZj,图中蓝色线段和线段PL之间的位置关系是？,"A. 平行
+B. 异面
+C. 相交且垂直
+D. 相交但不垂直",D,L1,网络,SE1 X GQ6,四棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0066_recvnmunMObNZj_1_image.png
+67,recvnmunMOvogu,在图上由三棱柱和圆柱嵌套形成的立体图形中，线段MP和线段SQ的位置关系是？,"A. 相交
+B. 异面
+C. 平行
+D. 无法判断",C,L1,网络,SE1 X GQ6,圆柱内含于三棱柱,多体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0067_recvnmunMOvogu_1_image.png
+68,recvnmunMOMvHv,图上由多个长方体堆叠而成的立体图形中，线段PT和线段DN的位置关系是？,"A. 异面
+B. 平行
+C. 相交且垂直
+D. 相交但不垂直",A,L2,网络,SE1 X GQ6,长方体堆叠,堆叠,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0068_recvnmunMOMvHv_1_image.png
+69,recvnmunMOwiPB,哪种颜色的面是顶面？,"A. 蓝色
+B. 红色
+C. 绿色
+D. 白色",A,L1,网络,SE2 X GQ2,正方体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0069_recvnmunMOwiPB_1_image.png
+70,recvnmunMOCIs8,以下选项中的哪条线段是图中这个棱柱的侧棱？,"A. FG
+B. FK
+C. FH
+D. FE",D,L1,网络,SE1 X GQ2,直四棱柱,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0070_recvnmunMOCIs8_1_image.png
+71,recvnmunMOxIUc,以下哪个选项中的线段表示这个棱台的高？,"A. HB
+B. KZ
+C. ZB
+D. KH",A,L2,网络,SE1 X GQ2,四棱台,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0071_recvnmunMOxIUc_1_image.png
+72,recvnmunMOViYD,图中哪条线段是这个棱锥的侧棱？,"A. MN
+B. MZ
+C. MQ
+D. MX",C,L1,网络,SE1 X GQ2,五棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0072_recvnmunMOViYD_1_image.png
+73,recvnmunMOkg8M,这个三棱柱的红色线段长多少？,A.4 B.6 C.8 D.2√13,B,L1,网络,SE1 X GQ4,三棱柱,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0073_recvnmunMOkg8M_1_20260622-175923.png
+74,recvnmunMObfcl,这条红色线段属于图中立体图形的哪种类型的线段？,"A. 高
+B. 底面的边
+C. 面对角线
+D. 侧棱",D,L1,网络,SE1 X GQ3,四棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0074_recvnmunMObfcl_1_image.png
+75,recvnmunMOh5l4,图中的线段MN是哪种类型的线段？,"A. 上底面半径
+B. 下底面直径
+C. 高线
+D. 母线",C,L2,网络,SE1 X GQ3,圆台,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0075_recvnmunMOh5l4_1_image.png
+76,recvnmunMOuSds,在图中用字母标记的点中，哪个点的位置最高？,"A. T
+B. M
+C. B
+D. Q",D,L1,网络,SE0 X GQ2,斜六棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0076_recvnmunMOuSds_1_image.png
+77,recvnmunMOMZ6z,如图所示，在所有标有字母的点中，哪个点是最右边的？,"A. D
+B. C
+C. B
+D. A",C,L2,网络,SE0 X GQ2,球体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0077_recvnmunMOMZ6z_1_image.png
+78,recvnmunMOYLeR,该图展示了一个由长方体和三棱锥组成的组合体。点B₁的坐标是什么？,"A. (3,4,0)
+B. (3,0,4)
+C. (3,4,4)
+D. (3,0,0）",C,L3,网络,SE0 X GQ2,三棱锥与长方体组合,多体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0078_recvnmunMOYLeR_1_image.png
+79,recvnmunMObZYV,图中字母所标识的点中，哪个点的空间位置是最高的？,"A. R
+B. P
+C. U
+D. Q",B,L1,网络,SE0 X GQ2,四棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0079_recvnmunMObZYV_1_img_v3_0212u_714a1978-b559-448d-b2f2-6c5.jpg
+80,recvnmunMOa8p4,在该组合体的顶点中，哪个点位于画面中的最靠右的位置？,"A. R
+B. P
+C. D
+D. K",D,L1,网络,SE0 X GQ2,四棱锥与三棱锥的组合体,多体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0080_recvnmunMOa8p4_1_image.png
+81,recvnmunMOCx3Q,图中点P到其他三个字母点之间的距离，哪个最短？,"A. 点P到点E的距离最短
+B. 点P到点F的距离最短
+C. 点P到点G的距离最短
+D. 点P到其他三个字母点的距离长度都一样",C,L3,网络,SE1 X GQ5,截角多面体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0081_recvnmunMOCx3Q_1_image.png
+82,recvnmunMObTY4,观察图中所有的几何图形，总共有多少个面是四边形？,A.14 B.11 C.13 D.15,A,L2,网络,SE2XGQ1,四棱锥、五棱柱、五棱台,多体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0082_recvnmunMObTY4_1_image.png
+83,recvnmunMOVAor,求线段AC长多少？,A.5 B.12 C.13 D.6√5,C,L2,网络,SE1 X GQ4,三棱台,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0083_recvnmunMOVAor_1_20260623-172914.png
+84,recvnmunMOnk2u,这是一个正四棱台，红色线段长多少？,A.5 B.10 C.12 D.5√3,A,L1,网络,SE1 X GQ4,正四棱台,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0084_recvnmunMOnk2u_1_image.png
+85,recvnmunMOCWVj,三角形ABE是等腰三角形，请问AE的长度是？,A.5 B.7 C.3√5 D.5√3,A,L1,网络,SE1 X GQ4,十面体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0085_recvnmunMOCWVj_1_img_v3_0212u_b5a67c65-7443-4c36-9f04-a70.png
+86,recvnmunMO64L7,将图中的三条彩色线按长度从长到短排序，哪个选项的排序是正确的？,"A. 黄、绿、蓝
+B. 蓝、黄、绿
+C. 绿、蓝、黄
+D. 蓝、绿、黄",D,L2,网络,SE1 X GQ5,五棱台,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0086_recvnmunMO64L7_1_image.png
+87,recvnmuppMlFJy,点F属于哪一类几何点位？,"A. 棱的中点
+B. 该内切球的球心
+C. 正方体的顶点
+D. 侧面上的普通点",B,L1,网络,SE0 X GQ3,正方体内切球体,多体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0087_recvnmuppMlFJy_1_image.png
+88,recvnmupYphjDk,比较图中线段QP、QS、QT之间的距离，哪个最长？,"A. 线段QP最长
+B. 线段QS最长
+C. 线段QT最长
+D. 都一样长",B,L3,网络,SE1 X GQ5,六棱柱,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0088_recvnmupYphjDk_1_image.png
+89,recvnmupYpzArA,图中哪条线段是这个棱柱的底棱？,"A. MP
+B. MN
+C. MQ
+D. MF",B,L1,网络,SE1 X GQ2,五棱柱,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0089_recvnmupYpzArA_1_image.png
+90,recvnmupYpB493,该图中唯一深色截面处于哪个位置？,"A.中间
+B.下方
+C.左侧
+D.右侧",A,L1,网络,SE2 X GQ2,正方体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0090_recvnmupYpB493_1_image.png
+91,recvnmupYpp3vX,几何体绿色的面实际是什么形状？,"A.正方形
+B.平行四边形
+C.梯形
+D.菱形",A,L2,网络,SE2 X GQ3,正四棱台,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0091_recvnmupYpp3vX_1_image.png
+92,recvnmupYp7CXP,橙色截面的实际形状是什么？,"A. 圆形
+B. 拱形
+C. 正六边形
+D. 椭圆形",D,L2,网络,SE2 X GQ3,圆锥截面,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0092_recvnmupYp7CXP_1_image.png
+93,recvnmupYpThbu,观察图中所有的立体图形，数一数总共有多少个面（不包含立方体内截面）？,A.9 B.11 C.13 D.10,D,L1,网络,SE2XGQ1,三棱柱、四棱锥,多体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0093_recvnmupYpThbu_1_image.png
+94,recvnmupYp7Gl6,比较图中各点的位置高低，以下哪项说法正确？,"A.点Q高于点S
+B.点S低于点D
+C.点M高于点F
+D.点G低于点S",D,L2,网络,SE0 X GQ5,斜棱柱,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0094_recvnmupYp7Gl6_1_image.png
+95,recvnmupYpnmaP,比较图中各点到点T的距离，下列哪项是正确的？,"A.点H到点T的距离大于点M到点T的距离
+B.点H到点T的距离等于点M到点T的距离
+C.点G到点T的距离小于点M到点T的距离
+D.点M到点T的距离等于点G到点T的距离",C,L3,网络,SE0 X GQ5,四棱锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0095_recvnmupYpnmaP_1_image.png
+96,recvnmupYpEiNE,关于图中各标记点高度比较的描述，哪项陈述是正确的？,"A.点K低于其他所有标记点
+B.点D高于点S
+C.点K低于点E
+D.点E低于点Q",D,L2,网络,SE0 X GQ5,四棱锥和三棱锥,多体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0096_recvnmupYpEiNE_1_image.png
+97,recvnmupYpTY8Z,观察图中点B位置判断其属于哪类空间点。,"A. 顶点
+
+B. 面中心
+
+C. 棱中点
+
+D. 体中心",C,L2,网络,SE0 X GQ3,八面体嵌入正方体,多体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0097_recvnmupYpTY8Z_1_image.png
+98,recvnmupYpF1zg,哪个选项中的线段是图中这个立体图形的面对角线？,"A. EX
+B. EY
+C. EZ
+D. ED",B,L3,网络,SE1 X GQ2,正方体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0098_recvnmupYpF1zg_1_image.png
+99,recvnmupYpR7JJ,图中哪条线段是这个圆锥的高？,"A. AB
+B. SB
+C. AD
+D. SD",D,L2,网络,SE1 X GQ2,圆锥,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0099_recvnmupYpR7JJ_1_image.png
+100,recvnmupYpFYuj,红色线段长多少?,A.4 B.8 C.4√2 D.4√3,C,L2,网络,SE1 X GQ4,正方体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0100_recvnmupYpFYuj_1_20260622-180620.png
+101,recvnmupYp0RNj,根据该图，在所有标有字母的点中，哪一个点是最左边的？,"A. N
+B. D
+C. G
+D. A",A,L2,网络,SE0 X GQ2,圆柱,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0101_recvnmupYp0RNj_1_image.png
+102,recvnmupYpl4iG,红色线段长为多少？,A.5 B.10 C.13 D.5√13,B,L1,网络,SE1 X GQ4,正四棱柱,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0102_recvnmupYpl4iG_1_image.png
+103,recvnmupYprVcg,这个立体图形可见的黄色面共有多少个？,A.1 B.2 C.5 D.3,D,L1,网络,SE2XGQ1,截角截半立方体,单体,/home/qizhangyang/.kitty/workspaces/s_14b8ad0c/feishu_downloads/立体几何数据交付情况_批量试标数据查看/images/0103_recvnmupYprVcg_1_image.png
