@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SEv2 data_fixed SFT Eval</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --ink: #18212f;
+      --muted: #657286;
+      --line: #d9dee8;
+      --soft: #eef2f7;
+      --blue: #2563eb;
+      --orange: #c05621;
+      --green: #1f8a70;
+      --red: #b42318;
+      --shadow: 0 1px 2px rgba(16, 24, 40, .06);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+      font-size: 14px;
+      letter-spacing: 0;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(246, 247, 249, .96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .wrap {
+      max-width: 1680px;
+      margin: 0 auto;
+      padding: 18px 22px;
+    }
+    .top {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: end;
+    }
+    h1 {
+      margin: 0 0 7px;
+      font-size: 22px;
+      line-height: 1.2;
+      font-weight: 720;
+    }
+    .sub {
+      color: var(--muted);
+      line-height: 1.45;
+      max-width: 1100px;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(76px, 1fr));
+      gap: 8px;
+      min-width: 390px;
+    }
+    .metric {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: 8px;
+      padding: 9px 10px;
+      min-height: 62px;
+    }
+    .metric strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+    .metric span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .control {
+      height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--panel);
+      color: var(--ink);
+      padding: 0 10px;
+      min-width: 168px;
+      font: inherit;
+    }
+    .legend {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 12px;
+      margin-left: auto;
+    }
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .swatch {
+      width: 22px;
+      height: 3px;
+      border-radius: 99px;
+      display: inline-block;
+    }
+    .swatch.run { background: var(--blue); }
+    .swatch.base { background: var(--orange); }
+    main.wrap {
+      padding-top: 18px;
+    }
+    .dataset-section {
+      margin: 0 0 22px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfcfe;
+    }
+    .section-title {
+      min-width: 0;
+    }
+    .section-title h2 {
+      margin: 0 0 3px;
+      font-size: 17px;
+      line-height: 1.2;
+    }
+    .job {
+      color: var(--muted);
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+    .summary {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      padding: 3px 8px;
+      background: var(--panel);
+      white-space: nowrap;
+    }
+    .chart-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(160px, 1fr));
+      gap: 10px;
+      padding: 12px;
+    }
+    .chart-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      min-width: 0;
+      overflow: hidden;
+    }
+    .chart-title {
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 7px 8px 0;
+      font-size: 12px;
+      line-height: 1.15;
+    }
+    .bench-name {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-weight: 650;
+    }
+    .delta {
+      font-variant-numeric: tabular-nums;
+      font-size: 11px;
+      white-space: nowrap;
+      color: var(--muted);
+    }
+    .delta.up { color: var(--green); }
+    .delta.down { color: var(--red); }
+    canvas {
+      display: block;
+      width: 100%;
+      height: 118px;
+    }
+    .chart-foot {
+      height: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+      align-items: center;
+      padding: 0 8px 7px;
+      color: var(--muted);
+      font-size: 11px;
+      font-variant-numeric: tabular-nums;
+    }
+    .hidden {
+      display: none !important;
+    }
+    .tooltip {
+      position: fixed;
+      pointer-events: none;
+      background: rgba(24, 33, 47, .96);
+      color: white;
+      padding: 8px 9px;
+      border-radius: 7px;
+      font-size: 12px;
+      line-height: 1.45;
+      z-index: 20;
+      max-width: 260px;
+      box-shadow: 0 8px 24px rgba(16, 24, 40, .18);
+      transform: translate(12px, 12px);
+    }
+    .note {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    @media (max-width: 1320px) {
+      .chart-grid { grid-template-columns: repeat(4, minmax(160px, 1fr)); }
+    }
+    @media (max-width: 900px) {
+      .top { grid-template-columns: 1fr; }
+      .metrics { min-width: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .legend { margin-left: 0; width: 100%; }
+      .chart-grid { grid-template-columns: repeat(2, minmax(150px, 1fr)); }
+      .wrap { padding: 14px; }
+      .section-head { align-items: flex-start; flex-direction: column; }
+      .summary { justify-content: flex-start; }
+    }
+    @media (max-width: 520px) {
+      .chart-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 19px; }
+      .control { min-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="top">
+        <div>
+          <h1>SEv2 data_fixed SFT Eval</h1>
+          <div class="sub">
+            13 个训练数据集，每个数据集 100..1000 共 10 个 ckpt；每个 section 内展示 14 个 benchmark。蓝线是当前训练数据集曲线，橙线是 baseline 314zfq step1000 参考线。
+          </div>
+          <p class="note" id="sourceNote"></p>
+        </div>
+        <div class="metrics">
+          <div class="metric"><strong id="mDatasets">13</strong><span>训练数据集</span></div>
+          <div class="metric"><strong id="mBenchmarks">14</strong><span>benchmark</span></div>
+          <div class="metric"><strong id="mSteps">10</strong><span>ckpt / dataset</span></div>
+          <div class="metric"><strong id="mCharts">182</strong><span>mini charts</span></div>
+        </div>
+      </div>
+      <div class="controls">
+        <select class="control" id="datasetFilter"></select>
+        <select class="control" id="benchFilter"></select>
+        <select class="control" id="sortMode">
+          <option value="default">原始 benchmark 顺序</option>
+          <option value="delta-desc">按 step1000 - baseline 降序</option>
+          <option value="delta-asc">按 step1000 - baseline 升序</option>
+        </select>
+        <div class="legend">
+          <span><i class="swatch run"></i>当前数据集</span>
+          <span><i class="swatch base"></i>baseline</span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="wrap" id="app"></main>
+  <div class="tooltip hidden" id="tooltip"></div>
+  <script src="data.js"></script>
+  <script>
+    const DATA = window.EVAL_DATA;
+    const app = document.getElementById('app');
+    const datasetFilter = document.getElementById('datasetFilter');
+    const benchFilter = document.getElementById('benchFilter');
+    const sortMode = document.getElementById('sortMode');
+    const tooltip = document.getElementById('tooltip');
+    const fmt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 3, minimumFractionDigits: 3 });
+
+    const css = getComputedStyle(document.documentElement);
+    const COLORS = {
+      run: css.getPropertyValue('--blue').trim(),
+      base: css.getPropertyValue('--orange').trim(),
+      grid: css.getPropertyValue('--line').trim(),
+      text: css.getPropertyValue('--muted').trim(),
+      ink: css.getPropertyValue('--ink').trim(),
+    };
+
+    function initMeta() {
+      document.getElementById('mDatasets').textContent = DATA.meta.counts.datasets;
+      document.getElementById('mBenchmarks').textContent = DATA.meta.counts.benchmarks;
+      document.getElementById('mSteps').textContent = DATA.meta.counts.steps_per_dataset;
+      document.getElementById('mCharts').textContent = DATA.meta.counts.charts;
+      document.getElementById('sourceNote').textContent =
+        `Collection ${DATA.meta.collection_id}; suffix ${DATA.meta.eval_suffix}; baseline ${DATA.meta.baseline.job_id} step${DATA.meta.baseline.step}.`;
+
+      datasetFilter.innerHTML = '<option value="all">全部 13 个训练数据集</option>' +
+        DATA.datasets.map(d => `<option value="${d.name}">${d.name}</option>`).join('');
+      benchFilter.innerHTML = '<option value="all">全部 14 个 benchmark</option>' +
+        DATA.benchmarks.map(b => `<option value="${b}">${b}</option>`).join('');
+    }
+
+    function scoreAt(dataset, step, benchmark) {
+      const point = dataset.steps.find(s => s.step === step);
+      return point ? point.scores[benchmark] : null;
+    }
+
+    function datasetSummary(dataset) {
+      let up = 0, down = 0, flat = 0;
+      for (const b of DATA.benchmarks) {
+        const delta = scoreAt(dataset, 1000, b) - DATA.baseline_scores[b];
+        if (delta > 0.002) up += 1;
+        else if (delta < -0.002) down += 1;
+        else flat += 1;
+      }
+      const avg = DATA.benchmarks.reduce((acc, b) => acc + scoreAt(dataset, 1000, b) - DATA.baseline_scores[b], 0) / DATA.benchmarks.length;
+      return { up, down, flat, avg };
+    }
+
+    function orderedBenchmarks(dataset) {
+      const selected = benchFilter.value;
+      let benches = DATA.benchmarks.filter(b => selected === 'all' || b === selected);
+      const mode = sortMode.value;
+      if (mode !== 'default') {
+        benches = benches.slice().sort((a, b) => {
+          const da = scoreAt(dataset, 1000, a) - DATA.baseline_scores[a];
+          const db = scoreAt(dataset, 1000, b) - DATA.baseline_scores[b];
+          return mode === 'delta-desc' ? db - da : da - db;
+        });
+      }
+      return benches;
+    }
+
+    function render() {
+      app.innerHTML = '';
+      const selectedDataset = datasetFilter.value;
+      for (const dataset of DATA.datasets) {
+        if (selectedDataset !== 'all' && selectedDataset !== dataset.name) continue;
+        const summary = datasetSummary(dataset);
+        const section = document.createElement('section');
+        section.className = 'dataset-section';
+        const avgClass = summary.avg > 0.002 ? 'up' : summary.avg < -0.002 ? 'down' : '';
+        section.innerHTML = `
+          <div class="section-head">
+            <div class="section-title">
+              <h2>${dataset.name}</h2>
+              <div class="job">${dataset.job_id}</div>
+            </div>
+            <div class="summary">
+              <span class="chip">step1000 avg Δ <b class="${avgClass}">${signed(summary.avg)}</b></span>
+              <span class="chip">up ${summary.up}</span>
+              <span class="chip">flat ${summary.flat}</span>
+              <span class="chip">down ${summary.down}</span>
+            </div>
+          </div>
+          <div class="chart-grid"></div>
+        `;
+        const grid = section.querySelector('.chart-grid');
+        for (const benchmark of orderedBenchmarks(dataset)) {
+          grid.appendChild(makeChartCard(dataset, benchmark));
+        }
+        app.appendChild(section);
+      }
+      requestAnimationFrame(drawAllCharts);
+    }
+
+    function makeChartCard(dataset, benchmark) {
+      const finalScore = scoreAt(dataset, 1000, benchmark);
+      const baseline = DATA.baseline_scores[benchmark];
+      const delta = finalScore - baseline;
+      const card = document.createElement('article');
+      card.className = 'chart-card';
+      card.dataset.dataset = dataset.name;
+      card.dataset.benchmark = benchmark;
+      card.innerHTML = `
+        <div class="chart-title">
+          <div class="bench-name" title="${benchmark}">${benchmark}</div>
+          <div class="delta ${delta > 0.002 ? 'up' : delta < -0.002 ? 'down' : ''}">${signed(delta)}</div>
+        </div>
+        <canvas width="240" height="118"></canvas>
+        <div class="chart-foot">
+          <span>base ${fmt.format(baseline)}</span>
+          <span>1000 ${fmt.format(finalScore)}</span>
+        </div>
+      `;
+      const canvas = card.querySelector('canvas');
+      canvas.__chart = { dataset, benchmark };
+      canvas.addEventListener('mousemove', onCanvasMove);
+      canvas.addEventListener('mouseleave', hideTooltip);
+      return card;
+    }
+
+    function signed(value) {
+      const s = value >= 0 ? '+' : '';
+      return s + fmt.format(value);
+    }
+
+    function drawAllCharts() {
+      document.querySelectorAll('canvas').forEach(drawChart);
+    }
+
+    function drawChart(canvas) {
+      const { dataset, benchmark } = canvas.__chart;
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      const width = Math.max(180, Math.floor(rect.width));
+      const height = 118;
+      if (canvas.width !== width * dpr || canvas.height !== height * dpr) {
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+      }
+      canvas.style.height = height + 'px';
+      const ctx = canvas.getContext('2d');
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, width, height);
+
+      const pad = { left: 30, right: 10, top: 8, bottom: 22 };
+      const plotW = width - pad.left - pad.right;
+      const plotH = height - pad.top - pad.bottom;
+      const steps = dataset.steps.map(s => s.step);
+      const vals = dataset.steps.map(s => s.scores[benchmark]);
+      const baseline = DATA.baseline_scores[benchmark];
+      const minRaw = Math.min(...vals, baseline);
+      const maxRaw = Math.max(...vals, baseline);
+      const spread = Math.max(0.012, maxRaw - minRaw);
+      const yMin = Math.max(0, minRaw - spread * 0.22);
+      const yMax = Math.min(1, maxRaw + spread * 0.22);
+      const x = step => pad.left + (step - 100) / 900 * plotW;
+      const y = val => pad.top + (yMax - val) / (yMax - yMin || 1) * plotH;
+
+      ctx.strokeStyle = COLORS.grid;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      for (let i = 0; i <= 2; i++) {
+        const yy = pad.top + i * plotH / 2;
+        ctx.moveTo(pad.left, yy);
+        ctx.lineTo(width - pad.right, yy);
+      }
+      ctx.stroke();
+
+      ctx.fillStyle = COLORS.text;
+      ctx.font = '10px system-ui, sans-serif';
+      ctx.textAlign = 'right';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(fmt.format(yMax), pad.left - 5, pad.top);
+      ctx.fillText(fmt.format((yMin + yMax) / 2), pad.left - 5, pad.top + plotH / 2);
+      ctx.fillText(fmt.format(yMin), pad.left - 5, pad.top + plotH);
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      ctx.fillText('100', pad.left, height - 16);
+      ctx.fillText('1000', width - pad.right, height - 16);
+
+      ctx.strokeStyle = COLORS.base;
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([5, 4]);
+      ctx.beginPath();
+      ctx.moveTo(pad.left, y(baseline));
+      ctx.lineTo(width - pad.right, y(baseline));
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      ctx.strokeStyle = COLORS.run;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      vals.forEach((val, idx) => {
+        const xx = x(steps[idx]);
+        const yy = y(val);
+        if (idx === 0) ctx.moveTo(xx, yy);
+        else ctx.lineTo(xx, yy);
+      });
+      ctx.stroke();
+
+      ctx.fillStyle = COLORS.run;
+      vals.forEach((val, idx) => {
+        ctx.beginPath();
+        ctx.arc(x(steps[idx]), y(val), 2.3, 0, Math.PI * 2);
+        ctx.fill();
+      });
+    }
+
+    function onCanvasMove(ev) {
+      const canvas = ev.currentTarget;
+      const { dataset, benchmark } = canvas.__chart;
+      const rect = canvas.getBoundingClientRect();
+      const width = rect.width;
+      const padLeft = 30;
+      const padRight = 10;
+      const plotW = width - padLeft - padRight;
+      const rel = Math.min(1, Math.max(0, (ev.clientX - rect.left - padLeft) / plotW));
+      const idx = Math.min(9, Math.max(0, Math.round(rel * 9)));
+      const point = dataset.steps[idx];
+      const score = point.scores[benchmark];
+      const baseline = DATA.baseline_scores[benchmark];
+      tooltip.innerHTML = `
+        <b>${dataset.name}</b><br>
+        ${benchmark}<br>
+        step ${point.step}: ${fmt.format(score)}<br>
+        baseline: ${fmt.format(baseline)}<br>
+        Δ ${signed(score - baseline)}
+      `;
+      tooltip.style.left = ev.clientX + 'px';
+      tooltip.style.top = ev.clientY + 'px';
+      tooltip.classList.remove('hidden');
+    }
+
+    function hideTooltip() {
+      tooltip.classList.add('hidden');
+    }
+
+    window.addEventListener('resize', () => requestAnimationFrame(drawAllCharts));
+    datasetFilter.addEventListener('change', render);
+    benchFilter.addEventListener('change', render);
+    sortMode.addEventListener('change', render);
+    initMeta();
+    render();
+  </script>
+</body>
+</html>
