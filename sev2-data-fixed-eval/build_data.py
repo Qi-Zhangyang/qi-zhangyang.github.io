@@ -14,12 +14,15 @@ OUT_JS = os.path.join(OUT_DIR, "data.js")
 OUT_JSON = os.path.join(OUT_DIR, "data.json")
 COLLECTION_ID = "mc-vb-2026062715-m948c"
 BASELINE_JOB = "mj-ms-2026062414-314zfq"
-BASELINE_REMOTE = (
-    "webdav_m0:mnt/moonfs/kimiv-m0/tensorboard/results/"
-    "mj-ms-2026062414-314zfq/"
-    "kimiv-sft-mj-ms-2026062414-314zfq-0001000-smoke2_t0.0_mt16384_"
-    "no-think_thinking.type-disabled/all_benchmark_scores.json"
-)
+P0_BASELINE_SEGMENTS = [
+    ("mj-ms-2026061717-zow4d", range(100, 501, 100)),
+    ("mj-ms-2026061801-zpjaj", range(600, 1001, 100)),
+]
+P0_THINKING_DISABLED_BENCHMARKS = {
+    "EmbSpatialBench",
+    "CVBench",
+    "Perception-geometry-mc-circular-v1",
+}
 
 
 DATASETS = [
@@ -62,13 +65,9 @@ def read_json(path):
         return json.load(f)
 
 
-def read_baseline():
-    local = os.path.join(OUT_DIR, "baseline_314zfq_step1000.json")
-    if os.path.exists(local):
-        return read_json(local)
-
+def rclone_json(uri):
     proc = subprocess.run(
-        ["rclone", "cat", BASELINE_REMOTE],
+        ["rclone", "cat", uri],
         text=True,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
@@ -76,11 +75,48 @@ def read_baseline():
     )
     if proc.returncode != 0:
         sys.stderr.write(proc.stderr)
-        raise RuntimeError("failed to read baseline with rclone")
-    data = json.loads(proc.stdout)
+        raise RuntimeError(f"failed to read {uri}")
+    return json.loads(proc.stdout)
+
+
+def p0_uri(job_id, step, suffix):
+    return (
+        "webdav_m0:mnt/moonfs/kimiv-m0/tensorboard/results/"
+        f"{job_id}/kimiv-sft-{job_id}-{step:07d}_t0.0_mt16384_{suffix}/"
+        "all_benchmark_scores.json"
+    )
+
+
+def read_p0_baseline():
+    local = os.path.join(OUT_DIR, "baseline_p0_lijia_line_curve.json")
+    if os.path.exists(local):
+        return read_json(local)
+
+    points = []
+    for job_id, steps in P0_BASELINE_SEGMENTS:
+        for step in steps:
+            thinking = rclone_json(p0_uri(job_id, step, "no-think_thinking.type-disabled"))
+            prefill = rclone_json(p0_uri(job_id, step, "no-think-prefill"))
+            scores = {}
+            sources = {}
+            for benchmark in BENCHMARK_ORDER:
+                if benchmark in P0_THINKING_DISABLED_BENCHMARKS:
+                    scores[benchmark] = thinking[benchmark]
+                    sources[benchmark] = "p0:webdav_m0:no-think_thinking.type-disabled"
+                else:
+                    scores[benchmark] = prefill[benchmark]
+                    sources[benchmark] = "p0:webdav_m0:no-think-prefill"
+            points.append(
+                {
+                    "job_id": job_id,
+                    "step": step,
+                    "scores": scores,
+                    "sources": sources,
+                }
+            )
     with open(local, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2, sort_keys=True)
-    return data
+        json.dump(points, f, ensure_ascii=False, indent=2, sort_keys=True)
+    return points
 
 
 def collect_scores():
@@ -124,10 +160,15 @@ def collect_scores():
 
 
 def main():
-    baseline = read_baseline()
-    missing_baseline = [b for b in BENCHMARK_ORDER if b not in baseline]
-    if missing_baseline:
-        raise RuntimeError(f"baseline missing benchmarks: {missing_baseline}")
+    baseline_points = read_p0_baseline()
+    if len(baseline_points) != 10:
+        raise RuntimeError(f"p0 baseline expected 10 points, got {len(baseline_points)}")
+    for point in baseline_points:
+        missing_baseline = [b for b in BENCHMARK_ORDER if b not in point["scores"]]
+        if missing_baseline:
+            raise RuntimeError(
+                f"p0 baseline step {point['step']} missing benchmarks: {missing_baseline}"
+            )
 
     datasets = collect_scores()
     payload = {
@@ -137,11 +178,24 @@ def main():
             "eval_suffix": "data-fixed-full-fix2",
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "baseline": {
-                "label": "baseline 314zfq step1000",
+                "label": "p0 baseline",
+                "job_name": "sn6v-instruct-sft-baseline-32k",
+                "segments": [
+                    {"job_id": job_id, "steps": list(steps)}
+                    for job_id, steps in P0_BASELINE_SEGMENTS
+                ],
+                "score_policy": {
+                    "no-think_thinking.type-disabled": sorted(P0_THINKING_DISABLED_BENCHMARKS),
+                    "no-think-prefill": [
+                        b for b in BENCHMARK_ORDER if b not in P0_THINKING_DISABLED_BENCHMARKS
+                    ],
+                },
+                "note": "Lijia-line p0 baseline: zow4d(100-500)+zpjaj(600-1000). Spatial benchmarks use no-think_thinking.type-disabled; the other 11 benchmarks use no-think-prefill, matching the historical corrected p0 composite.",
+            },
+            "core_32k_reference": {
+                "label": "core-32k, not p0 baseline",
                 "job_id": BASELINE_JOB,
-                "step": 1000,
-                "source": BASELINE_REMOTE,
-                "note": "Strict same no-think_thinking.type-disabled core baseline; available as a step1000 reference line.",
+                "note": "mj-ms-2026062414-314zfq was the core-32k job in the ratio sweep, not the pure p0 baseline.",
             },
             "counts": {
                 "datasets": len(DATASETS),
@@ -152,7 +206,8 @@ def main():
         },
         "benchmarks": BENCHMARK_ORDER,
         "datasets": datasets,
-        "baseline_scores": {b: baseline[b] for b in BENCHMARK_ORDER},
+        "baseline": {"steps": baseline_points},
+        "baseline_scores": {b: baseline_points[-1]["scores"][b] for b in BENCHMARK_ORDER},
     }
 
     with open(OUT_JSON, "w", encoding="utf-8") as f:

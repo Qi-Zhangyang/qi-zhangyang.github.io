@@ -273,7 +273,7 @@
         <div>
           <h1>SEv2 data_fixed SFT Eval</h1>
           <div class="sub">
-            13 个训练数据集，每个数据集 100..1000 共 10 个 ckpt；每个 section 内展示 14 个 benchmark。蓝线是当前训练数据集曲线，橙线是 baseline 314zfq step1000 参考线。
+            13 个训练数据集，每个数据集 100..1000 共 10 个 ckpt；每个 section 内展示 14 个 benchmark。蓝线是当前训练数据集曲线，橙线是真正 p0 baseline 曲线。
           </div>
           <p class="note" id="sourceNote"></p>
         </div>
@@ -325,8 +325,9 @@
       document.getElementById('mBenchmarks').textContent = DATA.meta.counts.benchmarks;
       document.getElementById('mSteps').textContent = DATA.meta.counts.steps_per_dataset;
       document.getElementById('mCharts').textContent = DATA.meta.counts.charts;
+      const segments = DATA.meta.baseline.segments.map(s => `${s.job_id}:${s.steps[0]}-${s.steps[s.steps.length - 1]}`).join(' + ');
       document.getElementById('sourceNote').textContent =
-        `Collection ${DATA.meta.collection_id}; suffix ${DATA.meta.eval_suffix}; baseline ${DATA.meta.baseline.job_id} step${DATA.meta.baseline.step}.`;
+        `Collection ${DATA.meta.collection_id}; suffix ${DATA.meta.eval_suffix}; baseline ${DATA.meta.baseline.label} (${segments}).`;
 
       datasetFilter.innerHTML = '<option value="all">全部 13 个训练数据集</option>' +
         DATA.datasets.map(d => `<option value="${d.name}">${d.name}</option>`).join('');
@@ -413,7 +414,7 @@
         </div>
         <canvas width="240" height="118"></canvas>
         <div class="chart-foot">
-          <span>base ${fmt.format(baseline)}</span>
+          <span>base1000 ${fmt.format(baseline)}</span>
           <span>1000 ${fmt.format(finalScore)}</span>
         </div>
       `;
@@ -454,8 +455,10 @@
       const steps = dataset.steps.map(s => s.step);
       const vals = dataset.steps.map(s => s.scores[benchmark]);
       const baseline = DATA.baseline_scores[benchmark];
-      const minRaw = Math.min(...vals, baseline);
-      const maxRaw = Math.max(...vals, baseline);
+      const baseSteps = DATA.baseline.steps.map(s => s.step);
+      const baseVals = DATA.baseline.steps.map(s => s.scores[benchmark]);
+      const minRaw = Math.min(...vals, ...baseVals);
+      const maxRaw = Math.max(...vals, ...baseVals);
       const spread = Math.max(0.012, maxRaw - minRaw);
       const yMin = Math.max(0, minRaw - spread * 0.22);
       const yMax = Math.min(1, maxRaw + spread * 0.22);
@@ -485,11 +488,15 @@
       ctx.fillText('1000', width - pad.right, height - 16);
 
       ctx.strokeStyle = COLORS.base;
-      ctx.lineWidth = 1.5;
+      ctx.lineWidth = 1.8;
       ctx.setLineDash([5, 4]);
       ctx.beginPath();
-      ctx.moveTo(pad.left, y(baseline));
-      ctx.lineTo(width - pad.right, y(baseline));
+      baseVals.forEach((val, idx) => {
+        const xx = x(baseSteps[idx]);
+        const yy = y(val);
+        if (idx === 0) ctx.moveTo(xx, yy);
+        else ctx.lineTo(xx, yy);
+      });
       ctx.stroke();
       ctx.setLineDash([]);
 
@@ -525,12 +532,14 @@
       const point = dataset.steps[idx];
       const score = point.scores[benchmark];
       const baseline = DATA.baseline_scores[benchmark];
+      const basePoint = DATA.baseline.steps.find(s => s.step === point.step);
+      const baseScore = basePoint ? basePoint.scores[benchmark] : baseline;
       tooltip.innerHTML = `
         <b>${dataset.name}</b><br>
         ${benchmark}<br>
         step ${point.step}: ${fmt.format(score)}<br>
-        baseline: ${fmt.format(baseline)}<br>
-        Δ ${signed(score - baseline)}
+        p0 baseline: ${fmt.format(baseScore)}<br>
+        Δ ${signed(score - baseScore)}
       `;
       tooltip.style.left = ev.clientX + 'px';
       tooltip.style.top = ev.clientY + 'px';

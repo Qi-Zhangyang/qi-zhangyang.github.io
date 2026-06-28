@@ -3,13 +3,58 @@
     "title": "SEv2 data_fixed SFT Eval",
     "collection_id": "mc-vb-2026062715-m948c",
     "eval_suffix": "data-fixed-full-fix2",
-    "generated_at": "2026-06-28T03:49:02.344241+00:00",
+    "generated_at": "2026-06-28T04:12:17.513892+00:00",
     "baseline": {
-      "label": "baseline 314zfq step1000",
+      "label": "p0 baseline",
+      "job_name": "sn6v-instruct-sft-baseline-32k",
+      "segments": [
+        {
+          "job_id": "mj-ms-2026061717-zow4d",
+          "steps": [
+            100,
+            200,
+            300,
+            400,
+            500
+          ]
+        },
+        {
+          "job_id": "mj-ms-2026061801-zpjaj",
+          "steps": [
+            600,
+            700,
+            800,
+            900,
+            1000
+          ]
+        }
+      ],
+      "score_policy": {
+        "no-think_thinking.type-disabled": [
+          "CVBench",
+          "EmbSpatialBench",
+          "Perception-geometry-mc-circular-v1"
+        ],
+        "no-think-prefill": [
+          "RealWorldQA",
+          "NaturalPerceptionCircularV3",
+          "MathVision",
+          "MathVista_MINI",
+          "OCRBench",
+          "SimpleVQA",
+          "REFCOCO_PLUS_VAL",
+          "MMMU_PRETRAIN",
+          "Math_Baby",
+          "BabyVision_x3_fix",
+          "MMStar"
+        ]
+      },
+      "note": "Lijia-line p0 baseline: zow4d(100-500)+zpjaj(600-1000). Spatial benchmarks use no-think_thinking.type-disabled; the other 11 benchmarks use no-think-prefill, matching the historical corrected p0 composite."
+    },
+    "core_32k_reference": {
+      "label": "core-32k, not p0 baseline",
       "job_id": "mj-ms-2026062414-314zfq",
-      "step": 1000,
-      "source": "webdav_m0:mnt/moonfs/kimiv-m0/tensorboard/results/mj-ms-2026062414-314zfq/kimiv-sft-mj-ms-2026062414-314zfq-0001000-smoke2_t0.0_mt16384_no-think_thinking.type-disabled/all_benchmark_scores.json",
-      "note": "Strict same no-think_thinking.type-disabled core baseline; available as a step1000 reference line."
+      "note": "mj-ms-2026062414-314zfq was the core-32k job in the ratio sweep, not the pure p0 baseline."
     },
     "counts": {
       "datasets": 13,
@@ -2584,20 +2629,384 @@
       ]
     }
   ],
+  "baseline": {
+    "steps": [
+      {
+        "job_id": "mj-ms-2026061717-zow4d",
+        "step": 100,
+        "scores": {
+          "RealWorldQA": 0.7058823529411765,
+          "EmbSpatialBench": 0.7153846153846154,
+          "Perception-geometry-mc-circular-v1": 0.26571428571428574,
+          "CVBench": 0.3009855951478393,
+          "NaturalPerceptionCircularV3": 0.22048066875653083,
+          "MathVision": 0.2444078947368421,
+          "MathVista_MINI": 0.657,
+          "OCRBench": 0.836,
+          "SimpleVQA": 0.4120603015075377,
+          "REFCOCO_PLUS_VAL": 0.8467187209518497,
+          "MMMU_PRETRAIN": 0.5576923076923077,
+          "Math_Baby": 0.45,
+          "BabyVision_x3_fix": 0.17783505154639176,
+          "MMStar": 0.646
+        },
+        "sources": {
+          "RealWorldQA": "p0:webdav_m0:no-think-prefill",
+          "EmbSpatialBench": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "Perception-geometry-mc-circular-v1": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "CVBench": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "NaturalPerceptionCircularV3": "p0:webdav_m0:no-think-prefill",
+          "MathVision": "p0:webdav_m0:no-think-prefill",
+          "MathVista_MINI": "p0:webdav_m0:no-think-prefill",
+          "OCRBench": "p0:webdav_m0:no-think-prefill",
+          "SimpleVQA": "p0:webdav_m0:no-think-prefill",
+          "REFCOCO_PLUS_VAL": "p0:webdav_m0:no-think-prefill",
+          "MMMU_PRETRAIN": "p0:webdav_m0:no-think-prefill",
+          "Math_Baby": "p0:webdav_m0:no-think-prefill",
+          "BabyVision_x3_fix": "p0:webdav_m0:no-think-prefill",
+          "MMStar": "p0:webdav_m0:no-think-prefill"
+        }
+      },
+      {
+        "job_id": "mj-ms-2026061717-zow4d",
+        "step": 200,
+        "scores": {
+          "RealWorldQA": 0.7241830065359477,
+          "EmbSpatialBench": 0.7436813186813187,
+          "Perception-geometry-mc-circular-v1": 0.26857142857142857,
+          "CVBench": 0.46209249431387417,
+          "NaturalPerceptionCircularV3": 0.2330198537095089,
+          "MathVision": 0.26348684210526313,
+          "MathVista_MINI": 0.672,
+          "OCRBench": 0.853,
+          "SimpleVQA": 0.44221105527638194,
+          "REFCOCO_PLUS_VAL": 0.8543409555679494,
+          "MMMU_PRETRAIN": 0.5600961538461539,
+          "Math_Baby": 0.55,
+          "BabyVision_x3_fix": 0.18814432989690721,
+          "MMStar": 0.6266666666666667
+        },
+        "sources": {
+          "RealWorldQA": "p0:webdav_m0:no-think-prefill",
+          "EmbSpatialBench": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "Perception-geometry-mc-circular-v1": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "CVBench": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "NaturalPerceptionCircularV3": "p0:webdav_m0:no-think-prefill",
+          "MathVision": "p0:webdav_m0:no-think-prefill",
+          "MathVista_MINI": "p0:webdav_m0:no-think-prefill",
+          "OCRBench": "p0:webdav_m0:no-think-prefill",
+          "SimpleVQA": "p0:webdav_m0:no-think-prefill",
+          "REFCOCO_PLUS_VAL": "p0:webdav_m0:no-think-prefill",
+          "MMMU_PRETRAIN": "p0:webdav_m0:no-think-prefill",
+          "Math_Baby": "p0:webdav_m0:no-think-prefill",
+          "BabyVision_x3_fix": "p0:webdav_m0:no-think-prefill",
+          "MMStar": "p0:webdav_m0:no-think-prefill"
+        }
+      },
+      {
+        "job_id": "mj-ms-2026061717-zow4d",
+        "step": 300,
+        "scores": {
+          "RealWorldQA": 0.7189542483660131,
+          "EmbSpatialBench": 0.7489010989010989,
+          "Perception-geometry-mc-circular-v1": 0.2752380952380952,
+          "CVBench": 0.45564821834723274,
+          "NaturalPerceptionCircularV3": 0.21839080459770116,
+          "MathVision": 0.2694078947368421,
+          "MathVista_MINI": 0.666,
+          "OCRBench": 0.855,
+          "SimpleVQA": 0.41708542713567837,
+          "REFCOCO_PLUS_VAL": 0.8543409555679494,
+          "MMMU_PRETRAIN": 0.5637019230769231,
+          "Math_Baby": 0.47,
+          "BabyVision_x3_fix": 0.16752577319587628,
+          "MMStar": 0.6253333333333333
+        },
+        "sources": {
+          "RealWorldQA": "p0:webdav_m0:no-think-prefill",
+          "EmbSpatialBench": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "Perception-geometry-mc-circular-v1": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "CVBench": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "NaturalPerceptionCircularV3": "p0:webdav_m0:no-think-prefill",
+          "MathVision": "p0:webdav_m0:no-think-prefill",
+          "MathVista_MINI": "p0:webdav_m0:no-think-prefill",
+          "OCRBench": "p0:webdav_m0:no-think-prefill",
+          "SimpleVQA": "p0:webdav_m0:no-think-prefill",
+          "REFCOCO_PLUS_VAL": "p0:webdav_m0:no-think-prefill",
+          "MMMU_PRETRAIN": "p0:webdav_m0:no-think-prefill",
+          "Math_Baby": "p0:webdav_m0:no-think-prefill",
+          "BabyVision_x3_fix": "p0:webdav_m0:no-think-prefill",
+          "MMStar": "p0:webdav_m0:no-think-prefill"
+        }
+      },
+      {
+        "job_id": "mj-ms-2026061717-zow4d",
+        "step": 400,
+        "scores": {
+          "RealWorldQA": 0.7254901960784313,
+          "EmbSpatialBench": 0.7516483516483516,
+          "Perception-geometry-mc-circular-v1": 0.28523809523809524,
+          "CVBench": 0.4488248673237301,
+          "NaturalPerceptionCircularV3": 0.2549634273772205,
+          "MathVision": 0.26907894736842103,
+          "MathVista_MINI": 0.675,
+          "OCRBench": 0.859,
+          "SimpleVQA": 0.45226130653266333,
+          "REFCOCO_PLUS_VAL": 0.8568507157464212,
+          "MMMU_PRETRAIN": 0.5709134615384616,
+          "Math_Baby": 0.52,
+          "BabyVision_x3_fix": 0.13917525773195877,
+          "MMStar": 0.6346666666666667
+        },
+        "sources": {
+          "RealWorldQA": "p0:webdav_m0:no-think-prefill",
+          "EmbSpatialBench": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "Perception-geometry-mc-circular-v1": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "CVBench": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "NaturalPerceptionCircularV3": "p0:webdav_m0:no-think-prefill",
+          "MathVision": "p0:webdav_m0:no-think-prefill",
+          "MathVista_MINI": "p0:webdav_m0:no-think-prefill",
+          "OCRBench": "p0:webdav_m0:no-think-prefill",
+          "SimpleVQA": "p0:webdav_m0:no-think-prefill",
+          "REFCOCO_PLUS_VAL": "p0:webdav_m0:no-think-prefill",
+          "MMMU_PRETRAIN": "p0:webdav_m0:no-think-prefill",
+          "Math_Baby": "p0:webdav_m0:no-think-prefill",
+          "BabyVision_x3_fix": "p0:webdav_m0:no-think-prefill",
+          "MMStar": "p0:webdav_m0:no-think-prefill"
+        }
+      },
+      {
+        "job_id": "mj-ms-2026061717-zow4d",
+        "step": 500,
+        "scores": {
+          "RealWorldQA": 0.7176470588235294,
+          "EmbSpatialBench": 0.7494505494505495,
+          "Perception-geometry-mc-circular-v1": 0.2914285714285714,
+          "CVBench": 0.45109931766489764,
+          "NaturalPerceptionCircularV3": 0.2330198537095089,
+          "MathVision": 0.28092105263157896,
+          "MathVista_MINI": 0.687,
+          "OCRBench": 0.848,
+          "SimpleVQA": 0.46733668341708545,
+          "REFCOCO_PLUS_VAL": 0.8562000371816323,
+          "MMMU_PRETRAIN": 0.5901442307692307,
+          "Math_Baby": 0.45,
+          "BabyVision_x3_fix": 0.17783505154639176,
+          "MMStar": 0.626
+        },
+        "sources": {
+          "RealWorldQA": "p0:webdav_m0:no-think-prefill",
+          "EmbSpatialBench": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "Perception-geometry-mc-circular-v1": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "CVBench": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "NaturalPerceptionCircularV3": "p0:webdav_m0:no-think-prefill",
+          "MathVision": "p0:webdav_m0:no-think-prefill",
+          "MathVista_MINI": "p0:webdav_m0:no-think-prefill",
+          "OCRBench": "p0:webdav_m0:no-think-prefill",
+          "SimpleVQA": "p0:webdav_m0:no-think-prefill",
+          "REFCOCO_PLUS_VAL": "p0:webdav_m0:no-think-prefill",
+          "MMMU_PRETRAIN": "p0:webdav_m0:no-think-prefill",
+          "Math_Baby": "p0:webdav_m0:no-think-prefill",
+          "BabyVision_x3_fix": "p0:webdav_m0:no-think-prefill",
+          "MMStar": "p0:webdav_m0:no-think-prefill"
+        }
+      },
+      {
+        "job_id": "mj-ms-2026061801-zpjaj",
+        "step": 600,
+        "scores": {
+          "RealWorldQA": 0.7189542483660131,
+          "EmbSpatialBench": 0.7516483516483516,
+          "Perception-geometry-mc-circular-v1": 0.28809523809523807,
+          "CVBench": 0.4469294920394238,
+          "NaturalPerceptionCircularV3": 0.22570532915360503,
+          "MathVision": 0.2746710526315789,
+          "MathVista_MINI": 0.692,
+          "OCRBench": 0.861,
+          "SimpleVQA": 0.46733668341708545,
+          "REFCOCO_PLUS_VAL": 0.8570366239077896,
+          "MMMU_PRETRAIN": 0.5685096153846154,
+          "Math_Baby": 0.46,
+          "BabyVision_x3_fix": 0.16838487972508592,
+          "MMStar": 0.6326666666666667
+        },
+        "sources": {
+          "RealWorldQA": "p0:webdav_m0:no-think-prefill",
+          "EmbSpatialBench": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "Perception-geometry-mc-circular-v1": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "CVBench": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "NaturalPerceptionCircularV3": "p0:webdav_m0:no-think-prefill",
+          "MathVision": "p0:webdav_m0:no-think-prefill",
+          "MathVista_MINI": "p0:webdav_m0:no-think-prefill",
+          "OCRBench": "p0:webdav_m0:no-think-prefill",
+          "SimpleVQA": "p0:webdav_m0:no-think-prefill",
+          "REFCOCO_PLUS_VAL": "p0:webdav_m0:no-think-prefill",
+          "MMMU_PRETRAIN": "p0:webdav_m0:no-think-prefill",
+          "Math_Baby": "p0:webdav_m0:no-think-prefill",
+          "BabyVision_x3_fix": "p0:webdav_m0:no-think-prefill",
+          "MMStar": "p0:webdav_m0:no-think-prefill"
+        }
+      },
+      {
+        "job_id": "mj-ms-2026061801-zpjaj",
+        "step": 700,
+        "scores": {
+          "RealWorldQA": 0.726797385620915,
+          "EmbSpatialBench": 0.7431318681318682,
+          "Perception-geometry-mc-circular-v1": 0.29285714285714287,
+          "CVBench": 0.46019711902956784,
+          "NaturalPerceptionCircularV3": 0.2392894461859979,
+          "MathVision": 0.275,
+          "MathVista_MINI": 0.694,
+          "OCRBench": 0.862,
+          "SimpleVQA": 0.46733668341708545,
+          "REFCOCO_PLUS_VAL": 0.8559211749395799,
+          "MMMU_PRETRAIN": 0.5745192307692307,
+          "Math_Baby": 0.46,
+          "BabyVision_x3_fix": 0.15807560137457044,
+          "MMStar": 0.6406666666666667
+        },
+        "sources": {
+          "RealWorldQA": "p0:webdav_m0:no-think-prefill",
+          "EmbSpatialBench": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "Perception-geometry-mc-circular-v1": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "CVBench": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "NaturalPerceptionCircularV3": "p0:webdav_m0:no-think-prefill",
+          "MathVision": "p0:webdav_m0:no-think-prefill",
+          "MathVista_MINI": "p0:webdav_m0:no-think-prefill",
+          "OCRBench": "p0:webdav_m0:no-think-prefill",
+          "SimpleVQA": "p0:webdav_m0:no-think-prefill",
+          "REFCOCO_PLUS_VAL": "p0:webdav_m0:no-think-prefill",
+          "MMMU_PRETRAIN": "p0:webdav_m0:no-think-prefill",
+          "Math_Baby": "p0:webdav_m0:no-think-prefill",
+          "BabyVision_x3_fix": "p0:webdav_m0:no-think-prefill",
+          "MMStar": "p0:webdav_m0:no-think-prefill"
+        }
+      },
+      {
+        "job_id": "mj-ms-2026061801-zpjaj",
+        "step": 800,
+        "scores": {
+          "RealWorldQA": 0.730718954248366,
+          "EmbSpatialBench": 0.7450549450549451,
+          "Perception-geometry-mc-circular-v1": 0.2980952380952381,
+          "CVBench": 0.46929492039423804,
+          "NaturalPerceptionCircularV3": 0.24555903866248693,
+          "MathVision": 0.2769736842105263,
+          "MathVista_MINI": 0.691,
+          "OCRBench": 0.859,
+          "SimpleVQA": 0.457286432160804,
+          "REFCOCO_PLUS_VAL": 0.8558282208588958,
+          "MMMU_PRETRAIN": 0.5829326923076923,
+          "Math_Baby": 0.47,
+          "BabyVision_x3_fix": 0.16323024054982818,
+          "MMStar": 0.638
+        },
+        "sources": {
+          "RealWorldQA": "p0:webdav_m0:no-think-prefill",
+          "EmbSpatialBench": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "Perception-geometry-mc-circular-v1": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "CVBench": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "NaturalPerceptionCircularV3": "p0:webdav_m0:no-think-prefill",
+          "MathVision": "p0:webdav_m0:no-think-prefill",
+          "MathVista_MINI": "p0:webdav_m0:no-think-prefill",
+          "OCRBench": "p0:webdav_m0:no-think-prefill",
+          "SimpleVQA": "p0:webdav_m0:no-think-prefill",
+          "REFCOCO_PLUS_VAL": "p0:webdav_m0:no-think-prefill",
+          "MMMU_PRETRAIN": "p0:webdav_m0:no-think-prefill",
+          "Math_Baby": "p0:webdav_m0:no-think-prefill",
+          "BabyVision_x3_fix": "p0:webdav_m0:no-think-prefill",
+          "MMStar": "p0:webdav_m0:no-think-prefill"
+        }
+      },
+      {
+        "job_id": "mj-ms-2026061801-zpjaj",
+        "step": 900,
+        "scores": {
+          "RealWorldQA": 0.734640522875817,
+          "EmbSpatialBench": 0.735989010989011,
+          "Perception-geometry-mc-circular-v1": 0.29285714285714287,
+          "CVBench": 0.4507202426080364,
+          "NaturalPerceptionCircularV3": 0.24346917450365727,
+          "MathVision": 0.2776315789473684,
+          "MathVista_MINI": 0.69,
+          "OCRBench": 0.856,
+          "SimpleVQA": 0.4321608040201005,
+          "REFCOCO_PLUS_VAL": 0.8569436698271055,
+          "MMMU_PRETRAIN": 0.5877403846153846,
+          "Math_Baby": 0.45,
+          "BabyVision_x3_fix": 0.16752577319587628,
+          "MMStar": 0.634
+        },
+        "sources": {
+          "RealWorldQA": "p0:webdav_m0:no-think-prefill",
+          "EmbSpatialBench": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "Perception-geometry-mc-circular-v1": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "CVBench": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "NaturalPerceptionCircularV3": "p0:webdav_m0:no-think-prefill",
+          "MathVision": "p0:webdav_m0:no-think-prefill",
+          "MathVista_MINI": "p0:webdav_m0:no-think-prefill",
+          "OCRBench": "p0:webdav_m0:no-think-prefill",
+          "SimpleVQA": "p0:webdav_m0:no-think-prefill",
+          "REFCOCO_PLUS_VAL": "p0:webdav_m0:no-think-prefill",
+          "MMMU_PRETRAIN": "p0:webdav_m0:no-think-prefill",
+          "Math_Baby": "p0:webdav_m0:no-think-prefill",
+          "BabyVision_x3_fix": "p0:webdav_m0:no-think-prefill",
+          "MMStar": "p0:webdav_m0:no-think-prefill"
+        }
+      },
+      {
+        "job_id": "mj-ms-2026061801-zpjaj",
+        "step": 1000,
+        "scores": {
+          "RealWorldQA": 0.7254901960784313,
+          "EmbSpatialBench": 0.739010989010989,
+          "Perception-geometry-mc-circular-v1": 0.2885714285714286,
+          "CVBench": 0.45261561789234267,
+          "NaturalPerceptionCircularV3": 0.24242424242424243,
+          "MathVision": 0.2819078947368421,
+          "MathVista_MINI": 0.698,
+          "OCRBench": 0.862,
+          "SimpleVQA": 0.46733668341708545,
+          "REFCOCO_PLUS_VAL": 0.8567577616657371,
+          "MMMU_PRETRAIN": 0.5841346153846154,
+          "Math_Baby": 0.47,
+          "BabyVision_x3_fix": 0.16151202749140894,
+          "MMStar": 0.6386666666666667
+        },
+        "sources": {
+          "RealWorldQA": "p0:webdav_m0:no-think-prefill",
+          "EmbSpatialBench": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "Perception-geometry-mc-circular-v1": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "CVBench": "p0:webdav_m0:no-think_thinking.type-disabled",
+          "NaturalPerceptionCircularV3": "p0:webdav_m0:no-think-prefill",
+          "MathVision": "p0:webdav_m0:no-think-prefill",
+          "MathVista_MINI": "p0:webdav_m0:no-think-prefill",
+          "OCRBench": "p0:webdav_m0:no-think-prefill",
+          "SimpleVQA": "p0:webdav_m0:no-think-prefill",
+          "REFCOCO_PLUS_VAL": "p0:webdav_m0:no-think-prefill",
+          "MMMU_PRETRAIN": "p0:webdav_m0:no-think-prefill",
+          "Math_Baby": "p0:webdav_m0:no-think-prefill",
+          "BabyVision_x3_fix": "p0:webdav_m0:no-think-prefill",
+          "MMStar": "p0:webdav_m0:no-think-prefill"
+        }
+      }
+    ]
+  },
   "baseline_scores": {
-    "RealWorldQA": 0.7294117647058823,
-    "EmbSpatialBench": 0.7384615384615385,
-    "Perception-geometry-mc-circular-v1": 0.3180952380952381,
-    "CVBench": 0.4438968915845337,
-    "NaturalPerceptionCircularV3": 0.2664576802507837,
-    "MathVision": 0.27039473684210524,
-    "MathVista_MINI": 0.696,
-    "OCRBench": 0.858,
-    "SimpleVQA": 0.457286432160804,
-    "REFCOCO_PLUS_VAL": 0.8444878230154304,
-    "MMMU_PRETRAIN": 0.5661057692307693,
-    "Math_Baby": 0.51,
-    "BabyVision_x3_fix": 0.18127147766323023,
-    "MMStar": 0.6286666666666667
+    "RealWorldQA": 0.7254901960784313,
+    "EmbSpatialBench": 0.739010989010989,
+    "Perception-geometry-mc-circular-v1": 0.2885714285714286,
+    "CVBench": 0.45261561789234267,
+    "NaturalPerceptionCircularV3": 0.24242424242424243,
+    "MathVision": 0.2819078947368421,
+    "MathVista_MINI": 0.698,
+    "OCRBench": 0.862,
+    "SimpleVQA": 0.46733668341708545,
+    "REFCOCO_PLUS_VAL": 0.8567577616657371,
+    "MMMU_PRETRAIN": 0.5841346153846154,
+    "Math_Baby": 0.47,
+    "BabyVision_x3_fix": 0.16151202749140894,
+    "MMStar": 0.6386666666666667
   }
 }
