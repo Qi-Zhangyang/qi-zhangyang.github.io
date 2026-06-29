@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-29T12:29:33Z",
-  "elapsed_sec": 42.27,
+  "generated_at": "2026-06-29T12:53:02Z",
+  "elapsed_sec": 40.98,
   "smoke_dir": "/home/qizhangyang/soutu_792w_qa_v5_lowercase_smoke_1k",
   "spec_path": "/home/qizhangyang/soutu_792w_spec_quality_zh_sanitized_lowercase_v5_stream/clean_specs.jsonl.gz",
   "image_root": "/home/qizhangyang/soutu_792w_clean_images_local",
@@ -13,8 +13,9 @@
   "label_font_size": 15,
   "point_size": 22,
   "render_crop_whitespace": true,
-  "render_cache_version": "label15-declutter2",
+  "render_cache_version": "label15-pointonly1",
   "render_label_placement": "projected_outward_offset",
+  "render_label_text_policy": "simple_point_names_only",
   "render_dense_label_limit": 24,
   "render_dense_label_policy": "required_labels_always_shown_then_priority_cap"
 }
