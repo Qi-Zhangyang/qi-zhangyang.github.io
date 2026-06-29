@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Soutu v5 QA Smoke Review</title>
+<style>
+:root {
+  --bg: #f5f7fa;
+  --panel: #ffffff;
+  --ink: #17202a;
+  --muted: #647181;
+  --line: #d8e0e8;
+  --accent: #1769aa;
+  --accent-soft: #e7f1fa;
+  --good: #177245;
+  --warn: #9b5a00;
+  --bad: #a33a3a;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  letter-spacing: 0;
+}
+button, input, select { font: inherit; }
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid var(--line);
+}
+.topbar-inner {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) minmax(300px, 520px);
+  gap: 16px;
+  align-items: center;
+}
+h1 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.2;
+}
+.sub {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.search-row {
+  display: grid;
+  grid-template-columns: 1fr 150px 150px;
+  gap: 8px;
+}
+.search-row input, .search-row select {
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  padding: 0 10px;
+  min-width: 0;
+}
+main {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 16px 20px 36px;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(120px, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.stat {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 11px 12px;
+}
+.stat b {
+  display: block;
+  font-size: 22px;
+  line-height: 1.15;
+}
+.stat span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0 14px;
+}
+.tab {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  padding: 8px 11px;
+  cursor: pointer;
+}
+.tab.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+  font-weight: 650;
+}
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.section-head {
+  padding: 12px 13px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+.section-head h2 {
+  margin: 0;
+  font-size: 16px;
+}
+.section-head p {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+.matrix {
+  display: grid;
+  grid-template-columns: 68px repeat(7, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border-top: 1px solid var(--line);
+}
+.cell {
+  min-height: 48px;
+  background: #fff;
+  padding: 7px 8px;
+  font-size: 12px;
+}
+.cell.head {
+  display: grid;
+  place-items: center;
+  color: #4c5a68;
+  background: #f0f4f8;
+  font-weight: 650;
+}
+.cell.data {
+  cursor: pointer;
+}
+.cell.data:hover {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+.cell.data.active {
+  background: #eaf4fd;
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+.cell .count {
+  font-size: 17px;
+  font-weight: 730;
+}
+.cell .label {
+  margin-top: 2px;
+  color: var(--muted);
+}
+.cell.empty {
+  color: #9aa5b1;
+  background: #fafbfc;
+}
+.view { display: none; }
+.view.active { display: block; }
+.qa-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+.qa-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 0;
+}
+.visuals {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #edf2f6;
+  border-bottom: 1px solid var(--line);
+}
+figure {
+  margin: 0;
+  min-width: 0;
+  border-right: 1px solid var(--line);
+}
+figure:last-child { border-right: 0; }
+figcaption {
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--muted);
+  background: #f9fbfc;
+  border-bottom: 1px solid var(--line);
+}
+figure img {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: contain;
+  background: #fff;
+}
+.missing-img {
+  height: 210px;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  background: #fff;
+  font-size: 12px;
+}
+.qa-body {
+  padding: 11px 12px 12px;
+}
+.meta-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.pill {
+  border: 1px solid #c8d8e8;
+  border-radius: 999px;
+  background: #f4f8fb;
+  color: #31546f;
+  padding: 3px 7px;
+  font-size: 12px;
+}
+.pill.good {
+  border-color: #bdddc9;
+  color: var(--good);
+  background: #edf8f1;
+}
+.title {
+  font-size: 13px;
+  color: var(--muted);
+  word-break: break-word;
+  margin-bottom: 7px;
+}
+.question {
+  font-size: 15px;
+  line-height: 1.48;
+  margin-bottom: 8px;
+}
+.options {
+  display: grid;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+.option {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 7px;
+  font-size: 13px;
+  line-height: 1.35;
+  align-items: start;
+}
+.option span {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #c9d2dc;
+  font-size: 11px;
+  font-weight: 700;
+  background: #fff;
+}
+.option.answer span {
+  border-color: #9bc7aa;
+  background: #e7f5ec;
+  color: var(--good);
+}
+.answer {
+  font-size: 14px;
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+details {
+  border-top: 1px dashed #d6dde5;
+  padding-top: 8px;
+}
+summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 12px;
+}
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 8px 0 0;
+  padding: 8px;
+  border: 1px solid #e0e6ec;
+  border-radius: 6px;
+  background: #f8fafc;
+  color: #344250;
+  font-size: 11px;
+  max-height: 220px;
+  overflow: auto;
+}
+.table-wrap {
+  max-height: 760px;
+  overflow: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+th, td {
+  border-bottom: 1px solid var(--line);
+  padding: 8px 9px;
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  position: sticky;
+  top: 0;
+  background: #f3f6f9;
+  z-index: 1;
+  font-size: 12px;
+  color: #4e5b68;
+}
+td.question-cell {
+  min-width: 360px;
+  line-height: 1.4;
+}
+.hidden { display: none !important; }
+@media (max-width: 900px) {
+  .topbar-inner { grid-template-columns: 1fr; }
+  .search-row { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .matrix { grid-template-columns: 52px repeat(7, minmax(72px, 1fr)); overflow-x: auto; }
+  .qa-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  main, .topbar-inner { padding-left: 10px; padding-right: 10px; }
+  .stats { grid-template-columns: 1fr; }
+  .visuals { grid-template-columns: 1fr; }
+  figure { border-right: 0; border-bottom: 1px solid var(--line); }
+  figure:last-child { border-bottom: 0; }
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div>
+      <h1>Soutu v5 QA Smoke Review</h1>
+      <div class="sub">1k smoke 结果：规则 QA、四选一 MC、SE×GQ 覆盖和抽样可视化</div>
+    </div>
+    <div class="search-row">
+      <input id="search" type="search" placeholder="搜索题目 / 答案 / task / sample id">
+      <select id="cellFilter"><option value="all">全部 cell</option></select>
+      <select id="taskFilter"><option value="all">全部 task</option></select>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="stats" id="stats"></section>
+  <nav class="tabs">
+    <button class="tab active" data-view="selectedView">按格子抽样看</button>
+    <button class="tab" data-view="allView">全量 MC QA 表</button>
+    <button class="tab" data-view="badView">过滤原因</button>
+  </nav>
+
+  <section class="panel">
+    <div class="section-head">
+      <div>
+        <h2>SE×GQ 覆盖矩阵</h2>
+        <p>点击格子过滤下面的抽样题。数字是 final MC QA 数量。</p>
+      </div>
+      <button class="tab" id="clearCell" type="button">清除格子过滤</button>
+    </div>
+    <div class="matrix" id="matrix"></div>
+  </section>
+
+  <section id="selectedView" class="view active">
+    <div class="section-head" style="margin-top:14px;border:1px solid var(--line);border-radius:8px;background:#fff;">
+      <div>
+        <h2>Selected Per Cell 抽样</h2>
+        <p><span id="selectedCount"></span> 条，用于人工扫题型、题面、选项和 evidence。</p>
+      </div>
+    </div>
+    <div class="qa-grid" id="selectedGrid"></div>
+  </section>
+
+  <section id="allView" class="view">
+    <div class="panel" style="margin-top:14px;">
+      <div class="section-head">
+        <div>
+          <h2>Final MC QA</h2>
+          <p><span id="allCount"></span> 条四选一题；这里不放图片，方便快速搜索。</p>
+        </div>
+      </div>
+      <div class="table-wrap"><table id="allTable"></table></div>
+    </div>
+  </section>
+
+  <section id="badView" class="view">
+    <div class="panel" style="margin-top:14px;">
+      <div class="section-head">
+        <div>
+          <h2>Invalid QA Reasons</h2>
+          <p>来自 summary.json，用于看 validator 拦掉了什么。</p>
+        </div>
+      </div>
+      <div class="table-wrap"><table id="badTable"></table></div>
+    </div>
+  </section>
+</main>
+<script src="data.js?v=label15-hybrid1"></script>
+<script>
+const DATA = window.SMOKE_DATA;
+const summary = DATA.summary;
+const selectedRows = DATA.selected;
+const allRows = DATA.all;
+const labels = ['A', 'B', 'C', 'D'];
+let activeView = 'selectedView';
+let activeCell = 'all';
+
+const search = document.getElementById('search');
+const cellFilter = document.getElementById('cellFilter');
+const taskFilter = document.getElementById('taskFilter');
+
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, ch => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[ch]));
+}
+function pretty(value) {
+  return JSON.stringify(value ?? {}, null, 2);
+}
+function rowText(row) {
+  return [
+    row.id, row.sample_id, row.task_id, row.variant, row.question, row.answer,
+    row.cell, row.task, row.content_type, row.ability, row.level,
+    row.sample && row.sample.title
+  ].join(' ').toLowerCase();
+}
+function visibleByFilters(row) {
+  const q = search.value.trim().toLowerCase();
+  const cellOk = activeCell === 'all' || row.cell === activeCell;
+  const taskOk = taskFilter.value === 'all' || row.task_id === taskFilter.value;
+  return cellOk && taskOk && (!q || rowText(row).includes(q));
+}
+function imgTag(path, label) {
+  if (!path) return `<div class="missing-img">${escapeHtml(label)}缺失</div>`;
+  return `<img src="${escapeHtml(path)}" loading="lazy" alt="">`;
+}
+function optionHtml(row) {
+  const options = Array.isArray(row.options) ? row.options : [];
+  return `<div class="options">${options.map((opt, idx) => {
+    const label = labels[idx] || String(idx + 1);
+    const cls = label === row.answer_label ? 'option answer' : 'option';
+    return `<div class="${cls}"><span>${label}</span><b>${escapeHtml(opt)}</b></div>`;
+  }).join('')}</div>`;
+}
+function selectedCard(row) {
+  const sample = row.sample || {};
+  return `<article class="qa-card" data-cell="${escapeHtml(row.cell)}" data-task="${escapeHtml(row.task_id)}">
+    <section class="visuals">
+      <figure><figcaption>原图</figcaption>${imgTag(sample.original, '原图')}</figure>
+      <figure><figcaption>spec 渲染</figcaption>${imgTag(sample.render, '渲染图')}</figure>
+    </section>
+    <section class="qa-body">
+      <div class="meta-line">
+        <span class="pill good">${escapeHtml(row.cell)}</span>
+        <span class="pill">${escapeHtml(row.GQ_label || row.gq)}</span>
+        <span class="pill">${escapeHtml(row.task_id)}</span>
+        <span class="pill">${escapeHtml(row.level || '')}</span>
+      </div>
+      <div class="title">${escapeHtml(sample.title || row.sample_id)} · ${escapeHtml(row.content_type || '')}</div>
+      <div class="question">${escapeHtml(row.question)}</div>
+      ${optionHtml(row)}
+      <div class="answer">答案：<strong>${escapeHtml(row.answer_label ? row.answer_label + '. ' : '')}${escapeHtml(row.answer)}</strong></div>
+      <details>
+        <summary>evidence / validator / render_request</summary>
+        <pre>${escapeHtml(pretty({
+          sample_id: row.sample_id,
+          evidence: row.evidence,
+          validator: row.validator,
+          render_request: row.render_request,
+          sample_counts: sample.counts
+        }))}</pre>
+      </details>
+    </section>
+  </article>`;
+}
+function renderStats() {
+  const counts = summary.counts || {};
+  const items = [
+    ['records_seen', counts.records_seen],
+    ['raw_qa', counts.raw_qa],
+    ['valid_qa', counts.valid_qa],
+    ['final_mc_qa', counts.final_mc_qa],
+    ['MC 覆盖 cell', `${summary.covered_cells_final_mc}/42`],
+    ['耗时', `${summary.elapsed_sec}s`],
+  ];
+  document.getElementById('stats').innerHTML = items.map(([label, value]) =>
+    `<div class="stat"><b>${escapeHtml(value)}</b><span>${escapeHtml(label)}</span></div>`
+  ).join('');
+}
+function renderMatrix() {
+  const counts = summary.cell_counts_final_mc || {};
+  let html = '<div class="cell head"></div>';
+  for (let gq = 1; gq <= 7; gq++) html += `<div class="cell head">GQ${gq}</div>`;
+  for (let se = 0; se <= 5; se++) {
+    html += `<div class="cell head">SE${se}</div>`;
+    for (let gq = 1; gq <= 7; gq++) {
+      const cell = `SE${se}-GQ${gq}`;
+      const count = counts[cell] || 0;
+      const cls = count ? 'cell data' : 'cell data empty';
+      html += `<div class="${cls}" data-cell="${cell}"><div class="count">${count}</div><div class="label">${cell}</div></div>`;
+    }
+  }
+  document.getElementById('matrix').innerHTML = html;
+}
+function populateFilters() {
+  const cells = Array.from(new Set(allRows.map(r => r.cell).filter(Boolean))).sort();
+  const tasks = Array.from(new Set(allRows.map(r => r.task_id).filter(Boolean))).sort();
+  cellFilter.innerHTML = '<option value="all">全部 cell</option>' + cells.map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
+  taskFilter.innerHTML = '<option value="all">全部 task</option>' + tasks.map(t => `<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join('');
+}
+function renderSelected() {
+  const filtered = selectedRows.filter(visibleByFilters);
+  document.getElementById('selectedCount').textContent = `${filtered.length}/${selectedRows.length}`;
+  document.getElementById('selectedGrid').innerHTML = filtered.map(selectedCard).join('');
+}
+function renderAllTable() {
+  const filtered = allRows.filter(visibleByFilters);
+  document.getElementById('allCount').textContent = `${filtered.length}/${allRows.length}`;
+  const head = '<thead><tr><th>cell</th><th>task</th><th>题目</th><th>选项</th><th>答案</th></tr></thead>';
+  const body = filtered.slice(0, 1200).map(row => `<tr>
+    <td>${escapeHtml(row.cell)}</td>
+    <td>${escapeHtml(row.task_id)}<br><span style="color:#647181">${escapeHtml(row.content_type || '')}</span></td>
+    <td class="question-cell">${escapeHtml(row.question)}</td>
+    <td>${(row.options || []).map((o, i) => `${labels[i] || i + 1}. ${escapeHtml(o)}`).join('<br>')}</td>
+    <td><b>${escapeHtml(row.answer_label || '')}</b> ${escapeHtml(row.answer)}</td>
+  </tr>`).join('');
+  document.getElementById('allTable').innerHTML = head + `<tbody>${body}</tbody>`;
+}
+function renderBadTable() {
+  const reasons = summary.invalid_reasons || {};
+  const rows = Object.entries(reasons).sort((a, b) => b[1] - a[1]);
+  const head = '<thead><tr><th>count</th><th>reason</th></tr></thead>';
+  const body = rows.map(([reason, count]) => `<tr><td><b>${count}</b></td><td>${escapeHtml(reason)}</td></tr>`).join('');
+  document.getElementById('badTable').innerHTML = head + `<tbody>${body}</tbody>`;
+}
+function refresh() {
+  activeCell = cellFilter.value;
+  document.querySelectorAll('.cell.data').forEach(node => node.classList.toggle('active', node.dataset.cell === activeCell));
+  renderSelected();
+  renderAllTable();
+}
+document.querySelector('.tabs').addEventListener('click', event => {
+  const tab = event.target.closest('[data-view]');
+  if (!tab) return;
+  activeView = tab.dataset.view;
+  document.querySelectorAll('.tab[data-view]').forEach(btn => btn.classList.toggle('active', btn === tab));
+  document.querySelectorAll('.view').forEach(view => view.classList.toggle('active', view.id === activeView));
+});
+document.getElementById('matrix').addEventListener('click', event => {
+  const node = event.target.closest('[data-cell]');
+  if (!node) return;
+  cellFilter.value = node.dataset.cell;
+  refresh();
+  document.getElementById('selectedView').scrollIntoView({behavior: 'smooth', block: 'start'});
+});
+document.getElementById('clearCell').addEventListener('click', () => {
+  cellFilter.value = 'all';
+  refresh();
+});
+search.addEventListener('input', refresh);
+cellFilter.addEventListener('change', refresh);
+taskFilter.addEventListener('change', refresh);
+renderStats();
+renderMatrix();
+populateFilters();
+renderBadTable();
+refresh();
+</script>
+</body>
+</html>
