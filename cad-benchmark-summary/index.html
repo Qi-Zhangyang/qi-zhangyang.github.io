@@ -268,8 +268,8 @@
           ["X3-High-288-Z", "73.122%"],
           ["Gemini 3.5 Flash", "64.346%"]
         ],
-        caveat: "四模型均为 CAD-Bench v1 full 100；Kimi/Gemini 为本地 Harbor run，GPT-5.5/X3 为平台 raw/full run，评分脚本一致但运行基础设施不同。",
-        detail: "Kimi combined 比 GPT-5.5 高 1.32 pp；GPT-5.5 的 spec 最高，X3 的 geometry 最高但 spec 较低。GPT-5.5 与 X3 均为 100/100、0 bad/timeout。"
+        caveat: "四模型均为 CAD-Bench v1 full 100；这里比较的是 model + mini-swe-agent，不是裸模型，也不是官方 gpt-5.5 + Codex row。Kimi/Gemini 为本地 Harbor run，GPT-5.5/X3 为平台 raw/full run，评分脚本一致但运行基础设施不同。",
+        detail: "Kimi combined 比 GPT-5.5 高 1.32 pp；GPT-5.5 的 spec 最高，X3 的 geometry 最高但 spec 较低。Combined 不是简单平均 Geom/Spec，而是逐题 geometry/specification harmonic mean 后再平均；因此 X3 虽 geometry 最高但 spec 低会被拉低，GPT-5.5 虽 spec 最高但 geometry 略低且 perfect 少。这个差距应表述为一次 full-run 的 agentic CAD 结果，不代表绝对模型排序。"
       },
       {
         name: "CadGenBench",
