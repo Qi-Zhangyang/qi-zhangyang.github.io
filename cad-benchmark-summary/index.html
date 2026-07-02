@@ -223,7 +223,7 @@
   <main>
     <section class="panel pad">
       <h2>TLDR</h2>
-      <p>GPT-5.5 在补测项里整体最强；X3-High-288-Z 在 3DCodeBench text_to_3d 与 GPT-5.5 并列第一，在 image_to_3d 排第二；Kimi K2.6 在 CAD-Bench 当前两模型口径下领先。</p>
+      <p>GPT-5.5 在补测项里整体最强；CAD-Bench 补入 GPT-5.5 与 X3-High-288-Z 后，Kimi K2.6 仍以 76.996% 小幅第一，GPT-5.5 75.678% 紧随，X3-High-288-Z 为 73.122%。</p>
       <div class="facts">
         <div class="fact"><span>Benchmark</span><strong>6 项 CAD/3D 任务</strong></div>
         <div class="fact"><span>样本口径累计</span><strong>1172 条</strong></div>
@@ -260,14 +260,16 @@
         name: "CAD-Bench / cadbench.ai",
         split: "100 FreeCAD tasks",
         metric: "combined score; geometry + specification",
-        winner: "Kimi K2.6 领先",
+        winner: "Kimi K2.6 小幅领先",
         cls: "kimi",
         scores: [
           ["Kimi K2.6", "76.996%"],
+          ["GPT-5.5", "75.678%"],
+          ["X3-High-288-Z", "73.122%"],
           ["Gemini 3.5 Flash", "64.346%"]
         ],
-        caveat: "当前只包含 Kimi/Gemini 两模型本地完整口径；未纳入 GPT-5.5 / X3。",
-        detail: "同一 benchmark、同一 full split、同一 scoring pipeline 下可比。Kimi 的优势主要来自 geometry score。"
+        caveat: "四模型均为 CAD-Bench v1 full 100；Kimi/Gemini 为本地 Harbor run，GPT-5.5/X3 为平台 raw/full run，评分脚本一致但运行基础设施不同。",
+        detail: "Kimi combined 比 GPT-5.5 高 1.32 pp；GPT-5.5 的 spec 最高，X3 的 geometry 最高但 spec 较低。GPT-5.5 与 X3 均为 100/100、0 bad/timeout。"
       },
       {
         name: "CadGenBench",
