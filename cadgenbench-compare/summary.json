@@ -1,0 +1,266 @@
+{
+  "generated_at": "2026-07-02 02:28:19",
+  "n_samples": 81,
+  "local_metrics_note": "Local metric is CADGenBench sanity-check validity (valid + watertight STEP) only. Final CAD Score requires the official leaderboard because ground truth is private. Models use the same protocol: raw pass (generic prompt) + repair pass (constrained build123d prompt + previous-error feedback); best-of picks repair when valid else raw.",
+  "models": {
+    "gemini": {
+      "raw": {
+        "counts": {
+          "valid": 17,
+          "code_error": 60,
+          "model_error": 3,
+          "invalid": 1
+        },
+        "validity_rate": 0.20987654320987653,
+        "n_valid": 17
+      },
+      "repair": {
+        "counts": {
+          "missing": 17,
+          "valid": 48,
+          "code_error": 5,
+          "invalid": 11
+        },
+        "validity_rate": 0.5925925925925926,
+        "n_valid": 48
+      },
+      "best": {
+        "counts": {
+          "valid": 65,
+          "code_error": 5,
+          "invalid": 11
+        },
+        "source_counts": {
+          "raw": 17,
+          "repair": 48,
+          "none": 16
+        },
+        "validity_rate": 0.8024691358024691,
+        "n_valid": 65,
+        "by_task_type": {
+          "editing": {
+            "counts": {
+              "valid": 25,
+              "invalid": 3,
+              "code_error": 4
+            },
+            "validity_rate": 0.78125,
+            "n_samples": 32
+          },
+          "generation": {
+            "counts": {
+              "valid": 40,
+              "code_error": 1,
+              "invalid": 8
+            },
+            "validity_rate": 0.8163265306122449,
+            "n_samples": 49
+          }
+        }
+      },
+      "n_samples": 81,
+      "label": "Gemini 3.5 Flash"
+    },
+    "kimi": {
+      "raw": {
+        "counts": {
+          "valid": 32,
+          "code_error": 47,
+          "invalid": 2
+        },
+        "validity_rate": 0.3950617283950617,
+        "n_valid": 32
+      },
+      "repair": {
+        "counts": {
+          "missing": 32,
+          "valid": 30,
+          "invalid": 9,
+          "code_error": 10
+        },
+        "validity_rate": 0.37037037037037035,
+        "n_valid": 30
+      },
+      "best": {
+        "counts": {
+          "valid": 62,
+          "invalid": 9,
+          "code_error": 10
+        },
+        "source_counts": {
+          "raw": 32,
+          "repair": 30,
+          "none": 19
+        },
+        "validity_rate": 0.7654320987654321,
+        "n_valid": 62,
+        "by_task_type": {
+          "editing": {
+            "counts": {
+              "valid": 21,
+              "code_error": 6,
+              "invalid": 5
+            },
+            "validity_rate": 0.65625,
+            "n_samples": 32
+          },
+          "generation": {
+            "counts": {
+              "valid": 41,
+              "invalid": 4,
+              "code_error": 4
+            },
+            "validity_rate": 0.8367346938775511,
+            "n_samples": 49
+          }
+        }
+      },
+      "n_samples": 81,
+      "label": "Kimi K2.6"
+    },
+    "x3": {
+      "raw": {
+        "counts": {
+          "valid": 26,
+          "code_error": 51,
+          "model_error": 1,
+          "invalid": 3
+        },
+        "validity_rate": 0.32098765432098764,
+        "n_valid": 26
+      },
+      "repair": {
+        "counts": {
+          "missing": 26,
+          "valid": 41,
+          "invalid": 8,
+          "code_error": 5,
+          "model_error": 1
+        },
+        "validity_rate": 0.5061728395061729,
+        "n_valid": 41
+      },
+      "best": {
+        "counts": {
+          "valid": 67,
+          "invalid": 8,
+          "code_error": 5,
+          "model_error": 1
+        },
+        "source_counts": {
+          "raw": 26,
+          "repair": 41,
+          "none": 14
+        },
+        "validity_rate": 0.8271604938271605,
+        "n_valid": 67,
+        "by_task_type": {
+          "editing": {
+            "counts": {
+              "valid": 28,
+              "model_error": 1,
+              "code_error": 2,
+              "invalid": 1
+            },
+            "validity_rate": 0.875,
+            "n_samples": 32
+          },
+          "generation": {
+            "counts": {
+              "valid": 39,
+              "invalid": 7,
+              "code_error": 3
+            },
+            "validity_rate": 0.7959183673469388,
+            "n_samples": 49
+          }
+        }
+      },
+      "n_samples": 81,
+      "label": "X3"
+    },
+    "gpt55": {
+      "raw": {
+        "counts": {
+          "code_error": 36,
+          "valid": 36,
+          "invalid": 9
+        },
+        "validity_rate": 0.4444444444444444,
+        "n_valid": 36
+      },
+      "repair": {
+        "counts": {
+          "valid": 35,
+          "missing": 36,
+          "invalid": 8,
+          "code_error": 2
+        },
+        "validity_rate": 0.43209876543209874,
+        "n_valid": 35
+      },
+      "best": {
+        "counts": {
+          "valid": 71,
+          "invalid": 8,
+          "code_error": 2
+        },
+        "source_counts": {
+          "repair": 35,
+          "raw": 36,
+          "none": 10
+        },
+        "validity_rate": 0.8765432098765432,
+        "n_valid": 71,
+        "by_task_type": {
+          "editing": {
+            "counts": {
+              "valid": 29,
+              "code_error": 1,
+              "invalid": 2
+            },
+            "validity_rate": 0.90625,
+            "n_samples": 32
+          },
+          "generation": {
+            "counts": {
+              "valid": 42,
+              "invalid": 6,
+              "code_error": 1
+            },
+            "validity_rate": 0.8571428571428571,
+            "n_samples": 49
+          }
+        }
+      },
+      "n_samples": 81,
+      "label": "GPT-5.5"
+    }
+  },
+  "diff_gemini_best_vs_kimi_best": {
+    "both_valid": 51,
+    "gemini_only": 14,
+    "kimi_only": 11,
+    "both_fail": 5
+  },
+  "diff_best_pairs": {
+    "gemini_vs_kimi": {
+      "both_valid": 51,
+      "gemini_only": 14,
+      "kimi_only": 11,
+      "both_fail": 5
+    },
+    "x3_vs_gemini": {
+      "both_valid": 52,
+      "gemini_only": 13,
+      "x3_only": 15,
+      "both_fail": 1
+    },
+    "x3_vs_kimi": {
+      "both_valid": 56,
+      "x3_only": 11,
+      "kimi_only": 6,
+      "both_fail": 8
+    }
+  }
+}
