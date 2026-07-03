@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-07-02T17:50:48Z",
+  "elapsed_sec": 42.69,
+  "category": "单体",
+  "samples_requested": 1000,
+  "samples_written": 1000,
+  "local_danti_ids": 1645,
+  "local_image_ids": 5574,
+  "candidate_danti_local_ids": 1645,
+  "matched_clean_specs": 1224,
+  "normal_samples": 667,
+  "abnormal_samples": 333,
+  "seed": 260702,
+  "spec_path": "/home/qizhangyang/soutu_792w_spec_quality_zh_sanitized_lowercase_no_orphan_v6_stream/clean_specs.jsonl.gz",
+  "image_root": "/home/qizhangyang/soutu_792w_clean_images_local_smoke",
+  "template": "/home/qizhangyang/soutu_792w_v6_spec_filter_review/index.html",
+  "labels_policy": "spec.labels intentionally omitted from viewer; structure only by default",
+  "selection_policy": "local smoke image cache ∩ danti category WDS ids ∩ v6 no-orphan clean_specs"
+}
