@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-07-03T04:11:23Z",
+  "total": 1000,
+  "hit_count": 166,
+  "keyword_count": 162,
+  "struct_count": 53,
+  "marked_bad_hits": 3,
+  "rule": "keyword OR vertices>=40 AND (faces>=12 OR aux_lines>=25 OR primitives>=10); aux_lines>=80/primitives>=20 are explanation tags only",
+  "source": "/home/qizhangyang/soutu_792w_v6_danti_spec_review/manifest.json"
+}

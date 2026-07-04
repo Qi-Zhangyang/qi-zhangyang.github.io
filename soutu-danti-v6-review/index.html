@@ -16,7 +16,7 @@ header{position:sticky;top:0;z-index:20;background:var(--panel);border-bottom:1p
   <header>
     <div><h1>Soutu v6 单体 Spec · 滚动原图-结构预览</h1><div class="sub" id="summary">单体 ∩ v6 no-orphan clean · 默认只看闭合/正常 spec · spec.labels 默认不渲染</div></div>
     <div class="search"><input id="search" placeholder="Search title / id"></div>
-    <div class="pager"><div class="mode" role="group" aria-label="quality filter"><button data-mode="normal" data-active="true">正常</button><button data-mode="bad">异常</button><button data-mode="all">全部</button></div><span id="pageInfo"></span><div class="mark-tools"><button id="syncMarks" type="button">同步</button><button id="exportMarks" type="button">导出</button><span id="markStatus" class="mark-status"></span></div></div>
+    <div class="pager"><div class="mode" role="group" aria-label="quality filter"><button data-mode="normal" data-active="true">正常</button><button data-mode="bad">异常</button><button data-mode="all">全部</button></div><span id="pageInfo"></span><div class="mark-tools"><button id="syncMarks" type="button">同步</button><button id="copyMarksCode" type="button">复制标记码</button><button id="exportMarks" type="button">导出</button><span id="markStatus" class="mark-status"></span></div></div>
   </header>
   <main id="grid" class="grid"></main>
   <div id="sentinel" class="load-more">向下滚动继续加载</div>
@@ -51,7 +51,7 @@ function markCounts(){const counts={keep:0,bad:0,todo:0,total:0};for(const mark 
 function setStatus(text,bad=false){if(!markStatus)return;markStatus.textContent=text;markStatus.dataset.bad=String(!!bad)}
 function markedPayload(){const samples={};for(const [id,mark] of Object.entries(marks)){if(!mark)continue;const s=sampleById.get(id);samples[id]={mark,index:s?.index,id,title:s?.title||'',meta:s?.meta||'',category:s?.category||'单体',stats:s?.stats||{},statsText:s?.statsText||'',quality:s?.quality||{},original:s?.original||'',specImage:s?.specImage||''}}return {slug:'spec-danti-v6',updatedAt:new Date().toISOString(),counts:markCounts(),marks,samples}}
 let saveTimer=0;
-async function saveMarksNow(){clearTimeout(saveTimer);const payload=markedPayload();if(STATIC_HOST){setStatus(`本地已保存 ${payload.counts.total}（公网版不回传，需要时用导出按钮）`);return;}try{const res=await fetch(marksApi,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});if(!res.ok)throw new Error(String(res.status));setStatus(`已同步 ${payload.counts.total}`)}catch(e){setStatus('同步失败',true)}}
+async function saveMarksNow(){clearTimeout(saveTimer);const payload=markedPayload();if(STATIC_HOST){setStatus(`本地已保存 ${payload.counts.total}（公网版不回传，点 复制标记码 发给机器人）`);return;}try{const res=await fetch(marksApi,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});if(!res.ok)throw new Error(String(res.status));setStatus(`已同步 ${payload.counts.total}`)}catch(e){setStatus('同步失败',true)}}
 function scheduleSave(){setStatus('待同步');clearTimeout(saveTimer);saveTimer=setTimeout(saveMarksNow,450)}
 async function loadServerMarks(){if(STATIC_HOST)return;try{const res=await fetch(marksApi,{cache:'no-store'});if(!res.ok)return;const data=await res.json();const remote=data&&typeof data.marks==='object'?data.marks:{};marks={...remote,...marks};localStorage.setItem(marksKey,JSON.stringify(marks));resetList(false);setStatus(`已载入 ${markCounts().total}`)}catch{}}
 function exportMarksFile(){const payload=markedPayload();const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`spec-danti-v6-marks-${new Date().toISOString().replace(/[:.]/g,'-')}.json`;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url)}
@@ -77,6 +77,11 @@ window.addEventListener('resize',maybeLoadMore,{passive:true});
 resetList(false);
 loadServerMarks();
 
+
+const MARKS_PAGE='danti-v6';
+function buildMarksCode(){const byId=(typeof sampleById!=='undefined')?sampleById:new Map((typeof SAMPLES!=='undefined'?SAMPLES:[]).map(s=>[s.id,s]));const idx={bad:[],keep:[],todo:[]};for(const [id,mark] of Object.entries(marks)){if(!mark||!idx[mark])continue;const s=byId.get(id);idx[mark].push(s&&Number.isInteger(s.index)?s.index:id)}for(const k of Object.keys(idx))idx[k].sort((a,b)=>String(a).localeCompare(String(b),undefined,{numeric:true}));const payload={v:1,page:MARKS_PAGE,slug:'spec-danti-v6',t:new Date().toISOString(),idx};return 'DANTI1.'+btoa(unescape(encodeURIComponent(JSON.stringify(payload))))}
+async function copyMarksCode(){const code=buildMarksCode();let ok=false;try{await navigator.clipboard.writeText(code);ok=true}catch(e){}if(ok){setStatus('标记码已复制，去飞书粘贴发给机器人即可')}else{window.prompt('长按全选复制标记码，发给飞书机器人：',code)}}
+document.getElementById('copyMarksCode')&&document.getElementById('copyMarksCode').addEventListener('click',copyMarksCode);
 </script>
 </body>
 </html>
