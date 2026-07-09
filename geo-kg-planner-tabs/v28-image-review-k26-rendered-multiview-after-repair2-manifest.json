@@ -2,7 +2,7 @@
   "center_proj_collinearity__S011": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/center_proj_collinearity__S011/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S011/00_current_enhanced.png",
       "camera": {
         "position": [
           1.935,
@@ -43,7 +43,7 @@
   "acute_dihedral__S013": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S013/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S013/00_current_enhanced.png",
       "camera": {
         "position": [
           6.444,
@@ -84,7 +84,7 @@
   "archimedean_solid_recognition__S011": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/archimedean_solid_recognition__S011/cand1_run2/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/archimedean_solid_recognition__S011/00_current_enhanced.png",
       "camera": {
         "position": [
           10.261,
@@ -125,7 +125,7 @@
   "center_proj_collinearity__S003": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/center_proj_collinearity__S003/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S003/00_current_enhanced.png",
       "camera": {
         "position": [
           21.639,
@@ -166,7 +166,7 @@
   "cross_section_sphere__S015": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/cross_section_sphere__S015/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/cross_section_sphere__S015/00_current_enhanced.png",
       "camera": {
         "position": [
           10.299,
@@ -207,7 +207,7 @@
   "archimedean_solid_recognition__S015": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/archimedean_solid_recognition__S015/cand1_run1/sample_0.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/archimedean_solid_recognition__S015/00_current_enhanced.png",
       "camera": {
         "position": [
           5.192,
@@ -248,7 +248,7 @@
   "archimedean_solid_recognition__S004": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/archimedean_solid_recognition__S004/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/archimedean_solid_recognition__S004/00_current_enhanced.png",
       "camera": {
         "position": [
           11.428,
@@ -289,7 +289,7 @@
   "solid3d_spatial_tangent_external__S006": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/solid3d_spatial_tangent_external__S006/cand1_run1/sample_0.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S006/00_current_enhanced.png",
       "camera": {
         "position": [
           4.547,
@@ -330,7 +330,7 @@
   "solid3d_spatial_tangent_external__S012": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/solid3d_spatial_tangent_external__S012/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S012/00_current_enhanced.png",
       "camera": {
         "position": [
           4.67,
@@ -371,7 +371,7 @@
   "solid3d_spatial_tangent_external__S020": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/solid3d_spatial_tangent_external__S020/cand1_run1/sample_0.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S020/00_current_enhanced.png",
       "camera": {
         "position": [
           8.628,
@@ -412,7 +412,7 @@
   "cross_section_sphere__S003": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/cross_section_sphere__S003/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/cross_section_sphere__S003/00_current_enhanced.png",
       "camera": {
         "position": [
           6.941,
@@ -474,7 +474,7 @@
   "solid3d_spatial_tangent_external__S015": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/solid3d_spatial_tangent_external__S015/cand1_run1/sample_0.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S015/00_current_enhanced.png",
       "camera": {
         "position": [
           6.692,
@@ -515,7 +515,7 @@
   "solid3d_spatial_tangent_external__S013": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/solid3d_spatial_tangent_external__S013/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S013/00_current_enhanced.png",
       "camera": {
         "position": [
           11.063,
@@ -556,7 +556,7 @@
   "solid3d_spatial_tangent_external__S001": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/solid3d_spatial_tangent_external__S001/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S001/00_current_enhanced.png",
       "camera": {
         "position": [
           5.767,
@@ -597,7 +597,7 @@
   "acute_dihedral__S014": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/acute_dihedral__S014/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S014/00_current_enhanced.png",
       "camera": {
         "position": [
           4.559,
@@ -638,7 +638,7 @@
   "cross_section_sphere__S011": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/cross_section_sphere__S011/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/cross_section_sphere__S011/00_current_enhanced.png",
       "camera": {
         "position": [
           6.641,
@@ -679,7 +679,7 @@
   "acute_dihedral__S009": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S009/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S009/00_current_enhanced.png",
       "camera": {
         "position": [
           3.245,
@@ -720,7 +720,7 @@
   "acute_dihedral__S010": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S010/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S010/00_current_enhanced.png",
       "camera": {
         "position": [
           12.521,
@@ -761,7 +761,7 @@
   "acute_dihedral__S017": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/acute_dihedral__S017/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S017/00_current_enhanced.png",
       "camera": {
         "position": [
           7.148,
@@ -802,7 +802,7 @@
   "solid3d_spatial_tangent_external__S016": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/solid3d_spatial_tangent_external__S016/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S016/00_current_enhanced.png",
       "camera": {
         "position": [
           8.327,
@@ -843,7 +843,7 @@
   "acute_dihedral__S002": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S002/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S002/00_current_enhanced.png",
       "camera": {
         "position": [
           6.079,
@@ -884,7 +884,7 @@
   "cross_section_sphere__S019": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/cross_section_sphere__S019/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/cross_section_sphere__S019/00_current_enhanced.png",
       "camera": {
         "position": [
           4.0,
@@ -925,7 +925,7 @@
   "cross_section_sphere__S007": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/cross_section_sphere__S007/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/cross_section_sphere__S007/00_current_enhanced.png",
       "camera": {
         "position": [
           8.916,
@@ -966,7 +966,7 @@
   "archimedean_solid_recognition__S008": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/archimedean_solid_recognition__S008/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/archimedean_solid_recognition__S008/00_current_enhanced.png",
       "camera": {
         "position": [
           8.156,
@@ -1007,7 +1007,7 @@
   "cross_section_sphere__S006": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/cross_section_sphere__S006/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/cross_section_sphere__S006/00_current_enhanced.png",
       "camera": {
         "position": [
           7.584,
@@ -1069,7 +1069,7 @@
   "cross_section_sphere__S010": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/cross_section_sphere__S010/cand1_run1/sample_0.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/cross_section_sphere__S010/00_current_enhanced.png",
       "camera": {
         "position": [
           12.616,
@@ -1110,7 +1110,7 @@
   "cross_section_sphere__S005": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/cross_section_sphere__S005/cand1_run1/sample_0.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/cross_section_sphere__S005/00_current_enhanced.png",
       "camera": {
         "position": [
           18.886,
@@ -1151,7 +1151,7 @@
   "acute_dihedral__S003": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S003/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S003/00_current_enhanced.png",
       "camera": {
         "position": [
           5.657,
@@ -1192,7 +1192,7 @@
   "archimedean_solid_recognition__S020": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/archimedean_solid_recognition__S020/cand1_run1/sample_0.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/archimedean_solid_recognition__S020/00_current_enhanced.png",
       "camera": {
         "position": [
           8.48,
@@ -1233,7 +1233,7 @@
   "acute_dihedral__S019": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S019/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S019/00_current_enhanced.png",
       "camera": {
         "position": [
           6.422,
@@ -1274,7 +1274,7 @@
   "archimedean_solid_recognition__S012": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/archimedean_solid_recognition__S012/cand1_run1/sample_0.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/archimedean_solid_recognition__S012/00_current_enhanced.png",
       "camera": {
         "position": [
           6.491,
@@ -1336,7 +1336,7 @@
   "archimedean_solid_recognition__S002": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/archimedean_solid_recognition__S002/cand1_run1/sample_0.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/archimedean_solid_recognition__S002/00_current_enhanced.png",
       "camera": {
         "position": [
           5.253,
@@ -1377,7 +1377,7 @@
   "solid3d_spatial_tangent_external__S011": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/solid3d_spatial_tangent_external__S011/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S011/00_current_enhanced.png",
       "camera": {
         "position": [
           19.134,
@@ -1439,7 +1439,7 @@
   "acute_dihedral__S012": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S012/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S012/00_current_enhanced.png",
       "camera": {
         "position": [
           6.006,
@@ -1480,7 +1480,7 @@
   "archimedean_solid_recognition__S014": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/archimedean_solid_recognition__S014/cand1_run1/sample_0.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/archimedean_solid_recognition__S014/00_current_enhanced.png",
       "camera": {
         "position": [
           5.774,
@@ -1521,7 +1521,7 @@
   "acute_dihedral__S020": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S020/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S020/00_current_enhanced.png",
       "camera": {
         "position": [
           13.455,
@@ -1583,7 +1583,7 @@
   "center_proj_collinearity__S010": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/center_proj_collinearity__S010/cand1_run1/sample_0.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S010/00_current_enhanced.png",
       "camera": {
         "position": [
           8.588,
@@ -1624,7 +1624,7 @@
   "center_proj_collinearity__S007": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/center_proj_collinearity__S007/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S007/00_current_enhanced.png",
       "camera": {
         "position": [
           9.312,
@@ -1665,7 +1665,7 @@
   "acute_dihedral__S016": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S016/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S016/00_current_enhanced.png",
       "camera": {
         "position": [
           9.015,
@@ -1727,7 +1727,7 @@
   "center_proj_collinearity__S018": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/center_proj_collinearity__S018/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S018/00_current_enhanced.png",
       "camera": {
         "position": [
           1.872,
@@ -1768,7 +1768,7 @@
   "acute_dihedral__S004": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S004/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S004/00_current_enhanced.png",
       "camera": {
         "position": [
           10.372,
@@ -1830,7 +1830,7 @@
   "center_proj_collinearity__S009": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/center_proj_collinearity__S009/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S009/00_current_enhanced.png",
       "camera": {
         "position": [
           3.506,
@@ -1913,7 +1913,7 @@
   "center_proj_collinearity__S014": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/center_proj_collinearity__S014/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S014/00_current_enhanced.png",
       "camera": {
         "position": [
           15.739,
@@ -1954,7 +1954,7 @@
   "archimedean_solid_recognition__S006": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/archimedean_solid_recognition__S006/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/archimedean_solid_recognition__S006/00_current_enhanced.png",
       "camera": {
         "position": [
           4.923,
@@ -1995,7 +1995,7 @@
   "acute_dihedral__S006": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/acute_dihedral__S006/cand1_run1/sample_0.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S006/00_current_enhanced.png",
       "camera": {
         "position": [
           11.025,
@@ -2036,7 +2036,7 @@
   "acute_dihedral__S018": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/acute_dihedral__S018/cand1_run1/sample_0.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S018/00_current_enhanced.png",
       "camera": {
         "position": [
           6.266,
@@ -2098,7 +2098,7 @@
   "solid3d_spatial_tangent_external__S002": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/solid3d_spatial_tangent_external__S002/cand1_run1/sample_0.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S002/00_current_enhanced.png",
       "camera": {
         "position": [
           4.746,
@@ -2139,7 +2139,7 @@
   "solid3d_spatial_tangent_external__S014": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/solid3d_spatial_tangent_external__S014/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S014/00_current_enhanced.png",
       "camera": {
         "position": [
           8.323,
@@ -2201,7 +2201,7 @@
   "center_proj_collinearity__S019": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/center_proj_collinearity__S019/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S019/00_current_enhanced.png",
       "camera": {
         "position": [
           1.515,
@@ -2263,7 +2263,7 @@
   "center_proj_collinearity__S002": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/center_proj_collinearity__S002/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S002/00_current_enhanced.png",
       "camera": {
         "position": [
           7.933,
@@ -2304,7 +2304,7 @@
   "cross_section_sphere__S001": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/cross_section_sphere__S001/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/cross_section_sphere__S001/00_current_enhanced.png",
       "camera": {
         "position": [
           12.959,
@@ -2345,7 +2345,7 @@
   "center_proj_collinearity__S017": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/center_proj_collinearity__S017/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S017/00_current_enhanced.png",
       "camera": {
         "position": [
           13.281,
@@ -2386,7 +2386,7 @@
   "acute_dihedral__S008": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S008/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S008/00_current_enhanced.png",
       "camera": {
         "position": [
           6.81,
@@ -2427,7 +2427,7 @@
   "acute_dihedral__S007": [
     {
       "view_name": "current",
-      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/acute_dihedral__S007/cand1_run1/sample_0_clean.png",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S007/00_current_enhanced.png",
       "camera": {
         "position": [
           -5.453,
