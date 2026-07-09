@@ -1,0 +1,3835 @@
+{
+  "aggregate": {
+    "n": 100,
+    "pass": 100,
+    "fail": 0,
+    "avg_score": 9.852,
+    "avg_labels": 8.26,
+    "issue_counts": {
+      "answer_too_short": 14,
+      "option_count_3": 1,
+      "visual_complexity_low": 6,
+      "too_few_labels_2": 4
+    }
+  },
+  "worst": [
+    {
+      "id": "acute_dihedral__S007",
+      "cell_id": "acute_dihedral",
+      "item_id": "S007",
+      "ok": true,
+      "issues": [
+        "option_count_3"
+      ],
+      "score": 8.8,
+      "n_labels": 9,
+      "n_vertices": 9,
+      "n_aux": 2,
+      "n_faces": 7,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "B",
+        "N",
+        "P"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "N",
+        "P"
+      ],
+      "question": "如图，正三棱锥侧面 PA₁B₁ 与直三棱柱侧面 AA₁B₁B 所成的二面角 P-A₁B₁-B 属于（　）",
+      "answer_text": "钝二面角",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S015",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S015",
+      "ok": true,
+      "issues": [
+        "too_few_labels_2",
+        "answer_too_short"
+      ],
+      "score": 8.8,
+      "n_labels": 2,
+      "n_vertices": 152,
+      "n_aux": 16,
+      "n_faces": 13,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "O",
+        "O'"
+      ],
+      "label_symbols": [
+        "O"
+      ],
+      "question": "如图，平面α截由球与圆台组成的组合体。平面α与球面相交所形成的封闭曲线是什么形状？",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S017",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S017",
+      "ok": true,
+      "issues": [
+        "visual_complexity_low",
+        "answer_too_short"
+      ],
+      "score": 8.8,
+      "n_labels": 3,
+      "n_vertices": 91,
+      "n_aux": 1,
+      "n_faces": 0,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A",
+        "O",
+        "O'"
+      ],
+      "label_symbols": [
+        "A",
+        "O",
+        "O'"
+      ],
+      "question": "如图，平面α截球O所得的截面形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S001",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S001",
+      "ok": true,
+      "issues": [
+        "visual_complexity_low"
+      ],
+      "score": 9.2,
+      "n_labels": 8,
+      "n_vertices": 21,
+      "n_aux": 1,
+      "n_faces": 0,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A"
+      ],
+      "label_symbols": [
+        "A"
+      ],
+      "question": "如图，该多面体由正三角形和正方形两种正多边形围成，且每个顶点周围的面的排列方式相同。判断它是否为半正多面体，并指出其具体名称。",
+      "answer_text": "是半正多面体，为截半立方体（cuboctahedron）",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S003",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S003",
+      "ok": true,
+      "issues": [
+        "visual_complexity_low"
+      ],
+      "score": 9.2,
+      "n_labels": 5,
+      "n_vertices": 59,
+      "n_aux": 0,
+      "n_faces": 0,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "E",
+        "E'",
+        "F",
+        "F'",
+        "Q",
+        "S"
+      ],
+      "label_symbols": [
+        "E",
+        "F",
+        "S"
+      ],
+      "question": "如图，点光源S照射水平地面上的正四棱台与竖直圆柱组合体，两物体在地面形成重叠影子。根据中心投影共线性质，下列判断正确的是？",
+      "answer_text": "点光源S、棱台上底顶点E及其地面影子点E′三点共线，且直线SE与地面交点即为E′。",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S011",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S011",
+      "ok": true,
+      "issues": [
+        "visual_complexity_low"
+      ],
+      "score": 9.2,
+      "n_labels": 9,
+      "n_vertices": 107,
+      "n_aux": 0,
+      "n_faces": 0,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "A'",
+        "B",
+        "B'"
+      ],
+      "label_symbols": [
+        "A'",
+        "B'",
+        "O'",
+        "T'"
+      ],
+      "question": "如图，圆台与球相邻放置于地面，在中心投影下圆台顶端边缘点 A 的影子为 A′，球大圆最右端点 B 的影子为 B′。根据中心投影共线性质，判断 S1、S2、S3 中哪个点是真实的点光源位置？",
+      "answer_text": "S2",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S004",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S004",
+      "ok": true,
+      "issues": [
+        "too_few_labels_2"
+      ],
+      "score": 9.2,
+      "n_labels": 2,
+      "n_vertices": 201,
+      "n_aux": 196,
+      "n_faces": 0,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "O"
+      ],
+      "label_symbols": [
+        "O"
+      ],
+      "question": "如图，平面 β 截球 O 所得交线的真实形状是什么？关于截面圆圆心位置关系的正确描述是？",
+      "answer_text": "截面形状是圆；截面圆圆心 O₁ 与球心 O 不重合，且连线 OO₁ 垂直于平面 β。",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S008",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S008",
+      "ok": true,
+      "issues": [
+        "too_few_labels_2"
+      ],
+      "score": 9.2,
+      "n_labels": 2,
+      "n_vertices": 110,
+      "n_aux": 37,
+      "n_faces": 1,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "O"
+      ],
+      "label_symbols": [
+        "O"
+      ],
+      "question": "如图，平面 α 截球 O，图中实线所示为平面 α 与球面的交线。则该截面的形状及其圆心位置判断正确的是？",
+      "answer_text": "截面是圆，其圆心为 O1",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S012",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S012",
+      "ok": true,
+      "issues": [
+        "too_few_labels_2"
+      ],
+      "score": 9.2,
+      "n_labels": 2,
+      "n_vertices": 73,
+      "n_aux": 3,
+      "n_faces": 1,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "O",
+        "O'"
+      ],
+      "label_symbols": [
+        "O",
+        "O'"
+      ],
+      "question": "如图，平面 α 与球 O 相交，O' 是球心 O 在平面 α 上的垂足。关于所得截面的形状与位置，下列说法正确的是（ ）",
+      "answer_text": "截面是圆，圆心为 O'",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S004",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S004",
+      "ok": true,
+      "issues": [
+        "visual_complexity_low"
+      ],
+      "score": 9.2,
+      "n_labels": 7,
+      "n_vertices": 39,
+      "n_aux": 0,
+      "n_faces": 0,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "E",
+        "O",
+        "T"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "O",
+        "T"
+      ],
+      "question": "如图，观察图中球与圆台的空间位置关系，下列判断正确的是（ ）",
+      "answer_text": "外切",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S020",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S020",
+      "ok": true,
+      "issues": [
+        "visual_complexity_low"
+      ],
+      "score": 9.2,
+      "n_labels": 7,
+      "n_vertices": 188,
+      "n_aux": 0,
+      "n_faces": 0,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "O",
+        "P",
+        "T"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "O",
+        "P",
+        "T"
+      ],
+      "question": "如图，球心C位于直圆锥轴线上的球体与圆锥共轴放置，轴截面中球与母线PA相切于点T。关于两立体在空间中公共点的集合，下列说法正确的是（ ）",
+      "answer_text": "球与圆锥外切于一个圆（纬圆）",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S002",
+      "cell_id": "acute_dihedral",
+      "item_id": "S002",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 15,
+      "n_vertices": 23,
+      "n_aux": 12,
+      "n_faces": 5,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A",
+        "B",
+        "E",
+        "F",
+        "O",
+        "S"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "F",
+        "O",
+        "S"
+      ],
+      "question": "如图，用带数字的弧线标注了四个二面角的平面角，其中属于锐二面角的是（ ）",
+      "answer_text": "①",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S002",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S002",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 5,
+      "n_vertices": 147,
+      "n_aux": 73,
+      "n_faces": 0,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A",
+        "H",
+        "O",
+        "O'"
+      ],
+      "label_symbols": [
+        "A'",
+        "H'",
+        "O'"
+      ],
+      "question": "如图，平面α截球O所得的截面形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S003",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S003",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 4,
+      "n_vertices": 78,
+      "n_aux": 54,
+      "n_faces": 14,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A",
+        "B",
+        "O",
+        "O'"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "O",
+        "O'"
+      ],
+      "question": "如图，一个球内切于竖直圆台，一斜平面截此组合体并与球面相交形成封闭曲线。则该曲线所在的截面形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S006",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S006",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 13,
+      "n_vertices": 89,
+      "n_aux": 4,
+      "n_faces": 0,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "O",
+        "T"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "H",
+        "O",
+        "P",
+        "T"
+      ],
+      "question": "如图，球内接正方体 ABCD-A1B1C1D1，平面 α 经过上底面对角线 A1C1 及棱 AB 的中点 M，与球面相交形成封闭曲线。则平面 α 截球所得截面的形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S007",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S007",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 4,
+      "n_vertices": 51,
+      "n_aux": 2,
+      "n_faces": 0,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "H",
+        "O",
+        "T"
+      ],
+      "label_symbols": [
+        "H",
+        "O",
+        "T"
+      ],
+      "question": "如图，平面 α 截球 O 所得的截面形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S009",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S009",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 4,
+      "n_vertices": 47,
+      "n_aux": 3,
+      "n_faces": 1,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "O",
+        "O'",
+        "P"
+      ],
+      "label_symbols": [
+        "O",
+        "O'",
+        "P"
+      ],
+      "question": "如图，平面 α 与球 O 相交，所得截面的真实形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S010",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S010",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 12,
+      "n_vertices": 40,
+      "n_aux": 3,
+      "n_faces": 0,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "H",
+        "O",
+        "P",
+        "Q"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "H",
+        "O",
+        "P",
+        "Q"
+      ],
+      "question": "如图，球 O 内有一内接正方体（虚线为不可见棱及对角线），平面 α 截球 O 于点 P 等处，H 为球心 O 在平面 α 上的射影。则平面 α 截球 O 所得截面的形状是？",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S011",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S011",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 5,
+      "n_vertices": 52,
+      "n_aux": 6,
+      "n_faces": 14,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "H",
+        "O",
+        "P",
+        "R"
+      ],
+      "label_symbols": [
+        "H",
+        "O",
+        "P",
+        "R"
+      ],
+      "question": "如图，斜平面α截该球-圆台组合体并与球面相交形成一条封闭曲线，则该曲线的形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S013",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S013",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 7,
+      "n_vertices": 91,
+      "n_aux": 58,
+      "n_faces": 1,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A",
+        "O",
+        "O'",
+        "R"
+      ],
+      "label_symbols": [
+        "A",
+        "O",
+        "O'",
+        "R"
+      ],
+      "question": "如图，平面 α 截球 O 所得的截面形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S014",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S014",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 4,
+      "n_vertices": 109,
+      "n_aux": 4,
+      "n_faces": 0,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "H",
+        "O",
+        "P",
+        "T"
+      ],
+      "label_symbols": [
+        "H",
+        "O",
+        "P",
+        "T"
+      ],
+      "question": "如图，平面 α 截球 O 所得截面的形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S018",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S018",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 8,
+      "n_vertices": 62,
+      "n_aux": 5,
+      "n_faces": 1,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "E",
+        "F",
+        "H",
+        "O",
+        "P",
+        "Q"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "F",
+        "H",
+        "O"
+      ],
+      "question": "如图，平面 α 与球面相交所形成的截面的形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S019",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S019",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 8,
+      "n_vertices": 136,
+      "n_aux": 2,
+      "n_faces": 0,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "H",
+        "N",
+        "O",
+        "O'",
+        "P"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "H",
+        "N",
+        "O",
+        "O'",
+        "P"
+      ],
+      "question": "如图，倾斜平面 α 截该组合体中的球，所得截面的形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S001",
+      "cell_id": "acute_dihedral",
+      "item_id": "S001",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 7,
+      "n_vertices": 17,
+      "n_aux": 11,
+      "n_faces": 5,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "O",
+        "S"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "O",
+        "S"
+      ],
+      "question": "如图所示，正四棱锥侧面 SAB 与底面 ABCD 所成的二面角属于（ ）",
+      "answer_text": "锐二面角",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S003",
+      "cell_id": "acute_dihedral",
+      "item_id": "S003",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 14,
+      "n_vertices": 28,
+      "n_aux": 16,
+      "n_faces": 8,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "B",
+        "P"
+      ],
+      "label_symbols": [
+        "A'",
+        "B'",
+        "C'",
+        "P'"
+      ],
+      "question": "如图，正三棱柱$A_1B_1C_1-A_2B_2C_2$的上底面内接有正三棱锥$P-ABC$（顶点$P$在上底面上方，底面$ABC$位于上底面内且边长小于上底面）。记①二面角$P-AB-C$，②二面角$B-PA-C$，③二面角$C_1-A_1B_1-A$，④二面角$P-BC-B_1$。其中为锐二面角的是（ ）",
+      "answer_text": "①④",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S004",
+      "cell_id": "acute_dihedral",
+      "item_id": "S004",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 12,
+      "n_vertices": 18,
+      "n_aux": 7,
+      "n_faces": 6,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A",
+        "H",
+        "N",
+        "O",
+        "P"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "H",
+        "N",
+        "O",
+        "P"
+      ],
+      "question": "如图，关于平面DBC与底面ABC所成二面角的判断，正确的是（ ）。",
+      "answer_text": "该二面角为锐二面角",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S005",
+      "cell_id": "acute_dihedral",
+      "item_id": "S005",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 5,
+      "n_vertices": 23,
+      "n_aux": 14,
+      "n_faces": 4,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "P"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "P"
+      ],
+      "question": "如图，观察图中二面角 P-BC-A 的平面角，该角属于（ ）",
+      "answer_text": "锐角",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S006",
+      "cell_id": "acute_dihedral",
+      "item_id": "S006",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 12,
+      "n_vertices": 13,
+      "n_aux": 0,
+      "n_faces": 5,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "E",
+        "E'",
+        "F",
+        "F'",
+        "G",
+        "H",
+        "S",
+        "T"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "E'",
+        "F",
+        "F'",
+        "G",
+        "H",
+        "S",
+        "T"
+      ],
+      "question": "如图，在三棱锥 S-ABC 中，SA⊥平面 ABC，∠ABC=90°，图中给出了高线 BD、截面 AEF 及辅助球等构造。下列二面角中，属于锐二面角的是？",
+      "answer_text": "平面 SBC 与平面 ABC 所成的二面角",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S008",
+      "cell_id": "acute_dihedral",
+      "item_id": "S008",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 10,
+      "n_vertices": 10,
+      "n_aux": 3,
+      "n_faces": 5,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "B",
+        "H"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "H",
+        "K"
+      ],
+      "question": "如图，在斜三棱台 ABC-A₁B₁C₁ 中，观察各侧面与底面 ABC 所成的二面角，下列判断正确的是？",
+      "answer_text": "侧面 BCC₁B₁ 与底面 ABC 所成的二面角是锐二面角",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S009",
+      "cell_id": "acute_dihedral",
+      "item_id": "S009",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 5,
+      "n_vertices": 9,
+      "n_aux": 5,
+      "n_faces": 4,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "P"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "P"
+      ],
+      "question": "如图，在三棱锥 P-ABC 中，以 AB 为棱，侧面 PAB 与底面 ABC 所成二面角的平面角为 ∠PDC。观察图形，该二面角属于（　　）",
+      "answer_text": "锐二面角",
+      "pass": true
+    }
+  ],
+  "rows": [
+    {
+      "id": "acute_dihedral__S001",
+      "cell_id": "acute_dihedral",
+      "item_id": "S001",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 7,
+      "n_vertices": 17,
+      "n_aux": 11,
+      "n_faces": 5,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "O",
+        "S"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "O",
+        "S"
+      ],
+      "question": "如图所示，正四棱锥侧面 SAB 与底面 ABCD 所成的二面角属于（ ）",
+      "answer_text": "锐二面角",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S002",
+      "cell_id": "acute_dihedral",
+      "item_id": "S002",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 15,
+      "n_vertices": 23,
+      "n_aux": 12,
+      "n_faces": 5,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A",
+        "B",
+        "E",
+        "F",
+        "O",
+        "S"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "F",
+        "O",
+        "S"
+      ],
+      "question": "如图，用带数字的弧线标注了四个二面角的平面角，其中属于锐二面角的是（ ）",
+      "answer_text": "①",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S003",
+      "cell_id": "acute_dihedral",
+      "item_id": "S003",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 14,
+      "n_vertices": 28,
+      "n_aux": 16,
+      "n_faces": 8,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "B",
+        "P"
+      ],
+      "label_symbols": [
+        "A'",
+        "B'",
+        "C'",
+        "P'"
+      ],
+      "question": "如图，正三棱柱$A_1B_1C_1-A_2B_2C_2$的上底面内接有正三棱锥$P-ABC$（顶点$P$在上底面上方，底面$ABC$位于上底面内且边长小于上底面）。记①二面角$P-AB-C$，②二面角$B-PA-C$，③二面角$C_1-A_1B_1-A$，④二面角$P-BC-B_1$。其中为锐二面角的是（ ）",
+      "answer_text": "①④",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S004",
+      "cell_id": "acute_dihedral",
+      "item_id": "S004",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 12,
+      "n_vertices": 18,
+      "n_aux": 7,
+      "n_faces": 6,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A",
+        "H",
+        "N",
+        "O",
+        "P"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "H",
+        "N",
+        "O",
+        "P"
+      ],
+      "question": "如图，关于平面DBC与底面ABC所成二面角的判断，正确的是（ ）。",
+      "answer_text": "该二面角为锐二面角",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S005",
+      "cell_id": "acute_dihedral",
+      "item_id": "S005",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 5,
+      "n_vertices": 23,
+      "n_aux": 14,
+      "n_faces": 4,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "P"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "P"
+      ],
+      "question": "如图，观察图中二面角 P-BC-A 的平面角，该角属于（ ）",
+      "answer_text": "锐角",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S006",
+      "cell_id": "acute_dihedral",
+      "item_id": "S006",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 12,
+      "n_vertices": 13,
+      "n_aux": 0,
+      "n_faces": 5,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "E",
+        "E'",
+        "F",
+        "F'",
+        "G",
+        "H",
+        "S",
+        "T"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "E'",
+        "F",
+        "F'",
+        "G",
+        "H",
+        "S",
+        "T"
+      ],
+      "question": "如图，在三棱锥 S-ABC 中，SA⊥平面 ABC，∠ABC=90°，图中给出了高线 BD、截面 AEF 及辅助球等构造。下列二面角中，属于锐二面角的是？",
+      "answer_text": "平面 SBC 与平面 ABC 所成的二面角",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S007",
+      "cell_id": "acute_dihedral",
+      "item_id": "S007",
+      "ok": true,
+      "issues": [
+        "option_count_3"
+      ],
+      "score": 8.8,
+      "n_labels": 9,
+      "n_vertices": 9,
+      "n_aux": 2,
+      "n_faces": 7,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "B",
+        "N",
+        "P"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "N",
+        "P"
+      ],
+      "question": "如图，正三棱锥侧面 PA₁B₁ 与直三棱柱侧面 AA₁B₁B 所成的二面角 P-A₁B₁-B 属于（　）",
+      "answer_text": "钝二面角",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S008",
+      "cell_id": "acute_dihedral",
+      "item_id": "S008",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 10,
+      "n_vertices": 10,
+      "n_aux": 3,
+      "n_faces": 5,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "B",
+        "H"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "H",
+        "K"
+      ],
+      "question": "如图，在斜三棱台 ABC-A₁B₁C₁ 中，观察各侧面与底面 ABC 所成的二面角，下列判断正确的是？",
+      "answer_text": "侧面 BCC₁B₁ 与底面 ABC 所成的二面角是锐二面角",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S009",
+      "cell_id": "acute_dihedral",
+      "item_id": "S009",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 5,
+      "n_vertices": 9,
+      "n_aux": 5,
+      "n_faces": 4,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "P"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "P"
+      ],
+      "question": "如图，在三棱锥 P-ABC 中，以 AB 为棱，侧面 PAB 与底面 ABC 所成二面角的平面角为 ∠PDC。观察图形，该二面角属于（　　）",
+      "answer_text": "锐二面角",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S010",
+      "cell_id": "acute_dihedral",
+      "item_id": "S010",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 11,
+      "n_vertices": 11,
+      "n_aux": 6,
+      "n_faces": 5,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A",
+        "E",
+        "G",
+        "H",
+        "P",
+        "R"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "G",
+        "H",
+        "P",
+        "R"
+      ],
+      "question": "如图，在三棱锥 P-ABC 中，PH⊥平面 ABC 于 H，截面 PMC 与内切球等辅助元素如图所示。观察二面角 P-BC-A 的平面角，可判断该二面角属于（ ）",
+      "answer_text": "锐二面角",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S011",
+      "cell_id": "acute_dihedral",
+      "item_id": "S011",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 10,
+      "n_vertices": 15,
+      "n_aux": 6,
+      "n_faces": 8,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "B",
+        "P"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "N",
+        "P",
+        "Q"
+      ],
+      "question": "如图，水平放置的正三棱柱ABC-A₁B₁C₁右端面外侧拼接三棱锥P-A₁B₁C₁。图中已在棱A₁B₁处作出二面角P-A₁B₁-A的平面角∠NMQ，观察其张口程度，该二面角属于（ ）",
+      "answer_text": "锐二面角",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S012",
+      "cell_id": "acute_dihedral",
+      "item_id": "S012",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 7,
+      "n_vertices": 47,
+      "n_aux": 12,
+      "n_faces": 0,
+      "n_primitives": 2,
+      "referenced_symbols": [
+        "O",
+        "S"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "O",
+        "S"
+      ],
+      "question": "如图，平面 α、β 均与圆锥底面相交于弦 AB，分别形成两个二面角。观察其张口大小，其中为锐二面角的是（ ）",
+      "answer_text": "平面 α 与底面所成的二面角",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S013",
+      "cell_id": "acute_dihedral",
+      "item_id": "S013",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 6,
+      "n_vertices": 24,
+      "n_aux": 20,
+      "n_faces": 4,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "E",
+        "S"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "S"
+      ],
+      "question": "如图，在三棱锥S-ABC中，D为棱BC上一点，AD⊂平面ABC，SD⊂平面SBC，且AD⊥BC，SD⊥BC。图中橙色圆弧标注的∠SDA是二面角S-BC-A的平面角。观察其张口程度，该二面角属于（ ）",
+      "answer_text": "锐二面角",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S014",
+      "cell_id": "acute_dihedral",
+      "item_id": "S014",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 6,
+      "n_vertices": 87,
+      "n_aux": 39,
+      "n_faces": 0,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "E",
+        "F",
+        "H",
+        "O",
+        "O'"
+      ],
+      "label_symbols": [
+        "E",
+        "F",
+        "O",
+        "O'",
+        "S"
+      ],
+      "question": "如图，斜截面与圆锥底面相交于直线l，点C为底面圆心O在棱l上的垂足，CE在截面内垂直于l且交椭圆截线于点E。观察二面角的平面角∠OCE，判断该二面角属于（ ）",
+      "answer_text": "锐二面角",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S015",
+      "cell_id": "acute_dihedral",
+      "item_id": "S015",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 9,
+      "n_vertices": 9,
+      "n_aux": 5,
+      "n_faces": 5,
+      "n_primitives": 0,
+      "referenced_symbols": [],
+      "label_symbols": [
+        "A",
+        "B"
+      ],
+      "question": "如图，在直三棱柱与内接正三棱锥的组合体中，平面 DAB 与平面 ABB1A1 沿公共棱 AB 所成二面角的大小为（ ）",
+      "answer_text": "锐角",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S016",
+      "cell_id": "acute_dihedral",
+      "item_id": "S016",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 12,
+      "n_vertices": 14,
+      "n_aux": 9,
+      "n_faces": 4,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "B",
+        "G",
+        "H",
+        "N",
+        "O",
+        "P"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "G",
+        "H",
+        "N",
+        "O",
+        "P"
+      ],
+      "question": "如图，在三棱锥 P-ABC 中，PO⊥平面 ABC 于 O，OH⊥AB，PH⊥AB，OG⊥AC，PG⊥AC，M 为 PA 中点且在底面的投影为 N，球 I 与平面 ABC、平面 PAB 都相切。下列判断正确的是（ ）",
+      "answer_text": "二面角 P-AB-C 为锐二面角，其平面角是 ∠PHO",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S017",
+      "cell_id": "acute_dihedral",
+      "item_id": "S017",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 6,
+      "n_vertices": 14,
+      "n_aux": 10,
+      "n_faces": 4,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "E"
+      ],
+      "label_symbols": [
+        "A'",
+        "B'",
+        "C'",
+        "D'",
+        "E'"
+      ],
+      "question": "如图，图中以 θ 标注的 ∠DEC 是二面角 D-AB-C 的平面角，依据其张口大小判断，该二面角属于哪一类？",
+      "answer_text": "锐二面角（0°<平面角<90°）",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S018",
+      "cell_id": "acute_dihedral",
+      "item_id": "S018",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 8,
+      "n_vertices": 8,
+      "n_aux": 3,
+      "n_faces": 5,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "N",
+        "O",
+        "P"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "N",
+        "O",
+        "P"
+      ],
+      "question": "如图，在正四棱锥 P-ABCD 中，M、N 分别为侧棱 PB、PC 的中点，截面 AMN 与侧面 PBC 相交于线段 MN。观察图中二面角 A-MN-P 的平面角张口程度，该二面角属于（ ）",
+      "answer_text": "锐二面角",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S019",
+      "cell_id": "acute_dihedral",
+      "item_id": "S019",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 7,
+      "n_vertices": 32,
+      "n_aux": 8,
+      "n_faces": 14,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "B",
+        "O",
+        "P"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "O",
+        "P"
+      ],
+      "question": "如图，正四棱锥P-ABCD的底面内接于圆台上底面，M为AB的中点。则侧面PAB与圆台上底面所成二面角应判定为？",
+      "answer_text": "锐二面角",
+      "pass": true
+    },
+    {
+      "id": "acute_dihedral__S020",
+      "cell_id": "acute_dihedral",
+      "item_id": "S020",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 14,
+      "n_vertices": 14,
+      "n_aux": 15,
+      "n_faces": 4,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "H",
+        "K",
+        "N",
+        "O",
+        "P",
+        "T"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "H",
+        "K",
+        "N",
+        "O",
+        "P",
+        "T"
+      ],
+      "question": "如图，在三棱锥 P-ABC 中，侧面 PAB 与底面 ABC 所成锐二面角的平面角是图中标注的哪一个？",
+      "answer_text": "∠PMC（角 α）",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S001",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S001",
+      "ok": true,
+      "issues": [
+        "visual_complexity_low"
+      ],
+      "score": 9.2,
+      "n_labels": 8,
+      "n_vertices": 21,
+      "n_aux": 1,
+      "n_faces": 0,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A"
+      ],
+      "label_symbols": [
+        "A"
+      ],
+      "question": "如图，该多面体由正三角形和正方形两种正多边形围成，且每个顶点周围的面的排列方式相同。判断它是否为半正多面体，并指出其具体名称。",
+      "answer_text": "是半正多面体，为截半立方体（cuboctahedron）",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S002",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S002",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 15,
+      "n_vertices": 21,
+      "n_aux": 8,
+      "n_faces": 14,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "O"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "F",
+        "G",
+        "H",
+        "J",
+        "K",
+        "O"
+      ],
+      "question": "如图，图中展示了一个内切球且被正六边形截面贯穿的多面体。已知该立体每个顶点周围都交替连接两个正三角形和两个正方形，且所有棱长相等。据此判断该立体属于以下哪种半正多面体？",
+      "answer_text": "截半立方体",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S003",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S003",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 8,
+      "n_vertices": 22,
+      "n_aux": 1,
+      "n_faces": 14,
+      "n_primitives": 12,
+      "referenced_symbols": [],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "question": "如图，实线表示的内接多面体仅由正三角形和正方形两种面组成，且每个顶点周围的面排列方式完全相同。该多面体属于哪一类半正多面体？",
+      "answer_text": "截半立方体（cuboctahedron）",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S004",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S004",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 10,
+      "n_vertices": 28,
+      "n_aux": 16,
+      "n_faces": 14,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "O",
+        "P",
+        "Q"
+      ],
+      "label_symbols": [
+        "O",
+        "P",
+        "Q"
+      ],
+      "question": "如图，该多面体由某立方体连接各棱上分点再截去顶角得到。图中给出了原始立方体的隐藏棱（虚线）、外接球及球心O、一条四边形面的对角线与边长标注，以及不同棱上截取比例不一致的标记。根据这些辅助信息，判断该多面体是否为半正多面体，并给出结论。",
+      "answer_text": "不是半正多面体（非均匀截半变体）",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S005",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S005",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 14,
+      "n_vertices": 14,
+      "n_aux": 1,
+      "n_faces": 14,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "O",
+        "P"
+      ],
+      "label_symbols": [
+        "A'",
+        "B'",
+        "C'",
+        "D'",
+        "E'",
+        "F'",
+        "G'",
+        "H'",
+        "I'",
+        "J'",
+        "L'",
+        "O'",
+        "P'",
+        "T'"
+      ],
+      "question": "如图，该凸多面体所有棱长均相等，表面仅由正三角形和正方形围成，且每个顶点都连接2个正三角形和2个正方形。该多面体属于下列哪种半正多面体？",
+      "answer_text": "截半立方体",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S006",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S006",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 15,
+      "n_vertices": 21,
+      "n_aux": 2,
+      "n_faces": 14,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "H",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "G",
+        "H",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "question": "如图，被辅助平面所截的几何体是否为半正多面体？若是，请指出其具体名称。",
+      "answer_text": "是，该多面体为截半立方体",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S007",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S007",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 6,
+      "n_vertices": 18,
+      "n_aux": 0,
+      "n_faces": 22,
+      "n_primitives": 12,
+      "referenced_symbols": [],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "F"
+      ],
+      "question": "如图，以正八面体各棱中点为顶点的内部多面体是否为半正多面体？若是，它属于哪一种？",
+      "answer_text": "是半正多面体，为截半立方体",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S008",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S008",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 14,
+      "n_vertices": 34,
+      "n_aux": 23,
+      "n_faces": 14,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "O",
+        "O'"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "F",
+        "G",
+        "H",
+        "J",
+        "K",
+        "O",
+        "O'"
+      ],
+      "question": "如图，观察主图及其辅助线、投影示意与截面，判断该多面体是否为半正多面体；若是，请指出其具体种类。",
+      "answer_text": "是半正多面体，为截半立方体",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S009",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S009",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 3,
+      "n_vertices": 63,
+      "n_aux": 1,
+      "n_faces": 12,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "A'"
+      ],
+      "label_symbols": [
+        "A"
+      ],
+      "question": "如图，该多面体是否为半正多面体（阿基米德立体）？并指出其具体种类。",
+      "answer_text": "是半正多面体，为截角二十面体（truncated icosahedron）",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S010",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S010",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 24,
+      "n_vertices": 25,
+      "n_aux": 12,
+      "n_faces": 14,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "H"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "F",
+        "G",
+        "H",
+        "J",
+        "K",
+        "N"
+      ],
+      "question": "如图，判断该多面体是否为半正多面体，并指出其具体名称。",
+      "answer_text": "是半正多面体，为截半立方体（立方八面体）",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S011",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S011",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 5,
+      "n_vertices": 74,
+      "n_aux": 1,
+      "n_faces": 38,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "E"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "E"
+      ],
+      "question": "如图，图中的组合体下方是一个多面体，其顶部的一个面与正六棱柱的底面完全贴合。根据可见面的形状、数量及相邻关系，判断该多面体是否为半正多面体？若是，它属于哪一类？",
+      "answer_text": "是半正多面体，属于截角二十面体",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S012",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S012",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 13,
+      "n_vertices": 17,
+      "n_aux": 20,
+      "n_faces": 14,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "O"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "F",
+        "G",
+        "H",
+        "J",
+        "K",
+        "O"
+      ],
+      "question": "如图，该多面体的所有顶点均在以O为球心的球面上，截面β过上下两面中心与一对相对顶点。根据可见面的形状、各顶点处面的连接顺序以及截面特征，判断该多面体属于哪一类常见半正多面体？",
+      "answer_text": "截半立方体",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S013",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S013",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 4,
+      "n_vertices": 27,
+      "n_aux": 3,
+      "n_faces": 14,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "P"
+      ],
+      "label_symbols": [
+        "P"
+      ],
+      "question": "如图，该多面体是一个半正多面体。请写出它的具体名称，并说明在标注的顶点P处，共有几个正多边形面相交？它们分别是哪两种正多边形？",
+      "answer_text": "截角八面体；顶点P处有3个正多边形面相交，分别是1个正方形和2个正六边形。",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S014",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S014",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 14,
+      "n_vertices": 14,
+      "n_aux": 9,
+      "n_faces": 14,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "H"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "F",
+        "G",
+        "H",
+        "J",
+        "K"
+      ],
+      "question": "如图，图中展示了一个带有辅助截面、投影线与体对角线的三维多面体。观察其面形状、面数及顶点连接方式，判断该立体是否为半正多面体；若是，请指出其具体名称。",
+      "answer_text": "是半正多面体，具体为截半立方体（cuboctahedron）",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S015",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S015",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 9,
+      "n_vertices": 21,
+      "n_aux": 4,
+      "n_faces": 23,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "B",
+        "O",
+        "P",
+        "Q"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "O",
+        "P",
+        "Q"
+      ],
+      "question": "如图，与正四棱锥共底面拼接、且部分被正三棱柱遮挡的多面体是下列哪一种半正多面体？",
+      "answer_text": "截半立方体（cuboctahedron）",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S016",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S016",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 7,
+      "n_vertices": 20,
+      "n_aux": 41,
+      "n_faces": 14,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "O",
+        "P",
+        "Q"
+      ],
+      "label_symbols": [
+        "O",
+        "P",
+        "Q"
+      ],
+      "question": "如图，展示了一个多面体及其外接球球心 O 和正六边形截面 α。根据图中面的形状、连接方式以及辅助线面的几何特征，下列关于该多面体的判断，正确的是（ ）",
+      "answer_text": "该多面体是半正多面体中的截半立方体（cuboctahedron）",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S017",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S017",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 2,
+      "n_vertices": 22,
+      "n_aux": 12,
+      "n_faces": 14,
+      "n_primitives": 0,
+      "referenced_symbols": [],
+      "label_symbols": [],
+      "question": "图中展示了一个所有棱长均相等的多面体，其表面由正三角形与正方形两种正多边形围成，每个顶点周围的面的种类与顺序完全相同，且图中用虚线给出了它的外接辅助立方体（顶点位于立方体各棱中点）。该多面体属于（ ）",
+      "answer_text": "半正多面体——截半立方体",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S018",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S018",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 21,
+      "n_vertices": 24,
+      "n_aux": 11,
+      "n_faces": 14,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "T"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "F",
+        "G",
+        "H",
+        "J",
+        "K",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "T",
+        "Y",
+        "Z"
+      ],
+      "question": "如图，观察其面形状与顶点连接方式，判断该多面体属于以下哪一种半正多面体？",
+      "answer_text": "截半立方体",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S019",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S019",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 0,
+      "n_vertices": 89,
+      "n_aux": 46,
+      "n_faces": 32,
+      "n_primitives": 1,
+      "referenced_symbols": [],
+      "label_symbols": [],
+      "question": "如图，图中实体线框表示一个被同心球面部分遮挡的多面体，内部浅灰虚线为其对应的正二十面体框架。根据可见部分的面形与顶点连接方式判断，该多面体属于（ ）",
+      "answer_text": "半正多面体（阿基米德立体）中的截角二十面体",
+      "pass": true
+    },
+    {
+      "id": "archimedean_solid_recognition__S020",
+      "cell_id": "archimedean_solid_recognition",
+      "item_id": "S020",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 14,
+      "n_vertices": 55,
+      "n_aux": 24,
+      "n_faces": 14,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "O"
+      ],
+      "label_symbols": [
+        "A'",
+        "B'",
+        "C'",
+        "D'",
+        "E'",
+        "F'",
+        "G'",
+        "H'",
+        "I'",
+        "J'",
+        "K'",
+        "L'",
+        "O'"
+      ],
+      "question": "如图，观察图中三维立体，根据其面的形状、数量及顶点连接方式，判断该多面体是否为半正多面体。若是，请指出它具体属于哪一种常见半正多面体。",
+      "answer_text": "是半正多面体，属于截半立方体",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S001",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S001",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 8,
+      "n_vertices": 53,
+      "n_aux": 28,
+      "n_faces": 0,
+      "n_primitives": 4,
+      "referenced_symbols": [
+        "A",
+        "A'",
+        "B",
+        "C'",
+        "S"
+      ],
+      "label_symbols": [
+        "A",
+        "A'",
+        "B",
+        "C'",
+        "S"
+      ],
+      "question": "如图，点光源S照射倾斜细杆AB，B为杆与地面的接触点，A′为杆顶A在地面上的影子端点，红色虚线为辅助投影线。根据中心投影共线性质，下列说法正确的是（　　）",
+      "answer_text": "点光源S、杆顶A与影子端点A′三点共线",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S002",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S002",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 9,
+      "n_vertices": 41,
+      "n_aux": 18,
+      "n_faces": 14,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A",
+        "A'",
+        "B",
+        "B'",
+        "O",
+        "S",
+        "T"
+      ],
+      "label_symbols": [
+        "A",
+        "A'",
+        "B",
+        "B'",
+        "J",
+        "O",
+        "S",
+        "T"
+      ],
+      "question": "如图，在点光源S的照射下，圆台在右侧墙面上形成影子。根据中心投影共线性质，下列关于点光源S、圆台边缘点A及其影子A′的说法正确的是（ ）",
+      "answer_text": "S、A、A′三点共线",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S003",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S003",
+      "ok": true,
+      "issues": [
+        "visual_complexity_low"
+      ],
+      "score": 9.2,
+      "n_labels": 5,
+      "n_vertices": 59,
+      "n_aux": 0,
+      "n_faces": 0,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "E",
+        "E'",
+        "F",
+        "F'",
+        "Q",
+        "S"
+      ],
+      "label_symbols": [
+        "E",
+        "F",
+        "S"
+      ],
+      "question": "如图，点光源S照射水平地面上的正四棱台与竖直圆柱组合体，两物体在地面形成重叠影子。根据中心投影共线性质，下列判断正确的是？",
+      "answer_text": "点光源S、棱台上底顶点E及其地面影子点E′三点共线，且直线SE与地面交点即为E′。",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S004",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S004",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 13,
+      "n_vertices": 18,
+      "n_aux": 0,
+      "n_faces": 6,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T"
+      ],
+      "label_symbols": [
+        "A'",
+        "B'",
+        "C'",
+        "D'",
+        "E'",
+        "G'",
+        "H'",
+        "P'",
+        "Q'",
+        "R'",
+        "S'",
+        "T'",
+        "V'"
+      ],
+      "question": "如图，点光源 S 照射置于水平地面 α 上的该组合体，杆顶 P 在地面上的中心投影影子为图中标注的某一点。根据中心投影共线性质，下列哪组三点共线且对应关系正确？",
+      "answer_text": "S、P、Q 三点共线，Q 为杆顶 P 的中心投影影子",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S005",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S005",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 9,
+      "n_vertices": 26,
+      "n_aux": 2,
+      "n_faces": 2,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A",
+        "B",
+        "B'",
+        "C'",
+        "S"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "B'",
+        "C'",
+        "S"
+      ],
+      "question": "如图，点光源S照射倾斜的三角板ABC，在水平地面上形成影子△AB'C'。根据中心投影共线性质，下列哪一组三点一定共线？",
+      "answer_text": "S、B、B'",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S006",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S006",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 10,
+      "n_vertices": 27,
+      "n_aux": 19,
+      "n_faces": 5,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "O",
+        "S",
+        "T",
+        "T'",
+        "V'"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "O",
+        "S",
+        "T",
+        "T'",
+        "V'"
+      ],
+      "question": "如图，点光源S将正四棱锥及其轴截面内的切点投射到水平地面Π上。根据中心投影共线性质，下列哪组三点一定共线？",
+      "answer_text": "S、V、V′ 三点共线",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S007",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S007",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 8,
+      "n_vertices": 47,
+      "n_aux": 21,
+      "n_faces": 14,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A",
+        "A'",
+        "B",
+        "B'",
+        "D'",
+        "S"
+      ],
+      "label_symbols": [
+        "A",
+        "A'",
+        "B",
+        "B'",
+        "D'",
+        "S"
+      ],
+      "question": "如图，点光源S照射由圆台与球组成的组合体，球与圆台上底面相切于点C。图中标注了地面上的三个点：A′在直线SA延长线上，B′在直线SB延长线上，D′为圆台底面边缘点D的竖直下方点。根据中心投影共线性质，下列判断正确的是？",
+      "answer_text": "点光源 S、球面轮廓点 A 及其影子 A′ 三点共线，A′ 是 A 在地面上的真实影子",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S008",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S008",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 6,
+      "n_vertices": 32,
+      "n_aux": 25,
+      "n_faces": 1,
+      "n_primitives": 2,
+      "referenced_symbols": [
+        "O",
+        "P",
+        "P'",
+        "S",
+        "T"
+      ],
+      "label_symbols": [
+        "O",
+        "P",
+        "P'",
+        "S",
+        "T"
+      ],
+      "question": "如图，点光源 S、球 O 及地面上影点 P′ 的位置关系如图所示，P 为球面上对应边缘点。根据中心投影共线性质，下列判断正确的是（ ）",
+      "answer_text": "S、P、P′ 三点共线",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S009",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S009",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 10,
+      "n_vertices": 68,
+      "n_aux": 10,
+      "n_faces": 0,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "M'",
+        "O'",
+        "P",
+        "P'",
+        "S"
+      ],
+      "label_symbols": [
+        "A'",
+        "M'",
+        "O'",
+        "P'",
+        "S'"
+      ],
+      "question": "如图，圆台的下底落在投影面α上，点光源为S，P是上底圆周上一点，M是母线PA上一点，P′、M′分别是P、M在α上的中心投影。根据中心投影共线性质，判断投影作图是否正确，应验证以下哪三点共线？",
+      "answer_text": "S、P、P′ 共线",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S010",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S010",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 18,
+      "n_vertices": 30,
+      "n_aux": 24,
+      "n_faces": 6,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "B",
+        "E",
+        "E'",
+        "F",
+        "F'",
+        "G",
+        "G'",
+        "H",
+        "H'",
+        "S"
+      ],
+      "label_symbols": [
+        "A'",
+        "B'",
+        "C'",
+        "D'",
+        "E'",
+        "F'",
+        "G'",
+        "H'",
+        "L'",
+        "S'"
+      ],
+      "question": "如图，正四棱锥 S-ABCD 的底面置于水平投影面 β 上，空间点光源为 L。斜截面与四棱锥相交得四边形 EFGH，其各边与截面内的内切圆分别切于 T1、T2、T3、T4。E、F、G、H 在 β 上的影点依次为 E′、F′、G′、H′。下列关于共线关系的说法正确的是",
+      "answer_text": "点光源 L、截面顶点 F 及其在投影面上的影点 F′ 三点共线",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S011",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S011",
+      "ok": true,
+      "issues": [
+        "visual_complexity_low"
+      ],
+      "score": 9.2,
+      "n_labels": 9,
+      "n_vertices": 107,
+      "n_aux": 0,
+      "n_faces": 0,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "A'",
+        "B",
+        "B'"
+      ],
+      "label_symbols": [
+        "A'",
+        "B'",
+        "O'",
+        "T'"
+      ],
+      "question": "如图，圆台与球相邻放置于地面，在中心投影下圆台顶端边缘点 A 的影子为 A′，球大圆最右端点 B 的影子为 B′。根据中心投影共线性质，判断 S1、S2、S3 中哪个点是真实的点光源位置？",
+      "answer_text": "S2",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S012",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S012",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 18,
+      "n_vertices": 30,
+      "n_aux": 4,
+      "n_faces": 0,
+      "n_primitives": 2,
+      "referenced_symbols": [
+        "A",
+        "B",
+        "O",
+        "O'",
+        "S",
+        "T",
+        "T'"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "O",
+        "S",
+        "T"
+      ],
+      "question": "如图，点光源S位于竖直细杆及其顶端球体的侧上方。图中地面上A、B、C、D四点中，哪一点是球心O在地面上的正确中心投影？",
+      "answer_text": "点A",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S013",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S013",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 6,
+      "n_vertices": 10,
+      "n_aux": 5,
+      "n_faces": 1,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "B",
+        "B'",
+        "C'",
+        "S"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "B'",
+        "C'",
+        "S"
+      ],
+      "question": "如图，点光源S照射立于水平地面的折杆ABC（AB竖直，BC水平），A在地面上，B'为杆顶B在地面影子的端点。下列关于中心投影性质的说法正确的是",
+      "answer_text": "点光源S、物体边缘点B及其影子B'三点共线",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S014",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S014",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 10,
+      "n_vertices": 34,
+      "n_aux": 4,
+      "n_faces": 14,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "A'",
+        "B",
+        "B'",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T"
+      ],
+      "label_symbols": [
+        "A'",
+        "B'",
+        "C'",
+        "P'",
+        "Q'",
+        "R'",
+        "S'",
+        "T'"
+      ],
+      "question": "如图，要确定圆台上底边缘点 A 在地面上的影子位置，依据中心投影共线性质，应满足哪组三点共线？",
+      "answer_text": "S、A、P 三点共线",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S015",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S015",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 9,
+      "n_vertices": 36,
+      "n_aux": 0,
+      "n_faces": 15,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "N",
+        "N'",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "label_symbols": [
+        "N",
+        "N'",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "question": "如图，该组合体由竖直圆台及右侧与其外切的球体构成，点光源S在左上方，球体最高点为M，地面上标有P、Q两点，其中P位于圆台投下的影区内部，Q位于影区外。根据中心投影共线性质，S、M与M在地面上的影子三点应共线，则影子落点是哪个点？",
+      "answer_text": "Q点",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S016",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S016",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 11,
+      "n_vertices": 15,
+      "n_aux": 5,
+      "n_faces": 1,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A",
+        "A'",
+        "B",
+        "B'",
+        "C'",
+        "D'",
+        "O",
+        "S",
+        "T"
+      ],
+      "label_symbols": [
+        "A",
+        "A'",
+        "B",
+        "B'",
+        "C'",
+        "D'",
+        "O",
+        "S",
+        "T"
+      ],
+      "question": "如图，点光源 S 照射两条平行斜杆 AB、CD，它们在水平地面 π 上的影子分别为 A'B'、C'D'。根据中心投影共线性质，以下哪组三点一定共线？",
+      "answer_text": "S、A、A'",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S017",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S017",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 5,
+      "n_vertices": 51,
+      "n_aux": 24,
+      "n_faces": 2,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "P",
+        "P'",
+        "Q",
+        "Q'",
+        "S"
+      ],
+      "label_symbols": [
+        "P",
+        "P'",
+        "Q",
+        "Q'",
+        "S"
+      ],
+      "question": "如图，点光源S照射空间中的细杆PQ，在水平地面上形成影子P'Q'。根据中心投影的共线性质，下列哪一组三点必定在同一条直线上？",
+      "answer_text": "点光源S、细杆端点P及其影子端点P'",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S018",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S018",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 7,
+      "n_vertices": 85,
+      "n_aux": 6,
+      "n_faces": 0,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "H",
+        "H'",
+        "O",
+        "P",
+        "P'",
+        "S",
+        "T"
+      ],
+      "label_symbols": [
+        "H",
+        "H'",
+        "O",
+        "P",
+        "P'",
+        "S",
+        "T"
+      ],
+      "question": "如图，点光源 S 照射圆柱-半球组合体，H 为半球顶点，H′ 为 H 在地面上的影子，T 为从 S 引向半球面的切点，P 为圆柱侧面上一点。根据中心投影的共线性质，下列哪三点必定共线？",
+      "answer_text": "点光源 S、半球顶点 H 及其地面影子 H′ 三点共线",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S019",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S019",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 7,
+      "n_vertices": 45,
+      "n_aux": 14,
+      "n_faces": 0,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "A'",
+        "O",
+        "S",
+        "T",
+        "T'"
+      ],
+      "label_symbols": [
+        "A",
+        "A'",
+        "O",
+        "S",
+        "T",
+        "T'"
+      ],
+      "question": "如图，正圆台与球体相邻放置于水平地面，点光源 S 位于圆台上方。图中标出了圆台上底边缘点 A 及其地面影子 A'，以及球面上一点 T 及其地面影子 T'。根据中心投影共线性质，下列判断正确的是？",
+      "answer_text": "S、T、T' 三点共线，且切点 T 决定球体影子的边界",
+      "pass": true
+    },
+    {
+      "id": "center_proj_collinearity__S020",
+      "cell_id": "center_proj_collinearity",
+      "item_id": "S020",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 14,
+      "n_vertices": 20,
+      "n_aux": 3,
+      "n_faces": 1,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "P",
+        "Q",
+        "Q'",
+        "R",
+        "R'",
+        "S",
+        "S'",
+        "T",
+        "U",
+        "U'"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "P",
+        "Q",
+        "Q'",
+        "R",
+        "R'",
+        "S",
+        "S'",
+        "T",
+        "U",
+        "U'"
+      ],
+      "question": "如图，空间中有真实点光源S及一个干扰点S′，折杆P-Q-R与短杆T-U均立于地面。根据中心投影共线性质，以下哪一组点满足“点光源、物体边缘点及其影子对应点”严格共线？",
+      "answer_text": "S、R、R′",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S001",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S001",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 5,
+      "n_vertices": 9,
+      "n_aux": 65,
+      "n_faces": 0,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A",
+        "H",
+        "O"
+      ],
+      "label_symbols": [
+        "A",
+        "H",
+        "O"
+      ],
+      "question": "如图，平面 α 截球 O 所得截面的形状是什么？",
+      "answer_text": "圆（或截面圆）",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S002",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S002",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 5,
+      "n_vertices": 147,
+      "n_aux": 73,
+      "n_faces": 0,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A",
+        "H",
+        "O",
+        "O'"
+      ],
+      "label_symbols": [
+        "A'",
+        "H'",
+        "O'"
+      ],
+      "question": "如图，平面α截球O所得的截面形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S003",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S003",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 4,
+      "n_vertices": 78,
+      "n_aux": 54,
+      "n_faces": 14,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A",
+        "B",
+        "O",
+        "O'"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "O",
+        "O'"
+      ],
+      "question": "如图，一个球内切于竖直圆台，一斜平面截此组合体并与球面相交形成封闭曲线。则该曲线所在的截面形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S004",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S004",
+      "ok": true,
+      "issues": [
+        "too_few_labels_2"
+      ],
+      "score": 9.2,
+      "n_labels": 2,
+      "n_vertices": 201,
+      "n_aux": 196,
+      "n_faces": 0,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "O"
+      ],
+      "label_symbols": [
+        "O"
+      ],
+      "question": "如图，平面 β 截球 O 所得交线的真实形状是什么？关于截面圆圆心位置关系的正确描述是？",
+      "answer_text": "截面形状是圆；截面圆圆心 O₁ 与球心 O 不重合，且连线 OO₁ 垂直于平面 β。",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S005",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S005",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 4,
+      "n_vertices": 227,
+      "n_aux": 3,
+      "n_faces": 0,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A",
+        "B",
+        "H",
+        "O"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "H",
+        "O"
+      ],
+      "question": "如图，平面 α 截球 O 所得的截面形状及该截面圆圆心的位置，下列说法正确的是（ ）",
+      "answer_text": "截面是圆，且截面圆的圆心是球心 O 在平面 α 上的垂足 H",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S006",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S006",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 13,
+      "n_vertices": 89,
+      "n_aux": 4,
+      "n_faces": 0,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "O",
+        "T"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "H",
+        "O",
+        "P",
+        "T"
+      ],
+      "question": "如图，球内接正方体 ABCD-A1B1C1D1，平面 α 经过上底面对角线 A1C1 及棱 AB 的中点 M，与球面相交形成封闭曲线。则平面 α 截球所得截面的形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S007",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S007",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 4,
+      "n_vertices": 51,
+      "n_aux": 2,
+      "n_faces": 0,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "H",
+        "O",
+        "T"
+      ],
+      "label_symbols": [
+        "H",
+        "O",
+        "T"
+      ],
+      "question": "如图，平面 α 截球 O 所得的截面形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S008",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S008",
+      "ok": true,
+      "issues": [
+        "too_few_labels_2"
+      ],
+      "score": 9.2,
+      "n_labels": 2,
+      "n_vertices": 110,
+      "n_aux": 37,
+      "n_faces": 1,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "O"
+      ],
+      "label_symbols": [
+        "O"
+      ],
+      "question": "如图，平面 α 截球 O，图中实线所示为平面 α 与球面的交线。则该截面的形状及其圆心位置判断正确的是？",
+      "answer_text": "截面是圆，其圆心为 O1",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S009",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S009",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 4,
+      "n_vertices": 47,
+      "n_aux": 3,
+      "n_faces": 1,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "O",
+        "O'",
+        "P"
+      ],
+      "label_symbols": [
+        "O",
+        "O'",
+        "P"
+      ],
+      "question": "如图，平面 α 与球 O 相交，所得截面的真实形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S010",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S010",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 12,
+      "n_vertices": 40,
+      "n_aux": 3,
+      "n_faces": 0,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "H",
+        "O",
+        "P",
+        "Q"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "H",
+        "O",
+        "P",
+        "Q"
+      ],
+      "question": "如图，球 O 内有一内接正方体（虚线为不可见棱及对角线），平面 α 截球 O 于点 P 等处，H 为球心 O 在平面 α 上的射影。则平面 α 截球 O 所得截面的形状是？",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S011",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S011",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 5,
+      "n_vertices": 52,
+      "n_aux": 6,
+      "n_faces": 14,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "H",
+        "O",
+        "P",
+        "R"
+      ],
+      "label_symbols": [
+        "H",
+        "O",
+        "P",
+        "R"
+      ],
+      "question": "如图，斜平面α截该球-圆台组合体并与球面相交形成一条封闭曲线，则该曲线的形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S012",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S012",
+      "ok": true,
+      "issues": [
+        "too_few_labels_2"
+      ],
+      "score": 9.2,
+      "n_labels": 2,
+      "n_vertices": 73,
+      "n_aux": 3,
+      "n_faces": 1,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "O",
+        "O'"
+      ],
+      "label_symbols": [
+        "O",
+        "O'"
+      ],
+      "question": "如图，平面 α 与球 O 相交，O' 是球心 O 在平面 α 上的垂足。关于所得截面的形状与位置，下列说法正确的是（ ）",
+      "answer_text": "截面是圆，圆心为 O'",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S013",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S013",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 7,
+      "n_vertices": 91,
+      "n_aux": 58,
+      "n_faces": 1,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A",
+        "O",
+        "O'",
+        "R"
+      ],
+      "label_symbols": [
+        "A",
+        "O",
+        "O'",
+        "R"
+      ],
+      "question": "如图，平面 α 截球 O 所得的截面形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S014",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S014",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 4,
+      "n_vertices": 109,
+      "n_aux": 4,
+      "n_faces": 0,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "H",
+        "O",
+        "P",
+        "T"
+      ],
+      "label_symbols": [
+        "H",
+        "O",
+        "P",
+        "T"
+      ],
+      "question": "如图，平面 α 截球 O 所得截面的形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S015",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S015",
+      "ok": true,
+      "issues": [
+        "too_few_labels_2",
+        "answer_too_short"
+      ],
+      "score": 8.8,
+      "n_labels": 2,
+      "n_vertices": 152,
+      "n_aux": 16,
+      "n_faces": 13,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "O",
+        "O'"
+      ],
+      "label_symbols": [
+        "O"
+      ],
+      "question": "如图，平面α截由球与圆台组成的组合体。平面α与球面相交所形成的封闭曲线是什么形状？",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S016",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S016",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 3,
+      "n_vertices": 71,
+      "n_aux": 59,
+      "n_faces": 0,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "H",
+        "O"
+      ],
+      "label_symbols": [
+        "A",
+        "H",
+        "O"
+      ],
+      "question": "如图，平面 α 与球 O 相交，图中同时给出了该截面在竖直方向上的投影（下方虚线椭圆）以及一个圆柱斜截面的相似构型（右后方虚线）。关于平面 α 截球所得截面的真实形状与位置，下列说法正确的是？",
+      "answer_text": "平面 α 截球所得截面一定是圆，其圆心为球心 O 在平面 α 上的垂足 H",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S017",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S017",
+      "ok": true,
+      "issues": [
+        "visual_complexity_low",
+        "answer_too_short"
+      ],
+      "score": 8.8,
+      "n_labels": 3,
+      "n_vertices": 91,
+      "n_aux": 1,
+      "n_faces": 0,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A",
+        "O",
+        "O'"
+      ],
+      "label_symbols": [
+        "A",
+        "O",
+        "O'"
+      ],
+      "question": "如图，平面α截球O所得的截面形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S018",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S018",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 8,
+      "n_vertices": 62,
+      "n_aux": 5,
+      "n_faces": 1,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "E",
+        "F",
+        "H",
+        "O",
+        "P",
+        "Q"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "F",
+        "H",
+        "O"
+      ],
+      "question": "如图，平面 α 与球面相交所形成的截面的形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S019",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S019",
+      "ok": true,
+      "issues": [
+        "answer_too_short"
+      ],
+      "score": 9.6,
+      "n_labels": 8,
+      "n_vertices": 136,
+      "n_aux": 2,
+      "n_faces": 0,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "H",
+        "N",
+        "O",
+        "O'",
+        "P"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "H",
+        "N",
+        "O",
+        "O'",
+        "P"
+      ],
+      "question": "如图，倾斜平面 α 截该组合体中的球，所得截面的形状是（ ）",
+      "answer_text": "圆",
+      "pass": true
+    },
+    {
+      "id": "cross_section_sphere__S020",
+      "cell_id": "cross_section_sphere",
+      "item_id": "S020",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 5,
+      "n_vertices": 89,
+      "n_aux": 1,
+      "n_faces": 1,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "H",
+        "O",
+        "O'"
+      ],
+      "label_symbols": [
+        "H",
+        "O",
+        "O'"
+      ],
+      "question": "如图，平面 α 截球 O 得到交线 Γ，平面 β 为过球心的辅助平面。关于截面的形状与位置，下列说法正确的是（ ）",
+      "answer_text": "交线 Γ 一定是圆，且其圆心是球心 O 在平面 α 上的垂足 H",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S001",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S001",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 8,
+      "n_vertices": 109,
+      "n_aux": 3,
+      "n_faces": 37,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "A",
+        "A'",
+        "B",
+        "B'",
+        "O",
+        "P"
+      ],
+      "label_symbols": [
+        "A",
+        "A'",
+        "B",
+        "B'",
+        "P"
+      ],
+      "question": "如图，两个等半径直圆柱的轴线互相平行且水平放置，从侧面观察它们恰好相互接触。下列关于这两个圆柱位置关系的说法，正确的是（ ）",
+      "answer_text": "两圆柱体外切，其公共部分是一条直线（公共母线）",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S002",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S002",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 10,
+      "n_vertices": 33,
+      "n_aux": 25,
+      "n_faces": 0,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "B",
+        "H",
+        "O",
+        "P",
+        "T"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "H",
+        "H'",
+        "O",
+        "P",
+        "T"
+      ],
+      "question": "如图，观察球 O 与正四棱锥 P-ABCD 的位置关系，下列说法正确的是（ ）",
+      "answer_text": "外切",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S003",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S003",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 10,
+      "n_vertices": 36,
+      "n_aux": 6,
+      "n_faces": 5,
+      "n_primitives": 2,
+      "referenced_symbols": [
+        "O",
+        "S",
+        "T"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "F",
+        "O",
+        "S",
+        "T"
+      ],
+      "question": "如图，圆锥与球体的位置关系属于（　　）",
+      "answer_text": "外切（相外切）",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S004",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S004",
+      "ok": true,
+      "issues": [
+        "visual_complexity_low"
+      ],
+      "score": 9.2,
+      "n_labels": 7,
+      "n_vertices": 39,
+      "n_aux": 0,
+      "n_faces": 0,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "E",
+        "O",
+        "T"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "E",
+        "O",
+        "T"
+      ],
+      "question": "如图，观察图中球与圆台的空间位置关系，下列判断正确的是（ ）",
+      "answer_text": "外切",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S005",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S005",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 9,
+      "n_vertices": 73,
+      "n_aux": 6,
+      "n_faces": 1,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A'",
+        "O",
+        "P",
+        "R"
+      ],
+      "label_symbols": [
+        "A",
+        "A'",
+        "B",
+        "B'",
+        "O",
+        "P",
+        "R"
+      ],
+      "question": "如图，球O₁位于圆柱外部且与其侧面外切。过球心与圆柱轴线的辅助截面截圆柱得矩形ABB'A'，截球得大圆⊙O₁，二者相切于高亮点P。则两体表面的公共点在空间中实际构成的图形是（ ）",
+      "answer_text": "一条封闭的圆（切点圆/两体的公共切圆）",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S006",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S006",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 9,
+      "n_vertices": 25,
+      "n_aux": 17,
+      "n_faces": 4,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "A",
+        "H",
+        "O",
+        "S",
+        "T"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "H",
+        "O",
+        "O'",
+        "S",
+        "T"
+      ],
+      "question": "如图，正三棱锥S-ABC底面水平放置，竖直截面SAD（D为BC中点）截三棱锥得到三角形截面。球心O位于平面SAD内，球体与侧面SBC相切于点T，且OT⊥SD。图中OH⊥底面ABC，SO'为三棱锥的高，部分被遮挡的棱已用虚线表示。关于三棱锥S-ABC与球体的位置关系，下列说法正确的是",
+      "answer_text": "两体外切",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S007",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S007",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 7,
+      "n_vertices": 25,
+      "n_aux": 20,
+      "n_faces": 4,
+      "n_primitives": 3,
+      "referenced_symbols": [
+        "O",
+        "P"
+      ],
+      "label_symbols": [
+        "E",
+        "F",
+        "O",
+        "P",
+        "Q"
+      ],
+      "question": "如图，观察图中球与圆锥的位置关系，下列说法正确的是？",
+      "answer_text": "球与圆锥外切",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S008",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S008",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 7,
+      "n_vertices": 26,
+      "n_aux": 14,
+      "n_faces": 0,
+      "n_primitives": 2,
+      "referenced_symbols": [
+        "C'",
+        "H",
+        "O",
+        "S",
+        "T"
+      ],
+      "label_symbols": [
+        "A",
+        "C'",
+        "H",
+        "O",
+        "S",
+        "T"
+      ],
+      "question": "如图，球与圆锥的位置关系属于哪一类？",
+      "answer_text": "体体外切",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S009",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S009",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 6,
+      "n_vertices": 46,
+      "n_aux": 43,
+      "n_faces": 0,
+      "n_primitives": 2,
+      "referenced_symbols": [
+        "O",
+        "O'",
+        "P",
+        "R"
+      ],
+      "label_symbols": [
+        "O'",
+        "P'",
+        "R",
+        "R'",
+        "T'"
+      ],
+      "question": "如图，观察图中球体与圆柱体的位置关系，下列判断正确的是（ ）",
+      "answer_text": "两体外切，有且仅有一条公共曲线（一个圆）",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S010",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S010",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 6,
+      "n_vertices": 138,
+      "n_aux": 2,
+      "n_faces": 0,
+      "n_primitives": 2,
+      "referenced_symbols": [
+        "T"
+      ],
+      "label_symbols": [
+        "T"
+      ],
+      "question": "如图，图中给出了两个球体及其辅助截面、球心连线与切点。根据图示判断，这两个球体的空间位置关系属于下列哪种情况？",
+      "answer_text": "外切",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S011",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S011",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 7,
+      "n_vertices": 77,
+      "n_aux": 58,
+      "n_faces": 0,
+      "n_primitives": 3,
+      "referenced_symbols": [
+        "A",
+        "B",
+        "O",
+        "P"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "O",
+        "P"
+      ],
+      "question": "如图，图中球O₂与圆锥的位置关系是？",
+      "answer_text": "外切",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S012",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S012",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 7,
+      "n_vertices": 87,
+      "n_aux": 4,
+      "n_faces": 0,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "H",
+        "O",
+        "O'",
+        "P",
+        "S"
+      ],
+      "label_symbols": [
+        "A",
+        "H",
+        "O",
+        "O'",
+        "P",
+        "S"
+      ],
+      "question": "如图，球O与圆锥的位置关系是（ ）",
+      "answer_text": "外切",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S013",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S013",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 6,
+      "n_vertices": 8,
+      "n_aux": 3,
+      "n_faces": 0,
+      "n_primitives": 2,
+      "referenced_symbols": [
+        "O",
+        "R",
+        "S",
+        "T"
+      ],
+      "label_symbols": [
+        "C'",
+        "O'",
+        "R'",
+        "S'",
+        "T'"
+      ],
+      "question": "如图，圆锥的顶点为S，底面圆心为C；球O的球心位于圆锥的轴线上，且球O与圆锥侧面有公共点。根据图形中两体的实际接触方式判断，球O与圆锥的位置关系属于（ ）",
+      "answer_text": "外切",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S014",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S014",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 9,
+      "n_vertices": 79,
+      "n_aux": 22,
+      "n_faces": 0,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "H",
+        "K",
+        "O",
+        "S",
+        "T"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "H",
+        "K",
+        "O",
+        "S",
+        "T"
+      ],
+      "question": "如图，球体O与正圆锥的位置关系为（ ）",
+      "answer_text": "外切",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S015",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S015",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 5,
+      "n_vertices": 38,
+      "n_aux": 3,
+      "n_faces": 5,
+      "n_primitives": 3,
+      "referenced_symbols": [],
+      "label_symbols": [
+        "E",
+        "O",
+        "S",
+        "T"
+      ],
+      "question": "如图，组合体包含圆锥、其内切球、圆锥外侧一球及一旁的三棱柱。关于两体位置关系，下列说法正确的是？",
+      "answer_text": "圆锥外侧的球与圆锥侧面是体体外切",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S016",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S016",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 7,
+      "n_vertices": 188,
+      "n_aux": 137,
+      "n_faces": 14,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "E",
+        "F"
+      ],
+      "label_symbols": [
+        "E",
+        "F"
+      ],
+      "question": "如图，观察图中球与圆台的位置关系，下列判断正确的是（ ）",
+      "answer_text": "球与圆台外切",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S017",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S017",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 5,
+      "n_vertices": 57,
+      "n_aux": 5,
+      "n_faces": 0,
+      "n_primitives": 3,
+      "referenced_symbols": [
+        "O",
+        "P",
+        "R"
+      ],
+      "label_symbols": [
+        "O",
+        "P",
+        "R"
+      ],
+      "question": "如图，过球心O₁、O₂的竖直辅助截面截两球得两个大圆，两圆外切于点P，且P为两球唯一的公共点。则球O₁与球O₂的空间位置关系是（ ）",
+      "answer_text": "两球外切",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S018",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S018",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 5,
+      "n_vertices": 74,
+      "n_aux": 38,
+      "n_faces": 0,
+      "n_primitives": 2,
+      "referenced_symbols": [
+        "O",
+        "P"
+      ],
+      "label_symbols": [
+        "O",
+        "P",
+        "S"
+      ],
+      "question": "如图，图中球体与直圆锥的位置关系是（ ）",
+      "answer_text": "球与圆锥体体外切",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S019",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S019",
+      "ok": true,
+      "issues": [],
+      "score": 10.0,
+      "n_labels": 4,
+      "n_vertices": 65,
+      "n_aux": 21,
+      "n_faces": 24,
+      "n_primitives": 1,
+      "referenced_symbols": [
+        "O",
+        "T"
+      ],
+      "label_symbols": [
+        "O",
+        "T"
+      ],
+      "question": "如图，在该组合体中，圆台外上方球与圆台的位置关系是？",
+      "answer_text": "球与圆台外切，且切点为一个圆",
+      "pass": true
+    },
+    {
+      "id": "solid3d_spatial_tangent_external__S020",
+      "cell_id": "solid3d_spatial_tangent_external",
+      "item_id": "S020",
+      "ok": true,
+      "issues": [
+        "visual_complexity_low"
+      ],
+      "score": 9.2,
+      "n_labels": 7,
+      "n_vertices": 188,
+      "n_aux": 0,
+      "n_faces": 0,
+      "n_primitives": 0,
+      "referenced_symbols": [
+        "O",
+        "P",
+        "T"
+      ],
+      "label_symbols": [
+        "A",
+        "B",
+        "O",
+        "P",
+        "T"
+      ],
+      "question": "如图，球心C位于直圆锥轴线上的球体与圆锥共轴放置，轴截面中球与母线PA相切于点T。关于两立体在空间中公共点的集合，下列说法正确的是（ ）",
+      "answer_text": "球与圆锥外切于一个圆（纬圆）",
+      "pass": true
+    }
+  ]
+}
