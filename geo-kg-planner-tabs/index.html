@@ -14,18 +14,18 @@ iframe{display:block;width:100%;height:calc(100vh - 104px);border:0;background:#
 </style>
 <header>
   <h1>Geo-KG Planner Compare · Plan-first View</h1>
-  <div class="sub">立体几何 QA 生成路线对比页：先展示构想/plan，再展示图和 QA。新增昨晚大样本：V2.7 K26 Strict 600 题、V2.8 Fable Medium 200 题。</div>
+  <div class="sub">立体几何 QA 生成路线对比页：优先看同一批 5 个 cell × 20 题的同口径结果；大样本/不同 cell 结果只作展示，不直接横向比较分数。</div>
   <nav class="tabs">
-    <button class="active" data-src="v27-k26-strict-30x20.html">V2.7 K26 Strict · 30×20 · 596/600</button>
-    <button data-src="v28-fable-medium-10x20.html">V2.8 Fable Medium · 10×20 · 199/200</button>
+    <button class="active" data-src="v27-k26-strict-same5-20.html">V2.7 K26 Strict · Same5×20 · 93/100</button>
     <button data-src="v26-1-planned-options.html">V2.6.1 Planned Options</button>
     <button data-src="v26-richbrief-k26.html">V2.6 Fable Rich Brief → K26 Plan</button>
     <button data-src="v25-brief-k26.html">V2.5 Fable Brief → K26 Plan</button>
     <button data-src="fable-full-plan.html">V2.4 Fable Full Plan</button>
     <button data-src="k26-only-plan.html">V2.4 K26 Only Plan</button>
+    <button data-src="v28-fable-medium-10x20.html">V2.8 Fable Medium · 10×20 · diff cells</button>
   </nav>
 </header>
-<iframe id="frame" src="v27-k26-strict-30x20.html"></iframe>
+<iframe id="frame" src="v27-k26-strict-same5-20.html"></iframe>
 <script>
 const frame=document.getElementById('frame');
 for(const btn of document.querySelectorAll('button[data-src]')){
