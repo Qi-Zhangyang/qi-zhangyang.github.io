@@ -1,0 +1,44 @@
+{
+  "n": 100,
+  "pass": 28,
+  "fail": 72,
+  "go_stage2": 29,
+  "avg_score": 5.13,
+  "verdict_counts": {
+    "major_spec_issue": 66,
+    "good": 6,
+    "minor_spec_issue": 24,
+    "unusable": 4
+  },
+  "repair_level_counts": {
+    "major": 27,
+    "toolkit": 25,
+    "none": 4,
+    "minor": 41,
+    "rewrite": 3
+  },
+  "issue_counts": {
+    "other": 22,
+    "plan_coverage": 32,
+    "aux_line_clutter": 37,
+    "frustum_render": 12,
+    "cone_cylinder_render": 7,
+    "label_missing": 27,
+    "angle_arc": 26,
+    "camera_or_view": 36,
+    "label_overlap": 59,
+    "mesh_clutter": 37,
+    "shape_primitive": 11,
+    "tangent_or_section": 9,
+    "sphere_render": 23,
+    "label_position": 1,
+    "renderer_support": 5,
+    "cylinder_render": 1
+  },
+  "next_action_counts": {
+    "spec_rewrite": 41,
+    "toolkit_patch": 24,
+    "go_stage2": 27,
+    "visual_repair": 8
+  }
+}
