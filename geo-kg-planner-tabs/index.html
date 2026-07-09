@@ -13,10 +13,8 @@ button{height:36px;border:1px solid #c8ced7;border-radius:7px;background:#fff;co
 button.active{background:#1f6feb;border-color:#1f6feb;color:#fff}
 button.archive{border-style:dashed;color:#64748b}
 iframe{display:block;width:100%;height:calc(100vh - 148px);border:0;background:#fff}
-#showNav{display:none;position:fixed;right:12px;top:10px;z-index:20;height:32px;background:#fff;box-shadow:0 2px 8px rgba(15,23,42,.16)}
 body.compact header{display:none}
 body.compact iframe{height:100vh}
-body.compact #showNav{display:block}
 </style>
 <header>
   <h1>Geo-KG Planner Compare · Plan-first View</h1>
@@ -43,20 +41,20 @@ body.compact #showNav{display:block}
     <button class="archive" data-src="v28-alignment-review.html?v=r1-failcards1">V2.8 R1 Alignment Review · Failed 33</button>
   </nav>
 </header>
-<button id="showNav">显示标签</button>
 <iframe id="frame" src="v28-repair2-gpt55.html?v=gpt55-repair2-86"></iframe>
 <script>
 const frame=document.getElementById('frame');
-const showNav=document.getElementById('showNav');
 function collapseNav(){document.body.classList.add('compact');}
-function expandNav(){document.body.classList.remove('compact'); window.scrollTo({top:0,behavior:'smooth'});}
+function expandNav(){document.body.classList.remove('compact');}
 function bindFrameScroll(){
   try{
     const w=frame.contentWindow;
-    w.addEventListener('scroll',()=>{ if(w.scrollY>24) collapseNav(); },{passive:true});
+    w.addEventListener('scroll',()=>{
+      if(w.scrollY>24) collapseNav();
+      else expandNav();
+    },{passive:true});
   }catch(e){}
 }
-showNav.onclick=expandNav;
 for(const btn of document.querySelectorAll('button[data-src]')){
   btn.onclick=()=>{
     document.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
