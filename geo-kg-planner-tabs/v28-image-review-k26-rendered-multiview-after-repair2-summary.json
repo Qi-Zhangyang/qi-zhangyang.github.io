@@ -1,0 +1,46 @@
+{
+  "n": 100,
+  "pass": 40,
+  "fail": 60,
+  "avg_score": 6.11,
+  "verdict_counts": {
+    "clear": 24,
+    "major_visibility_issue": 49,
+    "unusable": 8,
+    "minor_visibility_issue": 19
+  },
+  "issue_counts": {
+    "label_overlap": 61,
+    "label_missing": 25,
+    "critical_object_missing": 29,
+    "line_style": 60,
+    "geometry_unreadable": 30,
+    "qa_not_supported": 14,
+    "clutter": 31,
+    "shape_rendering": 19,
+    "view_angle": 10,
+    "plan_coverage": 1
+  },
+  "next_review_counts": {
+    "none": 46,
+    "deep_spec": 51,
+    "qa_answer": 3
+  },
+  "multi_view_needed": 54,
+  "multi_view_count_hist": {
+    "1": 56,
+    "2": 35,
+    "0": 5,
+    "3": 4
+  },
+  "recommended_view_counts": {
+    "current": 71,
+    "oblique_plus45": 18,
+    "oblique_minus45": 27,
+    "side": 3,
+    "section_plane": 8,
+    "detail_zoom": 4,
+    "top": 4,
+    "front": 3
+  }
+}

@@ -1,0 +1,2489 @@
+{
+  "center_proj_collinearity__S011": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/center_proj_collinearity__S011/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          1.935,
+          882.177,
+          6.388
+        ],
+        "target": [
+          1.935,
+          0.0,
+          -1.311
+        ],
+        "orthoSize": 245.793
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_plus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S011/01_oblique_plus45.png",
+      "camera": {
+        "position": [
+          8.9228,
+          882.177,
+          11.2924
+        ],
+        "target": [
+          3.4788,
+          0.0,
+          5.8484
+        ],
+        "orthoSize": 245.793
+      },
+      "camera_position": "绕竖直轴+45°，俯角25°，距离保持不变",
+      "target": "圆台与球切点及光源S2",
+      "projection": "orthographic",
+      "render_goal": "展示S2与AA'、BB'的空间共线关系"
+    }
+  ],
+  "acute_dihedral__S013": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S013/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          6.444,
+          4.869,
+          8.657
+        ],
+        "target": [
+          0.681,
+          0.182,
+          0.006
+        ],
+        "orthoSize": 2.917
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S013/00_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -2.8426,
+          4.687,
+          12.1409
+        ],
+        "target": [
+          -0.8004,
+          0.0,
+          1.9487
+        ],
+        "orthoSize": 2.917
+      },
+      "camera_position": "绕竖直轴-45°，俯角25°，距离保持不变",
+      "target": "棱BC中点D",
+      "projection": "orthographic",
+      "render_goal": "展开∠SDA两边，使平面角及橙色圆弧更易观察"
+    }
+  ],
+  "archimedean_solid_recognition__S011": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/archimedean_solid_recognition__S011/cand1_run2/sample_0_clean.png",
+      "camera": {
+        "position": [
+          10.261,
+          7.612,
+          13.724
+        ],
+        "target": [
+          -0.0,
+          0.549,
+          -0.21
+        ],
+        "orthoSize": 4.908
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_plus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/archimedean_solid_recognition__S011/01_oblique_plus45.png",
+      "camera": {
+        "position": [
+          17.1084,
+          7.612,
+          2.3872
+        ],
+        "target": [
+          -0.0,
+          0.549,
+          -0.21
+        ],
+        "orthoSize": 4.908
+      },
+      "camera_position": "绕组合体竖直轴顺时针旋转+45°，保持俯角25°，距离不变",
+      "target": "截角二十面体几何中心",
+      "projection": "orthographic",
+      "render_goal": "展示侧面正六边形与正五边形的分布规律及相邻关系"
+    }
+  ],
+  "center_proj_collinearity__S003": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/center_proj_collinearity__S003/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          21.639,
+          18.101,
+          41.114
+        ],
+        "target": [
+          1.724,
+          1.566,
+          0.284
+        ],
+        "orthoSize": 12.382
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S003/01_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -13.0651,
+          18.101,
+          43.2372
+        ],
+        "target": [
+          1.724,
+          1.566,
+          0.284
+        ],
+        "orthoSize": 12.382
+      },
+      "camera_position": "绕竖直轴-45°，俯角25°，距离不变",
+      "target": "棱台右侧面与圆柱左侧面贴合棱边",
+      "projection": "orthographic",
+      "render_goal": "展示棱台与圆柱贴合及整体投影轮廓"
+    }
+  ],
+  "cross_section_sphere__S015": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/cross_section_sphere__S015/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          10.299,
+          6.27,
+          13.897
+        ],
+        "target": [
+          -0.098,
+          0.056,
+          0.057
+        ],
+        "orthoSize": 4.826
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/cross_section_sphere__S015/00_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -2.4346,
+          6.214,
+          17.1381
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 4.826
+      },
+      "camera_position": "绕组合体竖直轴-45°，俯角25°，距离保持不变",
+      "target": "组合体中心/球心O",
+      "projection": "orthographic",
+      "render_goal": "展示圆台侧面轮廓及截面圆与球、圆台的完整空间关系"
+    }
+  ],
+  "archimedean_solid_recognition__S015": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/archimedean_solid_recognition__S015/cand1_run1/sample_0.png",
+      "camera": {
+        "position": [
+          5.192,
+          3.657,
+          6.715
+        ],
+        "target": [
+          -0.359,
+          0.082,
+          -0.154
+        ],
+        "orthoSize": 2.695
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/archimedean_solid_recognition__S015/00_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -0.932,
+          3.575,
+          8.7823
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 2.695
+      },
+      "camera_position": "绕竖直轴-45°，俯角30°，距离保持不变",
+      "target": "截半立方体中心O",
+      "projection": "orthographic",
+      "render_goal": "展示截半立方体侧面三角形与正方形交替结构"
+    }
+  ],
+  "archimedean_solid_recognition__S004": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/archimedean_solid_recognition__S004/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          11.428,
+          6.977,
+          15.537
+        ],
+        "target": [
+          0.301,
+          -0.283,
+          0.077
+        ],
+        "orthoSize": 5.37
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/archimedean_solid_recognition__S004/00_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -2.7629,
+          6.977,
+          18.8768
+        ],
+        "target": [
+          0.301,
+          -0.283,
+          0.077
+        ],
+        "orthoSize": 5.37
+      },
+      "camera_position": "绕竖直轴-45°，俯角25°，距离保持不变",
+      "target": "几何体中心",
+      "projection": "orthographic",
+      "render_goal": "展示右侧四边形面的对角线与邻边a、b标注，减少底部遮挡"
+    }
+  ],
+  "solid3d_spatial_tangent_external__S006": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/solid3d_spatial_tangent_external__S006/cand1_run1/sample_0.png",
+      "camera": {
+        "position": [
+          4.547,
+          5.609,
+          7.446
+        ],
+        "target": [
+          -0.0,
+          1.439,
+          -0.294
+        ],
+        "orthoSize": 2.385
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S006/00_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -2.2578,
+          4.17,
+          6.0574
+        ],
+        "target": [
+          0.0,
+          0.0,
+          -2.6308
+        ],
+        "orthoSize": 2.385
+      },
+      "camera_position": "绕几何体竖直轴-45°，俯角25°，距离保持不变",
+      "target": "球心O与截面SAD形心",
+      "projection": "orthographic",
+      "render_goal": "正面展示SAD截面、球心O及OT垂直SD关系"
+    }
+  ],
+  "solid3d_spatial_tangent_external__S012": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/solid3d_spatial_tangent_external__S012/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          4.67,
+          4.601,
+          10.671
+        ],
+        "target": [
+          0.52,
+          0.296,
+          0.272
+        ],
+        "orthoSize": 3.08
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_plus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S012/01_oblique_plus45.png",
+      "camera": {
+        "position": [
+          10.2019,
+          4.7897,
+          4.8647
+        ],
+        "target": [
+          -0.0858,
+          0.4847,
+          0.446
+        ],
+        "orthoSize": 3.08
+      },
+      "camera_position": "绕几何体竖直轴+45°，俯角25°，距离保持不变",
+      "target": "球心O与切点P",
+      "projection": "orthographic",
+      "render_goal": "展开左侧标签，清晰展示OP⊥SA与OH垂足位置"
+    }
+  ],
+  "solid3d_spatial_tangent_external__S020": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/solid3d_spatial_tangent_external__S020/cand1_run1/sample_0.png",
+      "camera": {
+        "position": [
+          8.628,
+          7.458,
+          12.788
+        ],
+        "target": [
+          0.002,
+          1.843,
+          0.0
+        ],
+        "orthoSize": 4.647
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_plus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S020/00_oblique_plus45.png",
+      "camera": {
+        "position": [
+          15.142,
+          5.615,
+          2.943
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 4.647
+      },
+      "camera_position": "绕竖直轴+45°，俯角25°，距离保持不变",
+      "target": "圆锥轴线PO中点",
+      "projection": "orthographic",
+      "render_goal": "侧面观察圆锥纬圆，避免与轴截面线重叠"
+    }
+  ],
+  "cross_section_sphere__S003": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/cross_section_sphere__S003/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          6.941,
+          6.274,
+          6.962
+        ],
+        "target": [
+          0.05,
+          1.092,
+          0.071
+        ],
+        "orthoSize": 3.13
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "side",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/cross_section_sphere__S003/00_side.png",
+      "camera": {
+        "position": [
+          11.1878,
+          1.2709,
+          0.1174
+        ],
+        "target": [
+          0.1504,
+          0.8538,
+          0.1174
+        ],
+        "orthoSize": 3.13
+      },
+      "camera_position": "从几何体正右方水平拍摄，视线垂直于圆台竖直轴线",
+      "target": "球心O与截面圆心O'的中点",
+      "projection": "orthographic",
+      "render_goal": "展示斜平面真实倾角及球与上下底切点位置"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/cross_section_sphere__S003/01_oblique_minus45.png",
+      "camera": {
+        "position": [
+          0.05,
+          6.274,
+          9.8163
+        ],
+        "target": [
+          0.05,
+          1.092,
+          0.071
+        ],
+        "orthoSize": 3.13
+      },
+      "camera_position": "绕竖直轴-45°，俯角25°，距离保持不变",
+      "target": "几何体中心",
+      "projection": "orthographic",
+      "render_goal": "观察斜平面与圆台侧面交线及截面圆空间走向"
+    }
+  ],
+  "solid3d_spatial_tangent_external__S015": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/solid3d_spatial_tangent_external__S015/cand1_run1/sample_0.png",
+      "camera": {
+        "position": [
+          6.692,
+          4.227,
+          8.162
+        ],
+        "target": [
+          0.341,
+          0.674,
+          0.033
+        ],
+        "orthoSize": 3.006
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S015/00_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -1.2572,
+          3.553,
+          10.2389
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 3.006
+      },
+      "camera_position": "绕竖直轴 -45°，俯角 25°，距离保持不变",
+      "target": "几何体中心（圆锥底面中心O附近）",
+      "projection": "orthographic",
+      "render_goal": "看清外球与圆锥切圆及两球球心连线"
+    }
+  ],
+  "solid3d_spatial_tangent_external__S013": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/solid3d_spatial_tangent_external__S013/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          11.063,
+          8.284,
+          17.084
+        ],
+        "target": [
+          0.388,
+          0.551,
+          0.0
+        ],
+        "orthoSize": 5.696
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_plus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S013/00_oblique_plus45.png",
+      "camera": {
+        "position": [
+          19.6286,
+          7.733,
+          4.5318
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 5.696
+      },
+      "camera_position": "绕竖直轴+45°，俯角25°，距离保持不变",
+      "target": "切点T与轴线SC",
+      "projection": "orthographic",
+      "render_goal": "明确球体位于圆锥侧面外侧，非被母线包围"
+    }
+  ],
+  "solid3d_spatial_tangent_external__S001": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/solid3d_spatial_tangent_external__S001/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          5.767,
+          5.856,
+          10.7
+        ],
+        "target": [
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        "orthoSize": 3.488
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "section_plane",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S001/00_section_plane.png",
+      "camera": {
+        "position": [
+          -1.4132,
+          5.856,
+          12.0727
+        ],
+        "target": [
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        "orthoSize": 2.5114
+      },
+      "camera_position": "视线沿圆柱轴线方向，正对辅助截面",
+      "target": "辅助截面内两圆圆心连线中点",
+      "projection": "orthographic",
+      "render_goal": "清晰展示截面内两等圆外切及切点P、圆心O1O2"
+    }
+  ],
+  "acute_dihedral__S014": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/acute_dihedral__S014/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          4.559,
+          6.681,
+          11.2
+        ],
+        "target": [
+          0.034,
+          0.79,
+          -0.0
+        ],
+        "orthoSize": 3.474
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S014/01_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -3.7791,
+          5.891,
+          11.1193
+        ],
+        "target": [
+          0.9409,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 3.474
+      },
+      "camera_position": "绕竖直轴-45°，俯角25°，距离不变",
+      "target": "棱l中点/点C",
+      "projection": "orthographic",
+      "render_goal": "看清截面内CE与底面OC构成的二面角平面角"
+    }
+  ],
+  "cross_section_sphere__S011": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/cross_section_sphere__S011/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          6.641,
+          8.328,
+          7.108
+        ],
+        "target": [
+          -0.159,
+          2.401,
+          0.005
+        ],
+        "orthoSize": 2.939
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_plus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/cross_section_sphere__S011/01_oblique_plus45.png",
+      "camera": {
+        "position": [
+          9.8309,
+          8.2512,
+          0.2143
+        ],
+        "target": [
+          0.0,
+          2.3242,
+          0.0
+        ],
+        "orthoSize": 2.939
+      },
+      "camera_position": "绕竖直轴+45°，俯角25°，距离保持不变",
+      "target": "球心O",
+      "projection": "orthographic",
+      "render_goal": "减少球体自遮挡，侧面展示截面圆与圆台关系"
+    }
+  ],
+  "acute_dihedral__S009": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S009/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          3.245,
+          3.182,
+          5.736
+        ],
+        "target": [
+          -0.221,
+          0.281,
+          -0.128
+        ],
+        "orthoSize": 1.826
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S009/00_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -1.6956,
+          2.901,
+          5.3973
+        ],
+        "target": [
+          0.0,
+          0.0,
+          -1.2
+        ],
+        "orthoSize": 1.826
+      },
+      "camera_position": "绕几何体竖直轴旋转-45°，保持俯角25°与距离不变",
+      "target": "AB棱中点/辅助点D",
+      "projection": "orthographic",
+      "render_goal": "清晰展示D在AB棱上的位置及PD、CD与AB的垂直关系"
+    }
+  ],
+  "acute_dihedral__S010": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S010/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          12.521,
+          7.208,
+          14.323
+        ],
+        "target": [
+          2.285,
+          0.628,
+          -0.077
+        ],
+        "orthoSize": 4.952
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S010/00_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -2.9444,
+          6.58,
+          17.4203
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 4.952
+      },
+      "camera_position": "绕竖直轴-45°，俯角25°，距离保持不变",
+      "target": "底面三角形ABC中心",
+      "projection": "orthographic",
+      "render_goal": "清晰展示底面ABC及垂足R在BC边上的准确位置"
+    }
+  ],
+  "acute_dihedral__S017": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/acute_dihedral__S017/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          7.148,
+          5.37,
+          10.682
+        ],
+        "target": [
+          0.0,
+          0.456,
+          0.843
+        ],
+        "orthoSize": 3.664
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S017/00_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -4.0406,
+          4.914,
+          12.0116
+        ],
+        "target": [
+          -2.1378,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 3.664
+      },
+      "camera_position": "绕几何体竖直轴-45°，俯角25°，距离保持不变",
+      "target": "AB中点E",
+      "projection": "orthographic",
+      "render_goal": "减少遮挡，清晰展示两面相对位置及∠DEC张角"
+    }
+  ],
+  "solid3d_spatial_tangent_external__S016": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/solid3d_spatial_tangent_external__S016/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          8.327,
+          7.371,
+          15.488
+        ],
+        "target": [
+          0.12,
+          1.008,
+          0.053
+        ],
+        "orthoSize": 4.884
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "section_plane",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S016/00_section_plane.png",
+      "camera": {
+        "position": [
+          -2.0104,
+          7.371,
+          17.404
+        ],
+        "target": [
+          0.12,
+          1.008,
+          0.053
+        ],
+        "orthoSize": 3.5165
+      },
+      "camera_position": "绕竖直轴旋转至正对轴截面平面，俯角0°，距离保持不变",
+      "target": "圆台与球的公共轴心及轴截面中心",
+      "projection": "orthographic",
+      "render_goal": "清晰显示等腰梯形两腰、球大圆及切点E、F，内部虚线内切球"
+    }
+  ],
+  "acute_dihedral__S002": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S002/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          6.079,
+          5.04,
+          9.652
+        ],
+        "target": [
+          0.185,
+          0.547,
+          0.22
+        ],
+        "orthoSize": 3.08
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S002/01_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -0.5795,
+          4.493,
+          8.9149
+        ],
+        "target": [
+          1.9222,
+          0.0,
+          -1.9222
+        ],
+        "orthoSize": 3.08
+      },
+      "camera_position": "绕竖直轴-45°，俯角25°，距离保持不变",
+      "target": "侧面SCD与截面SAE的交线SF",
+      "projection": "orthographic",
+      "render_goal": "消除右侧遮挡，清晰展示④号二面角与SF交线关系"
+    }
+  ],
+  "cross_section_sphere__S019": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/cross_section_sphere__S019/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          4.0,
+          3.5,
+          5.0
+        ],
+        "target": [
+          0.0,
+          1.3152840410291058,
+          0.0
+        ],
+        "orthoSize": 4.885340723822393
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_plus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/cross_section_sphere__S019/00_oblique_plus45.png",
+      "camera": {
+        "position": [
+          6.364,
+          3.4281,
+          0.7071
+        ],
+        "target": [
+          0.0,
+          1.2434,
+          0.0
+        ],
+        "orthoSize": 4.8853
+      },
+      "camera_position": "绕竖直轴+45°，俯角25°，距离保持不变",
+      "target": "球心O",
+      "projection": "orthographic",
+      "render_goal": "展示平面α倾斜与截面圆完整实虚线"
+    }
+  ],
+  "cross_section_sphere__S007": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/cross_section_sphere__S007/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          8.916,
+          6.475,
+          8.624
+        ],
+        "target": [
+          1.229,
+          1.085,
+          0.014
+        ],
+        "orthoSize": 3.283
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_plus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/cross_section_sphere__S007/00_oblique_plus45.png",
+      "camera": {
+        "position": [
+          12.7919,
+          7.4552,
+          0.6527
+        ],
+        "target": [
+          1.2682,
+          2.0652,
+          0.0
+        ],
+        "orthoSize": 3.283
+      },
+      "camera_position": "绕竖直轴+45°，俯角25°，距离保持不变",
+      "target": "球心 O 与圆柱轴线中点",
+      "projection": "orthographic",
+      "render_goal": "展示圆柱底圆、母线及与球外切遮挡关系"
+    }
+  ],
+  "archimedean_solid_recognition__S008": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/archimedean_solid_recognition__S008/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          8.156,
+          8.935,
+          17.576
+        ],
+        "target": [
+          -1.811,
+          0.047,
+          -1.895
+        ],
+        "orthoSize": 6.251
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "section_plane",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/archimedean_solid_recognition__S008/01_section_plane.png",
+      "camera": {
+        "position": [
+          -3.0036,
+          8.888,
+          21.6665
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 4.5007
+      },
+      "camera_position": "沿体对角线方向对准中心O，距离适中",
+      "target": "几何中心O",
+      "projection": "orthographic",
+      "render_goal": "使辅助截面γ正对观察者，正六边形轮廓无透视变形，清晰展示与O、O′相对位置"
+    }
+  ],
+  "cross_section_sphere__S006": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/cross_section_sphere__S006/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          7.584,
+          5.583,
+          10.701
+        ],
+        "target": [
+          0.239,
+          0.073,
+          0.048
+        ],
+        "orthoSize": 4.062
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_plus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/cross_section_sphere__S006/01_oblique_plus45.png",
+      "camera": {
+        "position": [
+          12.7265,
+          5.51,
+          2.3391
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 4.062
+      },
+      "camera_position": "绕竖直轴+45°，俯角25°，距离保持不变",
+      "target": "球心O",
+      "projection": "orthographic",
+      "render_goal": "消除B1遮挡，确认正方体所有顶点均在球面上"
+    },
+    {
+      "view_name": "section_plane",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/cross_section_sphere__S006/02_section_plane.png",
+      "camera": {
+        "position": [
+          0.1953,
+          5.6544,
+          13.2282
+        ],
+        "target": [
+          0.2889,
+          0.1444,
+          0.2889
+        ],
+        "orthoSize": 2.9246
+      },
+      "camera_position": "沿OH方向（即垂直于α平面）正对垂足H",
+      "target": "垂足H",
+      "projection": "orthographic",
+      "render_goal": "看清截面圆真实形状及OH垂直于α的辅助关系"
+    }
+  ],
+  "cross_section_sphere__S010": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/cross_section_sphere__S010/cand1_run1/sample_0.png",
+      "camera": {
+        "position": [
+          12.616,
+          9.092,
+          15.18
+        ],
+        "target": [
+          0.504,
+          0.905,
+          0.209
+        ],
+        "orthoSize": 5.736
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/cross_section_sphere__S010/00_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -2.0216,
+          8.187,
+          19.1506
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 5.736
+      },
+      "camera_position": "绕竖直轴-45°，俯角25°，距离保持不变",
+      "target": "球心O与垂足H连线中点",
+      "projection": "orthographic",
+      "render_goal": "分离H与B1标签，清晰展示OH垂线与截面半径HP"
+    }
+  ],
+  "cross_section_sphere__S005": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/cross_section_sphere__S005/cand1_run1/sample_0.png",
+      "camera": {
+        "position": [
+          18.886,
+          14.443,
+          23.604
+        ],
+        "target": [
+          0.248,
+          0.375,
+          0.295
+        ],
+        "orthoSize": 8.337
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_plus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/cross_section_sphere__S005/01_oblique_plus45.png",
+      "camera": {
+        "position": [
+          30.8156,
+          15.9343,
+          4.6834
+        ],
+        "target": [
+          1.1546,
+          1.8663,
+          1.3805
+        ],
+        "orthoSize": 8.337
+      },
+      "camera_position": "绕竖直轴+45°，俯角25°，距离不变",
+      "target": "截面圆圆心H",
+      "projection": "orthographic",
+      "render_goal": "明确展示截面圆所在平面与OH垂线关系"
+    }
+  ],
+  "acute_dihedral__S003": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S003/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          5.657,
+          5.961,
+          8.909
+        ],
+        "target": [
+          -0.221,
+          2.032,
+          -0.143
+        ],
+        "orthoSize": 2.941
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "detail_zoom",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S003/01_detail_zoom.png",
+      "camera": {
+        "position": [
+          9.1528,
+          6.5,
+          5.7197
+        ],
+        "target": [
+          -0.0,
+          2.571,
+          0.0
+        ],
+        "orthoSize": 1.8234
+      },
+      "camera_position": "相机向顶部P点推进，保持同向",
+      "target": "顶点P与上底面中心",
+      "projection": "perspective",
+      "render_goal": "放大顶部区域，使①②③④弧线与辅助线清晰可辨"
+    }
+  ],
+  "archimedean_solid_recognition__S020": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/archimedean_solid_recognition__S020/cand1_run1/sample_0.png",
+      "camera": {
+        "position": [
+          8.48,
+          8.253,
+          12.627
+        ],
+        "target": [
+          0.021,
+          1.062,
+          0.023
+        ],
+        "orthoSize": 4.22
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/archimedean_solid_recognition__S020/00_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -2.91,
+          8.253,
+          14.9168
+        ],
+        "target": [
+          0.021,
+          1.062,
+          0.023
+        ],
+        "orthoSize": 4.22
+      },
+      "camera_position": "绕几何体竖直轴-45°，保持原俯角25°与观察距离",
+      "target": "截半立方体几何中心",
+      "projection": "orthographic",
+      "render_goal": "减少背景立方体重叠，更清楚展示三角形与正方形面及顶点连接"
+    }
+  ],
+  "acute_dihedral__S019": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S019/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          6.422,
+          6.107,
+          9.889
+        ],
+        "target": [
+          -0.081,
+          0.996,
+          -0.081
+        ],
+        "orthoSize": 3.299
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "side",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S019/00_side.png",
+      "camera": {
+        "position": [
+          12.9542,
+          2.1579,
+          -1.3032
+        ],
+        "target": [
+          0.0,
+          1.6523,
+          -1.3032
+        ],
+        "orthoSize": 3.299
+      },
+      "camera_position": "从圆台正前方、与棱AB垂直方向水平观察",
+      "target": "AB中点M",
+      "projection": "orthographic",
+      "render_goal": "清晰展示MP、MO及∠PMO，消除垂直压缩"
+    }
+  ],
+  "archimedean_solid_recognition__S012": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/archimedean_solid_recognition__S012/cand1_run1/sample_0.png",
+      "camera": {
+        "position": [
+          6.491,
+          4.262,
+          8.371
+        ],
+        "target": [
+          -0.003,
+          0.0,
+          0.058
+        ],
+        "orthoSize": 3.271
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/archimedean_solid_recognition__S012/00_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -1.2862,
+          4.262,
+          10.4701
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 3.271
+      },
+      "camera_position": "绕竖直轴 -45°，俯角 30°，距离保持不变",
+      "target": "球心 O",
+      "projection": "orthographic",
+      "render_goal": "减少侧面遮挡，清晰展示侧面顶点周围三角形与正方形交替连接顺序"
+    },
+    {
+      "view_name": "detail_zoom",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/archimedean_solid_recognition__S012/01_detail_zoom.png",
+      "camera": {
+        "position": [
+          9.3988,
+          5.5371,
+          3.5145
+        ],
+        "target": [
+          0.0,
+          1.2751,
+          -1.2751
+        ],
+        "orthoSize": 2.028
+      },
+      "camera_position": "靠近顶点 J，距离缩短至原 1/3，保持原俯角",
+      "target": "顶点 J",
+      "projection": "orthographic",
+      "render_goal": "放大显示顶点处 2 个三角形与 2 个正方形交替环绕的顶点图"
+    }
+  ],
+  "archimedean_solid_recognition__S002": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/archimedean_solid_recognition__S002/cand1_run1/sample_0.png",
+      "camera": {
+        "position": [
+          5.253,
+          3.949,
+          7.097
+        ],
+        "target": [
+          0.009,
+          0.009,
+          0.022
+        ],
+        "orthoSize": 2.829
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/archimedean_solid_recognition__S002/00_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -1.2947,
+          3.94,
+          8.7108
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 2.829
+      },
+      "camera_position": "绕竖直轴-45°（向右旋转），保持原俯角25°与观察距离不变",
+      "target": "几何体中心O",
+      "projection": "orthographic",
+      "render_goal": "看清右侧切点T2所在面及前侧正方形面对角线"
+    }
+  ],
+  "solid3d_spatial_tangent_external__S011": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/solid3d_spatial_tangent_external__S011/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          19.134,
+          18.801,
+          34.187
+        ],
+        "target": [
+          -0.601,
+          1.228,
+          0.005
+        ],
+        "orthoSize": 13.028
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_plus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S011/00_oblique_plus45.png",
+      "camera": {
+        "position": [
+          38.1251,
+          17.573,
+          10.2156
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 13.028
+      },
+      "camera_position": "绕几何体竖直轴+45°，俯角25°，距离保持不变",
+      "target": "圆锥底面圆心O与球O₂球心连线的中点",
+      "projection": "orthographic",
+      "render_goal": "展示球O₂位于圆锥右外侧及水平公切圆"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S011/01_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -10.8166,
+          18.801,
+          38.1301
+        ],
+        "target": [
+          -0.601,
+          1.228,
+          0.005
+        ],
+        "orthoSize": 13.028
+      },
+      "camera_position": "绕几何体竖直轴-45°，俯角25°，距离保持不变",
+      "target": "公切圆中心",
+      "projection": "orthographic",
+      "render_goal": "验证球O₂与圆锥侧面仅沿一圆接触，无贯穿"
+    }
+  ],
+  "acute_dihedral__S012": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S012/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          6.006,
+          5.498,
+          10.683
+        ],
+        "target": [
+          0.0,
+          0.646,
+          0.281
+        ],
+        "orthoSize": 3.931
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "section_plane",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S012/01_section_plane.png",
+      "camera": {
+        "position": [
+          -2.9943,
+          4.852,
+          12.7682
+        ],
+        "target": [
+          -1.9478,
+          0.0,
+          0.8025
+        ],
+        "orthoSize": 2.8303
+      },
+      "camera_position": "位于AB中垂面上，水平正视AB中点",
+      "target": "AB中点",
+      "projection": "orthographic",
+      "render_goal": "清晰展示α、β与底面所成二面角的平面角"
+    }
+  ],
+  "archimedean_solid_recognition__S014": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/archimedean_solid_recognition__S014/cand1_run1/sample_0.png",
+      "camera": {
+        "position": [
+          5.774,
+          3.768,
+          8.579
+        ],
+        "target": [
+          0.062,
+          -0.101,
+          -0.036
+        ],
+        "orthoSize": 2.922
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_plus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/archimedean_solid_recognition__S014/00_oblique_plus45.png",
+      "camera": {
+        "position": [
+          10.1307,
+          3.869,
+          2.0527
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 2.922
+      },
+      "camera_position": "绕竖直轴+45°，俯角25°，距离保持不变",
+      "target": "几何体中心O",
+      "projection": "orthographic",
+      "render_goal": "看清投影线与底面垂直关系及体对角线空间走向"
+    }
+  ],
+  "acute_dihedral__S020": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S020/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          13.455,
+          7.511,
+          14.58
+        ],
+        "target": [
+          2.513,
+          0.256,
+          1.298
+        ],
+        "orthoSize": 4.903
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S020/01_oblique_minus45.png",
+      "camera": {
+        "position": [
+          0.8584,
+          7.511,
+          18.427
+        ],
+        "target": [
+          2.513,
+          0.256,
+          1.298
+        ],
+        "orthoSize": 4.903
+      },
+      "camera_position": "绕竖直轴-45°，俯角25°，距离不变",
+      "target": "底面重心",
+      "projection": "orthographic",
+      "render_goal": "减少AB边遮挡，展示底面H、T、M、N分布"
+    },
+    {
+      "view_name": "top",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S020/02_top.png",
+      "camera": {
+        "position": [
+          0.0641,
+          18.6755,
+          0.0641
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 4.903
+      },
+      "camera_position": "正上方垂直俯视底面ABC",
+      "target": "底面ABC重心",
+      "projection": "orthographic",
+      "render_goal": "清晰展示底面垂足K、H、T、M、N位置"
+    }
+  ],
+  "center_proj_collinearity__S010": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/center_proj_collinearity__S010/cand1_run1/sample_0.png",
+      "camera": {
+        "position": [
+          8.588,
+          8.759,
+          14.18
+        ],
+        "target": [
+          0.017,
+          0.807,
+          0.025
+        ],
+        "orthoSize": 5.132
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S010/00_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -4.3528,
+          8.8452,
+          15.2135
+        ],
+        "target": [
+          -0.4044,
+          0.8932,
+          -0.8562
+        ],
+        "orthoSize": 5.132
+      },
+      "camera_position": "绕竖直轴-45°，俯角25°，距离保持不变",
+      "target": "截面四边形EFGH中心",
+      "projection": "orthographic",
+      "render_goal": "减轻球体遮挡，侧面观察截面四边形与切点T1-T4的对应关系"
+    }
+  ],
+  "center_proj_collinearity__S007": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/center_proj_collinearity__S007/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          9.312,
+          7.801,
+          14.746
+        ],
+        "target": [
+          0.097,
+          1.126,
+          0.0
+        ],
+        "orthoSize": 4.89
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "detail_zoom",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S007/01_detail_zoom.png",
+      "camera": {
+        "position": [
+          12.5723,
+          9.7989,
+          9.47
+        ],
+        "target": [
+          -2.0113,
+          3.1239,
+          0.0
+        ],
+        "orthoSize": 3.0318
+      },
+      "camera_position": "基于当前视角平移并放大至右下地面区域",
+      "target": "地面点A'、D、D'及线段SA'延长线",
+      "projection": "orthographic",
+      "render_goal": "放大显示A'与D的精确位置及标签，消除重叠歧义"
+    }
+  ],
+  "acute_dihedral__S016": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S016/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          9.015,
+          6.261,
+          10.898
+        ],
+        "target": [
+          1.946,
+          0.392,
+          -0.35
+        ],
+        "orthoSize": 3.77
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "top",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S016/00_top.png",
+      "camera": {
+        "position": [
+          0.0482,
+          14.5235,
+          0.0482
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 3.77
+      },
+      "camera_position": "正上方垂直向下，距底面适当高度",
+      "target": "底面三角形ABC中心",
+      "projection": "orthographic",
+      "render_goal": "展示底面垂足H、G及OH⊥AB、OG⊥AC"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S016/01_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -1.009,
+          6.261,
+          12.6021
+        ],
+        "target": [
+          1.946,
+          0.392,
+          -0.35
+        ],
+        "orthoSize": 3.77
+      },
+      "camera_position": "绕竖直轴逆时针转45°，保持俯角25°",
+      "target": "几何体中心",
+      "projection": "orthographic",
+      "render_goal": "减少左侧遮挡，侧面观察二面角与球"
+    }
+  ],
+  "center_proj_collinearity__S018": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/center_proj_collinearity__S018/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          1.872,
+          41.707,
+          1.12
+        ],
+        "target": [
+          1.872,
+          0.0,
+          0.756
+        ],
+        "orthoSize": 11.422
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_plus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S018/00_oblique_plus45.png",
+      "camera": {
+        "position": [
+          2.1294,
+          41.707,
+          1.0134
+        ],
+        "target": [
+          1.872,
+          0.0,
+          0.756
+        ],
+        "orthoSize": 11.422
+      },
+      "camera_position": "绕竖直轴+45°，俯角30°，距离适中",
+      "target": "圆柱-半球组合体中心",
+      "projection": "orthographic",
+      "render_goal": "正确展示圆柱上方叠放半球及SHH'共线"
+    }
+  ],
+  "acute_dihedral__S004": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S004/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          10.372,
+          7.911,
+          15.522
+        ],
+        "target": [
+          2.051,
+          1.197,
+          1.803
+        ],
+        "orthoSize": 4.79
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S004/00_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -1.2481,
+          6.714,
+          20.0341
+        ],
+        "target": [
+          2.5689,
+          0.0,
+          4.4494
+        ],
+        "orthoSize": 4.79
+      },
+      "camera_position": "绕几何体竖直轴-45°，俯角25°，距离保持不变",
+      "target": "几何体中心/底面A点附近",
+      "projection": "orthographic",
+      "render_goal": "展开左下角标签，减少A/N/O/P重叠"
+    },
+    {
+      "view_name": "detail_zoom",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S004/01_detail_zoom.png",
+      "camera": {
+        "position": [
+          15.9082,
+          7.5151,
+          12.8263
+        ],
+        "target": [
+          2.5689,
+          0.8011,
+          3.9093
+        ],
+        "orthoSize": 2.9698
+      },
+      "camera_position": "正对左下角区域，距离拉近3倍，保持正交",
+      "target": "球心O及切点M、N",
+      "projection": "orthographic",
+      "render_goal": "清晰展示球切点M、N与平面角∠DHA"
+    }
+  ],
+  "center_proj_collinearity__S009": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/center_proj_collinearity__S009/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          3.506,
+          28.259,
+          -0.869
+        ],
+        "target": [
+          3.506,
+          0.0,
+          -1.115
+        ],
+        "orthoSize": 7.672
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "top",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S009/00_top.png",
+      "camera": {
+        "position": [
+          1.9715,
+          28.2601,
+          0.101
+        ],
+        "target": [
+          1.8705,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 7.672
+      },
+      "camera_position": "正上方俯视，垂直于投影面α",
+      "target": "圆台上下底圆心O′及点A、P",
+      "projection": "orthographic",
+      "render_goal": "清晰展示上下底圆及A、P水平位置关系"
+    },
+    {
+      "view_name": "front",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S009/01_front.png",
+      "camera": {
+        "position": [
+          1.8705,
+          1.212,
+          28.2601
+        ],
+        "target": [
+          1.8705,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 7.672
+      },
+      "camera_position": "正面平视，沿母线PA方向",
+      "target": "母线PA中点M及光源S",
+      "projection": "orthographic",
+      "render_goal": "展示S、P、P′共线及M、M′位置，α为底面水平线"
+    },
+    {
+      "view_name": "oblique_plus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S009/02_oblique_plus45.png",
+      "camera": {
+        "position": [
+          3.6799,
+          28.259,
+          -0.9411
+        ],
+        "target": [
+          3.506,
+          0.0,
+          -1.115
+        ],
+        "orthoSize": 7.672
+      },
+      "camera_position": "绕竖直轴+45°，俯角30°，距离适中",
+      "target": "圆台中心及投影面α",
+      "projection": "orthographic",
+      "render_goal": "三维直观展示光源、圆台、投影线及影子共线关系"
+    }
+  ],
+  "center_proj_collinearity__S014": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/center_proj_collinearity__S014/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          15.739,
+          13.845,
+          32.232
+        ],
+        "target": [
+          0.043,
+          0.814,
+          0.051
+        ],
+        "orthoSize": 10.209
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_plus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S014/00_oblique_plus45.png",
+      "camera": {
+        "position": [
+          33.8972,
+          13.845,
+          11.7077
+        ],
+        "target": [
+          0.043,
+          0.814,
+          0.051
+        ],
+        "orthoSize": 10.209
+      },
+      "camera_position": "绕几何体竖直轴+45°，俯角25°，距离保持不变",
+      "target": "圆台中心轴中点",
+      "projection": "orthographic",
+      "render_goal": "展示完整上下底椭圆与侧面母线，增强圆台立体感"
+    }
+  ],
+  "archimedean_solid_recognition__S006": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/archimedean_solid_recognition__S006/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          4.923,
+          3.418,
+          4.896
+        ],
+        "target": [
+          0.119,
+          0.068,
+          0.119
+        ],
+        "orthoSize": 1.868
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/archimedean_solid_recognition__S006/01_oblique_minus45.png",
+      "camera": {
+        "position": [
+          0.0191,
+          3.35,
+          6.7748
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 1.868
+      },
+      "camera_position": "绕竖直轴旋转-45°，俯角25°，距离保持不变",
+      "target": "截半立方体中心O",
+      "projection": "orthographic",
+      "render_goal": "展示右后侧面片分布及体心到截面中心连线"
+    }
+  ],
+  "acute_dihedral__S006": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/acute_dihedral__S006/cand1_run1/sample_0.png",
+      "camera": {
+        "position": [
+          11.025,
+          8.467,
+          16.326
+        ],
+        "target": [
+          1.685,
+          0.503,
+          0.56
+        ],
+        "orthoSize": 5.537
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S006/01_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -0.8994,
+          7.964,
+          17.7526
+        ],
+        "target": [
+          3.6444,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 5.537
+      },
+      "camera_position": "绕竖直轴-45°，俯角25°，距离保持不变",
+      "target": "底面三角形ABC重心",
+      "projection": "orthographic",
+      "render_goal": "展开底面，看清BD、D、H、E'、F'及AG交线位置。"
+    }
+  ],
+  "acute_dihedral__S018": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/acute_dihedral__S018/cand1_run1/sample_0.png",
+      "camera": {
+        "position": [
+          6.266,
+          4.444,
+          9.593
+        ],
+        "target": [
+          -0.122,
+          0.286,
+          0.122
+        ],
+        "orthoSize": 3.202
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S018/00_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -3.1567,
+          4.7304,
+          11.214
+        ],
+        "target": [
+          -0.9767,
+          0.5724,
+          -0.0
+        ],
+        "orthoSize": 3.202
+      },
+      "camera_position": "绕几何体竖直轴旋转-45°，俯角25°，距离不变",
+      "target": "MN中点Q",
+      "projection": "orthographic",
+      "render_goal": "减少侧面PBC遮挡，使截面AMN与棱MN的倾斜关系更清晰"
+    },
+    {
+      "view_name": "section_plane",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S018/01_section_plane.png",
+      "camera": {
+        "position": [
+          -1.1763,
+          4.7304,
+          11.4222
+        ],
+        "target": [
+          -0.9767,
+          0.5724,
+          -0.0
+        ],
+        "orthoSize": 2.3054
+      },
+      "camera_position": "垂直于MN且过点Q的法向位置，位于二面角开口外侧",
+      "target": "MN中点Q",
+      "projection": "orthographic",
+      "render_goal": "直接展示二面角A-MN-P的平面角∠AQP（或等效角）的真实张口"
+    }
+  ],
+  "solid3d_spatial_tangent_external__S002": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair2_gpt55/solid3d_spatial_tangent_external__S002/cand1_run1/sample_0.png",
+      "camera": {
+        "position": [
+          4.746,
+          6.529,
+          7.508
+        ],
+        "target": [
+          -0.138,
+          1.935,
+          0.594
+        ],
+        "orthoSize": 2.551
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_plus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S002/00_oblique_plus45.png",
+      "camera": {
+        "position": [
+          8.3774,
+          6.7243,
+          2.2959
+        ],
+        "target": [
+          0.035,
+          2.1303,
+          0.8605
+        ],
+        "orthoSize": 2.551
+      },
+      "camera_position": "绕竖直轴+45°，俯角25°，距离保持不变",
+      "target": "几何体重心/球心O",
+      "projection": "orthographic",
+      "render_goal": "展开PBD截面与球交线，侧面PBC切点T更清晰"
+    }
+  ],
+  "solid3d_spatial_tangent_external__S014": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/solid3d_spatial_tangent_external__S014/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          8.323,
+          7.35,
+          12.546
+        ],
+        "target": [
+          1.08,
+          0.9,
+          -0.0
+        ],
+        "orthoSize": 4.134
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "front",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S014/00_front.png",
+      "camera": {
+        "position": [
+          1.5133,
+          1.6384,
+          15.8577
+        ],
+        "target": [
+          1.5133,
+          0.9989,
+          0.0
+        ],
+        "orthoSize": 4.134
+      },
+      "camera_position": "正对轴截面平面，沿垂直于SB方向平视",
+      "target": "切点T",
+      "projection": "orthographic",
+      "render_goal": "展示轴截面等腰三角形与大圆相切及OT垂直SB"
+    },
+    {
+      "view_name": "top",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/solid3d_spatial_tangent_external__S014/01_top.png",
+      "camera": {
+        "position": [
+          1.1333,
+          16.7577,
+          0.0533
+        ],
+        "target": [
+          1.08,
+          0.9,
+          -0.0
+        ],
+        "orthoSize": 4.134
+      },
+      "camera_position": "正上方沿轴线俯视",
+      "target": "底面圆心",
+      "projection": "orthographic",
+      "render_goal": "展示底面直径AB、CD及球心O的水平投影关系"
+    }
+  ],
+  "center_proj_collinearity__S019": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/center_proj_collinearity__S019/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          1.515,
+          21.087,
+          0.591
+        ],
+        "target": [
+          1.515,
+          0.0,
+          0.407
+        ],
+        "orthoSize": 5.673
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_plus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S019/00_oblique_plus45.png",
+      "camera": {
+        "position": [
+          1.6451,
+          21.087,
+          0.5371
+        ],
+        "target": [
+          1.515,
+          0.0,
+          0.407
+        ],
+        "orthoSize": 5.673
+      },
+      "camera_position": "绕竖直轴+45°，俯角30°，距离保持适中",
+      "target": "圆台与球相邻处中心",
+      "projection": "orthographic",
+      "render_goal": "正确展示S在圆台上方、三维相邻关系及地面阴影整体"
+    },
+    {
+      "view_name": "section_plane",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S019/01_section_plane.png",
+      "camera": {
+        "position": [
+          1.4095,
+          21.087,
+          0.5577
+        ],
+        "target": [
+          1.515,
+          0.0,
+          0.407
+        ],
+        "orthoSize": 4.0846
+      },
+      "camera_position": "侧视，光轴水平过圆台与球心，与地面平行",
+      "target": "轴截面形心",
+      "projection": "orthographic",
+      "render_goal": "展示轴截面内SA、ST切线及影子共线细节"
+    }
+  ],
+  "center_proj_collinearity__S002": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/center_proj_collinearity__S002/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          7.933,
+          6.22,
+          16.579
+        ],
+        "target": [
+          1.901,
+          1.163,
+          0.008
+        ],
+        "orthoSize": 4.813
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S002/00_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -5.5512,
+          6.22,
+          15.9907
+        ],
+        "target": [
+          1.901,
+          1.163,
+          0.008
+        ],
+        "orthoSize": 4.813
+      },
+      "camera_position": "绕几何体竖直轴逆时针旋转45°，保持同等俯角与距离",
+      "target": "圆台中心轴中点",
+      "projection": "orthographic",
+      "render_goal": "清晰展示圆台左右底面大小及轴截面梯形结构"
+    }
+  ],
+  "cross_section_sphere__S001": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/cross_section_sphere__S001/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          12.959,
+          11.912,
+          17.959
+        ],
+        "target": [
+          0.653,
+          0.503,
+          0.383
+        ],
+        "orthoSize": 7.212
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_minus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/cross_section_sphere__S001/00_oblique_minus45.png",
+      "camera": {
+        "position": [
+          -3.7265,
+          11.409,
+          21.1298
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orthoSize": 7.212
+      },
+      "camera_position": "绕竖直轴-45°，俯角25°，距离保持不变",
+      "target": "球心O",
+      "projection": "orthographic",
+      "render_goal": "将重叠的O、H、A标签分散开，看清OH⊥α与截面圆"
+    }
+  ],
+  "center_proj_collinearity__S017": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/center_proj_collinearity__S017/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          13.281,
+          9.038,
+          21.063
+        ],
+        "target": [
+          -0.146,
+          0.35,
+          0.081
+        ],
+        "orthoSize": 7.008
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_plus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/center_proj_collinearity__S017/00_oblique_plus45.png",
+      "camera": {
+        "position": [
+          23.9248,
+          11.8952,
+          5.7867
+        ],
+        "target": [
+          -0.406,
+          3.2072,
+          0.4445
+        ],
+        "orthoSize": 7.008
+      },
+      "camera_position": "绕竖直轴+45°，保持当前俯角25°，距离不变",
+      "target": "杆PQ中点",
+      "projection": "orthographic",
+      "render_goal": "展开投影线与影子，清晰展示杆的倾斜及地面影子"
+    }
+  ],
+  "acute_dihedral__S008": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/k26_restore/acute_dihedral__S008/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          6.81,
+          5.29,
+          8.68
+        ],
+        "target": [
+          0.627,
+          0.935,
+          -0.151
+        ],
+        "orthoSize": 2.979
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_plus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S008/01_oblique_plus45.png",
+      "camera": {
+        "position": [
+          11.2435,
+          5.29,
+          1.7214
+        ],
+        "target": [
+          0.627,
+          0.935,
+          -0.151
+        ],
+        "orthoSize": 2.979
+      },
+      "camera_position": "绕竖直轴+45°，俯角25°，距离保持不变",
+      "target": "几何体中心",
+      "projection": "orthographic",
+      "render_goal": "正面展示侧面BCC1B1与底面沿BC的二面角及斜高MM1"
+    }
+  ],
+  "acute_dihedral__S007": [
+    {
+      "view_name": "current",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/repair1/acute_dihedral__S007/cand1_run1/sample_0_clean.png",
+      "camera": {
+        "position": [
+          -5.453,
+          6.354,
+          9.129
+        ],
+        "target": [
+          -0.137,
+          1.396,
+          -0.079
+        ],
+        "orthoSize": 3.157
+      },
+      "render_goal": "原始单图"
+    },
+    {
+      "view_name": "oblique_plus45",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S007/00_oblique_plus45.png",
+      "camera": {
+        "position": [
+          2.7521,
+          4.958,
+          8.8478
+        ],
+        "target": [
+          0.0,
+          0.0,
+          -1.4222
+        ],
+        "orthoSize": 3.157
+      },
+      "camera_position": "绕竖直轴 +45°，俯角 25°，距离保持不变",
+      "target": "几何体重心（上底面 A₁B₁C₁ 中心）",
+      "projection": "orthographic",
+      "render_goal": "使 AA₁ 与 BB₁ 分离，清晰展示直三棱柱与锥体的组合结构"
+    },
+    {
+      "view_name": "section_plane",
+      "path": "geo_kg_codegen/out_v2_8_free_review_same5/multiview_k26_camera/acute_dihedral__S007/01_section_plane.png",
+      "camera": {
+        "position": [
+          -10.2519,
+          7.1644,
+          4.1381
+        ],
+        "target": [
+          -0.6158,
+          2.2064,
+          -0.3556
+        ],
+        "orthoSize": 2.273
+      },
+      "camera_position": "位于棱 A₁B₁ 正前方，视线水平且垂直于棱并过点 M",
+      "target": "点 M",
+      "projection": "orthographic",
+      "render_goal": "直接展示 PM 与 MN 的锐角关系，消除钝角错觉"
+    }
+  ]
+}
