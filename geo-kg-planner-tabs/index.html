@@ -14,9 +14,10 @@ iframe{display:block;width:100%;height:calc(100vh - 104px);border:0;background:#
 </style>
 <header>
   <h1>Geo-KG Planner Compare · Plan-first View</h1>
-  <div class="sub">立体几何 QA 生成路线对比页：优先看同一批 5 个 cell × 20 题的同口径结果；大样本/不同 cell 结果只作展示，不直接横向比较分数。</div>
+  <div class="sub">立体几何 QA 生成路线对比页：默认按同一个 cell / 同一个 seed 横向排列不同版本；后续 tab 保留按版本查看。</div>
   <nav class="tabs">
-    <button class="active" data-src="v27-k26-strict-same5-20.html?v=2bd8e61">V2.7 K26 Strict · Same5×20 · 93/100</button>
+    <button class="active" data-src="by-cell.html?v=77996ba">按 Cell 横向对比</button>
+    <button data-src="v27-k26-strict-same5-20.html?v=2bd8e61">V2.7 K26 Strict · Same5×20 · 93/100</button>
     <button data-src="v26-1-planned-options.html">V2.6.1 Planned Options</button>
     <button data-src="v26-richbrief-k26.html">V2.6 Fable Rich Brief → K26 Plan</button>
     <button data-src="v25-brief-k26.html">V2.5 Fable Brief → K26 Plan</button>
@@ -24,7 +25,7 @@ iframe{display:block;width:100%;height:calc(100vh - 104px);border:0;background:#
     <button data-src="k26-only-plan.html">V2.4 K26 Only Plan</button>
   </nav>
 </header>
-<iframe id="frame" src="v27-k26-strict-same5-20.html?v=2bd8e61"></iframe>
+<iframe id="frame" src="by-cell.html?v=77996ba"></iframe>
 <script>
 const frame=document.getElementById('frame');
 for(const btn of document.querySelectorAll('button[data-src]')){
