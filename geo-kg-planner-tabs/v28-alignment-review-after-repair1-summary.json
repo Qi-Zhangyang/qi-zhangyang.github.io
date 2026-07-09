@@ -1,0 +1,23 @@
+{
+  "n": 100,
+  "pass": 76,
+  "fail": 24,
+  "avg_score": 8.18,
+  "verdict_counts": {
+    "minor_issue": 21,
+    "aligned": 54,
+    "major_issue": 22,
+    "uncertain": 3
+  },
+  "issue_counts": {
+    "label_or_aux": 22,
+    "plan_to_spec": 90,
+    "answer": 2,
+    "distractor": 2
+  },
+  "next_review_counts": {
+    "image": 62,
+    "deep_spec": 35,
+    "image|deep_spec": 3
+  }
+}
