@@ -1,0 +1,314 @@
+<!doctype html>
+<html><head><meta charset='utf-8'>
+<title>VST 评测曲线</title>
+<style>
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif;background:#f7f7f5;color:#151515;letter-spacing:0}
+header{padding:20px 28px 14px;background:#fff;border-bottom:1px solid #deded8;position:sticky;top:0;z-index:2}
+h1{margin:0 0 6px;font-size:24px;letter-spacing:0}.meta{font-size:13px;color:#565656;line-height:1.55}
+main{max-width:1680px;margin:0 auto;padding:20px 24px 44px}
+.tabs{display:flex;gap:8px;margin:0 0 18px}.tab{border:1px solid #d8d8d2;background:#fff;border-radius:6px;padding:9px 14px;font-weight:700;cursor:pointer;color:#151515}.tab.active{background:#151515;color:#fff;border-color:#151515}
+.pane{display:none}.pane.active{display:block}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}
+.card{background:#fff;border:1px solid #deded8;border-radius:6px;padding:12px;margin-bottom:16px}
+.card h2{font-size:16px;margin:0 0 8px}img{display:block;width:100%;height:auto;background:#fff}
+table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px solid #e7e7e1;padding:8px 10px;text-align:left;vertical-align:top}th{background:#fafafa}
+.links a{color:#005ea8;text-decoration:none;margin-right:18px}.links a:hover{text-decoration:underline}
+.section-title{font-size:18px;margin:24px 0 12px}
+.snv6-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0 0 16px}
+.snv6-kpi{background:#fff;border:1px solid #deded8;border-radius:6px;padding:13px 14px}
+.snv6-kpi .label{font-size:13px;font-weight:800;color:#545454}.snv6-kpi .value{font-size:32px;line-height:1.1;font-weight:900;margin-top:5px}.snv6-kpi .sub{font-size:13px;line-height:1.45;color:#5e5e5e;margin-top:6px}
+.snv6-chart-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.snv6-chart{background:#fff;border:1px solid #deded8;border-radius:6px;padding:12px;margin-bottom:16px}
+.snv6-chart h2{font-size:16px;margin:0 0 8px}.snv6-chart svg{width:100%;height:auto;display:block;background:#fff}
+.snv6-legend{display:flex;gap:18px;align-items:center;font-size:13px;font-weight:800;color:#3f3f3f;margin-bottom:4px}.snv6-dot{width:12px;height:12px;border-radius:99px;display:inline-block;margin-right:6px;vertical-align:-1px}.snv6-dot.scanmi{background:#d45b2c}.snv6-dot.base{background:#3f6f98}
+.snv6-table-wrap{overflow:auto}.snv6-pos{color:#b8471d;font-weight:900}.snv6-neg{color:#336d9f;font-weight:900}.snv6-muted{color:#767676}
+.geo-note{background:#fff;border-left:4px solid #202020;padding:11px 14px;margin:0 0 16px;font-size:13px;line-height:1.55;color:#4c4c4c}
+.geo-chart-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}
+.geo-legend{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin:0 0 12px;font-size:12px;font-weight:800;color:#444}
+.geo-legend-item{display:inline-flex;align-items:center;white-space:nowrap}.geo-swatch{width:20px;height:3px;display:inline-block;margin-right:6px;border-radius:0}.geo-swatch.dashed{height:0;background:transparent!important;border-top:3px dashed currentColor}
+.geo-baseline-swatch{width:10px;height:10px;background:#222;display:inline-block;margin-right:6px;transform:rotate(45deg)}
+.geo-status{display:inline-block;border-radius:4px;padding:2px 7px;font-size:12px;font-weight:800;background:#ecece7;color:#444}.geo-status.running{background:#dff1e4;color:#176231}.geo-status.pending,.geo-status.submitted{background:#fff0ca;color:#765300}.geo-status.success,.geo-status.succeeded{background:#dcecf9;color:#245b86}.geo-status.failed{background:#f8dddd;color:#8b2f2f}
+.geo-score-lines{line-height:1.55;white-space:nowrap}.geo-score-lines b{font-weight:900}.geo-table-note{font-size:12px;color:#666;margin:8px 0 0}
+@media(max-width:1100px){.grid3,.snv6-chart-grid,.snv6-kpis,.geo-chart-grid{grid-template-columns:1fr}}
+</style></head><body>
+<header><h1>VST 评测曲线</h1><div class='meta'>VST 与 Geo3D 验证图版的公网静态快照。Geo3D R5/R13 对比使用六路 baseline1000 实验的共同加载点，展示三个指定 benchmark 的每 100 step 已完成结果。本页不访问任何内网服务。</div></header>
+<main>
+<div class='tabs'>
+  <button class='tab active' data-tab='matrix'>VST p10 矩阵</button>
+  <button class='tab' data-tab='scanmi'>ScanNet 多图验证</button>
+  <button class='tab' data-tab='geo3d'>Geo3D R5 p10</button>
+  <button class='tab' data-tab='geo3d-b1000'>Geo3D R5/R13 对比</button>
+  <button class='tab' data-tab='snv6'>SN V6 Eval</button>
+</div>
+
+<section id='tab-matrix' class='pane active'>
+<h2 class='section-title'>By Dataset</h2>
+<div class='grid3'>
+<div class='card'><h2>NaturalPerception</h2><img src='vst_figures/vst_eval_dataset_np.png?v=202607100843'></div>
+<div class='card'><h2>SolidGeo</h2><img src='vst_figures/vst_eval_dataset_sg.png?v=202607100843'></div>
+<div class='card'><h2>Perception-geometry-mc</h2><img src='vst_figures/vst_eval_dataset_geom.png?v=202607100843'></div>
+</div>
+<h2 class='section-title'>By Ability / Task</h2>
+<div class='grid3'>
+<div class='card'><h2>NaturalPerception</h2><img src='vst_figures/vst_eval_task_np.png?v=202607100843'></div>
+<div class='card'><h2>SolidGeo</h2><img src='vst_figures/vst_eval_task_sg.png?v=202607100843'></div>
+<div class='card'><h2>Perception-geometry-mc</h2><img src='vst_figures/vst_eval_task_geom.png?v=202607100843'></div>
+</div>
+</section>
+
+<section id='tab-scanmi' class='pane'>
+<h2 class='section-title'>VST-ScanNet 多图验证：ScanMI vs Baseline</h2>
+<div class='grid3'>
+<div class='card'><h2>NaturalPerception</h2><img src='vst_figures_scanmi/scanmi_eval_dataset_np.png?v=202607100843'></div>
+<div class='card'><h2>SolidGeo</h2><img src='vst_figures_scanmi/scanmi_eval_dataset_sg.png?v=202607100843'></div>
+<div class='card'><h2>Perception-geometry-mc</h2><img src='vst_figures_scanmi/scanmi_eval_dataset_geom.png?v=202607100843'></div>
+</div>
+</section>
+
+<section id='tab-geo3d' class='pane'>
+<h2 class='section-title'>Geo3D R5 p10：三 benchmark vs lijia-line baseline</h2>
+<div class='grid3'>
+<div class='card'><h2>NaturalPerceptionCircularV3</h2><img src='vst_figures_geo3d/geo3d_vs_baseline_np.png?v=202607100843'></div>
+<div class='card'><h2>SolidGeoPerceptionCircularV1</h2><img src='vst_figures_geo3d/geo3d_vs_baseline_sg.png?v=202607100843'></div>
+<div class='card'><h2>Perception-geometry-mc-circular-v1</h2><img src='vst_figures_geo3d/geo3d_vs_baseline_geom.png?v=202607100843'></div>
+</div>
+</section>
+
+<section id='tab-geo3d-b1000' class='pane'>
+<h2 class='section-title'>Geo3D baseline1000：R5 / R13 / pair2 / 注入比例对比</h2>
+<div class='geo-note'>六路实验都从同一个 <b>lijia-line iter1000</b> checkpoint 加载，因此图中的 step 0 是严格共同起点。只绘制已经真实完成三项评测的 checkpoint；100、200、300……直到 1000 的待测状态见下表。这里不计算“三项均值”。</div>
+<div class='snv6-kpis' id='geo-b1000-kpis'></div>
+<div class='geo-legend' id='geo-b1000-legend'></div>
+<div class='geo-chart-grid'>
+  <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='geo-b1000-chart-natural'></div></div>
+  <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV1</h2><div id='geo-b1000-chart-solid'></div></div>
+  <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='geo-b1000-chart-geometry'></div></div>
+</div>
+<div class='card'>
+  <h2>六路训练与每 100 step 评测进度</h2>
+  <div class='snv6-table-wrap'><table id='geo-b1000-table'></table></div>
+  <div class='geo-table-note' id='geo-b1000-updated'></div>
+</div>
+</section>
+
+<section id='tab-snv6' class='pane'>
+<h2 class='section-title'>SN V6 Eval：ScanMI vs Baseline</h2>
+<div class='snv6-kpis' id='snv6-kpis'></div>
+<div class='snv6-chart'>
+  <h2>六项均值</h2>
+  <div class='snv6-legend'><span><i class='snv6-dot scanmi'></i>ScanMI</span><span><i class='snv6-dot base'></i>Baseline</span></div>
+  <div id='snv6-avg-chart'></div>
+</div>
+<div class='snv6-chart-grid' id='snv6-metric-charts'></div>
+<div class='card'>
+  <h2>同 checkpoint 对比</h2>
+  <div class='snv6-table-wrap'><table id='snv6-table'></table></div>
+</div>
+</section>
+</main>
+<script>
+const snv6Metrics = [
+  ['NaturalPerceptionCircularV3', '自然感知'],
+  ['BabyVPerceptionCircularV1', 'BabyV 感知'],
+  ['Perception-geometry-mc-cat-circular-v1', '几何 MC'],
+  ['ChartTableMCx4', '图表/表格'],
+  ['PointBench', 'PointBench'],
+  ['ZeroBench_v3', 'ZeroBench']
+];
+const snv6Rows = [
+  {group:'baseline',step:100,NaturalPerceptionCircularV3:0.22988505747126436,BabyVPerceptionCircularV1:0.2122885743872972,'Perception-geometry-mc-cat-circular-v1':0.26904761904761904,ChartTableMCx4:0.1688235294117647,PointBench:0.40224032586558045,ZeroBench_v3:0.03917050691244239},
+  {group:'baseline',step:200,NaturalPerceptionCircularV3:0.2476489028213166,BabyVPerceptionCircularV1:0.24231964100793923,'Perception-geometry-mc-cat-circular-v1':0.2671428571428571,ChartTableMCx4:0.19411764705882353,PointBench:0.5407331975560081,ZeroBench_v3:0.01152073732718894},
+  {group:'baseline',step:300,NaturalPerceptionCircularV3:0.22988505747126436,BabyVPerceptionCircularV1:0.2392129789437349,'Perception-geometry-mc-cat-circular-v1':0.27095238095238094,ChartTableMCx4:0.1923529411764706,PointBench:0.5814663951120163,ZeroBench_v3:0.020737327188940093},
+  {group:'baseline',step:400,NaturalPerceptionCircularV3:0.24242424242424243,BabyVPerceptionCircularV1:0.23610631687953054,'Perception-geometry-mc-cat-circular-v1':0.29285714285714287,ChartTableMCx4:0.18470588235294116,PointBench:0.5539714867617108,ZeroBench_v3:0.009216589861751152},
+  {group:'baseline',step:500,NaturalPerceptionCircularV3:0.23824451410658307,BabyVPerceptionCircularV1:0.23817742492233346,'Perception-geometry-mc-cat-circular-v1':0.3038095238095238,ChartTableMCx4:0.18411764705882352,PointBench:0.5570264765784114,ZeroBench_v3:0.02534562211981567},
+  {group:'baseline',step:600,NaturalPerceptionCircularV3:0.2277951933124347,BabyVPerceptionCircularV1:0.23196410079392474,'Perception-geometry-mc-cat-circular-v1':0.2814285714285714,ChartTableMCx4:0.17705882352941177,PointBench:0.5376782077393075,ZeroBench_v3:0.020737327188940093},
+  {group:'baseline',step:700,NaturalPerceptionCircularV3:0.2277951933124347,BabyVPerceptionCircularV1:0.23161891612012428,'Perception-geometry-mc-cat-circular-v1':0.30238095238095236,ChartTableMCx4:0.18176470588235294,PointBench:0.5580448065173116,ZeroBench_v3:0.027649769585253458},
+  {group:'baseline',step:800,NaturalPerceptionCircularV3:0.2361546499477534,BabyVPerceptionCircularV1:0.23610631687953054,'Perception-geometry-mc-cat-circular-v1':0.29285714285714287,ChartTableMCx4:0.16647058823529412,PointBench:0.5386965376782077,ZeroBench_v3:0.03686635944700461},
+  {group:'baseline',step:900,NaturalPerceptionCircularV3:0.22988505747126436,BabyVPerceptionCircularV1:0.2329996548153262,'Perception-geometry-mc-cat-circular-v1':0.2985714285714286,ChartTableMCx4:0.17058823529411765,PointBench:0.5519348268839104,ZeroBench_v3:0.03686635944700461},
+  {group:'baseline',step:1000,NaturalPerceptionCircularV3:0.219435736677116,BabyVPerceptionCircularV1:0.22816706938211945,'Perception-geometry-mc-cat-circular-v1':0.2914285714285714,ChartTableMCx4:0.17058823529411765,PointBench:0.539714867617108,ZeroBench_v3:0.029953917050691243},
+  {group:'scanmi',step:100,NaturalPerceptionCircularV3:0.26332288401253917,BabyVPerceptionCircularV1:0.24473593372454264,'Perception-geometry-mc-cat-circular-v1':0.22285714285714286,ChartTableMCx4:0.20588235294117646,PointBench:0.4429735234215886,ZeroBench_v3:0.04838709677419355},
+  {group:'scanmi',step:200,NaturalPerceptionCircularV3:0.29153605015673983,BabyVPerceptionCircularV1:0.2740766309975837,'Perception-geometry-mc-cat-circular-v1':0.31952380952380954,ChartTableMCx4:0.25,PointBench:0.5763747454175153,ZeroBench_v3:0.04838709677419355},
+  {group:'scanmi',step:300,NaturalPerceptionCircularV3:0.2988505747126437,BabyVPerceptionCircularV1:0.2802899551259924,'Perception-geometry-mc-cat-circular-v1':0.33904761904761904,ChartTableMCx4:0.25941176470588234,PointBench:0.5926680244399185,ZeroBench_v3:0.018433179723502304},
+  {group:'scanmi',step:400,NaturalPerceptionCircularV3:0.3155694879832811,BabyVPerceptionCircularV1:0.28684846392820157,'Perception-geometry-mc-cat-circular-v1':0.3357142857142857,ChartTableMCx4:0.2576470588235294,PointBench:0.59979633401222,ZeroBench_v3:0.041474654377880185},
+  {group:'scanmi',step:500,NaturalPerceptionCircularV3:0.29780564263322884,BabyVPerceptionCircularV1:0.2806351397997929,'Perception-geometry-mc-cat-circular-v1':0.3357142857142857,ChartTableMCx4:0.25882352941176473,PointBench:0.5733197556008147,ZeroBench_v3:0.029953917050691243},
+  {group:'scanmi',step:700,NaturalPerceptionCircularV3:0.30094043887147337,BabyVPerceptionCircularV1:0.27166033828098035,'Perception-geometry-mc-cat-circular-v1':0.33285714285714285,ChartTableMCx4:0.24294117647058824,PointBench:0.5519348268839104,ZeroBench_v3:0.03686635944700461},
+  {group:'scanmi',step:800,NaturalPerceptionCircularV3:0.30094043887147337,BabyVPerceptionCircularV1:0.26268553676216777,'Perception-geometry-mc-cat-circular-v1':0.3242857142857143,ChartTableMCx4:0.24058823529411766,PointBench:0.5712830957230143,ZeroBench_v3:0.04377880184331797},
+  {group:'scanmi',step:900,NaturalPerceptionCircularV3:0.28735632183908044,BabyVPerceptionCircularV1:0.2647566448049707,'Perception-geometry-mc-cat-circular-v1':0.33380952380952383,ChartTableMCx4:0.23294117647058823,PointBench:0.5936863543788188,ZeroBench_v3:0.03686635944700461},
+  {group:'scanmi',step:1000,NaturalPerceptionCircularV3:0.3019853709508882,BabyVPerceptionCircularV1:0.2764929237141871,'Perception-geometry-mc-cat-circular-v1':0.34523809523809523,ChartTableMCx4:0.25529411764705884,PointBench:0.5906313645621182,ZeroBench_v3:0.041474654377880185}
+];
+function snv6Avg(row){return snv6Metrics.reduce((s,[k])=>s+row[k],0)/snv6Metrics.length}
+function snv6Row(group, step){return snv6Rows.find(r=>r.group===group && r.step===step)}
+function snv6Pct(v){return (v*100).toFixed(1)}
+function snv6Delta(v){const s=(v*100).toFixed(1); return `${v>=0?'+':''}${s}`}
+function snv6DeltaClass(v){return v>=0?'snv6-pos':'snv6-neg'}
+function snv6Scale(values, h, top, bottom){
+  let min=Math.min(...values), max=Math.max(...values);
+  const pad=Math.max((max-min)*0.14,0.012);
+  min=Math.max(0,min-pad); max=Math.min(1,max+pad);
+  return {min,max,y:v=>top+(max-v)/(max-min)*(h-top-bottom)};
+}
+function snv6Path(points, xOf, yOf){
+  let d='', open=false;
+  points.forEach(p=>{
+    if(p.v==null){open=false; return}
+    d += `${open?'L':'M'}${xOf(p.step).toFixed(1)},${yOf(p.v).toFixed(1)} `;
+    open=true;
+  });
+  return d;
+}
+function snv6Chart(el, title, metricKey, large=false){
+  const w=large?1120:760, h=large?360:300, m={l:52,r:24,t:30,b:44};
+  const steps=[100,200,300,400,500,600,700,800,900,1000];
+  const series = ['baseline','scanmi'].map(group=>({group, points:steps.map(step=>{const r=snv6Row(group,step); return {step,v:r?(metricKey==='avg'?snv6Avg(r):r[metricKey]):null}})}));
+  const values=series.flatMap(s=>s.points.map(p=>p.v).filter(v=>v!=null));
+  const scale=snv6Scale(values,h,m.t,m.b);
+  const x=step=>m.l+(step-100)/900*(w-m.l-m.r);
+  const axisColor='#d7d7d0', labelColor='#4b4b4b';
+  const colors={scanmi:'#d45b2c',baseline:'#3f6f98'};
+  const tickVals=[scale.min,(scale.min*2+scale.max)/3,(scale.min+scale.max*2)/3,scale.max];
+  const grid=tickVals.map(v=>`<line x1="${m.l}" x2="${w-m.r}" y1="${scale.y(v)}" y2="${scale.y(v)}" stroke="${axisColor}" stroke-width="1"/><text x="${m.l-9}" y="${scale.y(v)+4}" text-anchor="end" font-size="12" fill="${labelColor}">${snv6Pct(v)}</text>`).join('');
+  const xLabels=steps.map(step=>`<text x="${x(step)}" y="${h-15}" text-anchor="middle" font-size="12" fill="${labelColor}">${step}</text>`).join('');
+  const paths=series.map(s=>`<path d="${snv6Path(s.points,x,scale.y)}" fill="none" stroke="${colors[s.group]}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`).join('');
+  const points=series.map(s=>s.points.filter(p=>p.v!=null).map((p,i)=>{
+    const y=scale.y(p.v), labelY=s.group==='scanmi'?y-10:y+18;
+    return `<circle cx="${x(p.step)}" cy="${y}" r="4.5" fill="#fff" stroke="${colors[s.group]}" stroke-width="2.5"/><text x="${x(p.step)}" y="${labelY}" text-anchor="middle" font-size="${large?13:12}" font-weight="800" fill="${colors[s.group]}">${snv6Pct(p.v)}</text>`;
+  }).join('')).join('');
+  el.innerHTML=`${title?`<h2>${title}</h2>`:''}<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${title||'SN V6 chart'}">
+    <rect x="0" y="0" width="${w}" height="${h}" fill="#fff"/>
+    ${grid}
+    <line x1="${m.l}" x2="${w-m.r}" y1="${h-m.b}" y2="${h-m.b}" stroke="#bdbdb5"/>
+    <line x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${h-m.b}" stroke="#bdbdb5"/>
+    ${xLabels}
+    <text x="${w/2}" y="${h-2}" text-anchor="middle" font-size="12" fill="${labelColor}">checkpoint</text>
+    ${paths}${points}
+  </svg>`;
+}
+function renderSnv6(){
+  const scanRows=snv6Rows.filter(r=>r.group==='scanmi');
+  const paired=scanRows.map(s=>({s,b:snv6Row('baseline',s.step)})).filter(x=>x.b);
+  const best=paired.reduce((a,x)=>snv6Avg(x.s)>snv6Avg(a.s)?x:a,paired[0]);
+  const latest=paired.find(x=>x.s.step===1000) || paired[paired.length-1];
+  const bestMetric=paired.flatMap(x=>snv6Metrics.map(([k,n])=>({step:x.s.step,name:n,delta:x.s[k]-x.b[k]}))).reduce((a,x)=>x.delta>a.delta?x:a);
+  const zero=latest.s.ZeroBench_v3-latest.b.ZeroBench_v3;
+  document.getElementById('snv6-kpis').innerHTML=[
+    ['最佳均值', `${snv6Pct(snv6Avg(best.s))}`, `ckpt${best.s.step}，相同 ckpt baseline ${snv6Pct(snv6Avg(best.b))}，Δ ${snv6Delta(snv6Avg(best.s)-snv6Avg(best.b))}`],
+    ['ckpt1000 均值', `${snv6Pct(snv6Avg(latest.s))}`, `baseline ${snv6Pct(snv6Avg(latest.b))}，Δ ${snv6Delta(snv6Avg(latest.s)-snv6Avg(latest.b))}`],
+    ['最大单项涨点', `${snv6Delta(bestMetric.delta)}`, `ckpt${bestMetric.step}：${bestMetric.name}`],
+    ['ZeroBench ckpt1000', `${snv6Pct(latest.s.ZeroBench_v3)}`, `baseline ${snv6Pct(latest.b.ZeroBench_v3)}，Δ ${snv6Delta(zero)}`]
+  ].map(([label,value,sub])=>`<div class="snv6-kpi"><div class="label">${label}</div><div class="value">${value}</div><div class="sub">${sub}</div></div>`).join('');
+  snv6Chart(document.getElementById('snv6-avg-chart'), '', 'avg', true);
+  document.getElementById('snv6-metric-charts').innerHTML = snv6Metrics.map(([k,n])=>`<div class="snv6-chart" id="snv6-chart-${k.replace(/[^a-zA-Z0-9]/g,'-')}"><div class='snv6-legend'><span><i class='snv6-dot scanmi'></i>ScanMI</span><span><i class='snv6-dot base'></i>Baseline</span></div></div>`).join('');
+  snv6Metrics.forEach(([k,n])=>snv6Chart(document.getElementById(`snv6-chart-${k.replace(/[^a-zA-Z0-9]/g,'-')}`), n, k, false));
+  const head=['ckpt','Baseline 均值','ScanMI 均值','均值 Δ',...snv6Metrics.map(([,n])=>`${n} Δ`)];
+  const body=paired.map(({s,b})=>{
+    const avgD=snv6Avg(s)-snv6Avg(b);
+    const cells=[s.step,snv6Pct(snv6Avg(b)),snv6Pct(snv6Avg(s)),`<span class="${snv6DeltaClass(avgD)}">${snv6Delta(avgD)}</span>`];
+    snv6Metrics.forEach(([k])=>{const d=s[k]-b[k]; cells.push(`<span class="${snv6DeltaClass(d)}">${snv6Delta(d)}</span>`)});
+    return `<tr>${cells.map(c=>`<td>${c}</td>`).join('')}</tr>`;
+  }).join('');
+  document.getElementById('snv6-table').innerHTML=`<thead><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${body}</tbody>`;
+}
+const geoB1000Series = [
+  {key:'r5_st_p10',label:'R5 single-turn p10',color:'#386cb0'},
+  {key:'r5_st_p30',label:'R5 single-turn p30',color:'#7b9fc2',dash:'8 5'},
+  {key:'r13_st_p10',label:'R13 single-turn p10',color:'#18885b'},
+  {key:'r13_st_p30',label:'R13 single-turn p30',color:'#d87918',dash:'8 5'},
+  {key:'r13_pair2_p10',label:'R13 pair2 p10',color:'#8b5aa6'},
+  {key:'r13_pair2_p30',label:'R13 pair2 p30',color:'#c6413a',dash:'8 5'}
+];
+function geoPct(v){return (v*100).toFixed(1)}
+function geoDelta(v){const p=(v*100).toFixed(1);return `${v>=0?'+':''}${p}pp`}
+function geoEsc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function geoStatus(value){const text=String(value||'Unknown');return `<span class="geo-status ${text.toLowerCase()}">${geoEsc(text)}</span>`}
+function geoB1000Chart(el, metric, data){
+  const w=720,h=390,m={l:58,r:22,t:32,b:48};
+  const baseline=data.baseline[metric];
+  const available=geoB1000Series.map(series=>({
+    ...series,
+    points:data.results.filter(row=>row.experiment===series.key && row.scores[metric]!=null).sort((a,b)=>a.step-b.step).map(row=>({step:row.step,v:row.scores[metric]}))
+  })).filter(series=>series.points.length);
+  const values=[baseline,...available.flatMap(series=>series.points.map(point=>point.v))];
+  let min=Math.min(...values),max=Math.max(...values);
+  const pad=Math.max((max-min)*0.28,0.012);
+  min=Math.max(0,min-pad);max=Math.min(1,max+pad);
+  if(max-min<0.03){const mid=(min+max)/2;min=Math.max(0,mid-0.018);max=Math.min(1,mid+0.018)}
+  const x=step=>m.l+step/1000*(w-m.l-m.r);
+  const y=value=>m.t+(max-value)/(max-min)*(h-m.t-m.b);
+  const yTicks=[min,(min*2+max)/3,(min+max*2)/3,max];
+  const grid=yTicks.map(value=>`<line x1="${m.l}" x2="${w-m.r}" y1="${y(value)}" y2="${y(value)}" stroke="#deded8"/><text x="${m.l-9}" y="${y(value)+4}" text-anchor="end" font-size="12" fill="#555">${geoPct(value)}</text>`).join('');
+  const xTicks=Array.from({length:11},(_,i)=>i*100).map(step=>`<text x="${x(step)}" y="${h-17}" text-anchor="middle" font-size="11" fill="#555">${step}</text>`).join('');
+  const paths=available.map((series,seriesIndex)=>{
+    const points=[{step:0,v:baseline},...series.points];
+    const d=points.map((point,index)=>`${index?'L':'M'}${x(point.step).toFixed(1)},${y(point.v).toFixed(1)}`).join(' ');
+    const marks=series.points.map((point,index)=>{
+      const labelAbove=(seriesIndex+index)%2===0;
+      const labelY=y(point.v)+(labelAbove?-11:19);
+      return `<circle cx="${x(point.step)}" cy="${y(point.v)}" r="5" fill="#fff" stroke="${series.color}" stroke-width="3"><title>${geoEsc(series.label)} step${point.step}: ${geoPct(point.v)}</title></circle><text x="${x(point.step)}" y="${labelY}" text-anchor="middle" font-size="12" font-weight="900" fill="${series.color}">${geoPct(point.v)}</text>`;
+    }).join('');
+    return `<path d="${d}" fill="none" stroke="${series.color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" ${series.dash?`stroke-dasharray="${series.dash}"`:''}/>${marks}`;
+  }).join('');
+  el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${geoEsc(metric)} evaluation curve">
+    <rect width="${w}" height="${h}" fill="#fff"/>
+    ${grid}
+    <line x1="${m.l}" x2="${w-m.r}" y1="${y(baseline)}" y2="${y(baseline)}" stroke="#777" stroke-width="1.5" stroke-dasharray="4 5"/>
+    <line x1="${m.l}" x2="${w-m.r}" y1="${h-m.b}" y2="${h-m.b}" stroke="#bdbdb5"/>
+    <line x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${h-m.b}" stroke="#bdbdb5"/>
+    ${xTicks}
+    <rect x="${x(0)-5}" y="${y(baseline)-5}" width="10" height="10" fill="#222" transform="rotate(45 ${x(0)} ${y(baseline)})"><title>${geoEsc(data.baseline_label)}: ${geoPct(baseline)}</title></rect>
+    <text x="${x(0)+10}" y="${y(baseline)-10}" font-size="11" font-weight="900" fill="#222">base ${geoPct(baseline)}</text>
+    ${paths}
+    <text x="${w/2}" y="${h-2}" text-anchor="middle" font-size="12" fill="#555">new training steps after common load point</text>
+  </svg>`;
+}
+async function renderGeoB1000(){
+  const kpi=document.getElementById('geo-b1000-kpis');
+  try{
+    const response=await fetch('geo3d_b1000_live.json',{cache:'no-store'});
+    if(!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    const stateSummary=Object.entries(data.eval_states).map(([state,count])=>`${state} ${count}`).join(' / ');
+    const latestTrain=Math.max(...data.experiments.map(row=>row.latest_checkpoint||0));
+    const activeTrain=data.experiments.filter(row=>['Running','Pending','Accepted','Initialized','Queue','Staging'].includes(row.train_state)).length;
+    kpi.innerHTML=[
+      ['真实完成点',`${data.results.length} / ${data.task_count}`,`每个点均完成 3 个指定 benchmark`],
+      ['Eval 队列',`${data.task_count-data.results.length}`,stateSummary],
+      ['训练最新进度',`step ${latestTrain}`,`${activeTrain}/6 条仍在 Running 或排队`],
+      ['固定评测间隔',`${data.step_interval} steps`,`从 ${data.eval_step_start} 到 ${data.eval_step_end-1}，不只测 step500`]
+    ].map(([label,value,sub])=>`<div class="snv6-kpi"><div class="label">${label}</div><div class="value">${value}</div><div class="sub">${sub}</div></div>`).join('');
+    document.getElementById('geo-b1000-legend').innerHTML=`<span class="geo-legend-item"><i class="geo-baseline-swatch"></i>共同起点</span>`+geoB1000Series.map(series=>`<span class="geo-legend-item"><i class="geo-swatch ${series.dash?'dashed':''}" style="background:${series.color};color:${series.color}"></i>${geoEsc(series.label)}</span>`).join('');
+    geoB1000Chart(document.getElementById('geo-b1000-chart-natural'),'NaturalPerceptionCircularV3',data);
+    geoB1000Chart(document.getElementById('geo-b1000-chart-solid'),'SolidGeoPerceptionCircularV1',data);
+    geoB1000Chart(document.getElementById('geo-b1000-chart-geometry'),'Perception-geometry-mc-circular-v1',data);
+    const metricLabels=[['NaturalPerceptionCircularV3','Natural'],['SolidGeoPerceptionCircularV1','SolidGeo'],['Perception-geometry-mc-circular-v1','Geometry']];
+    const body=data.experiments.map(row=>{
+      const latest=data.results.filter(result=>result.experiment===row.key).sort((a,b)=>b.step-a.step)[0];
+      const scores=latest?metricLabels.map(([metric,label])=>`<div><b>${label}</b> ${geoPct(latest.scores[metric])} <span class="${latest.scores[metric]-data.baseline[metric]>=0?'snv6-pos':'snv6-neg'}">${geoDelta(latest.scores[metric]-data.baseline[metric])}</span></div>`).join(''):'<span class="snv6-muted">暂无完成分数</span>';
+      const waiting=row.queued_steps.length?row.queued_steps.map(item=>`${item.step}(${item.status})`).join(', '):'-';
+      return `<tr><td><b>${geoEsc(row.label)}</b></td><td>${geoStatus(row.train_state)}</td><td><b>${row.latest_checkpoint||'-'}</b><br><span class="snv6-muted">${row.checkpoint_steps.join(', ')||'-'}</span></td><td>${row.successful_steps.join(', ')||'-'}</td><td>${geoEsc(waiting)}</td><td class="geo-score-lines">${scores}</td></tr>`;
+    }).join('');
+    document.getElementById('geo-b1000-table').innerHTML=`<thead><tr><th>实验</th><th>训练状态</th><th>已有 checkpoint</th><th>Eval 完成</th><th>Eval 待跑/运行</th><th>最新三项结果 vs 共同起点</th></tr></thead><tbody>${body}</tbody>`;
+    document.getElementById('geo-b1000-updated').textContent=`数据快照时间：${data.updated_at} · 只包含 ${data.benchmarks.join(' / ')}`;
+  }catch(error){
+    kpi.innerHTML=`<div class="snv6-kpi"><div class="label">数据加载失败</div><div class="sub">${geoEsc(error.message)}</div></div>`;
+  }
+}
+function activateDashboardTab(tab){
+  const btn=document.querySelector(`[data-tab="${tab}"]`);
+  const pane=document.getElementById('tab-'+tab);
+  if(!btn || !pane) return;
+  document.querySelectorAll('[data-tab]').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.pane').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  pane.classList.add('active');
+}
+document.querySelectorAll('[data-tab]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    activateDashboardTab(btn.dataset.tab);
+    history.replaceState(null,'','#'+btn.dataset.tab);
+  });
+});
+renderSnv6();
+renderGeoB1000();
+activateDashboardTab(location.hash ? location.hash.slice(1) : 'matrix');
+</script>
+</body></html>

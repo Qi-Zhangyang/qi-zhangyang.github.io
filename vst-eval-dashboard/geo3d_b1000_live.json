@@ -1,0 +1,329 @@
+{
+  "updated_at": "2026-07-10T08:46:52+00:00",
+  "benchmarks": [
+    "NaturalPerceptionCircularV3",
+    "SolidGeoPerceptionCircularV1",
+    "Perception-geometry-mc-circular-v1"
+  ],
+  "step_interval": 100,
+  "eval_step_start": 100,
+  "eval_step_end": 1001,
+  "baseline": {
+    "NaturalPerceptionCircularV3": 0.22257053,
+    "SolidGeoPerceptionCircularV1": 0.32449629,
+    "Perception-geometry-mc-circular-v1": 0.29095238
+  },
+  "baseline_label": "lijia-line iter1000 (common load point)",
+  "task_count": 35,
+  "eval_states": {
+    "Pending": 28,
+    "Submitted": 2,
+    "Success": 5
+  },
+  "experiments": [
+    {
+      "key": "r5_st_p10",
+      "label": "R5 single-turn p10",
+      "train_state": "Pending",
+      "latest_checkpoint": 400,
+      "checkpoint_steps": [
+        100,
+        200,
+        300,
+        400
+      ],
+      "successful_steps": [],
+      "queued_steps": [
+        {
+          "step": 100,
+          "status": "Pending"
+        },
+        {
+          "step": 200,
+          "status": "Pending"
+        },
+        {
+          "step": 300,
+          "status": "Pending"
+        },
+        {
+          "step": 400,
+          "status": "Pending"
+        }
+      ],
+      "eval_states": {
+        "Pending": 4
+      }
+    },
+    {
+      "key": "r5_st_p30",
+      "label": "R5 single-turn p30",
+      "train_state": "Pending",
+      "latest_checkpoint": 700,
+      "checkpoint_steps": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700
+      ],
+      "successful_steps": [
+        600,
+        700
+      ],
+      "queued_steps": [
+        {
+          "step": 100,
+          "status": "Pending"
+        },
+        {
+          "step": 200,
+          "status": "Pending"
+        },
+        {
+          "step": 300,
+          "status": "Pending"
+        },
+        {
+          "step": 400,
+          "status": "Pending"
+        },
+        {
+          "step": 500,
+          "status": "Pending"
+        }
+      ],
+      "eval_states": {
+        "Pending": 5,
+        "Success": 2
+      }
+    },
+    {
+      "key": "r13_st_p10",
+      "label": "R13 single-turn p10",
+      "train_state": "Pending",
+      "latest_checkpoint": 600,
+      "checkpoint_steps": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600
+      ],
+      "successful_steps": [
+        500,
+        600
+      ],
+      "queued_steps": [
+        {
+          "step": 100,
+          "status": "Pending"
+        },
+        {
+          "step": 200,
+          "status": "Pending"
+        },
+        {
+          "step": 300,
+          "status": "Pending"
+        },
+        {
+          "step": 400,
+          "status": "Pending"
+        }
+      ],
+      "eval_states": {
+        "Pending": 4,
+        "Success": 2
+      }
+    },
+    {
+      "key": "r13_st_p30",
+      "label": "R13 single-turn p30",
+      "train_state": "Pending",
+      "latest_checkpoint": 700,
+      "checkpoint_steps": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700
+      ],
+      "successful_steps": [],
+      "queued_steps": [
+        {
+          "step": 100,
+          "status": "Pending"
+        },
+        {
+          "step": 200,
+          "status": "Pending"
+        },
+        {
+          "step": 300,
+          "status": "Pending"
+        },
+        {
+          "step": 400,
+          "status": "Pending"
+        },
+        {
+          "step": 500,
+          "status": "Pending"
+        },
+        {
+          "step": 600,
+          "status": "Pending"
+        },
+        {
+          "step": 700,
+          "status": "Submitted"
+        }
+      ],
+      "eval_states": {
+        "Pending": 6,
+        "Submitted": 1
+      }
+    },
+    {
+      "key": "r13_pair2_p10",
+      "label": "R13 pair2 p10",
+      "train_state": "Pending",
+      "latest_checkpoint": 600,
+      "checkpoint_steps": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600
+      ],
+      "successful_steps": [],
+      "queued_steps": [
+        {
+          "step": 100,
+          "status": "Pending"
+        },
+        {
+          "step": 200,
+          "status": "Pending"
+        },
+        {
+          "step": 300,
+          "status": "Pending"
+        },
+        {
+          "step": 400,
+          "status": "Pending"
+        },
+        {
+          "step": 500,
+          "status": "Pending"
+        },
+        {
+          "step": 600,
+          "status": "Submitted"
+        }
+      ],
+      "eval_states": {
+        "Pending": 5,
+        "Submitted": 1
+      }
+    },
+    {
+      "key": "r13_pair2_p30",
+      "label": "R13 pair2 p30",
+      "train_state": "Pending",
+      "latest_checkpoint": 500,
+      "checkpoint_steps": [
+        100,
+        200,
+        300,
+        400,
+        500
+      ],
+      "successful_steps": [
+        500
+      ],
+      "queued_steps": [
+        {
+          "step": 100,
+          "status": "Pending"
+        },
+        {
+          "step": 200,
+          "status": "Pending"
+        },
+        {
+          "step": 300,
+          "status": "Pending"
+        },
+        {
+          "step": 400,
+          "status": "Pending"
+        }
+      ],
+      "eval_states": {
+        "Pending": 4,
+        "Success": 1
+      }
+    }
+  ],
+  "results": [
+    {
+      "experiment": "r13_pair2_p30",
+      "label": "R13 pair2 p30",
+      "step": 500,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.23719958202716823,
+        "SolidGeoPerceptionCircularV1": 0.31919406150583246,
+        "Perception-geometry-mc-circular-v1": 0.28095238095238095
+      }
+    },
+    {
+      "experiment": "r13_st_p10",
+      "label": "R13 single-turn p10",
+      "step": 500,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.24033437826541273,
+        "SolidGeoPerceptionCircularV1": 0.3329798515376458,
+        "Perception-geometry-mc-circular-v1": 0.2938095238095238
+      }
+    },
+    {
+      "experiment": "r13_st_p10",
+      "label": "R13 single-turn p10",
+      "step": 600,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.2277951933124347,
+        "SolidGeoPerceptionCircularV1": 0.32873806998939553,
+        "Perception-geometry-mc-circular-v1": 0.2838095238095238
+      }
+    },
+    {
+      "experiment": "r5_st_p30",
+      "label": "R5 single-turn p30",
+      "step": 600,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.25391849529780564,
+        "SolidGeoPerceptionCircularV1": 0.33191940615058324,
+        "Perception-geometry-mc-circular-v1": 0.2814285714285714
+      }
+    },
+    {
+      "experiment": "r5_st_p30",
+      "label": "R5 single-turn p30",
+      "step": 700,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.2413793103448276,
+        "SolidGeoPerceptionCircularV1": 0.3181336161187699,
+        "Perception-geometry-mc-circular-v1": 0.28809523809523807
+      }
+    }
+  ]
+}
