@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-11T00:30:20+00:00",
+  "updated_at": "2026-07-11T12:04:52+00:00",
   "benchmarks": [
     "NaturalPerceptionCircularV3",
     "SolidGeoPerceptionCircularV1",
@@ -13,7 +13,166 @@
     "SolidGeoPerceptionCircularV1": 0.32449629,
     "Perception-geometry-mc-circular-v1": 0.29095238
   },
-  "baseline_label": "lijia-line iter1000 (common load point)",
+  "baseline_label": "lijia-line baseline control",
+  "baseline_results": [
+    {
+      "step": 100,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.22884013,
+        "SolidGeoPerceptionCircularV1": 0.252386,
+        "Perception-geometry-mc-circular-v1": 0.26380952
+      }
+    },
+    {
+      "step": 200,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.25496343,
+        "SolidGeoPerceptionCircularV1": 0.31177094,
+        "Perception-geometry-mc-circular-v1": 0.2652381
+      }
+    },
+    {
+      "step": 300,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.22884013,
+        "SolidGeoPerceptionCircularV1": 0.29692471,
+        "Perception-geometry-mc-circular-v1": 0.27428571
+      }
+    },
+    {
+      "step": 400,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.24869383,
+        "SolidGeoPerceptionCircularV1": 0.31177094,
+        "Perception-geometry-mc-circular-v1": 0.29095238
+      }
+    },
+    {
+      "step": 500,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.23928945,
+        "SolidGeoPerceptionCircularV1": 0.32131495,
+        "Perception-geometry-mc-circular-v1": 0.2952381
+      }
+    },
+    {
+      "step": 600,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.2183908,
+        "SolidGeoPerceptionCircularV1": 0.32343584,
+        "Perception-geometry-mc-circular-v1": 0.28190476
+      }
+    },
+    {
+      "step": 700,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.22779519,
+        "SolidGeoPerceptionCircularV1": 0.32025451,
+        "Perception-geometry-mc-circular-v1": 0.29761905
+      }
+    },
+    {
+      "step": 800,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.23824451,
+        "SolidGeoPerceptionCircularV1": 0.33085896,
+        "Perception-geometry-mc-circular-v1": 0.29333333
+      }
+    },
+    {
+      "step": 900,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.22675026,
+        "SolidGeoPerceptionCircularV1": 0.32131495,
+        "Perception-geometry-mc-circular-v1": 0.29380952
+      }
+    },
+    {
+      "step": 1000,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.22257053,
+        "SolidGeoPerceptionCircularV1": 0.32449629,
+        "Perception-geometry-mc-circular-v1": 0.29095238
+      }
+    }
+  ],
+  "reference_experiments": [
+    {
+      "key": "r5_grouped_p10",
+      "label": "R5 grouped multi-QA p10",
+      "available_steps": [
+        200,
+        300,
+        400,
+        500,
+        600,
+        700
+      ],
+      "note": "Original R5 grouped single-image multi-QA run; only completed checkpoints are shown."
+    }
+  ],
+  "reference_results": [
+    {
+      "experiment": "r5_grouped_p10",
+      "label": "R5 grouped multi-QA p10",
+      "step": 200,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.25496343,
+        "SolidGeoPerceptionCircularV1": 0.31919406,
+        "Perception-geometry-mc-circular-v1": 0.27761905
+      }
+    },
+    {
+      "experiment": "r5_grouped_p10",
+      "label": "R5 grouped multi-QA p10",
+      "step": 300,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.26541275,
+        "SolidGeoPerceptionCircularV1": 0.33085896,
+        "Perception-geometry-mc-circular-v1": 0.29142857
+      }
+    },
+    {
+      "experiment": "r5_grouped_p10",
+      "label": "R5 grouped multi-QA p10",
+      "step": 400,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.2507837,
+        "SolidGeoPerceptionCircularV1": 0.31813362,
+        "Perception-geometry-mc-circular-v1": 0.27619048
+      }
+    },
+    {
+      "experiment": "r5_grouped_p10",
+      "label": "R5 grouped multi-QA p10",
+      "step": 500,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.23824451,
+        "SolidGeoPerceptionCircularV1": 0.31283139,
+        "Perception-geometry-mc-circular-v1": 0.28619048
+      }
+    },
+    {
+      "experiment": "r5_grouped_p10",
+      "label": "R5 grouped multi-QA p10",
+      "step": 600,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.23615465,
+        "SolidGeoPerceptionCircularV1": 0.32449629,
+        "Perception-geometry-mc-circular-v1": 0.2947619
+      }
+    },
+    {
+      "experiment": "r5_grouped_p10",
+      "label": "R5 grouped multi-QA p10",
+      "step": 700,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.24973877,
+        "SolidGeoPerceptionCircularV1": 0.32025451,
+        "Perception-geometry-mc-circular-v1": 0.29571429
+      }
+    }
+  ],
   "task_count": 60,
   "eval_states": {
     "Success": 60
