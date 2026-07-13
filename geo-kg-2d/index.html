@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang='zh'><head><meta charset='utf-8'><title>Geo-KG 2D 平面几何造题 · 总览</title>
+<style>
+body{font-family:'Noto Sans CJK SC',sans-serif;margin:0;background:#f5f6f8;color:#1a1a1a}
+header{background:#173d63;color:#fff;padding:20px 26px} header h1{margin:0;font-size:22px} header p{margin:8px 0 0;font-size:13.5px;opacity:.9}
+main{max-width:980px;margin:20px auto;padding:0 20px}
+.card{background:#fff;border:1px solid #e3e6ea;border-radius:12px;padding:18px 22px;margin-bottom:16px}
+.card h2{margin:0 0 8px;font-size:18px} .card h2 a{color:#1d5c9e;text-decoration:none}
+table{border-collapse:collapse;font-size:13.5px;margin-top:8px} td,th{border:1px solid #dde2e8;padding:6px 12px;text-align:center} th{background:#eef2f7}
+.note{font-size:12.5px;color:#666;margin-top:8px;line-height:1.7}
+</style></head><body>
+<header><h1>Geo-KG 2D 平面几何造题 · 总览</h1>
+<p>知识库: luhaoyu geo-kg 几何域 2D 部分（4150 叶子 cell）· 出题人/盲考官/质检官: kimi-k2.6 thinking @千循 · 2026-07-13</p></header>
+<main>
+<div class='card'><h2>流水线（每个知识点）</h2>
+<div class='note'>K2.6 写 5 份参数化出题程序互相竞赛 → 自动门控 → 各渲 6 题给盲考官(只看图)做 → 一致率最高者为冠军 → 冠军量产 10 题 → 质检官逐题六维深审(独立解题对gold/唯一性/泄漏/干扰项/贴合度/可视性) → 坏题清单回炉修程序。</div></div>
+<div class='card'><h2><a href='smoke8.html'>Smoke8 冒烟 →</a></h2>
+<table><tr><th>cell</th><th>冠军</th><th>题量</th><th>盲考</th><th>质检 ✅/⚠️/❌</th></tr>
+<tr><td>8</td><td>8/8 (100%)</td><td>80</td><td>全部 ≥6/6 或 5/6</td><td>67/10/3</td></tr></table>
+<div class='note'>❌ 案例: 中心对称题 gold 标错(2)、扇形题答案不唯一(1) —— 全部由深审抓出，已列修复队列。</div></div>
+<div class='card'><h2><a href='ring40.html'>Ring40 中环 →</a></h2>
+<table><tr><th>cell</th><th>冠军</th><th>题量</th><th>盲考</th><th>质检 ✅/⚠️/❌(370/380已审)</th></tr>
+<tr><td>40</td><td>38/40 首跑 + 2 回炉翻盘 = 40</td><td>380</td><td>胜率 95%</td><td>291/58/21</td></tr></table>
+<div class='note'>❌ 集中在 5 个 cell 的生成器 bug: 前提未画出(等弦tick)、计数对象预先画出(泄漏)、标注矛盾、语义漂移 —— 修一个生成器救十题。⚠️ 多为干扰项弱。</div></div>
+<div class='card'><h2>下一步（已定方向）</h2>
+<div class='note'>交付形态 = 训练数据 → 按 3D 方式加 Plan 层: 每 cell 先设计 N 个结构互异的题目方案(设问/难度/呈现三维变化)，每方案单独走竞赛流水线出冠军，方案级多样性 × seed 级参数变体。batch1 已产冠军将复用为各 cell 方案#1。</div></div>
+</main></body></html>
