@@ -8,6 +8,8 @@ h1{margin:0 0 6px;font-size:24px;letter-spacing:0}.meta{font-size:13px;color:#56
 main{max-width:1680px;margin:0 auto;padding:20px 24px 44px}
 .tabs{display:flex;gap:8px;margin:0;overflow-x:auto;max-width:100%}.tab{flex:none;border:1px solid #d8d8d2;background:#fff;border-radius:6px;padding:9px 14px;font-weight:700;cursor:pointer;color:#151515}.tab.active{background:#151515;color:#fff;border-color:#151515}
 .tabs-row{display:flex;align-items:center;gap:10px;margin:0 0 10px}.tabs-row-label{flex:none;min-width:118px;text-align:center;font-size:12px;font-weight:900;color:#4c4c4c;background:#ecece7;border:1px solid #deded8;border-radius:5px;padding:7px 10px;white-space:nowrap}.tabs-row.new-baseline .tabs-row-label{background:#dcefe1;border-color:#bfdcc7;color:#176231}
+.tabs-row.archived .tabs-row-label{background:#f5f5f0;border-style:dashed;color:#8a8a84}.tabs-row.archived .tab{color:#8a8a84;border-style:dashed}.tabs-row.archived .tab.active{background:#6f6f69;border-color:#6f6f69;border-style:solid;color:#fff}
+.archive-note{background:#fffaf0;border-left:4px solid #b8860b;padding:11px 14px;margin:0 0 16px;font-size:13px;line-height:1.55;color:#6b5310}
 .pane{display:none}.pane.active{display:block}
 .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}
 .card{background:#fff;border:1px solid #deded8;border-radius:6px;padding:12px;margin-bottom:16px}
@@ -45,13 +47,18 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
     <button class='tab' data-tab='scanmi'>ScanNet 多图验证</button>
     <button class='tab' data-tab='geo3d'>Geo3D R5 p10</button>
     <button class='tab' data-tab='geo3d-b1000'>Geo3D 对比实验</button>
-    <button class='tab' data-tab='snv6'>SN V6 评测</button>
   </div>
 </div>
 <div class='tabs-row new-baseline'>
   <span class='tabs-row-label'>新基线（0710）</span>
   <div class='tabs'>
     <button class='tab' data-tab='snv60710'>SN V6 0710 复验</button>
+  </div>
+</div>
+<div class='tabs-row archived'>
+  <span class='tabs-row-label'>归档</span>
+  <div class='tabs'>
+    <button class='tab' data-tab='snv6'>SN V6 评测（新结果 × 旧基线）</button>
   </div>
 </div>
 
@@ -124,7 +131,8 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 </section>
 
 <section id='tab-snv6' class='pane'>
-<h2 class='section-title'>SN V6 评测：ScanMI vs 基线</h2>
+<h2 class='section-title'>SN V6 评测（已归档）：ScanMI vs 旧基线</h2>
+<div class='archive-note'>已归档（2026-07-13）：本页是历史对比——新配方的 ScanMI 结果配的是旧 SNV6 基线，两组训练起点与数据配方不一致，<b>不严格可比</b>。严格结论以「SN V6 0710 复验」页签为准（同一 iter216 起点、参数逐项对齐的 control 对比）。</div>
 <div class='snv6-kpis' id='snv6-kpis'></div>
 <div class='snv6-chart'>
   <h2>六项均值</h2>
