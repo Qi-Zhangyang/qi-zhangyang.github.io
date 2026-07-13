@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="3D Grounding 项目介绍：从自然语言描述到稳定、精确的空间定位。"
+    />
+    <meta name="theme-color" content="#061023" />
+    <title>3D Grounding｜从语言到空间定位</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-glow page-glow--one" aria-hidden="true"></div>
+    <div class="page-glow page-glow--two" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="返回首页">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span>3D Grounding</span>
+      </a>
+      <nav class="site-nav" aria-label="页面导航">
+        <a href="#workflow">工作流</a>
+        <a href="#benchmark">实验结果</a>
+        <a href="#outlook">项目方向</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero__copy">
+          <p class="eyebrow"><span></span> 当前冲刺 · 2D Referring Polygon</p>
+          <h1>让模型听懂描述，<br /><em>并稳定圈准目标。</em></h1>
+          <p class="hero__lead">
+            给模型一张图和一句自然语言描述，由多模态模型识别指代对象，
+            输出可解析的多边形轮廓，再用统一基准验证定位精度与稳定性。
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#overview">查看项目图解</a>
+            <a class="button button--ghost" href="#benchmark">查看实验结论</a>
+          </div>
+        </div>
+
+        <aside class="hero__stats" aria-label="核心实验结果">
+          <div class="stat stat--featured">
+            <span class="stat__label">当前最佳固定协议</span>
+            <strong>16 <small>点轮廓</small></strong>
+            <p>精度与结构化输出稳定性的最佳平衡</p>
+          </div>
+          <div class="hero__stat-grid">
+            <div class="stat">
+              <span class="stat__label">mIoU</span>
+              <strong>0.4684</strong>
+            </div>
+            <div class="stat">
+              <span class="stat__label">格式有效率</span>
+              <strong>100%</strong>
+            </div>
+            <div class="stat">
+              <span class="stat__label">评测样本</span>
+              <strong>1,500</strong>
+            </div>
+            <div class="stat">
+              <span class="stat__label">数据集</span>
+              <strong>3 <small>个</small></strong>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="overview section-shell" id="overview">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span></span> One picture</p>
+            <h2>一张图看懂当前项目</h2>
+          </div>
+          <p>语言负责说明“找谁”，视觉模型负责理解“在哪”，多边形负责表达“边界是什么”。</p>
+        </div>
+        <figure class="overview-card">
+          <img
+            src="assets/project-overview.png"
+            alt="3D Grounding 项目流程：图像和目标描述经过多模态模型，生成 16 点轮廓定位，并进行可靠评测。"
+            width="1672"
+            height="941"
+          />
+          <figcaption>
+            当前已验证的是 2D 指代表达多边形评测阶段；它为更复杂的空间 Grounding
+            能力提供可量化的实验入口。
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="workflow section-shell" id="workflow">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span></span> How it works</p>
+            <h2>从一句话到一个轮廓</h2>
+          </div>
+          <p>每一步都能单独检查，让失败不再只是一个模糊的最终分数。</p>
+        </div>
+
+        <ol class="workflow-grid">
+          <li>
+            <span class="workflow-card__number">01</span>
+            <div class="workflow-card__icon" aria-hidden="true">⌁</div>
+            <h3>理解指代</h3>
+            <p>读取图片与自然语言描述，判断用户指的是哪个具体对象。</p>
+          </li>
+          <li>
+            <span class="workflow-card__number">02</span>
+            <div class="workflow-card__icon" aria-hidden="true">◈</div>
+            <h3>视觉推理</h3>
+            <p>结合类别、属性、相对位置和场景关系定位目标区域。</p>
+          </li>
+          <li>
+            <span class="workflow-card__number">03</span>
+            <div class="workflow-card__icon" aria-hidden="true">⬡</div>
+            <h3>输出轮廓</h3>
+            <p>按顺序生成多边形坐标，用结构化结果表达目标边界。</p>
+          </li>
+          <li>
+            <span class="workflow-card__number">04</span>
+            <div class="workflow-card__icon" aria-hidden="true">✓</div>
+            <h3>可靠评测</h3>
+            <p>同时计算定位精度、格式有效率与重复运行稳定性。</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="benchmark section-shell" id="benchmark">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span></span> Verified benchmark</p>
+            <h2>点数不是越多越好</h2>
+          </div>
+          <p>Seed 2.0 Pro 在 1,500 个均衡样本上的正式结果，格式错误按零 IoU 计入。</p>
+        </div>
+
+        <div class="benchmark-layout">
+          <div class="chart-card">
+            <div class="chart-card__header">
+              <div>
+                <span class="chart-card__label">Mean IoU</span>
+                <h3>轮廓点数对定位质量的影响</h3>
+              </div>
+              <div class="legend"><span></span> mIoU</div>
+            </div>
+            <div class="bar-chart" aria-label="各多边形点数对应的 mIoU">
+              <div class="bar-row">
+                <span>8 点</span>
+                <div class="bar-track"><i style="--value: 82.3%"></i></div>
+                <strong>0.4116</strong>
+              </div>
+              <div class="bar-row bar-row--best">
+                <span>16 点</span>
+                <div class="bar-track"><i style="--value: 93.7%"></i></div>
+                <strong>0.4684</strong>
+              </div>
+              <div class="bar-row">
+                <span>24 点</span>
+                <div class="bar-track"><i style="--value: 86.7%"></i></div>
+                <strong>0.4336</strong>
+              </div>
+              <div class="bar-row">
+                <span>32 点</span>
+                <div class="bar-track"><i style="--value: 85.4%"></i></div>
+                <strong>0.4269</strong>
+              </div>
+              <div class="bar-row">
+                <span>64 点</span>
+                <div class="bar-track"><i style="--value: 51.9%"></i></div>
+                <strong>0.2593</strong>
+              </div>
+            </div>
+          </div>
+
+          <aside class="finding-card">
+            <span class="finding-card__tag">关键结论</span>
+            <h3>16 点是当前最佳固定协议</h3>
+            <p>
+              相比 8 点，16 点的配对 mIoU 提升 <strong>+0.0568</strong>；继续增加点数却会放大长结构化输出失败。
+            </p>
+            <div class="validity">
+              <div>
+                <span>16 点格式有效率</span>
+                <strong>100%</strong>
+              </div>
+              <div>
+                <span>64 点格式有效率</span>
+                <strong>61.93%</strong>
+              </div>
+            </div>
+            <p class="finding-card__note">
+              聚合指标跨运行稳定，但单样本轮廓仍会波动；可靠评测必须同时报告总体结果与预测稳定性。
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="outlook section-shell" id="outlook">
+        <div class="outlook-card">
+          <div>
+            <p class="eyebrow"><span></span> Project direction</p>
+            <h2>把“能回答”推进到“能可靠定位”</h2>
+          </div>
+          <div class="outlook-grid">
+            <article>
+              <span>现在</span>
+              <h3>建立可信的 2D 基线</h3>
+              <p>统一数据、输出格式、评测指标与稳定性复测协议。</p>
+            </article>
+            <article>
+              <span>扩展</span>
+              <h3>比较更多多模态模型</h3>
+              <p>验证不同模型在精度、格式遵循和推理成本上的差异。</p>
+            </article>
+            <article>
+              <span>未来</span>
+              <h3>走向真实空间理解</h3>
+              <p>将语言指代与深度、三维场景和可交互空间表示进一步结合。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <div class="brand">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span>3D Grounding</span>
+      </div>
+      <p>Language → Vision → Geometry → Evaluation</p>
+    </footer>
+  </body>
+</html>
