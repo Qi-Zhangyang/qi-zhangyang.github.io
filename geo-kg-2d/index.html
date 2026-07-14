@@ -21,6 +21,10 @@ table{border-collapse:collapse;font-size:13.5px;margin-top:8px} td,th{border:1px
 <table><tr><th>cell</th><th>冠军</th><th>题量</th><th>盲考</th><th>质检 ✅/⚠️/❌(370/380已审)</th></tr>
 <tr><td>40</td><td>38/40 首跑 + 2 回炉翻盘 = 40</td><td>380</td><td>胜率 95%</td><td>291/58/21</td></tr></table>
 <div class='note'>❌ 集中在 5 个 cell 的生成器 bug: 前提未画出(等弦tick)、计数对象预先画出(泄漏)、标注矛盾、语义漂移 —— 修一个生成器救十题。⚠️ 多为干扰项弱。</div></div>
+<div class='card'><h2><a href='smoke5x100.html'>Smoke5×100 · 引擎全工序首跑 →</a></h2>
+<table><tr><th>方案</th><th>生成</th><th>五道审查放行</th><th>发布</th><th>终审均分</th></tr>
+<tr><td>500</td><td>496 (99.4%)</td><td>491→477→476→476→476</td><td><b>476 题</b>（94.2%）</td><td>8.9</td></tr></table>
+<div class='note'>3D 同款八工序引擎（fork+2D 适配）；per-item plan 多样性；多数放行+预热侧车逐项流水；隔离桶 24 项补差翻盘 5 项。</div></div>
 <div class='card'><h2>下一步（已定方向）</h2>
 <div class='note'>交付形态 = 训练数据 → 按 3D 方式加 Plan 层: 每 cell 先设计 N 个结构互异的题目方案(设问/难度/呈现三维变化)，每方案单独走竞赛流水线出冠军，方案级多样性 × seed 级参数变体。batch1 已产冠军将复用为各 cell 方案#1。</div></div>
 </main></body></html>
