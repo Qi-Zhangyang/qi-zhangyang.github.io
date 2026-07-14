@@ -8,7 +8,8 @@ h1{margin:0 0 6px;font-size:24px;letter-spacing:0}.meta{font-size:13px;color:#56
 main{max-width:1680px;margin:0 auto;padding:20px 24px 44px}
 .tabs{display:flex;gap:8px;margin:0;overflow-x:auto;max-width:100%}.tab{flex:none;border:1px solid #d8d8d2;background:#fff;border-radius:6px;padding:9px 14px;font-weight:700;cursor:pointer;color:#151515}.tab.active{background:#151515;color:#fff;border-color:#151515}
 .tabs-row{display:flex;align-items:center;gap:10px;margin:0 0 10px}.tabs-row-label{flex:none;min-width:118px;text-align:center;font-size:12px;font-weight:900;color:#4c4c4c;background:#ecece7;border:1px solid #deded8;border-radius:5px;padding:7px 10px;white-space:nowrap}.tabs-row.new-baseline .tabs-row-label{background:#dcefe1;border-color:#bfdcc7;color:#176231}
-.tabs-row.current-vst .tabs-row-label{background:#e5edf4;border-color:#c5d5e2;color:#244f73}.tabs-row.current-vst .tab.active{background:#244f73;border-color:#244f73;color:#fff}
+.tabs-row.geo3d-freshfix .tabs-row-label{background:#f3eadb;border-color:#dec9a7;color:#684710}.tabs-row.geo3d-freshfix .tab.active{background:#684710;border-color:#684710;color:#fff}
+.tabs-row.current-vst .tabs-row-label{background:#e5edf4;border-color:#c5d5e2;color:#244f73}.tabs-row.current-vst .tabs-row-label small{display:block;margin-top:2px;font-size:10px;font-weight:700;color:#58758d}.tabs-row.current-vst .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.current-vst .tab small{font-size:10px;font-weight:700;color:#6a737b;white-space:nowrap}.tabs-row.current-vst .tab.active{background:#244f73;border-color:#244f73;color:#fff}.tabs-row.current-vst .tab.active small{color:#dce7ef}
 .tabs-row.archived .tabs-row-label{background:#f5f5f0;border-style:dashed;color:#8a8a84}.tabs-row.archived .tab{color:#8a8a84;border-style:dashed}.tabs-row.archived .tab.active{background:#6f6f69;border-color:#6f6f69;border-style:solid;color:#fff}
 .archive-note{background:#fffaf0;border-left:4px solid #b8860b;padding:11px 14px;margin:0 0 16px;font-size:13px;line-height:1.55;color:#6b5310}
 .pane{display:none}.pane.active{display:block}
@@ -33,6 +34,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 .geo-compare-shell{background:#fff;border:1px solid #deded8;border-radius:6px;padding:14px 15px;margin:0 0 14px}.geo-control-row{display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap}.geo-control-label{font-size:12px;font-weight:900;color:#555}.geo-mode-tabs,.geo-variant-tabs{display:flex;gap:6px;flex-wrap:wrap}.geo-mode-btn,.geo-variant-btn{border:1px solid #d4d4ce;background:#fff;color:#222;border-radius:5px;padding:7px 10px;font-size:12px;font-weight:800;cursor:pointer}.geo-mode-btn.active,.geo-variant-btn.active{background:#202020;border-color:#202020;color:#fff}.geo-variant-row{display:flex;align-items:center;gap:10px;margin-top:10px}.geo-variant-row[hidden]{display:none}.geo-compare-title{font-size:16px;font-weight:900;margin:13px 0 3px}.geo-compare-meta{font-size:12px;line-height:1.5;color:#656565}.geo-run-meta{display:flex;gap:8px 18px;flex-wrap:wrap;margin:0 0 13px;padding:9px 12px;border-left:3px solid #737373;background:#fff;font-size:12px;color:#555}.geo-run-meta b{color:#222}.geo-conclusion-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 14px}.geo-conclusion{background:#fff;border:1px solid #deded8;border-radius:6px;padding:12px 13px;min-height:96px}.geo-conclusion .label{font-size:12px;font-weight:900;color:#555}.geo-conclusion .value{font-size:20px;font-weight:900;margin:5px 0}.geo-conclusion .sub{font-size:12px;line-height:1.55;color:#626262}.geo-audit summary{cursor:pointer;font-size:14px;font-weight:900;list-style-position:inside}.geo-audit[open] summary{margin-bottom:10px}
 .geo-status{display:inline-block;border-radius:4px;padding:2px 7px;font-size:12px;font-weight:800;background:#ecece7;color:#444}.geo-status.running{background:#dff1e4;color:#176231}.geo-status.pending,.geo-status.submitted{background:#fff0ca;color:#765300}.geo-status.success,.geo-status.succeeded{background:#dcecf9;color:#245b86}.geo-status.failed{background:#f8dddd;color:#8b2f2f}
 .geo-score-lines{line-height:1.55;white-space:nowrap}.geo-score-lines b{font-weight:900}.geo-table-note{font-size:12px;color:#666;margin:8px 0 0}
+.geo-fresh-note{border-left-color:#8a5d18;background:#fffdf8}.geo-fresh-partial{color:#765300;font-weight:900}.geo-fresh-complete{color:#176231;font-weight:900}
 .geo-final{background:#fff;border:1px solid #cfd8ce;border-radius:6px;margin:0 0 16px;overflow:hidden}
 .geo-final-head{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:15px 16px;border-bottom:1px solid #e3e7e1;background:#f4f7f2}.geo-final-head h3{font-size:17px;margin:0 0 4px}.geo-final-head p{font-size:13px;color:#545b53;line-height:1.5;margin:0}.geo-final-badge{flex:none;border-radius:4px;padding:5px 9px;background:#dcefe1;color:#176231;font-size:12px;font-weight:900}
 .geo-best-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid #e7e7e1}.geo-best{padding:15px 16px;border-right:1px solid #e7e7e1}.geo-best:last-child{border-right:0}.geo-best .label{font-size:12px;font-weight:900;color:#555}.geo-best .value{font-size:27px;line-height:1.15;font-weight:900;margin:4px 0}.geo-best .sub{font-size:12px;color:#626262;line-height:1.5}
@@ -58,14 +60,20 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
     <button class='tab' data-tab='snv60710'>SN V6 0710 复验</button>
   </div>
 </div>
-<div class='tabs-row current-vst'>
-  <span class='tabs-row-label'>当前 ScanNet VST</span>
+<div class='tabs-row geo3d-freshfix'>
+  <span class='tabs-row-label'>Geo3D Freshfix</span>
   <div class='tabs'>
-    <button class='tab' data-tab='current-video-v1'>Video v1</button>
-    <button class='tab' data-tab='current-video2mi-v1'>Video→MI v1</button>
-    <button class='tab' data-tab='current-native-mi-v2'>原生 MI V2</button>
-    <button class='tab' data-tab='current-video-v2'>Video V2</button>
-    <button class='tab' data-tab='current-video2mi-v2'>Video→MI V2</button>
+    <button class='tab' data-tab='geo3d-freshfix'>SN6V0710 Geo3D Freshfix</button>
+  </div>
+</div>
+<div class='tabs-row current-vst'>
+  <span class='tabs-row-label'>当前 ScanNet VST<small>exact SN6V0710 · p10</small></span>
+  <div class='tabs'>
+    <button class='tab' data-tab='current-video-v1'><span>Video v1（MP4 · 4,823 条）</span><small>原始视频输入</small></button>
+    <button class='tab' data-tab='current-video2mi-v1'><span>Video→Multi-Image v1（8 图 · 4,823 条）</span><small>1fps / 480px</small></button>
+    <button class='tab' data-tab='current-native-mi-v2'><span>原生 Multi-Image v2（2 图 · 120K 条）</span><small>原生双图样本</small></button>
+    <button class='tab' data-tab='current-video-v2'><span>Video v2（MP4 · 120K 条）</span><small>统一 V2 全量</small></button>
+    <button class='tab' data-tab='current-video2mi-v2'><span>Video→Multi-Image v2（8 图 · 120K 条）</span><small>1fps / 480px · 统一 V2 全量</small></button>
   </div>
 </div>
 <div class='tabs-row archived'>
@@ -173,6 +181,40 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <h2>同 checkpoint 对比</h2>
   <div class='snv6-table-wrap'><table id='snv60710-table'></table></div>
 </div>
+</section>
+
+<section id='tab-geo3d-freshfix' class='pane'>
+<h2 class='section-title'>SN6V0710 Geo3D Freshfix：一次只回答一个对比问题</h2>
+<div class='geo-note geo-fresh-note' id='geo-fresh-note'><b>正在加载阶段性结果。</b> 本页只使用 SN6V0710 control 作为基线，并严格限制为三个 circular benchmark；不计算三项均值，也不会把六组实验同时画在一张图上。</div>
+<div class='snv6-kpis' id='geo-fresh-kpis'></div>
+<div class='geo-compare-shell'>
+  <div class='geo-control-row'>
+    <span class='geo-control-label'>对比问题</span>
+    <div class='geo-mode-tabs' id='geo-fresh-mode-tabs'>
+      <button class='geo-mode-btn active' data-geo-fresh-mode='version'>筛选版本 R5 / R13</button>
+      <button class='geo-mode-btn' data-geo-fresh-mode='format'>样本格式 Single / Pair2</button>
+      <button class='geo-mode-btn' data-geo-fresh-mode='ratio'>注入比例 p10 / p30</button>
+    </div>
+  </div>
+  <div class='geo-variant-row' id='geo-fresh-variant-row'>
+    <span class='geo-control-label'>固定条件</span>
+    <div class='geo-variant-tabs' id='geo-fresh-variant-tabs'></div>
+  </div>
+  <div class='geo-compare-title' id='geo-fresh-compare-title'></div>
+  <div class='geo-compare-meta' id='geo-fresh-compare-meta'></div>
+</div>
+<div class='geo-conclusion-grid' id='geo-fresh-conclusions'></div>
+<div class='geo-legend' id='geo-fresh-legend'></div>
+<div class='geo-chart-grid'>
+  <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='geo-fresh-chart-natural'></div></div>
+  <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV1</h2><div id='geo-fresh-chart-solid'></div></div>
+  <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='geo-fresh-chart-geometry'></div></div>
+</div>
+<details class='card geo-audit'>
+  <summary>六组配置、训练链与每 100 step 评测审计</summary>
+  <div class='snv6-table-wrap'><table id='geo-fresh-table'></table></div>
+  <div class='geo-table-note' id='geo-fresh-updated'></div>
+</details>
 </section>
 
 <section id='tab-current-video-v1' class='pane'><div id='current-video-v1-root'></div></section>
@@ -561,6 +603,144 @@ async function renderGeoB1000(){
     kpi.innerHTML=`<div class="snv6-kpi"><div class="label">数据加载失败</div><div class="sub">${geoEsc(error.message)}</div></div>`;
   }
 }
+const geoFreshCatalog={
+  r5_st_p10:{label:'R5 单轮 p10',short:'R5'},
+  r5_st_p30:{label:'R5 单轮 p30',short:'R5'},
+  r13_st_p10:{label:'R13 单轮 p10',short:'R13'},
+  r13_st_p30:{label:'R13 单轮 p30',short:'R13'},
+  r13_pair2_p10:{label:'R13 Pair2 p10',short:'Pair2'},
+  r13_pair2_p30:{label:'R13 Pair2 p30',short:'Pair2'}
+};
+const geoFreshComparisons={
+  version:{
+    title:'筛选版本：R5 单轮 vs R13 单轮',
+    variants:{p10:'固定 p10',p30:'固定 p30'},defaultVariant:'p10',
+    note:'固定训练起点、单轮样本格式和注入比例，只改变题目筛选版本。',
+    shorts:()=>['R5','R13'],
+    series:variant=>[`r5_st_${variant}`,`r13_st_${variant}`]
+  },
+  format:{
+    title:'样本格式：R13 单轮 vs R13 Pair2',
+    variants:{p10:'固定 p10',p30:'固定 p30'},defaultVariant:'p10',
+    note:'固定 R13 筛选版本与注入比例，只改变一图一问 / 两图两问 Pair2 格式。',
+    shorts:()=>['Single','Pair2'],
+    series:variant=>[`r13_st_${variant}`,`r13_pair2_${variant}`]
+  },
+  ratio:{
+    title:'注入比例：p10 vs p30',
+    variants:{r5_st:'R5 单轮',r13_st:'R13 单轮',r13_pair2:'R13 Pair2'},defaultVariant:'r5_st',
+    note:'固定筛选版本与样本格式，只改变 Geo3D 数据注入比例。',
+    shorts:()=>['p10','p30'],
+    series:variant=>[`${variant}_p10`,`${variant}_p30`]
+  }
+};
+const geoFreshState={mode:'version',variants:{version:'p10',format:'p10',ratio:'r5_st'}};
+function geoFreshRows(data,key){
+  return data.results.filter(row=>row.experiment===key).sort((a,b)=>a.step-b.step);
+}
+function geoFreshBaselineAt(data,step,metric){
+  return (data.baseline_results||[]).find(row=>row.step===step)?.scores?.[metric];
+}
+function geoFreshSelected(data){
+  const config=geoFreshComparisons[geoFreshState.mode];
+  const variant=geoFreshState.variants[geoFreshState.mode]||config.defaultVariant;
+  return config.series(variant).map((key,index)=>({
+    key,...geoFreshCatalog[key],short:config.shorts(variant)[index],color:index===0?'#1769aa':'#c45d25',dash:index===1?'8 5':''
+  }));
+}
+function geoFreshChart(el,metric,data,selected){
+  const w=720,h=350,m={l:56,r:20,t:22,b:46};
+  const series=[
+    {key:'sn6v0710_control',label:data.baseline_label,color:'#4f555c',dash:'4 5',points:(data.baseline_results||[]).map(row=>({step:row.step,v:row.scores[metric]}))},
+    ...selected.map(item=>({...item,points:geoFreshRows(data,item.key).filter(row=>row.scores[metric]!=null).map(row=>({step:row.step,v:row.scores[metric]}))}))
+  ];
+  const values=series.flatMap(item=>item.points.map(point=>point.v));
+  let min=Math.min(...values),max=Math.max(...values);
+  const pad=Math.max((max-min)*0.2,0.012);
+  min=Math.max(0,min-pad);max=Math.min(1,max+pad);
+  if(max-min<0.03){const mid=(min+max)/2;min=Math.max(0,mid-0.018);max=Math.min(1,mid+0.018)}
+  const x=step=>m.l+(step-100)/900*(w-m.l-m.r);
+  const y=value=>m.t+(max-value)/(max-min)*(h-m.t-m.b);
+  const yTicks=[min,(min*2+max)/3,(min+max*2)/3,max];
+  const grid=yTicks.map(value=>`<line x1="${m.l}" x2="${w-m.r}" y1="${y(value)}" y2="${y(value)}" stroke="#deded8"/><text x="${m.l-9}" y="${y(value)+4}" text-anchor="end" font-size="12" fill="#555">${geoPct(value)}</text>`).join('');
+  const xTicks=Array.from({length:10},(_,i)=>(i+1)*100).map(step=>`<text x="${x(step)}" y="${h-16}" text-anchor="middle" font-size="11" fill="#555">${step}</text>`).join('');
+  const paths=series.map(item=>{
+    const marks=item.points.map(point=>`<circle data-geo-fresh-series="${item.key}" cx="${x(point.step)}" cy="${y(point.v)}" r="4" fill="#fff" stroke="${item.color}" stroke-width="2.4"><title>${geoEsc(item.label)} · step ${point.step}: ${geoPct(point.v)}</title></circle>`).join('');
+    return `<path data-geo-fresh-series="${item.key}" d="${geoPath(item.points,x,y)}" fill="none" stroke="${item.color}" stroke-width="${item.key==='sn6v0710_control'?'2.3':'3'}" stroke-linecap="round" stroke-linejoin="round" ${item.dash?`stroke-dasharray="${item.dash}"`:''}/>${marks}`;
+  }).join('');
+  el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${geoEsc(metric)} freshfix selected comparison curve">
+    <rect width="${w}" height="${h}" fill="#fff"/>${grid}
+    <line x1="${m.l}" x2="${w-m.r}" y1="${h-m.b}" y2="${h-m.b}" stroke="#bdbdb5"/>
+    <line x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${h-m.b}" stroke="#bdbdb5"/>
+    ${xTicks}${paths}<text x="${w/2}" y="${h-2}" text-anchor="middle" font-size="12" fill="#555">checkpoint</text>
+  </svg>`;
+}
+function geoFreshConclusions(data,selected){
+  return geoB1000MetricLabels.map(([metric,label])=>{
+    const first=new Map(geoFreshRows(data,selected[0].key).map(row=>[row.step,row.scores[metric]]));
+    const second=new Map(geoFreshRows(data,selected[1].key).map(row=>[row.step,row.scores[metric]]));
+    const steps=[...first.keys()].filter(step=>second.has(step)).sort((a,b)=>a-b);
+    if(!steps.length)return `<div class="geo-conclusion"><div class="label">${label}</div><div class="value">暂无重叠点</div><div class="sub">等待两组在相同 checkpoint 都完成评测。</div></div>`;
+    let firstWins=0,secondWins=0,ties=0;
+    steps.forEach(step=>{const delta=first.get(step)-second.get(step);if(Math.abs(delta)<1e-9)ties++;else if(delta>0)firstWins++;else secondWins++});
+    const latest=steps[steps.length-1],delta=first.get(latest)-second.get(latest);
+    const base=geoFreshBaselineAt(data,latest,metric);
+    const winner=firstWins===secondWins?'阶段互有胜负':firstWins>secondWins?`${selected[0].short} 阶段领先`:`${selected[1].short} 阶段领先`;
+    const baseText=base==null?'基线点待补':`较基线：${geoDelta(first.get(latest)-base)} / ${geoDelta(second.get(latest)-base)}`;
+    return `<div class="geo-conclusion"><div class="label">${label}</div><div class="value">${geoEsc(winner)}</div><div class="sub">仅统计 ${steps.length} 个重叠已完成点：${geoEsc(selected[0].short)} ${firstWins} 胜 / ${geoEsc(selected[1].short)} ${secondWins} 胜${ties?` / ${ties} 平`:''}<br>step${latest} 两者 Δ ${geoDelta(delta)}<br>${baseText}</div></div>`;
+  }).join('');
+}
+function renderGeoFreshComparison(data){
+  const config=geoFreshComparisons[geoFreshState.mode];
+  const variant=geoFreshState.variants[geoFreshState.mode]||config.defaultVariant;
+  const selected=geoFreshSelected(data);
+  document.querySelectorAll('[data-geo-fresh-mode]').forEach(button=>button.classList.toggle('active',button.dataset.geoFreshMode===geoFreshState.mode));
+  const variantTabs=document.getElementById('geo-fresh-variant-tabs');
+  variantTabs.innerHTML=Object.entries(config.variants).map(([key,label])=>`<button class="geo-variant-btn ${key===variant?'active':''}" data-geo-fresh-variant="${key}">${geoEsc(label)}</button>`).join('');
+  variantTabs.querySelectorAll('[data-geo-fresh-variant]').forEach(button=>button.addEventListener('click',()=>{geoFreshState.variants[geoFreshState.mode]=button.dataset.geoFreshVariant;renderGeoFreshComparison(data)}));
+  document.getElementById('geo-fresh-compare-title').textContent=config.title;
+  document.getElementById('geo-fresh-compare-meta').textContent=`${config.note} 当前结果未齐时，只统计两组重叠且真实完成的 checkpoint。`;
+  document.getElementById('geo-fresh-conclusions').innerHTML=geoFreshConclusions(data,selected);
+  const legend=[{label:data.baseline_label,color:'#4f555c',dash:'4 5'},...selected];
+  document.getElementById('geo-fresh-legend').innerHTML=legend.map(item=>`<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.label)}</span>`).join('');
+  geoFreshChart(document.getElementById('geo-fresh-chart-natural'),'NaturalPerceptionCircularV3',data,selected);
+  geoFreshChart(document.getElementById('geo-fresh-chart-solid'),'SolidGeoPerceptionCircularV1',data,selected);
+  geoFreshChart(document.getElementById('geo-fresh-chart-geometry'),'Perception-geometry-mc-circular-v1',data,selected);
+}
+async function renderGeoFreshfix(){
+  const note=document.getElementById('geo-fresh-note');
+  const kpis=document.getElementById('geo-fresh-kpis');
+  try{
+    const response=await fetch('geo3d_freshfix_live.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    const stateZh={Success:'成功',Submitted:'已提交',Running:'运行中',Pending:'排队中',Failed:'失败',Error:'错误'};
+    const stateSummary=Object.entries(data.eval_states).map(([state,count])=>`${stateZh[state]||state} ${count}`).join(' / ');
+    const remaining=data.target_checkpoint_points-data.real_score_points;
+    note.innerHTML=data.partial
+      ?`<b class="geo-fresh-partial">阶段性结果，尚未闭环。</b> 六组训练 checkpoint 覆盖 ${data.checkpoint_coverage}/${data.target_checkpoint_points}，真实评测分数 ${data.real_score_points}/${data.target_checkpoint_points}；剩余 ${remaining} 点未完成前不做最终排名。本页只使用 SN6V0710 control，并严格限制为三个 circular benchmark。`
+      :`<b class="geo-fresh-complete">六组评测已闭环。</b> ${data.real_score_points}/${data.target_checkpoint_points} 个 checkpoint 分数全部完成，并与 SN6V0710 control 严格同 step 对齐。`;
+    kpis.innerHTML=`
+      <div class="snv6-kpi"><div class="label">训练 checkpoint</div><div class="value">${data.checkpoint_coverage}/${data.target_checkpoint_points}</div><div class="sub">六组 × step100–1000</div></div>
+      <div class="snv6-kpi"><div class="label">真实评测分数</div><div class="value">${data.real_score_points}/${data.target_checkpoint_points}</div><div class="sub">有三项完整 score 文件</div></div>
+      <div class="snv6-kpi"><div class="label">0710 baseline</div><div class="value">${data.baseline_results.length}/10</div><div class="sub">同一 control 的 step100–1000</div></div>
+      <div class="snv6-kpi"><div class="label">评测队列</div><div class="value">${data.partial?'进行中':'已完成'}</div><div class="sub">${geoEsc(stateSummary)}</div></div>`;
+    document.querySelectorAll('[data-geo-fresh-mode]').forEach(button=>button.addEventListener('click',()=>{geoFreshState.mode=button.dataset.geoFreshMode;renderGeoFreshComparison(data)}));
+    renderGeoFreshComparison(data);
+    const body=data.experiments.map(row=>{
+      const latest=data.results.filter(result=>result.experiment===row.key).sort((a,b)=>b.step-a.step)[0];
+      const scores=latest?geoB1000MetricLabels.map(([metric,label])=>{const base=geoFreshBaselineAt(data,latest.step,metric);const delta=base==null?null:latest.scores[metric]-base;return `<div><b>${label}</b> ${geoPct(latest.scores[metric])}${delta==null?'':` <span class="${delta>=0?'snv6-pos':'snv6-neg'}">${geoDelta(delta)}</span>`}</div>`}).join(''):'<span class="snv6-muted">暂无完成分数</span>';
+      const waiting=row.queued_steps.length?row.queued_steps.map(item=>`${item.step}(${stateZh[item.status]||item.status})`).join(', '):'-';
+      const reason=row.train_reason?`<br><span class="snv6-muted">${geoEsc(row.train_reason)}</span>`:'';
+      return `<tr><td><b>${geoEsc(geoFreshCatalog[row.key].label)}</b></td><td>${geoStatus(row.train_state)}${reason}</td><td><b>${row.checkpoint_steps.length}/10</b><br><span class="snv6-muted">${row.checkpoint_steps.join(', ')||'-'}</span></td><td>${row.successful_steps.join(', ')||'-'}</td><td>${geoEsc(waiting)}</td><td class="geo-score-lines">${scores}</td></tr>`;
+    }).join('');
+    document.getElementById('geo-fresh-table').innerHTML=`<thead><tr><th>配置</th><th>最新训练链</th><th>已有 checkpoint</th><th>真实评测完成</th><th>待跑/运行</th><th>最新三项结果 vs 同 step baseline</th></tr></thead><tbody>${body}</tbody>`;
+    document.getElementById('geo-fresh-updated').textContent=`数据快照时间：${data.updated_at} · 只包含 ${data.benchmarks.join(' / ')}`;
+  }catch(error){
+    note.innerHTML=`<b>Freshfix 数据加载失败。</b> ${geoEsc(error.message)}`;
+    kpis.innerHTML='';
+  }
+}
 function activateDashboardTab(tab){
   const btn=document.querySelector(`[data-tab="${tab}"]`);
   const pane=document.getElementById('tab-'+tab);
@@ -580,6 +760,7 @@ renderSnv6();
 renderSnv60710();
 renderCurrentVst();
 renderGeoB1000();
+renderGeoFreshfix();
 activateDashboardTab(location.hash ? location.hash.slice(1) : 'matrix');
 </script>
 </body></html>
