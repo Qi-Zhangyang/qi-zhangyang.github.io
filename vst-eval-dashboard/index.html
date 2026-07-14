@@ -203,7 +203,6 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <div class='geo-compare-title' id='geo-fresh-compare-title'></div>
   <div class='geo-compare-meta' id='geo-fresh-compare-meta'></div>
 </div>
-<div class='geo-conclusion-grid' id='geo-fresh-conclusions'></div>
 <div class='geo-legend' id='geo-fresh-legend'></div>
 <div class='geo-chart-grid'>
   <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='geo-fresh-chart-natural'></div></div>
@@ -675,21 +674,6 @@ function geoFreshChart(el,metric,data,selected){
     ${xTicks}${paths}<text x="${w/2}" y="${h-2}" text-anchor="middle" font-size="12" fill="#555">checkpoint</text>
   </svg>`;
 }
-function geoFreshConclusions(data,selected){
-  return geoB1000MetricLabels.map(([metric,label])=>{
-    const first=new Map(geoFreshRows(data,selected[0].key).map(row=>[row.step,row.scores[metric]]));
-    const second=new Map(geoFreshRows(data,selected[1].key).map(row=>[row.step,row.scores[metric]]));
-    const steps=[...first.keys()].filter(step=>second.has(step)).sort((a,b)=>a-b);
-    if(!steps.length)return `<div class="geo-conclusion"><div class="label">${label}</div><div class="value">暂无重叠点</div><div class="sub">等待两组在相同 checkpoint 都完成评测。</div></div>`;
-    let firstWins=0,secondWins=0,ties=0;
-    steps.forEach(step=>{const delta=first.get(step)-second.get(step);if(Math.abs(delta)<1e-9)ties++;else if(delta>0)firstWins++;else secondWins++});
-    const latest=steps[steps.length-1],delta=first.get(latest)-second.get(latest);
-    const base=geoFreshBaselineAt(data,latest,metric);
-    const winner=firstWins===secondWins?'阶段互有胜负':firstWins>secondWins?`${selected[0].short} 阶段领先`:`${selected[1].short} 阶段领先`;
-    const baseText=base==null?'基线点待补':`较基线：${geoDelta(first.get(latest)-base)} / ${geoDelta(second.get(latest)-base)}`;
-    return `<div class="geo-conclusion"><div class="label">${label}</div><div class="value">${geoEsc(winner)}</div><div class="sub">仅统计 ${steps.length} 个重叠已完成点：${geoEsc(selected[0].short)} ${firstWins} 胜 / ${geoEsc(selected[1].short)} ${secondWins} 胜${ties?` / ${ties} 平`:''}<br>step${latest} 两者 Δ ${geoDelta(delta)}<br>${baseText}</div></div>`;
-  }).join('');
-}
 function renderGeoFreshComparison(data){
   const config=geoFreshComparisons[geoFreshState.mode];
   const variant=geoFreshState.variants[geoFreshState.mode]||config.defaultVariant;
@@ -700,7 +684,6 @@ function renderGeoFreshComparison(data){
   variantTabs.querySelectorAll('[data-geo-fresh-variant]').forEach(button=>button.addEventListener('click',()=>{geoFreshState.variants[geoFreshState.mode]=button.dataset.geoFreshVariant;renderGeoFreshComparison(data)}));
   document.getElementById('geo-fresh-compare-title').textContent=config.title;
   document.getElementById('geo-fresh-compare-meta').textContent=`${config.note} 当前结果未齐时，只统计两组重叠且真实完成的 checkpoint。`;
-  document.getElementById('geo-fresh-conclusions').innerHTML=geoFreshConclusions(data,selected);
   const legend=[{label:data.baseline_label,color:'#4f555c',dash:'4 5'},...selected];
   document.getElementById('geo-fresh-legend').innerHTML=legend.map(item=>`<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.label)}</span>`).join('');
   geoFreshChart(document.getElementById('geo-fresh-chart-natural'),'NaturalPerceptionCircularV3',data,selected);
