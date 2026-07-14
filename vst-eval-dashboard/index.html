@@ -371,17 +371,11 @@ function renderCurrentArm(data,arm){
         ['API 获取失败',String(audit.failed_to_obtain??0),`评测队列：${stateSummary}`]
       ].map(([label,value,sub])=>`<div class="snv6-kpi"><div class="label">${geoEsc(label)}</div><div class="value">${geoEsc(value)}</div><div class="sub">${geoEsc(sub)}</div></div>`).join('')}
     </div>
-    <div class="snv6-chart">
-      <h2>六项等权均值</h2>
-      <div class="snv6-legend"><span><i class="snv6-dot scanmi"></i>${geoEsc(arm.label)}</span><span><i class="snv6-dot base"></i>exact SN6V0710</span></div>
-      <div id="current-${arm.key}-avg-chart"></div>
-    </div>
     <div class="snv6-chart-grid" id="current-${arm.key}-metric-charts"></div>
     <div class="card"><h2>同 checkpoint 真实分数</h2><div class="snv6-table-wrap"><table id="current-${arm.key}-table"></table></div></div>
     <div class="current-audit"><b>结果审计</b><br>${geoEsc(audit.note||'已按真实结果验收口径检查。')}<br>空终答：${geoEsc(emptyText||'0')}<br>length cutoff：${geoEsc(cutoffText||'0')}</div>
     <div class="geo-table-note">数据更新时间：${geoEsc(data.updated_at)}</div>`;
 
-  snv6Chart(document.getElementById(`current-${arm.key}-avg-chart`),'','avg',true,rows);
   const chartRoot=document.getElementById(`current-${arm.key}-metric-charts`);
   chartRoot.innerHTML=snv6Metrics.map(([key,label])=>`<div class="snv6-chart"><h2>${geoEsc(label)}</h2><div class="snv6-legend"><span><i class="snv6-dot scanmi"></i>${geoEsc(arm.label)}</span><span><i class="snv6-dot base"></i>exact SN6V0710</span></div><div id="current-${arm.key}-${key.replace(/[^a-zA-Z0-9]/g,'-')}"></div></div>`).join('');
   snv6Metrics.forEach(([key])=>snv6Chart(document.getElementById(`current-${arm.key}-${key.replace(/[^a-zA-Z0-9]/g,'-')}`),'',key,false,rows));

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-14T11:37:18+08:00",
+  "updated_at": "2026-07-14T11:44:48+08:00",
   "baseline_label": "exact SN6V0710 control",
   "benchmarks": [
     {
@@ -341,9 +341,16 @@
       "title": "VST-ScanNet Video→Multi-Image V2 120K",
       "phase": "等待 ckpt100 smoke",
       "target_steps": 10,
-      "train_state": "Running",
-      "eval_states": {},
-      "eval_steps": [],
+      "train_state": "Pending",
+      "eval_states": {
+        "Pending": 1
+      },
+      "eval_steps": [
+        {
+          "step": 100,
+          "status": "Pending"
+        }
+      ],
       "verified_steps": [],
       "results": []
     }
