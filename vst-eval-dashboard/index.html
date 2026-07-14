@@ -8,6 +8,7 @@ h1{margin:0 0 6px;font-size:24px;letter-spacing:0}.meta{font-size:13px;color:#56
 main{max-width:1680px;margin:0 auto;padding:20px 24px 44px}
 .tabs{display:flex;gap:8px;margin:0;overflow-x:auto;max-width:100%}.tab{flex:none;border:1px solid #d8d8d2;background:#fff;border-radius:6px;padding:9px 14px;font-weight:700;cursor:pointer;color:#151515}.tab.active{background:#151515;color:#fff;border-color:#151515}
 .tabs-row{display:flex;align-items:center;gap:10px;margin:0 0 10px}.tabs-row-label{flex:none;min-width:118px;text-align:center;font-size:12px;font-weight:900;color:#4c4c4c;background:#ecece7;border:1px solid #deded8;border-radius:5px;padding:7px 10px;white-space:nowrap}.tabs-row.new-baseline .tabs-row-label{background:#dcefe1;border-color:#bfdcc7;color:#176231}
+.tabs-row.current-vst .tabs-row-label{background:#e5edf4;border-color:#c5d5e2;color:#244f73}.tabs-row.current-vst .tab.active{background:#244f73;border-color:#244f73;color:#fff}
 .tabs-row.archived .tabs-row-label{background:#f5f5f0;border-style:dashed;color:#8a8a84}.tabs-row.archived .tab{color:#8a8a84;border-style:dashed}.tabs-row.archived .tab.active{background:#6f6f69;border-color:#6f6f69;border-style:solid;color:#fff}
 .archive-note{background:#fffaf0;border-left:4px solid #b8860b;padding:11px 14px;margin:0 0 16px;font-size:13px;line-height:1.55;color:#6b5310}
 .pane{display:none}.pane.active{display:block}
@@ -36,7 +37,9 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 .geo-final-head{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:15px 16px;border-bottom:1px solid #e3e7e1;background:#f4f7f2}.geo-final-head h3{font-size:17px;margin:0 0 4px}.geo-final-head p{font-size:13px;color:#545b53;line-height:1.5;margin:0}.geo-final-badge{flex:none;border-radius:4px;padding:5px 9px;background:#dcefe1;color:#176231;font-size:12px;font-weight:900}
 .geo-best-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid #e7e7e1}.geo-best{padding:15px 16px;border-right:1px solid #e7e7e1}.geo-best:last-child{border-right:0}.geo-best .label{font-size:12px;font-weight:900;color:#555}.geo-best .value{font-size:27px;line-height:1.15;font-weight:900;margin:4px 0}.geo-best .sub{font-size:12px;color:#626262;line-height:1.5}
 .geo-final-table{padding:14px 16px}.geo-final-table h3{font-size:14px;margin:0 0 9px}.geo-final-insight{padding:11px 16px;border-top:1px solid #e1e5df;background:#fafbf9;font-size:13px;line-height:1.55;color:#343a33}.geo-final-insight b{font-weight:900}
+.current-note{background:#fff;border-left:4px solid #244f73;padding:11px 14px;margin:0 0 16px;font-size:13px;line-height:1.6;color:#3f4f5d}.current-empty{background:#fff;border:1px solid #deded8;padding:28px 20px;margin:0 0 16px;text-align:center}.current-empty strong{display:block;font-size:18px;margin-bottom:7px}.current-empty span{font-size:13px;color:#666;line-height:1.55}.current-audit{background:#f5f8fa;border:1px solid #d7e1e8;padding:12px 14px;margin:0 0 16px;font-size:13px;line-height:1.6;color:#344a5b}.current-audit b{color:#173e5d}.current-state-list{display:flex;gap:8px 16px;flex-wrap:wrap;margin-top:8px}.current-table-score{white-space:nowrap}.current-table-score .raw{font-weight:900;margin-right:5px}
 @media(max-width:1100px){.grid3,.snv6-chart-grid,.snv6-kpis,.geo-chart-grid,.geo-best-grid,.geo-conclusion-grid{grid-template-columns:1fr}.geo-best{border-right:0;border-bottom:1px solid #e7e7e1}.geo-best:last-child{border-bottom:0}.geo-final-head{align-items:flex-start}}
+@media(max-width:720px){header{position:static;padding:17px 16px 12px}h1{font-size:21px}main{padding:14px 12px 32px}.tabs-row{display:block}.tabs-row-label{display:block;width:max-content;min-width:0;margin-bottom:7px}.tabs{padding-bottom:3px}.tab{padding:8px 11px;font-size:13px}.section-title{font-size:17px;margin-top:20px}.snv6-kpi .value{font-size:27px}th,td{padding:7px 8px}.current-empty{padding:22px 14px}}
 </style></head><body>
 <header><h1>VST 评测曲线</h1><div class='meta'>VST 与 Geo3D 验证图版的公网静态快照。Geo3D 主图按研究问题拆分，每次只比较两条实验曲线，并对齐真实的 lijia-line 100–1000 checkpoint 基线。本页不访问任何内网服务。</div></header>
 <main>
@@ -53,6 +56,16 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <span class='tabs-row-label'>新基线（0710）</span>
   <div class='tabs'>
     <button class='tab' data-tab='snv60710'>SN V6 0710 复验</button>
+  </div>
+</div>
+<div class='tabs-row current-vst'>
+  <span class='tabs-row-label'>当前 ScanNet VST</span>
+  <div class='tabs'>
+    <button class='tab' data-tab='current-video-v1'>Video v1</button>
+    <button class='tab' data-tab='current-video2mi-v1'>Video→MI v1</button>
+    <button class='tab' data-tab='current-native-mi-v2'>原生 MI V2</button>
+    <button class='tab' data-tab='current-video-v2'>Video V2</button>
+    <button class='tab' data-tab='current-video2mi-v2'>Video→MI V2</button>
   </div>
 </div>
 <div class='tabs-row archived'>
@@ -161,6 +174,12 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <div class='snv6-table-wrap'><table id='snv60710-table'></table></div>
 </div>
 </section>
+
+<section id='tab-current-video-v1' class='pane'><div id='current-video-v1-root'></div></section>
+<section id='tab-current-video2mi-v1' class='pane'><div id='current-video2mi-v1-root'></div></section>
+<section id='tab-current-native-mi-v2' class='pane'><div id='current-native-mi-v2-root'></div></section>
+<section id='tab-current-video-v2' class='pane'><div id='current-video-v2-root'></div></section>
+<section id='tab-current-video2mi-v2' class='pane'><div id='current-video2mi-v2-root'></div></section>
 </main>
 <script>
 const snv6Metrics = [
@@ -288,6 +307,102 @@ function renderSnv6Panel(prefix, rows, treatmentLabel){
 }
 function renderSnv6(){renderSnv6Panel('snv6',snv6Rows,'ScanMI')}
 function renderSnv60710(){renderSnv6Panel('snv60710',snv60710Rows,'0710 + 10% VST 多图')}
+function currentStateText(state){
+  return {Success:'成功',Succeeded:'已完成',Running:'运行中',Pending:'排队中',Submitted:'已提交',Failed:'失败',Unknown:'未知'}[state]||state;
+}
+function currentStateSummary(states){
+  const entries=Object.entries(states||{});
+  return entries.length?entries.map(([state,count])=>`${currentStateText(state)} ${count}`).join(' / '):'尚无评测任务';
+}
+function currentRows(data,arm){
+  const steps=new Set(arm.results.map(row=>row.step));
+  return [
+    ...data.baseline_results.filter(row=>steps.has(row.step)).map(row=>({group:'baseline',step:row.step,...row.scores})),
+    ...arm.results.map(row=>({group:'scanmi',step:row.step,...row.scores}))
+  ];
+}
+function currentStatusTable(arm){
+  if(!arm.eval_steps.length)return '<div class="current-empty"><strong>尚未达到首个评测门槛</strong><span>ckpt100 注册并完成三项 smoke 后，才会进入真实结果验收。</span></div>';
+  const body=arm.eval_steps.map(item=>`<tr><td>ckpt${item.step}</td><td>${geoStatus(item.status)}</td></tr>`).join('');
+  return `<div class="card"><h2>当前评测队列</h2><div class="snv6-table-wrap"><table><thead><tr><th>checkpoint</th><th>状态</th></tr></thead><tbody>${body}</tbody></table></div></div>`;
+}
+function renderCurrentArm(data,arm){
+  const root=document.getElementById(`current-${arm.key}-root`);
+  if(!root)return;
+  const verified=arm.results.length;
+  const stateSummary=currentStateSummary(arm.eval_states);
+  if(!verified){
+    root.innerHTML=`
+      <h2 class="section-title">${geoEsc(arm.title)}</h2>
+      <div class="current-note"><b>当前阶段：</b>${geoEsc(arm.phase)}。${geoEsc(data.policy)}</div>
+      <div class="snv6-kpis">
+        ${[
+          ['真实验收',`0 / ${arm.target_steps}`,'当前没有可进入曲线的 checkpoint'],
+          ['训练状态',currentStateText(arm.train_state),'按严格训练链读取最新状态'],
+          ['评测阶段',arm.phase,'smoke 通过后才启动六项 full eval'],
+          ['评测任务',stateSummary,'排队不等于已有结果']
+        ].map(([label,value,sub])=>`<div class="snv6-kpi"><div class="label">${geoEsc(label)}</div><div class="value">${geoEsc(value)}</div><div class="sub">${geoEsc(sub)}</div></div>`).join('')}
+      </div>
+      <div class="current-empty"><strong>暂无通过真实验收的分数</strong><span>不会用空目录、Submitted 状态或未完成的 smoke 结果补画曲线。</span></div>
+      ${currentStatusTable(arm)}
+      <div class="geo-table-note">数据更新时间：${geoEsc(data.updated_at)}</div>`;
+    return;
+  }
+
+  const rows=currentRows(data,arm);
+  const paired=arm.results.map(result=>({
+    s:{group:'scanmi',step:result.step,...result.scores},
+    b:rows.find(row=>row.group==='baseline'&&row.step===result.step)
+  })).filter(item=>item.b);
+  const best=paired.reduce((left,right)=>snv6Avg(right.s)>snv6Avg(left.s)?right:left);
+  const latest=paired[paired.length-1];
+  const avgDelta=snv6Avg(latest.s)-snv6Avg(latest.b);
+  const audit=arm.audit||{};
+  const emptyText=Object.entries(audit.empty_final_by_step||{}).map(([step,count])=>`ckpt${step}: ${count}`).join(' / ');
+  const cutoffText=Object.entries(audit.length_cutoff_by_step||{}).map(([step,count])=>`ckpt${step}: ${count}`).join(' / ');
+  root.innerHTML=`
+    <h2 class="section-title">${geoEsc(arm.title)}：已验收结果 vs exact SN6V0710</h2>
+    <div class="current-note"><b>口径：</b>六项 no-thinking full eval，同 checkpoint 对齐 exact SN6V0710 control。${geoEsc(data.policy)}</div>
+    <div class="snv6-kpis">
+      ${[
+        ['真实验收',`${verified} / ${arm.target_steps}`,`已完成 ckpt ${arm.verified_steps.join(', ')}`],
+        ['最佳六项均值',snv6Pct(snv6Avg(best.s)),`ckpt${best.s.step}，同 step 基线 ${snv6Pct(snv6Avg(best.b))}`],
+        ['最新已验收',`ckpt${latest.s.step}`,`均值 ${snv6Pct(snv6Avg(latest.s))}，Δ ${snv6Delta(avgDelta)}pp`],
+        ['API 获取失败',String(audit.failed_to_obtain??0),`评测队列：${stateSummary}`]
+      ].map(([label,value,sub])=>`<div class="snv6-kpi"><div class="label">${geoEsc(label)}</div><div class="value">${geoEsc(value)}</div><div class="sub">${geoEsc(sub)}</div></div>`).join('')}
+    </div>
+    <div class="snv6-chart">
+      <h2>六项等权均值</h2>
+      <div class="snv6-legend"><span><i class="snv6-dot scanmi"></i>${geoEsc(arm.label)}</span><span><i class="snv6-dot base"></i>exact SN6V0710</span></div>
+      <div id="current-${arm.key}-avg-chart"></div>
+    </div>
+    <div class="snv6-chart-grid" id="current-${arm.key}-metric-charts"></div>
+    <div class="card"><h2>同 checkpoint 真实分数</h2><div class="snv6-table-wrap"><table id="current-${arm.key}-table"></table></div></div>
+    <div class="current-audit"><b>结果审计</b><br>${geoEsc(audit.note||'已按真实结果验收口径检查。')}<br>空终答：${geoEsc(emptyText||'0')}<br>length cutoff：${geoEsc(cutoffText||'0')}</div>
+    <div class="geo-table-note">数据更新时间：${geoEsc(data.updated_at)}</div>`;
+
+  snv6Chart(document.getElementById(`current-${arm.key}-avg-chart`),'','avg',true,rows);
+  const chartRoot=document.getElementById(`current-${arm.key}-metric-charts`);
+  chartRoot.innerHTML=snv6Metrics.map(([key,label])=>`<div class="snv6-chart"><h2>${geoEsc(label)}</h2><div class="snv6-legend"><span><i class="snv6-dot scanmi"></i>${geoEsc(arm.label)}</span><span><i class="snv6-dot base"></i>exact SN6V0710</span></div><div id="current-${arm.key}-${key.replace(/[^a-zA-Z0-9]/g,'-')}"></div></div>`).join('');
+  snv6Metrics.forEach(([key])=>snv6Chart(document.getElementById(`current-${arm.key}-${key.replace(/[^a-zA-Z0-9]/g,'-')}`),'',key,false,rows));
+  const head=['ckpt',`${arm.label} 均值`,'基线均值','均值 Δ',...snv6Metrics.map(([,label])=>label)];
+  const body=paired.map(({s,b})=>{
+    const cells=[s.step,snv6Pct(snv6Avg(s)),snv6Pct(snv6Avg(b)),`<span class="${snv6DeltaClass(snv6Avg(s)-snv6Avg(b))}">${snv6Delta(snv6Avg(s)-snv6Avg(b))}pp</span>`];
+    snv6Metrics.forEach(([key])=>{const delta=s[key]-b[key];cells.push(`<span class="current-table-score"><span class="raw">${snv6Pct(s[key])}</span><span class="${snv6DeltaClass(delta)}">${snv6Delta(delta)}pp</span></span>`)});
+    return `<tr>${cells.map(cell=>`<td>${cell}</td>`).join('')}</tr>`;
+  }).join('');
+  document.getElementById(`current-${arm.key}-table`).innerHTML=`<thead><tr>${head.map(value=>`<th>${geoEsc(value)}</th>`).join('')}</tr></thead><tbody>${body}</tbody>`;
+}
+async function renderCurrentVst(){
+  try{
+    const response=await fetch('vst_scannet_current_live.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    data.arms.forEach(arm=>renderCurrentArm(data,arm));
+  }catch(error){
+    document.querySelectorAll('[id^="current-"][id$="-root"]').forEach(root=>{root.innerHTML=`<div class="current-empty"><strong>当前 VST 数据加载失败</strong><span>${geoEsc(error.message)}</span></div>`});
+  }
+}
 const geoB1000Catalog = {
   r5_st_p10:{label:'R5 单轮 p10',short:'R5 单轮'},
   r5_st_p30:{label:'R5 单轮 p30',short:'R5 p30'},
@@ -469,6 +584,7 @@ document.querySelectorAll('[data-tab]').forEach(btn=>{
 });
 renderSnv6();
 renderSnv60710();
+renderCurrentVst();
 renderGeoB1000();
 activateDashboardTab(location.hash ? location.hash.slice(1) : 'matrix');
 </script>
