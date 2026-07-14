@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "updated_at": "2026-07-14T12:19:19+08:00",
+  "schema_version": 2,
+  "updated_at": "2026-07-15T05:36:00+08:00",
   "baseline_label": "exact SN6V0710 control",
   "benchmarks": [
     {
@@ -145,13 +145,11 @@
       "key": "video-v1",
       "label": "Video v1",
       "title": "VST-ScanNet Video v1",
-      "phase": "六项 full eval",
+      "phase": "已完成：六项 full eval",
       "target_steps": 10,
       "train_state": "Succeeded",
       "eval_states": {
-        "Pending": 3,
-        "Submitted": 2,
-        "Success": 5
+        "Success": 10
       },
       "eval_steps": [
         {
@@ -176,23 +174,23 @@
         },
         {
           "step": 600,
-          "status": "Submitted"
+          "status": "Success"
         },
         {
           "step": 700,
-          "status": "Submitted"
+          "status": "Success"
         },
         {
           "step": 800,
-          "status": "Pending"
+          "status": "Success"
         },
         {
           "step": 900,
-          "status": "Pending"
+          "status": "Success"
         },
         {
           "step": 1000,
-          "status": "Pending"
+          "status": "Success"
         }
       ],
       "verified_steps": [
@@ -200,7 +198,12 @@
         200,
         300,
         400,
-        500
+        500,
+        600,
+        700,
+        800,
+        900,
+        1000
       ],
       "results": [
         {
@@ -257,6 +260,61 @@
             "PointBench": 0.5814663951120163,
             "ZeroBench_v3": 0.020737327188940093
           }
+        },
+        {
+          "step": 600,
+          "scores": {
+            "ZeroBench_v3": 0.03456221198156682,
+            "Perception-geometry-mc-cat-circular-v1": 0.34285714285714286,
+            "ChartTableMCx4": 0.22941176470588234,
+            "BabyVPerceptionCircularV1": 0.25854332067656194,
+            "NaturalPerceptionCircularV3": 0.29780564263322884,
+            "PointBench": 0.5621181262729125
+          }
+        },
+        {
+          "step": 700,
+          "scores": {
+            "ZeroBench_v3": 0.013824884792626729,
+            "Perception-geometry-mc-cat-circular-v1": 0.3323809523809524,
+            "ChartTableMCx4": 0.22058823529411764,
+            "BabyVPerceptionCircularV1": 0.25716258198136005,
+            "NaturalPerceptionCircularV3": 0.2852664576802508,
+            "PointBench": 0.5763747454175153
+          }
+        },
+        {
+          "step": 800,
+          "scores": {
+            "ZeroBench_v3": 0.029953917050691243,
+            "Perception-geometry-mc-cat-circular-v1": 0.3361904761904762,
+            "ChartTableMCx4": 0.21764705882352942,
+            "BabyVPerceptionCircularV1": 0.25509147393855713,
+            "NaturalPerceptionCircularV3": 0.30407523510971785,
+            "PointBench": 0.5641547861507128
+          }
+        },
+        {
+          "step": 900,
+          "scores": {
+            "ZeroBench_v3": 0.02534562211981567,
+            "Perception-geometry-mc-cat-circular-v1": 0.3376190476190476,
+            "ChartTableMCx4": 0.22470588235294117,
+            "BabyVPerceptionCircularV1": 0.2564722126337591,
+            "NaturalPerceptionCircularV3": 0.290491118077325,
+            "PointBench": 0.5682281059063137
+          }
+        },
+        {
+          "step": 1000,
+          "scores": {
+            "ZeroBench_v3": 0.03917050691244239,
+            "Perception-geometry-mc-cat-circular-v1": 0.33476190476190476,
+            "ChartTableMCx4": 0.2223529411764706,
+            "BabyVPerceptionCircularV1": 0.25509147393855713,
+            "NaturalPerceptionCircularV3": 0.3019853709508882,
+            "PointBench": 0.5773930753564155
+          }
         }
       ],
       "audit": {
@@ -266,94 +324,1005 @@
           "200": 0,
           "300": 0,
           "400": 0,
-          "500": 0
+          "500": 0,
+          "600": 0,
+          "700": 0,
+          "800": 0,
+          "900": 0,
+          "1000": 0
         },
         "length_cutoff_by_step": {
           "100": 143,
           "200": 18,
           "300": 24,
           "400": 23,
-          "500": 16
+          "500": 16,
+          "600": 13,
+          "700": 17,
+          "800": 19,
+          "900": 21,
+          "1000": 22
         },
-        "note": "step100–500 已从 m3 核验六项 prediction、summary、score 与模型 usage；API 获取失败为 0。"
-      }
+        "pointbench_length_cutoff_by_step": {
+          "600": 5,
+          "700": 4,
+          "800": 6,
+          "900": 7,
+          "1000": 7
+        },
+        "zerobench_length_cutoff_by_step": {
+          "600": 8,
+          "700": 13,
+          "800": 13,
+          "900": 14,
+          "1000": 15
+        },
+        "note": "step100–1000 已逐 checkpoint 核验六集 progress、6 summary、6 scores、精确 prediction 行数、model/usage；Failed to obtain=0。"
+      },
+      "eval_tag": "perception-eval-video0712"
     },
     {
       "key": "video2mi-v1",
       "label": "Video→MI v1",
       "title": "VST-ScanNet Video→Multi-Image v1",
-      "phase": "ckpt100 三项 smoke",
+      "phase": "已完成：六项 full eval",
       "target_steps": 10,
-      "train_state": "Running",
+      "train_state": "Succeeded",
       "eval_states": {
-        "Submitted": 1
+        "Success": 10
       },
       "eval_steps": [
         {
           "step": 100,
-          "status": "Submitted"
+          "status": "Success"
+        },
+        {
+          "step": 200,
+          "status": "Success"
+        },
+        {
+          "step": 300,
+          "status": "Success"
+        },
+        {
+          "step": 400,
+          "status": "Success"
+        },
+        {
+          "step": 500,
+          "status": "Success"
+        },
+        {
+          "step": 600,
+          "status": "Success"
+        },
+        {
+          "step": 700,
+          "status": "Success"
+        },
+        {
+          "step": 800,
+          "status": "Success"
+        },
+        {
+          "step": 900,
+          "status": "Success"
+        },
+        {
+          "step": 1000,
+          "status": "Success"
         }
       ],
-      "verified_steps": [],
-      "results": []
+      "verified_steps": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800,
+        900,
+        1000
+      ],
+      "results": [
+        {
+          "step": 100,
+          "scores": {
+            "ZeroBench_v3": 0.10138248847926268,
+            "Perception-geometry-mc-cat-circular-v1": 0.23333333333333334,
+            "ChartTableMCx4": 0.1952941176470588,
+            "BabyVPerceptionCircularV1": 0.21988263721090784,
+            "NaturalPerceptionCircularV3": 0.21839080459770116,
+            "PointBench": 0.5610997963340122
+          }
+        },
+        {
+          "step": 200,
+          "scores": {
+            "ZeroBench_v3": 0.041474654377880185,
+            "Perception-geometry-mc-cat-circular-v1": 0.30428571428571427,
+            "ChartTableMCx4": 0.21058823529411766,
+            "BabyVPerceptionCircularV1": 0.2581981360027615,
+            "NaturalPerceptionCircularV3": 0.2852664576802508,
+            "PointBench": 0.515274949083503
+          }
+        },
+        {
+          "step": 300,
+          "scores": {
+            "ZeroBench_v3": 0.03225806451612903,
+            "Perception-geometry-mc-cat-circular-v1": 0.3238095238095238,
+            "ChartTableMCx4": 0.20705882352941177,
+            "BabyVPerceptionCircularV1": 0.25681739730755954,
+            "NaturalPerceptionCircularV3": 0.2831765935214211,
+            "PointBench": 0.5865580448065173
+          }
+        },
+        {
+          "step": 400,
+          "scores": {
+            "ZeroBench_v3": 0.029953917050691243,
+            "Perception-geometry-mc-cat-circular-v1": 0.3161904761904762,
+            "ChartTableMCx4": 0.20470588235294118,
+            "BabyVPerceptionCircularV1": 0.2613047980669658,
+            "NaturalPerceptionCircularV3": 0.2884012539184953,
+            "PointBench": 0.5855397148676171
+          }
+        },
+        {
+          "step": 500,
+          "scores": {
+            "ZeroBench_v3": 0.029953917050691243,
+            "Perception-geometry-mc-cat-circular-v1": 0.3271428571428571,
+            "ChartTableMCx4": 0.21764705882352942,
+            "BabyVPerceptionCircularV1": 0.26061442871936485,
+            "NaturalPerceptionCircularV3": 0.3103448275862069,
+            "PointBench": 0.5651731160896131
+          }
+        },
+        {
+          "step": 600,
+          "scores": {
+            "ZeroBench_v3": 0.02304147465437788,
+            "Perception-geometry-mc-cat-circular-v1": 0.32666666666666666,
+            "ChartTableMCx4": 0.21823529411764706,
+            "BabyVPerceptionCircularV1": 0.2637210907835692,
+            "NaturalPerceptionCircularV3": 0.2936259143155695,
+            "PointBench": 0.570264765784114
+          }
+        },
+        {
+          "step": 700,
+          "scores": {
+            "ZeroBench_v3": 0.016129032258064516,
+            "Perception-geometry-mc-cat-circular-v1": 0.32666666666666666,
+            "ChartTableMCx4": 0.21529411764705883,
+            "BabyVPerceptionCircularV1": 0.2557818432861581,
+            "NaturalPerceptionCircularV3": 0.3113897596656217,
+            "PointBench": 0.5621181262729125
+          }
+        },
+        {
+          "step": 800,
+          "scores": {
+            "ZeroBench_v3": 0.027649769585253458,
+            "Perception-geometry-mc-cat-circular-v1": 0.3323809523809524,
+            "ChartTableMCx4": 0.21823529411764706,
+            "BabyVPerceptionCircularV1": 0.2592336900241629,
+            "NaturalPerceptionCircularV3": 0.31452455590386624,
+            "PointBench": 0.5692464358452138
+          }
+        },
+        {
+          "step": 900,
+          "scores": {
+            "ZeroBench_v3": 0.02534562211981567,
+            "Perception-geometry-mc-cat-circular-v1": 0.32666666666666666,
+            "ChartTableMCx4": 0.21058823529411766,
+            "BabyVPerceptionCircularV1": 0.25888850535036245,
+            "NaturalPerceptionCircularV3": 0.2936259143155695,
+            "PointBench": 0.5580448065173116
+          }
+        },
+        {
+          "step": 1000,
+          "scores": {
+            "ZeroBench_v3": 0.03917050691244239,
+            "Perception-geometry-mc-cat-circular-v1": 0.3342857142857143,
+            "ChartTableMCx4": 0.21823529411764706,
+            "BabyVPerceptionCircularV1": 0.2637210907835692,
+            "NaturalPerceptionCircularV3": 0.3155694879832811,
+            "PointBench": 0.5773930753564155
+          }
+        }
+      ],
+      "eval_tag": "perception-eval-video2mi0713",
+      "audit": {
+        "failed_to_obtain": 0,
+        "empty_final_by_step": {
+          "100": 4,
+          "200": 0,
+          "300": 0,
+          "400": 0,
+          "500": 0,
+          "600": 0,
+          "700": 0,
+          "800": 0,
+          "900": 0,
+          "1000": 0
+        },
+        "length_cutoff_by_step": {
+          "100": 104,
+          "200": 12,
+          "300": 16,
+          "400": 22,
+          "500": 21,
+          "600": 24,
+          "700": 23,
+          "800": 23,
+          "900": 17,
+          "1000": 18
+        },
+        "pointbench_length_cutoff_by_step": {
+          "100": 91,
+          "200": 1,
+          "300": 3,
+          "400": 6,
+          "500": 5,
+          "600": 10,
+          "700": 9,
+          "800": 8,
+          "900": 4,
+          "1000": 6
+        },
+        "zerobench_length_cutoff_by_step": {
+          "100": 12,
+          "200": 11,
+          "300": 13,
+          "400": 16,
+          "500": 16,
+          "600": 14,
+          "700": 14,
+          "800": 15,
+          "900": 13,
+          "1000": 12
+        },
+        "note": "step100–1000 已逐 checkpoint 核验六集 progress、6 summary、6 scores、精确 prediction 行数、model/usage；Failed to obtain=0。"
+      }
     },
     {
       "key": "native-mi-v2",
       "label": "原生 MI V2",
       "title": "原生 VST-ScanNet Multi-Image V2 120K",
-      "phase": "ckpt100 三项 smoke",
+      "phase": "已完成：六项 full eval",
       "target_steps": 10,
-      "train_state": "Running",
+      "train_state": "Succeeded",
       "eval_states": {
-        "Submitted": 1
+        "Success": 10
       },
       "eval_steps": [
         {
           "step": 100,
-          "status": "Submitted"
+          "status": "Success"
+        },
+        {
+          "step": 200,
+          "status": "Success"
+        },
+        {
+          "step": 300,
+          "status": "Success"
+        },
+        {
+          "step": 400,
+          "status": "Success"
+        },
+        {
+          "step": 500,
+          "status": "Success"
+        },
+        {
+          "step": 600,
+          "status": "Success"
+        },
+        {
+          "step": 700,
+          "status": "Success"
+        },
+        {
+          "step": 800,
+          "status": "Success"
+        },
+        {
+          "step": 900,
+          "status": "Success"
+        },
+        {
+          "step": 1000,
+          "status": "Success"
         }
       ],
-      "verified_steps": [],
-      "results": []
+      "verified_steps": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800,
+        900,
+        1000
+      ],
+      "results": [
+        {
+          "step": 100,
+          "scores": {
+            "ZeroBench_v3": 0.07142857142857142,
+            "Perception-geometry-mc-cat-circular-v1": 0.22285714285714286,
+            "ChartTableMCx4": 0.1723529411764706,
+            "BabyVPerceptionCircularV1": 0.22402485329651364,
+            "NaturalPerceptionCircularV3": 0.2277951933124347,
+            "PointBench": 0.5081466395112016
+          }
+        },
+        {
+          "step": 200,
+          "scores": {
+            "ZeroBench_v3": 0.04838709677419355,
+            "Perception-geometry-mc-cat-circular-v1": 0.3161904761904762,
+            "ChartTableMCx4": 0.24764705882352941,
+            "BabyVPerceptionCircularV1": 0.2661373835001726,
+            "NaturalPerceptionCircularV3": 0.3187042842215256,
+            "PointBench": 0.5712830957230143
+          }
+        },
+        {
+          "step": 300,
+          "scores": {
+            "ZeroBench_v3": 0.03456221198156682,
+            "Perception-geometry-mc-cat-circular-v1": 0.3242857142857143,
+            "ChartTableMCx4": 0.2447058823529412,
+            "BabyVPerceptionCircularV1": 0.2637210907835692,
+            "NaturalPerceptionCircularV3": 0.3187042842215256,
+            "PointBench": 0.5733197556008147
+          }
+        },
+        {
+          "step": 400,
+          "scores": {
+            "ZeroBench_v3": 0.027649769585253458,
+            "Perception-geometry-mc-cat-circular-v1": 0.3076190476190476,
+            "ChartTableMCx4": 0.2388235294117647,
+            "BabyVPerceptionCircularV1": 0.25785295132896097,
+            "NaturalPerceptionCircularV3": 0.3103448275862069,
+            "PointBench": 0.5824847250509165
+          }
+        },
+        {
+          "step": 500,
+          "scores": {
+            "ZeroBench_v3": 0.03225806451612903,
+            "Perception-geometry-mc-cat-circular-v1": 0.30428571428571427,
+            "ChartTableMCx4": 0.22764705882352942,
+            "BabyVPerceptionCircularV1": 0.2554366586123576,
+            "NaturalPerceptionCircularV3": 0.29258098223615464,
+            "PointBench": 0.5794297352342159
+          }
+        },
+        {
+          "step": 600,
+          "scores": {
+            "ZeroBench_v3": 0.02304147465437788,
+            "Perception-geometry-mc-cat-circular-v1": 0.3171428571428571,
+            "ChartTableMCx4": 0.2323529411764706,
+            "BabyVPerceptionCircularV1": 0.2602692440455644,
+            "NaturalPerceptionCircularV3": 0.30303030303030304,
+            "PointBench": 0.575356415478615
+          }
+        },
+        {
+          "step": 700,
+          "scores": {
+            "ZeroBench_v3": 0.03225806451612903,
+            "Perception-geometry-mc-cat-circular-v1": 0.30666666666666664,
+            "ChartTableMCx4": 0.2211764705882353,
+            "BabyVPerceptionCircularV1": 0.24853296513634796,
+            "NaturalPerceptionCircularV3": 0.2988505747126437,
+            "PointBench": 0.5824847250509165
+          }
+        },
+        {
+          "step": 800,
+          "scores": {
+            "ZeroBench_v3": 0.018433179723502304,
+            "Perception-geometry-mc-cat-circular-v1": 0.319047619047619,
+            "ChartTableMCx4": 0.21705882352941178,
+            "BabyVPerceptionCircularV1": 0.23403520883672765,
+            "NaturalPerceptionCircularV3": 0.28735632183908044,
+            "PointBench": 0.570264765784114
+          }
+        },
+        {
+          "step": 900,
+          "scores": {
+            "ZeroBench_v3": 0.027649769585253458,
+            "Perception-geometry-mc-cat-circular-v1": 0.31523809523809526,
+            "ChartTableMCx4": 0.22058823529411764,
+            "BabyVPerceptionCircularV1": 0.2474974111149465,
+            "NaturalPerceptionCircularV3": 0.3207941483803553,
+            "PointBench": 0.575356415478615
+          }
+        },
+        {
+          "step": 1000,
+          "scores": {
+            "ZeroBench_v3": 0.03225806451612903,
+            "Perception-geometry-mc-cat-circular-v1": 0.3057142857142857,
+            "ChartTableMCx4": 0.2223529411764706,
+            "BabyVPerceptionCircularV1": 0.24266482568173972,
+            "NaturalPerceptionCircularV3": 0.30407523510971785,
+            "PointBench": 0.5672097759674134
+          }
+        }
+      ],
+      "eval_tag": "perception-eval-vstmi-v2-120k0713",
+      "audit": {
+        "failed_to_obtain": 0,
+        "empty_final_by_step": {
+          "100": 4,
+          "200": 0,
+          "300": 0,
+          "400": 0,
+          "500": 0,
+          "600": 0,
+          "700": 0,
+          "800": 0,
+          "900": 0,
+          "1000": 0
+        },
+        "length_cutoff_by_step": {
+          "100": 251,
+          "200": 18,
+          "300": 20,
+          "400": 8,
+          "500": 18,
+          "600": 18,
+          "700": 24,
+          "800": 27,
+          "900": 19,
+          "1000": 18
+        },
+        "pointbench_length_cutoff_by_step": {
+          "100": 182,
+          "200": 2,
+          "300": 3,
+          "400": 1,
+          "500": 5,
+          "600": 5,
+          "700": 8,
+          "800": 8,
+          "900": 5,
+          "1000": 2
+        },
+        "zerobench_length_cutoff_by_step": {
+          "100": 35,
+          "200": 16,
+          "300": 17,
+          "400": 7,
+          "500": 13,
+          "600": 13,
+          "700": 16,
+          "800": 19,
+          "900": 14,
+          "1000": 16
+        },
+        "note": "step100–1000 已逐 checkpoint 核验六集 progress、6 summary、6 scores、精确 prediction 行数、model/usage；Failed to obtain=0。"
+      }
     },
     {
       "key": "video-v2",
       "label": "Video V2",
       "title": "VST-ScanNet Video V2 120K",
-      "phase": "ckpt100 三项 smoke",
+      "phase": "已完成：六项 full eval",
       "target_steps": 10,
-      "train_state": "Running",
+      "train_state": "Succeeded",
       "eval_states": {
-        "Submitted": 1
+        "Success": 10
       },
       "eval_steps": [
         {
           "step": 100,
-          "status": "Submitted"
+          "status": "Success"
+        },
+        {
+          "step": 200,
+          "status": "Success"
+        },
+        {
+          "step": 300,
+          "status": "Success"
+        },
+        {
+          "step": 400,
+          "status": "Success"
+        },
+        {
+          "step": 500,
+          "status": "Success"
+        },
+        {
+          "step": 600,
+          "status": "Success"
+        },
+        {
+          "step": 700,
+          "status": "Success"
+        },
+        {
+          "step": 800,
+          "status": "Success"
+        },
+        {
+          "step": 900,
+          "status": "Success"
+        },
+        {
+          "step": 1000,
+          "status": "Success"
         }
       ],
-      "verified_steps": [],
-      "results": []
+      "verified_steps": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800,
+        900,
+        1000
+      ],
+      "results": [
+        {
+          "step": 100,
+          "scores": {
+            "ZeroBench_v3": 0.0944700460829493,
+            "Perception-geometry-mc-cat-circular-v1": 0.22476190476190477,
+            "ChartTableMCx4": 0.18588235294117647,
+            "BabyVPerceptionCircularV1": 0.21781152916810492,
+            "NaturalPerceptionCircularV3": 0.21316614420062696,
+            "PointBench": 0.594704684317719
+          }
+        },
+        {
+          "step": 200,
+          "scores": {
+            "ZeroBench_v3": 0.05069124423963134,
+            "Perception-geometry-mc-cat-circular-v1": 0.3061904761904762,
+            "ChartTableMCx4": 0.24352941176470588,
+            "BabyVPerceptionCircularV1": 0.26717293752157406,
+            "NaturalPerceptionCircularV3": 0.3176593521421108,
+            "PointBench": 0.5855397148676171
+          }
+        },
+        {
+          "step": 300,
+          "scores": {
+            "ZeroBench_v3": 0.041474654377880185,
+            "Perception-geometry-mc-cat-circular-v1": 0.32571428571428573,
+            "ChartTableMCx4": 0.23529411764705882,
+            "BabyVPerceptionCircularV1": 0.26303072143596823,
+            "NaturalPerceptionCircularV3": 0.2936259143155695,
+            "PointBench": 0.5845213849287169
+          }
+        },
+        {
+          "step": 400,
+          "scores": {
+            "ZeroBench_v3": 0.02304147465437788,
+            "Perception-geometry-mc-cat-circular-v1": 0.33714285714285713,
+            "ChartTableMCx4": 0.24,
+            "BabyVPerceptionCircularV1": 0.2644114601311702,
+            "NaturalPerceptionCircularV3": 0.3155694879832811,
+            "PointBench": 0.5957230142566191
+          }
+        },
+        {
+          "step": 500,
+          "scores": {
+            "ZeroBench_v3": 0.03686635944700461,
+            "Perception-geometry-mc-cat-circular-v1": 0.3466666666666667,
+            "ChartTableMCx4": 0.25529411764705884,
+            "BabyVPerceptionCircularV1": 0.2699344149119779,
+            "NaturalPerceptionCircularV3": 0.32497387669801464,
+            "PointBench": 0.5855397148676171
+          }
+        },
+        {
+          "step": 600,
+          "scores": {
+            "ZeroBench_v3": 0.03917050691244239,
+            "Perception-geometry-mc-cat-circular-v1": 0.3419047619047619,
+            "ChartTableMCx4": 0.26294117647058823,
+            "BabyVPerceptionCircularV1": 0.2692440455643769,
+            "NaturalPerceptionCircularV3": 0.3176593521421108,
+            "PointBench": 0.5814663951120163
+          }
+        },
+        {
+          "step": 700,
+          "scores": {
+            "ZeroBench_v3": 0.03917050691244239,
+            "Perception-geometry-mc-cat-circular-v1": 0.3523809523809524,
+            "ChartTableMCx4": 0.26705882352941174,
+            "BabyVPerceptionCircularV1": 0.2726958923023818,
+            "NaturalPerceptionCircularV3": 0.3343782654127482,
+            "PointBench": 0.5723014256619144
+          }
+        },
+        {
+          "step": 800,
+          "scores": {
+            "ZeroBench_v3": 0.03686635944700461,
+            "Perception-geometry-mc-cat-circular-v1": 0.35095238095238096,
+            "ChartTableMCx4": 0.2647058823529412,
+            "BabyVPerceptionCircularV1": 0.26889886089057646,
+            "NaturalPerceptionCircularV3": 0.329153605015674,
+            "PointBench": 0.5773930753564155
+          }
+        },
+        {
+          "step": 900,
+          "scores": {
+            "ZeroBench_v3": 0.04608294930875576,
+            "Perception-geometry-mc-cat-circular-v1": 0.35428571428571426,
+            "ChartTableMCx4": 0.25176470588235295,
+            "BabyVPerceptionCircularV1": 0.27131515360717984,
+            "NaturalPerceptionCircularV3": 0.33124346917450365,
+            "PointBench": 0.575356415478615
+          }
+        },
+        {
+          "step": 1000,
+          "scores": {
+            "ZeroBench_v3": 0.06221198156682028,
+            "Perception-geometry-mc-cat-circular-v1": 0.34523809523809523,
+            "ChartTableMCx4": 0.26529411764705885,
+            "BabyVPerceptionCircularV1": 0.27304107697618224,
+            "NaturalPerceptionCircularV3": 0.32497387669801464,
+            "PointBench": 0.554989816700611
+          }
+        }
+      ],
+      "eval_tag": "perception-eval-videov2-120k0714",
+      "audit": {
+        "failed_to_obtain": 0,
+        "empty_final_by_step": {
+          "100": 3,
+          "200": 0,
+          "300": 0,
+          "400": 0,
+          "500": 0,
+          "600": 0,
+          "700": 0,
+          "800": 0,
+          "900": 0,
+          "1000": 0
+        },
+        "length_cutoff_by_step": {
+          "100": 90,
+          "200": 10,
+          "300": 17,
+          "400": 22,
+          "500": 20,
+          "600": 22,
+          "700": 21,
+          "800": 18,
+          "900": 17,
+          "1000": 16
+        },
+        "pointbench_length_cutoff_by_step": {
+          "100": 75,
+          "200": 2,
+          "300": 2,
+          "400": 3,
+          "500": 7,
+          "600": 10,
+          "700": 7,
+          "800": 8,
+          "900": 4,
+          "1000": 5
+        },
+        "zerobench_length_cutoff_by_step": {
+          "100": 10,
+          "200": 8,
+          "300": 15,
+          "400": 19,
+          "500": 13,
+          "600": 12,
+          "700": 14,
+          "800": 10,
+          "900": 13,
+          "1000": 11
+        },
+        "note": "step100–1000 已逐 checkpoint 核验六集 progress、6 summary、6 scores、精确 prediction 行数、model/usage；Failed to obtain=0。"
+      }
     },
     {
       "key": "video2mi-v2",
       "label": "Video→MI V2",
       "title": "VST-ScanNet Video→Multi-Image V2 120K",
-      "phase": "等待 ckpt100 smoke",
+      "phase": "已完成：六项 full eval",
       "target_steps": 10,
-      "train_state": "Pending",
+      "train_state": "Succeeded",
       "eval_states": {
-        "Submitted": 1
+        "Success": 10
       },
       "eval_steps": [
         {
           "step": 100,
-          "status": "Submitted"
+          "status": "Success"
+        },
+        {
+          "step": 200,
+          "status": "Success"
+        },
+        {
+          "step": 300,
+          "status": "Success"
+        },
+        {
+          "step": 400,
+          "status": "Success"
+        },
+        {
+          "step": 500,
+          "status": "Success"
+        },
+        {
+          "step": 600,
+          "status": "Success"
+        },
+        {
+          "step": 700,
+          "status": "Success"
+        },
+        {
+          "step": 800,
+          "status": "Success"
+        },
+        {
+          "step": 900,
+          "status": "Success"
+        },
+        {
+          "step": 1000,
+          "status": "Success"
         }
       ],
-      "verified_steps": [],
-      "results": []
+      "verified_steps": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800,
+        900,
+        1000
+      ],
+      "results": [
+        {
+          "step": 100,
+          "scores": {
+            "ZeroBench_v3": 0.09216589861751152,
+            "Perception-geometry-mc-cat-circular-v1": 0.2338095238095238,
+            "ChartTableMCx4": 0.18470588235294116,
+            "BabyVPerceptionCircularV1": 0.22022782188470832,
+            "NaturalPerceptionCircularV3": 0.2089864158829676,
+            "PointBench": 0.5661914460285132
+          }
+        },
+        {
+          "step": 200,
+          "scores": {
+            "ZeroBench_v3": 0.03686635944700461,
+            "Perception-geometry-mc-cat-circular-v1": 0.28809523809523807,
+            "ChartTableMCx4": 0.2164705882352941,
+            "BabyVPerceptionCircularV1": 0.2502588885053504,
+            "NaturalPerceptionCircularV3": 0.28213166144200624,
+            "PointBench": 0.5376782077393075
+          }
+        },
+        {
+          "step": 300,
+          "scores": {
+            "ZeroBench_v3": 0.03456221198156682,
+            "Perception-geometry-mc-cat-circular-v1": 0.31523809523809526,
+            "ChartTableMCx4": 0.22941176470588234,
+            "BabyVPerceptionCircularV1": 0.2647566448049707,
+            "NaturalPerceptionCircularV3": 0.2988505747126437,
+            "PointBench": 0.5763747454175153
+          }
+        },
+        {
+          "step": 400,
+          "scores": {
+            "ZeroBench_v3": 0.02534562211981567,
+            "Perception-geometry-mc-cat-circular-v1": 0.3295238095238095,
+            "ChartTableMCx4": 0.24352941176470588,
+            "BabyVPerceptionCircularV1": 0.2619951674145668,
+            "NaturalPerceptionCircularV3": 0.3051201671891327,
+            "PointBench": 0.5885947046843177
+          }
+        },
+        {
+          "step": 500,
+          "scores": {
+            "ZeroBench_v3": 0.03225806451612903,
+            "Perception-geometry-mc-cat-circular-v1": 0.33714285714285713,
+            "ChartTableMCx4": 0.24411764705882352,
+            "BabyVPerceptionCircularV1": 0.26510182947877114,
+            "NaturalPerceptionCircularV3": 0.30407523510971785,
+            "PointBench": 0.5824847250509165
+          }
+        },
+        {
+          "step": 600,
+          "scores": {
+            "ZeroBench_v3": 0.03456221198156682,
+            "Perception-geometry-mc-cat-circular-v1": 0.3314285714285714,
+            "ChartTableMCx4": 0.23352941176470587,
+            "BabyVPerceptionCircularV1": 0.2682084915429755,
+            "NaturalPerceptionCircularV3": 0.29258098223615464,
+            "PointBench": 0.5855397148676171
+          }
+        },
+        {
+          "step": 700,
+          "scores": {
+            "ZeroBench_v3": 0.03686635944700461,
+            "Perception-geometry-mc-cat-circular-v1": 0.33476190476190476,
+            "ChartTableMCx4": 0.23470588235294118,
+            "BabyVPerceptionCircularV1": 0.26958923023817744,
+            "NaturalPerceptionCircularV3": 0.31347962382445144,
+            "PointBench": 0.5784114052953157
+          }
+        },
+        {
+          "step": 800,
+          "scores": {
+            "ZeroBench_v3": 0.03456221198156682,
+            "Perception-geometry-mc-cat-circular-v1": 0.33,
+            "ChartTableMCx4": 0.23470588235294118,
+            "BabyVPerceptionCircularV1": 0.26234035208836726,
+            "NaturalPerceptionCircularV3": 0.29571577847439917,
+            "PointBench": 0.5580448065173116
+          }
+        },
+        {
+          "step": 900,
+          "scores": {
+            "ZeroBench_v3": 0.03686635944700461,
+            "Perception-geometry-mc-cat-circular-v1": 0.3466666666666667,
+            "ChartTableMCx4": 0.2511764705882353,
+            "BabyVPerceptionCircularV1": 0.2709699689333794,
+            "NaturalPerceptionCircularV3": 0.33124346917450365,
+            "PointBench": 0.5682281059063137
+          }
+        },
+        {
+          "step": 1000,
+          "scores": {
+            "ZeroBench_v3": 0.03456221198156682,
+            "Perception-geometry-mc-cat-circular-v1": 0.3414285714285714,
+            "ChartTableMCx4": 0.25882352941176473,
+            "BabyVPerceptionCircularV1": 0.27131515360717984,
+            "NaturalPerceptionCircularV3": 0.32497387669801464,
+            "PointBench": 0.5733197556008147
+          }
+        }
+      ],
+      "eval_tag": "perception-eval-video2miv2-120k0714",
+      "audit": {
+        "failed_to_obtain": 0,
+        "empty_final_by_step": {
+          "100": 2,
+          "200": 0,
+          "300": 0,
+          "400": 0,
+          "500": 0,
+          "600": 0,
+          "700": 0,
+          "800": 0,
+          "900": 0,
+          "1000": 0
+        },
+        "length_cutoff_by_step": {
+          "100": 113,
+          "200": 21,
+          "300": 29,
+          "400": 24,
+          "500": 21,
+          "600": 24,
+          "700": 21,
+          "800": 22,
+          "900": 18,
+          "1000": 17
+        },
+        "pointbench_length_cutoff_by_step": {
+          "100": 96,
+          "200": 7,
+          "300": 5,
+          "400": 6,
+          "500": 4,
+          "600": 7,
+          "700": 4,
+          "800": 5,
+          "900": 5,
+          "1000": 3
+        },
+        "zerobench_length_cutoff_by_step": {
+          "100": 11,
+          "200": 14,
+          "300": 24,
+          "400": 18,
+          "500": 17,
+          "600": 17,
+          "700": 17,
+          "800": 17,
+          "900": 13,
+          "1000": 14
+        },
+        "note": "step100–1000 已逐 checkpoint 核验六集 progress、6 summary、6 scores、精确 prediction 行数、model/usage；Failed to obtain=0。"
+      }
     }
   ],
-  "policy": "只有完成 m3 真实结果验收且进入显式白名单的 checkpoint 才会显示分数。"
+  "policy": "仅显示完成真实结果验收的 checkpoint；五条链 step100–1000 已全部通过，评测固定在 M0/pretrain-compute。",
+  "closure": {
+    "status": "Complete",
+    "completed_at": "2026-07-15T05:36:00+08:00",
+    "training_chains": {
+      "complete": 5,
+      "total": 5
+    },
+    "full_checkpoints": {
+      "verified": 50,
+      "total": 50
+    },
+    "benchmark_results": {
+      "verified": 300,
+      "total": 300
+    },
+    "failed_to_obtain": 0,
+    "prediction_rows_by_benchmark": {
+      "Perception-geometry-mc-cat-circular-v1": 8400,
+      "NaturalPerceptionCircularV3": 3828,
+      "BabyVPerceptionCircularV1": 11588,
+      "ChartTableMCx4": 6800,
+      "PointBench": 982,
+      "ZeroBench_v3": 434
+    },
+    "prediction_rows_total": 1601600,
+    "eval_policy": {
+      "zone": "m0",
+      "rc_group": "pretrain-compute",
+      "priority": "Lowest",
+      "preemptible": true,
+      "preemption_policy": "Never"
+    },
+    "active_eval_jobs": 0,
+    "running_controllers": 0,
+    "upstream": {
+      "wds_validation": "Complete",
+      "token_audit": "Complete",
+      "m3data_zoo_mr": "!3424",
+      "video_v2_epochs": 0.444444,
+      "video2mi_v2_epochs": 0.888889
+    }
+  }
 }
