@@ -69,8 +69,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 <div class='tabs-row current-vst'>
   <span class='tabs-row-label'>当前 ScanNet VST<small>exact SN6V0710 · p10</small></span>
   <div class='tabs'>
-    <button class='tab active' data-tab='current-vst-closure'><span>五链收口总览</span><small>5/5 training · 50/50 checkpoint</small></button>
-    <button class='tab' data-tab='current-video-v1'><span>Video v1（MP4 · 4,823 条）</span><small>原始视频输入</small></button>
+    <button class='tab active' data-tab='current-video-v1'><span>Video v1（MP4 · 4,823 条）</span><small>原始视频输入</small></button>
     <button class='tab' data-tab='current-video2mi-v1'><span>Video→Multi-Image v1（8 图 · 4,823 条）</span><small>1fps / 480px</small></button>
     <button class='tab' data-tab='current-native-mi-v2'><span>原生 Multi-Image v2（2 图 · 120K 条）</span><small>原生双图样本</small></button>
     <button class='tab' data-tab='current-video-v2'><span>Video v2（MP4 · 120K 条）</span><small>统一 V2 全量</small></button>
@@ -217,8 +216,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 </details>
 </section>
 
-<section id='tab-current-vst-closure' class='pane active'><div id='current-vst-closure-root'></div></section>
-<section id='tab-current-video-v1' class='pane'><div id='current-video-v1-root'></div></section>
+<section id='tab-current-video-v1' class='pane active'><div id='current-video-v1-root'></div></section>
 <section id='tab-current-video2mi-v1' class='pane'><div id='current-video2mi-v1-root'></div></section>
 <section id='tab-current-native-mi-v2' class='pane'><div id='current-native-mi-v2-root'></div></section>
 <section id='tab-current-video-v2' class='pane'><div id='current-video-v2-root'></div></section>
@@ -369,36 +367,6 @@ function currentStatusTable(arm){
   const body=arm.eval_steps.map(item=>`<tr><td>ckpt${item.step}</td><td>${geoStatus(item.status)}</td></tr>`).join('');
   return `<div class="card"><h2>当前评测队列</h2><div class="snv6-table-wrap"><table><thead><tr><th>checkpoint</th><th>状态</th></tr></thead><tbody>${body}</tbody></table></div></div>`;
 }
-function renderCurrentClosure(data){
-  const root=document.getElementById('current-vst-closure-root');
-  const closure=data.closure;
-  if(!root||!closure)return;
-  const policy=closure.eval_policy;
-  const rows=data.arms.map(arm=>{
-    const audit=arm.audit||{};
-    const empty=audit.empty_final_by_step?.['1000']??0;
-    const point=audit.pointbench_length_cutoff_by_step?.['1000']??'-';
-    const zero=audit.zerobench_length_cutoff_by_step?.['1000']??'-';
-    return `<tr><td><b>${geoEsc(arm.title)}</b></td><td class="current-code">${geoEsc(arm.eval_tag)}</td><td>${arm.verified_steps.length}/10</td><td>${empty}</td><td>${point} / ${zero}</td><td>${geoStatus('Succeeded')}</td></tr>`;
-  }).join('');
-  root.innerHTML=`
-    <h2 class="section-title">Exact SN6V0710：五条 VST 训练与 full evaluation 最终闭环</h2>
-    <div class="current-note"><b>完成时间：</b>${geoEsc(closure.completed_at)}。五条训练均从 exact SN6V0710 b0 iter216 独立 model-only restart，全部 Succeeded 并注册 ckpt1000。评测固定为 <b>${geoEsc(policy.zone)} / ${geoEsc(policy.rc_group)}</b>、${geoEsc(policy.priority)}、preemptible=${geoEsc(policy.preemptible)}、preemption_policy=${geoEsc(policy.preemption_policy)}；controller 与 active eval 均已清零。</div>
-    <div class="snv6-kpis">
-      ${[
-        ['训练链',`${closure.training_chains.complete} / ${closure.training_chains.total}`,'全部 Succeeded，ckpt1000 已注册'],
-        ['Full checkpoints',`${closure.full_checkpoints.verified} / ${closure.full_checkpoints.total}`,'五链 step100..1000，每 100 step'],
-        ['Benchmark 结果',`${closure.benchmark_results.verified} / ${closure.benchmark_results.total}`,'每 checkpoint 六项 no-thinking benchmark'],
-        ['Failed to obtain',String(closure.failed_to_obtain),`${closure.prediction_rows_total.toLocaleString()} 行 prediction 已核验`]
-      ].map(([label,value,sub])=>`<div class="snv6-kpi"><div class="label">${geoEsc(label)}</div><div class="value">${geoEsc(value)}</div><div class="sub">${geoEsc(sub)}</div></div>`).join('')}
-    </div>
-    <div class="card"><h2>五条独立 treatment</h2><div class="snv6-table-wrap"><table><thead><tr><th>Treatment</th><th>Full-eval tag</th><th>真实验收</th><th>ckpt1000 空终答</th><th>ckpt1000 cutoff（Point / Zero）</th><th>状态</th></tr></thead><tbody>${rows}</tbody></table></div></div>
-    <div class="snv6-chart-grid">
-      <div class="card"><h2>真实结果验收口径</h2><div class="current-audit"><span class="current-complete">六集 progress 全满</span>，且每 checkpoint 有 6 summary 与六键 all_benchmark_scores。Prediction 精确行数为 <span class="current-code">8400 / 3828 / 11588 / 6800 / 982 / 434</span>；model / usage 正确，Failed to obtain=0。空终答与 length cutoff 作为模型生成质量指标记录，不误判为基础设施失败。</div></div>
-      <div class="card"><h2>V2 上游交付</h2><div class="current-audit">统一 120K aggregate、MP4 257 对 shard、8 图 61 对 shard 均完成全量 WDS 与 3,197 source 真实解码验收。32K audit：Video V2 为 <b>${geoEsc(closure.upstream.video_v2_epochs)} epoch</b>，Video→Multi-Image V2 为 <b>${geoEsc(closure.upstream.video2mi_v2_epochs)} epoch</b>，drop/skip 均为 0；m3data-zoo MR ${geoEsc(closure.upstream.m3data_zoo_mr)} 已交付。</div></div>
-    </div>
-    <div class="geo-table-note">数据更新时间：${geoEsc(data.updated_at)}</div>`;
-}
 function renderCurrentArm(data,arm){
   const root=document.getElementById(`current-${arm.key}-root`);
   if(!root)return;
@@ -465,7 +433,6 @@ async function renderCurrentVst(){
     const response=await fetch('vst_scannet_current_live.json',{cache:'no-store'});
     if(!response.ok)throw new Error(`HTTP ${response.status}`);
     const data=await response.json();
-    renderCurrentClosure(data);
     data.arms.forEach(arm=>renderCurrentArm(data,arm));
   }catch(error){
     document.querySelectorAll('[id^="current-"][id$="-root"]').forEach(root=>{root.innerHTML=`<div class="current-empty"><strong>当前 VST 数据加载失败</strong><span>${geoEsc(error.message)}</span></div>`});
@@ -777,6 +744,6 @@ renderSnv60710();
 renderCurrentVst();
 renderGeoB1000();
 renderGeoFreshfix();
-activateDashboardTab(location.hash ? location.hash.slice(1) : 'current-vst-closure');
+activateDashboardTab(location.hash ? location.hash.slice(1) : 'current-video-v1');
 </script>
 </body></html>
