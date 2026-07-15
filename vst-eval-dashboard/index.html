@@ -395,23 +395,12 @@ function renderCurrentArm(data,arm){
     s:{group:'scanmi',step:result.step,...result.scores},
     b:rows.find(row=>row.group==='baseline'&&row.step===result.step)
   })).filter(item=>item.b);
-  const best=paired.reduce((left,right)=>snv6Avg(right.s)>snv6Avg(left.s)?right:left);
-  const latest=paired[paired.length-1];
-  const avgDelta=snv6Avg(latest.s)-snv6Avg(latest.b);
   const audit=arm.audit||{};
   const emptyText=Object.entries(audit.empty_final_by_step||{}).map(([step,count])=>`ckpt${step}: ${count}`).join(' / ');
   const cutoffText=Object.entries(audit.length_cutoff_by_step||{}).map(([step,count])=>`ckpt${step}: ${count}`).join(' / ');
   root.innerHTML=`
     <h2 class="section-title">${geoEsc(arm.title)}：已验收结果 vs exact SN6V0710</h2>
     <div class="current-note"><b>口径：</b>六项 no-thinking full eval，同 checkpoint 对齐 exact SN6V0710 control。${geoEsc(data.policy)}</div>
-    <div class="snv6-kpis">
-      ${[
-        ['真实验收',`${verified} / ${arm.target_steps}`,`已完成 ckpt ${arm.verified_steps.join(', ')}`],
-        ['最佳六项均值',snv6Pct(snv6Avg(best.s)),`ckpt${best.s.step}，同 step 基线 ${snv6Pct(snv6Avg(best.b))}`],
-        ['最新已验收',`ckpt${latest.s.step}`,`均值 ${snv6Pct(snv6Avg(latest.s))}，Δ ${snv6Delta(avgDelta)}pp`],
-        ['API 获取失败',String(audit.failed_to_obtain??0),`评测队列：${stateSummary}`]
-      ].map(([label,value,sub])=>`<div class="snv6-kpi"><div class="label">${geoEsc(label)}</div><div class="value">${geoEsc(value)}</div><div class="sub">${geoEsc(sub)}</div></div>`).join('')}
-    </div>
     <div class="snv6-chart-grid" id="current-${arm.key}-metric-charts"></div>
     <div class="card"><h2>同 checkpoint 真实分数</h2><div class="snv6-table-wrap"><table id="current-${arm.key}-table"></table></div></div>
     <div class="current-audit"><b>结果审计</b><br>${geoEsc(audit.note||'已按真实结果验收口径检查。')}<br>空终答：${geoEsc(emptyText||'0')}<br>length cutoff：${geoEsc(cutoffText||'0')}</div>
