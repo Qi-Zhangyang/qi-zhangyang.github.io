@@ -165,11 +165,6 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 <section id='tab-snv60710' class='pane'>
 <h2 class='section-title'>SN V6 0710 严格复验：新基线 vs 10% VST-ScanNet 多图</h2>
 <div class='geo-note'>蓝线为 0710 新基线，橙线为 0710 + 10% VST 多图组。两组使用相同的 iter216 起点、训练参数和 no-thinking 评测配置；多图组加入 10% VST-ScanNet MI。ckpt100 处于 warmup、仅作审计；60 份 prediction 均已核验完整，API 失败数为 0。</div>
-<div class='snv6-chart'>
-  <h2>六项等权均值</h2>
-  <div class='snv6-legend'><span><i class='snv6-dot scanmi'></i>0710 + 10% VST 多图</span><span><i class='snv6-dot base'></i>0710 新基线</span></div>
-  <div id='snv60710-avg-chart'></div>
-</div>
 <div class='snv6-chart-grid' id='snv60710-metric-charts'></div>
 <div class='card'>
   <h2>同 checkpoint 对比</h2>
@@ -311,7 +306,8 @@ function snv6Chart(el, title, metricKey, large=false, rows=snv6Rows){
 function renderSnv6Panel(prefix, rows, treatmentLabel){
   const scanRows=rows.filter(r=>r.group==='scanmi');
   const paired=scanRows.map(s=>({s,b:snv6Row('baseline',s.step,rows)})).filter(x=>x.b);
-  snv6Chart(document.getElementById(`${prefix}-avg-chart`), '', 'avg', true, rows);
+  const avgChart=document.getElementById(`${prefix}-avg-chart`);
+  if(avgChart)snv6Chart(avgChart, '', 'avg', true, rows);
   document.getElementById(`${prefix}-metric-charts`).innerHTML = snv6Metrics.map(([k])=>`<div class="snv6-chart" id="${prefix}-chart-${k.replace(/[^a-zA-Z0-9]/g,'-')}"><div class='snv6-legend'><span><i class='snv6-dot scanmi'></i>${treatmentLabel}</span><span><i class='snv6-dot base'></i>基线</span></div></div>`).join('');
   snv6Metrics.forEach(([k,n])=>snv6Chart(document.getElementById(`${prefix}-chart-${k.replace(/[^a-zA-Z0-9]/g,'-')}`), n, k, false, rows));
   const head=['ckpt','基线均值',`${treatmentLabel} 均值`,'均值 Δ',...snv6Metrics.map(([,n])=>`${n} Δ`)];
