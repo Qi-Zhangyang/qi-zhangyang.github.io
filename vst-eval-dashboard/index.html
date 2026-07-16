@@ -7,7 +7,7 @@ header{padding:20px 28px 14px;background:#fff;border-bottom:1px solid #deded8;po
 h1{margin:0 0 6px;font-size:24px;letter-spacing:0}.meta{font-size:13px;color:#565656;line-height:1.55}
 main{max-width:1680px;margin:0 auto;padding:20px 24px 44px}
 .tabs{display:flex;gap:8px;margin:0;overflow-x:auto;max-width:100%}.tab{flex:none;border:1px solid #d8d8d2;background:#fff;border-radius:6px;padding:9px 14px;font-weight:700;cursor:pointer;color:#151515}.tab.active{background:#151515;color:#fff;border-color:#151515}
-.tabs-row{display:flex;align-items:center;gap:10px;margin:0 0 10px}.tabs-row-label{flex:none;min-width:118px;text-align:center;font-size:12px;font-weight:900;color:#4c4c4c;background:#ecece7;border:1px solid #deded8;border-radius:5px;padding:7px 10px;white-space:nowrap}.tabs-row.new-baseline .tabs-row-label{background:#dcefe1;border-color:#bfdcc7;color:#176231}
+.tabs-row{display:flex;align-items:center;gap:10px;margin:0 0 10px}.tabs-row-label{flex:none;min-width:118px;text-align:center;font-size:12px;font-weight:900;color:#4c4c4c;background:#ecece7;border:1px solid #deded8;border-radius:5px;padding:7px 10px;white-space:nowrap}.tabs-row.new-baseline .tabs-row-label{background:#dcefe1;border-color:#bfdcc7;color:#176231}.tabs-row.new-baseline .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.new-baseline .tab small{font-size:10px;font-weight:700;color:#5e7765;white-space:nowrap}.tabs-row.new-baseline .tab.active{background:#176231;border-color:#176231;color:#fff}.tabs-row.new-baseline .tab.active small{color:#dcefe1}
 .tabs-row.geo3d-freshfix .tabs-row-label{background:#f3eadb;border-color:#dec9a7;color:#684710}.tabs-row.geo3d-freshfix .tab.active{background:#684710;border-color:#684710;color:#fff}
 .tabs-row.current-vst .tabs-row-label{background:#e5edf4;border-color:#c5d5e2;color:#244f73}.tabs-row.current-vst .tabs-row-label small{display:block;margin-top:2px;font-size:10px;font-weight:700;color:#58758d}.tabs-row.current-vst .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.current-vst .tab small{font-size:10px;font-weight:700;color:#6a737b;white-space:nowrap}.tabs-row.current-vst .tab.active{background:#244f73;border-color:#244f73;color:#fff}.tabs-row.current-vst .tab.active small{color:#dce7ef}
 .tabs-row.archived .tabs-row-label{background:#f5f5f0;border-style:dashed;color:#8a8a84}.tabs-row.archived .tab{color:#8a8a84;border-style:dashed}.tabs-row.archived .tab.active{background:#6f6f69;border-color:#6f6f69;border-style:solid;color:#fff}
@@ -57,7 +57,8 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 <div class='tabs-row new-baseline'>
   <span class='tabs-row-label'>新基线（0710）</span>
   <div class='tabs'>
-    <button class='tab' data-tab='snv60710'>SN V6 0710 复验</button>
+    <button class='tab' data-tab='snv60710'><span>原生 VST-ScanNet Multi-Image V1（41K）</span><small>SN V6 0710 复验</small></button>
+    <button class='tab' data-tab='current-native-mi-v2-1'><span>原生 VST-ScanNet Multi-Image V1 120K</span><small>V1 core + 稳定 seed 新增</small></button>
   </div>
 </div>
 <div class='tabs-row geo3d-freshfix'>
@@ -72,7 +73,6 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
     <button class='tab active' data-tab='current-video-v1'><span>Video v1（MP4 · 4,823 条）</span><small>原始视频输入</small></button>
     <button class='tab' data-tab='current-video2mi-v1'><span>Video→Multi-Image v1（8 图 · 4,823 条）</span><small>1fps / 480px</small></button>
     <button class='tab' data-tab='current-native-mi-v2'><span>原生 Multi-Image v2（2 图 · 120K 条）</span><small>原生双图样本</small></button>
-    <button class='tab' data-tab='current-native-mi-v2-1'><span>原生 Multi-Image v2.1（2 图 · 120K 条 · 修复版）</span><small>V1 core + 稳定 seed 新增</small></button>
     <button class='tab' data-tab='current-video-v2'><span>Video v2（MP4 · 120K 条）</span><small>统一 V2 全量</small></button>
     <button class='tab' data-tab='current-video2mi-v2'><span>Video→Multi-Image v2（8 图 · 120K 条）</span><small>1fps / 480px · 统一 V2 全量</small></button>
   </div>
@@ -152,7 +152,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 </section>
 
 <section id='tab-snv60710' class='pane'>
-<h2 class='section-title'>SN V6 0710 严格复验：新基线 vs 10% VST-ScanNet 多图</h2>
+<h2 class='section-title'>原生 VST-ScanNet Multi-Image V1（41K）：SN V6 0710 严格复验</h2>
 <div class='geo-note'>蓝线为 0710 新基线，橙线为 0710 + 10% VST 多图组。两组使用相同的 iter216 起点、训练参数和 no-thinking 评测配置；多图组加入 10% VST-ScanNet MI。</div>
 <div class='snv6-chart-grid' id='snv60710-metric-charts'></div>
 </section>

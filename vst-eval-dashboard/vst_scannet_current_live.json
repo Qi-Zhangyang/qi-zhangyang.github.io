@@ -823,8 +823,8 @@
     },
     {
       "key": "native-mi-v2-1",
-      "label": "原生 MI V2.1",
-      "title": "原生 VST-ScanNet Multi-Image V2.1 120K（V1 core + 稳定 seed 新增）",
+      "label": "原生 MI V1 120K",
+      "title": "原生 VST-ScanNet Multi-Image V1 120K（V1 core + 稳定 seed 新增）",
       "phase": "已完成：六项 full eval",
       "target_steps": 10,
       "train_state": "Succeeded",
