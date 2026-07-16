@@ -41,7 +41,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 .geo-r15-section{margin:0 0 18px}.geo-r15-section-title{font-size:18px;margin:22px 0 10px}.geo-r15-subtitle{font-size:12px;line-height:1.55;color:#666;margin:-3px 0 11px}.geo-lineage-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.geo-lineage-card{border:1px solid #deded8;border-radius:5px;padding:12px;background:#fff}.geo-lineage-card h4{font-size:14px;margin:0 0 7px}.geo-lineage-card p{font-size:12px;line-height:1.55;color:#555;margin:5px 0}.geo-lineage-card b{color:#222}.geo-r15-audit{font-size:12px;line-height:1.6;color:#5f655e;margin-top:8px}.geo-r15-legacy{margin-top:24px;border-top:1px solid #d9d9d2;padding-top:2px}
 .current-note{background:#fff;border-left:4px solid #244f73;padding:11px 14px;margin:0 0 16px;font-size:13px;line-height:1.6;color:#3f4f5d}.current-empty{background:#fff;border:1px solid #deded8;padding:28px 20px;margin:0 0 16px;text-align:center}.current-empty strong{display:block;font-size:18px;margin-bottom:7px}.current-empty span{font-size:13px;color:#666;line-height:1.55}.current-audit{background:#f5f8fa;border:1px solid #d7e1e8;padding:12px 14px;margin:0 0 16px;font-size:13px;line-height:1.6;color:#344a5b}.current-audit b{color:#173e5d}.current-state-list{display:flex;gap:8px 16px;flex-wrap:wrap;margin-top:8px}.current-table-score{white-space:nowrap}.current-table-score .raw{font-weight:900;margin-right:5px}
 @media(max-width:1100px){.grid3,.snv6-chart-grid,.geo-chart-grid,.geo-best-grid,.geo-r15-chart-grid,.geo-lineage-grid{grid-template-columns:1fr}.geo-r15-metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.geo-r15-metric:nth-child(2){border-right:0}.geo-r15-metric:nth-child(-n+2){border-bottom:1px solid #e7e7e1}.geo-best{border-right:0;border-bottom:1px solid #e7e7e1}.geo-best:last-child{border-bottom:0}.geo-final-head{align-items:flex-start}}
-@media(max-width:720px){header{position:static;padding:17px 16px 12px}h1{font-size:21px}main{padding:14px 12px 32px}.tabs-row{display:block}.tabs-row-label{display:block;width:max-content;min-width:0;margin-bottom:7px}.tabs{padding-bottom:3px}.tab{padding:8px 11px;font-size:13px}.section-title{font-size:17px;margin-top:20px}th,td{padding:7px 8px}.current-empty{padding:22px 14px}}
+@media(max-width:720px){header{position:static;padding:17px 16px 12px}h1{font-size:21px}main{padding:14px 12px 32px}.tabs-row{display:block}.tabs-row-label{display:block;width:max-content;min-width:0;margin-bottom:7px}.tabs{padding-bottom:3px}.tab{padding:8px 11px;font-size:13px}.section-title{font-size:17px;margin-top:20px}th,td{padding:7px 8px}.current-empty{padding:22px 14px}.geo-r15-metric-grid{grid-template-columns:1fr}.geo-r15-metric{border-right:0;border-bottom:1px solid #e7e7e1}.geo-r15-metric:last-child{border-bottom:0}.geo-final-head{display:block}.geo-final-badge{display:inline-block;margin-top:9px}}
 </style></head><body>
 <header><h1>VST 评测曲线</h1><div class='meta'>VST 与 Geo3D 验证图版的公网静态快照。Geo3D 主图按研究问题拆分，每次只比较两条实验曲线，并对齐真实的 lijia-line 100–1000 checkpoint 基线。本页不访问任何内网服务。</div></header>
 <main>
@@ -200,6 +200,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 <div class='card geo-final-table'>
   <h3>单体与堆叠关键结果（pp）</h3>
   <div class='geo-r15-table-wrap'><table class='geo-r15-table' id='geo-r15-danti-table'></table></div>
+  <div class='geo-r15-audit' id='geo-r15-danti-insight'></div>
 </div>
 
 <h2 class='geo-r15-section-title'>R13 → R14 → R15：数据改进血缘</h2>
@@ -612,6 +613,10 @@ function renderGeoR15Final(data){
   const dantiRows=final.overall_rows.map(row=>`<tr><td><b>${row.step}</b></td>${[['SolidGeoV1','SINGLE'],['SolidGeoV2','SINGLE'],['SolidGeoV1','STACK'],['SolidGeoV2','STACK']].map(([benchmark,group])=>{const v=danti(benchmark,group,row.step);return `<td class="${geoR15DeltaClass(v)}">${geoR15Pp(v)}</td>`}).join('')}</tr>`).join('');
   const counts=final.danti_counts;
   document.getElementById('geo-r15-danti-table').innerHTML=`<thead><tr><th>step</th><th>V1 单体 (n=${counts.SolidGeoV1.SINGLE})</th><th>V2 单体 (n=${counts.SolidGeoV2.SINGLE})</th><th>V1 堆叠 (n=${counts.SolidGeoV1.STACK})</th><th>V2 堆叠 (n=${counts.SolidGeoV2.STACK})</th></tr></thead><tbody>${dantiRows}</tbody>`;
+  const dantiSeries=(benchmark,group)=>final.danti_rows.filter(row=>row.benchmark===benchmark&&row.group===group).sort((a,b)=>a.step-b.step).map(row=>row.delta_strict_pp);
+  const avg=values=>values.reduce((sum,value)=>sum+value,0)/values.length;
+  const v1Single=dantiSeries('SolidGeoV1','SINGLE'),v2Single=dantiSeries('SolidGeoV2','SINGLE'),v2Multi=dantiSeries('SolidGeoV2','MULTIPLE'),v2Stack=dantiSeries('SolidGeoV2','STACK');
+  document.getElementById('geo-r15-danti-insight').innerHTML=`<b>结论：</b>V1 单体后段稳定受益（step1000 ${geoR15Pp(v1Single[v1Single.length-1])}，后 3 点均值 ${geoR15Pp(avg(v1Single.slice(-3)))}）；V2 单体仍负（step1000 ${geoR15Pp(v2Single[v2Single.length-1])}，十点均值 ${geoR15Pp(avg(v2Single))}）。V2 整体的微增主要由多体与堆叠支撑（十点均值 ${geoR15Pp(avg(v2Multi))} / ${geoR15Pp(avg(v2Stack))}）。`;
   document.getElementById('geo-r15-lineage').innerHTML=final.lineage.map(item=>`<div class="geo-lineage-card"><h4>${geoEsc(item.round)} · ${geoEsc(item.title)}</h4><p><b>问题：</b>${geoEsc(item.problem)}</p><p><b>改动：</b>${geoEsc(item.change)}</p><p><b>证据：</b>${geoEsc(item.evidence)}</p></div>`).join('');
 }
 const geoFreshCatalog={

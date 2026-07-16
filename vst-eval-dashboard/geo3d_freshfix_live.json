@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-16T05:27:41+00:00",
+  "updated_at": "2026-07-16T05:52:00+00:00",
   "baseline_label": "SN6V0710 control",
   "benchmarks": [
     "NaturalPerceptionCircularV3",
@@ -851,5 +851,1048 @@
         "Perception-geometry-mc-circular-v1": 0.32476190476190475
       }
     }
-  ]
+  ],
+  "r15_final": {
+    "complete": true,
+    "train_state": "Succeeded",
+    "sample_count": 23910,
+    "eval_points": 40,
+    "failed_ratio": 0.0,
+    "metrics": [
+      {
+        "key": "NaturalPerceptionCircularV3",
+        "label": "Natural V3"
+      },
+      {
+        "key": "SolidGeoPerceptionCircularV1",
+        "label": "SolidGeo V1"
+      },
+      {
+        "key": "SolidGeoPerceptionCircularV2",
+        "label": "SolidGeo V2"
+      },
+      {
+        "key": "Perception-geometry-mc-circular-v1",
+        "label": "Geometry MC"
+      }
+    ],
+    "overall_rows": [
+      {
+        "step": 100,
+        "r15": {
+          "NaturalPerceptionCircularV3": 0.2142110762800418,
+          "SolidGeoPerceptionCircularV1": 0.25026511134676566,
+          "SolidGeoPerceptionCircularV2": 0.25583756345177666,
+          "Perception-geometry-mc-circular-v1": 0.24095238095238095
+        },
+        "baseline": {
+          "NaturalPerceptionCircularV3": 0.2413793103448276,
+          "SolidGeoPerceptionCircularV1": 0.25874867444326616,
+          "SolidGeoPerceptionCircularV2": 0.2654822335025381,
+          "Perception-geometry-mc-circular-v1": 0.24285714285714285
+        },
+        "delta_pp": {
+          "NaturalPerceptionCircularV3": -2.72,
+          "SolidGeoPerceptionCircularV1": -0.85,
+          "SolidGeoPerceptionCircularV2": -0.96,
+          "Perception-geometry-mc-circular-v1": -0.19
+        }
+      },
+      {
+        "step": 200,
+        "r15": {
+          "NaturalPerceptionCircularV3": 0.296760710553814,
+          "SolidGeoPerceptionCircularV1": 0.3075291622481442,
+          "SolidGeoPerceptionCircularV2": 0.2949238578680203,
+          "Perception-geometry-mc-circular-v1": 0.29523809523809524
+        },
+        "baseline": {
+          "NaturalPerceptionCircularV3": 0.2946708463949843,
+          "SolidGeoPerceptionCircularV1": 0.31601272534464475,
+          "SolidGeoPerceptionCircularV2": 0.3015228426395939,
+          "Perception-geometry-mc-circular-v1": 0.3080952380952381
+        },
+        "delta_pp": {
+          "NaturalPerceptionCircularV3": 0.21,
+          "SolidGeoPerceptionCircularV1": -0.85,
+          "SolidGeoPerceptionCircularV2": -0.66,
+          "Perception-geometry-mc-circular-v1": -1.29
+        }
+      },
+      {
+        "step": 300,
+        "r15": {
+          "NaturalPerceptionCircularV3": 0.3187042842215256,
+          "SolidGeoPerceptionCircularV1": 0.3255567338282078,
+          "SolidGeoPerceptionCircularV2": 0.3284263959390863,
+          "Perception-geometry-mc-circular-v1": 0.32857142857142857
+        },
+        "baseline": {
+          "NaturalPerceptionCircularV3": 0.30825496342737724,
+          "SolidGeoPerceptionCircularV1": 0.31919406150583246,
+          "SolidGeoPerceptionCircularV2": 0.3177664974619289,
+          "Perception-geometry-mc-circular-v1": 0.3242857142857143
+        },
+        "delta_pp": {
+          "NaturalPerceptionCircularV3": 1.04,
+          "SolidGeoPerceptionCircularV1": 0.64,
+          "SolidGeoPerceptionCircularV2": 1.07,
+          "Perception-geometry-mc-circular-v1": 0.43
+        }
+      },
+      {
+        "step": 400,
+        "r15": {
+          "NaturalPerceptionCircularV3": 0.30407523510971785,
+          "SolidGeoPerceptionCircularV1": 0.33191940615058324,
+          "SolidGeoPerceptionCircularV2": 0.3314720812182741,
+          "Perception-geometry-mc-circular-v1": 0.3238095238095238
+        },
+        "baseline": {
+          "NaturalPerceptionCircularV3": 0.3218390804597701,
+          "SolidGeoPerceptionCircularV1": 0.344644750795334,
+          "SolidGeoPerceptionCircularV2": 0.33401015228426395,
+          "Perception-geometry-mc-circular-v1": 0.3352380952380952
+        },
+        "delta_pp": {
+          "NaturalPerceptionCircularV3": -1.78,
+          "SolidGeoPerceptionCircularV1": -1.27,
+          "SolidGeoPerceptionCircularV2": -0.25,
+          "Perception-geometry-mc-circular-v1": -1.14
+        }
+      },
+      {
+        "step": 500,
+        "r15": {
+          "NaturalPerceptionCircularV3": 0.3239289446185998,
+          "SolidGeoPerceptionCircularV1": 0.34782608695652173,
+          "SolidGeoPerceptionCircularV2": 0.34517766497461927,
+          "Perception-geometry-mc-circular-v1": 0.34476190476190477
+        },
+        "baseline": {
+          "NaturalPerceptionCircularV3": 0.3270637408568443,
+          "SolidGeoPerceptionCircularV1": 0.3457051961823966,
+          "SolidGeoPerceptionCircularV2": 0.34213197969543147,
+          "Perception-geometry-mc-circular-v1": 0.33
+        },
+        "delta_pp": {
+          "NaturalPerceptionCircularV3": -0.31,
+          "SolidGeoPerceptionCircularV1": 0.21,
+          "SolidGeoPerceptionCircularV2": 0.3,
+          "Perception-geometry-mc-circular-v1": 1.48
+        }
+      },
+      {
+        "step": 600,
+        "r15": {
+          "NaturalPerceptionCircularV3": 0.3385579937304075,
+          "SolidGeoPerceptionCircularV1": 0.35418875927889715,
+          "SolidGeoPerceptionCircularV2": 0.3395939086294416,
+          "Perception-geometry-mc-circular-v1": 0.33904761904761904
+        },
+        "baseline": {
+          "NaturalPerceptionCircularV3": 0.32497387669801464,
+          "SolidGeoPerceptionCircularV1": 0.33828207847295866,
+          "SolidGeoPerceptionCircularV2": 0.34060913705583756,
+          "Perception-geometry-mc-circular-v1": 0.3352380952380952
+        },
+        "delta_pp": {
+          "NaturalPerceptionCircularV3": 1.36,
+          "SolidGeoPerceptionCircularV1": 1.59,
+          "SolidGeoPerceptionCircularV2": -0.1,
+          "Perception-geometry-mc-circular-v1": 0.38
+        }
+      },
+      {
+        "step": 700,
+        "r15": {
+          "NaturalPerceptionCircularV3": 0.329153605015674,
+          "SolidGeoPerceptionCircularV1": 0.35737009544008486,
+          "SolidGeoPerceptionCircularV2": 0.3517766497461929,
+          "Perception-geometry-mc-circular-v1": 0.34714285714285714
+        },
+        "baseline": {
+          "NaturalPerceptionCircularV3": 0.33646812957157785,
+          "SolidGeoPerceptionCircularV1": 0.3552492046659597,
+          "SolidGeoPerceptionCircularV2": 0.3416243654822335,
+          "Perception-geometry-mc-circular-v1": 0.3404761904761905
+        },
+        "delta_pp": {
+          "NaturalPerceptionCircularV3": -0.73,
+          "SolidGeoPerceptionCircularV1": 0.21,
+          "SolidGeoPerceptionCircularV2": 1.02,
+          "Perception-geometry-mc-circular-v1": 0.67
+        }
+      },
+      {
+        "step": 800,
+        "r15": {
+          "NaturalPerceptionCircularV3": 0.3343782654127482,
+          "SolidGeoPerceptionCircularV1": 0.36903499469777307,
+          "SolidGeoPerceptionCircularV2": 0.3532994923857868,
+          "Perception-geometry-mc-circular-v1": 0.35
+        },
+        "baseline": {
+          "NaturalPerceptionCircularV3": 0.35214211076280044,
+          "SolidGeoPerceptionCircularV1": 0.3552492046659597,
+          "SolidGeoPerceptionCircularV2": 0.34822335025380713,
+          "Perception-geometry-mc-circular-v1": 0.35
+        },
+        "delta_pp": {
+          "NaturalPerceptionCircularV3": -1.78,
+          "SolidGeoPerceptionCircularV1": 1.38,
+          "SolidGeoPerceptionCircularV2": 0.51,
+          "Perception-geometry-mc-circular-v1": 0.0
+        }
+      },
+      {
+        "step": 900,
+        "r15": {
+          "NaturalPerceptionCircularV3": 0.34796238244514105,
+          "SolidGeoPerceptionCircularV1": 0.3637327677624602,
+          "SolidGeoPerceptionCircularV2": 0.3517766497461929,
+          "Perception-geometry-mc-circular-v1": 0.35904761904761906
+        },
+        "baseline": {
+          "NaturalPerceptionCircularV3": 0.3510971786833856,
+          "SolidGeoPerceptionCircularV1": 0.35418875927889715,
+          "SolidGeoPerceptionCircularV2": 0.3538071065989848,
+          "Perception-geometry-mc-circular-v1": 0.3514285714285714
+        },
+        "delta_pp": {
+          "NaturalPerceptionCircularV3": -0.31,
+          "SolidGeoPerceptionCircularV1": 0.95,
+          "SolidGeoPerceptionCircularV2": -0.2,
+          "Perception-geometry-mc-circular-v1": 0.76
+        }
+      },
+      {
+        "step": 1000,
+        "r15": {
+          "NaturalPerceptionCircularV3": 0.3490073145245559,
+          "SolidGeoPerceptionCircularV1": 0.37009544008483564,
+          "SolidGeoPerceptionCircularV2": 0.3568527918781726,
+          "Perception-geometry-mc-circular-v1": 0.36047619047619045
+        },
+        "baseline": {
+          "NaturalPerceptionCircularV3": 0.3343782654127482,
+          "SolidGeoPerceptionCircularV1": 0.35949098621421,
+          "SolidGeoPerceptionCircularV2": 0.3548223350253807,
+          "Perception-geometry-mc-circular-v1": 0.3495238095238095
+        },
+        "delta_pp": {
+          "NaturalPerceptionCircularV3": 1.46,
+          "SolidGeoPerceptionCircularV1": 1.06,
+          "SolidGeoPerceptionCircularV2": 0.2,
+          "Perception-geometry-mc-circular-v1": 1.1
+        }
+      }
+    ],
+    "metric_summary": {
+      "NaturalPerceptionCircularV3": {
+        "label": "Natural V3",
+        "endpoint_r15": 0.3490073145245559,
+        "endpoint_baseline": 0.3343782654127482,
+        "endpoint_delta_pp": 1.46,
+        "mean_delta_pp": -0.36,
+        "tail3_delta_pp": -0.21
+      },
+      "SolidGeoPerceptionCircularV1": {
+        "label": "SolidGeo V1",
+        "endpoint_r15": 0.37009544008483564,
+        "endpoint_baseline": 0.35949098621421,
+        "endpoint_delta_pp": 1.06,
+        "mean_delta_pp": 0.31,
+        "tail3_delta_pp": 1.13
+      },
+      "SolidGeoPerceptionCircularV2": {
+        "label": "SolidGeo V2",
+        "endpoint_r15": 0.3568527918781726,
+        "endpoint_baseline": 0.3548223350253807,
+        "endpoint_delta_pp": 0.2,
+        "mean_delta_pp": 0.09,
+        "tail3_delta_pp": 0.17
+      },
+      "Perception-geometry-mc-circular-v1": {
+        "label": "Geometry MC",
+        "endpoint_r15": 0.36047619047619045,
+        "endpoint_baseline": 0.3495238095238095,
+        "endpoint_delta_pp": 1.1,
+        "mean_delta_pp": 0.22,
+        "tail3_delta_pp": 0.62
+      }
+    },
+    "danti_rows": [
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "SINGLE",
+        "step": 100,
+        "n": 661,
+        "r15_strict": 26.48,
+        "base_strict": 26.63,
+        "delta_strict_pp": -0.15,
+        "r15_variant": 48.49,
+        "base_variant": 48.68,
+        "delta_variant_pp": -0.19
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "MULTIPLE",
+        "step": 100,
+        "n": 197,
+        "r15_strict": 21.83,
+        "base_strict": 25.38,
+        "delta_strict_pp": -3.55,
+        "r15_variant": 42.64,
+        "base_variant": 44.8,
+        "delta_variant_pp": -2.16
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "STACK",
+        "step": 100,
+        "n": 85,
+        "r15_strict": 21.18,
+        "base_strict": 21.18,
+        "delta_strict_pp": 0.0,
+        "r15_variant": 47.65,
+        "base_variant": 47.06,
+        "delta_variant_pp": 0.59
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "SINGLE",
+        "step": 200,
+        "n": 661,
+        "r15_strict": 32.07,
+        "base_strict": 33.74,
+        "delta_strict_pp": -1.66,
+        "r15_variant": 53.4,
+        "base_variant": 52.76,
+        "delta_variant_pp": 0.64
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "MULTIPLE",
+        "step": 200,
+        "n": 197,
+        "r15_strict": 27.92,
+        "base_strict": 27.41,
+        "delta_strict_pp": 0.51,
+        "r15_variant": 48.73,
+        "base_variant": 49.24,
+        "delta_variant_pp": -0.51
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "STACK",
+        "step": 200,
+        "n": 85,
+        "r15_strict": 27.06,
+        "base_strict": 24.71,
+        "delta_strict_pp": 2.35,
+        "r15_variant": 48.24,
+        "base_variant": 46.18,
+        "delta_variant_pp": 2.06
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "SINGLE",
+        "step": 300,
+        "n": 661,
+        "r15_strict": 33.89,
+        "base_strict": 33.59,
+        "delta_strict_pp": 0.3,
+        "r15_variant": 53.9,
+        "base_variant": 53.03,
+        "delta_variant_pp": 0.87
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "MULTIPLE",
+        "step": 300,
+        "n": 197,
+        "r15_strict": 30.46,
+        "base_strict": 30.46,
+        "delta_strict_pp": 0.0,
+        "r15_variant": 48.73,
+        "base_variant": 48.1,
+        "delta_variant_pp": 0.63
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "STACK",
+        "step": 300,
+        "n": 85,
+        "r15_strict": 27.06,
+        "base_strict": 22.35,
+        "delta_strict_pp": 4.71,
+        "r15_variant": 50.29,
+        "base_variant": 44.41,
+        "delta_variant_pp": 5.88
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "SINGLE",
+        "step": 400,
+        "n": 661,
+        "r15_strict": 34.34,
+        "base_strict": 36.01,
+        "delta_strict_pp": -1.66,
+        "r15_variant": 53.59,
+        "base_variant": 52.76,
+        "delta_variant_pp": 0.83
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "MULTIPLE",
+        "step": 400,
+        "n": 197,
+        "r15_strict": 31.98,
+        "base_strict": 31.98,
+        "delta_strict_pp": 0.0,
+        "r15_variant": 48.73,
+        "base_variant": 48.86,
+        "delta_variant_pp": -0.13
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "STACK",
+        "step": 400,
+        "n": 85,
+        "r15_strict": 27.06,
+        "base_strict": 28.24,
+        "delta_strict_pp": -1.18,
+        "r15_variant": 49.41,
+        "base_variant": 49.12,
+        "delta_variant_pp": 0.29
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "SINGLE",
+        "step": 500,
+        "n": 661,
+        "r15_strict": 37.22,
+        "base_strict": 36.31,
+        "delta_strict_pp": 0.91,
+        "r15_variant": 54.46,
+        "base_variant": 52.61,
+        "delta_variant_pp": 1.85
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "MULTIPLE",
+        "step": 500,
+        "n": 197,
+        "r15_strict": 30.46,
+        "base_strict": 31.98,
+        "delta_strict_pp": -1.52,
+        "r15_variant": 47.46,
+        "base_variant": 49.49,
+        "delta_variant_pp": -2.03
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "STACK",
+        "step": 500,
+        "n": 85,
+        "r15_strict": 25.88,
+        "base_strict": 27.06,
+        "delta_strict_pp": -1.18,
+        "r15_variant": 49.41,
+        "base_variant": 46.47,
+        "delta_variant_pp": 2.94
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "SINGLE",
+        "step": 600,
+        "n": 661,
+        "r15_strict": 36.76,
+        "base_strict": 34.8,
+        "delta_strict_pp": 1.97,
+        "r15_variant": 54.43,
+        "base_variant": 53.03,
+        "delta_variant_pp": 1.4
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "MULTIPLE",
+        "step": 600,
+        "n": 197,
+        "r15_strict": 32.49,
+        "base_strict": 33.5,
+        "delta_strict_pp": -1.02,
+        "r15_variant": 48.22,
+        "base_variant": 50.0,
+        "delta_variant_pp": -1.78
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "STACK",
+        "step": 600,
+        "n": 85,
+        "r15_strict": 31.76,
+        "base_strict": 27.06,
+        "delta_strict_pp": 4.71,
+        "r15_variant": 50.0,
+        "base_variant": 48.82,
+        "delta_variant_pp": 1.18
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "SINGLE",
+        "step": 700,
+        "n": 661,
+        "r15_strict": 37.67,
+        "base_strict": 37.22,
+        "delta_strict_pp": 0.45,
+        "r15_variant": 54.5,
+        "base_variant": 54.05,
+        "delta_variant_pp": 0.45
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "MULTIPLE",
+        "step": 700,
+        "n": 197,
+        "r15_strict": 33.5,
+        "base_strict": 32.49,
+        "delta_strict_pp": 1.02,
+        "r15_variant": 50.25,
+        "base_variant": 49.75,
+        "delta_variant_pp": 0.51
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "STACK",
+        "step": 700,
+        "n": 85,
+        "r15_strict": 25.88,
+        "base_strict": 29.41,
+        "delta_strict_pp": -3.53,
+        "r15_variant": 49.12,
+        "base_variant": 49.41,
+        "delta_variant_pp": -0.29
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "SINGLE",
+        "step": 800,
+        "n": 661,
+        "r15_strict": 38.88,
+        "base_strict": 37.52,
+        "delta_strict_pp": 1.36,
+        "r15_variant": 55.64,
+        "base_variant": 53.86,
+        "delta_variant_pp": 1.78
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "MULTIPLE",
+        "step": 800,
+        "n": 197,
+        "r15_strict": 33.5,
+        "base_strict": 33.5,
+        "delta_strict_pp": 0.0,
+        "r15_variant": 48.6,
+        "base_variant": 49.49,
+        "delta_variant_pp": -0.89
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "STACK",
+        "step": 800,
+        "n": 85,
+        "r15_strict": 29.41,
+        "base_strict": 24.71,
+        "delta_strict_pp": 4.71,
+        "r15_variant": 48.82,
+        "base_variant": 45.29,
+        "delta_variant_pp": 3.53
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "SINGLE",
+        "step": 900,
+        "n": 661,
+        "r15_strict": 38.43,
+        "base_strict": 37.22,
+        "delta_strict_pp": 1.21,
+        "r15_variant": 54.99,
+        "base_variant": 53.59,
+        "delta_variant_pp": 1.4
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "MULTIPLE",
+        "step": 900,
+        "n": 197,
+        "r15_strict": 31.98,
+        "base_strict": 34.01,
+        "delta_strict_pp": -2.03,
+        "r15_variant": 49.11,
+        "base_variant": 48.98,
+        "delta_variant_pp": 0.13
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "STACK",
+        "step": 900,
+        "n": 85,
+        "r15_strict": 30.59,
+        "base_strict": 24.71,
+        "delta_strict_pp": 5.88,
+        "r15_variant": 50.88,
+        "base_variant": 47.06,
+        "delta_variant_pp": 3.82
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "SINGLE",
+        "step": 1000,
+        "n": 661,
+        "r15_strict": 39.18,
+        "base_strict": 37.37,
+        "delta_strict_pp": 1.82,
+        "r15_variant": 55.56,
+        "base_variant": 53.9,
+        "delta_variant_pp": 1.66
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "MULTIPLE",
+        "step": 1000,
+        "n": 197,
+        "r15_strict": 32.49,
+        "base_strict": 35.03,
+        "delta_strict_pp": -2.54,
+        "r15_variant": 50.38,
+        "base_variant": 50.76,
+        "delta_variant_pp": -0.38
+      },
+      {
+        "benchmark": "SolidGeoV1",
+        "group": "STACK",
+        "step": 1000,
+        "n": 85,
+        "r15_strict": 30.59,
+        "base_strict": 27.06,
+        "delta_strict_pp": 3.53,
+        "r15_variant": 50.0,
+        "base_variant": 48.82,
+        "delta_variant_pp": 1.18
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "SINGLE",
+        "step": 100,
+        "n": 1275,
+        "r15_strict": 26.04,
+        "base_strict": 27.22,
+        "delta_strict_pp": -1.18,
+        "r15_variant": 46.8,
+        "base_variant": 48.71,
+        "delta_variant_pp": -1.9
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "MULTIPLE",
+        "step": 100,
+        "n": 539,
+        "r15_strict": 25.97,
+        "base_strict": 26.35,
+        "delta_strict_pp": -0.37,
+        "r15_variant": 49.44,
+        "base_variant": 48.01,
+        "delta_variant_pp": 1.44
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "STACK",
+        "step": 100,
+        "n": 156,
+        "r15_strict": 20.51,
+        "base_strict": 21.79,
+        "delta_strict_pp": -1.28,
+        "r15_variant": 44.55,
+        "base_variant": 46.47,
+        "delta_variant_pp": -1.92
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "SINGLE",
+        "step": 200,
+        "n": 1275,
+        "r15_strict": 29.41,
+        "base_strict": 30.43,
+        "delta_strict_pp": -1.02,
+        "r15_variant": 49.67,
+        "base_variant": 50.51,
+        "delta_variant_pp": -0.84
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "MULTIPLE",
+        "step": 200,
+        "n": 539,
+        "r15_strict": 30.8,
+        "base_strict": 31.35,
+        "delta_strict_pp": -0.56,
+        "r15_variant": 51.81,
+        "base_variant": 52.13,
+        "delta_variant_pp": -0.32
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "STACK",
+        "step": 200,
+        "n": 156,
+        "r15_strict": 25.64,
+        "base_strict": 23.72,
+        "delta_strict_pp": 1.92,
+        "r15_variant": 48.4,
+        "base_variant": 46.31,
+        "delta_variant_pp": 2.08
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "SINGLE",
+        "step": 300,
+        "n": 1275,
+        "r15_strict": 32.39,
+        "base_strict": 32.24,
+        "delta_strict_pp": 0.16,
+        "r15_variant": 50.53,
+        "base_variant": 50.94,
+        "delta_variant_pp": -0.41
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "MULTIPLE",
+        "step": 300,
+        "n": 539,
+        "r15_strict": 34.51,
+        "base_strict": 32.28,
+        "delta_strict_pp": 2.23,
+        "r15_variant": 53.48,
+        "base_variant": 51.16,
+        "delta_variant_pp": 2.32
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "STACK",
+        "step": 300,
+        "n": 156,
+        "r15_strict": 30.77,
+        "base_strict": 26.28,
+        "delta_strict_pp": 4.49,
+        "r15_variant": 51.12,
+        "base_variant": 48.88,
+        "delta_variant_pp": 2.24
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "SINGLE",
+        "step": 400,
+        "n": 1275,
+        "r15_strict": 32.78,
+        "base_strict": 34.12,
+        "delta_strict_pp": -1.33,
+        "r15_variant": 51.43,
+        "base_variant": 51.82,
+        "delta_variant_pp": -0.39
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "MULTIPLE",
+        "step": 400,
+        "n": 539,
+        "r15_strict": 34.51,
+        "base_strict": 33.4,
+        "delta_strict_pp": 1.11,
+        "r15_variant": 53.8,
+        "base_variant": 52.78,
+        "delta_variant_pp": 1.02
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "STACK",
+        "step": 400,
+        "n": 156,
+        "r15_strict": 31.41,
+        "base_strict": 27.56,
+        "delta_strict_pp": 3.85,
+        "r15_variant": 50.0,
+        "base_variant": 49.04,
+        "delta_variant_pp": 0.96
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "SINGLE",
+        "step": 500,
+        "n": 1275,
+        "r15_strict": 34.43,
+        "base_strict": 34.9,
+        "delta_strict_pp": -0.47,
+        "r15_variant": 52.29,
+        "base_variant": 51.78,
+        "delta_variant_pp": 0.51
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "MULTIPLE",
+        "step": 500,
+        "n": 539,
+        "r15_strict": 35.44,
+        "base_strict": 33.95,
+        "delta_strict_pp": 1.48,
+        "r15_variant": 54.45,
+        "base_variant": 52.55,
+        "delta_variant_pp": 1.9
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "STACK",
+        "step": 500,
+        "n": 156,
+        "r15_strict": 32.05,
+        "base_strict": 29.49,
+        "delta_strict_pp": 2.56,
+        "r15_variant": 49.84,
+        "base_variant": 47.76,
+        "delta_variant_pp": 2.08
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "SINGLE",
+        "step": 600,
+        "n": 1275,
+        "r15_strict": 33.65,
+        "base_strict": 34.9,
+        "delta_strict_pp": -1.25,
+        "r15_variant": 51.59,
+        "base_variant": 51.92,
+        "delta_variant_pp": -0.33
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "MULTIPLE",
+        "step": 600,
+        "n": 539,
+        "r15_strict": 34.88,
+        "base_strict": 33.77,
+        "delta_strict_pp": 1.11,
+        "r15_variant": 53.66,
+        "base_variant": 51.99,
+        "delta_variant_pp": 1.67
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "STACK",
+        "step": 600,
+        "n": 156,
+        "r15_strict": 33.33,
+        "base_strict": 28.21,
+        "delta_strict_pp": 5.13,
+        "r15_variant": 51.28,
+        "base_variant": 47.92,
+        "delta_variant_pp": 3.37
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "SINGLE",
+        "step": 700,
+        "n": 1275,
+        "r15_strict": 35.06,
+        "base_strict": 35.29,
+        "delta_strict_pp": -0.24,
+        "r15_variant": 51.96,
+        "base_variant": 52.45,
+        "delta_variant_pp": -0.49
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "MULTIPLE",
+        "step": 700,
+        "n": 539,
+        "r15_strict": 36.36,
+        "base_strict": 34.32,
+        "delta_strict_pp": 2.04,
+        "r15_variant": 54.22,
+        "base_variant": 51.35,
+        "delta_variant_pp": 2.88
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "STACK",
+        "step": 700,
+        "n": 156,
+        "r15_strict": 32.05,
+        "base_strict": 24.36,
+        "delta_strict_pp": 7.69,
+        "r15_variant": 52.08,
+        "base_variant": 47.92,
+        "delta_variant_pp": 4.17
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "SINGLE",
+        "step": 800,
+        "n": 1275,
+        "r15_strict": 36.16,
+        "base_strict": 35.06,
+        "delta_strict_pp": 1.1,
+        "r15_variant": 52.75,
+        "base_variant": 51.86,
+        "delta_variant_pp": 0.88
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "MULTIPLE",
+        "step": 800,
+        "n": 539,
+        "r15_strict": 34.88,
+        "base_strict": 36.18,
+        "delta_strict_pp": -1.3,
+        "r15_variant": 53.62,
+        "base_variant": 53.01,
+        "delta_variant_pp": 0.6
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "STACK",
+        "step": 800,
+        "n": 156,
+        "r15_strict": 30.13,
+        "base_strict": 28.21,
+        "delta_strict_pp": 1.92,
+        "r15_variant": 48.88,
+        "base_variant": 47.28,
+        "delta_variant_pp": 1.6
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "SINGLE",
+        "step": 900,
+        "n": 1275,
+        "r15_strict": 34.9,
+        "base_strict": 35.76,
+        "delta_strict_pp": -0.86,
+        "r15_variant": 52.18,
+        "base_variant": 51.88,
+        "delta_variant_pp": 0.29
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "MULTIPLE",
+        "step": 900,
+        "n": 539,
+        "r15_strict": 36.92,
+        "base_strict": 36.36,
+        "delta_strict_pp": 0.56,
+        "r15_variant": 54.5,
+        "base_variant": 53.01,
+        "delta_variant_pp": 1.48
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "STACK",
+        "step": 900,
+        "n": 156,
+        "r15_strict": 31.41,
+        "base_strict": 28.85,
+        "delta_strict_pp": 2.56,
+        "r15_variant": 50.8,
+        "base_variant": 48.72,
+        "delta_variant_pp": 2.08
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "SINGLE",
+        "step": 1000,
+        "n": 1275,
+        "r15_strict": 35.69,
+        "base_strict": 36.47,
+        "delta_strict_pp": -0.78,
+        "r15_variant": 52.49,
+        "base_variant": 52.67,
+        "delta_variant_pp": -0.18
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "MULTIPLE",
+        "step": 1000,
+        "n": 539,
+        "r15_strict": 37.85,
+        "base_strict": 35.81,
+        "delta_strict_pp": 2.04,
+        "r15_variant": 54.96,
+        "base_variant": 53.01,
+        "delta_variant_pp": 1.95
+      },
+      {
+        "benchmark": "SolidGeoV2",
+        "group": "STACK",
+        "step": 1000,
+        "n": 156,
+        "r15_strict": 28.21,
+        "base_strict": 26.28,
+        "delta_strict_pp": 1.92,
+        "r15_variant": 49.36,
+        "base_variant": 47.28,
+        "delta_variant_pp": 2.08
+      }
+    ],
+    "danti_counts": {
+      "SolidGeoV1": {
+        "SINGLE": 661,
+        "MULTIPLE": 197,
+        "STACK": 85
+      },
+      "SolidGeoV2": {
+        "SINGLE": 1275,
+        "MULTIPLE": 539,
+        "STACK": 156
+      }
+    },
+    "lineage": [
+      {
+        "round": "R13",
+        "title": "Class-17：收紧局部关系门控",
+        "problem": "关系残差仍高，局部端点投影容易形成假共线、假共面。",
+        "change": "收紧被问线段之间的端点投影与关系可见性门控。",
+        "evidence": "线线 3627 题中异面 3605（99.4%），平行15、相交7"
+      },
+      {
+        "round": "R14",
+        "title": "按 SolidGeo V2 单体分布重建关系题",
+        "problem": "R13 门控过紧，线线关系分布塌缩为几乎全异面。",
+        "change": "恢复端点相交与普通共面平行，按 V2 分布配额，并加入 select 选线和共面题。",
+        "evidence": "线线3008题：异面67.85%、相交20.08%、平行12.07%，几何重算0错"
+      },
+      {
+        "round": "R15",
+        "title": "Class-18：全图命名点清晰度门控",
+        "problem": "被问端点可能投影到无关棱上，产生假共线或假细分。",
+        "change": "把端点冲突检查扩展到全图，并覆盖线线、线面、面面三类关系题。",
+        "evidence": "关系题6541：线线2821、线面3203、面面517，全量重算0错；engine_wrong 27→13"
+      }
+    ],
+    "source_policy": {
+      "r15": {
+        "NaturalPerceptionCircularV3": "g3r15v2 (canonical) at all steps",
+        "Perception-geometry-mc-circular-v1": "g3r15v2 (canonical) at all steps",
+        "SolidGeoPerceptionCircularV2": "g3r15v2fix1 at steps 200/300; g3r15v2 otherwise",
+        "SolidGeoPerceptionCircularV1": "g3r15v1fix1 at all steps"
+      },
+      "baseline": {
+        "NaturalPerceptionCircularV3": "g3s0710ctrl",
+        "Perception-geometry-mc-circular-v1": "g3s0710ctrl",
+        "SolidGeoPerceptionCircularV1": "g3s0710ctrl",
+        "SolidGeoPerceptionCircularV2": "g3ctrlv2fix1"
+      },
+      "reason": "Natural/Geometry MC retain the canonical main-collection audit scores; SolidGeo V2 uses the valid fix1 retry at steps 200/300, matching the danti subset source; V1 is a dedicated curve."
+    }
+  }
 }
