@@ -11,7 +11,7 @@ main{max-width:1680px;margin:0 auto;padding:20px 24px 44px}
 .tabs-row.failed-results .tabs-row-label{background:#f6e3e3;border-color:#e3bcbc;color:#8b2929}.tabs-row.failed-results .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.failed-results .tab small{font-size:10px;font-weight:700;color:#8c6262;white-space:nowrap}.tabs-row.failed-results .tab.active{background:#8b2929;border-color:#8b2929;color:#fff}.tabs-row.failed-results .tab.active small{color:#f4dede}
 .tabs-row.geo3d-freshfix .tabs-row-label{background:#f3eadb;border-color:#dec9a7;color:#684710}.tabs-row.geo3d-freshfix .tab.active{background:#684710;border-color:#684710;color:#fff}
 .tabs-row.current-vst .tabs-row-label{background:#e5edf4;border-color:#c5d5e2;color:#244f73}.tabs-row.current-vst .tabs-row-label small{display:block;margin-top:2px;font-size:10px;font-weight:700;color:#58758d}.tabs-row.current-vst .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.current-vst .tab small{font-size:10px;font-weight:700;color:#6a737b;white-space:nowrap}.tabs-row.current-vst .tab.active{background:#244f73;border-color:#244f73;color:#fff}.tabs-row.current-vst .tab.active small{color:#dce7ef}
-.tabs-row.archived .tabs-row-label{background:#f5f5f0;border-style:dashed;color:#8a8a84}.tabs-row.archived .tab{color:#8a8a84;border-style:dashed}.tabs-row.archived .tab.active{background:#6f6f69;border-color:#6f6f69;border-style:solid;color:#fff}
+.tabs-row.archived .tabs-row-label{background:#f5f5f0;border-style:dashed;color:#8a8a84}.tabs-row.archived .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;color:#8a8a84;border-style:dashed;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.archived .tab small{font-size:10px;font-weight:700;color:#96968f;white-space:nowrap}.tabs-row.archived .tab.active{background:#6f6f69;border-color:#6f6f69;border-style:solid;color:#fff}.tabs-row.archived .tab.active small{color:#ecece7}
 .archive-note{background:#fffaf0;border-left:4px solid #b8860b;padding:11px 14px;margin:0 0 16px;font-size:13px;line-height:1.55;color:#6b5310}
 .pane{display:none}.pane.active{display:block}
 .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}
@@ -63,18 +63,6 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
     <button class='tab' data-tab='current-native-mi-v2-1'><span>原生 VST-ScanNet Multi-Image V1 120K</span><small>V1 core + 稳定 seed 新增</small></button>
   </div>
 </div>
-<div class='tabs-row failed-results'>
-  <span class='tabs-row-label'>失败结果</span>
-  <div class='tabs'>
-    <button class='tab' data-tab='current-native-mi-v2'><span>原生 VST-ScanNet Multi-Image V2 120K</span><small>数据集扩充方式不正确</small></button>
-  </div>
-</div>
-<div class='tabs-row geo3d-freshfix'>
-  <span class='tabs-row-label'>Geo3D R15</span>
-  <div class='tabs'>
-    <button class='tab' data-tab='geo3d-freshfix'>R15 最终报告（SN6V0710）</button>
-  </div>
-</div>
 <div class='tabs-row current-vst'>
   <span class='tabs-row-label'>当前 ScanNet VST<small>exact SN6V0710 · p10</small></span>
   <div class='tabs'>
@@ -88,6 +76,8 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <span class='tabs-row-label'>归档</span>
   <div class='tabs'>
     <button class='tab' data-tab='snv6'>SN V6 评测（新结果 × 旧基线）</button>
+    <button class='tab' data-tab='current-native-mi-v2'><span>原生 VST-ScanNet Multi-Image V2 120K</span><small>失败：数据集扩充方式不正确</small></button>
+    <button class='tab' data-tab='geo3d-freshfix'><span>Geo3D R15 最终报告</span><small>SN6V0710 · 训练与十点评测已完成</small></button>
   </div>
 </div>
 
@@ -166,6 +156,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 
 <section id='tab-geo3d-freshfix' class='pane'>
 <div class='geo-note' id='geo-fresh-error' hidden></div>
+<div class='archive-note'>已归档（2026-07-16）：R15 训练与 step100–1000 同步评测均已完成；本页保留最终曲线和单体/多体/堆叠分解，供后续实验追溯。</div>
 <h2 class='geo-r15-section-title'>R15 vs SN6V0710 control：四项严格同 step 曲线</h2>
 <p class='geo-r15-subtitle'>只比较同 benchmark、同 checkpoint；虚线为 SN6V0710 control，实线为 R15。SolidGeo V1 与 V2 分别对各自 baseline，不跨版本混算。</p>
 <div class='geo-r15-chart-grid'>
@@ -212,6 +203,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 <section id='tab-current-video-v1' class='pane active'><div id='current-video-v1-root'></div></section>
 <section id='tab-current-video2mi-v1' class='pane'><div id='current-video2mi-v1-root'></div></section>
 <section id='tab-current-native-mi-v2' class='pane'>
+<div class='archive-note'>已归档（2026-07-16）：该实验因数据集扩充方式不正确而判定失败，保留曲线与失败分析用于追溯，不作为当前基线。</div>
 <div class='failure-note'><b>失败原因：数据集扩充方式不正确。</b> V2 只保留了 44.3% 的 V1 唯一核心语义；120K 行数主要来自组合枚举，唯一 scene-frame 覆盖仅增至 1.07×，且 92.8% 的帧已在 V1 出现；同时生产 seed 问题造成答案位置偏置，并稀释了任务配比与低共视样本质量，因此训练在 step200 后持续退化。</div>
 <div id='current-native-mi-v2-root'></div>
 </section>
