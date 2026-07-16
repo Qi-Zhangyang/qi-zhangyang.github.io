@@ -119,7 +119,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 
 <section id='tab-geo3d-b1000' class='pane'>
 <h2 class='section-title'>Geo3D：一次只比较一个变量</h2>
-<div class='geo-note'>每个视图只画 <b>两条实验线 + lijia-line 基线</b>，并按相同 checkpoint 对齐。默认回答 R5 单轮与原 R5 同图多 QA 的差异；旧多轮实验只有真实完成的 step200–700，不补缺失点。本页不计算“三项均值”。</div>
+<div class='geo-note'>每个视图只画 <b>两条实验线 + lijia-line 基线</b>，并按相同 checkpoint 对齐。默认回答 R5 单轮与原 R5 同图多 QA 的差异；旧多轮实验只有真实完成的 step200–700，不补缺失点。</div>
 <div class='geo-compare-shell'>
   <div class='geo-control-row'>
     <span class='geo-control-label'>对比问题</span>
@@ -143,41 +143,22 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV1</h2><div id='geo-b1000-chart-solid'></div></div>
   <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='geo-b1000-chart-geometry'></div></div>
 </div>
-<details class='card geo-audit'>
-  <summary>全量六路训练与每 100 step 评测明细</summary>
-  <div class='snv6-table-wrap'><table id='geo-b1000-table'></table></div>
-  <div class='geo-table-note' id='geo-b1000-updated'></div>
-</details>
 </section>
 
 <section id='tab-snv6' class='pane'>
 <h2 class='section-title'>SN V6 评测（已归档）：ScanMI vs 旧基线</h2>
 <div class='archive-note'>已归档（2026-07-13）：本页是历史对比——新配方的 ScanMI 结果配的是旧 SNV6 基线，两组训练起点与数据配方不一致，<b>不严格可比</b>。严格结论以「SN V6 0710 复验」页签为准（同一 iter216 起点、参数逐项对齐的 control 对比）。</div>
-<div class='snv6-chart'>
-  <h2>六项均值</h2>
-  <div class='snv6-legend'><span><i class='snv6-dot scanmi'></i>ScanMI</span><span><i class='snv6-dot base'></i>基线</span></div>
-  <div id='snv6-avg-chart'></div>
-</div>
 <div class='snv6-chart-grid' id='snv6-metric-charts'></div>
-<div class='card'>
-  <h2>同 checkpoint 对比</h2>
-  <div class='snv6-table-wrap'><table id='snv6-table'></table></div>
-</div>
 </section>
 
 <section id='tab-snv60710' class='pane'>
 <h2 class='section-title'>SN V6 0710 严格复验：新基线 vs 10% VST-ScanNet 多图</h2>
-<div class='geo-note'>蓝线为 0710 新基线，橙线为 0710 + 10% VST 多图组。两组使用相同的 iter216 起点、训练参数和 no-thinking 评测配置；多图组加入 10% VST-ScanNet MI。ckpt100 处于 warmup、仅作审计；60 份 prediction 均已核验完整，API 失败数为 0。</div>
+<div class='geo-note'>蓝线为 0710 新基线，橙线为 0710 + 10% VST 多图组。两组使用相同的 iter216 起点、训练参数和 no-thinking 评测配置；多图组加入 10% VST-ScanNet MI。</div>
 <div class='snv6-chart-grid' id='snv60710-metric-charts'></div>
-<div class='card'>
-  <h2>同 checkpoint 对比</h2>
-  <div class='snv6-table-wrap'><table id='snv60710-table'></table></div>
-</div>
 </section>
 
 <section id='tab-geo3d-freshfix' class='pane'>
 <div class='geo-note' id='geo-fresh-error' hidden></div>
-<div id='geo-r15-final' class='geo-r15-section'></div>
 <h2 class='geo-r15-section-title'>R15 vs SN6V0710 control：四项严格同 step 曲线</h2>
 <p class='geo-r15-subtitle'>只比较同 benchmark、同 checkpoint；虚线为 SN6V0710 control，实线为 R15。SolidGeo V1 与 V2 分别对各自 baseline，不跨版本混算。</p>
 <div class='geo-r15-chart-grid'>
@@ -186,10 +167,6 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV1</h2><div id='geo-r15-chart-v1'></div></div>
   <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV2</h2><div id='geo-r15-chart-v2'></div></div>
 </div>
-<div class='card geo-final-table'>
-  <h3>十点同 step 差值（R15 − control，pp）</h3>
-  <div class='geo-r15-table-wrap'><table class='geo-r15-table' id='geo-r15-delta-table'></table></div>
-</div>
 
 <h2 class='geo-r15-section-title'>SolidGeo 单体 / 多体 / 堆叠拆分</h2>
 <p class='geo-r15-subtitle'>严格 Circular：同一基础题四轮全部答对才记 1。分组直接使用上游 K26 scene-form 已固化的 image_type，无需重新标注。</p>
@@ -197,14 +174,6 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <div class='snv6-chart'><h2>SolidGeo V1 分组 delta</h2><div id='geo-r15-danti-v1'></div></div>
   <div class='snv6-chart'><h2>SolidGeo V2 分组 delta</h2><div id='geo-r15-danti-v2'></div></div>
 </div>
-<div class='card geo-final-table'>
-  <h3>单体与堆叠关键结果（pp）</h3>
-  <div class='geo-r15-table-wrap'><table class='geo-r15-table' id='geo-r15-danti-table'></table></div>
-  <div class='geo-r15-audit' id='geo-r15-danti-insight'></div>
-</div>
-
-<h2 class='geo-r15-section-title'>R13 → R14 → R15：数据改进血缘</h2>
-<div class='geo-lineage-grid' id='geo-r15-lineage'></div>
 
 <div class='geo-r15-legacy'>
 <h2 class='geo-r15-section-title'>历史实验筛选比较</h2>
@@ -340,20 +309,8 @@ function snv6Chart(el, title, metricKey, large=false, rows=snv6Rows){
   </svg>`;
 }
 function renderSnv6Panel(prefix, rows, treatmentLabel){
-  const scanRows=rows.filter(r=>r.group==='scanmi');
-  const paired=scanRows.map(s=>({s,b:snv6Row('baseline',s.step,rows)})).filter(x=>x.b);
-  const avgChart=document.getElementById(`${prefix}-avg-chart`);
-  if(avgChart)snv6Chart(avgChart, '', 'avg', true, rows);
   document.getElementById(`${prefix}-metric-charts`).innerHTML = snv6Metrics.map(([k])=>`<div class="snv6-chart" id="${prefix}-chart-${k.replace(/[^a-zA-Z0-9]/g,'-')}"><div class='snv6-legend'><span><i class='snv6-dot scanmi'></i>${treatmentLabel}</span><span><i class='snv6-dot base'></i>基线</span></div></div>`).join('');
   snv6Metrics.forEach(([k,n])=>snv6Chart(document.getElementById(`${prefix}-chart-${k.replace(/[^a-zA-Z0-9]/g,'-')}`), n, k, false, rows));
-  const head=['ckpt','基线均值',`${treatmentLabel} 均值`,'均值 Δ',...snv6Metrics.map(([,n])=>`${n} Δ`)];
-  const body=paired.map(({s,b})=>{
-    const avgD=snv6Avg(s)-snv6Avg(b);
-    const cells=[s.step,snv6Pct(snv6Avg(b)),snv6Pct(snv6Avg(s)),`<span class="${snv6DeltaClass(avgD)}">${snv6Delta(avgD)}</span>`];
-    snv6Metrics.forEach(([k])=>{const d=s[k]-b[k]; cells.push(`<span class="${snv6DeltaClass(d)}">${snv6Delta(d)}</span>`)});
-    return `<tr>${cells.map(c=>`<td>${c}</td>`).join('')}</tr>`;
-  }).join('');
-  document.getElementById(`${prefix}-table`).innerHTML=`<thead><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${body}</tbody>`;
 }
 function renderSnv6(){renderSnv6Panel('snv6',snv6Rows,'ScanMI')}
 function renderSnv60710(){renderSnv6Panel('snv60710',snv60710Rows,'0710 + 10% VST 多图')}
@@ -364,11 +321,6 @@ function currentRows(data,arm){
     ...arm.results.map(row=>({group:'scanmi',step:row.step,...row.scores}))
   ];
 }
-function currentStatusTable(arm){
-  if(!arm.eval_steps.length)return '<div class="current-empty"><strong>尚未达到首个评测门槛</strong><span>ckpt100 注册并完成三项 smoke 后，才会进入真实结果验收。</span></div>';
-  const body=arm.eval_steps.map(item=>`<tr><td>ckpt${item.step}</td><td>${geoStatus(item.status)}</td></tr>`).join('');
-  return `<div class="card"><h2>当前评测队列</h2><div class="snv6-table-wrap"><table><thead><tr><th>checkpoint</th><th>状态</th></tr></thead><tbody>${body}</tbody></table></div></div>`;
-}
 function renderCurrentArm(data,arm){
   const root=document.getElementById(`current-${arm.key}-root`);
   if(!root)return;
@@ -376,19 +328,15 @@ function renderCurrentArm(data,arm){
   if(!verified){
     root.innerHTML=`
       <h2 class="section-title">${geoEsc(arm.title)}</h2>
-      <div class="current-note"><b>当前阶段：</b>${geoEsc(arm.phase)}。${geoEsc(data.policy)}</div>
-      <div class="current-empty"><strong>暂无通过真实验收的分数</strong><span>不会用空目录、Submitted 状态或未完成的 smoke 结果补画曲线。</span></div>
-      ${currentStatusTable(arm)}
-      <div class="geo-table-note">数据更新时间：${geoEsc(data.updated_at)}</div>`;
+      <div class="current-empty"><strong>暂无通过真实验收的分数</strong><span>不会用空目录、Submitted 状态或未完成的 smoke 结果补画曲线。</span></div>`;
     return;
   }
 
   const rows=currentRows(data,arm);
   root.innerHTML=`
     <h2 class="section-title">${geoEsc(arm.title)}：已验收结果 vs exact SN6V0710</h2>
-    <div class="current-note"><b>口径：</b>六项 no-thinking full eval，同 checkpoint 对齐 exact SN6V0710 control。${geoEsc(data.policy)}</div>
-    <div class="snv6-chart-grid" id="current-${arm.key}-metric-charts"></div>
-    <div class="geo-table-note">数据更新时间：${geoEsc(data.updated_at)}</div>`;
+    <div class="current-note"><b>口径：</b>六项 no-thinking full eval，同 checkpoint 对齐 exact SN6V0710 control。</div>
+    <div class="snv6-chart-grid" id="current-${arm.key}-metric-charts"></div>`;
 
   const chartRoot=document.getElementById(`current-${arm.key}-metric-charts`);
   chartRoot.innerHTML=snv6Metrics.map(([key,label])=>`<div class="snv6-chart"><h2>${geoEsc(label)}</h2><div class="snv6-legend"><span><i class="snv6-dot scanmi"></i>${geoEsc(arm.label)}</span><span><i class="snv6-dot base"></i>exact SN6V0710</span></div><div id="current-${arm.key}-${key.replace(/[^a-zA-Z0-9]/g,'-')}"></div></div>`).join('');
@@ -532,17 +480,8 @@ async function renderGeoB1000(){
     const geoZhLabels={'lijia-line baseline control':'lijia-line 基线（控制组）','R5 single-turn p10':'R5 单轮 p10','R5 single-turn p30':'R5 单轮 p30','R5 grouped multi-QA p10':'R5 同图多 QA p10','R13 single-turn p10':'R13 单轮 p10','R13 single-turn p30':'R13 单轮 p30','R13 pair2 p10':'R13 Pair2 p10','R13 pair2 p30':'R13 Pair2 p30'};
     data.baseline_label=geoZhLabels[data.baseline_label]||data.baseline_label;
     data.experiments.forEach(row=>{row.label=geoZhLabels[row.label]||row.label});
-    const metricLabels=geoB1000MetricLabels;
     document.querySelectorAll('[data-geo-mode]').forEach(button=>button.addEventListener('click',()=>{geoB1000State.mode=button.dataset.geoMode;renderGeoComparison(data)}));
     renderGeoComparison(data);
-    const body=data.experiments.map(row=>{
-      const latest=data.results.filter(result=>result.experiment===row.key).sort((a,b)=>b.step-a.step)[0];
-      const scores=latest?metricLabels.map(([metric,label])=>{const delta=latest.scores[metric]-geoBaselineAt(data,latest.step,metric);return `<div><b>${label}</b> ${geoPct(latest.scores[metric])} <span class="${delta>=0?'snv6-pos':'snv6-neg'}">${geoDelta(delta)}</span></div>`}).join(''):'<span class="snv6-muted">暂无完成分数</span>';
-      const waiting=row.queued_steps.length?row.queued_steps.map(item=>`${item.step}(${item.status})`).join(', '):'-';
-      return `<tr><td><b>${geoEsc(row.label)}</b></td><td>${geoStatus(row.train_state)}</td><td><b>${row.latest_checkpoint||'-'}</b><br><span class="snv6-muted">${row.checkpoint_steps.join(', ')||'-'}</span></td><td>${row.successful_steps.join(', ')||'-'}</td><td>${geoEsc(waiting)}</td><td class="geo-score-lines">${scores}</td></tr>`;
-    }).join('');
-    document.getElementById('geo-b1000-table').innerHTML=`<thead><tr><th>实验</th><th>训练状态</th><th>已有 checkpoint</th><th>评测完成</th><th>评测待跑/运行</th><th>最新三项结果 vs 同 step 基线</th></tr></thead><tbody>${body}</tbody>`;
-    document.getElementById('geo-b1000-updated').textContent=`数据快照时间：${data.updated_at} · 只包含 ${data.benchmarks.join(' / ')}`;
   }catch(error){
     document.getElementById('geo-b1000-compare-meta').textContent=`数据加载失败：${error.message}`;
   }
@@ -600,24 +539,9 @@ function geoR15DantiChart(el,benchmark,data){
 }
 function renderGeoR15Final(data){
   const final=data.r15_final;if(!final?.complete)throw new Error('R15 final payload incomplete');
-  const summary=final.metric_summary;
-  const endpointCards=geoR15MetricOrder.map(metric=>{const item=summary[metric];return `<div class="geo-r15-metric"><div class="label">${geoEsc(item.label||geoR15MetricShort[metric])} · step1000</div><div class="value ${item.endpoint_delta_pp>=0?'positive':'negative'}">${geoR15Pp(item.endpoint_delta_pp)}</div><div class="sub">R15 ${geoPct(item.endpoint_r15)} vs control ${geoPct(item.endpoint_baseline)}<br>后 3 点均值 ${geoR15Pp(item.tail3_delta_pp)} · 十点均值 ${geoR15Pp(item.mean_delta_pp)}</div></div>`}).join('');
-  document.getElementById('geo-r15-final').innerHTML=`<div class="geo-final"><div class="geo-final-head"><div><h3>Geo3D R15 / SN6V0710 p10 single-turn 最终报告</h3><p>训练与测评同步完成：1000/1000 step，10 个 checkpoint × 4 项 benchmark，全部采用同 step SN6V0710 control 对比。</p></div><span class="geo-final-badge">已闭环 · failed_ratio=0</span></div><div class="geo-r15-metric-grid">${endpointCards}</div><div class="geo-final-insight"><b>终点四项全正。</b> 后三点以 SolidGeo V1 最稳；Geometry MC 转正；Natural 终点转正但全程略负；SolidGeo V2 围绕零轴小幅波动。训练数据 ${final.sample_count.toLocaleString()} 条，真实评测 ${final.eval_points} 个。</div></div>`;
   const metricToId={NaturalPerceptionCircularV3:'geo-r15-chart-natural','Perception-geometry-mc-circular-v1':'geo-r15-chart-geometry',SolidGeoPerceptionCircularV1:'geo-r15-chart-v1',SolidGeoPerceptionCircularV2:'geo-r15-chart-v2'};
   geoR15MetricOrder.forEach(metric=>geoR15OverallChart(document.getElementById(metricToId[metric]),metric,data));
-  const tableRows=final.overall_rows.map(row=>`<tr><td><b>${row.step}</b></td>${geoR15MetricOrder.map(metric=>`<td class="${geoR15DeltaClass(row.delta_pp[metric])}">${geoR15Pp(row.delta_pp[metric])}</td>`).join('')}</tr>`).join('');
-  const summaryRow=(label,key)=>`<tr><th>${label}</th>${geoR15MetricOrder.map(metric=>`<th class="${geoR15DeltaClass(summary[metric][key])}">${geoR15Pp(summary[metric][key])}</th>`).join('')}</tr>`;
-  document.getElementById('geo-r15-delta-table').innerHTML=`<thead><tr><th>step</th>${geoR15MetricOrder.map(metric=>`<th>${geoEsc(geoR15MetricShort[metric])}</th>`).join('')}</tr></thead><tbody>${tableRows}</tbody><tfoot>${summaryRow('十点均值','mean_delta_pp')}${summaryRow('后 3 点均值','tail3_delta_pp')}</tfoot>`;
   geoR15DantiChart(document.getElementById('geo-r15-danti-v1'),'SolidGeoV1',data);geoR15DantiChart(document.getElementById('geo-r15-danti-v2'),'SolidGeoV2',data);
-  const danti=(benchmark,group,step)=>final.danti_rows.find(row=>row.benchmark===benchmark&&row.group===group&&row.step===step)?.delta_strict_pp;
-  const dantiRows=final.overall_rows.map(row=>`<tr><td><b>${row.step}</b></td>${[['SolidGeoV1','SINGLE'],['SolidGeoV2','SINGLE'],['SolidGeoV1','STACK'],['SolidGeoV2','STACK']].map(([benchmark,group])=>{const v=danti(benchmark,group,row.step);return `<td class="${geoR15DeltaClass(v)}">${geoR15Pp(v)}</td>`}).join('')}</tr>`).join('');
-  const counts=final.danti_counts;
-  document.getElementById('geo-r15-danti-table').innerHTML=`<thead><tr><th>step</th><th>V1 单体 (n=${counts.SolidGeoV1.SINGLE})</th><th>V2 单体 (n=${counts.SolidGeoV2.SINGLE})</th><th>V1 堆叠 (n=${counts.SolidGeoV1.STACK})</th><th>V2 堆叠 (n=${counts.SolidGeoV2.STACK})</th></tr></thead><tbody>${dantiRows}</tbody>`;
-  const dantiSeries=(benchmark,group)=>final.danti_rows.filter(row=>row.benchmark===benchmark&&row.group===group).sort((a,b)=>a.step-b.step).map(row=>row.delta_strict_pp);
-  const avg=values=>values.reduce((sum,value)=>sum+value,0)/values.length;
-  const v1Single=dantiSeries('SolidGeoV1','SINGLE'),v2Single=dantiSeries('SolidGeoV2','SINGLE'),v2Multi=dantiSeries('SolidGeoV2','MULTIPLE'),v2Stack=dantiSeries('SolidGeoV2','STACK');
-  document.getElementById('geo-r15-danti-insight').innerHTML=`<b>结论：</b>V1 单体后段稳定受益（step1000 ${geoR15Pp(v1Single[v1Single.length-1])}，后 3 点均值 ${geoR15Pp(avg(v1Single.slice(-3)))}）；V2 单体仍负（step1000 ${geoR15Pp(v2Single[v2Single.length-1])}，十点均值 ${geoR15Pp(avg(v2Single))}）。V2 整体的微增主要由多体与堆叠支撑（十点均值 ${geoR15Pp(avg(v2Multi))} / ${geoR15Pp(avg(v2Stack))}）。`;
-  document.getElementById('geo-r15-lineage').innerHTML=final.lineage.map(item=>`<div class="geo-lineage-card"><h4>${geoEsc(item.round)} · ${geoEsc(item.title)}</h4><p><b>问题：</b>${geoEsc(item.problem)}</p><p><b>改动：</b>${geoEsc(item.change)}</p><p><b>证据：</b>${geoEsc(item.evidence)}</p></div>`).join('');
 }
 const geoFreshCatalog={
   r5_st_p10:{label:'R5 单轮 p10',short:'R5'},
