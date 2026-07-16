@@ -1,6 +1,6 @@
 <!doctype html>
 <html><head><meta charset='utf-8'>
-<title>VST 评测与实验状态</title>
+<title>VST 评测曲线</title>
 <style>
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif;background:#f7f7f5;color:#151515;letter-spacing:0}
 header{padding:20px 28px 14px;background:#fff;border-bottom:1px solid #deded8;position:sticky;top:0;z-index:2}
@@ -36,11 +36,11 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 .geo-final-head{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:15px 16px;border-bottom:1px solid #e3e7e1;background:#f4f7f2}.geo-final-head h3{font-size:17px;margin:0 0 4px}.geo-final-head p{font-size:13px;color:#545b53;line-height:1.5;margin:0}.geo-final-badge{flex:none;border-radius:4px;padding:5px 9px;background:#dcefe1;color:#176231;font-size:12px;font-weight:900}
 .geo-best-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid #e7e7e1}.geo-best{padding:15px 16px;border-right:1px solid #e7e7e1}.geo-best:last-child{border-right:0}.geo-best .label{font-size:12px;font-weight:900;color:#555}.geo-best .value{font-size:27px;line-height:1.15;font-weight:900;margin:4px 0}.geo-best .sub{font-size:12px;color:#626262;line-height:1.5}
 .geo-final-table{padding:14px 16px}.geo-final-table h3{font-size:14px;margin:0 0 9px}.geo-final-insight{padding:11px 16px;border-top:1px solid #e1e5df;background:#fafbf9;font-size:13px;line-height:1.55;color:#343a33}.geo-final-insight b{font-weight:900}
-.current-note{background:#fff;border-left:4px solid #244f73;padding:11px 14px;margin:0 0 16px;font-size:13px;line-height:1.6;color:#3f4f5d}.current-empty{background:#fff;border:1px solid #deded8;padding:28px 20px;margin:0 0 16px;text-align:center}.current-empty strong{display:block;font-size:18px;margin-bottom:7px}.current-empty span{font-size:13px;color:#666;line-height:1.55}.current-audit{background:#f5f8fa;border:1px solid #d7e1e8;padding:12px 14px;margin:0 0 16px;font-size:13px;line-height:1.6;color:#344a5b}.current-audit b{color:#173e5d}.current-state-list{display:flex;gap:8px 16px;flex-wrap:wrap;margin-top:8px}.current-table-score{white-space:nowrap}.current-table-score .raw{font-weight:900;margin-right:5px}.current-code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px}.current-complete{color:#176231;font-weight:900}
+.current-note{background:#fff;border-left:4px solid #244f73;padding:11px 14px;margin:0 0 16px;font-size:13px;line-height:1.6;color:#3f4f5d}.current-empty{background:#fff;border:1px solid #deded8;padding:28px 20px;margin:0 0 16px;text-align:center}.current-empty strong{display:block;font-size:18px;margin-bottom:7px}.current-empty span{font-size:13px;color:#666;line-height:1.55}.current-audit{background:#f5f8fa;border:1px solid #d7e1e8;padding:12px 14px;margin:0 0 16px;font-size:13px;line-height:1.6;color:#344a5b}.current-audit b{color:#173e5d}.current-state-list{display:flex;gap:8px 16px;flex-wrap:wrap;margin-top:8px}.current-table-score{white-space:nowrap}.current-table-score .raw{font-weight:900;margin-right:5px}
 @media(max-width:1100px){.grid3,.snv6-chart-grid,.geo-chart-grid,.geo-best-grid{grid-template-columns:1fr}.geo-best{border-right:0;border-bottom:1px solid #e7e7e1}.geo-best:last-child{border-bottom:0}.geo-final-head{align-items:flex-start}}
 @media(max-width:720px){header{position:static;padding:17px 16px 12px}h1{font-size:21px}main{padding:14px 12px 32px}.tabs-row{display:block}.tabs-row-label{display:block;width:max-content;min-width:0;margin-bottom:7px}.tabs{padding-bottom:3px}.tab{padding:8px 11px;font-size:13px}.section-title{font-size:17px;margin-top:20px}th,td{padding:7px 8px}.current-empty{padding:22px 14px}}
 </style></head><body>
-<header><h1>VST 评测与实验状态</h1><div class='meta'>Exact SN6V0710 五条 VST 训练与 full evaluation 已于 2026-07-15 完整收口。各 treatment 的 100–1000 checkpoint 曲线、真实结果审计和历史 Geo3D 对比保留在对应页签。本页不访问任何内网服务。</div></header>
+<header><h1>VST 评测曲线</h1><div class='meta'>VST 与 Geo3D 验证图版的公网静态快照。Geo3D 主图按研究问题拆分，每次只比较两条实验曲线，并对齐真实的 lijia-line 100–1000 checkpoint 基线。本页不访问任何内网服务。</div></header>
 <main>
 <div class='tabs-row'>
   <span class='tabs-row-label'>老基线</span>
@@ -69,6 +69,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
     <button class='tab active' data-tab='current-video-v1'><span>Video v1（MP4 · 4,823 条）</span><small>原始视频输入</small></button>
     <button class='tab' data-tab='current-video2mi-v1'><span>Video→Multi-Image v1（8 图 · 4,823 条）</span><small>1fps / 480px</small></button>
     <button class='tab' data-tab='current-native-mi-v2'><span>原生 Multi-Image v2（2 图 · 120K 条）</span><small>原生双图样本</small></button>
+    <button class='tab' data-tab='current-native-mi-v2-1'><span>原生 Multi-Image v2.1（2 图 · 120K 条 · 修复版）</span><small>V1 core + 稳定 seed 新增</small></button>
     <button class='tab' data-tab='current-video-v2'><span>Video v2（MP4 · 120K 条）</span><small>统一 V2 全量</small></button>
     <button class='tab' data-tab='current-video2mi-v2'><span>Video→Multi-Image v2（8 图 · 120K 条）</span><small>1fps / 480px · 统一 V2 全量</small></button>
   </div>
@@ -177,13 +178,12 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 </section>
 
 <section id='tab-geo3d-freshfix' class='pane'>
-<h2 class='section-title'>SN6V0710 Geo3D Freshfix：一次只回答一个对比问题</h2>
-<div class='geo-note geo-fresh-note' id='geo-fresh-note'><b>正在加载阶段性结果。</b> 本页只使用 SN6V0710 control 作为基线，并严格限制为三个 circular benchmark；不计算三项均值，也不会把六组实验同时画在一张图上。</div>
+<div class='geo-note' id='geo-fresh-error' hidden></div>
 <div class='geo-compare-shell'>
   <div class='geo-control-row'>
     <span class='geo-control-label'>对比问题</span>
     <div class='geo-mode-tabs' id='geo-fresh-mode-tabs'>
-      <button class='geo-mode-btn active' data-geo-fresh-mode='version'>筛选版本 R5 / R13</button>
+      <button class='geo-mode-btn active' data-geo-fresh-mode='version'>筛选版本 R5 / R13 / R15</button>
       <button class='geo-mode-btn' data-geo-fresh-mode='format'>样本格式 Single / Pair2</button>
       <button class='geo-mode-btn' data-geo-fresh-mode='ratio'>注入比例 p10 / p30</button>
     </div>
@@ -193,7 +193,6 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
     <div class='geo-variant-tabs' id='geo-fresh-variant-tabs'></div>
   </div>
   <div class='geo-compare-title' id='geo-fresh-compare-title'></div>
-  <div class='geo-compare-meta' id='geo-fresh-compare-meta'></div>
 </div>
 <div class='geo-legend' id='geo-fresh-legend'></div>
 <div class='geo-chart-grid'>
@@ -201,16 +200,12 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV1</h2><div id='geo-fresh-chart-solid'></div></div>
   <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='geo-fresh-chart-geometry'></div></div>
 </div>
-<details class='card geo-audit'>
-  <summary>六组配置、训练链与每 100 step 评测审计</summary>
-  <div class='snv6-table-wrap'><table id='geo-fresh-table'></table></div>
-  <div class='geo-table-note' id='geo-fresh-updated'></div>
-</details>
 </section>
 
 <section id='tab-current-video-v1' class='pane active'><div id='current-video-v1-root'></div></section>
 <section id='tab-current-video2mi-v1' class='pane'><div id='current-video2mi-v1-root'></div></section>
 <section id='tab-current-native-mi-v2' class='pane'><div id='current-native-mi-v2-root'></div></section>
+<section id='tab-current-native-mi-v2-1' class='pane'><div id='current-native-mi-v2-1-root'></div></section>
 <section id='tab-current-video-v2' class='pane'><div id='current-video-v2-root'></div></section>
 <section id='tab-current-video2mi-v2' class='pane'><div id='current-video2mi-v2-root'></div></section>
 </main>
@@ -542,15 +537,16 @@ const geoFreshCatalog={
   r13_st_p10:{label:'R13 单轮 p10',short:'R13'},
   r13_st_p30:{label:'R13 单轮 p30',short:'R13'},
   r13_pair2_p10:{label:'R13 Pair2 p10',short:'Pair2'},
-  r13_pair2_p30:{label:'R13 Pair2 p30',short:'Pair2'}
+  r13_pair2_p30:{label:'R13 Pair2 p30',short:'Pair2'},
+  r15_st_p10:{label:'R15 单轮 p10',short:'R15'}
 };
 const geoFreshComparisons={
   version:{
-    title:'筛选版本：R5 单轮 vs R13 单轮',
+    title:'筛选版本：R5 / R13 / R15 单轮',
     variants:{p10:'固定 p10',p30:'固定 p30'},defaultVariant:'p10',
-    note:'固定训练起点、单轮样本格式和注入比例，只改变题目筛选版本。',
-    shorts:()=>['R5','R13'],
-    series:variant=>[`r5_st_${variant}`,`r13_st_${variant}`]
+    note:'固定训练起点、单轮样本格式和注入比例，只改变题目筛选版本。R15 为 V2 数据 + Class-18 门控（2026-07-15 起跑，1000/1000 已闭环）；p30 仅有 R5/R13。',
+    shorts:variant=>variant==='p10'?['R5','R13','R15']:['R5','R13'],
+    series:variant=>variant==='p10'?['r5_st_p10','r13_st_p10','r15_st_p10']:[`r5_st_${variant}`,`r13_st_${variant}`]
   },
   format:{
     title:'样本格式：R13 单轮 vs R13 Pair2',
@@ -578,7 +574,7 @@ function geoFreshSelected(data){
   const config=geoFreshComparisons[geoFreshState.mode];
   const variant=geoFreshState.variants[geoFreshState.mode]||config.defaultVariant;
   return config.series(variant).map((key,index)=>({
-    key,...geoFreshCatalog[key],short:config.shorts(variant)[index],color:index===0?'#1769aa':'#c45d25',dash:index===1?'8 5':''
+    key,...geoFreshCatalog[key],short:config.shorts(variant)[index],color:['#1769aa','#c45d25','#2e8b57'][index%3],dash:index===1?'8 5':''
   }));
 }
 function geoFreshChart(el,metric,data,selected){
@@ -617,7 +613,6 @@ function renderGeoFreshComparison(data){
   variantTabs.innerHTML=Object.entries(config.variants).map(([key,label])=>`<button class="geo-variant-btn ${key===variant?'active':''}" data-geo-fresh-variant="${key}">${geoEsc(label)}</button>`).join('');
   variantTabs.querySelectorAll('[data-geo-fresh-variant]').forEach(button=>button.addEventListener('click',()=>{geoFreshState.variants[geoFreshState.mode]=button.dataset.geoFreshVariant;renderGeoFreshComparison(data)}));
   document.getElementById('geo-fresh-compare-title').textContent=config.title;
-  document.getElementById('geo-fresh-compare-meta').textContent=`${config.note} 当前结果未齐时，只统计两组重叠且真实完成的 checkpoint。`;
   const legend=[{label:data.baseline_label,color:'#4f555c',dash:'4 5'},...selected];
   document.getElementById('geo-fresh-legend').innerHTML=legend.map(item=>`<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.label)}</span>`).join('');
   geoFreshChart(document.getElementById('geo-fresh-chart-natural'),'NaturalPerceptionCircularV3',data,selected);
@@ -625,29 +620,17 @@ function renderGeoFreshComparison(data){
   geoFreshChart(document.getElementById('geo-fresh-chart-geometry'),'Perception-geometry-mc-circular-v1',data,selected);
 }
 async function renderGeoFreshfix(){
-  const note=document.getElementById('geo-fresh-note');
+  const errorBox=document.getElementById('geo-fresh-error');
   try{
     const response=await fetch('geo3d_freshfix_live.json',{cache:'no-store'});
     if(!response.ok)throw new Error(`HTTP ${response.status}`);
     const data=await response.json();
-    const stateZh={Success:'成功',Submitted:'已提交',Running:'运行中',Pending:'排队中',Failed:'失败',Error:'错误'};
-    const remaining=data.target_checkpoint_points-data.real_score_points;
-    note.innerHTML=data.partial
-      ?`<b class="geo-fresh-partial">阶段性结果，尚未闭环。</b> 六组训练 checkpoint 覆盖 ${data.checkpoint_coverage}/${data.target_checkpoint_points}，真实评测分数 ${data.real_score_points}/${data.target_checkpoint_points}；剩余 ${remaining} 点未完成前不做最终排名。本页只使用 SN6V0710 control，并严格限制为三个 circular benchmark。`
-      :`<b class="geo-fresh-complete">六组评测已闭环。</b> ${data.real_score_points}/${data.target_checkpoint_points} 个 checkpoint 分数全部完成，并与 SN6V0710 control 严格同 step 对齐。`;
+    errorBox.hidden=true;
     document.querySelectorAll('[data-geo-fresh-mode]').forEach(button=>button.addEventListener('click',()=>{geoFreshState.mode=button.dataset.geoFreshMode;renderGeoFreshComparison(data)}));
     renderGeoFreshComparison(data);
-    const body=data.experiments.map(row=>{
-      const latest=data.results.filter(result=>result.experiment===row.key).sort((a,b)=>b.step-a.step)[0];
-      const scores=latest?geoB1000MetricLabels.map(([metric,label])=>{const base=geoFreshBaselineAt(data,latest.step,metric);const delta=base==null?null:latest.scores[metric]-base;return `<div><b>${label}</b> ${geoPct(latest.scores[metric])}${delta==null?'':` <span class="${delta>=0?'snv6-pos':'snv6-neg'}">${geoDelta(delta)}</span>`}</div>`}).join(''):'<span class="snv6-muted">暂无完成分数</span>';
-      const waiting=row.queued_steps.length?row.queued_steps.map(item=>`${item.step}(${stateZh[item.status]||item.status})`).join(', '):'-';
-      const reason=row.train_reason?`<br><span class="snv6-muted">${geoEsc(row.train_reason)}</span>`:'';
-      return `<tr><td><b>${geoEsc(geoFreshCatalog[row.key].label)}</b></td><td>${geoStatus(row.train_state)}${reason}</td><td><b>${row.checkpoint_steps.length}/10</b><br><span class="snv6-muted">${row.checkpoint_steps.join(', ')||'-'}</span></td><td>${row.successful_steps.join(', ')||'-'}</td><td>${geoEsc(waiting)}</td><td class="geo-score-lines">${scores}</td></tr>`;
-    }).join('');
-    document.getElementById('geo-fresh-table').innerHTML=`<thead><tr><th>配置</th><th>最新训练链</th><th>已有 checkpoint</th><th>真实评测完成</th><th>待跑/运行</th><th>最新三项结果 vs 同 step baseline</th></tr></thead><tbody>${body}</tbody>`;
-    document.getElementById('geo-fresh-updated').textContent=`数据快照时间：${data.updated_at} · 只包含 ${data.benchmarks.join(' / ')}`;
   }catch(error){
-    note.innerHTML=`<b>Freshfix 数据加载失败。</b> ${geoEsc(error.message)}`;
+    errorBox.hidden=false;
+    errorBox.innerHTML=`<b>Freshfix 数据加载失败。</b> ${geoEsc(error.message)}`;
   }
 }
 function activateDashboardTab(tab){

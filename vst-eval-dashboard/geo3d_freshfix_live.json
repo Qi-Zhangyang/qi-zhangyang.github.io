@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-14T04:00:26+00:00",
+  "updated_at": "2026-07-16T05:27:41+00:00",
   "baseline_label": "SN6V0710 control",
   "benchmarks": [
     "NaturalPerceptionCircularV3",
@@ -9,13 +9,13 @@
   "step_interval": 100,
   "eval_step_start": 100,
   "eval_step_end": 1001,
-  "target_checkpoint_points": 60,
-  "checkpoint_coverage": 58,
-  "task_count": 58,
-  "real_score_points": 31,
+  "target_checkpoint_points": 70,
+  "checkpoint_coverage": 70,
+  "task_count": 60,
+  "real_score_points": 41,
   "partial": true,
   "eval_states": {
-    "Pending": 25,
+    "Pending": 27,
     "Submitted": 2,
     "Success": 31
   },
@@ -142,8 +142,8 @@
     {
       "key": "r5_st_p30",
       "label": "R5 single-turn p30",
-      "train_state": "Pending",
-      "latest_checkpoint": 900,
+      "train_state": "Succeeded",
+      "latest_checkpoint": 1000,
       "checkpoint_steps": [
         100,
         200,
@@ -153,7 +153,8 @@
         600,
         700,
         800,
-        900
+        900,
+        1000
       ],
       "successful_steps": [
         100,
@@ -166,8 +167,14 @@
         800,
         900
       ],
-      "queued_steps": [],
+      "queued_steps": [
+        {
+          "step": 1000,
+          "status": "Pending"
+        }
+      ],
       "eval_states": {
+        "Pending": 1,
         "Success": 9
       }
     },
@@ -337,8 +344,8 @@
     {
       "key": "r13_pair2_p30",
       "label": "R13 pair2 p30",
-      "train_state": "Running",
-      "latest_checkpoint": 900,
+      "train_state": "Succeeded",
+      "latest_checkpoint": 1000,
       "checkpoint_steps": [
         100,
         200,
@@ -348,7 +355,8 @@
         600,
         700,
         800,
-        900
+        900,
+        1000
       ],
       "successful_steps": [],
       "queued_steps": [
@@ -387,10 +395,48 @@
         {
           "step": 900,
           "status": "Pending"
+        },
+        {
+          "step": 1000,
+          "status": "Pending"
         }
       ],
       "eval_states": {
-        "Pending": 9
+        "Pending": 10
+      }
+    },
+    {
+      "key": "r15_st_p10",
+      "label": "R15 single-turn p10",
+      "train_state": "Succeeded",
+      "latest_checkpoint": 1000,
+      "checkpoint_steps": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800,
+        900,
+        1000
+      ],
+      "successful_steps": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800,
+        900,
+        1000
+      ],
+      "queued_steps": [],
+      "eval_states": {
+        "Success": 10
       }
     }
   ],
@@ -513,6 +559,106 @@
         "NaturalPerceptionCircularV3": 0.2142110762800418,
         "SolidGeoPerceptionCircularV1": 0.2608695652173913,
         "Perception-geometry-mc-circular-v1": 0.2338095238095238
+      }
+    },
+    {
+      "experiment": "r15_st_p10",
+      "label": "R15 single-turn p10",
+      "step": 100,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.2142110762800418,
+        "SolidGeoPerceptionCircularV1": 0.25026511134676566,
+        "Perception-geometry-mc-circular-v1": 0.24095238095238095
+      }
+    },
+    {
+      "experiment": "r15_st_p10",
+      "label": "R15 single-turn p10",
+      "step": 200,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.296760710553814,
+        "SolidGeoPerceptionCircularV1": 0.3075291622481442,
+        "Perception-geometry-mc-circular-v1": 0.29523809523809524
+      }
+    },
+    {
+      "experiment": "r15_st_p10",
+      "label": "R15 single-turn p10",
+      "step": 300,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.3187042842215256,
+        "SolidGeoPerceptionCircularV1": 0.3255567338282078,
+        "Perception-geometry-mc-circular-v1": 0.32857142857142857
+      }
+    },
+    {
+      "experiment": "r15_st_p10",
+      "label": "R15 single-turn p10",
+      "step": 400,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.30407523510971785,
+        "SolidGeoPerceptionCircularV1": 0.33191940615058324,
+        "Perception-geometry-mc-circular-v1": 0.3238095238095238
+      }
+    },
+    {
+      "experiment": "r15_st_p10",
+      "label": "R15 single-turn p10",
+      "step": 500,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.3239289446185998,
+        "SolidGeoPerceptionCircularV1": 0.34782608695652173,
+        "Perception-geometry-mc-circular-v1": 0.34476190476190477
+      }
+    },
+    {
+      "experiment": "r15_st_p10",
+      "label": "R15 single-turn p10",
+      "step": 600,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.3385579937304075,
+        "SolidGeoPerceptionCircularV1": 0.35418875927889715,
+        "Perception-geometry-mc-circular-v1": 0.33904761904761904
+      }
+    },
+    {
+      "experiment": "r15_st_p10",
+      "label": "R15 single-turn p10",
+      "step": 700,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.329153605015674,
+        "SolidGeoPerceptionCircularV1": 0.35737009544008486,
+        "Perception-geometry-mc-circular-v1": 0.34714285714285714
+      }
+    },
+    {
+      "experiment": "r15_st_p10",
+      "label": "R15 single-turn p10",
+      "step": 800,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.3343782654127482,
+        "SolidGeoPerceptionCircularV1": 0.36903499469777307,
+        "Perception-geometry-mc-circular-v1": 0.35
+      }
+    },
+    {
+      "experiment": "r15_st_p10",
+      "label": "R15 single-turn p10",
+      "step": 900,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.34796238244514105,
+        "SolidGeoPerceptionCircularV1": 0.3637327677624602,
+        "Perception-geometry-mc-circular-v1": 0.35904761904761906
+      }
+    },
+    {
+      "experiment": "r15_st_p10",
+      "label": "R15 single-turn p10",
+      "step": 1000,
+      "scores": {
+        "NaturalPerceptionCircularV3": 0.3490073145245559,
+        "SolidGeoPerceptionCircularV1": 0.37009544008483564,
+        "Perception-geometry-mc-circular-v1": 0.36047619047619045
       }
     },
     {
