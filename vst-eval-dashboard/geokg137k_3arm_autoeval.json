@@ -7,6 +7,24 @@
     {"key": "Perception-geometry-mc-circular-v1", "label": "Geometry-MC V1"},
     {"key": "NaturalPerceptionCircularV3", "label": "NaturalPerception V3"}
   ],
+  "baseline": {
+    "key": "control",
+    "label": "SN6V0710 control · 无 Geo-KG",
+    "color": "#5f6368",
+    "dash": "7 5",
+    "rows": [
+      {"step": 100, "SolidGeoPerceptionCircularV2": 0.2654822335025381, "Perception-geometry-mc-circular-v1": 0.24285714285714285, "NaturalPerceptionCircularV3": 0.2413793103448276},
+      {"step": 200, "SolidGeoPerceptionCircularV2": 0.3015228426395939, "Perception-geometry-mc-circular-v1": 0.3080952380952381, "NaturalPerceptionCircularV3": 0.2946708463949843},
+      {"step": 300, "SolidGeoPerceptionCircularV2": 0.3177664974619289, "Perception-geometry-mc-circular-v1": 0.3242857142857143, "NaturalPerceptionCircularV3": 0.30825496342737724},
+      {"step": 400, "SolidGeoPerceptionCircularV2": 0.334010152284264, "Perception-geometry-mc-circular-v1": 0.3352380952380952, "NaturalPerceptionCircularV3": 0.3218390804597701},
+      {"step": 500, "SolidGeoPerceptionCircularV2": 0.34213197969543146, "Perception-geometry-mc-circular-v1": 0.33, "NaturalPerceptionCircularV3": 0.3270637408568443},
+      {"step": 600, "SolidGeoPerceptionCircularV2": 0.34060913705583756, "Perception-geometry-mc-circular-v1": 0.3352380952380952, "NaturalPerceptionCircularV3": 0.32497387669801464},
+      {"step": 700, "SolidGeoPerceptionCircularV2": 0.3416243654822335, "Perception-geometry-mc-circular-v1": 0.3404761904761905, "NaturalPerceptionCircularV3": 0.33646812957157785},
+      {"step": 800, "SolidGeoPerceptionCircularV2": 0.34822335025380713, "Perception-geometry-mc-circular-v1": 0.35, "NaturalPerceptionCircularV3": 0.35214211076280044},
+      {"step": 900, "SolidGeoPerceptionCircularV2": 0.3538071065989848, "Perception-geometry-mc-circular-v1": 0.3514285714285714, "NaturalPerceptionCircularV3": 0.3510971786833856},
+      {"step": 1000, "SolidGeoPerceptionCircularV2": 0.3548223350253807, "Perception-geometry-mc-circular-v1": 0.3495238095238095, "NaturalPerceptionCircularV3": 0.3343782654127482}
+    ]
+  },
   "series": [
     {
       "key": "mc",

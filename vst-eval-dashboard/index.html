@@ -78,7 +78,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 <div class='tabs-row geokg-3arm'>
   <span class='tabs-row-label'>Geo-KG 训练验证</span>
   <div class='tabs'>
-    <button class='tab' data-tab='geokg137k'><span>Geo-KG 137K · 三种答案格式</span><small>MC / Fill / Half · step100–1000 · 三榜</small></button>
+    <button class='tab' data-tab='geokg137k'><span>Geo-KG 137K · 三种答案格式</span><small>Control / MC / Fill / Half · step100–1000</small></button>
   </div>
 </div>
 <div class='tabs-row archived'>
@@ -165,7 +165,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 
 <section id='tab-geokg137k' class='pane'>
 <h2 class='section-title'>Geo-KG Solid3D 137K：三种答案格式训练验证</h2>
-<div class='geokg-summary'><b>结论：</b>Fill 在 SolidGeo V2 的 10 个 checkpoint 全程最高，整体表现也最强；三臂的最佳综合区间都落在 step900 附近，step1000 未继续稳定增益。下面只展示三个 benchmark 的真实十点曲线。</div>
+<div class='geokg-summary'><b>结论：</b>Fill 是三条 Geo-KG 实验臂中最强的一条，并在训练前中段多次超过 control；但后段没有形成稳定的三榜增益，step700 以后 control 仍然很有竞争力。灰色虚线为不注入 Geo-KG 的 SN6V0710 同口径 baseline。</div>
 <div class='geo-note' id='geokg137k-error' hidden></div>
 <div class='geo-legend' id='geokg137k-legend'></div>
 <div class='geo-chart-grid'>
@@ -173,7 +173,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='geokg137k-chart-geometry'></div></div>
   <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='geokg137k-chart-natural'></div></div>
 </div>
-<p class='geokg-method'>口径：SN6V0710 同一起点、同训练配置，Geo-KG 数据占比 p10；仅改变答案格式。三臂均评测 step100–1000 共 10 个 checkpoint，no-thinking，30/30 点完整。</p>
+<p class='geokg-method'>口径：control 与三臂使用同一 SN6V0710 起点、训练参数及评测配置；control 不注入 Geo-KG，三臂的 Geo-KG 数据占比均为 p10，仅改变答案格式。四条曲线均为 step100–1000、no-thinking、严格同 step 对比。</p>
 </section>
 
 <section id='tab-geo3d-freshfix' class='pane'>
@@ -767,7 +767,7 @@ async function renderGeoFreshfix(){
 }
 function geokg137kChart(el,metric,data){
   const w=720,h=350,m={l:56,r:20,t:22,b:46};
-  const series=data.series.map(item=>({
+  const series=[data.baseline,...data.series].map(item=>({
     ...item,
     points:item.rows.map(row=>({step:row.step,v:row[metric]})).filter(point=>point.v!=null)
   }));
@@ -781,8 +781,8 @@ function geokg137kChart(el,metric,data){
   const grid=yTicks.map(value=>`<line x1="${m.l}" x2="${w-m.r}" y1="${y(value)}" y2="${y(value)}" stroke="#deded8"/><text x="${m.l-9}" y="${y(value)+4}" text-anchor="end" font-size="12" fill="#555">${geoPct(value)}</text>`).join('');
   const xTicks=Array.from({length:10},(_,i)=>(i+1)*100).map(step=>`<text x="${x(step)}" y="${h-16}" text-anchor="middle" font-size="11" fill="#555">${step}</text>`).join('');
   const paths=series.map(item=>{
-    const marks=item.points.map(point=>`<circle cx="${x(point.step)}" cy="${y(point.v)}" r="4" fill="#fff" stroke="${item.color}" stroke-width="2.4"><title>${geoEsc(item.label)} · step ${point.step}: ${geoPct(point.v)}</title></circle>`).join('');
-    return `<path d="${geoPath(item.points,x,y)}" fill="none" stroke="${item.color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>${marks}`;
+    const marks=item.points.map(point=>`<circle cx="${x(point.step)}" cy="${y(point.v)}" r="${item.key==='control'?'3.4':'4'}" fill="#fff" stroke="${item.color}" stroke-width="2.4"><title>${geoEsc(item.label)} · step ${point.step}: ${geoPct(point.v)}</title></circle>`).join('');
+    return `<path d="${geoPath(item.points,x,y)}" fill="none" stroke="${item.color}" stroke-width="${item.key==='control'?'2.3':'3'}" stroke-linecap="round" stroke-linejoin="round" ${item.dash?`stroke-dasharray="${item.dash}"`:''}/>${marks}`;
   }).join('');
   el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${geoEsc(metric)} Geo-KG three-arm curve"><rect width="${w}" height="${h}" fill="#fff"/>${grid}<line x1="${m.l}" x2="${w-m.r}" y1="${h-m.b}" y2="${h-m.b}" stroke="#bdbdb5"/><line x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${h-m.b}" stroke="#bdbdb5"/>${xTicks}${paths}<text x="${w/2}" y="${h-2}" text-anchor="middle" font-size="12" fill="#555">checkpoint</text></svg>`;
 }
@@ -793,7 +793,7 @@ async function renderGeokg137k(){
     if(!response.ok)throw new Error(`HTTP ${response.status}`);
     const data=await response.json();
     errorBox.hidden=true;
-    document.getElementById('geokg137k-legend').innerHTML=data.series.map(item=>`<span class="geo-legend-item"><i class="geo-swatch" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.label)}</span>`).join('');
+    document.getElementById('geokg137k-legend').innerHTML=[data.baseline,...data.series].map(item=>`<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.label)}</span>`).join('');
     geokg137kChart(document.getElementById('geokg137k-chart-solid'),'SolidGeoPerceptionCircularV2',data);
     geokg137kChart(document.getElementById('geokg137k-chart-geometry'),'Perception-geometry-mc-circular-v1',data);
     geokg137kChart(document.getElementById('geokg137k-chart-natural'),'NaturalPerceptionCircularV3',data);
