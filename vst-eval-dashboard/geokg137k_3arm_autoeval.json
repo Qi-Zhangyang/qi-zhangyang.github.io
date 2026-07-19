@@ -1,7 +1,10 @@
 {
-  "title": "Geo-KG Solid3D 137K · 三种答案格式",
-  "subtitle": "SN6V0710 · p10 · step100–1000 · no-thinking",
-  "updated_at": "2026-07-18",
+  "title": "Geo-KG Solid3D 137K · 位置偏置修复轮",
+  "subtitle": "V2修复已真验收 step100–700 · V1旧轮与 SN6V0710 control 作为对照",
+  "updated_at": "2026-07-19",
+  "verified_through": 700,
+  "verified_points": 21,
+  "total_points": 30,
   "benchmarks": [
     {"key": "SolidGeoPerceptionCircularV2", "label": "SolidGeo V2"},
     {"key": "Perception-geometry-mc-circular-v1", "label": "Geometry-MC V1"},
@@ -27,9 +30,10 @@
   },
   "series": [
     {
-      "key": "mc",
-      "label": "MC · 选择题",
+      "key": "mc_v1",
+      "label": "V1旧轮 · MC",
       "color": "#2563eb",
+      "dash": "5 5",
       "rows": [
         {"step": 100, "SolidGeoPerceptionCircularV2": 0.264975, "Perception-geometry-mc-circular-v1": 0.254286, "NaturalPerceptionCircularV3": 0.223615},
         {"step": 200, "SolidGeoPerceptionCircularV2": 0.310660, "Perception-geometry-mc-circular-v1": 0.303333, "NaturalPerceptionCircularV3": 0.307210},
@@ -44,9 +48,10 @@
       ]
     },
     {
-      "key": "fill",
-      "label": "Fill · 填空题",
+      "key": "fill_v1",
+      "label": "V1旧轮 · Fill",
       "color": "#f97316",
+      "dash": "5 5",
       "rows": [
         {"step": 100, "SolidGeoPerceptionCircularV2": 0.277157, "Perception-geometry-mc-circular-v1": 0.260000, "NaturalPerceptionCircularV3": 0.246604},
         {"step": 200, "SolidGeoPerceptionCircularV2": 0.340609, "Perception-geometry-mc-circular-v1": 0.314762, "NaturalPerceptionCircularV3": 0.309300},
@@ -61,9 +66,10 @@
       ]
     },
     {
-      "key": "half",
-      "label": "Half · 半选择半填空",
+      "key": "half_v1",
+      "label": "V1旧轮 · Half",
       "color": "#0f9f86",
+      "dash": "5 5",
       "rows": [
         {"step": 100, "SolidGeoPerceptionCircularV2": 0.267513, "Perception-geometry-mc-circular-v1": 0.246190, "NaturalPerceptionCircularV3": 0.233020},
         {"step": 200, "SolidGeoPerceptionCircularV2": 0.312690, "Perception-geometry-mc-circular-v1": 0.301905, "NaturalPerceptionCircularV3": 0.303030},
@@ -75,6 +81,50 @@
         {"step": 800, "SolidGeoPerceptionCircularV2": 0.337056, "Perception-geometry-mc-circular-v1": 0.333333, "NaturalPerceptionCircularV3": 0.339603},
         {"step": 900, "SolidGeoPerceptionCircularV2": 0.340102, "Perception-geometry-mc-circular-v1": 0.341429, "NaturalPerceptionCircularV3": 0.341693},
         {"step": 1000, "SolidGeoPerceptionCircularV2": 0.334518, "Perception-geometry-mc-circular-v1": 0.340476, "NaturalPerceptionCircularV3": 0.331243}
+      ]
+    }
+  ],
+  "v2fix_series": [
+    {
+      "key": "mc_v2fix",
+      "label": "V2修复 · MC",
+      "color": "#2563eb",
+      "rows": [
+        {"step": 100, "SolidGeoPerceptionCircularV2": 0.2548223350253807, "Perception-geometry-mc-circular-v1": 0.24523809523809523, "NaturalPerceptionCircularV3": 0.22570532915360503},
+        {"step": 200, "SolidGeoPerceptionCircularV2": 0.3, "Perception-geometry-mc-circular-v1": 0.30666666666666664, "NaturalPerceptionCircularV3": 0.3103448275862069},
+        {"step": 300, "SolidGeoPerceptionCircularV2": 0.30710659898477155, "Perception-geometry-mc-circular-v1": 0.31761904761904763, "NaturalPerceptionCircularV3": 0.2988505747126437},
+        {"step": 400, "SolidGeoPerceptionCircularV2": 0.3385786802030457, "Perception-geometry-mc-circular-v1": 0.3423809523809524, "NaturalPerceptionCircularV3": 0.3207941483803553},
+        {"step": 500, "SolidGeoPerceptionCircularV2": 0.33096446700507615, "Perception-geometry-mc-circular-v1": 0.34523809523809523, "NaturalPerceptionCircularV3": 0.33124346917450365},
+        {"step": 600, "SolidGeoPerceptionCircularV2": 0.333502538071066, "Perception-geometry-mc-circular-v1": 0.33476190476190476, "NaturalPerceptionCircularV3": 0.3270637408568443},
+        {"step": 700, "SolidGeoPerceptionCircularV2": 0.3284263959390863, "Perception-geometry-mc-circular-v1": 0.33476190476190476, "NaturalPerceptionCircularV3": 0.329153605015674}
+      ]
+    },
+    {
+      "key": "fill_v2fix",
+      "label": "V2修复 · Fill",
+      "color": "#f97316",
+      "rows": [
+        {"step": 100, "SolidGeoPerceptionCircularV2": 0.27614213197969545, "Perception-geometry-mc-circular-v1": 0.2542857142857143, "NaturalPerceptionCircularV3": 0.23510971786833856},
+        {"step": 200, "SolidGeoPerceptionCircularV2": 0.33553299492385785, "Perception-geometry-mc-circular-v1": 0.31047619047619046, "NaturalPerceptionCircularV3": 0.3218390804597701},
+        {"step": 300, "SolidGeoPerceptionCircularV2": 0.3380710659898477, "Perception-geometry-mc-circular-v1": 0.319047619047619, "NaturalPerceptionCircularV3": 0.31974921630094044},
+        {"step": 400, "SolidGeoPerceptionCircularV2": 0.349238578680203, "Perception-geometry-mc-circular-v1": 0.32571428571428573, "NaturalPerceptionCircularV3": 0.3343782654127482},
+        {"step": 500, "SolidGeoPerceptionCircularV2": 0.349238578680203, "Perception-geometry-mc-circular-v1": 0.3314285714285714, "NaturalPerceptionCircularV3": 0.3406478578892372},
+        {"step": 600, "SolidGeoPerceptionCircularV2": 0.35939086294416245, "Perception-geometry-mc-circular-v1": 0.33476190476190476, "NaturalPerceptionCircularV3": 0.3396029258098224},
+        {"step": 700, "SolidGeoPerceptionCircularV2": 0.3583756345177665, "Perception-geometry-mc-circular-v1": 0.3271428571428571, "NaturalPerceptionCircularV3": 0.335423197492163}
+      ]
+    },
+    {
+      "key": "half_v2fix",
+      "label": "V2修复 · Half",
+      "color": "#0f9f86",
+      "rows": [
+        {"step": 100, "SolidGeoPerceptionCircularV2": 0.2649746192893401, "Perception-geometry-mc-circular-v1": 0.2419047619047619, "NaturalPerceptionCircularV3": 0.22988505747126436},
+        {"step": 200, "SolidGeoPerceptionCircularV2": 0.300507614213198, "Perception-geometry-mc-circular-v1": 0.30238095238095236, "NaturalPerceptionCircularV3": 0.29258098223615464},
+        {"step": 300, "SolidGeoPerceptionCircularV2": 0.33248730964467005, "Perception-geometry-mc-circular-v1": 0.3304761904761905, "NaturalPerceptionCircularV3": 0.30825496342737724},
+        {"step": 400, "SolidGeoPerceptionCircularV2": 0.33401015228426395, "Perception-geometry-mc-circular-v1": 0.33, "NaturalPerceptionCircularV3": 0.322884012539185},
+        {"step": 500, "SolidGeoPerceptionCircularV2": 0.34060913705583756, "Perception-geometry-mc-circular-v1": 0.3442857142857143, "NaturalPerceptionCircularV3": 0.3281086729362591},
+        {"step": 600, "SolidGeoPerceptionCircularV2": 0.35279187817258884, "Perception-geometry-mc-circular-v1": 0.34095238095238095, "NaturalPerceptionCircularV3": 0.3396029258098224},
+        {"step": 700, "SolidGeoPerceptionCircularV2": 0.33553299492385785, "Perception-geometry-mc-circular-v1": 0.3357142857142857, "NaturalPerceptionCircularV3": 0.3166144200626959}
       ]
     }
   ]
