@@ -85,7 +85,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 <div class='tabs-row geokg-3arm'>
   <span class='tabs-row-label'>Geo-KG 训练验证</span>
   <div class='tabs'>
-    <button class='tab' data-tab='geokg137k'><span>Geo-KG 137K · V2 修复轮</span><small>V2修复 21/30 · V1旧轮 · Control</small></button>
+    <button class='tab' data-tab='geokg137k'><span>Geo-KG 137K · V2 修复轮</span><small>V2修复 24/30 · V1旧轮 · Control</small></button>
   </div>
 </div>
 <div class='tabs-row archived'>
@@ -178,7 +178,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
     <button class='geokg-view-btn active' data-geokg-arm='fill'>Fill · 填空题</button>
     <button class='geokg-view-btn' data-geokg-arm='half'>Half · 混合</button>
   </div>
-  <span class='geokg-verified'>V2修复 21/30 · step100–700 已真验收</span>
+  <span class='geokg-verified'>V2修复 24/30 · step100–800 已真验收</span>
 </div>
 <div class='geo-note' id='geokg137k-error' hidden></div>
 <div class='geo-legend' id='geokg137k-legend'></div>
@@ -840,7 +840,7 @@ function renderGeokg137kView(data){
   document.querySelectorAll('[data-geokg-arm]').forEach(button=>button.classList.toggle('active',button.dataset.geokgArm===geokg137kState.arm));
   document.getElementById('geokg137k-legend').innerHTML=[data.baseline,...visibleSeries].map(item=>`<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.label)}</span>`).join('');
   const armLabels={mc:'MC',fill:'Fill',half:'Half'};
-  document.getElementById('geokg137k-caption').textContent=`当前选中 ${armLabels[geokg137kState.arm]}：同色实线为 V2 修复轮，同色虚线为 V1 旧轮，灰色虚线为 SN6V0710 control。V2 暂至 step700。`;
+  document.getElementById('geokg137k-caption').textContent=`当前选中 ${armLabels[geokg137kState.arm]}：同色实线为 V2 修复轮，同色虚线为 V1 旧轮，灰色虚线为 SN6V0710 control。V2 暂至 step${data.verified_through}。`;
   geokg137kChart(document.getElementById('geokg137k-chart-solid'),'SolidGeoPerceptionCircularV2',data,visibleSeries);
   geokg137kChart(document.getElementById('geokg137k-chart-geometry'),'Perception-geometry-mc-circular-v1',data,visibleSeries);
   geokg137kChart(document.getElementById('geokg137k-chart-natural'),'NaturalPerceptionCircularV3',data,visibleSeries);
