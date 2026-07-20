@@ -85,7 +85,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 <div class='tabs-row geokg-3arm'>
   <span class='tabs-row-label'>Geo-KG 训练验证</span>
   <div class='tabs'>
-    <button class='tab' data-tab='geokg137k'><span>Geo-KG 137K · V2 三种 setting</span><small>MC / Fill / Half 同图同表 · 30/30</small></button>
+    <button class='tab' data-tab='geokg137k'><span>Geo-KG 137K · V2 三种 setting</span><small>Baseline + MC / Fill / Half 同图 · 30/30</small></button>
   </div>
 </div>
 <div class='tabs-row archived'>
@@ -171,14 +171,14 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 </section>
 
 <section id='tab-geokg137k' class='pane'>
-<h2 class='section-title'>Geo-KG Solid3D 137K：V2 三种 setting 对比</h2>
+<h2 class='section-title'>Geo-KG Solid3D 137K：V2 三种 setting vs Baseline</h2>
 <div class='geokg-toolbar'>
-  <span class='geokg-mode'>只展示 V2 修复版 · MC / Fill / Half</span>
+  <span class='geokg-mode'>实验线仅 V2 · MC / Fill / Half；灰色虚线为 Baseline</span>
   <span class='geokg-verified'>30/30 · step100–1000 已真验收</span>
 </div>
 <div class='geo-note' id='geokg137k-error' hidden></div>
 <div class='geo-legend' id='geokg137k-legend'></div>
-<p class='geokg-caption' id='geokg137k-caption'>三张图只画 V2 修复版的三种 setting；下方统一点数表按 benchmark 并排展示 MC、Fill、Half，绿色粗体为该 step 的三臂最高分。</p>
+<p class='geokg-caption' id='geokg137k-caption'>三张图均保留 SN6V0710 Baseline，并叠加 V2 修复版的三种 setting；下方统一点数表只并排展示 MC、Fill、Half，绿色粗体为该 step 的三臂最高分。</p>
 <div class='geo-chart-grid'>
   <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV2</h2><div id='geokg137k-chart-solid'></div></div>
   <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='geokg137k-chart-geometry'></div></div>
@@ -786,9 +786,9 @@ function geokg137kV2Series(data){
   const order=['mc_v2fix','fill_v2fix','half_v2fix'];
   return order.map(key=>(data.v2fix_series||[]).find(item=>item.key===key)).filter(Boolean);
 }
-function geokg137kChart(el,metric,visibleSeries){
+function geokg137kChart(el,metric,data,visibleSeries){
   const w=720,h=350,m={l:56,r:20,t:22,b:46};
-  const series=visibleSeries.map(item=>({
+  const series=[data.baseline,...visibleSeries].map(item=>({
     ...item,
     points:item.rows.map(row=>({step:row.step,v:row[metric]})).filter(point=>point.v!=null)
   }));
@@ -802,8 +802,9 @@ function geokg137kChart(el,metric,visibleSeries){
   const grid=yTicks.map(value=>`<line x1="${m.l}" x2="${w-m.r}" y1="${y(value)}" y2="${y(value)}" stroke="#deded8"/><text x="${m.l-9}" y="${y(value)+4}" text-anchor="end" font-size="12" fill="#555">${geoPct(value)}</text>`).join('');
   const xTicks=Array.from({length:10},(_,i)=>(i+1)*100).map(step=>`<text x="${x(step)}" y="${h-16}" text-anchor="middle" font-size="11" fill="#555">${step}</text>`).join('');
   const paths=series.map(item=>{
-    const marks=item.points.map(point=>`<circle data-geokg-series="${item.key}" cx="${x(point.step)}" cy="${y(point.v)}" r="4" fill="#fff" stroke="${item.color}" stroke-width="2.4"><title>${geoEsc(item.label)} · step ${point.step}: ${geoPct(point.v)}</title></circle>`).join('');
-    return `<path data-geokg-series="${item.key}" d="${geoPath(item.points,x,y)}" fill="none" stroke="${item.color}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>${marks}`;
+    const isBaseline=item.key==='control';
+    const marks=item.points.map(point=>`<circle data-geokg-series="${item.key}" cx="${x(point.step)}" cy="${y(point.v)}" r="${isBaseline?'3.2':'4'}" fill="#fff" stroke="${item.color}" stroke-width="${isBaseline?'2':'2.4'}"><title>${geoEsc(item.label)} · step ${point.step}: ${geoPct(point.v)}</title></circle>`).join('');
+    return `<path data-geokg-series="${item.key}" d="${geoPath(item.points,x,y)}" fill="none" stroke="${item.color}" stroke-width="${isBaseline?'2.3':'3.2'}" stroke-linecap="round" stroke-linejoin="round" ${item.dash?`stroke-dasharray="${item.dash}"`:''}/>${marks}`;
   }).join('');
   el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${geoEsc(metric)} Geo-KG V2 three-setting comparison curve"><rect width="${w}" height="${h}" fill="#fff"/>${grid}<line x1="${m.l}" x2="${w-m.r}" y1="${h-m.b}" y2="${h-m.b}" stroke="#bdbdb5"/><line x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${h-m.b}" stroke="#bdbdb5"/>${xTicks}${paths}<text x="${w/2}" y="${h-2}" text-anchor="middle" font-size="12" fill="#555">checkpoint</text></svg>`;
 }
@@ -825,10 +826,10 @@ function geokg137kPointTable(data,visibleSeries){
 }
 function renderGeokg137kView(data){
   const visibleSeries=geokg137kV2Series(data);
-  document.getElementById('geokg137k-legend').innerHTML=visibleSeries.map(item=>`<span class="geo-legend-item"><i class="geo-swatch" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.label.replace('V2修复 · ','V2 · '))}</span>`).join('');
-  geokg137kChart(document.getElementById('geokg137k-chart-solid'),'SolidGeoPerceptionCircularV2',visibleSeries);
-  geokg137kChart(document.getElementById('geokg137k-chart-geometry'),'Perception-geometry-mc-circular-v1',visibleSeries);
-  geokg137kChart(document.getElementById('geokg137k-chart-natural'),'NaturalPerceptionCircularV3',visibleSeries);
+  document.getElementById('geokg137k-legend').innerHTML=[data.baseline,...visibleSeries].map(item=>`<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.key==='control'?'Baseline · SN6V0710':item.label.replace('V2修复 · ','V2 · '))}</span>`).join('');
+  geokg137kChart(document.getElementById('geokg137k-chart-solid'),'SolidGeoPerceptionCircularV2',data,visibleSeries);
+  geokg137kChart(document.getElementById('geokg137k-chart-geometry'),'Perception-geometry-mc-circular-v1',data,visibleSeries);
+  geokg137kChart(document.getElementById('geokg137k-chart-natural'),'NaturalPerceptionCircularV3',data,visibleSeries);
   geokg137kPointTable(data,visibleSeries);
 }
 async function renderGeokg137k(){
