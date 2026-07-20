@@ -92,7 +92,6 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <div class='tabs'>
     <button class='tab' data-tab='snv6'>SN V6 评测（新结果 × 旧基线）</button>
     <button class='tab' data-tab='current-native-mi-v2'><span>原生 VST-ScanNet Multi-Image V2 120K</span><small>失败：数据集扩充方式不正确</small></button>
-    <button class='tab' data-tab='geo3d-freshfix'><span>Geo3D SolidGeo V2 复验</span><small>R13 / R15 / SN6V0710 · 十点同 step</small></button>
   </div>
 </div>
 
@@ -185,89 +184,6 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 </div>
 </section>
 
-<section id='tab-geo3d-freshfix' class='pane'>
-<div class='geo-note' id='geo-fresh-error' hidden></div>
-<div class='geo-r13-hero'>
-  <div class='geo-r13-hero-head'><h2>SolidGeo V2：R13 ↔ R15 ↔ SN6V0710 control 完整复验</h2><p>同一 benchmark、同一 checkpoint、同一 strict Circular 口径：1,970 道基础题，每题四个排列全部答对才计 1。三条曲线均覆盖 step100–1000 十点。</p></div>
-  <div class='geo-r13-kpis' id='geo-r13-kpis'></div>
-  <div class='geo-r13-conclusion' id='geo-r13-conclusion'></div>
-</div>
-
-<h2 class='geo-r15-section-title'>三方十点严格曲线</h2>
-<p class='geo-r15-subtitle'><span class='geo-r13-name r13'>R13</span>、<span class='geo-r13-name r15'>R15</span> 与 <span class='geo-r13-name control'>SN6V0710 control</span> 同 step 比较；分数均为基础题 strict accuracy。</p>
-<div class='snv6-chart geo-r13-chart'><h2>SolidGeoPerceptionCircularV2</h2><div id='geo-r13-overall-chart'></div></div>
-<div class='geo-r15-table-wrap' id='geo-r13-curve-table'></div>
-
-<h2 class='geo-r15-section-title'>SINGLE / MULTIPLE / STACK 三方曲线</h2>
-<p class='geo-r15-subtitle'>分组直接使用 benchmark 固化的 image_type；三图均展示实际 strict accuracy，不用训练内起点作参照。</p>
-<div class='geo-r13-chart-grid'>
-  <div class='snv6-chart geo-r13-chart'><h2>SINGLE · 单体（n=1,275）</h2><div id='geo-r13-image-single'></div></div>
-  <div class='snv6-chart geo-r13-chart'><h2>MULTIPLE · 多体（n=539）</h2><div id='geo-r13-image-multiple'></div></div>
-  <div class='snv6-chart geo-r13-chart'><h2>STACK · 堆叠（n=156）</h2><div id='geo-r13-image-stack'></div></div>
-</div>
-
-<h2 class='geo-r15-section-title'>step1000 配对 case 四象限</h2>
-<p class='geo-r15-subtitle'>逐题配对 R15 与 R13。净差不是“整体变好”，而是两边各自换了一批对错 case。</p>
-<div class='geo-r13-case-grid' id='geo-r13-case-grid'></div>
-<p class='geo-r13-audit' id='geo-r13-case-meta'></p>
-
-<h2 class='geo-r15-section-title'>子类摘要：后 3 点平均 R15 − R13</h2>
-<p class='geo-r15-subtitle'>SE / GQ / 难度为大方向；SE×GQ cell 仅作诊断，样本较小且未做多重检验校正，不能单独宣称显著。</p>
-<div class='geo-r13-summary-grid'>
-  <div class='geo-r13-mini-table' id='geo-r13-direction-gains'></div>
-  <div class='geo-r13-mini-table' id='geo-r13-direction-regressions'></div>
-  <div class='geo-r13-mini-table' id='geo-r13-cell-gains'></div>
-  <div class='geo-r13-mini-table' id='geo-r13-cell-regressions'></div>
-</div>
-<p class='geo-r13-audit'>验收：三条曲线均为 10/10 checkpoint；每个 R13 点 pred/eval=7,880/7,880，Failed-to-obtain=0、坏 JSON=0、failed_ratio=0。公开 payload 已移除内部任务、存储与 collection 标识。</p>
-
-<details class='geo-r13-history'>
-<summary>历史：R15 vs SN6V0710 control 四项报告与旧实验筛选</summary>
-<div class='geo-r13-history-body'>
-<h2 class='geo-r15-section-title'>R15 vs SN6V0710 control：四项严格同 step 曲线</h2>
-<p class='geo-r15-subtitle'>只比较同 benchmark、同 checkpoint；虚线为 SN6V0710 control，实线为 R15。SolidGeo V1 与 V2 分别对各自 baseline，不跨版本混算。</p>
-<div class='geo-r15-chart-grid'>
-  <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='geo-r15-chart-natural'></div></div>
-  <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='geo-r15-chart-geometry'></div></div>
-  <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV1</h2><div id='geo-r15-chart-v1'></div></div>
-  <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV2</h2><div id='geo-r15-chart-v2'></div></div>
-</div>
-
-<h2 class='geo-r15-section-title'>SolidGeo 单体 / 多体 / 堆叠拆分</h2>
-<p class='geo-r15-subtitle'>严格 Circular：同一基础题四轮全部答对才记 1。分组直接使用上游 K26 scene-form 已固化的 image_type，无需重新标注。</p>
-<div class='geo-r15-chart-grid'>
-  <div class='snv6-chart'><h2>SolidGeo V1 分组 delta</h2><div id='geo-r15-danti-v1'></div></div>
-  <div class='snv6-chart'><h2>SolidGeo V2 分组 delta</h2><div id='geo-r15-danti-v2'></div></div>
-</div>
-
-<div class='geo-r15-legacy'>
-<h2 class='geo-r15-section-title'>历史实验筛选比较</h2>
-<p class='geo-r15-subtitle'>保留原 Freshfix 六路比较器，用于回看 R5/R13/R15、Single/Pair2 与 p10/p30；终局结论以上方 R15 strict baseline 分析为准。</p>
-<div class='geo-compare-shell'>
-  <div class='geo-control-row'>
-    <span class='geo-control-label'>对比问题</span>
-    <div class='geo-mode-tabs' id='geo-fresh-mode-tabs'>
-      <button class='geo-mode-btn active' data-geo-fresh-mode='version'>筛选版本 R5 / R13 / R15</button>
-      <button class='geo-mode-btn' data-geo-fresh-mode='format'>样本格式 Single / Pair2</button>
-      <button class='geo-mode-btn' data-geo-fresh-mode='ratio'>注入比例 p10 / p30</button>
-    </div>
-  </div>
-  <div class='geo-variant-row' id='geo-fresh-variant-row'>
-    <span class='geo-control-label'>固定条件</span>
-    <div class='geo-variant-tabs' id='geo-fresh-variant-tabs'></div>
-  </div>
-  <div class='geo-compare-title' id='geo-fresh-compare-title'></div>
-</div>
-<div class='geo-legend' id='geo-fresh-legend'></div>
-<div class='geo-chart-grid'>
-  <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='geo-fresh-chart-natural'></div></div>
-  <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV1</h2><div id='geo-fresh-chart-solid'></div></div>
-  <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='geo-fresh-chart-geometry'></div></div>
-</div>
-</div>
-</div>
-</details>
-</section>
 
 <section id='tab-current-video-v1' class='pane active'><div id='current-video-v1-root'></div></section>
 <section id='tab-current-video2mi-v1' class='pane'><div id='current-video2mi-v1-root'></div></section>
@@ -845,7 +761,6 @@ renderSnv6();
 renderSnv60710();
 renderCurrentVst();
 renderGeoB1000();
-renderGeoFreshfix();
 renderGeokg137k();
 activateDashboardTab(location.hash ? location.hash.slice(1) : 'current-video-v1');
 </script>
