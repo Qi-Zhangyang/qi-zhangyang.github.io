@@ -71,7 +71,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 <div class='tabs-row new-baseline'>
   <span class='tabs-row-label'>RPQA 单图vs多图 🔬</span>
   <div class='tabs'>
-    <button class='tab' data-tab='rpqa'><span>RPQA 单图 vs 多图（p10）</span><small>边训边测 vs 0710 baseline</small></button>
+    <button class='tab' data-tab='rpqa'><span>RPQA 单图 vs 多图（p10）</span><small>已完成 · vs 0710 baseline</small></button>
   </div>
 </div>
 <div class='tabs-row new-baseline'>
@@ -208,11 +208,11 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 <h2 class='section-title'>RPQA 单图 vs 多图：p10 数据验证 vs SN6V0710 Baseline</h2>
 <div class='geokg-toolbar'>
   <span class='geokg-mode'>唯一变量 = 第二张图 · 蓝=单图 橙=多图 · 灰虚线 = SN6V0710 baseline（无实验数据）</span>
-  <span class='geokg-verified' id='rpqa-verified'>边训边测中</span>
+  <span class='geokg-verified' id='rpqa-verified'>已完成至 step 1000</span>
 </div>
 <div class='geo-note' id='rpqa-error' hidden></div>
 <div class='geo-legend' id='rpqa-legend'></div>
-<p class='geokg-caption' id='rpqa-caption'>3bench 为通用几何感知（非 rpqa 关系题本身，选它是为了与 0710 baseline / 其它实验可比）。单步噪声约 ±0.02–0.03，两组相差在此量级内多半是噪声；训练未到 1000 步、单图数据 C 组欠采样（wdsindex 114/398）已知——结论待补齐。</p>
+<p class='geokg-caption' id='rpqa-caption'>最终结果：step 1000 三项宏平均，单图 34.12%、多图 34.72%、SN6V0710 baseline 34.62%。多图较单图 +0.60 个百分点，主要来自 NaturalPerception；差距小于已知单步噪声，不能视为显著优势。3bench 是通用几何感知而非 RPQA 关系题本身；单图 B 类仍存在“题目引用缺失 Image 2”的 control caveat。</p>
 <div class='geo-chart-grid'>
   <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV2</h2><div id='rpqa-chart-solid'></div></div>
   <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='rpqa-chart-geometry'></div></div>
