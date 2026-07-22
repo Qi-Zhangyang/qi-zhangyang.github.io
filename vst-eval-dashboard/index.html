@@ -10,6 +10,9 @@ main{max-width:1680px;margin:0 auto;padding:20px 24px 44px}
 .tabs-row{display:flex;align-items:center;gap:10px;margin:0 0 10px}.tabs-row-label{flex:none;min-width:118px;text-align:center;font-size:12px;font-weight:900;color:#4c4c4c;background:#ecece7;border:1px solid #deded8;border-radius:5px;padding:7px 10px;white-space:nowrap}.tabs-row.new-baseline .tabs-row-label{background:#dcefe1;border-color:#bfdcc7;color:#176231}.tabs-row.new-baseline .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.new-baseline .tab small{font-size:10px;font-weight:700;color:#5e7765;white-space:nowrap}.tabs-row.new-baseline .tab.active{background:#176231;border-color:#176231;color:#fff}.tabs-row.new-baseline .tab.active small{color:#dcefe1}
 .tabs-row.failed-results .tabs-row-label{background:#f6e3e3;border-color:#e3bcbc;color:#8b2929}.tabs-row.failed-results .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.failed-results .tab small{font-size:10px;font-weight:700;color:#8c6262;white-space:nowrap}.tabs-row.failed-results .tab.active{background:#8b2929;border-color:#8b2929;color:#fff}.tabs-row.failed-results .tab.active small{color:#f4dede}
 .tabs-row.geo3d-freshfix .tabs-row-label{background:#f3eadb;border-color:#dec9a7;color:#684710}.tabs-row.geo3d-freshfix .tab.active{background:#684710;border-color:#684710;color:#fff}
+.tabs-row.geo3d-r3p10 .tabs-row-label{background:#f3eadb;border-color:#dec9a7;color:#684710}.tabs-row.geo3d-r3p10 .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.geo3d-r3p10 .tab small{font-size:10px;font-weight:700;color:#8a6a2e;white-space:nowrap}.tabs-row.geo3d-r3p10 .tab.active{background:#684710;border-color:#684710;color:#fff}.tabs-row.geo3d-r3p10 .tab.active small{color:#f3eadb}
+.geo-r3p10-note{background:#fffdf8;border-left:4px solid #8a5d18;padding:11px 14px;margin:0 0 14px;font-size:13px;line-height:1.6;color:#5f4a18}.geo-r3p10-note b{color:#493811}
+.geo-r3p10-table-wrap{overflow:auto;background:#fff;border:1px solid #deded8;border-radius:6px;padding:2px 2px 0}.geo-r3p10-table{font-size:13px}.geo-r3p10-table th:not(:first-child),.geo-r3p10-table td:not(:first-child){text-align:right;white-space:nowrap}.geo-r3p10-table .arm-head{font-weight:900}.geo-r3p10-score{font-weight:900}.geo-r3p10-pos{color:#176231;font-weight:800}.geo-r3p10-neg{color:#9a3d31;font-weight:800}.geo-r3p10-zero{color:#666;font-weight:800}.geo-r3p10-muted{color:#9a9a94}.geo-r3p10-fr-bad{color:#9a3d31;font-weight:900}
 .tabs-row.geokg-3arm .tabs-row-label{background:#e9e8fb;border-color:#ccc9ef;color:#443c88}.tabs-row.geokg-3arm .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.geokg-3arm .tab small{font-size:10px;font-weight:700;color:#6d6798;white-space:nowrap}.tabs-row.geokg-3arm .tab.active{background:#51489a;border-color:#51489a;color:#fff}.tabs-row.geokg-3arm .tab.active small{color:#e9e8fb}
 .tabs-row.current-vst .tabs-row-label{background:#e5edf4;border-color:#c5d5e2;color:#244f73}.tabs-row.current-vst .tabs-row-label small{display:block;margin-top:2px;font-size:10px;font-weight:700;color:#58758d}.tabs-row.current-vst .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.current-vst .tab small{font-size:10px;font-weight:700;color:#6a737b;white-space:nowrap}.tabs-row.current-vst .tab.active{background:#244f73;border-color:#244f73;color:#fff}.tabs-row.current-vst .tab.active small{color:#dce7ef}
 .tabs-row.archived .tabs-row-label{background:#f5f5f0;border-style:dashed;color:#8a8a84}.tabs-row.archived .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;color:#8a8a84;border-style:dashed;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.archived .tab small{font-size:10px;font-weight:700;color:#96968f;white-space:nowrap}.tabs-row.archived .tab.active{background:#6f6f69;border-color:#6f6f69;border-style:solid;color:#fff}.tabs-row.archived .tab.active small{color:#ecece7}
@@ -59,16 +62,16 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
     <button class='tab' data-tab='geo3d-b1000'>Geo3D 对比实验</button>
   </div>
 </div>
+<div class='tabs-row geo3d-r3p10'>
+  <span class='tabs-row-label'>Geo3D R3 P10 四臂 🔬</span>
+  <div class='tabs'>
+    <button class='tab' data-tab='geo3d-r3-p10'><span>Geo3D R3 P10 四臂 · SolidGeo V2</span><small>规则造题数据 · 边训边测 vs 0710 baseline</small></button>
+  </div>
+</div>
 <div class='tabs-row new-baseline'>
   <span class='tabs-row-label'>RPQA 单图vs多图 🔬</span>
   <div class='tabs'>
     <button class='tab' data-tab='rpqa'><span>RPQA 单图 vs 多图（p10）</span><small>边训边测 vs 0710 baseline</small></button>
-  </div>
-</div>
-<div class='tabs-row new-baseline'>
-  <span class='tabs-row-label'>Geo3D R3 P10 四臂 🔬</span>
-  <div class='tabs'>
-    <button class='tab' data-tab='geo3d-r3-p10'><span>Geo3D R3 P10 四臂 · SolidGeo V2</span><small>规则造题数据 · 边训边测 vs 0710 baseline</small></button>
   </div>
 </div>
 <div class='tabs-row new-baseline'>
@@ -215,6 +218,23 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='rpqa-chart-geometry'></div></div>
   <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='rpqa-chart-natural'></div></div>
 </div>
+</section>
+
+<section id='tab-geo3d-r3-p10' class='pane'>
+<h2 class='section-title'>Geo3D R3 P10 四臂 · SolidGeo V2</h2>
+<div class='geokg-toolbar'>
+  <span class='geokg-mode' id='geo-r3p10-subtitle'>规则造题数据 · 边训边测 vs 0710 baseline</span>
+  <span class='geokg-verified' id='geo-r3p10-verified'>边训边测中</span>
+</div>
+<div class='geo-note' id='geo-r3p10-error' hidden></div>
+<div class='geo-r3p10-note'>口径：四臂 = 0710 baseline 90% + 10% 某 SE 分组（规则造题）；<b>只测 SolidGeo V2</b>（SolidGeoPerceptionCircularV2），每 100 步一测，对照 <b>同 step 的 0710 baseline (control)</b>；delta = 臂 − baseline（pp）。单步噪声约 ±0.5–1pp，<b>step500+ 才好下结论</b>；failed_ratio 应为 0。</div>
+<div class='geo-legend' id='geo-r3p10-legend'></div>
+<div class='geo-chart-grid' style='grid-template-columns:repeat(2,minmax(0,1fr))'>
+  <div class='snv6-chart'><h2>SolidGeo V2 绝对分（四臂 + baseline）</h2><div id='geo-r3p10-chart-abs'></div></div>
+  <div class='snv6-chart'><h2>SolidGeo V2 delta（臂 − baseline · pp）</h2><div id='geo-r3p10-chart-delta'></div></div>
+</div>
+<div class='geo-r3p10-table-wrap'><table class='geo-r3p10-table' id='geo-r3p10-table'></table></div>
+<p class='geo-table-note' id='geo-r3p10-updated'></p>
 </section>
 
 
@@ -800,6 +820,86 @@ async function renderRpqa(){
     errorBox.innerHTML=`<b>RPQA 数据加载失败。</b> ${geoEsc(error.message)}`;
   }
 }
+const GEO_R3P10_METRIC='SolidGeoPerceptionCircularV2';
+function geoR3p10DeltaClass(v){return v>0?'geo-r3p10-pos':v<0?'geo-r3p10-neg':'geo-r3p10-zero'}
+function geoR3p10Pp(v){return `${v>0?'+':''}${Number(v).toFixed(2)}pp`}
+function geoR3p10DeltaChart(el,data,series){
+  // 每臂在每个 step 的 (臂 − baseline) pp 曲线；0 线加粗
+  const w=720,h=350,m={l:56,r:20,t:22,b:46};
+  const baseByStep=new Map((data.baseline.rows||[]).map(r=>[r.step,r[GEO_R3P10_METRIC]]));
+  const lines=series.map(s=>({
+    key:s.key,label:s.label,color:s.color,
+    points:(s.rows||[]).filter(r=>baseByStep.has(r.step)&&r[GEO_R3P10_METRIC]!=null)
+      .map(r=>({step:r.step,v:(r[GEO_R3P10_METRIC]-baseByStep.get(r.step))*100}))
+  }));
+  const values=[0,...lines.flatMap(l=>l.points.map(p=>p.v))];
+  let min=Math.min(...values),max=Math.max(...values);
+  const pad=Math.max((max-min)*0.16,0.6);min-=pad;max+=pad;
+  const x=step=>m.l+(step-100)/900*(w-m.l-m.r);
+  const y=value=>m.t+(max-value)/(max-min)*(h-m.t-m.b);
+  const yTicks=[min,(min*2+max)/3,0,(min+max*2)/3,max].sort((a,b)=>a-b).filter((v,i,a)=>i===0||Math.abs(v-a[i-1])>0.15);
+  const grid=yTicks.map(value=>`<line x1="${m.l}" x2="${w-m.r}" y1="${y(value)}" y2="${y(value)}" stroke="${Math.abs(value)<1e-9?'#777':'#deded8'}" ${Math.abs(value)<1e-9?'stroke-width="1.5"':''}/><text x="${m.l-9}" y="${y(value)+4}" text-anchor="end" font-size="12" fill="#555">${value>0?'+':''}${value.toFixed(1)}</text>`).join('');
+  const xTicks=Array.from({length:10},(_,i)=>(i+1)*100).map(step=>`<text x="${x(step)}" y="${h-16}" text-anchor="middle" font-size="11" fill="#555">${step}</text>`).join('');
+  const paths=lines.map(item=>{
+    const marks=item.points.map(point=>`<circle data-geo-r3p10-delta="${item.key}" cx="${x(point.step)}" cy="${y(point.v)}" r="4" fill="#fff" stroke="${item.color}" stroke-width="2.4"><title>${geoEsc(item.label)} · step ${point.step}: ${geoR3p10Pp(point.v)}</title></circle>`).join('');
+    return `<path data-geo-r3p10-delta="${item.key}" d="${geoPath(item.points,x,y)}" fill="none" stroke="${item.color}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>${marks}`;
+  }).join('');
+  el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Geo3D R3 P10 SolidGeo V2 delta vs baseline"><rect width="${w}" height="${h}" fill="#fff"/>${grid}<line x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${h-m.b}" stroke="#bdbdb5"/>${xTicks}${paths}<text x="${w/2}" y="${h-2}" text-anchor="middle" font-size="12" fill="#555">checkpoint · 臂 − baseline (pp)</text></svg>`;
+}
+function renderGeo3dR3P10View(data){
+  const series=data.series||[];
+  const baseFr=new Map();(data.baseline.rows||[]).forEach(r=>{if(r.failed_ratio!=null)baseFr.set(r.step,r.failed_ratio)});
+  const sub=document.getElementById('geo-r3p10-subtitle');if(sub&&data.subtitle)sub.textContent=data.subtitle;
+  const vf=document.getElementById('geo-r3p10-verified');if(vf&&data.verified_through)vf.textContent='已评至 step '+data.verified_through;
+  const up=document.getElementById('geo-r3p10-updated');if(up)up.textContent=`更新时间：${geoEsc(data.updated_at||'')}`;
+  // 图例：baseline + 四臂（带题量）
+  document.getElementById('geo-r3p10-legend').innerHTML=[data.baseline,...series].map(item=>{
+    const isBase=item.key==='control';
+    const extra=(!isBase&&item.n_questions)?` <span class="geo-r3p10-muted">(${item.n_questions.toLocaleString('en-US')} 题)</span>`:'';
+    return `<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(isBase?'0710 baseline (control)':item.label)}${extra}</span>`;
+  }).join('');
+  // 绝对分曲线：复用 geokg137kChart（baseline + 四臂）
+  geokg137kChart(document.getElementById('geo-r3p10-chart-abs'),GEO_R3P10_METRIC,data,series);
+  // delta 曲线
+  geoR3p10DeltaChart(document.getElementById('geo-r3p10-chart-delta'),data,series);
+  // 数据表：step × 臂（V2 分 + delta），末行 failed_ratio
+  const baseByStep=new Map((data.baseline.rows||[]).map(r=>[r.step,r[GEO_R3P10_METRIC]]));
+  const steps=(data.step_targets||[]).filter(step=>baseByStep.has(step)||series.some(s=>(s.rows||[]).some(r=>r.step===step)));
+  const armCell=(s,step)=>{
+    const row=(s.rows||[]).find(r=>r.step===step);
+    if(!row||row[GEO_R3P10_METRIC]==null)return '<td class="geo-r3p10-muted">—</td>';
+    const score=(row[GEO_R3P10_METRIC]*100).toFixed(2);
+    let d='';
+    if(baseByStep.has(step)){
+      const dv=row[GEO_R3P10_METRIC]*100-baseByStep.get(step)*100;
+      d=` <span class="${geoR3p10DeltaClass(dv)}">(${geoR3p10Pp(dv)})</span>`;
+    }
+    const frBad=(row.failed_ratio!=null&&row.failed_ratio>0)?` <span class="geo-r3p10-fr-bad" title="failed_ratio=${row.failed_ratio}">⚠</span>`:'';
+    return `<td><span class="geo-r3p10-score">${score}</span>${d}${frBad}</td>`;
+  };
+  const head=`<thead><tr><th>step</th><th>0710 baseline</th>${series.map(s=>`<th class="arm-head" style="color:${s.color}">${geoEsc(s.label)}</th>`).join('')}</tr></thead>`;
+  const body=steps.map(step=>{
+    const b=baseByStep.has(step)?`<td><span class="geo-r3p10-score">${(baseByStep.get(step)*100).toFixed(2)}</span></td>`:'<td class="geo-r3p10-muted">—</td>';
+    return `<tr><td><b>${step}</b></td>${b}${series.map(s=>armCell(s,step)).join('')}</tr>`;
+  }).join('');
+  // failed_ratio 汇总行
+  const frCell=(rows)=>{const vals=(rows||[]).map(r=>r.failed_ratio).filter(v=>v!=null);if(!vals.length)return '<td class="geo-r3p10-muted">—</td>';const mx=Math.max(...vals);return `<td class="${mx>0?'geo-r3p10-fr-bad':'geo-r3p10-zero'}">${mx.toFixed(3)}</td>`};
+  const frRow=`<tr><td><b>failed_ratio (max)</b></td>${frCell(data.baseline.rows)}${series.map(s=>frCell(s.rows)).join('')}</tr>`;
+  document.getElementById('geo-r3p10-table').innerHTML=`${head}<tbody>${body}${frRow}</tbody>`;
+}
+async function renderGeo3dR3P10(){
+  const errorBox=document.getElementById('geo-r3p10-error');
+  try{
+    const response=await fetch('geo3d_r3_p10_live.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    errorBox.hidden=true;
+    renderGeo3dR3P10View(data);
+  }catch(error){
+    errorBox.hidden=false;
+    errorBox.innerHTML=`<b>Geo3D R3 P10 数据加载失败。</b> ${geoEsc(error.message)}`;
+  }
+}
 function activateDashboardTab(tab){
   const btn=document.querySelector(`[data-tab="${tab}"]`);
   const pane=document.getElementById('tab-'+tab);
@@ -821,6 +921,7 @@ renderCurrentVst();
 renderGeoB1000();
 renderGeokg137k();
 renderRpqa();
+renderGeo3dR3P10();
 activateDashboardTab(location.hash ? location.hash.slice(1) : 'current-video-v1');
 </script>
 </body></html>
