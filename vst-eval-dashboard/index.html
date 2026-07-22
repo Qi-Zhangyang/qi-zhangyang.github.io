@@ -858,8 +858,8 @@ function renderGeo3dR3P10View(data){
   }).join('');
   // 绝对分曲线：复用 geokg137kChart（baseline + 四臂）
   geokg137kChart(document.getElementById('geo-r3p10-chart-abs'),GEO_R3P10_METRIC,data,series);
-  // delta 曲线
-  geoR3p10DeltaChart(document.getElementById('geo-r3p10-chart-delta'),data,series);
+  // delta 曲线（已按用户要求隐藏；元素不存在时跳过）
+  const _r3dc=document.getElementById('geo-r3p10-chart-delta');if(_r3dc)geoR3p10DeltaChart(_r3dc,data,series);
   // 数据表：step × 臂（V2 分 + delta），末行 failed_ratio
   const baseByStep=new Map((data.baseline.rows||[]).map(r=>[r.step,r[GEO_R3P10_METRIC]]));
   const steps=(data.step_targets||[]).filter(step=>baseByStep.has(step)||series.some(s=>(s.rows||[]).some(r=>r.step===step)));
@@ -883,7 +883,7 @@ function renderGeo3dR3P10View(data){
   // failed_ratio 汇总行
   const frCell=(rows)=>{const vals=(rows||[]).map(r=>r.failed_ratio).filter(v=>v!=null);if(!vals.length)return '<td class="geo-r3p10-muted">—</td>';const mx=Math.max(...vals);return `<td class="${mx>0?'geo-r3p10-fr-bad':'geo-r3p10-zero'}">${mx.toFixed(3)}</td>`};
   const frRow=`<tr><td><b>failed_ratio (max)</b></td>${frCell(data.baseline.rows)}${series.map(s=>frCell(s.rows)).join('')}</tr>`;
-  document.getElementById('geo-r3p10-table').innerHTML=`${head}<tbody>${body}${frRow}</tbody>`;
+  const _r3tb=document.getElementById('geo-r3p10-table');if(_r3tb)_r3tb.innerHTML=`${head}<tbody>${body}${frRow}</tbody>`;
 }
 async function renderGeo3dR3P10(){
   const errorBox=document.getElementById('geo-r3p10-error');
