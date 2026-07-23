@@ -228,9 +228,17 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 </div>
 <div class='geo-note' id='geo-r3p10-error' hidden></div>
 <div class='geo-r3p10-note'>口径：四臂 = 0710 baseline 90% + 10% 某 SE 分组（规则造题）；<b>只测 SolidGeo V2</b>（SolidGeoPerceptionCircularV2），每 100 步一测，对照 <b>同 step 的 0710 baseline (control)</b>；delta = 臂 − baseline（pp）。单步噪声约 ±0.5–1pp，<b>step500+ 才好下结论</b>；failed_ratio 应为 0。</div>
-<div class='geo-legend' id='geo-r3p10-legend'></div>
-<div class='geo-chart-grid' style='grid-template-columns:minmax(0,1fr)'>
-  <div class='snv6-chart'><h2>SolidGeo V2 绝对分（四臂 + baseline）</h2><div id='geo-r3p10-chart-abs'></div></div>
+<div class='snv6-chart-grid'>
+  <div class='snv6-chart'>
+    <h2>SE 分组对比（SE0 / SE1 / SE2–5 + baseline）</h2>
+    <div class='geo-legend' id='geo-r3p10-legend-se'></div>
+    <div id='geo-r3p10-chart-se'></div>
+  </div>
+  <div class='snv6-chart'>
+    <h2>全量数据（Full + baseline）</h2>
+    <div class='geo-legend' id='geo-r3p10-legend-full'></div>
+    <div id='geo-r3p10-chart-full'></div>
+  </div>
 </div>
 <p class='geo-table-note' id='geo-r3p10-updated'></p>
 </section>
@@ -755,16 +763,15 @@ function geokg137kV2Series(data){
   const order=['mc_v2fix','fill_v2fix','half_v2fix'];
   return order.map(key=>(data.v2fix_series||[]).find(item=>item.key===key)).filter(Boolean);
 }
-function geokg137kChart(el,metric,data,visibleSeries){
+function geokg137kChart(el,metric,data,visibleSeries,yDomain=null){
   const w=720,h=350,m={l:56,r:20,t:22,b:46};
   const series=[data.baseline,...visibleSeries].map(item=>({
     ...item,
     points:item.rows.map(row=>({step:row.step,v:row[metric]})).filter(point=>point.v!=null)
   }));
   const values=series.flatMap(item=>item.points.map(point=>point.v));
-  let min=Math.min(...values),max=Math.max(...values);
-  const pad=Math.max((max-min)*0.18,0.012);
-  min=Math.max(0,min-pad);max=Math.min(1,max+pad);
+  let min=yDomain?yDomain[0]:Math.min(...values),max=yDomain?yDomain[1]:Math.max(...values);
+  if(!yDomain){const pad=Math.max((max-min)*0.18,0.012);min=Math.max(0,min-pad);max=Math.min(1,max+pad)}
   const x=step=>m.l+(step-100)/900*(w-m.l-m.r);
   const y=value=>m.t+(max-value)/(max-min)*(h-m.t-m.b);
   const yTicks=[min,(min*2+max)/3,(min+max*2)/3,max];
@@ -846,18 +853,28 @@ function geoR3p10DeltaChart(el,data,series){
 }
 function renderGeo3dR3P10View(data){
   const series=data.series||[];
+  const seSeries=series.filter(item=>['se0','se1','se2345'].includes(item.key));
+  const fullSeries=series.filter(item=>item.key==='full');
+  const allValues=[data.baseline,...series].flatMap(item=>(item.rows||[]).map(row=>row[GEO_R3P10_METRIC]).filter(value=>value!=null));
+  let sharedMin=Math.min(...allValues),sharedMax=Math.max(...allValues);
+  const sharedPad=Math.max((sharedMax-sharedMin)*0.18,0.012);
+  const sharedYDomain=[Math.max(0,sharedMin-sharedPad),Math.min(1,sharedMax+sharedPad)];
+  const fullChartData={...data,baseline:{...data.baseline,color:'#adb3b8'}};
   const baseFr=new Map();(data.baseline.rows||[]).forEach(r=>{if(r.failed_ratio!=null)baseFr.set(r.step,r.failed_ratio)});
   const sub=document.getElementById('geo-r3p10-subtitle');if(sub&&data.subtitle)sub.textContent=data.subtitle;
-  const vf=document.getElementById('geo-r3p10-verified');if(vf&&data.verified_through)vf.textContent='已评至 step '+data.verified_through;
+  const lastStep=item=>Math.max(0,...(item.rows||[]).map(row=>Number(row.step)||0));
+  const vf=document.getElementById('geo-r3p10-verified');if(vf)vf.textContent='各臂最新：'+series.map(item=>`${item.label} ${lastStep(item)||'—'}`).join(' · ');
   const up=document.getElementById('geo-r3p10-updated');if(up)up.textContent=`更新时间：${geoEsc(data.updated_at||'')}`;
-  // 图例：baseline + 四臂（带题量）
-  document.getElementById('geo-r3p10-legend').innerHTML=[data.baseline,...series].map(item=>{
+  // 两张独立图：三个 SE 分臂；Full 单独突出。两图都保留灰色 baseline 参照。
+  const renderLegend=(id,items,baseline=data.baseline)=>{document.getElementById(id).innerHTML=[baseline,...items].map(item=>{
     const isBase=item.key==='control';
     const extra=(!isBase&&item.n_questions)?` <span class="geo-r3p10-muted">(${item.n_questions.toLocaleString('en-US')} 题)</span>`:'';
     return `<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(isBase?'0710 baseline (control)':item.label)}${extra}</span>`;
-  }).join('');
-  // 绝对分曲线：复用 geokg137kChart（baseline + 四臂）
-  geokg137kChart(document.getElementById('geo-r3p10-chart-abs'),GEO_R3P10_METRIC,data,series);
+  }).join('')};
+  renderLegend('geo-r3p10-legend-se',seSeries);
+  renderLegend('geo-r3p10-legend-full',fullSeries,fullChartData.baseline);
+  geokg137kChart(document.getElementById('geo-r3p10-chart-se'),GEO_R3P10_METRIC,data,seSeries,sharedYDomain);
+  geokg137kChart(document.getElementById('geo-r3p10-chart-full'),GEO_R3P10_METRIC,fullChartData,fullSeries,sharedYDomain);
   // delta 曲线（已按用户要求隐藏；元素不存在时跳过）
   const _r3dc=document.getElementById('geo-r3p10-chart-delta');if(_r3dc)geoR3p10DeltaChart(_r3dc,data,series);
   // 数据表：step × 臂（V2 分 + delta），末行 failed_ratio
