@@ -57,9 +57,12 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 .arm-info{background:#fff;border-left:4px solid #176231;padding:11px 14px;margin:0 0 16px;font-size:13px;line-height:1.75;color:#3f4f5d}
 .sample-card{background:#fff;border:1px solid #deded8;padding:12px 14px;margin:0 0 16px}
 .sample-title{font-size:13px;color:#33506a;font-weight:700;margin-bottom:8px}
+.sample-item{border-top:1px dashed #e3e8ee;padding-top:9px;margin-top:9px}
+.sample-item:first-of-type{border-top:0;padding-top:0;margin-top:0}
 .sample-imgs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px}
 .sample-imgs img{max-height:210px;max-width:330px;border:1px solid #d5dde4;border-radius:4px;cursor:zoom-in}
 .sample-qa{font-size:12.5px;color:#3f4f5d;line-height:1.65;margin-top:4px;word-break:break-word;white-space:pre-wrap}
+.sample-qa.zh{color:#176231}
 </style>
 </head><body>
 <header><h1>VST-ScanNet 消融专题 🔬</h1><div class='meta'>双维度解构：场景消融（10 个新源场景各自成臂，哪个场景有效）× 题型消融（native MI 9 题型解构 11 臂，哪个题型/形态驱动）。同 p10 配方、六项 full eval、逐 ckpt WebDAV 真值验收；对照 = exact SN6V0710 baseline + native MI。本页不访问任何内网服务。</div></header>
@@ -256,12 +259,17 @@ function renderCurrentArm(data,arm){
   if(!root)return;
   const verified=arm.results.length;
   const infoCard=arm.desc?`<div class="current-note arm-info"><b>臂介绍：</b>${arm.desc}</div>`:'';
-  const smp=(arm.samples&&arm.samples.images&&arm.samples.images.length)?`
+  const smp=(arm.samples&&arm.samples.length)?`
     <div class="sample-card">
-      <div class="sample-title">真实训练样本（本臂 WDS 首 shard 首条，点击看大图）</div>
-      <div class="sample-imgs">${arm.samples.images.map(u=>`<a href="${u}" target="_blank" rel="noopener"><img src="${u}" loading="lazy"></a>`).join('')}</div>
-      ${arm.samples.q?`<div class="sample-qa"><b>Q：</b>${geoEsc(arm.samples.q)}</div>`:''}
-      ${arm.samples.a?`<div class="sample-qa"><b>A：</b>${geoEsc(arm.samples.a)}</div>`:''}
+      <div class="sample-title">真实训练样本 ×${arm.samples.length}（跨 shard 抽取不同场景，点击看大图；Q/A 中英对照）</div>
+      ${arm.samples.map((s,si)=>`
+        <div class="sample-item">
+          <div class="sample-imgs">${s.images.map(u=>`<a href="${u}" target="_blank" rel="noopener"><img src="${u}" loading="lazy"></a>`).join('')}</div>
+          ${s.q_en?`<div class="sample-qa"><b>Q${si+1}：</b>${geoEsc(s.q_en)}</div>`:''}
+          ${s.q_zh?`<div class="sample-qa zh"><b>问题${si+1}：</b>${geoEsc(s.q_zh)}</div>`:''}
+          ${s.a_en?`<div class="sample-qa"><b>A${si+1}：</b>${geoEsc(s.a_en)}</div>`:''}
+          ${s.a_zh?`<div class="sample-qa zh"><b>答案${si+1}：</b>${geoEsc(s.a_zh)}</div>`:''}
+        </div>`).join('')}
     </div>`:'';
   if(!verified){
     root.innerHTML=`

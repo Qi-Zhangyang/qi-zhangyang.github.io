@@ -1,0 +1,828 @@
+{
+ "camgeo-cam-rot": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg"
+   ],
+   "q_en": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. Considering rotation around the forward-facing axis, does the camera roll clockwise or counterclockwise from image-1 to image-2? Options:\nA. rolling counterclockwise\nB. rolling clockwise\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "A. rolling counterclockwise",
+   "q_zh": "摄像机以第一人称视角记录了一系列图像。请识别刻意的相机旋转，忽略微小的抖动。“水平转动（Pan）”是水平（左/右）旋转，“垂直转动（Tilt）”是垂直（上/下）旋转，“翻滚（Roll）”是绕前向轴的旋转。考虑到绕前向轴的旋转，从图像-1到图像-2，相机是顺时针翻滚还是逆时针翻滚？选项：\nA. 逆时针翻滚\nB. 顺时针翻滚\n请尽量使用简短的词汇或短语回答问题。",
+   "a_zh": "A. 逆时针翻滚"
+  },
+  {
+   "images": [
+    "s2/img1.jpg",
+    "s2/img2.jpg"
+   ],
+   "q_en": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. When focusing on the camera's horizontal rotation, does it pan to the left or right from image-1 to image-2? Options: A. panning to the left, B. panning to the right\nPlease select the correct answer from the options above.",
+   "a_en": "A. panning to the left",
+   "q_zh": "相机以第一人称视角记录了一系列图像。请识别相机刻意的旋转，忽略微小的抖动。“水平转动 (Pan)”是水平（左/右）旋转，“垂直转动 (Tilt)”是垂直（上/下）旋转，“翻滚 (Roll)”是绕前进轴旋转。当关注相机的水平旋转时，从图像-1到图像-2，它是向左还是向右水平转动？选项：A. 向左水平转动，B. 向右水平转动。请从以上选项中选择正确答案。",
+   "a_zh": "A. 向左水平转动"
+  },
+  {
+   "images": [
+    "s3/img1.jpg",
+    "s3/img2.jpg"
+   ],
+   "q_en": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. Considering only vertical rotation, does the camera tilt upward or downward from image-1 to image-2? Options: A. tilting upward, B. tilting downward\nPlease select the correct answer from the options above.",
+   "a_en": "B. tilting downward",
+   "q_zh": "摄像机以第一人称视角记录了一系列图像。请识别刻意的相机旋转，忽略微小的抖动。“水平转动 (Pan)”是水平（左/右）旋转，“垂直俯仰 (Tilt)”是垂直（上/下）旋转，“翻滚 (Roll)”是绕前进轴旋转。仅考虑垂直旋转，相机从图像-1到图像-2是向上俯仰还是向下俯仰？选项：A. 向上俯仰，B. 向下俯仰。请从上述选项中选择正确答案。",
+   "a_zh": "B. 向下俯仰"
+  },
+  {
+   "images": [
+    "s4/img1.jpg",
+    "s4/img2.jpg"
+   ],
+   "q_en": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. Considering rotation around the forward-facing axis, does the camera roll clockwise or counterclockwise from image-1 to image-2? Options:\nA. rolling counterclockwise\nB. rolling clockwise\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "A. rolling counterclockwise",
+   "q_zh": "摄像机以第一人称视角记录了一系列图像。请识别刻意的相机旋转，忽略微小的抖动。“水平转动（Pan）”是水平（左/右）旋转，“垂直转动（Tilt）”是垂直（上/下）旋转，“翻滚（Roll）”是绕前向轴的旋转。考虑到绕前向轴的旋转，从图像-1到图像-2，相机是顺时针翻滚还是逆时针翻滚？选项：\nA. 逆时针翻滚\nB. 顺时针翻滚\n请尽量使用简短的词汇或短语回答问题。",
+   "a_zh": "A. 逆时针翻滚"
+  }
+ ],
+ "camgeo-cam-trans": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg"
+   ],
+   "q_en": "Images are acquired in a continuous stream from a first-person perspective. How does the camera's location change through space? Options:\nA. forward and leftward\nB. backward\nC. backward and leftward\nD. forward and rightward\nPlease select the correct answer from the options above.",
+   "a_en": "D. forward and rightward",
+   "q_zh": "图像是以第一人称视角连续采集的。摄像机在空间中的位置是如何变化的？选项：\nA. 向前并向左\nB. 向后\nC. 向后并向左\nD. 向前并向右\n请从以上选项中选择正确答案。",
+   "a_zh": "D. 向前并向右"
+  },
+  {
+   "images": [
+    "s2/img1.jpg",
+    "s2/img2.jpg"
+   ],
+   "q_en": "Each frame is taken in turn, providing a continuous first-person perspective. The objective is to recognize the primary movement direction of the camera, ignoring slight jitters. Which way does the camera's position move? Options: A. rightward, B. leftward\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "A. rightward",
+   "q_zh": "每一帧按顺序拍摄，提供连续的第一人称视角。目标是识别摄像机的主要移动方向，忽略轻微的抖动。摄像机的位置向哪个方向移动？选项：A. 向右，B. 向左。如果可能，请尝试用简短的词语或短语回答问题。",
+   "a_zh": "A. 向右"
+  },
+  {
+   "images": [
+    "s3/img1.jpg",
+    "s3/img2.jpg"
+   ],
+   "q_en": "Each frame is taken in turn, providing a continuous first-person perspective. How does the camera's location change through space? Options:\nA. rightward and upward\nB. backward and leftward\nC. rightward and downward\nD. backward\nAnswer the question using a single word or phrase.",
+   "a_en": "B. backward and leftward",
+   "q_zh": "每一帧按顺序拍摄，提供连续的第一人称视角。摄像机的位置在空间中是如何变化的？选项：\nA. 向右且向上\nB. 向后且向左\nC. 向右且向下\nD. 向后\n请用一个单词或短语回答问题。",
+   "a_zh": "B. 向后且向左"
+  },
+  {
+   "images": [
+    "s4/img1.jpg",
+    "s4/img2.jpg"
+   ],
+   "q_en": "The images are taken continuously from a first-person perspective. How does the camera's location change through space? Options:\nA. backward and leftward\nB. upward\nC. backward and rightward\nD. rightward and downward\nAnswer the question using a single word or phrase.",
+   "a_en": "C. backward and rightward",
+   "q_zh": "这些图像是以第一人称视角连续拍摄的。摄像机在空间中的位置是如何变化的？选项：\nA. 向后并向左\nB. 向上\nC. 向后并向右\nD. 向右并向下\n请用一个单词或短语回答问题。",
+   "a_zh": "C. 向后并向右"
+  }
+ ],
+ "camgeo-cam-view-direction": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg"
+   ],
+   "q_en": "Images are acquired in a continuous stream from a first-person perspective. Assuming the second shot was taken facing northwest, what is the camera's facing direction for the first shot? Options: A. southwest, B. it cannot be determined, C. west, D. northeast\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "C. west",
+   "q_zh": "图像是以第一人称视角连续采集的。假设第二张照片是面向西北方向拍摄的，第一张照片拍摄时相机的朝向是什么？选项：A. 西南，B. 无法确定，C. 正西，D. 东北。请尽量使用简短的词汇或短语回答问题。",
+   "a_zh": "C. 正西"
+  },
+  {
+   "images": [
+    "s2/img1.jpg",
+    "s2/img2.jpg"
+   ],
+   "q_en": "Each frame is taken in turn, providing a continuous first-person perspective. Assuming the first shot was taken facing north, what is the camera's facing direction for the second shot? Options:\nA. northeast\nB. north\nC. the result cannot be determined\nD. south\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "B. north",
+   "q_zh": "每一帧都是按顺序拍摄的，提供连续的第一人称视角。假设第一张照片是朝北拍摄的，那么第二张照片中相机的朝向是什么？选项：\nA. 东北\nB. 北\nC. 无法确定结果\nD. 南\n如果可能，请尝试用简短的词或短语回答问题。",
+   "a_zh": "B. 北"
+  },
+  {
+   "images": [
+    "s3/img1.jpg",
+    "s3/img2.jpg"
+   ],
+   "q_en": "Each frame is taken in turn, providing a continuous first-person perspective. Assuming the second shot was taken facing southeast, what is the camera's facing direction for the first shot? Options:\nA. cannot say for sure\nB. southeast\nC. southwest\nD. east\nPlease select the correct answer from the options above.",
+   "a_en": "B. southeast",
+   "q_zh": "每一帧都是按顺序拍摄的，提供了一个连续的第一人称视角。假设第二张照片是面向东南方向拍摄的，第一张照片中相机的朝向是什么？选项：\nA. 无法确定\nB. 东南\nC. 西南\nD. 东\n请从以上选项中选择正确答案。",
+   "a_zh": "B. 东南"
+  },
+  {
+   "images": [
+    "s4/img1.jpg",
+    "s4/img2.jpg"
+   ],
+   "q_en": "Each frame is taken in turn, providing a continuous first-person perspective. Assuming the first shot was taken facing south, what is the camera's facing direction for the second shot? Options:\nA. north\nB. southwest\nC. it cannot be determined\nD. south\nAnswer the question using a single word or phrase.",
+   "a_en": "D. south",
+   "q_zh": "每一帧都是按顺序拍摄的，提供了连续的第一人称视角。假设第一张照片是朝南拍摄的，那么第二张照片中相机的朝向是什么？选项：\nA. 北\nB. 西南\nC. 无法确定\nD. 南\n请用一个词或短语回答问题。",
+   "a_zh": "D. 南"
+  }
+ ],
+ "camgeo-cam-position": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg"
+   ],
+   "q_en": "Images are acquired in a continuous stream from a first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options:\nA. front\nB. uncertain\nC. right\nD. back left\nAnswer the question using a single word or phrase.",
+   "a_en": "A. front",
+   "q_zh": "图像是以第一人称视角连续采集的。如果第一张照片是在我所在的位置拍摄的，那么第二台相机相对于那个位置在哪里？选项：\nA. 前方\nB. 不确定\nC. 右方\nD. 左后方\n请用一个词或短语回答问题。",
+   "a_zh": "A. 前方"
+  },
+  {
+   "images": [
+    "s2/img1.jpg",
+    "s2/img2.jpg"
+   ],
+   "q_en": "Each frame is taken in turn, providing a continuous first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options:\nA. right\nB. back left\nC. front\nD. cannot say for sure\nAnswer the question using a single word or phrase.",
+   "a_en": "D. cannot say for sure",
+   "q_zh": "每一帧都是按顺序拍摄的，提供了连续的第一人称视角。如果第一张照片是在我的位置拍摄的，那么第二台相机相对于那个位置在哪里？选项：\nA. 右侧\nB. 左后方\nC. 前方\nD. 无法确定\n请用一个词或短语回答问题。",
+   "a_zh": "D. 无法确定"
+  },
+  {
+   "images": [
+    "s3/img1.jpg",
+    "s3/img2.jpg"
+   ],
+   "q_en": "The images are taken continuously from a first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options:\nA. back\nB. it cannot be determined\nC. front left\nD. back right\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "B. it cannot be determined",
+   "q_zh": "这些图像是以第一人称视角连续拍摄的。如果第一张照片是在我的位置拍摄的，那么第二台相机相对于该位置在什么方向？选项：\nA. 后方\nB. 无法确定\nC. 左前方\nD. 右后方\n请尽量使用简短的词汇或短语回答。",
+   "a_zh": "B. 无法确定"
+  },
+  {
+   "images": [
+    "s4/img1.jpg",
+    "s4/img2.jpg"
+   ],
+   "q_en": "The images are taken continuously from a first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options:\nA. back right\nB. right\nC. front left\nD. cannot say for sure\nAnswer the question using a single word or phrase.",
+   "a_en": "D. cannot say for sure",
+   "q_zh": "这些图像是以第一人称视角连续拍摄的。如果第一张照片是在我当前的位置拍摄的，那么第二台相机相对于该位置在什么方向？选项：\nA. 右后方\nB. 右侧\nC. 左前方\nD. 无法确定\n请使用单词或短语回答。",
+   "a_zh": "D. 无法确定"
+  }
+ ],
+ "camgeo-correspondence": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg"
+   ],
+   "q_en": "A point is highlighted with a blue circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple blue-circled points labeled 'A, B, C, D'. Which matches the original point?\nA point-A\nB point-B\nC point-C\nD point-D",
+   "a_en": "B point-B",
+   "q_zh": "图 1 中用蓝色圆圈（标记为“REF”）标出了一个点。在调整相机视角后，图 2 显示了多个标有“A、B、C、D”的蓝色圆圈点。请问哪一个点与原始点相匹配？\nA 点-A\nB 点-B\nC 点-C\nD 点-D",
+   "a_zh": "B 点-B"
+  },
+  {
+   "images": [
+    "s2/img1.jpg",
+    "s2/img2.jpg"
+   ],
+   "q_en": "A point is highlighted with a cyan circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple cyan-circled points labeled 'A, B, C, D'. Which matches the original point?\nA point-A\nB point-B\nC point-C\nD point-D",
+   "a_en": "B point-B",
+   "q_zh": "图一中有一个用青色圆圈（标记为“REF”）标出的点。在调整相机视角后，图二显示了多个标有“A、B、C、D”的青色圆圈点。哪一个点与原始点相匹配？\nA 点-A\nB 点-B\nC 点-C\nD 点-D",
+   "a_zh": "B 点-B"
+  },
+  {
+   "images": [
+    "s3/img1.jpg",
+    "s3/img2.jpg"
+   ],
+   "q_en": "A point is highlighted with a gold circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple gold-circled points labeled 'A, B, C, D'. Which matches the original point?\nA point-A\nB point-B\nC point-C\nD point-D",
+   "a_en": "D point-D",
+   "q_zh": "图 1 中有一个用金色圆圈标出的点（标记为“REF”）。在调整相机视角后，图 2 显示了多个标记为“A、B、C、D”的金色圆圈点。请问哪一个点与原始点相匹配？\nA 点-A\nB 点-B\nC 点-C\nD 点-D",
+   "a_zh": "D 点-D"
+  },
+  {
+   "images": [
+    "s4/img1.jpg",
+    "s4/img2.jpg"
+   ],
+   "q_en": "A point is highlighted with a red circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple red-circled points labeled 'A, B, C, D'. Which matches the original point?\nA point-A\nB point-B\nC point-C\nD point-D",
+   "a_en": "A point-A",
+   "q_zh": "图 1 中有一个用红圈突出显示的点（标记为“REF”）。在调整相机视角后，图 2 显示了多个标记为“A、B、C、D”的红圈点。哪一个与原始点相匹配？\nA 点-A\nB 点-B\nC 点-C\nD 点-D",
+   "a_zh": "A 点-A"
+  }
+ ],
+ "multiimgcamgeo-b1": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg",
+    "s1/img3.jpg"
+   ],
+   "q_en": "A camera moves through the room and takes three shots in sequence (view-1, then view-2, then view-3). Order the three camera positions along the back-to-front axis of the room, from the back-most to the front-most. Options:\nA. view-1 -> view-2 -> view-3\nB. view-3 -> view-2 -> view-1\nC. view-2 -> view-3 -> view-1\nD. view-3 -> view-1 -> view-2\nPlease select the correct answer from the options above.",
+   "a_en": "A. view-1 -> view-2 -> view-3",
+   "q_zh": "一个摄像头在房间内移动，并依次拍摄了三张照片（视角-1，接着是视角-2，然后是视角-3）。请沿着房间的后向到前向轴，将这三个摄像头的位置按从最靠后到最靠前的顺序排列。选项：\nA. 视角-1 -> 视角-2 -> 视角-3\nB. 视角-3 -> 视角-2 -> 视角-1\nC. 视角-2 -> 视角-3 -> 视角-1\nD. 视角-3 -> 视角-1 -> 视角-2\n请从上述选项中选择正确答案。",
+   "a_zh": "A. 视角-1 -> 视角-2 -> 视角-3"
+  },
+  {
+   "images": [
+    "s2/img1.jpg",
+    "s2/img2.jpg",
+    "s2/img3.jpg"
+   ],
+   "q_en": "Three images are captured in order (view-1, view-2, view-3) from a moving first-person camera. Combining both turns, what is the net change in the direction the camera is facing from view-1 to view-3 (ignore small jitter)? Options: A. about 30 degrees to the left (counter-clockwise), B. about 15 degrees to the left (counter-clockwise), C. about 75 degrees to the right (clockwise), D. about 45 degrees to the left (counter-clockwise)\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "A. about 30 degrees to the left (counter-clockwise)",
+   "q_zh": "一个移动的第一人称相机按顺序拍摄了三张图像（视角-1、视角-2、视角-3）。结合两次转向，从视角-1到视角-3，相机朝向的净变化是多少（忽略微小抖动）？选项：A. 向左（逆时针）约 30 度，B. 向左（逆时针）约 15 度，C. 向右（顺时针）约 75 度，D. 向左（逆时针）约 45 度。请尽量使用简短的词汇或短语回答问题。",
+   "a_zh": "A. 向左（逆时针）约 30 度"
+  },
+  {
+   "images": [
+    "s3/img1.jpg",
+    "s3/img2.jpg",
+    "s3/img3.jpg"
+   ],
+   "q_en": "Three images are captured in order (view-1, view-2, view-3) from a moving first-person camera. Combining both turns, what is the net change in the direction the camera is facing from view-1 to view-3 (ignore small jitter)? Options: A. about 15 degrees to the left (counter-clockwise), B. about 15 degrees to the right (clockwise), C. about 90 degrees to the right (clockwise), D. about 30 degrees to the left (counter-clockwise)\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "D. about 30 degrees to the left (counter-clockwise)",
+   "q_zh": "从移动的第一人称视角相机按顺序拍摄了三张图像（视角-1、视角-2、视角-3）。结合两次转向，从视角-1到视角-3，相机朝向的净变化是多少（忽略微小抖动）？选项：A. 向左（逆时针）约 15 度，B. 向右（顺时针）约 15 度，C. 向右（顺时针）约 90 度，D. 向左（逆时针）约 30 度。请尽可能使用简短的词汇或短语回答问题。",
+   "a_zh": "D. 向左（逆时针）约 30 度"
+  },
+  {
+   "images": [
+    "s4/img1.jpg",
+    "s4/img2.jpg",
+    "s4/img3.jpg"
+   ],
+   "q_en": "The three images below are frames taken one after another (view-1, view-2, view-3) from a single moving camera. Imagine standing at the view-2 camera and looking toward the view-3 camera. Relative to that line of sight, where is the view-1 camera? Options:\nA. directly on the line between them\nB. on the left side\nC. on the right side\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "B. on the left side",
+   "q_zh": "下面三张图像是由单个移动摄像机依次拍摄的帧（视角-1、视角-2、视角-3）。想象你站在视角-2摄像机的位置，并朝向视角-3摄像机的方向看。相对于这条视线，视角-1摄像机位于什么位置？选项：\nA. 直接位于两者之间的连线上\nB. 在左侧\nC. 在右侧\n请尽量用简短的词汇或短语回答问题。",
+   "a_zh": "B. 在左侧"
+  }
+ ],
+ "videocamgeo-b2": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg"
+   ],
+   "q_en": "The images are taken continuously from a first-person perspective. The objective is to recognize the primary movement direction of the camera, ignoring slight jitters. Which way does the camera's position move? Options:\nA. rightward\nB. leftward\nAnswer the question using a single word or phrase.",
+   "a_en": "B. leftward",
+   "q_zh": "这些图像是从第一人称视角连续拍摄的。目标是识别摄像机的主要移动方向，忽略轻微的抖动。摄像机的位置向哪个方向移动？选项：\nA. 向右\nB. 向左\n请用一个词或短语回答问题。",
+   "a_zh": "B. 向左"
+  },
+  {
+   "images": [
+    "s2/img1.jpg",
+    "s2/img2.jpg"
+   ],
+   "q_en": "Images are acquired in a continuous stream from a first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options:\nA. it cannot be determined\nB. left\nC. back\nD. front right\nPlease select the correct answer from the options above.",
+   "a_en": "A. it cannot be determined",
+   "q_zh": "图像是以第一人称视角连续采集的。如果第一张照片是在我的位置拍摄的，那么第二台摄像机相对于那个位置在哪里？选项：\nA. 无法确定\nB. 左侧\nC. 后方\nD. 右前方\n请从以上选项中选择正确答案。",
+   "a_zh": "A. 无法确定"
+  },
+  {
+   "images": [
+    "s3/img1.jpg",
+    "s3/img2.jpg"
+   ],
+   "q_en": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. When focusing on the camera's horizontal rotation, does it pan to the left or right from image-1 to image-2? Options:\nA. panning to the left\nB. panning to the right\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "A. panning to the left",
+   "q_zh": "摄像机以第一人称视角记录了一系列图像。请识别相机的刻意旋转，忽略微小的抖动。“水平转动 (Pan)”是水平（左/右）旋转，“俯仰 (Tilt)”是垂直（上/下）旋转，“翻滚 (Roll)”是绕前进轴旋转。关注相机的水平旋转，从图像-1到图像-2，它是向左还是向右转动？选项：\nA. 向左转动\nB. 向右转动\n请尽量使用简短的词汇或短语回答。",
+   "a_zh": "A. 向左转动"
+  },
+  {
+   "images": [
+    "s4/img1.jpg",
+    "s4/img2.jpg"
+   ],
+   "q_en": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. When focusing on the camera's horizontal rotation, does it pan to the left or right from image-1 to image-2? Options:\nA. panning to the left\nB. panning to the right\nPlease select the correct answer from the options above.",
+   "a_en": "B. panning to the right",
+   "q_zh": "摄像机以第一人称视角记录了一系列图像。请识别出相机刻意的旋转，忽略微小的抖动。“水平转动 (Pan)”是水平方向（左/右）的旋转，“垂直转动 (Tilt)”是垂直方向（上/下）的旋转，“翻滚 (Roll)”是绕前进轴的旋转。当关注相机的水平旋转时，从图像-1到图像-2，它是向左还是向右水平转动？选项：\nA. 向左水平转动\nB. 向右水平转动\n请从以上选项中选择正确答案。",
+   "a_zh": "B. 向右水平转动"
+  }
+ ],
+ "objtask-obj-orientation": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg"
+   ],
+   "q_en": "Given that laptop (in frame 1) is northwest of table (in frame 2), what is the direction of window (in frame 1) relative to table (in frame 2)? Options:\nA. northwest\nB. north\nC. northeast\nD. west\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "B. north",
+   "q_zh": "已知笔记本电脑（帧 1）位于桌子（帧 2）的西北方向，那么窗户（帧 1）相对于桌子（帧 2）的方向是什么？选项：\nA. 西北\nB. 北\nC. 东北\nD. 西\n请尽量使用简短的词汇或短语回答问题。",
+   "a_zh": "B. 北"
+  },
+  {
+   "images": [
+    "s2/img1.jpg",
+    "s2/img2.jpg"
+   ],
+   "q_en": "Given that paper (in frame 2) is to the front-left of curtain (in frame 1), what is the direction of table (in frame 2) relative to curtain (in frame 1)? Options: A. back, B. back-left, C. left, D. front-left\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "D. front-left",
+   "q_zh": "已知纸张（在第 2 帧中）位于窗帘（在第 1 帧中）的左前方，那么桌子（在第 2 帧中）相对于窗帘（在第 1 帧中）的方向是什么？选项：A. 后方，B. 左后方，C. 左侧，D. 左前方。请尽量使用简短的词汇或短语回答问题。",
+   "a_zh": "D. 左前方"
+  },
+  {
+   "images": [
+    "s3/img1.jpg",
+    "s3/img2.jpg"
+   ],
+   "q_en": "Given that divider (in frame 2) is northeast of board (in frame 1), what is the direction of cabinet (in frame 2) relative to board (in frame 1)? Options: A. south, B. northwest, C. southwest, D. southeast\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "D. southeast",
+   "q_zh": "已知隔板（在帧 2 中）位于板子（在帧 1 中）的东北方向，那么柜子（在帧 2 中）相对于板子（在帧 1 中）的方向是什么？选项：A. 南，B. 西北，C. 西南，D. 东南。请尽量用简短的词汇或短语回答问题。",
+   "a_zh": "D. 东南"
+  },
+  {
+   "images": [
+    "s4/img1.jpg",
+    "s4/img2.jpg"
+   ],
+   "q_en": "Given that shelf (in frame 1) is east of computer (in frame 1), what is the direction of keyboard (in frame 2) relative to computer (in frame 1)? Options:\nA. east\nB. northwest\nC. south\nD. southwest\nPlease select the correct answer from the options above.",
+   "a_en": "B. northwest",
+   "q_zh": "已知书架（在帧 1 中）位于电脑（在帧 1 中）的东面，那么键盘（在帧 2 中）相对于电脑（在帧 1 中）的方向是什么？选项：\nA. 东\nB. 西北\nC. 南\nD. 西南\n请从以上选项中选择正确答案。",
+   "a_zh": "B. 西北"
+  }
+ ],
+ "objtask-obj-orientation-camera": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg"
+   ],
+   "q_en": "If, at the camera position of the second image, the person considers the direction to table (in frame 2) as southwest, what direction is chair (in frame 1) relative to the person? Options:\nA. east\nB. northeast\nC. southeast\nD. southwest\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "D. southwest",
+   "q_zh": "如果在第二张图像的相机位置，此人将指向桌子（在第2帧中）的方向视为西南方向，那么椅子（在第1帧中）相对于此人是在什么方向？选项：\nA. 东\nB. 东北\nC. 东南\nD. 西南\n请尽量用简短的词汇或短语回答问题。",
+   "a_zh": "D. 西南"
+  },
+  {
+   "images": [
+    "s2/img1.jpg",
+    "s2/img2.jpg"
+   ],
+   "q_en": "When the person stands at the camera position of the second image and looks at sink (in frame 2) (which is front), what is the direction of microwave (in frame 1) from the person? Options: A. back, B. front-left, C. front-right, D. back-right\nPlease select the correct answer from the options above.",
+   "a_en": "B. front-left",
+   "q_zh": "当人站在第二张图像的相机位置并看向水槽（图 2 中，即前方）时，微波炉（图 1 中）位于该人的哪个方向？选项：A. 后方，B. 左前方，C. 右前方，D. 右后方。请从以上选项中选择正确答案。",
+   "a_zh": "B. 左前方"
+  },
+  {
+   "images": [
+    "s3/img1.jpg",
+    "s3/img2.jpg"
+   ],
+   "q_en": "If, at the camera position of the second image, the person considers the direction to sink (in frame 2) as west, what direction is shower (in frame 1) relative to the person? Options: A. east, B. west, C. south, D. northwest\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "D. northwest",
+   "q_zh": "如果在第二张图像的相机位置，此人将（图 2 中的）水槽方向视为西方，那么（图 1 中的）淋浴间相对于此人的方向是什么？选项：A. 东，B. 西，C. 南，D. 西北。请尽量使用简短的词汇或短语回答问题。",
+   "a_zh": "D. 西北"
+  },
+  {
+   "images": [
+    "s4/img1.jpg",
+    "s4/img2.jpg"
+   ],
+   "q_en": "If, at the camera position of the first image, the person considers the direction to bag (in frame 1) as northeast, what direction is switch (in frame 2) relative to the person? Options:\nA. southwest\nB. south\nC. northeast\nD. southeast\nAnswer the question using a single word or phrase.",
+   "a_en": "C. northeast",
+   "q_zh": "如果在第一张图像的相机位置，此人将指向包（在第1帧中）的方向视为东北方向，那么开关（在第2帧中）相对于此人的方向是什么？选项：A. 西南 B. 南 C. 东北 D. 东南 请用一个词或短语回答问题。",
+   "a_zh": "C. 东北"
+  }
+ ],
+ "objtask-obj-orientation-camera-vp": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg"
+   ],
+   "q_en": "When the person stands at the camera position of the first image and looks at stapler (highlighted at the gold point) (which is front), what is the direction of cabinet (positioned at the purple point) from the person? Options:\nA. back-right\nB. back-left\nC. front-right\nD. front\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "D. front",
+   "q_zh": "当人站在第一张图像的相机位置并看向订书机（金点标注处，即前方）时，柜子（紫点标注处）相对于人的方向是什么？选项：\nA. 右后方\nB. 左后方\nC. 右前方\nD. 前方\n请尽量使用简短的词汇或短语回答。",
+   "a_zh": "D. 前方"
+  },
+  {
+   "images": [
+    "s2/img1.jpg",
+    "s2/img2.jpg"
+   ],
+   "q_en": "If, at the camera position of the first image, the person considers the direction to switch (linked to the cyan point) as south, what direction is door (linked to the green point) relative to the person? Options: A. south, B. east, C. north, D. northwest\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "A. south",
+   "q_zh": "如果在第一张图像的相机位置，这个人将开关（连接到青色点）的方向视为南方，那么门（连接到绿色点）相对于这个人的方向是什么？选项：A. 南方，B. 东方，C. 北方，D. 西北方。请尽量用简短的词汇或短语回答问题。",
+   "a_zh": "A. 南方"
+  },
+  {
+   "images": [
+    "s3/img1.jpg",
+    "s3/img2.jpg"
+   ],
+   "q_en": "If, at the camera position of the second image, the person considers the direction to faucet (linked to the orange point) as southeast, what direction is stall (denoted by the yellow point) relative to the person? Options:\nA. north\nB. southwest\nC. south\nD. west\nAnswer the question using a single word or phrase.",
+   "a_en": "C. south",
+   "q_zh": "如果在第二张图像的相机位置处，某人将指向水龙头（与橙色点相连）的方向视为东南方向，那么隔间（由黄色点表示）相对于该人是什么方向？选项：\nA. 北\nB. 西南\nC. 南\nD. 西\n请用一个词或短语回答问题。",
+   "a_zh": "C. 南"
+  },
+  {
+   "images": [
+    "s4/img1.jpg",
+    "s4/img2.jpg"
+   ],
+   "q_en": "If, at the camera position of the second image, the person considers the direction to chair (positioned at the blue point) as southeast, what direction is toy (denoted by the purple point) relative to the person? Options: A. northeast, B. southeast, C. south, D. southwest\nPlease select the correct answer from the options above.",
+   "a_en": "B. southeast",
+   "q_zh": "如果在第二张图像的相机位置处，某人将指向椅子（位于蓝色点处）的方向视为东南方向，那么玩具（由紫色点表示）相对于该人处于什么方向？选项：A. 东北，B. 东南，C. 南，D. 西南。请从以上选项中选择正确答案。",
+   "a_zh": "B. 东南"
+  }
+ ],
+ "objtask-obj-orientation-vp": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg"
+   ],
+   "q_en": "Given that toilet (positioned at the gold point) is northeast of soap dish (indicated by the purple point), what is the direction of curtain (highlighted at the cyan point) relative to soap dish (indicated by the purple point)? Options: A. east, B. northwest, C. north, D. southwest\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "A. east",
+   "q_zh": "已知马桶（位于金色点）在肥皂盒（由紫色点标出）的东北方向，那么窗帘（由青色点标出）相对于肥皂盒（由紫色点标出）的方向是什么？选项：A. 东，B. 西北，C. 北，D. 西南。如果可能，请尝试用简短的词或短语回答问题。",
+   "a_zh": "A. 东"
+  },
+  {
+   "images": [
+    "s2/img1.jpg",
+    "s2/img2.jpg"
+   ],
+   "q_en": "Given that cart (positioned at the cyan point) is southwest of radiator (denoted by the yellow point), what is the direction of socket (highlighted at the gold point) relative to radiator (denoted by the yellow point)? Options: A. southeast, B. west, C. south, D. northwest\nPlease select the correct answer from the options above.",
+   "a_en": "B. west",
+   "q_zh": "已知手推车（位于青色点）在暖气片（由黄色点表示）的西南方向，那么插座（在金色点处突出显示）相对于暖气片（由黄色点表示）的方向是什么？选项：A. 东南，B. 西，C. 南，D. 西北。请从以上选项中选择正确答案。",
+   "a_zh": "B. 西"
+  },
+  {
+   "images": [
+    "s3/img1.jpg",
+    "s3/img2.jpg"
+   ],
+   "q_en": "Given that picture (linked to the green point) is east of plant (denoted by the purple point), what is the direction of column (indicated by the red point) relative to plant (denoted by the purple point)? Options: A. east, B. northwest, C. northeast, D. south\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "D. south",
+   "q_zh": "已知图片（由绿点标出）位于植物（由紫点标出）的东边，那么柱子（由红点标出）相对于植物（由紫点标出）的方向是什么？选项：A. 东，B. 西北，C. 东北，D. 南。请尽量使用简短的词汇或短语回答问题。",
+   "a_zh": "D. 南"
+  },
+  {
+   "images": [
+    "s4/img1.jpg",
+    "s4/img2.jpg"
+   ],
+   "q_en": "Given that door (indicated by the yellow point) is southeast of desk (linked to the cyan point), what is the direction of picture (shown by the purple point) relative to desk (linked to the cyan point)? Options: A. northwest, B. northeast, C. southeast, D. north\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "C. southeast",
+   "q_zh": "已知门（由黄色点标出）位于书桌（由青色点标出）的东南方向，那么画（由紫色点标出）相对于书桌（由青色点标出）在什么方向？选项：A. 西北，B. 东北，C. 东南，D. 北。请尽量使用简短的词语或短语回答。",
+   "a_zh": "C. 东南"
+  }
+ ],
+ "scannetpp-mi-v1": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg"
+   ],
+   "q_en": "When the person stands at the camera position of the second image and looks at tv (in frame 2) (which is front), what is the direction of bookshelf (in frame 1) from the person? Options:\nA. back\nB. back-left\nC. front\nD. front-right\nAnswer the question using a single word or phrase.",
+   "a_en": "D. front-right",
+   "q_zh": "当人站在第二张图像的相机位置并看向电视（在第2帧中）（即前方）时，书架（在第1帧中）位于该人的哪个方向？选项：\nA. 后方\nB. 左后方\nC. 前方\nD. 右前方\n请用一个词或短语回答问题。",
+   "a_zh": "D. 右前方"
+  },
+  {
+   "images": [
+    "s2/img1.jpg",
+    "s2/img2.jpg"
+   ],
+   "q_en": "When the person stands at the camera position of the second image and looks at cabinet (in frame 1) (which is front), what is the direction of pc tower (in frame 2) from the person? Options:\nA. front\nB. back\nC. right\nD. back-left\nPlease select the correct answer from the options above.",
+   "a_en": "A. front",
+   "q_zh": "当人站在第二张图像的相机位置，面向柜子（第1帧中，即前方）时，电脑主机（第2帧中）位于该人的什么方向？选项：\nA. 前方\nB. 后方\nC. 右侧\nD. 左后方\n请从以上选项中选择正确答案。",
+   "a_zh": "A. 前方"
+  },
+  {
+   "images": [
+    "s3/img1.jpg",
+    "s3/img2.jpg"
+   ],
+   "q_en": "The images are taken continuously from a first-person perspective. If the camera faced 12 o'clock direction when the first picture was taken, what is its direction for the second picture? Options: A. the result cannot be determined, B. 11 o'clock, C. 3 o'clock, D. 10 o'clock\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "B. 11 o'clock",
+   "q_zh": "这些图像是从第一人称视角连续拍摄的。如果拍摄第一张照片时相机面向 12 点钟方向，那么拍摄第二张照片时它的方向是什么？选项：A. 无法确定结果，B. 11 点钟方向，C. 3 点钟方向，D. 10 点钟方向。如果可能，请尝试用简短的词或短语回答问题。",
+   "a_zh": "B. 11 点钟方向"
+  },
+  {
+   "images": [
+    "s4/img1.jpg",
+    "s4/img2.jpg"
+   ],
+   "q_en": "Given that wall lamp (linked to the cyan point) is to the back-left of shelf (denoted by the orange point), what is the direction of cover up panel (linked to the gold point) relative to shelf (denoted by the orange point)? Options: A. left, B. back, C. front, D. back-left\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "D. back-left",
+   "q_zh": "已知壁灯（对应青色点）位于置物架（由橙色点表示）的左后方，那么遮盖板（对应金色点）相对于置物架（由橙色点表示）的方向是什么？选项：A. 左侧，B. 后方，C. 前方，D. 左后方。请尽量使用简短的词汇或短语回答。",
+   "a_zh": "D. 左后方"
+  }
+ ],
+ "arkitscenes-mi-v1": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg"
+   ],
+   "q_en": "The images are taken continuously from a first-person perspective. If the camera faced 3 o'clock direction when the first picture was taken, what is its direction for the second picture? Options: A. 3 o'clock, B. 1 o'clock, C. 7 o'clock, D. cannot say for sure\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "A. 3 o'clock",
+   "q_zh": "这些图像是从第一人称视角连续拍摄的。如果拍摄第一张照片时相机朝向3点钟方向，那么拍摄第二张照片时它的朝向是哪里？选项：A. 3点钟，B. 1点钟，C. 7点钟，D. 无法确定。如果可能，请尝试用简短的词汇或短语回答问题。",
+   "a_zh": "A. 3点钟"
+  },
+  {
+   "images": [
+    "s2/img1.jpg",
+    "s2/img2.jpg"
+   ],
+   "q_en": "A point is highlighted with a orange circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple orange-circled points labeled '1, 2, 3, 4'. Which matches the original point?\nA point-1\nB point-2\nC point-3\nD point-4",
+   "a_en": "A point-1",
+   "q_zh": "图 1 中用橙色圆圈标出了一个点（标记为“REF”）。调整相机后，图 2 显示了多个标有“1, 2, 3, 4”的橙色圆圈点。哪一个与原始点相匹配？\nA 点-1\nB 点-2\nC 点-3\nD 点-4",
+   "a_zh": "A 点-1"
+  },
+  {
+   "images": [
+    "s3/img1.jpg",
+    "s3/img2.jpg"
+   ],
+   "q_en": "Images are acquired in a continuous stream from a first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options:\nA. right\nB. front right\nC. uncertain\nD. front\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "D. front",
+   "q_zh": "图像是以第一人称视角连续采集的。如果第一张照片是在我的位置拍摄的，那么第二个相机相对于那个位置在哪里？选项：\nA. 右侧\nB. 右前方\nC. 不确定\nD. 前方\n请尽量用简短的词汇或短语回答。",
+   "a_zh": "D. 前方"
+  }
+ ],
+ "hypersim-mi-v1-m3h20": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg"
+   ],
+   "q_en": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. When focusing on the camera's horizontal rotation, does it pan to the left or right from image-1 to image-2? Options: A. panning to the right, B. panning to the left\nPlease select the correct answer from the options above.",
+   "a_en": "B. panning to the left",
+   "q_zh": "摄像机以第一人称视角记录了一系列图像。请识别相机刻意的旋转，忽略微小的抖动。“水平转动 (Pan)”是水平方向（左/右）的旋转，“垂直转动 (Tilt)”是垂直方向（上/下）的旋转，“翻滚 (Roll)”是绕前进轴的旋转。当关注相机的水平旋转时，从图像-1到图像-2，它是向左还是向右转动？选项：A. 向右水平转动，B. 向左水平转动。请从以上选项中选择正确答案。",
+   "a_zh": "B. 向左水平转动"
+  },
+  {
+   "images": [
+    "s2/img1.jpg",
+    "s2/img2.jpg"
+   ],
+   "q_en": "Given that books (denoted by the purple point) is to the left of lamp (linked to the blue point), what is the direction of blinds (indicated by the orange point) relative to lamp (linked to the blue point)? Options: A. front-right, B. back-right, C. left, D. back\nAnswer the question using a single word or phrase.",
+   "a_en": "D. back",
+   "q_zh": "已知书籍（由紫色点表示）位于台灯（与蓝色点关联）的左侧，那么百叶窗（由橙色点指示）相对于台灯（与蓝色点关联）在什么方向？选项：A. 右前方，B. 右后方，C. 左侧，D. 后方。请使用单个词或短语回答。",
+   "a_zh": "D. 后方"
+  },
+  {
+   "images": [
+    "s3/img1.jpg",
+    "s3/img2.jpg"
+   ],
+   "q_en": "When the person stands at the camera position of the second image and looks at sofa (denoted by the purple point) (which is front), what is the direction of door (positioned at the cyan point) from the person? Options:\nA. back-right\nB. front-left\nC. back\nD. right\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "B. front-left",
+   "q_zh": "当人站在第二张图像的相机位置并看向沙发（由紫色点表示，即前方）时，门（位于青色点处）相对于人的方向是什么？选项：A. 右后方 B. 左前方 C. 后方 D. 右方。请尽量用简短的词汇或短语回答问题。",
+   "a_zh": "B. 左前方"
+  },
+  {
+   "images": [
+    "s4/img1.jpg",
+    "s4/img2.jpg"
+   ],
+   "q_en": "A point is highlighted with a green circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple green-circled points labeled 'A, B, C, D'. Which matches the original point?\nA point-A\nB point-B\nC point-C\nD point-D",
+   "a_en": "A point-A",
+   "q_zh": "图一中有一个用绿色圆圈标出的点（标记为“REF”）。在调整相机视角后，图二显示了多个标记为“A、B、C、D”的绿色圆圈点。哪一个与原始点相匹配？\nA 点-A\nB 点-B\nC 点-C\nD 点-D",
+   "a_zh": "A 点-A"
+  }
+ ],
+ "dl3dv-mi-v1": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg"
+   ],
+   "q_en": "The images are taken continuously from a first-person perspective. How does the camera's location change through space? Options: A. forward and leftward, B. forward, C. backward and rightward, D. downward\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "A. forward and leftward",
+   "q_zh": "这些图像是从第一人称视角连续拍摄的。摄像机在空间中的位置是如何变化的？选项：A. 向前并向左，B. 向前，C. 向后并向右，D. 向下。请尽量使用简短的词汇或短语回答问题。",
+   "a_zh": "A. 向前并向左"
+  },
+  {
+   "images": [
+    "s2/img1.jpg",
+    "s2/img2.jpg"
+   ],
+   "q_en": "A point is highlighted with a orange circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple orange-circled points labeled 'A, B, C, D'. Which matches the original point?\nA point-A\nB point-B\nC point-C\nD point-D",
+   "a_en": "C point-C",
+   "q_zh": "图 1 中用橙色圆圈（标记为“REF”）标出了一个点。在调整相机视角后，图 2 显示了多个标有“A、B、C、D”的橙色圆圈点。请问哪一个点与原始点相匹配？\nA 点-A\nB 点-B\nC 点-C\nD 点-D",
+   "a_zh": "C 点-C"
+  },
+  {
+   "images": [
+    "s3/img1.jpg",
+    "s3/img2.jpg"
+   ],
+   "q_en": "The images are taken continuously from a first-person perspective. If the camera faced 12 o'clock direction when the first picture was taken, what is its direction for the second picture? Options:\nA. 11 o'clock\nB. 12 o'clock\nC. indeterminable\nD. 4 o'clock\nPlease select the correct answer from the options above.",
+   "a_en": "B. 12 o'clock",
+   "q_zh": "这些图像是从第一人称视角连续拍摄的。如果拍摄第一张照片时相机面向 12 点钟方向，那么拍摄第二张照片时它的方向是什么？选项：\nA. 11 点钟方向\nB. 12 点钟方向\nC. 无法确定\nD. 4 点钟方向\n请从以上选项中选择正确答案。",
+   "a_zh": "B. 12 点钟方向"
+  },
+  {
+   "images": [
+    "s4/img1.jpg",
+    "s4/img2.jpg"
+   ],
+   "q_en": "A point is highlighted with a yellow circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple yellow-circled points labeled 'A, B, C, D'. Which matches the original point?\nA point-A\nB point-B\nC point-C\nD point-D",
+   "a_en": "D point-D",
+   "q_zh": "图 1 中有一个用黄色圆圈标出的点（标记为“REF”）。调整相机视角后，图 2 显示了多个标有“A、B、C、D”的黄色圆圈点。哪一个与原始点相匹配？\nA 点 A\nB 点 B\nC 点 C\nD 点 D",
+   "a_zh": "D 点 D"
+  }
+ ],
+ "taskonomy-mi-v1": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg"
+   ],
+   "q_en": "Each frame is taken in turn, providing a continuous first-person perspective. If the camera faced 3 o'clock direction when the second picture was taken, what is its direction for the first picture? Options: A. 1 o'clock, B. it cannot be determined, C. 4 o'clock, D. 2 o'clock\nAnswer the question using a single word or phrase.",
+   "a_en": "B. it cannot be determined",
+   "q_zh": "每一帧都是按顺序拍摄的，提供连续的第一人称视角。如果拍摄第二张照片时相机朝向 3 点钟方向，那么拍摄第一张照片时它的朝向是哪里？选项：A. 1 点钟方向，B. 无法确定，C. 4 点钟方向，D. 2 点钟方向。请用一个词或短语回答问题。",
+   "a_zh": "B. 无法确定"
+  },
+  {
+   "images": [
+    "s2/img1.jpg",
+    "s2/img2.jpg"
+   ],
+   "q_en": "Images are acquired in a continuous stream from a first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options: A. front, B. front left, C. back left, D. uncertain\nAnswer the question using a single word or phrase.",
+   "a_en": "B. front left",
+   "q_zh": "图像是以第一人称视角连续采集的。如果第一张照片是在我的位置拍摄的，那么第二台摄像机相对于那个位置在哪里？选项：A. 前方，B. 左前方，C. 左后方，D. 不确定。请用一个词或短语回答问题。",
+   "a_zh": "B. 左前方"
+  },
+  {
+   "images": [
+    "s3/img1.jpg",
+    "s3/img2.jpg"
+   ],
+   "q_en": "Each frame is taken in turn, providing a continuous first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options: A. front, B. right, C. front left, D. the result cannot be determined\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "A. front",
+   "q_zh": "每一帧都是按顺序拍摄的，提供连续的第一人称视角。如果第一张照片是在我的位置拍摄的，那么第二台相机相对于那个位置在哪里？选项：A. 前方，B. 右方，C. 左前方，D. 无法确定结果。请尽量用简短的词汇或短语回答问题。",
+   "a_zh": "A. 前方"
+  },
+  {
+   "images": [
+    "s4/img1.jpg",
+    "s4/img2.jpg"
+   ],
+   "q_en": "A point is highlighted with a cyan circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple cyan-circled points labeled 'A, B, C, D'. Which matches the original point?\nA point-A\nB point-B\nC point-C\nD point-D",
+   "a_en": "A point-A",
+   "q_zh": "图一中有一个用青色圆圈（标记为“REF”）高亮显示的点。在调整相机角度后，图二显示了多个标记为“A、B、C、D”的青色圆圈点。哪一个与原始点相匹配？\nA 点-A\nB 点-B\nC 点-C\nD 点-D",
+   "a_zh": "A 点-A"
+  }
+ ],
+ "megadepth-mi-v1": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg"
+   ],
+   "q_en": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. Considering only vertical rotation, does the camera tilt upward or downward from image-1 to image-2? Options: A. tilting upward, B. tilting downward\nAnswer the question using a single word or phrase.",
+   "a_en": "B. tilting downward",
+   "q_zh": "摄像机以第一人称视角记录了一系列图像。请识别有意的摄像机旋转，忽略微小的抖动。“水平转动（Pan）”是水平（左/右）旋转，“俯仰（Tilt）”是垂直（上/下）旋转，“翻滚（Roll）”是绕前进轴的旋转。仅考虑垂直旋转，摄像机从图像-1到图像-2是向上俯仰还是向下俯仰？选项：A. 向上俯仰，B. 向下俯仰。请用一个词或短语回答问题。",
+   "a_zh": "B. 向下俯仰"
+  },
+  {
+   "images": [
+    "s2/img1.jpg",
+    "s2/img2.jpg"
+   ],
+   "q_en": "The images are taken continuously from a first-person perspective. How does the camera's location change through space? Options:\nA. leftward and downward\nB. forward\nC. backward\nD. forward and rightward\nAnswer the question using a single word or phrase.",
+   "a_en": "D. forward and rightward",
+   "q_zh": "这些图像是从第一人称视角连续拍摄的。摄像机在空间中的位置是如何变化的？选项：\nA. 向左并向下\nB. 向前\nC. 向后\nD. 向前并向右\n请用一个单词或短语回答问题。",
+   "a_zh": "D. 向前并向右"
+  },
+  {
+   "images": [
+    "s3/img1.jpg",
+    "s3/img2.jpg"
+   ],
+   "q_en": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. When focusing on the camera's horizontal rotation, does it pan to the left or right from image-1 to image-2? Options: A. panning to the left, B. panning to the right\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "A. panning to the left",
+   "q_zh": "摄像机以第一人称视角记录了一系列图像。请识别摄像机刻意的旋转动作，忽略微小的抖动。“水平转动（Pan）”是水平方向（左/右）的旋转，“俯仰（Tilt）”是垂直方向（上/下）的旋转，“翻滚（Roll）”是绕着向前轴的旋转。关注摄像机的水平旋转，从图像-1到图像-2，它是向左还是向右转动？选项：A. 向左转动，B. 向右转动。请尽量使用简短的词汇或短语回答问题。",
+   "a_zh": "A. 向左转动"
+  },
+  {
+   "images": [
+    "s4/img1.jpg",
+    "s4/img2.jpg"
+   ],
+   "q_en": "Images are acquired in a continuous stream from a first-person perspective. If the camera faced 9 o'clock direction when the first picture was taken, what is its direction for the second picture? Options: A. 9 o'clock, B. cannot say for sure, C. 11 o'clock, D. 8 o'clock\nAnswer the question using a single word or phrase.",
+   "a_en": "A. 9 o'clock",
+   "q_zh": "图像是以第一人称视角连续采集的。如果拍摄第一张照片时相机面向 9 点钟方向，那么拍摄第二张照片时它的方向是什么？选项：A. 9 点钟，B. 无法确定，C. 11 点钟，D. 8 点钟。请用一个词或短语回答问题。",
+   "a_zh": "A. 9 点钟"
+  }
+ ],
+ "arkitscenes-mi-v2": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg"
+   ],
+   "q_en": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. When focusing on the camera's horizontal rotation, does it pan to the left or right from image-1 to image-2? Options:\nA. panning to the left\nB. panning to the right\nPlease select the correct answer from the options above.",
+   "a_en": "B. panning to the right",
+   "q_zh": "摄像机以第一人称视角记录了一系列图像。请识别出相机刻意的旋转，忽略微小的抖动。“水平转动 (Pan)”是水平方向（左/右）的旋转，“垂直转动 (Tilt)”是垂直方向（上/下）的旋转，“翻滚 (Roll)”是绕前进轴的旋转。当关注相机的水平旋转时，从图像-1到图像-2，它是向左还是向右水平转动？选项：\nA. 向左水平转动\nB. 向右水平转动\n请从以上选项中选择正确答案。",
+   "a_zh": "B. 向右水平转动"
+  },
+  {
+   "images": [
+    "s2/img1.jpg",
+    "s2/img2.jpg"
+   ],
+   "q_en": "When the person stands at the camera position of the first image and looks at oven (in frame 2) (which is front), what is the direction of tv (in frame 1) from the person? Options: A. front-left, B. back, C. front, D. left\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "A. front-left",
+   "q_zh": "当人站在第一张图像的相机位置并看向烤箱（在第2帧中，即前方）时，电视（在第1帧中）位于该人的什么方向？选项：A. 左前方，B. 后方，C. 前方，D. 左侧。请尽量使用简短的词汇或短语回答。",
+   "a_zh": "A. 左前方"
+  },
+  {
+   "images": [
+    "s3/img1.jpg",
+    "s3/img2.jpg"
+   ],
+   "q_en": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. Considering only vertical rotation, does the camera tilt upward or downward from image-1 to image-2? Options: A. tilting upward, B. tilting downward\nAnswer the question using a single word or phrase.",
+   "a_en": "B. tilting downward",
+   "q_zh": "摄像机以第一人称视角记录了一系列图像。请识别有意的摄像机旋转，忽略微小的抖动。“水平转动（Pan）”是水平（左/右）旋转，“俯仰（Tilt）”是垂直（上/下）旋转，“翻滚（Roll）”是绕前进轴的旋转。仅考虑垂直旋转，摄像机从图像-1到图像-2是向上俯仰还是向下俯仰？选项：A. 向上俯仰，B. 向下俯仰。请用一个词或短语回答问题。",
+   "a_zh": "B. 向下俯仰"
+  },
+  {
+   "images": [
+    "s4/img1.jpg",
+    "s4/img2.jpg"
+   ],
+   "q_en": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. Considering only vertical rotation, does the camera tilt upward or downward from image-1 to image-2? Options: A. tilting upward, B. tilting downward\nAnswer the question using a single word or phrase.",
+   "a_en": "A. tilting upward",
+   "q_zh": "摄像机以第一人称视角记录了一系列图像。请识别有意的摄像机旋转，忽略微小的抖动。“水平转动（Pan）”是水平（左/右）旋转，“俯仰（Tilt）”是垂直（上/下）旋转，“翻滚（Roll）”是绕向前轴的旋转。仅考虑垂直旋转，摄像机从图像-1到图像-2是向上俯仰还是向下俯仰？选项：A. 向上俯仰，B. 向下俯仰。请用一个词或短语回答问题。",
+   "a_zh": "A. 向上俯仰"
+  }
+ ],
+ "waymo-outdoor-mi-v1": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg"
+   ],
+   "q_en": "The two images were captured in order by the same calibrated front camera. From the first camera position to the second, what is the primary direction of the metric camera displacement? Options: A. backward and leftward, B. forward, C. leftward and downward, D. rightward and upward\nPlease select the correct answer from the options above.",
+   "a_en": "B. forward",
+   "q_zh": "这两张图像是由同一台经过标定的前置摄像头按顺序拍摄的。从第一个相机位置到第二个相机位置，相机位移的主要方向是什么？选项：A. 向后且向左，B. 向前，C. 向左且向下，D. 向右且向上。请从以上选项中选择正确答案。",
+   "a_zh": "B. 向前"
+  },
+  {
+   "images": [
+    "s2/img1.jpg",
+    "s2/img2.jpg"
+   ],
+   "q_en": "The two images were captured in order by the same calibrated front camera. From the first camera position to the second, what is the primary direction of the metric camera displacement? Options:\nA. backward and leftward\nB. downward\nC. backward and rightward\nD. forward\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "D. forward",
+   "q_zh": "这两张图像是由同一台经过标定的前置摄像头按顺序拍摄的。从第一个相机位置到第二个，相机位移的主要方向是什么？选项：\nA. 向后且向左\nB. 向下\nC. 向后且向右\nD. 向前\n请尽量使用简短的词汇或短语回答问题。",
+   "a_zh": "D. 向前"
+  },
+  {
+   "images": [
+    "s3/img1.jpg",
+    "s3/img2.jpg"
+   ],
+   "q_en": "Standing at the camera position of the second image and looking toward the object marked by the cyan point in image one (defined as front), what is the direction of the object marked by the blue point in image two? Options:\nA. front-right\nB. back-right\nC. front\nD. left\nAnswer the question using a single word or phrase.",
+   "a_en": "C. front",
+   "q_zh": "站在第二张图像的相机位置，朝向第一张图像中青色点标记的物体看（定义为前方），第二张图像中蓝色点标记的物体在什么方向？选项：A. 右前方 B. 右后方 C. 前方 D. 左侧。请用一个词或短语回答问题。",
+   "a_zh": "C. 前方"
+  },
+  {
+   "images": [
+    "s4/img1.jpg",
+    "s4/img2.jpg"
+   ],
+   "q_en": "The two images are synchronized views from two calibrated cameras on the same vehicle. Assuming the first camera faced east, what direction does the second camera face? Options:\nA. south\nB. southeast\nC. southwest\nD. east\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "B. southeast",
+   "q_zh": "这两张图像是同一辆车上两个经过校准的摄像头的同步视图。假设第一个摄像头朝向正东，那么第二个摄像头朝向哪个方向？选项：A. 南 B. 东南 C. 西南 D. 东 请尽量使用简短的词汇或短语回答问题。",
+   "a_zh": "B. 东南"
+  }
+ ],
+ "mp3d-mi-v1": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg"
+   ],
+   "q_en": "Images are acquired in a continuous stream from a first-person perspective. How does the camera's location change through space? Options:\nA. leftward\nB. leftward and upward\nC. forward and rightward\nD. backward\nPlease select the correct answer from the options above.",
+   "a_en": "C. forward and rightward",
+   "q_zh": "图像是以第一人称视角连续采集的。摄像机在空间中的位置是如何变化的？选项：\nA. 向左\nB. 向左并向上\nC. 向前并向右\nD. 向后\n请从以上选项中选择正确答案。",
+   "a_zh": "C. 向前并向右"
+  },
+  {
+   "images": [
+    "s2/img1.jpg",
+    "s2/img2.jpg"
+   ],
+   "q_en": "A point is highlighted with a green circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple green-circled points labeled 'A, B, C, D'. Which matches the original point?\nA point-A\nB point-B\nC point-C\nD point-D",
+   "a_en": "B point-B",
+   "q_zh": "图 1 中用绿色圆圈（标记为“REF”）标出了一个点。在调整相机视角后，图 2 显示了多个标有“A、B、C、D”的绿色圆圈点。请问哪一个点与原始点相匹配？\nA 点-A\nB 点-B\nC 点-C\nD 点-D",
+   "a_zh": "B 点-B"
+  }
+ ],
+ "replica-mi-v1": [
+  {
+   "images": [
+    "s1/img1.jpg",
+    "s1/img2.jpg"
+   ],
+   "q_en": "The images are taken continuously from a first-person perspective. If the second photo was taken from my spot, where is the first camera relative to that? Options: A. right, B. front, C. back right, D. the result cannot be determined\nPlease try to answer the question with short words or phrases if possible.",
+   "a_en": "A. right",
+   "q_zh": "这些图像是以第一人称视角连续拍摄的。如果第二张照片是在我当前的位置拍摄的，那么第一台相机相对于该位置在什么方向？选项：A. 右侧，B. 前方，C. 右后方，D. 无法确定结果。请尽量使用简短的词语或短语回答。",
+   "a_zh": "A. 右侧"
+  }
+ ]
+}
