@@ -1,0 +1,182 @@
+{
+ "scannetpp-mi-v1": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "When the person stands at the camera position of the second image and looks at tv (in frame 2) (which is front), what is the direction of bookshelf (in frame 1) from the person? Options:\nA. back\nB. back-left\nC. front\nD. front-right\nAnswer the question using a single word or phrase."
+   },
+   {
+    "role": "assistant",
+    "content": "D. front-right"
+   }
+  ],
+  "n_pieces": 4,
+  "n_video": 0
+ },
+ "arkitscenes-mi-v1": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "The images are taken continuously from a first-person perspective. If the camera faced 3 o'clock direction when the first picture was taken, what is its direction for the second picture? Options: A. 3 o'clock, B. 1 o'clock, C. 7 o'clock, D. cannot say for sure\nPlease try to answer the question with short words or phrases if possible."
+   },
+   {
+    "role": "assistant",
+    "content": "A. 3 o'clock"
+   }
+  ],
+  "n_pieces": 4,
+  "n_video": 0
+ },
+ "hypersim-mi-v1-m3h20": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. When focusing on the camera's horizontal rotation, does it pan to the left or right from image-1 to image-2? Options: A. panning to the right, B. panning to the left\nPlease select the correct answer from the options above."
+   },
+   {
+    "role": "assistant",
+    "content": "B. panning to the left"
+   }
+  ],
+  "n_pieces": 4,
+  "n_video": 0
+ },
+ "dl3dv-mi-v1": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "The images are taken continuously from a first-person perspective. How does the camera's location change through space? Options: A. forward and leftward, B. forward, C. backward and rightward, D. downward\nPlease try to answer the question with short words or phrases if possible."
+   },
+   {
+    "role": "assistant",
+    "content": "A. forward and leftward"
+   }
+  ],
+  "n_pieces": 4,
+  "n_video": 0
+ },
+ "taskonomy-mi-v1": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "Each frame is taken in turn, providing a continuous first-person perspective. If the camera faced 3 o'clock direction when the second picture was taken, what is its direction for the first picture? Options: A. 1 o'clock, B. it cannot be determined, C. 4 o'clock, D. 2 o'clock\nAnswer the question using a single word or phrase."
+   },
+   {
+    "role": "assistant",
+    "content": "B. it cannot be determined"
+   }
+  ],
+  "n_pieces": 4,
+  "n_video": 0
+ },
+ "arkitscenes-mi-v2": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. When focusing on the camera's horizontal rotation, does it pan to the left or right from image-1 to image-2? Options:\nA. panning to the left\nB. panning to the right\nPlease select the correct answer from the options above."
+   },
+   {
+    "role": "assistant",
+    "content": "B. panning to the right"
+   }
+  ],
+  "n_pieces": 4,
+  "n_video": 0
+ },
+ "megadepth-mi-v1": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. Considering only vertical rotation, does the camera tilt upward or downward from image-1 to image-2? Options: A. tilting upward, B. tilting downward\nAnswer the question using a single word or phrase."
+   },
+   {
+    "role": "assistant",
+    "content": "B. tilting downward"
+   }
+  ],
+  "n_pieces": 4,
+  "n_video": 0
+ },
+ "replica-mi-v1": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "The images are taken continuously from a first-person perspective. If the second photo was taken from my spot, where is the first camera relative to that? Options: A. right, B. front, C. back right, D. the result cannot be determined\nPlease try to answer the question with short words or phrases if possible."
+   },
+   {
+    "role": "assistant",
+    "content": "A. right"
+   }
+  ],
+  "n_pieces": 4,
+  "n_video": 0
+ },
+ "waymo-outdoor-mi-v1": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "The two images were captured in order by the same calibrated front camera. From the first camera position to the second, what is the primary direction of the metric camera displacement? Options: A. backward and leftward, B. forward, C. leftward and downward, D. rightward and upward\nPlease select the correct answer from the options above."
+   },
+   {
+    "role": "assistant",
+    "content": "B. forward"
+   }
+  ],
+  "n_pieces": 4,
+  "n_video": 0
+ },
+ "mp3d-mi-v1": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "Images are acquired in a continuous stream from a first-person perspective. How does the camera's location change through space? Options:\nA. leftward\nB. leftward and upward\nC. forward and rightward\nD. backward\nPlease select the correct answer from the options above."
+   },
+   {
+    "role": "assistant",
+    "content": "C. forward and rightward"
+   }
+  ],
+  "n_pieces": 4,
+  "n_video": 0
+ }
+}

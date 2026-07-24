@@ -1,0 +1,201 @@
+{
+ "camgeo-cam-trans": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "Images are acquired in a continuous stream from a first-person perspective. How does the camera's location change through space? Options:\nA. forward and leftward\nB. backward\nC. backward and leftward\nD. forward and rightward\nPlease select the correct answer from the options above."
+   },
+   {
+    "role": "assistant",
+    "content": "D. forward and rightward"
+   }
+  ],
+  "n_pieces": 4,
+  "n_video": 0
+ },
+ "camgeo-cam-rot": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. Considering rotation around the forward-facing axis, does the camera roll clockwise or counterclockwise from image-1 to image-2? Options:\nA. rolling counterclockwise\nB. rolling clockwise\nPlease try to answer the question with short words or phrases if possible."
+   },
+   {
+    "role": "assistant",
+    "content": "A. rolling counterclockwise"
+   }
+  ],
+  "n_pieces": 4,
+  "n_video": 0
+ },
+ "camgeo-cam-view-direction": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "Images are acquired in a continuous stream from a first-person perspective. Assuming the second shot was taken facing northwest, what is the camera's facing direction for the first shot? Options: A. southwest, B. it cannot be determined, C. west, D. northeast\nPlease try to answer the question with short words or phrases if possible."
+   },
+   {
+    "role": "assistant",
+    "content": "C. west"
+   }
+  ],
+  "n_pieces": 4,
+  "n_video": 0
+ },
+ "camgeo-cam-position": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "Images are acquired in a continuous stream from a first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options:\nA. front\nB. uncertain\nC. right\nD. back left\nAnswer the question using a single word or phrase."
+   },
+   {
+    "role": "assistant",
+    "content": "A. front"
+   }
+  ],
+  "n_pieces": 4,
+  "n_video": 0
+ },
+ "camgeo-correspondence": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "A point is highlighted with a blue circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple blue-circled points labeled 'A, B, C, D'. Which matches the original point?\nA point-A\nB point-B\nC point-C\nD point-D"
+   },
+   {
+    "role": "assistant",
+    "content": "B point-B"
+   }
+  ],
+  "n_pieces": 4,
+  "n_video": 0
+ },
+ "multiimgcamgeo-b1": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg",
+   "img3.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "A camera moves through the room and takes three shots in sequence (view-1, then view-2, then view-3). Order the three camera positions along the back-to-front axis of the room, from the back-most to the front-most. Options:\nA. view-1 -> view-2 -> view-3\nB. view-3 -> view-2 -> view-1\nC. view-2 -> view-3 -> view-1\nD. view-3 -> view-1 -> view-2\nPlease select the correct answer from the options above."
+   },
+   {
+    "role": "assistant",
+    "content": "A. view-1 -> view-2 -> view-3"
+   }
+  ],
+  "n_pieces": 5,
+  "n_video": 0
+ },
+ "videocamgeo-b2": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "The images are taken continuously from a first-person perspective. The objective is to recognize the primary movement direction of the camera, ignoring slight jitters. Which way does the camera's position move? Options:\nA. rightward\nB. leftward\nAnswer the question using a single word or phrase."
+   },
+   {
+    "role": "assistant",
+    "content": "B. leftward"
+   }
+  ],
+  "n_pieces": 4,
+  "n_video": 0
+ },
+ "objtask-obj-orientation": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "Given that laptop (in frame 1) is northwest of table (in frame 2), what is the direction of window (in frame 1) relative to table (in frame 2)? Options:\nA. northwest\nB. north\nC. northeast\nD. west\nPlease try to answer the question with short words or phrases if possible."
+   },
+   {
+    "role": "assistant",
+    "content": "B. north"
+   }
+  ],
+  "n_pieces": 4,
+  "n_video": 0
+ },
+ "objtask-obj-orientation-camera": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "If, at the camera position of the second image, the person considers the direction to table (in frame 2) as southwest, what direction is chair (in frame 1) relative to the person? Options:\nA. east\nB. northeast\nC. southeast\nD. southwest\nPlease try to answer the question with short words or phrases if possible."
+   },
+   {
+    "role": "assistant",
+    "content": "D. southwest"
+   }
+  ],
+  "n_pieces": 4,
+  "n_video": 0
+ },
+ "objtask-obj-orientation-camera-vp": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "When the person stands at the camera position of the first image and looks at stapler (highlighted at the gold point) (which is front), what is the direction of cabinet (positioned at the purple point) from the person? Options:\nA. back-right\nB. back-left\nC. front-right\nD. front\nPlease try to answer the question with short words or phrases if possible."
+   },
+   {
+    "role": "assistant",
+    "content": "D. front"
+   }
+  ],
+  "n_pieces": 4,
+  "n_video": 0
+ },
+ "objtask-obj-orientation-vp": {
+  "images": [
+   "img1.jpg",
+   "img2.jpg"
+  ],
+  "texts": [
+   {
+    "role": "user",
+    "content": "Given that toilet (positioned at the gold point) is northeast of soap dish (indicated by the purple point), what is the direction of curtain (highlighted at the cyan point) relative to soap dish (indicated by the purple point)? Options: A. east, B. northwest, C. north, D. southwest\nPlease try to answer the question with short words or phrases if possible."
+   },
+   {
+    "role": "assistant",
+    "content": "A. east"
+   }
+  ],
+  "n_pieces": 4,
+  "n_video": 0
+ }
+}

@@ -52,7 +52,16 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 .current-note{background:#fff;border-left:4px solid #244f73;padding:11px 14px;margin:0 0 16px;font-size:13px;line-height:1.6;color:#3f4f5d}.current-empty{background:#fff;border:1px solid #deded8;padding:28px 20px;margin:0 0 16px;text-align:center}.current-empty strong{display:block;font-size:18px;margin-bottom:7px}.current-empty span{font-size:13px;color:#666;line-height:1.55}.current-audit{background:#f5f8fa;border:1px solid #d7e1e8;padding:12px 14px;margin:0 0 16px;font-size:13px;line-height:1.6;color:#344a5b}.current-audit b{color:#173e5d}.current-state-list{display:flex;gap:8px 16px;flex-wrap:wrap;margin-top:8px}.current-table-score{white-space:nowrap}.current-table-score .raw{font-weight:900;margin-right:5px}
 @media(max-width:1100px){.grid3,.snv6-chart-grid,.geo-chart-grid,.geo-best-grid,.geo-r15-chart-grid,.geo-lineage-grid,.geo-r13-chart-grid{grid-template-columns:1fr}.geo-r15-metric-grid,.geo-r13-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.geo-r15-metric:nth-child(2),.geo-r13-kpi:nth-child(2){border-right:0}.geo-r15-metric:nth-child(-n+2),.geo-r13-kpi:nth-child(-n+2){border-bottom:1px solid #e7e7e1}.geo-best{border-right:0;border-bottom:1px solid #e7e7e1}.geo-best:last-child{border-bottom:0}.geo-final-head{align-items:flex-start}.geo-r13-case-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.geo-r13-case:nth-child(2){border-right:0}.geo-r13-case:nth-child(-n+2){border-bottom:1px solid #e7e7e1}}
 @media(max-width:720px){header{position:static;padding:17px 16px 12px}h1{font-size:21px}main{padding:14px 12px 32px}.tabs-row{display:block}.tabs-row-label{display:block;width:max-content;min-width:0;margin-bottom:7px}.tabs{padding-bottom:3px}.tab{padding:8px 11px;font-size:13px}.section-title{font-size:17px;margin-top:20px}th,td{padding:7px 8px}.current-empty{padding:22px 14px}.geo-r15-metric-grid,.geo-r13-kpis,.geo-r13-case-grid,.geo-r13-summary-grid{grid-template-columns:1fr}.geo-r15-metric,.geo-r13-kpi,.geo-r13-case{border-right:0;border-bottom:1px solid #e7e7e1}.geo-r15-metric:last-child,.geo-r13-kpi:last-child,.geo-r13-case:last-child{border-bottom:0}.geo-final-head{display:block}.geo-final-badge{display:inline-block;margin-top:9px}.geo-r13-hero-head h2{font-size:18px}}
-</style></head><body>
+</style>
+<style>
+.arm-info{background:#fff;border-left:4px solid #176231;padding:11px 14px;margin:0 0 16px;font-size:13px;line-height:1.75;color:#3f4f5d}
+.sample-card{background:#fff;border:1px solid #deded8;padding:12px 14px;margin:0 0 16px}
+.sample-title{font-size:13px;color:#33506a;font-weight:700;margin-bottom:8px}
+.sample-imgs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.sample-imgs img{max-height:210px;max-width:330px;border:1px solid #d5dde4;border-radius:4px;cursor:zoom-in}
+.sample-qa{font-size:12.5px;color:#3f4f5d;line-height:1.65;margin-top:4px;word-break:break-word;white-space:pre-wrap}
+</style>
+</head><body>
 <header><h1>VST-ScanNet 消融专题 🔬</h1><div class='meta'>双维度解构：场景消融（10 个新源场景各自成臂，哪个场景有效）× 题型消融（native MI 9 题型解构 11 臂，哪个题型/形态驱动）。同 p10 配方、六项 full eval、逐 ckpt WebDAV 真值验收；对照 = exact SN6V0710 baseline + native MI。本页不访问任何内网服务。</div></header>
 <main>
 <div class='tabs-row new-baseline'>
@@ -246,9 +255,18 @@ function renderCurrentArm(data,arm){
   const root=document.getElementById(`current-${arm.key}-root`);
   if(!root)return;
   const verified=arm.results.length;
+  const infoCard=arm.desc?`<div class="current-note arm-info"><b>臂介绍：</b>${arm.desc}</div>`:'';
+  const smp=(arm.samples&&arm.samples.images&&arm.samples.images.length)?`
+    <div class="sample-card">
+      <div class="sample-title">真实训练样本（本臂 WDS 首 shard 首条，点击看大图）</div>
+      <div class="sample-imgs">${arm.samples.images.map(u=>`<a href="${u}" target="_blank" rel="noopener"><img src="${u}" loading="lazy"></a>`).join('')}</div>
+      ${arm.samples.q?`<div class="sample-qa"><b>Q：</b>${geoEsc(arm.samples.q)}</div>`:''}
+      ${arm.samples.a?`<div class="sample-qa"><b>A：</b>${geoEsc(arm.samples.a)}</div>`:''}
+    </div>`:'';
   if(!verified){
     root.innerHTML=`
       <h2 class="section-title">${geoEsc(arm.title)}</h2>
+      ${infoCard}${smp}
       <div class="current-empty"><strong>暂无通过真实验收的分数</strong><span>不会用空目录、Submitted 状态或未完成的 smoke 结果补画曲线。</span></div>`;
     return;
   }
@@ -256,6 +274,7 @@ function renderCurrentArm(data,arm){
   const rows=currentRows(data,arm);
   root.innerHTML=`
     <h2 class="section-title">${geoEsc(arm.title)}：已验收结果 vs exact SN6V0710</h2>
+    ${infoCard}${smp}
     <div class="current-note"><b>口径：</b>六项 no-thinking full eval，同 checkpoint 对齐 exact SN6V0710 control。</div>
     <div class="snv6-chart-grid" id="current-${arm.key}-metric-charts"></div>`;
 
