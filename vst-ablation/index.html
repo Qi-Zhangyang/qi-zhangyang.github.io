@@ -1,243 +1,880 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VST-ScanNet 消融专题 · 场景 × 题型</title>
+<!doctype html>
+<html><head><meta charset='utf-8'><link rel='icon' href='data:,'>
+<title>VST 评测曲线</title>
 <style>
-:root{--ink:#1f2733;--sub:#5b6b7c;--line:#e3e8ee;--card:#fff;--bg:#f5f7fa;--accent:#c53030;--blue:#244f73}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
-header{background:linear-gradient(135deg,#173e5d,#244f73);color:#fff;padding:26px 22px 20px}
-header h1{font-size:23px;font-weight:800;letter-spacing:.3px}
-header p{margin-top:6px;font-size:13px;color:#cfdfec}
-header .links{margin-top:10px;font-size:12.5px}
-header .links a{color:#9ec5e8;text-decoration:none;margin-right:14px}
-header .links a:hover{text-decoration:underline}
-main{max-width:1180px;margin:0 auto;padding:20px 16px 60px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin-bottom:18px;box-shadow:0 1px 2px rgba(20,40,60,.04)}
-.card h2{font-size:17px;font-weight:800;margin-bottom:10px}
-.card h2 small{font-size:12px;font-weight:600;color:var(--sub);margin-left:8px}
-.dim{font-size:12px;font-weight:800;padding:2px 9px;border-radius:20px;background:#e8f0f7;color:#244f73;margin-left:8px}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin-bottom:18px}
-.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
-.kpi .v{font-size:24px;font-weight:900;margin:2px 0}
-.kpi .t{font-size:12px;color:var(--sub);font-weight:700}
-.kpi .d{font-size:12px;margin-top:2px}
-.up{color:#c53030;font-weight:800}.down{color:#2f855a;font-weight:800}.flat{color:#718096;font-weight:800}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
-th:first-child,td:first-child{text-align:left}
-th{background:#f0f4f8;font-weight:800;color:#33506a}
-tr:hover td{background:#f8fafc}
-.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:8px 0 4px;font-size:12px}
-.legend span{display:inline-flex;align-items:center;gap:5px;color:#3d4c5c;cursor:pointer;user-select:none}
-.legend span.off{opacity:.32}
-.dot{display:inline-block;width:11px;height:11px;border-radius:3px}
-.chart-wrap{width:100%;overflow-x:auto}
-svg text{font-family:inherit}
-.grid6{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:14px}
-.mini{background:#fbfcfe;border:1px solid var(--line);border-radius:8px;padding:10px}
-.mini h3{font-size:13px;font-weight:800;margin-bottom:4px}
-.arm-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.badge{font-size:11px;font-weight:800;padding:2px 8px;border-radius:20px;background:#e8f0f7;color:#244f73}
-.badge.g2{background:#fdecea;color:#c53030}.badge.g3{background:#e9f7ef;color:#276749}.badge.sc{background:#fff4e0;color:#b7791f}
-.stat{font-size:12.5px;color:var(--sub)}
-.note{font-size:12.5px;color:var(--sub);margin-top:8px}
-footer{text-align:center;font-size:12px;color:#8a97a5;margin-top:26px}
-.updated{font-size:12px;color:#cfe0ee;margin-top:4px}
-@media(max-width:720px){header h1{font-size:19px}th,td{padding:6px 7px;font-size:12px}}
-</style>
-</head>
-<body>
-<header>
-  <h1>VST-ScanNet 消融专题看板 🔬</h1>
-  <p>双维度解构：<b>场景维度</b>（10 个新源场景各自成臂，哪个场景的数据有效）× <b>题型维度</b>（native MI 9 题型解构 11 臂，哪个题型/形态驱动）· 同 p10 配方 · 六项 full eval · 逐 ckpt WebDAV 真值验收</p>
-  <div class="links">
-    <a href="https://moonshot.feishu.cn/docx/HGIsdk84oonI3pxsOh9cbXqknFc">📄 分析文档（飞书）</a>
-    <a href="../vst-eval-dashboard/index.html">📊 完整 VST 评测大盘</a>
-    <a href="#dim-scene">🗺 场景维度</a>
-    <a href="#dim-task">🧩 题型维度</a>
-    <a href="#arms">📈 各臂曲线</a>
-  </div>
-  <div class="updated" id="updated">数据加载中…</div>
-</header>
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif;background:#f7f7f5;color:#151515;letter-spacing:0}
+header{padding:20px 28px 14px;background:#fff;border-bottom:1px solid #deded8;position:sticky;top:0;z-index:2}
+h1{margin:0 0 6px;font-size:24px;letter-spacing:0}.meta{font-size:13px;color:#565656;line-height:1.55}
+main{max-width:1680px;margin:0 auto;padding:20px 24px 44px}
+.tabs{display:flex;gap:8px;margin:0;flex-wrap:wrap;max-width:100%}.tab{flex:none;border:1px solid #d8d8d2;background:#fff;border-radius:6px;padding:9px 14px;font-weight:700;cursor:pointer;color:#151515}.tab.active{background:#151515;color:#fff;border-color:#151515}
+.tabs-row{display:flex;align-items:center;gap:10px;margin:0 0 10px}.tabs-row-label{flex:none;min-width:118px;text-align:center;font-size:12px;font-weight:900;color:#4c4c4c;background:#ecece7;border:1px solid #deded8;border-radius:5px;padding:7px 10px;white-space:nowrap}.tabs-row.new-baseline .tabs-row-label{background:#dcefe1;border-color:#bfdcc7;color:#176231}.tabs-row.new-baseline .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.new-baseline .tab small{font-size:10px;font-weight:700;color:#5e7765;white-space:nowrap}.tabs-row.new-baseline .tab.active{background:#176231;border-color:#176231;color:#fff}.tabs-row.new-baseline .tab.active small{color:#dcefe1}
+.tabs-row.failed-results .tabs-row-label{background:#f6e3e3;border-color:#e3bcbc;color:#8b2929}.tabs-row.failed-results .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.failed-results .tab small{font-size:10px;font-weight:700;color:#8c6262;white-space:nowrap}.tabs-row.failed-results .tab.active{background:#8b2929;border-color:#8b2929;color:#fff}.tabs-row.failed-results .tab.active small{color:#f4dede}
+.tabs-row.geo3d-freshfix .tabs-row-label{background:#f3eadb;border-color:#dec9a7;color:#684710}.tabs-row.geo3d-freshfix .tab.active{background:#684710;border-color:#684710;color:#fff}
+.tabs-row.geo3d-r3p10 .tabs-row-label{background:#f3eadb;border-color:#dec9a7;color:#684710}.tabs-row.geo3d-r3p10 .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.geo3d-r3p10 .tab small{font-size:10px;font-weight:700;color:#8a6a2e;white-space:nowrap}.tabs-row.geo3d-r3p10 .tab.active{background:#684710;border-color:#684710;color:#fff}.tabs-row.geo3d-r3p10 .tab.active small{color:#f3eadb}
+.tabs-row.perceptiongeo-noorig .tabs-row-label{background:#e9e8fb;border-color:#ccc9ef;color:#5b21b6}.tabs-row.perceptiongeo-noorig .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1;max-width:100%}.tabs-row.perceptiongeo-noorig .tab small{font-size:10px;font-weight:700;color:#6d5aa8;white-space:nowrap}.tabs-row.perceptiongeo-noorig .tab.active{background:#5b21b6;border-color:#5b21b6;color:#fff}.tabs-row.perceptiongeo-noorig .tab.active small{color:#e9e8fb}
+@media(max-width:720px){.tabs-row.perceptiongeo-noorig .tab{max-width:100%;overflow:hidden}.tabs-row.perceptiongeo-noorig .tab span,.tabs-row.perceptiongeo-noorig .tab small{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis}}
+.geo-r3p10-note{background:#fffdf8;border-left:4px solid #8a5d18;padding:11px 14px;margin:0 0 14px;font-size:13px;line-height:1.6;color:#5f4a18}.geo-r3p10-note b{color:#493811}
+.geo-r3p10-table-wrap{overflow:auto;background:#fff;border:1px solid #deded8;border-radius:6px;padding:2px 2px 0}.geo-r3p10-table{font-size:13px}.geo-r3p10-table th:not(:first-child),.geo-r3p10-table td:not(:first-child){text-align:right;white-space:nowrap}.geo-r3p10-table .arm-head{font-weight:900}.geo-r3p10-score{font-weight:900}.geo-r3p10-pos{color:#176231;font-weight:800}.geo-r3p10-neg{color:#9a3d31;font-weight:800}.geo-r3p10-zero{color:#666;font-weight:800}.geo-r3p10-muted{color:#9a9a94}.geo-r3p10-fr-bad{color:#9a3d31;font-weight:900}
+.tabs-row.geokg-3arm .tabs-row-label{background:#e9e8fb;border-color:#ccc9ef;color:#443c88}.tabs-row.geokg-3arm .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.geokg-3arm .tab small{font-size:10px;font-weight:700;color:#6d6798;white-space:nowrap}.tabs-row.geokg-3arm .tab.active{background:#51489a;border-color:#51489a;color:#fff}.tabs-row.geokg-3arm .tab.active small{color:#e9e8fb}
+.tabs-row.current-vst .tabs-row-label{background:#e5edf4;border-color:#c5d5e2;color:#244f73}.tabs-row.current-vst .tabs-row-label small{display:block;margin-top:2px;font-size:10px;font-weight:700;color:#58758d}.tabs-row.current-vst .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.current-vst .tab small{font-size:10px;font-weight:700;color:#6a737b;white-space:nowrap}.tabs-row.current-vst .tab.active{background:#244f73;border-color:#244f73;color:#fff}.tabs-row.current-vst .tab.active small{color:#dce7ef}
+.tabs-row.archived .tabs-row-label{background:#f5f5f0;border-style:dashed;color:#8a8a84}.tabs-row.archived .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;color:#8a8a84;border-style:dashed;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.archived .tab small{font-size:10px;font-weight:700;color:#96968f;white-space:nowrap}.tabs-row.archived .tab.active{background:#6f6f69;border-color:#6f6f69;border-style:solid;color:#fff}.tabs-row.archived .tab.active small{color:#ecece7}
+.archive-note{background:#fffaf0;border-left:4px solid #b8860b;padding:11px 14px;margin:0 0 16px;font-size:13px;line-height:1.55;color:#6b5310}
+.pane{display:none}.pane.active{display:block}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}
+.card{background:#fff;border:1px solid #deded8;border-radius:6px;padding:12px;margin-bottom:16px}
+.card h2{font-size:16px;margin:0 0 8px}img{display:block;width:100%;height:auto;background:#fff}
+table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px solid #e7e7e1;padding:8px 10px;text-align:left;vertical-align:top}th{background:#fafafa}
+.links a{color:#005ea8;text-decoration:none;margin-right:18px}.links a:hover{text-decoration:underline}
+.section-title{font-size:18px;margin:24px 0 12px}
+.snv6-chart-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.snv6-chart{background:#fff;border:1px solid #deded8;border-radius:6px;padding:12px;margin-bottom:16px}
+.snv6-chart h2{font-size:16px;margin:0 0 8px}.snv6-chart svg{width:100%;height:auto;display:block;background:#fff}
+.snv6-legend{display:flex;gap:18px;align-items:center;font-size:13px;font-weight:800;color:#3f3f3f;margin-bottom:4px}.snv6-dot{width:12px;height:12px;border-radius:99px;display:inline-block;margin-right:6px;vertical-align:-1px}.snv6-dot.scanmi{background:#d45b2c}.snv6-dot.base{background:#3f6f98}
+.snv6-table-wrap{overflow:auto}.snv6-pos{color:#b8471d;font-weight:900}.snv6-neg{color:#336d9f;font-weight:900}.snv6-muted{color:#767676}
+.geo-note{background:#fff;border-left:4px solid #202020;padding:11px 14px;margin:0 0 16px;font-size:13px;line-height:1.55;color:#4c4c4c}
+.failure-note{background:#fff5f5;border-left:4px solid #a53232;padding:12px 14px;margin:0 0 16px;font-size:13px;line-height:1.6;color:#6f2929}.failure-note b{color:#8b2020}
+.geo-chart-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}
+.geo-legend{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin:0 0 12px;font-size:12px;font-weight:800;color:#444}
+.geo-legend-item{display:inline-flex;align-items:center;white-space:nowrap}.geo-swatch{width:20px;height:3px;display:inline-block;margin-right:6px;border-radius:0}.geo-swatch.dashed{height:0;background:transparent!important;border-top:3px dashed currentColor}
+.geo-compare-shell{background:#fff;border:1px solid #deded8;border-radius:6px;padding:14px 15px;margin:0 0 14px}.geo-control-row{display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap}.geo-control-label{font-size:12px;font-weight:900;color:#555}.geo-mode-tabs,.geo-variant-tabs{display:flex;gap:6px;flex-wrap:wrap}.geo-mode-btn,.geo-variant-btn{border:1px solid #d4d4ce;background:#fff;color:#222;border-radius:5px;padding:7px 10px;font-size:12px;font-weight:800;cursor:pointer}.geo-mode-btn.active,.geo-variant-btn.active{background:#202020;border-color:#202020;color:#fff}.geo-variant-row{display:flex;align-items:center;gap:10px;margin-top:10px}.geo-variant-row[hidden]{display:none}.geo-compare-title{font-size:16px;font-weight:900;margin:13px 0 3px}.geo-compare-meta{font-size:12px;line-height:1.5;color:#656565}.geo-audit summary{cursor:pointer;font-size:14px;font-weight:900;list-style-position:inside}.geo-audit[open] summary{margin-bottom:10px}
+.geo-status{display:inline-block;border-radius:4px;padding:2px 7px;font-size:12px;font-weight:800;background:#ecece7;color:#444}.geo-status.running{background:#dff1e4;color:#176231}.geo-status.pending,.geo-status.submitted{background:#fff0ca;color:#765300}.geo-status.success,.geo-status.succeeded{background:#dcecf9;color:#245b86}.geo-status.failed{background:#f8dddd;color:#8b2f2f}
+.geo-score-lines{line-height:1.55;white-space:nowrap}.geo-score-lines b{font-weight:900}.geo-table-note{font-size:12px;color:#666;margin:8px 0 0}
+.geo-fresh-note{border-left-color:#8a5d18;background:#fffdf8}.geo-fresh-partial{color:#765300;font-weight:900}.geo-fresh-complete{color:#176231;font-weight:900}
+.geo-final{background:#fff;border:1px solid #cfd8ce;border-radius:6px;margin:0 0 16px;overflow:hidden}
+.geo-final-head{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:15px 16px;border-bottom:1px solid #e3e7e1;background:#f4f7f2}.geo-final-head h3{font-size:17px;margin:0 0 4px}.geo-final-head p{font-size:13px;color:#545b53;line-height:1.5;margin:0}.geo-final-badge{flex:none;border-radius:4px;padding:5px 9px;background:#dcefe1;color:#176231;font-size:12px;font-weight:900}
+.geo-best-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid #e7e7e1}.geo-best{padding:15px 16px;border-right:1px solid #e7e7e1}.geo-best:last-child{border-right:0}.geo-best .label{font-size:12px;font-weight:900;color:#555}.geo-best .value{font-size:27px;line-height:1.15;font-weight:900;margin:4px 0}.geo-best .sub{font-size:12px;color:#626262;line-height:1.5}
+.geo-final-table{padding:14px 16px}.geo-final-table h3{font-size:14px;margin:0 0 9px}.geo-final-insight{padding:11px 16px;border-top:1px solid #e1e5df;background:#fafbf9;font-size:13px;line-height:1.55;color:#343a33}.geo-final-insight b{font-weight:900}
+.geo-r15-metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid #e7e7e1}.geo-r15-metric{padding:15px 16px;border-right:1px solid #e7e7e1}.geo-r15-metric:last-child{border-right:0}.geo-r15-metric .label{font-size:12px;font-weight:900;color:#555}.geo-r15-metric .value{font-size:25px;line-height:1.15;font-weight:900;margin:4px 0}.geo-r15-metric .sub{font-size:12px;color:#626262;line-height:1.5}.geo-r15-metric .positive{color:#176231}.geo-r15-metric .negative{color:#9a3d31}
+.geo-r15-chart-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.geo-r15-table-wrap{overflow:auto}.geo-r15-table td:not(:first-child),.geo-r15-table th:not(:first-child){text-align:right;white-space:nowrap}.geo-r15-pos{color:#176231;font-weight:900}.geo-r15-neg{color:#9a3d31;font-weight:900}.geo-r15-zero{color:#666;font-weight:900}
+.geo-r15-section{margin:0 0 18px}.geo-r15-section-title{font-size:18px;margin:22px 0 10px}.geo-r15-subtitle{font-size:12px;line-height:1.55;color:#666;margin:-3px 0 11px}.geo-lineage-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.geo-lineage-card{border:1px solid #deded8;border-radius:5px;padding:12px;background:#fff}.geo-lineage-card h4{font-size:14px;margin:0 0 7px}.geo-lineage-card p{font-size:12px;line-height:1.55;color:#555;margin:5px 0}.geo-lineage-card b{color:#222}.geo-r15-audit{font-size:12px;line-height:1.6;color:#5f655e;margin-top:8px}.geo-r15-legacy{margin-top:24px;border-top:1px solid #d9d9d2;padding-top:2px}
+.geo-r13-hero{background:#fff;border:1px solid #d9dfd8;border-radius:6px;overflow:hidden;margin:0 0 18px}.geo-r13-hero-head{padding:16px;background:#f3f7f2;border-bottom:1px solid #dfe6dd}.geo-r13-hero-head h2{font-size:20px;margin:0 0 6px}.geo-r13-hero-head p{font-size:13px;line-height:1.6;color:#4f5b4d;margin:0}.geo-r13-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.geo-r13-kpi{padding:14px 16px;border-right:1px solid #e7e7e1}.geo-r13-kpi:last-child{border-right:0}.geo-r13-kpi .label{font-size:12px;font-weight:900;color:#5b615a}.geo-r13-kpi .value{font-size:25px;font-weight:900;line-height:1.2;margin:4px 0}.geo-r13-kpi .sub{font-size:12px;line-height:1.5;color:#666}.geo-r13-conclusion{padding:12px 16px;background:#fffaf0;border-top:1px solid #ede3cd;font-size:13px;line-height:1.65;color:#614c18}.geo-r13-conclusion b{color:#413109}.geo-r13-chart-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.geo-r13-chart svg{width:100%;height:auto;display:block}.geo-r13-case-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid #deded8;border-radius:6px;overflow:hidden;background:#fff}.geo-r13-case{padding:14px 15px;border-right:1px solid #e7e7e1}.geo-r13-case:last-child{border-right:0}.geo-r13-case .value{font-size:25px;font-weight:900;margin-bottom:4px}.geo-r13-case .label{font-size:12px;line-height:1.45;color:#5f5f5f}.geo-r13-summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.geo-r13-mini-table{overflow:auto;background:#fff;border:1px solid #deded8;border-radius:6px}.geo-r13-mini-table h3{font-size:14px;margin:0;padding:12px 13px 4px}.geo-r13-mini-table table{font-size:12px}.geo-r13-mini-table td:not(:first-child),.geo-r13-mini-table th:not(:first-child){text-align:right;white-space:nowrap}.geo-r13-history{margin-top:28px;border-top:1px solid #d9d9d2;padding-top:12px}.geo-r13-history>summary{cursor:pointer;font-size:16px;font-weight:900;color:#555;padding:7px 0}.geo-r13-history-body{padding-top:2px}.geo-r13-audit{font-size:12px;line-height:1.65;color:#646b62;margin:8px 0 14px}.geo-r13-name{font-weight:900}.geo-r13-name.r13{color:#c45d25}.geo-r13-name.r15{color:#2e8b57}.geo-r13-name.control{color:#4f555c}
+.geokg-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px 18px;flex-wrap:wrap;background:#fff;border:1px solid #deded8;border-radius:6px;padding:11px 12px;margin:0 0 12px}.geokg-mode{font-size:13px;font-weight:900;color:#443c88}.geokg-verified{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:900;color:#176231}.geokg-verified:before{content:'';width:8px;height:8px;border-radius:50%;background:#2e8b57}.geokg-caption{font-size:12px;color:#67646f;line-height:1.55;margin:-3px 0 12px}
+.current-note{background:#fff;border-left:4px solid #244f73;padding:11px 14px;margin:0 0 16px;font-size:13px;line-height:1.6;color:#3f4f5d}.current-empty{background:#fff;border:1px solid #deded8;padding:28px 20px;margin:0 0 16px;text-align:center}.current-empty strong{display:block;font-size:18px;margin-bottom:7px}.current-empty span{font-size:13px;color:#666;line-height:1.55}.current-audit{background:#f5f8fa;border:1px solid #d7e1e8;padding:12px 14px;margin:0 0 16px;font-size:13px;line-height:1.6;color:#344a5b}.current-audit b{color:#173e5d}.current-state-list{display:flex;gap:8px 16px;flex-wrap:wrap;margin-top:8px}.current-table-score{white-space:nowrap}.current-table-score .raw{font-weight:900;margin-right:5px}
+@media(max-width:1100px){.grid3,.snv6-chart-grid,.geo-chart-grid,.geo-best-grid,.geo-r15-chart-grid,.geo-lineage-grid,.geo-r13-chart-grid{grid-template-columns:1fr}.geo-r15-metric-grid,.geo-r13-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.geo-r15-metric:nth-child(2),.geo-r13-kpi:nth-child(2){border-right:0}.geo-r15-metric:nth-child(-n+2),.geo-r13-kpi:nth-child(-n+2){border-bottom:1px solid #e7e7e1}.geo-best{border-right:0;border-bottom:1px solid #e7e7e1}.geo-best:last-child{border-bottom:0}.geo-final-head{align-items:flex-start}.geo-r13-case-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.geo-r13-case:nth-child(2){border-right:0}.geo-r13-case:nth-child(-n+2){border-bottom:1px solid #e7e7e1}}
+@media(max-width:720px){header{position:static;padding:17px 16px 12px}h1{font-size:21px}main{padding:14px 12px 32px}.tabs-row{display:block}.tabs-row-label{display:block;width:max-content;min-width:0;margin-bottom:7px}.tabs{padding-bottom:3px}.tab{padding:8px 11px;font-size:13px}.section-title{font-size:17px;margin-top:20px}th,td{padding:7px 8px}.current-empty{padding:22px 14px}.geo-r15-metric-grid,.geo-r13-kpis,.geo-r13-case-grid,.geo-r13-summary-grid{grid-template-columns:1fr}.geo-r15-metric,.geo-r13-kpi,.geo-r13-case{border-right:0;border-bottom:1px solid #e7e7e1}.geo-r15-metric:last-child,.geo-r13-kpi:last-child,.geo-r13-case:last-child{border-bottom:0}.geo-final-head{display:block}.geo-final-badge{display:inline-block;margin-top:9px}.geo-r13-hero-head h2{font-size:18px}}
+</style></head><body>
+<header><h1>VST-ScanNet 消融专题 🔬</h1><div class='meta'>双维度解构：场景消融（10 个新源场景各自成臂，哪个场景有效）× 题型消融（native MI 9 题型解构 11 臂，哪个题型/形态驱动）。同 p10 配方、六项 full eval、逐 ckpt WebDAV 真值验收；对照 = exact SN6V0710 baseline + native MI。本页不访问任何内网服务。</div></header>
 <main>
-  <div class="kpis" id="kpis"></div>
-
-  <div class="card" id="dim-scene">
-    <h2>维度一 · 场景消融总览<small>10 个新源场景各自成臂 vs native MI（ScanNet 混合场景）vs baseline；点击图例隐藏/显示</small></h2>
-    <div class="legend" id="sceneLegend"></div>
-    <div class="chart-wrap" id="sceneChart"></div>
-    <div style="overflow-x:auto;margin-top:12px"><table id="sceneTable"></table></div>
+<div class='tabs-row new-baseline'>
+  <span class='tabs-row-label'>场景消融 · 新源验证 🗺</span>
+  <div class='tabs'>
+    <button class='tab' data-tab='snv60710'><span>原生 VST-ScanNet Multi-Image V1（41K）</span><small>SN V6 0710 复验</small></button>
+    <button class='tab' data-tab='current-native-mi-v2-1'><span>原生 VST-ScanNet Multi-Image V1 120K</span><small>V1 core + 稳定 seed 新增</small></button>
+    <button class='tab' data-tab='current-scannetpp-mi-v1'><span>ScanNet++ MC（120K · p10）</span><small>新源验证 · 评测进行中</small></button>
+    <button class='tab' data-tab='current-arkitscenes-mi-v1'><span>ARKitScenes MC（p10 · multi-epoch）</span><small>新源验证 · 评测进行中</small></button>
+    <button class='tab' data-tab='current-taskonomy-mi-v1'><span>Taskonomy MC（p10 · 5题型）</span><small>新源验证 · 评测进行中</small></button>
+    <button class='tab' data-tab='current-dl3dv-mi-v1'><span>DL3DV MC（120K · p10 · 5题型）</span><small>新源验证 · 评测进行中</small></button>
+    <button class='tab' data-tab='current-arkitscenes-mi-v2'><span>ARKitScenes MC v2（修复版）</span><small>去近重复+配比+均衡</small></button>
+    <button class='tab' data-tab='current-hypersim-mi-v1-m3h20'><span>HyperSim MC（120K · p10）</span><small>m3h20 迁移重跑 · 评测进行中</small></button>
+    <button class='tab' data-tab='current-megadepth-mi-v1'><span>MegaDepth MC（p10 · multi-epoch）</span><small>新源验证 · 评测已完成</small></button>
+    <button class='tab' data-tab='current-waymo-outdoor-mi-v1'><span>Waymo Outdoor MC（p10）</span><small>人审通过 · 评测已完成</small></button>
+    <button class='tab' data-tab='current-replica-mi-v1'><span>Replica MC（p10 · Habitat）</span><small>人审通过 · 待评测</small></button>
+    <button class='tab' data-tab='current-mp3d-mi-v1'><span>MP3D MC（p10 · Habitat）</span><small>人审通过 · 待评测</small></button>
   </div>
-
-  <div class="card" id="dim-task">
-    <h2>维度二 · 题型消融总览<small>native MI 9 题型解构 11 臂（组1 相机 ×5｜组2 新形态 ×2｜组3 对象 ×4）；点击图例隐藏/显示</small></h2>
-    <div class="legend" id="taskLegend"></div>
-    <div class="chart-wrap" id="taskChart"></div>
-    <div style="overflow-x:auto;margin-top:12px"><table id="taskTable"></table></div>
+</div>
+<div class='tabs-row current-vst'>
+  <span class='tabs-row-label'>Native MI 题型消融 🔬</span>
+  <div class='tabs'>
+    <button class='tab' data-tab='current-camgeo-cam-trans'><span>cam_trans 单题型</span><small>组1·相机题 · 2图</small></button>
+    <button class='tab' data-tab='current-camgeo-cam-rot'><span>cam_rot 单题型</span><small>组1·相机题 · 2图</small></button>
+    <button class='tab' data-tab='current-camgeo-cam-view-direction'><span>cam_view 单题型</span><small>组1·相机题 · 2图</small></button>
+    <button class='tab' data-tab='current-camgeo-cam-position'><span>cam_position 单题型</span><small>组1·相机题 · 2图</small></button>
+    <button class='tab' data-tab='current-camgeo-correspondence'><span>correspondence 单题型</span><small>组1·相机题 · 2图</small></button>
+    <button class='tab' data-tab='current-multiimgcamgeo-b1'><span>B1 三图几何</span><small>组2·新形态</small></button>
+    <button class='tab' data-tab='current-videocamgeo-b2'><span>B2 视频几何 🏆</span><small>组2·新形态</small></button>
+    <button class='tab' data-tab='current-objtask-obj-orientation'><span>obj_orientation</span><small>组3·对象题 · 2图</small></button>
+    <button class='tab' data-tab='current-objtask-obj-orientation-camera'><span>obj_orientation_camera</span><small>组3·对象题 · 2图</small></button>
+    <button class='tab' data-tab='current-objtask-obj-orientation-camera-vp'><span>obj_orientation_camera_vp</span><small>组3·对象题 · 2图</small></button>
+    <button class='tab' data-tab='current-objtask-obj-orientation-vp'><span>obj_orientation_vp</span><small>组3·对象题 · 2图</small></button>
   </div>
+</div>
 
-  <div class="card">
-    <h2>六项 benchmark · 最新已验收点（%）<small>各臂取各自最新 verified step</small></h2>
-    <div style="overflow-x:auto"><table id="sixTable"></table></div>
-  </div>
 
-  <div class="card">
-    <h2>结论速览</h2>
-    <div style="font-size:13.5px;line-height:1.9" id="findings">
-      1. 🗺 <b>场景维度</b>：HyperSim（峰值 37.24）与 Taskonomy（终点 36.95）单场景即超 native MI，ScanNet++/Waymo 也强劲；Replica/MP3D（Habitat 系）最弱（&lt;34）——<b>场景选择比混合更关键，合成/多任务场景迁移性最好</b>；<br>
-      2. 🏆 <b>题型维度 · B2 视频几何双杀 native MI</b>（峰值 36.90 / 终点 36.52 vs 36.76 / 36.14）——唯一终点超过混合臂的题型臂；<br>
-      3. 📷 <b>相机五题型互补</b>：最强 cam_rot 终点 35.76 仍低于混合，混合收益 = 相机主体 ~+0.7 + 题型互补 ~+0.3；<br>
-      4. 🧊 <b>纯对象题 ≈ 没加</b>（终点 34.95 vs baseline 35.10），但 <b>对象×相机耦合立刻有效</b>（obj_cam 峰值 35.76）；<br>
-      5. ⏱ <b>对象臂后段才发力</b>（obj_cam s600 33.90 → s900 35.76），早停会误判；多数臂 s900 &gt; s1000，下游建议按验证集选点。
-    </div>
-  </div>
 
-  <div id="arms"></div>
 
-  <footer>
-    <p>分数逐 ckpt 读自 m0 tensorboard results 的 all_benchmark_scores.json；每个入表点均通过 WebDAV 验收：六项 32,032/32,032 全量、prediction 非空、model/usage 正确、0 API failure。</p>
-    <p id="footUpdated"></p>
-  </footer>
+
+
+<section id='tab-snv60710' class='pane'>
+<h2 class='section-title'>原生 VST-ScanNet Multi-Image V1（41K）：SN V6 0710 严格复验</h2>
+<div class='geo-note'>蓝线为 0710 新基线，橙线为 0710 + 10% VST 多图组。两组使用相同的 iter216 起点、训练参数和 no-thinking 评测配置；多图组加入 10% VST-ScanNet MI。</div>
+<div class='snv6-chart-grid' id='snv60710-metric-charts'></div>
+</section>
+
+
+
+
+
+
+
+
+<section id='tab-current-native-mi-v2-1' class='pane'><div id='current-native-mi-v2-1-root'></div></section>
+<section id='tab-current-scannetpp-mi-v1' class='pane'><div id='current-scannetpp-mi-v1-root'></div></section>
+<section id='tab-current-arkitscenes-mi-v1' class='pane'><div id='current-arkitscenes-mi-v1-root'></div></section>
+<section id='tab-current-taskonomy-mi-v1' class='pane'><div id='current-taskonomy-mi-v1-root'></div></section>
+<section id='tab-current-dl3dv-mi-v1' class='pane'><div id='current-dl3dv-mi-v1-root'></div></section>
+<section id='tab-current-arkitscenes-mi-v2' class='pane'><div id='current-arkitscenes-mi-v2-root'></div></section>
+<section id='tab-current-hypersim-mi-v1-m3h20' class='pane'><div id='current-hypersim-mi-v1-m3h20-root'></div></section>
+<section id='tab-current-megadepth-mi-v1' class='pane'><div id='current-megadepth-mi-v1-root'></div></section>
+<section id='tab-current-waymo-outdoor-mi-v1' class='pane'><div id='current-waymo-outdoor-mi-v1-root'></div></section>
+<section id='tab-current-replica-mi-v1' class='pane'><div id='current-replica-mi-v1-root'></div></section>
+<section id='tab-current-mp3d-mi-v1' class='pane'><div id='current-mp3d-mi-v1-root'></div></section>
+<section id='tab-current-camgeo-cam-trans' class='pane'><div id='current-camgeo-cam-trans-root'></div></section>
+<section id='tab-current-camgeo-cam-rot' class='pane'><div id='current-camgeo-cam-rot-root'></div></section>
+<section id='tab-current-camgeo-cam-view-direction' class='pane'><div id='current-camgeo-cam-view-direction-root'></div></section>
+<section id='tab-current-camgeo-cam-position' class='pane'><div id='current-camgeo-cam-position-root'></div></section>
+<section id='tab-current-camgeo-correspondence' class='pane'><div id='current-camgeo-correspondence-root'></div></section>
+<section id='tab-current-multiimgcamgeo-b1' class='pane'><div id='current-multiimgcamgeo-b1-root'></div></section>
+<section id='tab-current-videocamgeo-b2' class='pane'><div id='current-videocamgeo-b2-root'></div></section>
+<section id='tab-current-objtask-obj-orientation' class='pane'><div id='current-objtask-obj-orientation-root'></div></section>
+<section id='tab-current-objtask-obj-orientation-camera' class='pane'><div id='current-objtask-obj-orientation-camera-root'></div></section>
+<section id='tab-current-objtask-obj-orientation-camera-vp' class='pane'><div id='current-objtask-obj-orientation-camera-vp-root'></div></section>
+<section id='tab-current-objtask-obj-orientation-vp' class='pane'><div id='current-objtask-obj-orientation-vp-root'></div></section>
 </main>
 <script>
-const TASK_PALETTE={
- 'camgeo-cam-trans':'#4c8bf5','camgeo-cam-rot':'#1d4ed8','camgeo-cam-view-direction':'#63b3ed',
- 'camgeo-cam-position':'#805ad5','camgeo-correspondence':'#94a3b8',
- 'multiimgcamgeo-b1':'#ed8936','videocamgeo-b2':'#e53e3e',
- 'objtask-obj-orientation':'#68d391','objtask-obj-orientation-camera':'#276749',
- 'objtask-obj-orientation-camera-vp':'#9f7aea','objtask-obj-orientation-vp':'#d69e2e'};
-const SCENE_PALETTE={
- 'scannetpp-mi-v1':'#3182ce','arkitscenes-mi-v1':'#63b3ed','taskonomy-mi-v1':'#dd6b20',
- 'dl3dv-mi-v1':'#38b2ac','arkitscenes-mi-v2':'#4299e1','hypersim-mi-v1-m3h20':'#b794f4',
- 'megadepth-mi-v1':'#f6ad55','waymo-outdoor-mi-v1':'#fc8181','replica-mi-v1':'#68d391','mp3d-mi-v1':'#4fd1c5'};
-const GROUP_CLASS={'组1·相机单题型':'','组2·新几何形态':'g2','组3·对象单题型':'g3'};
-const BASE_COLOR='#9aa0a6', REF_COLOR='#1a202c';
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const pct=v=>(v*100).toFixed(2);
-const GEO='Perception-geometry-mc-cat-circular-v1';
-const seriesOf=(results,bm)=>results.map(r=>[r.step,r.scores[bm]]).filter(p=>p[1]!=null);
-const peakOf=r=>r.length?r.reduce((a,b)=>b.scores[GEO]>a.scores[GEO]?b:a):null;
-const latestOf=r=>r.length?r[r.length-1]:null;
-const d=(a,b)=>((a-b)>=0?'+':'')+((a-b)*100).toFixed(2);
-
-function svgChart(series,{w=760,h=300}={}){
-  const pad={l:46,r:10,t:8,b:26};const xs=[100,1000];let ymin=Infinity,ymax=-Infinity;
-  series.forEach(s=>s.points.forEach(p=>{if(p[1]<ymin)ymin=p[1];if(p[1]>ymax)ymax=p[1]}));
-  if(!isFinite(ymin)){ymin=0;ymax=1}
-  const span=Math.max(ymax-ymin,0.005);ymin-=span*0.12;ymax+=span*0.12;
-  const X=v=>pad.l+(v-xs[0])/(xs[1]-xs[0])*(w-pad.l-pad.r);
-  const Y=v=>h-pad.b-(v-ymin)/(ymax-ymin)*(h-pad.t-pad.b);
-  let g='';
-  for(let i=0;i<=4;i++){const v=ymin+(ymax-ymin)*i/4,y=Y(v);
-    g+=`<line x1="${pad.l}" y1="${y}" x2="${w-pad.r}" y2="${y}" stroke="#e8edf2" stroke-width="1"/><text x="${pad.l-6}" y="${y+3.5}" font-size="10" fill="#8a97a5" text-anchor="end">${(v*100).toFixed(1)}</text>`}
-  for(let s=100;s<=1000;s+=200){const x=X(s);g+=`<text x="${x}" y="${h-8}" font-size="10" fill="#8a97a5" text-anchor="middle">${s}</text>`}
-  series.forEach(s=>{
-    const pts=s.points.map(p=>`${X(p[0]).toFixed(1)},${Y(p[1]).toFixed(1)}`).join(' ');
-    g+=`<polyline points="${pts}" fill="none" stroke="${s.color}" stroke-width="${s.width||2}" ${s.dash?'stroke-dasharray="6 4"':''} stroke-linejoin="round" stroke-linecap="round"/>`;
-    const last=s.points[s.points.length-1];
-    if(last&&s.endLabel)g+=`<text x="${X(last[0])+4}" y="${Y(last[1])+3}" font-size="9.5" fill="${s.color}" font-weight="700">${esc(s.endLabel)}</text>`;
-  });
-  return `<svg viewBox="0 0 ${w} ${h}" style="width:100%;min-width:560px;display:block">${g}</svg>`;
+const snv6Metrics = [
+  ['NaturalPerceptionCircularV3', '自然感知'],
+  ['BabyVPerceptionCircularV1', 'BabyV 感知'],
+  ['Perception-geometry-mc-cat-circular-v1', '几何 MC'],
+  ['ChartTableMCx4', '图表/表格'],
+  ['PointBench', 'PointBench'],
+  ['ZeroBench_v3', 'ZeroBench']
+];
+const snv6Rows = [
+  {group:'baseline',step:100,NaturalPerceptionCircularV3:0.22988505747126436,BabyVPerceptionCircularV1:0.2122885743872972,'Perception-geometry-mc-cat-circular-v1':0.26904761904761904,ChartTableMCx4:0.1688235294117647,PointBench:0.40224032586558045,ZeroBench_v3:0.03917050691244239},
+  {group:'baseline',step:200,NaturalPerceptionCircularV3:0.2476489028213166,BabyVPerceptionCircularV1:0.24231964100793923,'Perception-geometry-mc-cat-circular-v1':0.2671428571428571,ChartTableMCx4:0.19411764705882353,PointBench:0.5407331975560081,ZeroBench_v3:0.01152073732718894},
+  {group:'baseline',step:300,NaturalPerceptionCircularV3:0.22988505747126436,BabyVPerceptionCircularV1:0.2392129789437349,'Perception-geometry-mc-cat-circular-v1':0.27095238095238094,ChartTableMCx4:0.1923529411764706,PointBench:0.5814663951120163,ZeroBench_v3:0.020737327188940093},
+  {group:'baseline',step:400,NaturalPerceptionCircularV3:0.24242424242424243,BabyVPerceptionCircularV1:0.23610631687953054,'Perception-geometry-mc-cat-circular-v1':0.29285714285714287,ChartTableMCx4:0.18470588235294116,PointBench:0.5539714867617108,ZeroBench_v3:0.009216589861751152},
+  {group:'baseline',step:500,NaturalPerceptionCircularV3:0.23824451410658307,BabyVPerceptionCircularV1:0.23817742492233346,'Perception-geometry-mc-cat-circular-v1':0.3038095238095238,ChartTableMCx4:0.18411764705882352,PointBench:0.5570264765784114,ZeroBench_v3:0.02534562211981567},
+  {group:'baseline',step:600,NaturalPerceptionCircularV3:0.2277951933124347,BabyVPerceptionCircularV1:0.23196410079392474,'Perception-geometry-mc-cat-circular-v1':0.2814285714285714,ChartTableMCx4:0.17705882352941177,PointBench:0.5376782077393075,ZeroBench_v3:0.020737327188940093},
+  {group:'baseline',step:700,NaturalPerceptionCircularV3:0.2277951933124347,BabyVPerceptionCircularV1:0.23161891612012428,'Perception-geometry-mc-cat-circular-v1':0.30238095238095236,ChartTableMCx4:0.18176470588235294,PointBench:0.5580448065173116,ZeroBench_v3:0.027649769585253458},
+  {group:'baseline',step:800,NaturalPerceptionCircularV3:0.2361546499477534,BabyVPerceptionCircularV1:0.23610631687953054,'Perception-geometry-mc-cat-circular-v1':0.29285714285714287,ChartTableMCx4:0.16647058823529412,PointBench:0.5386965376782077,ZeroBench_v3:0.03686635944700461},
+  {group:'baseline',step:900,NaturalPerceptionCircularV3:0.22988505747126436,BabyVPerceptionCircularV1:0.2329996548153262,'Perception-geometry-mc-cat-circular-v1':0.2985714285714286,ChartTableMCx4:0.17058823529411765,PointBench:0.5519348268839104,ZeroBench_v3:0.03686635944700461},
+  {group:'baseline',step:1000,NaturalPerceptionCircularV3:0.219435736677116,BabyVPerceptionCircularV1:0.22816706938211945,'Perception-geometry-mc-cat-circular-v1':0.2914285714285714,ChartTableMCx4:0.17058823529411765,PointBench:0.539714867617108,ZeroBench_v3:0.029953917050691243},
+  {group:'scanmi',step:100,NaturalPerceptionCircularV3:0.26332288401253917,BabyVPerceptionCircularV1:0.24473593372454264,'Perception-geometry-mc-cat-circular-v1':0.22285714285714286,ChartTableMCx4:0.20588235294117646,PointBench:0.4429735234215886,ZeroBench_v3:0.04838709677419355},
+  {group:'scanmi',step:200,NaturalPerceptionCircularV3:0.29153605015673983,BabyVPerceptionCircularV1:0.2740766309975837,'Perception-geometry-mc-cat-circular-v1':0.31952380952380954,ChartTableMCx4:0.25,PointBench:0.5763747454175153,ZeroBench_v3:0.04838709677419355},
+  {group:'scanmi',step:300,NaturalPerceptionCircularV3:0.2988505747126437,BabyVPerceptionCircularV1:0.2802899551259924,'Perception-geometry-mc-cat-circular-v1':0.33904761904761904,ChartTableMCx4:0.25941176470588234,PointBench:0.5926680244399185,ZeroBench_v3:0.018433179723502304},
+  {group:'scanmi',step:400,NaturalPerceptionCircularV3:0.3155694879832811,BabyVPerceptionCircularV1:0.28684846392820157,'Perception-geometry-mc-cat-circular-v1':0.3357142857142857,ChartTableMCx4:0.2576470588235294,PointBench:0.59979633401222,ZeroBench_v3:0.041474654377880185},
+  {group:'scanmi',step:500,NaturalPerceptionCircularV3:0.29780564263322884,BabyVPerceptionCircularV1:0.2806351397997929,'Perception-geometry-mc-cat-circular-v1':0.3357142857142857,ChartTableMCx4:0.25882352941176473,PointBench:0.5733197556008147,ZeroBench_v3:0.029953917050691243},
+  {group:'scanmi',step:700,NaturalPerceptionCircularV3:0.30094043887147337,BabyVPerceptionCircularV1:0.27166033828098035,'Perception-geometry-mc-cat-circular-v1':0.33285714285714285,ChartTableMCx4:0.24294117647058824,PointBench:0.5519348268839104,ZeroBench_v3:0.03686635944700461},
+  {group:'scanmi',step:800,NaturalPerceptionCircularV3:0.30094043887147337,BabyVPerceptionCircularV1:0.26268553676216777,'Perception-geometry-mc-cat-circular-v1':0.3242857142857143,ChartTableMCx4:0.24058823529411766,PointBench:0.5712830957230143,ZeroBench_v3:0.04377880184331797},
+  {group:'scanmi',step:900,NaturalPerceptionCircularV3:0.28735632183908044,BabyVPerceptionCircularV1:0.2647566448049707,'Perception-geometry-mc-cat-circular-v1':0.33380952380952383,ChartTableMCx4:0.23294117647058823,PointBench:0.5936863543788188,ZeroBench_v3:0.03686635944700461},
+  {group:'scanmi',step:1000,NaturalPerceptionCircularV3:0.3019853709508882,BabyVPerceptionCircularV1:0.2764929237141871,'Perception-geometry-mc-cat-circular-v1':0.34523809523809523,ChartTableMCx4:0.25529411764705884,PointBench:0.5906313645621182,ZeroBench_v3:0.041474654377880185}
+];
+const snv60710Rows = [
+  {group:'baseline',step:100,NaturalPerceptionCircularV3:0.23719958202716823,BabyVPerceptionCircularV1:0.23058336209872282,'Perception-geometry-mc-cat-circular-v1':0.24095238095238095,ChartTableMCx4:0.2023529411764706,PointBench:0.5315682281059063,ZeroBench_v3:0.055299539170506916},
+  {group:'baseline',step:200,NaturalPerceptionCircularV3:0.29571577847439917,BabyVPerceptionCircularV1:0.2595788746979634,'Perception-geometry-mc-cat-circular-v1':0.30857142857142855,ChartTableMCx4:0.21294117647058824,PointBench:0.5519348268839104,ZeroBench_v3:0.03456221198156682},
+  {group:'baseline',step:300,NaturalPerceptionCircularV3:0.30929989550679204,BabyVPerceptionCircularV1:0.26510182947877114,'Perception-geometry-mc-cat-circular-v1':0.31761904761904763,ChartTableMCx4:0.21235294117647058,PointBench:0.5845213849287169,ZeroBench_v3:0.020737327188940093},
+  {group:'baseline',step:400,NaturalPerceptionCircularV3:0.3218390804597701,BabyVPerceptionCircularV1:0.2726958923023818,'Perception-geometry-mc-cat-circular-v1':0.3333333333333333,ChartTableMCx4:0.24,PointBench:0.5967413441955194,ZeroBench_v3:0.03225806451612903},
+  {group:'baseline',step:500,NaturalPerceptionCircularV3:0.3281086729362591,BabyVPerceptionCircularV1:0.2744218156713842,'Perception-geometry-mc-cat-circular-v1':0.33904761904761904,ChartTableMCx4:0.23176470588235293,PointBench:0.5733197556008147,ZeroBench_v3:0.03225806451612903},
+  {group:'baseline',step:600,NaturalPerceptionCircularV3:0.3281086729362591,BabyVPerceptionCircularV1:0.26682775284777355,'Perception-geometry-mc-cat-circular-v1':0.3357142857142857,ChartTableMCx4:0.20823529411764705,PointBench:0.5763747454175153,ZeroBench_v3:0.016129032258064516},
+  {group:'baseline',step:700,NaturalPerceptionCircularV3:0.3385579937304075,BabyVPerceptionCircularV1:0.2657921988263721,'Perception-geometry-mc-cat-circular-v1':0.3376190476190476,ChartTableMCx4:0.21705882352941178,PointBench:0.5773930753564155,ZeroBench_v3:0.029953917050691243},
+  {group:'baseline',step:800,NaturalPerceptionCircularV3:0.35318704284221525,BabyVPerceptionCircularV1:0.2692440455643769,'Perception-geometry-mc-cat-circular-v1':0.3519047619047619,ChartTableMCx4:0.21941176470588236,PointBench:0.5733197556008147,ZeroBench_v3:0.052995391705069124},
+  {group:'baseline',step:900,NaturalPerceptionCircularV3:0.3406478578892372,BabyVPerceptionCircularV1:0.27235070762858127,'Perception-geometry-mc-cat-circular-v1':0.3538095238095238,ChartTableMCx4:0.2252941176470588,PointBench:0.5773930753564155,ZeroBench_v3:0.029953917050691243},
+  {group:'baseline',step:1000,NaturalPerceptionCircularV3:0.3437826541274817,BabyVPerceptionCircularV1:0.27235070762858127,'Perception-geometry-mc-cat-circular-v1':0.35095238095238096,ChartTableMCx4:0.2252941176470588,PointBench:0.5763747454175153,ZeroBench_v3:0.029953917050691243},
+  {group:'scanmi',step:100,NaturalPerceptionCircularV3:0.24346917450365727,BabyVPerceptionCircularV1:0.2329996548153262,'Perception-geometry-mc-cat-circular-v1':0.2261904761904762,ChartTableMCx4:0.18235294117647058,PointBench:0.5162932790224033,ZeroBench_v3:0.059907834101382486},
+  {group:'scanmi',step:200,NaturalPerceptionCircularV3:0.33019853709508884,BabyVPerceptionCircularV1:0.26786330686917503,'Perception-geometry-mc-cat-circular-v1':0.32761904761904764,ChartTableMCx4:0.2447058823529412,PointBench:0.5763747454175153,ZeroBench_v3:0.03917050691244239},
+  {group:'scanmi',step:300,NaturalPerceptionCircularV3:0.3176593521421108,BabyVPerceptionCircularV1:0.2789092164307905,'Perception-geometry-mc-cat-circular-v1':0.3404761904761905,ChartTableMCx4:0.25,PointBench:0.5926680244399185,ZeroBench_v3:0.018433179723502304},
+  {group:'scanmi',step:400,NaturalPerceptionCircularV3:0.35318704284221525,BabyVPerceptionCircularV1:0.27959958577839145,'Perception-geometry-mc-cat-circular-v1':0.3461904761904762,ChartTableMCx4:0.2605882352941176,PointBench:0.5824847250509165,ZeroBench_v3:0.02304147465437788},
+  {group:'scanmi',step:500,NaturalPerceptionCircularV3:0.35214211076280044,BabyVPerceptionCircularV1:0.27959958577839145,'Perception-geometry-mc-cat-circular-v1':0.35333333333333333,ChartTableMCx4:0.24941176470588236,PointBench:0.5814663951120163,ZeroBench_v3:0.03225806451612903},
+  {group:'scanmi',step:600,NaturalPerceptionCircularV3:0.34796238244514105,BabyVPerceptionCircularV1:0.2827062478425958,'Perception-geometry-mc-cat-circular-v1':0.3580952380952381,ChartTableMCx4:0.2664705882352941,PointBench:0.5784114052953157,ZeroBench_v3:0.03686635944700461},
+  {group:'scanmi',step:700,NaturalPerceptionCircularV3:0.3406478578892372,BabyVPerceptionCircularV1:0.2740766309975837,'Perception-geometry-mc-cat-circular-v1':0.36,ChartTableMCx4:0.2611764705882353,PointBench:0.5804480651731161,ZeroBench_v3:0.020737327188940093},
+  {group:'scanmi',step:800,NaturalPerceptionCircularV3:0.3490073145245559,BabyVPerceptionCircularV1:0.2747670003451847,'Perception-geometry-mc-cat-circular-v1':0.3576190476190476,ChartTableMCx4:0.27058823529411763,PointBench:0.5814663951120163,ZeroBench_v3:0.02304147465437788},
+  {group:'scanmi',step:900,NaturalPerceptionCircularV3:0.3510971786833856,BabyVPerceptionCircularV1:0.2782188470831895,'Perception-geometry-mc-cat-circular-v1':0.3638095238095238,ChartTableMCx4:0.25941176470588234,PointBench:0.5712830957230143,ZeroBench_v3:0.02304147465437788},
+  {group:'scanmi',step:1000,NaturalPerceptionCircularV3:0.367816091954023,BabyVPerceptionCircularV1:0.27338626164998275,'Perception-geometry-mc-cat-circular-v1':0.35904761904761906,ChartTableMCx4:0.26529411764705885,PointBench:0.5621181262729125,ZeroBench_v3:0.027649769585253458}
+];
+function snv6Avg(row){return snv6Metrics.reduce((s,[k])=>s+row[k],0)/snv6Metrics.length}
+function snv6Row(group, step, rows=snv6Rows){return rows.find(r=>r.group===group && r.step===step)}
+function snv6Pct(v){return (v*100).toFixed(1)}
+function snv6Delta(v){const s=(v*100).toFixed(1); return `${v>=0?'+':''}${s}`}
+function snv6DeltaClass(v){return v>=0?'snv6-pos':'snv6-neg'}
+function snv6Scale(values, h, top, bottom){
+  let min=Math.min(...values), max=Math.max(...values);
+  const pad=Math.max((max-min)*0.14,0.012);
+  min=Math.max(0,min-pad); max=Math.min(1,max+pad);
+  return {min,max,y:v=>top+(max-v)/(max-min)*(h-top-bottom)};
 }
-
-function overviewBlock(arms,palette,base,ref,legendId,chartId,tableId,extraCol){
-  const series=[
-    {label:base.label,color:BASE_COLOR,dash:true,width:2,points:seriesOf(base.results,GEO)},
-    {label:ref.label,color:REF_COLOR,width:3.2,points:seriesOf(ref.results,GEO)},
-    ...arms.map(a=>({label:a.label,color:palette[a.key],width:a.key==='videocamgeo-b2'?3.4:1.8,points:seriesOf(a.results,GEO)}))
+function snv6Path(points, xOf, yOf){
+  let d='', open=false;
+  points.forEach(p=>{
+    if(p.v==null){open=false; return}
+    d += `${open?'L':'M'}${xOf(p.step).toFixed(1)},${yOf(p.v).toFixed(1)} `;
+    open=true;
+  });
+  return d;
+}
+function snv6Chart(el, title, metricKey, large=false, rows=snv6Rows){
+  const w=large?1120:760, h=large?360:300, m={l:52,r:24,t:30,b:44};
+  const steps=[100,200,300,400,500,600,700,800,900,1000];
+  const series = ['baseline','scanmi'].map(group=>({group, points:steps.map(step=>{const r=snv6Row(group,step,rows); return {step,v:r?(metricKey==='avg'?snv6Avg(r):r[metricKey]):null}})}));
+  const values=series.flatMap(s=>s.points.map(p=>p.v).filter(v=>v!=null));
+  const scale=snv6Scale(values,h,m.t,m.b);
+  const x=step=>m.l+(step-100)/900*(w-m.l-m.r);
+  const axisColor='#d7d7d0', labelColor='#4b4b4b';
+  const colors={scanmi:'#d45b2c',baseline:'#3f6f98'};
+  const tickVals=[scale.min,(scale.min*2+scale.max)/3,(scale.min+scale.max*2)/3,scale.max];
+  const grid=tickVals.map(v=>`<line x1="${m.l}" x2="${w-m.r}" y1="${scale.y(v)}" y2="${scale.y(v)}" stroke="${axisColor}" stroke-width="1"/><text x="${m.l-9}" y="${scale.y(v)+4}" text-anchor="end" font-size="12" fill="${labelColor}">${snv6Pct(v)}</text>`).join('');
+  const xLabels=steps.map(step=>`<text x="${x(step)}" y="${h-15}" text-anchor="middle" font-size="12" fill="${labelColor}">${step}</text>`).join('');
+  const paths=series.map(s=>`<path d="${snv6Path(s.points,x,scale.y)}" fill="none" stroke="${colors[s.group]}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`).join('');
+  const points=series.map(s=>s.points.filter(p=>p.v!=null).map((p,i)=>{
+    const y=scale.y(p.v), labelY=s.group==='scanmi'?y-10:y+18;
+    return `<circle cx="${x(p.step)}" cy="${y}" r="4.5" fill="#fff" stroke="${colors[s.group]}" stroke-width="2.5"/><text x="${x(p.step)}" y="${labelY}" text-anchor="middle" font-size="${large?14:13}" font-weight="800" fill="${colors[s.group]}">${snv6Pct(p.v)}</text>`;
+  }).join('')).join('');
+  el.innerHTML=`${title?`<h2>${title}</h2>`:''}<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${title||'SN V6 chart'}">
+    <rect x="0" y="0" width="${w}" height="${h}" fill="#fff"/>
+    ${grid}
+    <line x1="${m.l}" x2="${w-m.r}" y1="${h-m.b}" y2="${h-m.b}" stroke="#bdbdb5"/>
+    <line x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${h-m.b}" stroke="#bdbdb5"/>
+    ${xLabels}
+    <text x="${w/2}" y="${h-2}" text-anchor="middle" font-size="12" fill="${labelColor}">checkpoint</text>
+    ${paths}${points}
+  </svg>`;
+}
+function renderSnv6Panel(prefix, rows, treatmentLabel){
+  document.getElementById(`${prefix}-metric-charts`).innerHTML = snv6Metrics.map(([k])=>`<div class="snv6-chart" id="${prefix}-chart-${k.replace(/[^a-zA-Z0-9]/g,'-')}"><div class='snv6-legend'><span><i class='snv6-dot scanmi'></i>${treatmentLabel}</span><span><i class='snv6-dot base'></i>基线</span></div></div>`).join('');
+  snv6Metrics.forEach(([k,n])=>snv6Chart(document.getElementById(`${prefix}-chart-${k.replace(/[^a-zA-Z0-9]/g,'-')}`), n, k, false, rows));
+}
+function renderSnv6(){renderSnv6Panel('snv6',snv6Rows,'ScanMI')}
+function renderSnv60710(){renderSnv6Panel('snv60710',snv60710Rows,'0710 + 10% VST 多图')}
+function currentRows(data,arm){
+  const steps=new Set(arm.results.map(row=>row.step));
+  return [
+    ...data.baseline_results.filter(row=>steps.has(row.step)).map(row=>({group:'baseline',step:row.step,...row.scores})),
+    ...arm.results.map(row=>({group:'scanmi',step:row.step,...row.scores}))
   ];
-  const legendEl=document.getElementById(legendId), chartEl=document.getElementById(chartId);
-  legendEl.innerHTML=series.map((s,i)=>`<span data-i="${i}"><i class="dot" style="background:${s.color}"></i>${esc(s.label)}</span>`).join('');
-  const hidden=new Set();
-  const draw=()=>{chartEl.innerHTML=svgChart(series.filter((s,i)=>!hidden.has(i)),{w:1060,h:400})};
-  legendEl.querySelectorAll('span').forEach(sp=>sp.onclick=()=>{const i=+sp.dataset.i;hidden.has(i)?hidden.delete(i):hidden.add(i);sp.classList.toggle('off');draw()});
-  draw();
-  // table
-  const refPeak=peakOf(ref.results),basePeak=peakOf(base.results);
-  const rows=arms.map(a=>({a,p:peakOf(a.results),l:latestOf(a.results)})).sort((x,y)=>(y.p?y.p.scores[GEO]:0)-(x.p?x.p.scores[GEO]:0));
-  const allRows=[{a:{label:ref.label,[extraCol]:'—'},p:refPeak,l:latestOf(ref.results),ref:true},
-    ...rows,
-    {a:{label:base.label,[extraCol]:'—'},p:basePeak,l:latestOf(base.results),base:true}];
-  let html=`<tr><th>#</th><th>臂</th><th>${extraCol==='group'?'组':'备注'}</th><th>峰值 (step)</th><th>最新 (step)</th><th>Δ vs baseline峰</th><th>Δ vs native峰</th><th>进度</th></tr>`;
-  let rank=0;
-  allRows.forEach(r=>{
-    const pv=r.p?r.p.scores[GEO]:null, lv=r.l?r.l.scores[GEO]:null;
-    const style=r.ref?'background:#fff8e6;font-weight:700':r.base?'background:#f5f5f5;color:#666':'';
-    const extra=r.a[extraCol]||r.a.note||'—';
-    if(!r.ref&&!r.base)rank++;
-    html+=`<tr style="${style}"><td>${r.ref||r.base?'':rank}</td><td>${esc(r.a.label)}</td><td>${esc(extra)}</td>`+
-      `<td><b>${pv!=null?pct(pv):'—'}</b>${r.p?` (s${r.p.step})`:''}</td>`+
-      `<td>${lv!=null?pct(lv):'—'}${r.l?` (s${r.l.step})`:''}</td>`+
-      `<td>${pv!=null?d(pv,basePeak.scores[GEO]):'—'}</td><td>${pv!=null?d(pv,refPeak.scores[GEO]):'—'}</td>`+
-      `<td>${r.a.results?r.a.results.length:10}/10</td></tr>`;
-  });
-  document.getElementById(tableId).innerHTML=html;
 }
+function renderCurrentArm(data,arm){
+  const root=document.getElementById(`current-${arm.key}-root`);
+  if(!root)return;
+  const verified=arm.results.length;
+  if(!verified){
+    root.innerHTML=`
+      <h2 class="section-title">${geoEsc(arm.title)}</h2>
+      <div class="current-empty"><strong>暂无通过真实验收的分数</strong><span>不会用空目录、Submitted 状态或未完成的 smoke 结果补画曲线。</span></div>`;
+    return;
+  }
 
-async function main(){
-  const resp=await fetch('ablation_live.json',{cache:'no-store'});
-  const data=await resp.json();
-  document.getElementById('updated').textContent='数据更新于 '+data.updated_at+'（每 3 分钟自动刷新，题型臂收官自动补全 10/10）';
-  document.getElementById('footUpdated').textContent='updated_at: '+data.updated_at;
-  const base={label:data.baseline_label,results:data.baseline_results};
-  const ref={label:data.reference.label,results:data.reference.results};
-  const baseLatest=latestOf(base.results), refLatest=latestOf(ref.results), refPeak=peakOf(ref.results);
+  const rows=currentRows(data,arm);
+  root.innerHTML=`
+    <h2 class="section-title">${geoEsc(arm.title)}：已验收结果 vs exact SN6V0710</h2>
+    <div class="current-note"><b>口径：</b>六项 no-thinking full eval，同 checkpoint 对齐 exact SN6V0710 control。</div>
+    <div class="snv6-chart-grid" id="current-${arm.key}-metric-charts"></div>`;
 
-  // ---- KPI ----
-  const b2=data.task_arms.find(a=>a.key==='videocamgeo-b2');
-  const objPure=data.task_arms.find(a=>a.key==='objtask-obj-orientation');
-  const objCam=data.task_arms.find(a=>a.key==='objtask-obj-orientation-camera');
-  const hyper=data.scene_arms.find(a=>a.key==='hypersim-mi-v1-m3h20');
-  const task=data.scene_arms.find(a=>a.key==='taskonomy-mi-v1');
-  const b2f=latestOf(b2.results),b2p=peakOf(b2.results),refF=latestOf(ref.results);
-  const objF=latestOf(objPure.results),objCamP=peakOf(objCam.results);
-  const hyperP=peakOf(hyper.results),taskF=latestOf(task.results);
-  document.getElementById('kpis').innerHTML=`
-   <div class="kpi"><div class="t">🗺 场景最强 · HyperSim 峰值 s${hyperP.step}</div><div class="v up">${pct(hyperP.scores[GEO])}%</div><div class="d">Taskonomy 终点 ${pct(taskF.scores[GEO])}% —— 单场景即超 native MI</div></div>
-   <div class="kpi"><div class="t">🏆 B2 视频 · 终点 s${b2f.step}</div><div class="v up">${pct(b2f.scores[GEO])}%</div><div class="d">vs native MI 终点 ${pct(refF.scores[GEO])}%（<span class="up">${d(b2f.scores[GEO],refF.scores[GEO])}</span>）</div></div>
-   <div class="kpi"><div class="t">🚀 B2 视频 · 峰值 s${b2p.step}</div><div class="v up">${pct(b2p.scores[GEO])}%</div><div class="d">native MI 峰值 ${pct(refPeak.scores[GEO])}%（s${refPeak.step}）</div></div>
-   <div class="kpi"><div class="t">🧊 纯对象题 · 终点</div><div class="v flat">${pct(objF.scores[GEO])}%</div><div class="d">vs baseline ${pct(baseLatest.scores[GEO])}%（≈无贡献）；耦合后 obj_cam 峰值 ${pct(objCamP.scores[GEO])}%</div></div>`;
-
-  overviewBlock(data.scene_arms,SCENE_PALETTE,base,ref,'sceneLegend','sceneChart','sceneTable','note');
-  overviewBlock(data.task_arms,TASK_PALETTE,base,ref,'taskLegend','taskChart','taskTable','group');
-
-  // ---- six-benchmark table ----
-  let six=`<tr><th>维度</th><th>臂</th>${data.benchmarks.map(b=>`<th>${esc(b[1])}</th>`).join('')}<th>step</th></tr>`;
-  const sixRows=[{dim:'对照',label:ref.label,results:ref.results,ref:true},
-    ...data.scene_arms.map(a=>({dim:'场景',label:a.label,results:a.results})),
-    ...data.task_arms.map(a=>({dim:'题型',label:a.label,results:a.results})),
-    {dim:'对照',label:base.label,results:base.results,base:true}];
-  sixRows.forEach(r=>{
-    const l=latestOf(r.results);if(!l)return;
-    const style=r.ref?'background:#fff8e6;font-weight:700':r.base?'background:#f5f5f5;color:#666':'';
-    six+=`<tr style="${style}"><td>${r.dim}</td><td>${esc(r.label)}</td>${data.benchmarks.map(b=>`<td>${l.scores[b[0]]!=null?pct(l.scores[b[0]]):'—'}</td>`).join('')}<td>s${l.step}</td></tr>`;
-  });
-  document.getElementById('sixTable').innerHTML=six;
-
-  // ---- per-arm sections ----
-  const armCard=(a,palette,badgeHtml)=>`
-    <div class="card" id="arm-${a.key}">
-      <div class="arm-head"><h2 style="margin:0">${esc(a.label)}</h2>${badgeHtml}
-      <span class="stat">峰值 <b>${peakOf(a.results)?pct(peakOf(a.results).scores[GEO]):'—'}</b>（s${peakOf(a.results)?peakOf(a.results).step:'—'}）· 最新 <b>${latestOf(a.results)?pct(latestOf(a.results).scores[GEO]):'—'}</b>（s${latestOf(a.results)?latestOf(a.results).step:'—'}）· ${a.results.length}/10</span></div>
-      <div class="grid6" style="margin-top:10px">${data.benchmarks.map(b=>{
-        const l=latestOf(a.results);
-        return `<div class="mini"><h3>${esc(b[1])}</h3>${svgChart([
-          {label:base.label,color:BASE_COLOR,dash:true,width:1.6,points:seriesOf(base.results,b[0])},
-          {label:ref.label,color:REF_COLOR,width:1.8,points:seriesOf(ref.results,b[0])},
-          {label:a.label,color:palette[a.key],width:2.4,points:seriesOf(a.results,b[0]),endLabel:l?pct(l.scores[b[0]]):''}
-        ],{w:520,h:190})}</div>`}).join('')}</div>
-      <div class="note">灰虚线 = baseline（exact SN6V0710）｜黑实线 = native MI（9题型混合）｜彩线 = 本臂</div>
-    </div>`;
-  document.getElementById('arms').innerHTML=
-    `<h2 style="margin:6px 0 12px;font-size:19px" id="arms">🗺 场景维度 · 各臂六项曲线</h2>`+
-    data.scene_arms.map(a=>armCard(a,SCENE_PALETTE,`<span class="badge sc">场景源</span><span class="badge">${esc(a.note||'')}</span>`)).join('')+
-    `<h2 style="margin:22px 0 12px;font-size:19px">🧩 题型维度 · 各臂六项曲线</h2>`+
-    data.task_arms.map(a=>armCard(a,TASK_PALETTE,`<span class="badge ${GROUP_CLASS[a.group]||''}">${esc(a.group)}</span><span class="badge">${esc(a.shape)}</span>`)).join('');
+  const chartRoot=document.getElementById(`current-${arm.key}-metric-charts`);
+  chartRoot.innerHTML=snv6Metrics.map(([key,label])=>`<div class="snv6-chart"><h2>${geoEsc(label)}</h2><div class="snv6-legend"><span><i class="snv6-dot scanmi"></i>${geoEsc(arm.label)}</span><span><i class="snv6-dot base"></i>exact SN6V0710</span></div><div id="current-${arm.key}-${key.replace(/[^a-zA-Z0-9]/g,'-')}"></div></div>`).join('');
+  snv6Metrics.forEach(([key])=>snv6Chart(document.getElementById(`current-${arm.key}-${key.replace(/[^a-zA-Z0-9]/g,'-')}`),'',key,false,rows));
 }
-main().catch(e=>{document.getElementById('updated').textContent='数据加载失败：'+e.message});
+async function renderCurrentVst(){
+  try{
+    const response=await fetch('vst_scannet_current_live.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    data.arms.forEach(arm=>renderCurrentArm(data,arm));
+  }catch(error){
+    document.querySelectorAll('[id^="current-"][id$="-root"]').forEach(root=>{root.innerHTML=`<div class="current-empty"><strong>当前 VST 数据加载失败</strong><span>${geoEsc(error.message)}</span></div>`});
+  }
+}
+const geoB1000Catalog = {
+  r5_st_p10:{label:'R5 单轮 p10',short:'R5 单轮'},
+  r5_st_p30:{label:'R5 单轮 p30',short:'R5 p30'},
+  r5_grouped_p10:{label:'R5 同图多 QA p10',short:'R5 多轮'},
+  r13_st_p10:{label:'R13 单轮 p10',short:'R13 单轮'},
+  r13_st_p30:{label:'R13 单轮 p30',short:'R13 p30'},
+  r13_pair2_p10:{label:'R13 Pair2 p10',short:'R13 Pair2'},
+  r13_pair2_p30:{label:'R13 Pair2 p30',short:'R13 Pair2 p30'}
+};
+const geoB1000Comparisons = {
+  r5_format:{
+    title:'R5 数据组织：单轮 vs 同图多 QA',
+    note:'固定 R5 与 p10。旧同图多 QA 多轮实验只有 step200–700 六个已完成点，胜负统计只使用这些重叠 checkpoint。',
+    series:()=>['r5_st_p10','r5_grouped_p10']
+  },
+  version:{
+    title:'题目筛选版本：R5 vs R13',
+    variants:{p10:'固定 p10',p30:'固定 p30'},defaultVariant:'p10',
+    note:'固定数据组织为单轮，只改变 R5/R13 筛选版本。',
+    shorts:()=>['R5 单轮','R13 单轮'],
+    series:variant=>[`r5_st_${variant}`,`r13_st_${variant}`]
+  },
+  format:{
+    title:'样本格式：单轮 vs Pair2',
+    variants:{p10:'固定 p10',p30:'固定 p30'},defaultVariant:'p10',
+    note:'固定为 R13，只改变单轮 / 两图两问 Pair2 格式。',
+    shorts:()=>['R13 单轮','R13 Pair2'],
+    series:variant=>[`r13_st_${variant}`,`r13_pair2_${variant}`]
+  },
+  ratio:{
+    title:'注入比例：p10 vs p30',
+    variants:{r5:'R5 单轮',r13_st:'R13 单轮',r13_pair2:'R13 Pair2'},defaultVariant:'r5',
+    note:'固定数据版本与格式，只改变训练数据注入比例。',
+    shorts:variant=>variant==='r5'?['R5 p10','R5 p30']:variant==='r13_st'?['R13 p10','R13 p30']:['R13 Pair2 p10','R13 Pair2 p30'],
+    series:variant=>variant==='r5'?['r5_st_p10','r5_st_p30']:[`${variant}_p10`,`${variant}_p30`]
+  }
+};
+const geoB1000State={mode:'r5_format',variants:{version:'p10',format:'p10',ratio:'r5'}};
+const geoB1000MetricLabels=[
+  ['NaturalPerceptionCircularV3','自然感知'],
+  ['SolidGeoPerceptionCircularV1','立体几何'],
+  ['Perception-geometry-mc-circular-v1','几何 MC']
+];
+function geoPct(v){return (v*100).toFixed(1)}
+function geoDelta(v){const p=(v*100).toFixed(1);return `${v>=0?'+':''}${p}pp`}
+function geoEsc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function geoStatus(value){const text=String(value||'Unknown');const zh={Succeeded:'已完成',Success:'成功',Running:'运行中',Pending:'排队中',Accepted:'已受理',Failed:'失败',Unknown:'未知'};return `<span class="geo-status ${text.toLowerCase()}">${geoEsc(zh[text]||text)}</span>`}
+function geoResultRows(data,key){
+  const rows=key==='r5_grouped_p10'?(data.reference_results||[]):data.results;
+  return rows.filter(row=>row.experiment===key).sort((a,b)=>a.step-b.step);
+}
+function geoBaselineAt(data,step,metric){
+  const row=(data.baseline_results||[]).find(item=>item.step===step);
+  return row?.scores?.[metric]??data.baseline[metric];
+}
+function geoSelectedSeries(data){
+  const config=geoB1000Comparisons[geoB1000State.mode];
+  const variant=config.variants?(geoB1000State.variants[geoB1000State.mode]||config.defaultVariant):null;
+  return config.series(variant).map((key,index)=>({
+    key,...geoB1000Catalog[key],...(config.shorts?{short:config.shorts(variant)[index]}:{}),color:index===0?'#1769aa':'#c45d25',dash:index===1?'8 5':''
+  }));
+}
+function geoPath(points,x,y){
+  const byStep=new Map(points.map(point=>[point.step,point.v]));
+  let path='',open=false;
+  for(let step=100;step<=1000;step+=100){
+    const value=byStep.get(step);
+    if(value==null){open=false;continue}
+    path+=`${open?'L':'M'}${x(step).toFixed(1)},${y(value).toFixed(1)} `;
+    open=true;
+  }
+  return path;
+}
+function geoB1000Chart(el,metric,data,selected){
+  const w=720,h=350,m={l:56,r:20,t:22,b:46};
+  const series=[
+    {key:'lijia_baseline',label:data.baseline_label,color:'#4f555c',dash:'4 5',points:(data.baseline_results||[]).map(row=>({step:row.step,v:row.scores[metric]}))},
+    ...selected.map(item=>({...item,points:geoResultRows(data,item.key).filter(row=>row.scores[metric]!=null).map(row=>({step:row.step,v:row.scores[metric]}))}))
+  ];
+  const values=series.flatMap(item=>item.points.map(point=>point.v));
+  let min=Math.min(...values),max=Math.max(...values);
+  const pad=Math.max((max-min)*0.2,0.012);
+  min=Math.max(0,min-pad);max=Math.min(1,max+pad);
+  if(max-min<0.03){const mid=(min+max)/2;min=Math.max(0,mid-0.018);max=Math.min(1,mid+0.018)}
+  const x=step=>m.l+(step-100)/900*(w-m.l-m.r);
+  const y=value=>m.t+(max-value)/(max-min)*(h-m.t-m.b);
+  const yTicks=[min,(min*2+max)/3,(min+max*2)/3,max];
+  const grid=yTicks.map(value=>`<line x1="${m.l}" x2="${w-m.r}" y1="${y(value)}" y2="${y(value)}" stroke="#deded8"/><text x="${m.l-9}" y="${y(value)+4}" text-anchor="end" font-size="12" fill="#555">${geoPct(value)}</text>`).join('');
+  const xTicks=Array.from({length:10},(_,i)=>(i+1)*100).map(step=>`<text x="${x(step)}" y="${h-16}" text-anchor="middle" font-size="11" fill="#555">${step}</text>`).join('');
+  const paths=series.map(item=>{
+    const marks=item.points.map(point=>`<circle data-geo-series="${item.key}" cx="${x(point.step)}" cy="${y(point.v)}" r="4" fill="#fff" stroke="${item.color}" stroke-width="2.4"><title>${geoEsc(item.label)} · step ${point.step}: ${geoPct(point.v)}</title></circle>`).join('');
+    return `<path data-geo-series="${item.key}" d="${geoPath(item.points,x,y)}" fill="none" stroke="${item.color}" stroke-width="${item.key==='lijia_baseline'?'2.3':'3'}" stroke-linecap="round" stroke-linejoin="round" ${item.dash?`stroke-dasharray="${item.dash}"`:''}/>${marks}`;
+  }).join('');
+  el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${geoEsc(metric)} selected comparison curve">
+    <rect width="${w}" height="${h}" fill="#fff"/>
+    ${grid}
+    <line x1="${m.l}" x2="${w-m.r}" y1="${h-m.b}" y2="${h-m.b}" stroke="#bdbdb5"/>
+    <line x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${h-m.b}" stroke="#bdbdb5"/>
+    ${xTicks}${paths}
+    <text x="${w/2}" y="${h-2}" text-anchor="middle" font-size="12" fill="#555">checkpoint</text>
+  </svg>`;
+}
+function renderGeoComparison(data){
+  const config=geoB1000Comparisons[geoB1000State.mode];
+  const variant=config.variants?(geoB1000State.variants[geoB1000State.mode]||config.defaultVariant):null;
+  const selected=geoSelectedSeries(data);
+  document.querySelectorAll('[data-geo-mode]').forEach(button=>button.classList.toggle('active',button.dataset.geoMode===geoB1000State.mode));
+  const variantRow=document.getElementById('geo-b1000-variant-row');
+  const variantTabs=document.getElementById('geo-b1000-variant-tabs');
+  variantRow.hidden=!config.variants;
+  variantTabs.innerHTML=config.variants?Object.entries(config.variants).map(([key,label])=>`<button class="geo-variant-btn ${key===variant?'active':''}" data-geo-variant="${key}">${geoEsc(label)}</button>`).join(''):'';
+  variantTabs.querySelectorAll('[data-geo-variant]').forEach(button=>button.addEventListener('click',()=>{geoB1000State.variants[geoB1000State.mode]=button.dataset.geoVariant;renderGeoComparison(data)}));
+  document.getElementById('geo-b1000-compare-title').textContent=config.title;
+  document.getElementById('geo-b1000-compare-meta').textContent=config.note;
+  const legendSeries=[{label:data.baseline_label,color:'#4f555c',dash:'4 5'},...selected];
+  document.getElementById('geo-b1000-legend').innerHTML=legendSeries.map(item=>`<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.label)}</span>`).join('');
+  geoB1000Chart(document.getElementById('geo-b1000-chart-natural'),'NaturalPerceptionCircularV3',data,selected);
+  geoB1000Chart(document.getElementById('geo-b1000-chart-solid'),'SolidGeoPerceptionCircularV1',data,selected);
+  geoB1000Chart(document.getElementById('geo-b1000-chart-geometry'),'Perception-geometry-mc-circular-v1',data,selected);
+}
+async function renderGeoB1000(){
+  try{
+    const response=await fetch('geo3d_b1000_live.json',{cache:'no-store'});
+    if(!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    const geoZhLabels={'lijia-line baseline control':'lijia-line 基线（控制组）','R5 single-turn p10':'R5 单轮 p10','R5 single-turn p30':'R5 单轮 p30','R5 grouped multi-QA p10':'R5 同图多 QA p10','R13 single-turn p10':'R13 单轮 p10','R13 single-turn p30':'R13 单轮 p30','R13 pair2 p10':'R13 Pair2 p10','R13 pair2 p30':'R13 Pair2 p30'};
+    data.baseline_label=geoZhLabels[data.baseline_label]||data.baseline_label;
+    data.experiments.forEach(row=>{row.label=geoZhLabels[row.label]||row.label});
+    document.querySelectorAll('[data-geo-mode]').forEach(button=>button.addEventListener('click',()=>{geoB1000State.mode=button.dataset.geoMode;renderGeoComparison(data)}));
+    renderGeoComparison(data);
+  }catch(error){
+    document.getElementById('geo-b1000-compare-meta').textContent=`数据加载失败：${error.message}`;
+  }
+}
+const geoR15MetricOrder=[
+  'NaturalPerceptionCircularV3',
+  'Perception-geometry-mc-circular-v1',
+  'SolidGeoPerceptionCircularV1',
+  'SolidGeoPerceptionCircularV2'
+];
+const geoR15MetricShort={
+  NaturalPerceptionCircularV3:'Natural V3',
+  'Perception-geometry-mc-circular-v1':'Geometry MC',
+  SolidGeoPerceptionCircularV1:'SolidGeo V1',
+  SolidGeoPerceptionCircularV2:'SolidGeo V2'
+};
+function geoR15Pp(v){const n=Number(v);return `${n>0?'+':''}${n.toFixed(2)}pp`}
+function geoR15DeltaClass(v){return v>0?'geo-r15-pos':v<0?'geo-r15-neg':'geo-r15-zero'}
+function geoR15OverallChart(el,metric,data){
+  const rows=data.r15_final.overall_rows;
+  const w=720,h=350,m={l:56,r:20,t:22,b:46};
+  const series=[
+    {key:'baseline',label:'SN6V0710 control',color:'#4f555c',dash:'4 5',points:rows.map(row=>({step:row.step,v:row.baseline[metric]}))},
+    {key:'r15',label:'R15 single-turn p10',color:'#2e8b57',dash:'',points:rows.map(row=>({step:row.step,v:row.r15[metric]}))}
+  ];
+  const values=series.flatMap(item=>item.points.map(point=>point.v));
+  let min=Math.min(...values),max=Math.max(...values);
+  const pad=Math.max((max-min)*0.2,0.012);min=Math.max(0,min-pad);max=Math.min(1,max+pad);
+  if(max-min<0.03){const mid=(min+max)/2;min=Math.max(0,mid-0.018);max=Math.min(1,mid+0.018)}
+  const x=step=>m.l+(step-100)/900*(w-m.l-m.r);
+  const y=value=>m.t+(max-value)/(max-min)*(h-m.t-m.b);
+  const yTicks=[min,(min*2+max)/3,(min+max*2)/3,max];
+  const grid=yTicks.map(value=>`<line x1="${m.l}" x2="${w-m.r}" y1="${y(value)}" y2="${y(value)}" stroke="#deded8"/><text x="${m.l-9}" y="${y(value)+4}" text-anchor="end" font-size="12" fill="#555">${geoPct(value)}</text>`).join('');
+  const xTicks=Array.from({length:10},(_,i)=>(i+1)*100).map(step=>`<text x="${x(step)}" y="${h-16}" text-anchor="middle" font-size="11" fill="#555">${step}</text>`).join('');
+  const paths=series.map(item=>{
+    const marks=item.points.map(point=>`<circle data-geo-r15-series="${item.key}" cx="${x(point.step)}" cy="${y(point.v)}" r="4" fill="#fff" stroke="${item.color}" stroke-width="2.4"><title>${geoEsc(item.label)} · step ${point.step}: ${geoPct(point.v)}</title></circle>`).join('');
+    return `<path data-geo-r15-series="${item.key}" d="${geoPath(item.points,x,y)}" fill="none" stroke="${item.color}" stroke-width="${item.key==='baseline'?'2.3':'3'}" stroke-linecap="round" stroke-linejoin="round" ${item.dash?`stroke-dasharray="${item.dash}"`:''}/>${marks}`;
+  }).join('');
+  el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${geoEsc(metric)} R15 versus baseline curve"><rect width="${w}" height="${h}" fill="#fff"/>${grid}<line x1="${m.l}" x2="${w-m.r}" y1="${h-m.b}" y2="${h-m.b}" stroke="#bdbdb5"/><line x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${h-m.b}" stroke="#bdbdb5"/>${xTicks}${paths}<text x="${w/2}" y="${h-2}" text-anchor="middle" font-size="12" fill="#555">checkpoint</text></svg>`;
+}
+function geoR15DantiChart(el,benchmark,data){
+  const rows=data.r15_final.danti_rows.filter(row=>row.benchmark===benchmark);
+  const groups=[['SINGLE','单体','#2e8b57'],['MULTIPLE','多体','#1769aa'],['STACK','堆叠','#c45d25']];
+  const w=720,h=350,m={l:60,r:20,t:22,b:46};
+  const series=groups.map(([key,label,color])=>({key,label,color,points:rows.filter(row=>row.group===key).sort((a,b)=>a.step-b.step).map(row=>({step:row.step,v:row.delta_strict_pp}))}));
+  const values=[0,...series.flatMap(item=>item.points.map(point=>point.v))];
+  let min=Math.min(...values),max=Math.max(...values);const pad=Math.max((max-min)*0.16,0.75);min-=pad;max+=pad;
+  const x=step=>m.l+(step-100)/900*(w-m.l-m.r);const y=value=>m.t+(max-value)/(max-min)*(h-m.t-m.b);
+  const yTicks=[min,(min*2+max)/3,0,(min+max*2)/3,max].sort((a,b)=>a-b).filter((v,i,a)=>i===0||Math.abs(v-a[i-1])>0.2);
+  const grid=yTicks.map(value=>`<line x1="${m.l}" x2="${w-m.r}" y1="${y(value)}" y2="${y(value)}" stroke="${Math.abs(value)<1e-9?'#777':'#deded8'}" ${Math.abs(value)<1e-9?'stroke-width="1.5"':''}/><text x="${m.l-9}" y="${y(value)+4}" text-anchor="end" font-size="12" fill="#555">${value>0?'+':''}${value.toFixed(1)}</text>`).join('');
+  const xTicks=Array.from({length:10},(_,i)=>(i+1)*100).map(step=>`<text x="${x(step)}" y="${h-16}" text-anchor="middle" font-size="11" fill="#555">${step}</text>`).join('');
+  const paths=series.map(item=>{const marks=item.points.map(point=>`<circle data-geo-r15-danti-series="${item.key}" cx="${x(point.step)}" cy="${y(point.v)}" r="4" fill="#fff" stroke="${item.color}" stroke-width="2.4"><title>${item.label} · step ${point.step}: ${geoR15Pp(point.v)}</title></circle>`).join('');return `<path data-geo-r15-danti-series="${item.key}" d="${geoPath(item.points,x,y)}" fill="none" stroke="${item.color}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>${marks}`}).join('');
+  const legend=groups.map(([key,label,color],i)=>`<text x="${m.l+i*92}" y="14" font-size="11" font-weight="700" fill="${color}">● ${label}</text>`).join('');
+  el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${benchmark} grouped delta curve"><rect width="${w}" height="${h}" fill="#fff"/>${legend}${grid}<line x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${h-m.b}" stroke="#bdbdb5"/>${xTicks}${paths}<text x="${w/2}" y="${h-2}" text-anchor="middle" font-size="12" fill="#555">checkpoint · R15 − control (pp)</text></svg>`;
+}
+const geoR13SeriesStyle={
+  r13:{label:'R13',color:'#c45d25',dash:'7 5'},
+  r15:{label:'R15',color:'#2e8b57',dash:''},
+  control:{label:'SN6V0710 control',color:'#4f555c',dash:'3 5'}
+};
+function geoR13Chart(el,series,title){
+  const w=720,h=350,m={l:58,r:20,t:28,b:46};
+  const values=series.flatMap(item=>item.points.map(point=>point.v));
+  let min=Math.min(...values),max=Math.max(...values);const pad=Math.max((max-min)*0.18,1.2);min=Math.max(0,min-pad);max=Math.min(100,max+pad);
+  if(max-min<4){const mid=(min+max)/2;min=Math.max(0,mid-2.4);max=Math.min(100,mid+2.4)}
+  const x=step=>m.l+(step-100)/900*(w-m.l-m.r);const y=value=>m.t+(max-value)/(max-min)*(h-m.t-m.b);
+  const ticks=[min,(min*2+max)/3,(min+max*2)/3,max];
+  const grid=ticks.map(value=>`<line x1="${m.l}" x2="${w-m.r}" y1="${y(value)}" y2="${y(value)}" stroke="#deded8"/><text x="${m.l-9}" y="${y(value)+4}" text-anchor="end" font-size="12" fill="#555">${value.toFixed(1)}%</text>`).join('');
+  const xTicks=Array.from({length:10},(_,i)=>(i+1)*100).map(step=>`<text x="${x(step)}" y="${h-16}" text-anchor="middle" font-size="11" fill="#555">${step}</text>`).join('');
+  const legend=series.map((item,i)=>`<text x="${m.l+i*155}" y="15" font-size="11" font-weight="800" fill="${item.color}">● ${geoEsc(item.label)}</text>`).join('');
+  const paths=series.map(item=>{const marks=item.points.map(point=>`<circle data-geo-r13-series="${item.key}" cx="${x(point.step)}" cy="${y(point.v)}" r="4" fill="#fff" stroke="${item.color}" stroke-width="2.4"><title>${geoEsc(item.label)} · step ${point.step}: ${point.v.toFixed(2)}%</title></circle>`).join('');return `<path data-geo-r13-series="${item.key}" d="${geoPath(item.points,x,y)}" fill="none" stroke="${item.color}" stroke-width="${item.key==='r15'?'3.2':'2.6'}" stroke-linecap="round" stroke-linejoin="round" ${item.dash?`stroke-dasharray="${item.dash}"`:''}/>${marks}`}).join('');
+  el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${geoEsc(title)}"><rect width="${w}" height="${h}" fill="#fff"/>${legend}${grid}<line x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${h-m.b}" stroke="#bdbdb5"/>${xTicks}${paths}<text x="${w/2}" y="${h-2}" text-anchor="middle" font-size="12" fill="#555">checkpoint</text></svg>`;
+}
+function geoR13SubtypeTable(el,title,rows){
+  const dimZh={se:'SE',gq:'GQ',hardness:'难度',category:'SE×GQ'};
+  el.innerHTML=`<h3>${geoEsc(title)}</h3><table><thead><tr><th>方向</th><th>n</th><th>后3点</th><th>step1000</th></tr></thead><tbody>${rows.map(row=>`<tr><td>${geoEsc(dimZh[row.dimension]||row.dimension)} · ${geoEsc(row.value)}</td><td>${row.n}</td><td class="${geoR15DeltaClass(row.r15_minus_r13_tail3_pp)}">${geoR15Pp(row.r15_minus_r13_tail3_pp)}</td><td class="${geoR15DeltaClass(row.r15_minus_r13_step1000_pp)}">${geoR15Pp(row.r15_minus_r13_step1000_pp)}</td></tr>`).join('')}</tbody></table>`;
+}
+function renderGeoR13Retest(data){
+  const audit=data.r13_v2_retest;if(!audit?.complete)throw new Error('R13 V2 retest payload incomplete');
+  const endpoint=audit.step1000_r15_vs_r13;
+  const kpis=[
+    ['十点均值',geoR15Pp(audit.r15_minus_r13_mean10_pp),'R15 − R13；7/10 点为正'],
+    ['后 3 点均值',geoR15Pp(audit.r15_minus_r13_tail3_pp),'step800/900/1000'],
+    ['step1000',geoR15Pp(endpoint.delta_pp),'703 vs 704 题'],
+    ['显著点','1 / 10','仅 step300；其余未显著']
+  ];
+  document.getElementById('geo-r13-kpis').innerHTML=kpis.map(([label,value,sub])=>`<div class="geo-r13-kpi"><div class="label">${label}</div><div class="value ${geoR15DeltaClass(parseFloat(value)||0)}">${value}</div><div class="sub">${sub}</div></div>`).join('');
+  document.getElementById('geo-r13-conclusion').innerHTML=`<b>结论：R15 的数据质量修复没有在 SolidGeo V2 overall 上形成稳定、可确认的提升。</b> 平均仅 ${geoR15Pp(audit.r15_minus_r13_mean10_pp)}，终点反而 ${geoR15Pp(endpoint.delta_pp)}；SINGLE 是唯一方向较一致的弱正信号，但 STACK 后段明显退化。`;
+  const overallSeries=['r13','r15','control'].map(key=>({...geoR13SeriesStyle[key],key,points:audit.curve_rows.map(row=>({step:row.step,v:row[`${key}_strict_pct`]}))}));
+  geoR13Chart(document.getElementById('geo-r13-overall-chart'),overallSeries,'SolidGeo V2 three-way strict curve');
+  document.getElementById('geo-r13-curve-table').innerHTML=`<table class="geo-r15-table"><thead><tr><th>step</th><th>R13</th><th>R15</th><th>control</th><th>R15−R13</th><th>R15−control</th></tr></thead><tbody>${audit.curve_rows.map(row=>`<tr><td>${row.step}</td><td>${row.r13_strict_pct.toFixed(2)}%</td><td>${row.r15_strict_pct.toFixed(2)}%</td><td>${row.control_strict_pct.toFixed(2)}%</td><td class="${geoR15DeltaClass(row.r15_minus_r13_pp)}">${geoR15Pp(row.r15_minus_r13_pp)}</td><td class="${geoR15DeltaClass(row.r15_minus_control_pp)}">${geoR15Pp(row.r15_minus_control_pp)}</td></tr>`).join('')}</tbody></table>`;
+  const r15V2=(data.r15_final.danti_rows||[]).filter(row=>row.benchmark==='SolidGeoV2');
+  const imageMap={SINGLE:'geo-r13-image-single',MULTIPLE:'geo-r13-image-multiple',STACK:'geo-r13-image-stack'};
+  Object.entries(imageMap).forEach(([group,id])=>{
+    const r13Rows=audit.image_type_r13_rows.filter(row=>row.group===group).sort((a,b)=>a.step-b.step);
+    const grouped=r15V2.filter(row=>row.group===group).sort((a,b)=>a.step-b.step);
+    const series=[
+      {...geoR13SeriesStyle.r13,key:'r13',points:r13Rows.map(row=>({step:row.step,v:row.r13_strict_pct}))},
+      {...geoR13SeriesStyle.r15,key:'r15',points:grouped.map(row=>({step:row.step,v:row.r15_strict}))},
+      {...geoR13SeriesStyle.control,key:'control',points:grouped.map(row=>({step:row.step,v:row.base_strict}))}
+    ];
+    geoR13Chart(document.getElementById(id),series,`${group} three-way strict curve`);
+  });
+  const quadrants=[['R15 对 / R13 错',endpoint.left_correct_right_wrong],['R15 错 / R13 对',endpoint.left_wrong_right_correct],['都对',endpoint.both_correct],['都错',endpoint.both_wrong]];
+  document.getElementById('geo-r13-case-grid').innerHTML=quadrants.map(([label,value])=>`<div class="geo-r13-case"><div class="value">${value}</div><div class="label">${label}</div></div>`).join('');
+  document.getElementById('geo-r13-case-meta').textContent=`净差 ${geoR15Pp(endpoint.delta_pp)}；McNemar exact p=${endpoint.mcnemar_exact_p.toFixed(3)}；95% paired CI [${endpoint.paired_ci95_low_pp.toFixed(2)}, ${endpoint.paired_ci95_high_pp.toFixed(2)}]pp。`;
+  geoR13SubtypeTable(document.getElementById('geo-r13-direction-gains'),'大方向 · 改善最多',audit.top_directions.slice(0,6));
+  geoR13SubtypeTable(document.getElementById('geo-r13-direction-regressions'),'大方向 · 退化最多',audit.bottom_directions.slice(0,6));
+  geoR13SubtypeTable(document.getElementById('geo-r13-cell-gains'),'SE×GQ cell · 改善最多',audit.top_cells.slice(0,6));
+  geoR13SubtypeTable(document.getElementById('geo-r13-cell-regressions'),'SE×GQ cell · 退化最多',audit.bottom_cells.slice(0,6));
+}
+function renderGeoR15Final(data){
+  const final=data.r15_final;if(!final?.complete)throw new Error('R15 final payload incomplete');
+  const metricToId={NaturalPerceptionCircularV3:'geo-r15-chart-natural','Perception-geometry-mc-circular-v1':'geo-r15-chart-geometry',SolidGeoPerceptionCircularV1:'geo-r15-chart-v1',SolidGeoPerceptionCircularV2:'geo-r15-chart-v2'};
+  geoR15MetricOrder.forEach(metric=>geoR15OverallChart(document.getElementById(metricToId[metric]),metric,data));
+  geoR15DantiChart(document.getElementById('geo-r15-danti-v1'),'SolidGeoV1',data);geoR15DantiChart(document.getElementById('geo-r15-danti-v2'),'SolidGeoV2',data);
+}
+const geoFreshCatalog={
+  r5_st_p10:{label:'R5 单轮 p10',short:'R5'},
+  r5_st_p30:{label:'R5 单轮 p30',short:'R5'},
+  r13_st_p10:{label:'R13 单轮 p10',short:'R13'},
+  r13_st_p30:{label:'R13 单轮 p30',short:'R13'},
+  r13_pair2_p10:{label:'R13 Pair2 p10',short:'Pair2'},
+  r13_pair2_p30:{label:'R13 Pair2 p30',short:'Pair2'},
+  r15_st_p10:{label:'R15 单轮 p10',short:'R15'}
+};
+const geoFreshComparisons={
+  version:{
+    title:'筛选版本：R5 / R13 / R15 单轮',
+    variants:{p10:'固定 p10',p30:'固定 p30'},defaultVariant:'p10',
+    note:'固定训练起点、单轮样本格式和注入比例，只改变题目筛选版本。R15 为 V2 数据 + Class-18 门控（2026-07-15 起跑，1000/1000 已闭环）；p30 仅有 R5/R13。',
+    shorts:variant=>variant==='p10'?['R5','R13','R15']:['R5','R13'],
+    series:variant=>variant==='p10'?['r5_st_p10','r13_st_p10','r15_st_p10']:[`r5_st_${variant}`,`r13_st_${variant}`]
+  },
+  format:{
+    title:'样本格式：R13 单轮 vs R13 Pair2',
+    variants:{p10:'固定 p10',p30:'固定 p30'},defaultVariant:'p10',
+    note:'固定 R13 筛选版本与注入比例，只改变一图一问 / 两图两问 Pair2 格式。',
+    shorts:()=>['Single','Pair2'],
+    series:variant=>[`r13_st_${variant}`,`r13_pair2_${variant}`]
+  },
+  ratio:{
+    title:'注入比例：p10 vs p30',
+    variants:{r5_st:'R5 单轮',r13_st:'R13 单轮',r13_pair2:'R13 Pair2'},defaultVariant:'r5_st',
+    note:'固定筛选版本与样本格式，只改变 Geo3D 数据注入比例。',
+    shorts:()=>['p10','p30'],
+    series:variant=>[`${variant}_p10`,`${variant}_p30`]
+  }
+};
+const geoFreshState={mode:'version',variants:{version:'p10',format:'p10',ratio:'r5_st'}};
+function geoFreshRows(data,key){
+  return data.results.filter(row=>row.experiment===key).sort((a,b)=>a.step-b.step);
+}
+function geoFreshBaselineAt(data,step,metric){
+  return (data.baseline_results||[]).find(row=>row.step===step)?.scores?.[metric];
+}
+function geoFreshSelected(data){
+  const config=geoFreshComparisons[geoFreshState.mode];
+  const variant=geoFreshState.variants[geoFreshState.mode]||config.defaultVariant;
+  return config.series(variant).map((key,index)=>({
+    key,...geoFreshCatalog[key],short:config.shorts(variant)[index],color:['#1769aa','#c45d25','#2e8b57'][index%3],dash:index===1?'8 5':''
+  }));
+}
+function geoFreshChart(el,metric,data,selected){
+  const w=720,h=350,m={l:56,r:20,t:22,b:46};
+  const series=[
+    {key:'sn6v0710_control',label:data.baseline_label,color:'#4f555c',dash:'4 5',points:(data.baseline_results||[]).map(row=>({step:row.step,v:row.scores[metric]}))},
+    ...selected.map(item=>({...item,points:geoFreshRows(data,item.key).filter(row=>row.scores[metric]!=null).map(row=>({step:row.step,v:row.scores[metric]}))}))
+  ];
+  const values=series.flatMap(item=>item.points.map(point=>point.v));
+  let min=Math.min(...values),max=Math.max(...values);
+  const pad=Math.max((max-min)*0.2,0.012);
+  min=Math.max(0,min-pad);max=Math.min(1,max+pad);
+  if(max-min<0.03){const mid=(min+max)/2;min=Math.max(0,mid-0.018);max=Math.min(1,mid+0.018)}
+  const x=step=>m.l+(step-100)/900*(w-m.l-m.r);
+  const y=value=>m.t+(max-value)/(max-min)*(h-m.t-m.b);
+  const yTicks=[min,(min*2+max)/3,(min+max*2)/3,max];
+  const grid=yTicks.map(value=>`<line x1="${m.l}" x2="${w-m.r}" y1="${y(value)}" y2="${y(value)}" stroke="#deded8"/><text x="${m.l-9}" y="${y(value)+4}" text-anchor="end" font-size="12" fill="#555">${geoPct(value)}</text>`).join('');
+  const xTicks=Array.from({length:10},(_,i)=>(i+1)*100).map(step=>`<text x="${x(step)}" y="${h-16}" text-anchor="middle" font-size="11" fill="#555">${step}</text>`).join('');
+  const paths=series.map(item=>{
+    const marks=item.points.map(point=>`<circle data-geo-fresh-series="${item.key}" cx="${x(point.step)}" cy="${y(point.v)}" r="4" fill="#fff" stroke="${item.color}" stroke-width="2.4"><title>${geoEsc(item.label)} · step ${point.step}: ${geoPct(point.v)}</title></circle>`).join('');
+    return `<path data-geo-fresh-series="${item.key}" d="${geoPath(item.points,x,y)}" fill="none" stroke="${item.color}" stroke-width="${item.key==='sn6v0710_control'?'2.3':'3'}" stroke-linecap="round" stroke-linejoin="round" ${item.dash?`stroke-dasharray="${item.dash}"`:''}/>${marks}`;
+  }).join('');
+  el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${geoEsc(metric)} freshfix selected comparison curve">
+    <rect width="${w}" height="${h}" fill="#fff"/>${grid}
+    <line x1="${m.l}" x2="${w-m.r}" y1="${h-m.b}" y2="${h-m.b}" stroke="#bdbdb5"/>
+    <line x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${h-m.b}" stroke="#bdbdb5"/>
+    ${xTicks}${paths}<text x="${w/2}" y="${h-2}" text-anchor="middle" font-size="12" fill="#555">checkpoint</text>
+  </svg>`;
+}
+function renderGeoFreshComparison(data){
+  const config=geoFreshComparisons[geoFreshState.mode];
+  const variant=geoFreshState.variants[geoFreshState.mode]||config.defaultVariant;
+  const selected=geoFreshSelected(data);
+  document.querySelectorAll('[data-geo-fresh-mode]').forEach(button=>button.classList.toggle('active',button.dataset.geoFreshMode===geoFreshState.mode));
+  const variantTabs=document.getElementById('geo-fresh-variant-tabs');
+  variantTabs.innerHTML=Object.entries(config.variants).map(([key,label])=>`<button class="geo-variant-btn ${key===variant?'active':''}" data-geo-fresh-variant="${key}">${geoEsc(label)}</button>`).join('');
+  variantTabs.querySelectorAll('[data-geo-fresh-variant]').forEach(button=>button.addEventListener('click',()=>{geoFreshState.variants[geoFreshState.mode]=button.dataset.geoFreshVariant;renderGeoFreshComparison(data)}));
+  document.getElementById('geo-fresh-compare-title').textContent=config.title;
+  const legend=[{label:data.baseline_label,color:'#4f555c',dash:'4 5'},...selected];
+  document.getElementById('geo-fresh-legend').innerHTML=legend.map(item=>`<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.label)}</span>`).join('');
+  geoFreshChart(document.getElementById('geo-fresh-chart-natural'),'NaturalPerceptionCircularV3',data,selected);
+  geoFreshChart(document.getElementById('geo-fresh-chart-solid'),'SolidGeoPerceptionCircularV1',data,selected);
+  geoFreshChart(document.getElementById('geo-fresh-chart-geometry'),'Perception-geometry-mc-circular-v1',data,selected);
+}
+async function renderGeoFreshfix(){
+  const errorBox=document.getElementById('geo-fresh-error');
+  try{
+    const response=await fetch('geo3d_freshfix_live.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    errorBox.hidden=true;
+    renderGeoR13Retest(data);
+    renderGeoR15Final(data);
+    document.querySelectorAll('[data-geo-fresh-mode]').forEach(button=>button.addEventListener('click',()=>{geoFreshState.mode=button.dataset.geoFreshMode;renderGeoFreshComparison(data)}));
+    renderGeoFreshComparison(data);
+  }catch(error){
+    errorBox.hidden=false;
+    errorBox.innerHTML=`<b>Freshfix 数据加载失败。</b> ${geoEsc(error.message)}`;
+  }
+}
+function geokg137kV2Series(data){
+  const order=['mc_v2fix','fill_v2fix','half_v2fix'];
+  return order.map(key=>(data.v2fix_series||[]).find(item=>item.key===key)).filter(Boolean);
+}
+function geokg137kChart(el,metric,data,visibleSeries,yDomain=null){
+  const w=720,h=350,m={l:56,r:20,t:22,b:46};
+  const series=[data.baseline,...visibleSeries].map(item=>({
+    ...item,
+    points:item.rows.map(row=>({step:row.step,v:row[metric]})).filter(point=>point.v!=null)
+  }));
+  const values=series.flatMap(item=>item.points.map(point=>point.v));
+  let min=yDomain?yDomain[0]:Math.min(...values),max=yDomain?yDomain[1]:Math.max(...values);
+  if(!yDomain){const pad=Math.max((max-min)*0.18,0.012);min=Math.max(0,min-pad);max=Math.min(1,max+pad)}
+  const x=step=>m.l+(step-100)/900*(w-m.l-m.r);
+  const y=value=>m.t+(max-value)/(max-min)*(h-m.t-m.b);
+  const yTicks=[min,(min*2+max)/3,(min+max*2)/3,max];
+  const grid=yTicks.map(value=>`<line x1="${m.l}" x2="${w-m.r}" y1="${y(value)}" y2="${y(value)}" stroke="#deded8"/><text x="${m.l-9}" y="${y(value)+4}" text-anchor="end" font-size="12" fill="#555">${geoPct(value)}</text>`).join('');
+  const xTicks=Array.from({length:10},(_,i)=>(i+1)*100).map(step=>`<text x="${x(step)}" y="${h-16}" text-anchor="middle" font-size="11" fill="#555">${step}</text>`).join('');
+  const paths=series.map(item=>{
+    const isBaseline=item.key==='control';
+    const marks=item.points.map(point=>`<circle data-geokg-series="${item.key}" cx="${x(point.step)}" cy="${y(point.v)}" r="${isBaseline?'3.2':'4'}" fill="#fff" stroke="${item.color}" stroke-width="${isBaseline?'2':'2.4'}"><title>${geoEsc(item.label)} · step ${point.step}: ${geoPct(point.v)}</title></circle>`).join('');
+    return `<path data-geokg-series="${item.key}" d="${geoPath(item.points,x,y)}" fill="none" stroke="${item.color}" stroke-width="${isBaseline?'2.3':'3.2'}" stroke-linecap="round" stroke-linejoin="round" ${item.dash?`stroke-dasharray="${item.dash}"`:''}/>${marks}`;
+  }).join('');
+  el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${geoEsc(metric)} Geo-KG V2 three-setting comparison curve"><rect width="${w}" height="${h}" fill="#fff"/>${grid}<line x1="${m.l}" x2="${w-m.r}" y1="${h-m.b}" y2="${h-m.b}" stroke="#bdbdb5"/><line x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${h-m.b}" stroke="#bdbdb5"/>${xTicks}${paths}<text x="${w/2}" y="${h-2}" text-anchor="middle" font-size="12" fill="#555">checkpoint</text></svg>`;
+}
+function renderGeokg137kView(data){
+  const visibleSeries=geokg137kV2Series(data);
+  document.getElementById('geokg137k-legend').innerHTML=[data.baseline,...visibleSeries].map(item=>`<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.key==='control'?'Baseline · SN6V0710':item.label.replace('V2修复 · ','V2 · '))}</span>`).join('');
+  geokg137kChart(document.getElementById('geokg137k-chart-solid'),'SolidGeoPerceptionCircularV2',data,visibleSeries);
+  geokg137kChart(document.getElementById('geokg137k-chart-geometry'),'Perception-geometry-mc-circular-v1',data,visibleSeries);
+  geokg137kChart(document.getElementById('geokg137k-chart-natural'),'NaturalPerceptionCircularV3',data,visibleSeries);
+}
+async function renderGeokg137k(){
+  const errorBox=document.getElementById('geokg137k-error');
+  try{
+    const response=await fetch('geokg137k_3arm_autoeval.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    errorBox.hidden=true;
+    renderGeokg137kView(data);
+  }catch(error){
+    errorBox.hidden=false;
+    errorBox.innerHTML=`<b>Geo-KG 三臂数据加载失败。</b> ${geoEsc(error.message)}`;
+  }
+}
+function renderRpqaView(data){
+  const visibleSeries=data.series||[];
+  document.getElementById('rpqa-legend').innerHTML=[data.baseline,...visibleSeries].map(item=>`<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.key==='control'?'Baseline · SN6V0710':item.label)}</span>`).join('');
+  const vf=document.getElementById('rpqa-verified'); if(vf&&data.verified_through) vf.textContent='已评至 step '+data.verified_through;
+  geokg137kChart(document.getElementById('rpqa-chart-solid'),'SolidGeoPerceptionCircularV2',data,visibleSeries);
+  geokg137kChart(document.getElementById('rpqa-chart-geometry'),'Perception-geometry-mc-circular-v1',data,visibleSeries);
+  geokg137kChart(document.getElementById('rpqa-chart-natural'),'NaturalPerceptionCircularV3',data,visibleSeries);
+}
+async function renderRpqa(){
+  const errorBox=document.getElementById('rpqa-error');
+  try{
+    const response=await fetch('rpqa_live.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    errorBox.hidden=true;
+    renderRpqaView(data);
+  }catch(error){
+    errorBox.hidden=false;
+    errorBox.innerHTML=`<b>RPQA 数据加载失败。</b> ${geoEsc(error.message)}`;
+  }
+}
+const GEO_R3P10_METRIC='SolidGeoPerceptionCircularV2';
+function geoR3p10DeltaClass(v){return v>0?'geo-r3p10-pos':v<0?'geo-r3p10-neg':'geo-r3p10-zero'}
+function geoR3p10Pp(v){return `${v>0?'+':''}${Number(v).toFixed(2)}pp`}
+function geoR3p10DeltaChart(el,data,series){
+  // 每臂在每个 step 的 (臂 − baseline) pp 曲线；0 线加粗
+  const w=720,h=350,m={l:56,r:20,t:22,b:46};
+  const baseByStep=new Map((data.baseline.rows||[]).map(r=>[r.step,r[GEO_R3P10_METRIC]]));
+  const lines=series.map(s=>({
+    key:s.key,label:s.label,color:s.color,
+    points:(s.rows||[]).filter(r=>baseByStep.has(r.step)&&r[GEO_R3P10_METRIC]!=null)
+      .map(r=>({step:r.step,v:(r[GEO_R3P10_METRIC]-baseByStep.get(r.step))*100}))
+  }));
+  const values=[0,...lines.flatMap(l=>l.points.map(p=>p.v))];
+  let min=Math.min(...values),max=Math.max(...values);
+  const pad=Math.max((max-min)*0.16,0.6);min-=pad;max+=pad;
+  const x=step=>m.l+(step-100)/900*(w-m.l-m.r);
+  const y=value=>m.t+(max-value)/(max-min)*(h-m.t-m.b);
+  const yTicks=[min,(min*2+max)/3,0,(min+max*2)/3,max].sort((a,b)=>a-b).filter((v,i,a)=>i===0||Math.abs(v-a[i-1])>0.15);
+  const grid=yTicks.map(value=>`<line x1="${m.l}" x2="${w-m.r}" y1="${y(value)}" y2="${y(value)}" stroke="${Math.abs(value)<1e-9?'#777':'#deded8'}" ${Math.abs(value)<1e-9?'stroke-width="1.5"':''}/><text x="${m.l-9}" y="${y(value)+4}" text-anchor="end" font-size="12" fill="#555">${value>0?'+':''}${value.toFixed(1)}</text>`).join('');
+  const xTicks=Array.from({length:10},(_,i)=>(i+1)*100).map(step=>`<text x="${x(step)}" y="${h-16}" text-anchor="middle" font-size="11" fill="#555">${step}</text>`).join('');
+  const paths=lines.map(item=>{
+    const marks=item.points.map(point=>`<circle data-geo-r3p10-delta="${item.key}" cx="${x(point.step)}" cy="${y(point.v)}" r="4" fill="#fff" stroke="${item.color}" stroke-width="2.4"><title>${geoEsc(item.label)} · step ${point.step}: ${geoR3p10Pp(point.v)}</title></circle>`).join('');
+    return `<path data-geo-r3p10-delta="${item.key}" d="${geoPath(item.points,x,y)}" fill="none" stroke="${item.color}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>${marks}`;
+  }).join('');
+  el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Geo3D R3 P10 SolidGeo V2 delta vs baseline"><rect width="${w}" height="${h}" fill="#fff"/>${grid}<line x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${h-m.b}" stroke="#bdbdb5"/>${xTicks}${paths}<text x="${w/2}" y="${h-2}" text-anchor="middle" font-size="12" fill="#555">checkpoint · 臂 − baseline (pp)</text></svg>`;
+}
+function renderGeo3dR3P10View(data){
+  const series=data.series||[];
+  const seSeries=series.filter(item=>['se0','se1','se2345'].includes(item.key));
+  const fullSeries=series.filter(item=>item.key==='full');
+  const allValues=[data.baseline,...series].flatMap(item=>(item.rows||[]).map(row=>row[GEO_R3P10_METRIC]).filter(value=>value!=null));
+  let sharedMin=Math.min(...allValues),sharedMax=Math.max(...allValues);
+  const sharedPad=Math.max((sharedMax-sharedMin)*0.18,0.012);
+  const sharedYDomain=[Math.max(0,sharedMin-sharedPad),Math.min(1,sharedMax+sharedPad)];
+  const fullChartData={...data,baseline:{...data.baseline,color:'#adb3b8'}};
+  const baseFr=new Map();(data.baseline.rows||[]).forEach(r=>{if(r.failed_ratio!=null)baseFr.set(r.step,r.failed_ratio)});
+  const sub=document.getElementById('geo-r3p10-subtitle');if(sub&&data.subtitle)sub.textContent=data.subtitle;
+  const lastStep=item=>Math.max(0,...(item.rows||[]).map(row=>Number(row.step)||0));
+  const vf=document.getElementById('geo-r3p10-verified');if(vf)vf.textContent='各臂最新：'+series.map(item=>`${item.label} ${lastStep(item)||'—'}`).join(' · ');
+  const up=document.getElementById('geo-r3p10-updated');if(up)up.textContent=`更新时间：${geoEsc(data.updated_at||'')}`;
+  // 两张独立图：三个 SE 分臂；Full 单独突出。两图都保留灰色 baseline 参照。
+  const renderLegend=(id,items,baseline=data.baseline)=>{document.getElementById(id).innerHTML=[baseline,...items].map(item=>{
+    const isBase=item.key==='control';
+    const extra=(!isBase&&item.n_questions)?` <span class="geo-r3p10-muted">(${item.n_questions.toLocaleString('en-US')} 题)</span>`:'';
+    return `<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(isBase?'0710 baseline (control)':item.label)}${extra}</span>`;
+  }).join('')};
+  renderLegend('geo-r3p10-legend-se',seSeries);
+  renderLegend('geo-r3p10-legend-full',fullSeries,fullChartData.baseline);
+  geokg137kChart(document.getElementById('geo-r3p10-chart-se'),GEO_R3P10_METRIC,data,seSeries,sharedYDomain);
+  geokg137kChart(document.getElementById('geo-r3p10-chart-full'),GEO_R3P10_METRIC,fullChartData,fullSeries,sharedYDomain);
+  // delta 曲线（已按用户要求隐藏；元素不存在时跳过）
+  const _r3dc=document.getElementById('geo-r3p10-chart-delta');if(_r3dc)geoR3p10DeltaChart(_r3dc,data,series);
+  // 数据表：step × 臂（V2 分 + delta），末行 failed_ratio
+  const baseByStep=new Map((data.baseline.rows||[]).map(r=>[r.step,r[GEO_R3P10_METRIC]]));
+  const steps=(data.step_targets||[]).filter(step=>baseByStep.has(step)||series.some(s=>(s.rows||[]).some(r=>r.step===step)));
+  const armCell=(s,step)=>{
+    const row=(s.rows||[]).find(r=>r.step===step);
+    if(!row||row[GEO_R3P10_METRIC]==null)return '<td class="geo-r3p10-muted">—</td>';
+    const score=(row[GEO_R3P10_METRIC]*100).toFixed(2);
+    let d='';
+    if(baseByStep.has(step)){
+      const dv=row[GEO_R3P10_METRIC]*100-baseByStep.get(step)*100;
+      d=` <span class="${geoR3p10DeltaClass(dv)}">(${geoR3p10Pp(dv)})</span>`;
+    }
+    const frBad=(row.failed_ratio!=null&&row.failed_ratio>0)?` <span class="geo-r3p10-fr-bad" title="failed_ratio=${row.failed_ratio}">⚠</span>`:'';
+    return `<td><span class="geo-r3p10-score">${score}</span>${d}${frBad}</td>`;
+  };
+  const head=`<thead><tr><th>step</th><th>0710 baseline</th>${series.map(s=>`<th class="arm-head" style="color:${s.color}">${geoEsc(s.label)}</th>`).join('')}</tr></thead>`;
+  const body=steps.map(step=>{
+    const b=baseByStep.has(step)?`<td><span class="geo-r3p10-score">${(baseByStep.get(step)*100).toFixed(2)}</span></td>`:'<td class="geo-r3p10-muted">—</td>';
+    return `<tr><td><b>${step}</b></td>${b}${series.map(s=>armCell(s,step)).join('')}</tr>`;
+  }).join('');
+  // failed_ratio 汇总行
+  const frCell=(rows)=>{const vals=(rows||[]).map(r=>r.failed_ratio).filter(v=>v!=null);if(!vals.length)return '<td class="geo-r3p10-muted">—</td>';const mx=Math.max(...vals);return `<td class="${mx>0?'geo-r3p10-fr-bad':'geo-r3p10-zero'}">${mx.toFixed(3)}</td>`};
+  const frRow=`<tr><td><b>failed_ratio (max)</b></td>${frCell(data.baseline.rows)}${series.map(s=>frCell(s.rows)).join('')}</tr>`;
+  const _r3tb=document.getElementById('geo-r3p10-table');if(_r3tb)_r3tb.innerHTML=`${head}<tbody>${body}${frRow}</tbody>`;
+}
+async function renderGeo3dR3P10(){
+  const errorBox=document.getElementById('geo-r3p10-error');
+  try{
+    const response=await fetch('geo3d_r3_p10_live.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    errorBox.hidden=true;
+    renderGeo3dR3P10View(data);
+  }catch(error){
+    errorBox.hidden=false;
+    errorBox.innerHTML=`<b>Geo3D R3 P10 数据加载失败。</b> ${geoEsc(error.message)}`;
+  }
+}
+function renderPgNoorigView(data){
+  const visibleSeries=data.series||[];
+  document.getElementById('pgnoorig-legend').innerHTML=[data.baseline,...visibleSeries].map(item=>{
+    const isBase=item.key==='control';
+    const extra=(!isBase&&item.n_questions)?` <span class="geo-r3p10-muted">(${item.n_questions.toLocaleString('en-US')} 题)</span>`:'';
+    return `<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(isBase?'0710 baseline (control)':item.label)}${extra}</span>`;
+  }).join('');
+  const sub=document.getElementById('pgnoorig-subtitle');if(sub&&data.subtitle)sub.textContent=data.subtitle;
+  const lastStep=item=>Math.max(0,...(item.rows||[]).map(row=>Number(row.step)||0));
+  const vf=document.getElementById('pgnoorig-verified');if(vf)vf.textContent='本臂已真值核验到 step '+(data.verified_through||lastStep(visibleSeries[0]||{rows:[]})||'—');
+  const up=document.getElementById('pgnoorig-updated');if(up)up.textContent=`更新时间：${geoEsc(data.updated_at||'')}`;
+  geokg137kChart(document.getElementById('pgnoorig-chart-solid'),'SolidGeoPerceptionCircularV1',data,visibleSeries);
+  geokg137kChart(document.getElementById('pgnoorig-chart-geometry'),'Perception-geometry-mc-circular-v1',data,visibleSeries);
+  geokg137kChart(document.getElementById('pgnoorig-chart-natural'),'NaturalPerceptionCircularV3',data,visibleSeries);
+}
+async function renderPgNoorig(){
+  const errorBox=document.getElementById('pgnoorig-error');
+  try{
+    const response=await fetch('perceptiongeo_noorig_p10_live.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    errorBox.hidden=true;
+    renderPgNoorigView(data);
+  }catch(error){
+    errorBox.hidden=false;
+    errorBox.innerHTML=`<b>PerceptionGeo NoOrig P10 数据加载失败。</b> ${geoEsc(error.message)}`;
+  }
+}
+function renderG3v4fmtView(data){
+  const series=data.series||[];
+  document.getElementById('g3v4fmt-legend').innerHTML=[data.baseline,...series].map(item=>{
+    const isBase=item.key==='control';
+    const extra=(!isBase&&item.n_questions)?` <span class="geo-r3p10-muted">(${item.n_questions.toLocaleString('en-US')} 题)</span>`:'';
+    return `<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(isBase?'0710 baseline (control)':item.label)}${extra}</span>`;
+  }).join('');
+  const sub=document.getElementById('g3v4fmt-subtitle');if(sub&&data.subtitle)sub.textContent=data.subtitle;
+  const v4=series.find(s=>s.key==='v4fmt');
+  const lastStep=item=>Math.max(0,...(item.rows||[]).map(row=>Number(row.step)||0));
+  const vf=document.getElementById('g3v4fmt-verified');if(vf)vf.textContent='v4 臂已真值核验到 step '+(data.verified_through||lastStep(v4||{rows:[]})||'—');
+  const up=document.getElementById('g3v4fmt-updated');if(up)up.textContent=`更新时间：${geoEsc(data.updated_at||'')}`;
+  geokg137kChart(document.getElementById('g3v4fmt-chart'),'SolidGeoPerceptionCircularV2',data,series);
+  // 数据表：step × 臂（V2 分 + delta），末行 failed_ratio
+  const baseByStep=new Map((data.baseline.rows||[]).map(r=>[r.step,r['SolidGeoPerceptionCircularV2']]));
+  const steps=(data.step_targets||[]).filter(step=>baseByStep.has(step)||series.some(s=>(s.rows||[]).some(r=>r.step===step)));
+  const armCell=(s,step)=>{
+    const row=(s.rows||[]).find(r=>r.step===step);
+    if(!row||row['SolidGeoPerceptionCircularV2']==null)return '<td class="geo-r3p10-muted">—</td>';
+    const score=(row['SolidGeoPerceptionCircularV2']*100).toFixed(2);
+    let d='';
+    if(baseByStep.has(step)){
+      const dv=row['SolidGeoPerceptionCircularV2']*100-baseByStep.get(step)*100;
+      d=` <span class="${geoR3p10DeltaClass(dv)}">(${geoR3p10Pp(dv)})</span>`;
+    }
+    const frBad=(row.failed_ratio!=null&&row.failed_ratio>0)?` <span class="geo-r3p10-fr-bad" title="failed_ratio=${row.failed_ratio}">⚠</span>`:'';
+    return `<td><span class="geo-r3p10-score">${score}</span>${d}${frBad}</td>`;
+  };
+  const head=`<thead><tr><th>step</th><th>0710 baseline</th>${series.map(s=>`<th class="arm-head" style="color:${s.color}">${geoEsc(s.label)}</th>`).join('')}</tr></thead>`;
+  const body=steps.map(step=>{
+    const b=baseByStep.has(step)?`<td><span class="geo-r3p10-score">${(baseByStep.get(step)*100).toFixed(2)}</span></td>`:'<td class="geo-r3p10-muted">—</td>';
+    return `<tr><td><b>${step}</b></td>${b}${series.map(s=>armCell(s,step)).join('')}</tr>`;
+  }).join('');
+  const frCell=(rows)=>{const vals=(rows||[]).map(r=>r.failed_ratio).filter(v=>v!=null);if(!vals.length)return '<td class="geo-r3p10-muted">—</td>';const mx=Math.max(...vals);return `<td class="${mx>0?'geo-r3p10-fr-bad':'geo-r3p10-zero'}">${mx.toFixed(3)}</td>`};
+  const frRow=`<tr><td><b>failed_ratio (max)</b></td>${frCell(data.baseline.rows)}${series.map(s=>frCell(s.rows)).join('')}</tr>`;
+  const _tb=document.getElementById('g3v4fmt-table');if(_tb)_tb.innerHTML=`${head}<tbody>${body}${frRow}</tbody>`;
+}
+async function renderG3v4fmt(){
+  const errorBox=document.getElementById('g3v4fmt-error');
+  try{
+    const response=await fetch('geo3d_r3_v4fmt_p10_live.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    errorBox.hidden=true;
+    renderG3v4fmtView(data);
+  }catch(error){
+    errorBox.hidden=false;
+    errorBox.innerHTML=`<b>Geo3D R3 v4fmt 数据加载失败。</b> ${geoEsc(error.message)}`;
+  }
+}
+function activateDashboardTab(tab){
+  const btn=document.querySelector(`[data-tab="${tab}"]`);
+  const pane=document.getElementById('tab-'+tab);
+  if(!btn || !pane) return;
+  document.querySelectorAll('[data-tab]').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.pane').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  pane.classList.add('active');
+}
+document.querySelectorAll('[data-tab]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    activateDashboardTab(btn.dataset.tab);
+    history.replaceState(null,'','#'+btn.dataset.tab);
+  });
+});
+renderSnv60710();
+renderCurrentVst();
+activateDashboardTab(location.hash ? location.hash.slice(1) : 'snv60710');
 </script>
-</body>
-</html>
+</body></html>
