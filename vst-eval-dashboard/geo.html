@@ -1,0 +1,562 @@
+<!doctype html>
+<html><head><meta charset='utf-8'><link rel='icon' href='data:,'>
+<title>Geo 几何评测曲线</title>
+<style>
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif;background:#f7f7f5;color:#151515;letter-spacing:0}
+header{padding:20px 28px 14px;background:#fff;border-bottom:1px solid #deded8;position:sticky;top:0;z-index:2}
+h1{margin:0 0 6px;font-size:24px;letter-spacing:0}.meta{font-size:13px;color:#565656;line-height:1.55}
+main{max-width:1680px;margin:0 auto;padding:20px 24px 44px}
+.tabs{display:flex;gap:8px;margin:0;flex-wrap:wrap;max-width:100%}.tab{flex:none;border:1px solid #d8d8d2;background:#fff;border-radius:6px;padding:9px 14px;font-weight:700;cursor:pointer;color:#151515}.tab.active{background:#151515;color:#fff;border-color:#151515}
+.tabs-row{display:flex;align-items:center;gap:10px;margin:0 0 10px}.tabs-row-label{flex:none;min-width:118px;text-align:center;font-size:12px;font-weight:900;color:#4c4c4c;background:#ecece7;border:1px solid #deded8;border-radius:5px;padding:7px 10px;white-space:nowrap}.tabs-row.new-baseline .tabs-row-label{background:#dcefe1;border-color:#bfdcc7;color:#176231}.tabs-row.new-baseline .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.new-baseline .tab small{font-size:10px;font-weight:700;color:#5e7765;white-space:nowrap}.tabs-row.new-baseline .tab.active{background:#176231;border-color:#176231;color:#fff}.tabs-row.new-baseline .tab.active small{color:#dcefe1}
+.tabs-row.failed-results .tabs-row-label{background:#f6e3e3;border-color:#e3bcbc;color:#8b2929}.tabs-row.failed-results .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.failed-results .tab small{font-size:10px;font-weight:700;color:#8c6262;white-space:nowrap}.tabs-row.failed-results .tab.active{background:#8b2929;border-color:#8b2929;color:#fff}.tabs-row.failed-results .tab.active small{color:#f4dede}
+.tabs-row.geo3d-freshfix .tabs-row-label{background:#f3eadb;border-color:#dec9a7;color:#684710}.tabs-row.geo3d-freshfix .tab.active{background:#684710;border-color:#684710;color:#fff}
+.tabs-row.geo3d-r3p10 .tabs-row-label{background:#f3eadb;border-color:#dec9a7;color:#684710}.tabs-row.geo3d-r3p10 .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.geo3d-r3p10 .tab small{font-size:10px;font-weight:700;color:#8a6a2e;white-space:nowrap}.tabs-row.geo3d-r3p10 .tab.active{background:#684710;border-color:#684710;color:#fff}.tabs-row.geo3d-r3p10 .tab.active small{color:#f3eadb}
+.tabs-row.perceptiongeo-noorig .tabs-row-label{background:#e9e8fb;border-color:#ccc9ef;color:#5b21b6}.tabs-row.perceptiongeo-noorig .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1;max-width:100%}.tabs-row.perceptiongeo-noorig .tab small{font-size:10px;font-weight:700;color:#6d5aa8;white-space:nowrap}.tabs-row.perceptiongeo-noorig .tab.active{background:#5b21b6;border-color:#5b21b6;color:#fff}.tabs-row.perceptiongeo-noorig .tab.active small{color:#e9e8fb}
+@media(max-width:720px){.tabs-row.perceptiongeo-noorig .tab{max-width:100%;overflow:hidden}.tabs-row.perceptiongeo-noorig .tab span,.tabs-row.perceptiongeo-noorig .tab small{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis}}
+.geo-r3p10-note{background:#fffdf8;border-left:4px solid #8a5d18;padding:11px 14px;margin:0 0 14px;font-size:13px;line-height:1.6;color:#5f4a18}.geo-r3p10-note b{color:#493811}
+.geo-r3p10-table-wrap{overflow:auto;background:#fff;border:1px solid #deded8;border-radius:6px;padding:2px 2px 0}.geo-r3p10-table{font-size:13px}.geo-r3p10-table th:not(:first-child),.geo-r3p10-table td:not(:first-child){text-align:right;white-space:nowrap}.geo-r3p10-table .arm-head{font-weight:900}.geo-r3p10-score{font-weight:900}.geo-r3p10-pos{color:#176231;font-weight:800}.geo-r3p10-neg{color:#9a3d31;font-weight:800}.geo-r3p10-zero{color:#666;font-weight:800}.geo-r3p10-muted{color:#9a9a94}.geo-r3p10-fr-bad{color:#9a3d31;font-weight:900}
+.tabs-row.geokg-3arm .tabs-row-label{background:#e9e8fb;border-color:#ccc9ef;color:#443c88}.tabs-row.geokg-3arm .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.geokg-3arm .tab small{font-size:10px;font-weight:700;color:#6d6798;white-space:nowrap}.tabs-row.geokg-3arm .tab.active{background:#51489a;border-color:#51489a;color:#fff}.tabs-row.geokg-3arm .tab.active small{color:#e9e8fb}
+.tabs-row.current-vst .tabs-row-label{background:#e5edf4;border-color:#c5d5e2;color:#244f73}.tabs-row.current-vst .tabs-row-label small{display:block;margin-top:2px;font-size:10px;font-weight:700;color:#58758d}.tabs-row.current-vst .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.current-vst .tab small{font-size:10px;font-weight:700;color:#6a737b;white-space:nowrap}.tabs-row.current-vst .tab.active{background:#244f73;border-color:#244f73;color:#fff}.tabs-row.current-vst .tab.active small{color:#dce7ef}
+.tabs-row.archived .tabs-row-label{background:#f5f5f0;border-style:dashed;color:#8a8a84}.tabs-row.archived .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;color:#8a8a84;border-style:dashed;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.archived .tab small{font-size:10px;font-weight:700;color:#96968f;white-space:nowrap}.tabs-row.archived .tab.active{background:#6f6f69;border-color:#6f6f69;border-style:solid;color:#fff}.tabs-row.archived .tab.active small{color:#ecece7}
+.archive-note{background:#fffaf0;border-left:4px solid #b8860b;padding:11px 14px;margin:0 0 16px;font-size:13px;line-height:1.55;color:#6b5310}
+.pane{display:none}.pane.active{display:block}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}
+.card{background:#fff;border:1px solid #deded8;border-radius:6px;padding:12px;margin-bottom:16px}
+.card h2{font-size:16px;margin:0 0 8px}img{display:block;width:100%;height:auto;background:#fff}
+table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px solid #e7e7e1;padding:8px 10px;text-align:left;vertical-align:top}th{background:#fafafa}
+.links a{color:#005ea8;text-decoration:none;margin-right:18px}.links a:hover{text-decoration:underline}
+.section-title{font-size:18px;margin:24px 0 12px}
+.snv6-chart-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.snv6-chart{background:#fff;border:1px solid #deded8;border-radius:6px;padding:12px;margin-bottom:16px}
+.snv6-chart h2{font-size:16px;margin:0 0 8px}.snv6-chart svg{width:100%;height:auto;display:block;background:#fff}
+.snv6-legend{display:flex;gap:18px;align-items:center;font-size:13px;font-weight:800;color:#3f3f3f;margin-bottom:4px}.snv6-dot{width:12px;height:12px;border-radius:99px;display:inline-block;margin-right:6px;vertical-align:-1px}.snv6-dot.scanmi{background:#d45b2c}.snv6-dot.base{background:#3f6f98}
+.snv6-table-wrap{overflow:auto}.snv6-pos{color:#b8471d;font-weight:900}.snv6-neg{color:#336d9f;font-weight:900}.snv6-muted{color:#767676}
+.geo-note{background:#fff;border-left:4px solid #202020;padding:11px 14px;margin:0 0 16px;font-size:13px;line-height:1.55;color:#4c4c4c}
+.failure-note{background:#fff5f5;border-left:4px solid #a53232;padding:12px 14px;margin:0 0 16px;font-size:13px;line-height:1.6;color:#6f2929}.failure-note b{color:#8b2020}
+.geo-chart-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}
+.geo-legend{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin:0 0 12px;font-size:12px;font-weight:800;color:#444}
+.geo-legend-item{display:inline-flex;align-items:center;white-space:nowrap}.geo-swatch{width:20px;height:3px;display:inline-block;margin-right:6px;border-radius:0}.geo-swatch.dashed{height:0;background:transparent!important;border-top:3px dashed currentColor}
+.geo-compare-shell{background:#fff;border:1px solid #deded8;border-radius:6px;padding:14px 15px;margin:0 0 14px}.geo-control-row{display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap}.geo-control-label{font-size:12px;font-weight:900;color:#555}.geo-mode-tabs,.geo-variant-tabs{display:flex;gap:6px;flex-wrap:wrap}.geo-mode-btn,.geo-variant-btn{border:1px solid #d4d4ce;background:#fff;color:#222;border-radius:5px;padding:7px 10px;font-size:12px;font-weight:800;cursor:pointer}.geo-mode-btn.active,.geo-variant-btn.active{background:#202020;border-color:#202020;color:#fff}.geo-variant-row{display:flex;align-items:center;gap:10px;margin-top:10px}.geo-variant-row[hidden]{display:none}.geo-compare-title{font-size:16px;font-weight:900;margin:13px 0 3px}.geo-compare-meta{font-size:12px;line-height:1.5;color:#656565}.geo-audit summary{cursor:pointer;font-size:14px;font-weight:900;list-style-position:inside}.geo-audit[open] summary{margin-bottom:10px}
+.geo-status{display:inline-block;border-radius:4px;padding:2px 7px;font-size:12px;font-weight:800;background:#ecece7;color:#444}.geo-status.running{background:#dff1e4;color:#176231}.geo-status.pending,.geo-status.submitted{background:#fff0ca;color:#765300}.geo-status.success,.geo-status.succeeded{background:#dcecf9;color:#245b86}.geo-status.failed{background:#f8dddd;color:#8b2f2f}
+.geo-score-lines{line-height:1.55;white-space:nowrap}.geo-score-lines b{font-weight:900}.geo-table-note{font-size:12px;color:#666;margin:8px 0 0}
+.geo-fresh-note{border-left-color:#8a5d18;background:#fffdf8}.geo-fresh-partial{color:#765300;font-weight:900}.geo-fresh-complete{color:#176231;font-weight:900}
+.geo-final{background:#fff;border:1px solid #cfd8ce;border-radius:6px;margin:0 0 16px;overflow:hidden}
+.geo-final-head{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:15px 16px;border-bottom:1px solid #e3e7e1;background:#f4f7f2}.geo-final-head h3{font-size:17px;margin:0 0 4px}.geo-final-head p{font-size:13px;color:#545b53;line-height:1.5;margin:0}.geo-final-badge{flex:none;border-radius:4px;padding:5px 9px;background:#dcefe1;color:#176231;font-size:12px;font-weight:900}
+.geo-best-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid #e7e7e1}.geo-best{padding:15px 16px;border-right:1px solid #e7e7e1}.geo-best:last-child{border-right:0}.geo-best .label{font-size:12px;font-weight:900;color:#555}.geo-best .value{font-size:27px;line-height:1.15;font-weight:900;margin:4px 0}.geo-best .sub{font-size:12px;color:#626262;line-height:1.5}
+.geo-final-table{padding:14px 16px}.geo-final-table h3{font-size:14px;margin:0 0 9px}.geo-final-insight{padding:11px 16px;border-top:1px solid #e1e5df;background:#fafbf9;font-size:13px;line-height:1.55;color:#343a33}.geo-final-insight b{font-weight:900}
+.geo-r15-metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid #e7e7e1}.geo-r15-metric{padding:15px 16px;border-right:1px solid #e7e7e1}.geo-r15-metric:last-child{border-right:0}.geo-r15-metric .label{font-size:12px;font-weight:900;color:#555}.geo-r15-metric .value{font-size:25px;line-height:1.15;font-weight:900;margin:4px 0}.geo-r15-metric .sub{font-size:12px;color:#626262;line-height:1.5}.geo-r15-metric .positive{color:#176231}.geo-r15-metric .negative{color:#9a3d31}
+.geo-r15-chart-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.geo-r15-table-wrap{overflow:auto}.geo-r15-table td:not(:first-child),.geo-r15-table th:not(:first-child){text-align:right;white-space:nowrap}.geo-r15-pos{color:#176231;font-weight:900}.geo-r15-neg{color:#9a3d31;font-weight:900}.geo-r15-zero{color:#666;font-weight:900}
+.geo-r15-section{margin:0 0 18px}.geo-r15-section-title{font-size:18px;margin:22px 0 10px}.geo-r15-subtitle{font-size:12px;line-height:1.55;color:#666;margin:-3px 0 11px}.geo-lineage-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.geo-lineage-card{border:1px solid #deded8;border-radius:5px;padding:12px;background:#fff}.geo-lineage-card h4{font-size:14px;margin:0 0 7px}.geo-lineage-card p{font-size:12px;line-height:1.55;color:#555;margin:5px 0}.geo-lineage-card b{color:#222}.geo-r15-audit{font-size:12px;line-height:1.6;color:#5f655e;margin-top:8px}.geo-r15-legacy{margin-top:24px;border-top:1px solid #d9d9d2;padding-top:2px}
+.geo-r13-hero{background:#fff;border:1px solid #d9dfd8;border-radius:6px;overflow:hidden;margin:0 0 18px}.geo-r13-hero-head{padding:16px;background:#f3f7f2;border-bottom:1px solid #dfe6dd}.geo-r13-hero-head h2{font-size:20px;margin:0 0 6px}.geo-r13-hero-head p{font-size:13px;line-height:1.6;color:#4f5b4d;margin:0}.geo-r13-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.geo-r13-kpi{padding:14px 16px;border-right:1px solid #e7e7e1}.geo-r13-kpi:last-child{border-right:0}.geo-r13-kpi .label{font-size:12px;font-weight:900;color:#5b615a}.geo-r13-kpi .value{font-size:25px;font-weight:900;line-height:1.2;margin:4px 0}.geo-r13-kpi .sub{font-size:12px;line-height:1.5;color:#666}.geo-r13-conclusion{padding:12px 16px;background:#fffaf0;border-top:1px solid #ede3cd;font-size:13px;line-height:1.65;color:#614c18}.geo-r13-conclusion b{color:#413109}.geo-r13-chart-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.geo-r13-chart svg{width:100%;height:auto;display:block}.geo-r13-case-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid #deded8;border-radius:6px;overflow:hidden;background:#fff}.geo-r13-case{padding:14px 15px;border-right:1px solid #e7e7e1}.geo-r13-case:last-child{border-right:0}.geo-r13-case .value{font-size:25px;font-weight:900;margin-bottom:4px}.geo-r13-case .label{font-size:12px;line-height:1.45;color:#5f5f5f}.geo-r13-summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.geo-r13-mini-table{overflow:auto;background:#fff;border:1px solid #deded8;border-radius:6px}.geo-r13-mini-table h3{font-size:14px;margin:0;padding:12px 13px 4px}.geo-r13-mini-table table{font-size:12px}.geo-r13-mini-table td:not(:first-child),.geo-r13-mini-table th:not(:first-child){text-align:right;white-space:nowrap}.geo-r13-history{margin-top:28px;border-top:1px solid #d9d9d2;padding-top:12px}.geo-r13-history>summary{cursor:pointer;font-size:16px;font-weight:900;color:#555;padding:7px 0}.geo-r13-history-body{padding-top:2px}.geo-r13-audit{font-size:12px;line-height:1.65;color:#646b62;margin:8px 0 14px}.geo-r13-name{font-weight:900}.geo-r13-name.r13{color:#c45d25}.geo-r13-name.r15{color:#2e8b57}.geo-r13-name.control{color:#4f555c}
+.geokg-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px 18px;flex-wrap:wrap;background:#fff;border:1px solid #deded8;border-radius:6px;padding:11px 12px;margin:0 0 12px}.geokg-mode{font-size:13px;font-weight:900;color:#443c88}.geokg-verified{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:900;color:#176231}.geokg-verified:before{content:'';width:8px;height:8px;border-radius:50%;background:#2e8b57}.geokg-caption{font-size:12px;color:#67646f;line-height:1.55;margin:-3px 0 12px}
+.current-note{background:#fff;border-left:4px solid #244f73;padding:11px 14px;margin:0 0 16px;font-size:13px;line-height:1.6;color:#3f4f5d}.current-empty{background:#fff;border:1px solid #deded8;padding:28px 20px;margin:0 0 16px;text-align:center}.current-empty strong{display:block;font-size:18px;margin-bottom:7px}.current-empty span{font-size:13px;color:#666;line-height:1.55}.current-audit{background:#f5f8fa;border:1px solid #d7e1e8;padding:12px 14px;margin:0 0 16px;font-size:13px;line-height:1.6;color:#344a5b}.current-audit b{color:#173e5d}.current-state-list{display:flex;gap:8px 16px;flex-wrap:wrap;margin-top:8px}.current-table-score{white-space:nowrap}.current-table-score .raw{font-weight:900;margin-right:5px}
+@media(max-width:1100px){.grid3,.snv6-chart-grid,.geo-chart-grid,.geo-best-grid,.geo-r15-chart-grid,.geo-lineage-grid,.geo-r13-chart-grid{grid-template-columns:1fr}.geo-r15-metric-grid,.geo-r13-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.geo-r15-metric:nth-child(2),.geo-r13-kpi:nth-child(2){border-right:0}.geo-r15-metric:nth-child(-n+2),.geo-r13-kpi:nth-child(-n+2){border-bottom:1px solid #e7e7e1}.geo-best{border-right:0;border-bottom:1px solid #e7e7e1}.geo-best:last-child{border-bottom:0}.geo-final-head{align-items:flex-start}.geo-r13-case-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.geo-r13-case:nth-child(2){border-right:0}.geo-r13-case:nth-child(-n+2){border-bottom:1px solid #e7e7e1}}
+@media(max-width:720px){header{position:static;padding:17px 16px 12px}h1{font-size:21px}main{padding:14px 12px 32px}.tabs-row{display:block}.tabs-row-label{display:block;width:max-content;min-width:0;margin-bottom:7px}.tabs{padding-bottom:3px}.tab{padding:8px 11px;font-size:13px}.section-title{font-size:17px;margin-top:20px}th,td{padding:7px 8px}.current-empty{padding:22px 14px}.geo-r15-metric-grid,.geo-r13-kpis,.geo-r13-case-grid,.geo-r13-summary-grid{grid-template-columns:1fr}.geo-r15-metric,.geo-r13-kpi,.geo-r13-case{border-right:0;border-bottom:1px solid #e7e7e1}.geo-r15-metric:last-child,.geo-r13-kpi:last-child,.geo-r13-case:last-child{border-bottom:0}.geo-final-head{display:block}.geo-final-badge{display:inline-block;margin-top:9px}.geo-r13-hero-head h2{font-size:18px}}
+</style></head><body>
+<header><h1>Geo 几何评测专题 🔬</h1><div class='meta'>几何线专版：Geo3D（R5 老基线 / B1000 对比 / R3 P10 四臂 / R3 v4fmt 答案格式消融）· PerceptionGeo NoOrig · Geo-KG 137K 训练验证。与 VST 母版同源的公网静态快照，已剔除全部 VST 与 RPQA 内容；Geo3D 主图按研究问题拆分，每次只比较两条实验曲线，并对齐真实的 lijia-line 100–1000 checkpoint 基线。本页不访问任何内网服务。</div></header>
+<main>
+<div class='tabs-row'>
+  <span class='tabs-row-label'>Geo3D 早期实验</span>
+  <div class='tabs'>
+    <button class='tab' data-tab='geo3d'>Geo3D R5 p10</button>
+    <button class='tab' data-tab='geo3d-b1000'>Geo3D 对比实验</button>
+  </div>
+</div>
+<div class='tabs-row geo3d-r3p10'>
+  <span class='tabs-row-label'>Geo3D R3 P10 四臂 🔬</span>
+  <div class='tabs'>
+    <button class='tab' data-tab='geo3d-r3-p10'><span>Geo3D R3 P10 四臂 · SolidGeo V2</span><small>规则造题数据 · 边训边测 vs 0710 baseline</small></button>
+    <button class='tab' data-tab='geo3d-r3-v4fmt-p10'><span>Geo3D R3 答案格式消融 · SolidGeo V2</span><small>单变量 v4 点号 vs v1 双字段 · 边训边测 vs 0710 baseline</small></button>
+  </div>
+</div>
+<div class='tabs-row perceptiongeo-noorig'>
+  <span class='tabs-row-label'>PerceptionGeo NoOrig P10 🔬</span>
+  <div class='tabs'>
+    <button class='tab' data-tab='perceptiongeo-noorig-p10'><span>PerceptionGeo NoOrig P10 · 三榜</span><small>2D 平面几何感知（冗余对照）· 边训边测 vs 0710 baseline</small></button>
+  </div>
+</div>
+<div class='tabs-row geokg-3arm'>
+  <span class='tabs-row-label'>Geo-KG 训练验证</span>
+  <div class='tabs'>
+    <button class='tab' data-tab='geokg137k'><span>Geo-KG 137K · V2 三种 setting</span><small>Baseline + MC / Fill / Half 同图 · 30/30</small></button>
+  </div>
+</div>
+
+<section id='tab-geo3d' class='pane'>
+<h2 class='section-title'>Geo3D R5 p10：三个 benchmark vs lijia-line 基线</h2>
+<div class='grid3'>
+<div class='card'><h2>NaturalPerceptionCircularV3</h2><img src='vst_figures_geo3d/geo3d_vs_baseline_np.png?v=202607131110'></div>
+<div class='card'><h2>SolidGeoPerceptionCircularV1</h2><img src='vst_figures_geo3d/geo3d_vs_baseline_sg.png?v=202607131110'></div>
+<div class='card'><h2>Perception-geometry-mc-circular-v1</h2><img src='vst_figures_geo3d/geo3d_vs_baseline_geom.png?v=202607131110'></div>
+</div>
+</section>
+<section id='tab-geo3d-b1000' class='pane'>
+<h2 class='section-title'>Geo3D：一次只比较一个变量</h2>
+<div class='geo-note'>每个视图只画 <b>两条实验线 + lijia-line 基线</b>，并按相同 checkpoint 对齐。默认回答 R5 单轮与原 R5 同图多 QA 的差异；旧多轮实验只有真实完成的 step200–700，不补缺失点。</div>
+<div class='geo-compare-shell'>
+  <div class='geo-control-row'>
+    <span class='geo-control-label'>对比问题</span>
+    <div class='geo-mode-tabs' id='geo-b1000-mode-tabs'>
+      <button class='geo-mode-btn active' data-geo-mode='r5_format'>R5 单轮 / 多轮</button>
+      <button class='geo-mode-btn' data-geo-mode='version'>R5 / R13 版本</button>
+      <button class='geo-mode-btn' data-geo-mode='format'>单轮 / Pair2</button>
+      <button class='geo-mode-btn' data-geo-mode='ratio'>p10 / p30</button>
+    </div>
+  </div>
+  <div class='geo-variant-row' id='geo-b1000-variant-row' hidden>
+    <span class='geo-control-label'>固定条件</span>
+    <div class='geo-variant-tabs' id='geo-b1000-variant-tabs'></div>
+  </div>
+  <div class='geo-compare-title' id='geo-b1000-compare-title'></div>
+  <div class='geo-compare-meta' id='geo-b1000-compare-meta'></div>
+</div>
+<div class='geo-legend' id='geo-b1000-legend'></div>
+<div class='geo-chart-grid'>
+  <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='geo-b1000-chart-natural'></div></div>
+  <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV1</h2><div id='geo-b1000-chart-solid'></div></div>
+  <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='geo-b1000-chart-geometry'></div></div>
+</div>
+</section>
+<section id='tab-geokg137k' class='pane'>
+<h2 class='section-title'>Geo-KG Solid3D 137K：V2 三种 setting vs Baseline</h2>
+<div class='geokg-toolbar'>
+  <span class='geokg-mode'>实验线仅 V2 · MC / Fill / Half；灰色虚线为 Baseline</span>
+  <span class='geokg-verified'>30/30 · step100–1000 已真验收</span>
+</div>
+<div class='geo-note' id='geokg137k-error' hidden></div>
+<div class='geo-legend' id='geokg137k-legend'></div>
+<p class='geokg-caption' id='geokg137k-caption'>三张图均保留 SN6V0710 Baseline，并叠加 V2 修复版的 MC、Fill、Half 三种 setting；不展示 V1。</p>
+<div class='geo-chart-grid'>
+  <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV2</h2><div id='geokg137k-chart-solid'></div></div>
+  <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='geokg137k-chart-geometry'></div></div>
+  <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='geokg137k-chart-natural'></div></div>
+</div>
+</section>
+<section id='tab-geo3d-r3-p10' class='pane'>
+<h2 class='section-title'>Geo3D R3 P10 四臂 · SolidGeo V2</h2>
+<div class='geokg-toolbar'>
+  <span class='geokg-mode' id='geo-r3p10-subtitle'>规则造题数据 · 边训边测 vs 0710 baseline</span>
+  <span class='geokg-verified' id='geo-r3p10-verified'>边训边测中</span>
+</div>
+<div class='geo-note' id='geo-r3p10-error' hidden></div>
+<div class='geo-r3p10-note'>口径：四臂 = 0710 baseline 90% + 10% 某 SE 分组（规则造题）；<b>只测 SolidGeo V2</b>（SolidGeoPerceptionCircularV2），每 100 步一测，对照 <b>同 step 的 0710 baseline (control)</b>；delta = 臂 − baseline（pp）。单步噪声约 ±0.5–1pp，<b>step500+ 才好下结论</b>；failed_ratio 应为 0。</div>
+<div class='snv6-chart-grid'>
+  <div class='snv6-chart'>
+    <h2>SE 分组对比（SE0 / SE1 / SE2–5 + baseline）</h2>
+    <div class='geo-legend' id='geo-r3p10-legend-se'></div>
+    <div id='geo-r3p10-chart-se'></div>
+  </div>
+  <div class='snv6-chart'>
+    <h2>全量数据（Full + baseline）</h2>
+    <div class='geo-legend' id='geo-r3p10-legend-full'></div>
+    <div id='geo-r3p10-chart-full'></div>
+  </div>
+</div>
+<p class='geo-table-note' id='geo-r3p10-updated'></p>
+</section>
+<section id='tab-geo3d-r3-v4fmt-p10' class='pane'>
+<h2 class='section-title'>Geo3D R3 Full 答案格式消融 · SolidGeo V2</h2>
+<div class='geokg-toolbar'>
+  <span class='geokg-mode' id='g3v4fmt-subtitle'>单变量：仅答案格式不同（v4 点号 vs v1 双字段）· 边训边测 vs 0710 baseline</span>
+  <span class='geokg-verified' id='g3v4fmt-verified'>边训边测中</span>
+</div>
+<div class='geo-note' id='g3v4fmt-error' hidden></div>
+<div class='geo-r3p10-note'>口径：两臂同为 0710 baseline 90% + 10% Geo3D R3 full（101,845 题），<b>唯一变量是训练 target 的答案格式</b>：v1 = 旧双字段（<code>答案：15</code> + 冗余 <code>答案内容：15</code> 第二行、选择题格式不一致）；v4 = 新规范（选择题 <code>答案：B. 选项原文</code>、其余单行 <code>答案：15</code>）。只测 SolidGeo V2（SolidGeoPerceptionCircularV2），每 100 步一测，对照 <b>同 step 的 0710 baseline (control)</b>；delta = 臂 − baseline（pp）。单步噪声约 ±0.5–1pp，<b>step500+ 才好下结论</b>；failed_ratio 应为 0。step100 配对 McNemar：v4−v1=+3.50pp（p=1.4e-07）、v4−control=+1.52pp（p=0.04）。</div>
+<div class='geo-legend' id='g3v4fmt-legend'></div>
+<div class='snv6-chart-grid'>
+  <div class='snv6-chart'>
+    <h2>答案格式消融（v4fmt / v1full + baseline）</h2>
+    <div id='g3v4fmt-chart'></div>
+  </div>
+</div>
+<table class='geo-table' id='g3v4fmt-table'></table>
+<p class='geo-table-note' id='g3v4fmt-updated'></p>
+</section>
+<section id='tab-perceptiongeo-noorig-p10' class='pane'>
+<h2 class='section-title'>PerceptionGeo V1V2 NoOrig P10 · 三榜</h2>
+<div class='geokg-toolbar'>
+  <span class='geokg-mode' id='pgnoorig-subtitle'>2D 平面几何感知（冗余渲染变体对照）· 边训边测 vs 0710 baseline</span>
+  <span class='geokg-verified' id='pgnoorig-verified'>边训边测中</span>
+</div>
+<div class='geo-note' id='pgnoorig-error' hidden></div>
+<div class='geo-r3p10-note'>口径：臂 = 0710 baseline 90% + 10% <b>NoOrig</b>（2D 平面几何感知题，与 baseline 已含的 AugBg 为<b>同 QA、不同渲染</b>的冗余变体，预期增益≈0）；三榜（SolidGeoPerceptionCircularV1 / Perception-geometry-mc-circular-v1 / NaturalPerceptionCircularV3）每 100 步一测，对照 <b>同 step 的 0710 baseline (control)</b>；单步噪声约 ±0.5–1pp，<b>step500+ 才好下结论</b>；failed_ratio 应为 0。数据来源已逐档在 moonfs 真值核验（progress total=pred=eval、jsonl 行数相符）。</div>
+<div class='geo-legend' id='pgnoorig-legend'></div>
+<div class='snv6-chart-grid'>
+  <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV1</h2><div id='pgnoorig-chart-solid'></div></div>
+  <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='pgnoorig-chart-geometry'></div></div>
+  <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='pgnoorig-chart-natural'></div></div>
+</div>
+<p class='geo-table-note' id='pgnoorig-updated'></p>
+</section>
+</main>
+<script>
+const geoB1000Catalog = {
+  r5_st_p10:{label:'R5 单轮 p10',short:'R5 单轮'},
+  r5_st_p30:{label:'R5 单轮 p30',short:'R5 p30'},
+  r5_grouped_p10:{label:'R5 同图多 QA p10',short:'R5 多轮'},
+  r13_st_p10:{label:'R13 单轮 p10',short:'R13 单轮'},
+  r13_st_p30:{label:'R13 单轮 p30',short:'R13 p30'},
+  r13_pair2_p10:{label:'R13 Pair2 p10',short:'R13 Pair2'},
+  r13_pair2_p30:{label:'R13 Pair2 p30',short:'R13 Pair2 p30'}
+};
+const geoB1000Comparisons = {
+  r5_format:{
+    title:'R5 数据组织：单轮 vs 同图多 QA',
+    note:'固定 R5 与 p10。旧同图多 QA 多轮实验只有 step200–700 六个已完成点，胜负统计只使用这些重叠 checkpoint。',
+    series:()=>['r5_st_p10','r5_grouped_p10']
+  },
+  version:{
+    title:'题目筛选版本：R5 vs R13',
+    variants:{p10:'固定 p10',p30:'固定 p30'},defaultVariant:'p10',
+    note:'固定数据组织为单轮，只改变 R5/R13 筛选版本。',
+    shorts:()=>['R5 单轮','R13 单轮'],
+    series:variant=>[`r5_st_${variant}`,`r13_st_${variant}`]
+  },
+  format:{
+    title:'样本格式：单轮 vs Pair2',
+    variants:{p10:'固定 p10',p30:'固定 p30'},defaultVariant:'p10',
+    note:'固定为 R13，只改变单轮 / 两图两问 Pair2 格式。',
+    shorts:()=>['R13 单轮','R13 Pair2'],
+    series:variant=>[`r13_st_${variant}`,`r13_pair2_${variant}`]
+  },
+  ratio:{
+    title:'注入比例：p10 vs p30',
+    variants:{r5:'R5 单轮',r13_st:'R13 单轮',r13_pair2:'R13 Pair2'},defaultVariant:'r5',
+    note:'固定数据版本与格式，只改变训练数据注入比例。',
+    shorts:variant=>variant==='r5'?['R5 p10','R5 p30']:variant==='r13_st'?['R13 p10','R13 p30']:['R13 Pair2 p10','R13 Pair2 p30'],
+    series:variant=>variant==='r5'?['r5_st_p10','r5_st_p30']:[`${variant}_p10`,`${variant}_p30`]
+  }
+};
+const geoB1000State={mode:'r5_format',variants:{version:'p10',format:'p10',ratio:'r5'}};
+const geoB1000MetricLabels=[
+  ['NaturalPerceptionCircularV3','自然感知'],
+  ['SolidGeoPerceptionCircularV1','立体几何'],
+  ['Perception-geometry-mc-circular-v1','几何 MC']
+];
+function geoPct(v){return (v*100).toFixed(1)}
+function geoDelta(v){const p=(v*100).toFixed(1);return `${v>=0?'+':''}${p}pp`}
+function geoEsc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function geoStatus(value){const text=String(value||'Unknown');const zh={Succeeded:'已完成',Success:'成功',Running:'运行中',Pending:'排队中',Accepted:'已受理',Failed:'失败',Unknown:'未知'};return `<span class="geo-status ${text.toLowerCase()}">${geoEsc(zh[text]||text)}</span>`}
+function geoResultRows(data,key){
+  const rows=key==='r5_grouped_p10'?(data.reference_results||[]):data.results;
+  return rows.filter(row=>row.experiment===key).sort((a,b)=>a.step-b.step);
+}
+function geoBaselineAt(data,step,metric){
+  const row=(data.baseline_results||[]).find(item=>item.step===step);
+  return row?.scores?.[metric]??data.baseline[metric];
+}
+function geoSelectedSeries(data){
+  const config=geoB1000Comparisons[geoB1000State.mode];
+  const variant=config.variants?(geoB1000State.variants[geoB1000State.mode]||config.defaultVariant):null;
+  return config.series(variant).map((key,index)=>({
+    key,...geoB1000Catalog[key],...(config.shorts?{short:config.shorts(variant)[index]}:{}),color:index===0?'#1769aa':'#c45d25',dash:index===1?'8 5':''
+  }));
+}
+function geoPath(points,x,y){
+  const byStep=new Map(points.map(point=>[point.step,point.v]));
+  let path='',open=false;
+  for(let step=100;step<=1000;step+=100){
+    const value=byStep.get(step);
+    if(value==null){open=false;continue}
+    path+=`${open?'L':'M'}${x(step).toFixed(1)},${y(value).toFixed(1)} `;
+    open=true;
+  }
+  return path;
+}
+function geoB1000Chart(el,metric,data,selected){
+  const w=720,h=350,m={l:56,r:20,t:22,b:46};
+  const series=[
+    {key:'lijia_baseline',label:data.baseline_label,color:'#4f555c',dash:'4 5',points:(data.baseline_results||[]).map(row=>({step:row.step,v:row.scores[metric]}))},
+    ...selected.map(item=>({...item,points:geoResultRows(data,item.key).filter(row=>row.scores[metric]!=null).map(row=>({step:row.step,v:row.scores[metric]}))}))
+  ];
+  const values=series.flatMap(item=>item.points.map(point=>point.v));
+  let min=Math.min(...values),max=Math.max(...values);
+  const pad=Math.max((max-min)*0.2,0.012);
+  min=Math.max(0,min-pad);max=Math.min(1,max+pad);
+  if(max-min<0.03){const mid=(min+max)/2;min=Math.max(0,mid-0.018);max=Math.min(1,mid+0.018)}
+  const x=step=>m.l+(step-100)/900*(w-m.l-m.r);
+  const y=value=>m.t+(max-value)/(max-min)*(h-m.t-m.b);
+  const yTicks=[min,(min*2+max)/3,(min+max*2)/3,max];
+  const grid=yTicks.map(value=>`<line x1="${m.l}" x2="${w-m.r}" y1="${y(value)}" y2="${y(value)}" stroke="#deded8"/><text x="${m.l-9}" y="${y(value)+4}" text-anchor="end" font-size="12" fill="#555">${geoPct(value)}</text>`).join('');
+  const xTicks=Array.from({length:10},(_,i)=>(i+1)*100).map(step=>`<text x="${x(step)}" y="${h-16}" text-anchor="middle" font-size="11" fill="#555">${step}</text>`).join('');
+  const paths=series.map(item=>{
+    const marks=item.points.map(point=>`<circle data-geo-series="${item.key}" cx="${x(point.step)}" cy="${y(point.v)}" r="4" fill="#fff" stroke="${item.color}" stroke-width="2.4"><title>${geoEsc(item.label)} · step ${point.step}: ${geoPct(point.v)}</title></circle>`).join('');
+    return `<path data-geo-series="${item.key}" d="${geoPath(item.points,x,y)}" fill="none" stroke="${item.color}" stroke-width="${item.key==='lijia_baseline'?'2.3':'3'}" stroke-linecap="round" stroke-linejoin="round" ${item.dash?`stroke-dasharray="${item.dash}"`:''}/>${marks}`;
+  }).join('');
+  el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${geoEsc(metric)} selected comparison curve">
+    <rect width="${w}" height="${h}" fill="#fff"/>
+    ${grid}
+    <line x1="${m.l}" x2="${w-m.r}" y1="${h-m.b}" y2="${h-m.b}" stroke="#bdbdb5"/>
+    <line x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${h-m.b}" stroke="#bdbdb5"/>
+    ${xTicks}${paths}
+    <text x="${w/2}" y="${h-2}" text-anchor="middle" font-size="12" fill="#555">checkpoint</text>
+  </svg>`;
+}
+function renderGeoComparison(data){
+  const config=geoB1000Comparisons[geoB1000State.mode];
+  const variant=config.variants?(geoB1000State.variants[geoB1000State.mode]||config.defaultVariant):null;
+  const selected=geoSelectedSeries(data);
+  document.querySelectorAll('[data-geo-mode]').forEach(button=>button.classList.toggle('active',button.dataset.geoMode===geoB1000State.mode));
+  const variantRow=document.getElementById('geo-b1000-variant-row');
+  const variantTabs=document.getElementById('geo-b1000-variant-tabs');
+  variantRow.hidden=!config.variants;
+  variantTabs.innerHTML=config.variants?Object.entries(config.variants).map(([key,label])=>`<button class="geo-variant-btn ${key===variant?'active':''}" data-geo-variant="${key}">${geoEsc(label)}</button>`).join(''):'';
+  variantTabs.querySelectorAll('[data-geo-variant]').forEach(button=>button.addEventListener('click',()=>{geoB1000State.variants[geoB1000State.mode]=button.dataset.geoVariant;renderGeoComparison(data)}));
+  document.getElementById('geo-b1000-compare-title').textContent=config.title;
+  document.getElementById('geo-b1000-compare-meta').textContent=config.note;
+  const legendSeries=[{label:data.baseline_label,color:'#4f555c',dash:'4 5'},...selected];
+  document.getElementById('geo-b1000-legend').innerHTML=legendSeries.map(item=>`<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.label)}</span>`).join('');
+  geoB1000Chart(document.getElementById('geo-b1000-chart-natural'),'NaturalPerceptionCircularV3',data,selected);
+  geoB1000Chart(document.getElementById('geo-b1000-chart-solid'),'SolidGeoPerceptionCircularV1',data,selected);
+  geoB1000Chart(document.getElementById('geo-b1000-chart-geometry'),'Perception-geometry-mc-circular-v1',data,selected);
+}
+async function renderGeoB1000(){
+  try{
+    const response=await fetch('geo3d_b1000_live.json',{cache:'no-store'});
+    if(!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    const geoZhLabels={'lijia-line baseline control':'lijia-line 基线（控制组）','R5 single-turn p10':'R5 单轮 p10','R5 single-turn p30':'R5 单轮 p30','R5 grouped multi-QA p10':'R5 同图多 QA p10','R13 single-turn p10':'R13 单轮 p10','R13 single-turn p30':'R13 单轮 p30','R13 pair2 p10':'R13 Pair2 p10','R13 pair2 p30':'R13 Pair2 p30'};
+    data.baseline_label=geoZhLabels[data.baseline_label]||data.baseline_label;
+    data.experiments.forEach(row=>{row.label=geoZhLabels[row.label]||row.label});
+    document.querySelectorAll('[data-geo-mode]').forEach(button=>button.addEventListener('click',()=>{geoB1000State.mode=button.dataset.geoMode;renderGeoComparison(data)}));
+    renderGeoComparison(data);
+  }catch(error){
+    document.getElementById('geo-b1000-compare-meta').textContent=`数据加载失败：${error.message}`;
+  }
+}
+function geokg137kV2Series(data){
+  const order=['mc_v2fix','fill_v2fix','half_v2fix'];
+  return order.map(key=>(data.v2fix_series||[]).find(item=>item.key===key)).filter(Boolean);
+}
+function geokg137kChart(el,metric,data,visibleSeries,yDomain=null){
+  const w=720,h=350,m={l:56,r:20,t:22,b:46};
+  const series=[data.baseline,...visibleSeries].map(item=>({
+    ...item,
+    points:item.rows.map(row=>({step:row.step,v:row[metric]})).filter(point=>point.v!=null)
+  }));
+  const values=series.flatMap(item=>item.points.map(point=>point.v));
+  let min=yDomain?yDomain[0]:Math.min(...values),max=yDomain?yDomain[1]:Math.max(...values);
+  if(!yDomain){const pad=Math.max((max-min)*0.18,0.012);min=Math.max(0,min-pad);max=Math.min(1,max+pad)}
+  const x=step=>m.l+(step-100)/900*(w-m.l-m.r);
+  const y=value=>m.t+(max-value)/(max-min)*(h-m.t-m.b);
+  const yTicks=[min,(min*2+max)/3,(min+max*2)/3,max];
+  const grid=yTicks.map(value=>`<line x1="${m.l}" x2="${w-m.r}" y1="${y(value)}" y2="${y(value)}" stroke="#deded8"/><text x="${m.l-9}" y="${y(value)+4}" text-anchor="end" font-size="12" fill="#555">${geoPct(value)}</text>`).join('');
+  const xTicks=Array.from({length:10},(_,i)=>(i+1)*100).map(step=>`<text x="${x(step)}" y="${h-16}" text-anchor="middle" font-size="11" fill="#555">${step}</text>`).join('');
+  const paths=series.map(item=>{
+    const isBaseline=item.key==='control';
+    const marks=item.points.map(point=>`<circle data-geokg-series="${item.key}" cx="${x(point.step)}" cy="${y(point.v)}" r="${isBaseline?'3.2':'4'}" fill="#fff" stroke="${item.color}" stroke-width="${isBaseline?'2':'2.4'}"><title>${geoEsc(item.label)} · step ${point.step}: ${geoPct(point.v)}</title></circle>`).join('');
+    return `<path data-geokg-series="${item.key}" d="${geoPath(item.points,x,y)}" fill="none" stroke="${item.color}" stroke-width="${isBaseline?'2.3':'3.2'}" stroke-linecap="round" stroke-linejoin="round" ${item.dash?`stroke-dasharray="${item.dash}"`:''}/>${marks}`;
+  }).join('');
+  el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${geoEsc(metric)} Geo-KG V2 three-setting comparison curve"><rect width="${w}" height="${h}" fill="#fff"/>${grid}<line x1="${m.l}" x2="${w-m.r}" y1="${h-m.b}" y2="${h-m.b}" stroke="#bdbdb5"/><line x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${h-m.b}" stroke="#bdbdb5"/>${xTicks}${paths}<text x="${w/2}" y="${h-2}" text-anchor="middle" font-size="12" fill="#555">checkpoint</text></svg>`;
+}
+function renderGeokg137kView(data){
+  const visibleSeries=geokg137kV2Series(data);
+  document.getElementById('geokg137k-legend').innerHTML=[data.baseline,...visibleSeries].map(item=>`<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.key==='control'?'Baseline · SN6V0710':item.label.replace('V2修复 · ','V2 · '))}</span>`).join('');
+  geokg137kChart(document.getElementById('geokg137k-chart-solid'),'SolidGeoPerceptionCircularV2',data,visibleSeries);
+  geokg137kChart(document.getElementById('geokg137k-chart-geometry'),'Perception-geometry-mc-circular-v1',data,visibleSeries);
+  geokg137kChart(document.getElementById('geokg137k-chart-natural'),'NaturalPerceptionCircularV3',data,visibleSeries);
+}
+async function renderGeokg137k(){
+  const errorBox=document.getElementById('geokg137k-error');
+  try{
+    const response=await fetch('geokg137k_3arm_autoeval.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    errorBox.hidden=true;
+    renderGeokg137kView(data);
+  }catch(error){
+    errorBox.hidden=false;
+    errorBox.innerHTML=`<b>Geo-KG 三臂数据加载失败。</b> ${geoEsc(error.message)}`;
+  }
+}
+const GEO_R3P10_METRIC='SolidGeoPerceptionCircularV2';
+function geoR3p10DeltaClass(v){return v>0?'geo-r3p10-pos':v<0?'geo-r3p10-neg':'geo-r3p10-zero'}
+function geoR3p10Pp(v){return `${v>0?'+':''}${Number(v).toFixed(2)}pp`}
+function geoR3p10DeltaChart(el,data,series){
+  // 每臂在每个 step 的 (臂 − baseline) pp 曲线；0 线加粗
+  const w=720,h=350,m={l:56,r:20,t:22,b:46};
+  const baseByStep=new Map((data.baseline.rows||[]).map(r=>[r.step,r[GEO_R3P10_METRIC]]));
+  const lines=series.map(s=>({
+    key:s.key,label:s.label,color:s.color,
+    points:(s.rows||[]).filter(r=>baseByStep.has(r.step)&&r[GEO_R3P10_METRIC]!=null)
+      .map(r=>({step:r.step,v:(r[GEO_R3P10_METRIC]-baseByStep.get(r.step))*100}))
+  }));
+  const values=[0,...lines.flatMap(l=>l.points.map(p=>p.v))];
+  let min=Math.min(...values),max=Math.max(...values);
+  const pad=Math.max((max-min)*0.16,0.6);min-=pad;max+=pad;
+  const x=step=>m.l+(step-100)/900*(w-m.l-m.r);
+  const y=value=>m.t+(max-value)/(max-min)*(h-m.t-m.b);
+  const yTicks=[min,(min*2+max)/3,0,(min+max*2)/3,max].sort((a,b)=>a-b).filter((v,i,a)=>i===0||Math.abs(v-a[i-1])>0.15);
+  const grid=yTicks.map(value=>`<line x1="${m.l}" x2="${w-m.r}" y1="${y(value)}" y2="${y(value)}" stroke="${Math.abs(value)<1e-9?'#777':'#deded8'}" ${Math.abs(value)<1e-9?'stroke-width="1.5"':''}/><text x="${m.l-9}" y="${y(value)+4}" text-anchor="end" font-size="12" fill="#555">${value>0?'+':''}${value.toFixed(1)}</text>`).join('');
+  const xTicks=Array.from({length:10},(_,i)=>(i+1)*100).map(step=>`<text x="${x(step)}" y="${h-16}" text-anchor="middle" font-size="11" fill="#555">${step}</text>`).join('');
+  const paths=lines.map(item=>{
+    const marks=item.points.map(point=>`<circle data-geo-r3p10-delta="${item.key}" cx="${x(point.step)}" cy="${y(point.v)}" r="4" fill="#fff" stroke="${item.color}" stroke-width="2.4"><title>${geoEsc(item.label)} · step ${point.step}: ${geoR3p10Pp(point.v)}</title></circle>`).join('');
+    return `<path data-geo-r3p10-delta="${item.key}" d="${geoPath(item.points,x,y)}" fill="none" stroke="${item.color}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>${marks}`;
+  }).join('');
+  el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Geo3D R3 P10 SolidGeo V2 delta vs baseline"><rect width="${w}" height="${h}" fill="#fff"/>${grid}<line x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${h-m.b}" stroke="#bdbdb5"/>${xTicks}${paths}<text x="${w/2}" y="${h-2}" text-anchor="middle" font-size="12" fill="#555">checkpoint · 臂 − baseline (pp)</text></svg>`;
+}
+function renderGeo3dR3P10View(data){
+  const series=data.series||[];
+  const seSeries=series.filter(item=>['se0','se1','se2345'].includes(item.key));
+  const fullSeries=series.filter(item=>item.key==='full');
+  const allValues=[data.baseline,...series].flatMap(item=>(item.rows||[]).map(row=>row[GEO_R3P10_METRIC]).filter(value=>value!=null));
+  let sharedMin=Math.min(...allValues),sharedMax=Math.max(...allValues);
+  const sharedPad=Math.max((sharedMax-sharedMin)*0.18,0.012);
+  const sharedYDomain=[Math.max(0,sharedMin-sharedPad),Math.min(1,sharedMax+sharedPad)];
+  const fullChartData={...data,baseline:{...data.baseline,color:'#adb3b8'}};
+  const baseFr=new Map();(data.baseline.rows||[]).forEach(r=>{if(r.failed_ratio!=null)baseFr.set(r.step,r.failed_ratio)});
+  const sub=document.getElementById('geo-r3p10-subtitle');if(sub&&data.subtitle)sub.textContent=data.subtitle;
+  const lastStep=item=>Math.max(0,...(item.rows||[]).map(row=>Number(row.step)||0));
+  const vf=document.getElementById('geo-r3p10-verified');if(vf)vf.textContent='各臂最新：'+series.map(item=>`${item.label} ${lastStep(item)||'—'}`).join(' · ');
+  const up=document.getElementById('geo-r3p10-updated');if(up)up.textContent=`更新时间：${geoEsc(data.updated_at||'')}`;
+  // 两张独立图：三个 SE 分臂；Full 单独突出。两图都保留灰色 baseline 参照。
+  const renderLegend=(id,items,baseline=data.baseline)=>{document.getElementById(id).innerHTML=[baseline,...items].map(item=>{
+    const isBase=item.key==='control';
+    const extra=(!isBase&&item.n_questions)?` <span class="geo-r3p10-muted">(${item.n_questions.toLocaleString('en-US')} 题)</span>`:'';
+    return `<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(isBase?'0710 baseline (control)':item.label)}${extra}</span>`;
+  }).join('')};
+  renderLegend('geo-r3p10-legend-se',seSeries);
+  renderLegend('geo-r3p10-legend-full',fullSeries,fullChartData.baseline);
+  geokg137kChart(document.getElementById('geo-r3p10-chart-se'),GEO_R3P10_METRIC,data,seSeries,sharedYDomain);
+  geokg137kChart(document.getElementById('geo-r3p10-chart-full'),GEO_R3P10_METRIC,fullChartData,fullSeries,sharedYDomain);
+  // delta 曲线（已按用户要求隐藏；元素不存在时跳过）
+  const _r3dc=document.getElementById('geo-r3p10-chart-delta');if(_r3dc)geoR3p10DeltaChart(_r3dc,data,series);
+  // 数据表：step × 臂（V2 分 + delta），末行 failed_ratio
+  const baseByStep=new Map((data.baseline.rows||[]).map(r=>[r.step,r[GEO_R3P10_METRIC]]));
+  const steps=(data.step_targets||[]).filter(step=>baseByStep.has(step)||series.some(s=>(s.rows||[]).some(r=>r.step===step)));
+  const armCell=(s,step)=>{
+    const row=(s.rows||[]).find(r=>r.step===step);
+    if(!row||row[GEO_R3P10_METRIC]==null)return '<td class="geo-r3p10-muted">—</td>';
+    const score=(row[GEO_R3P10_METRIC]*100).toFixed(2);
+    let d='';
+    if(baseByStep.has(step)){
+      const dv=row[GEO_R3P10_METRIC]*100-baseByStep.get(step)*100;
+      d=` <span class="${geoR3p10DeltaClass(dv)}">(${geoR3p10Pp(dv)})</span>`;
+    }
+    const frBad=(row.failed_ratio!=null&&row.failed_ratio>0)?` <span class="geo-r3p10-fr-bad" title="failed_ratio=${row.failed_ratio}">⚠</span>`:'';
+    return `<td><span class="geo-r3p10-score">${score}</span>${d}${frBad}</td>`;
+  };
+  const head=`<thead><tr><th>step</th><th>0710 baseline</th>${series.map(s=>`<th class="arm-head" style="color:${s.color}">${geoEsc(s.label)}</th>`).join('')}</tr></thead>`;
+  const body=steps.map(step=>{
+    const b=baseByStep.has(step)?`<td><span class="geo-r3p10-score">${(baseByStep.get(step)*100).toFixed(2)}</span></td>`:'<td class="geo-r3p10-muted">—</td>';
+    return `<tr><td><b>${step}</b></td>${b}${series.map(s=>armCell(s,step)).join('')}</tr>`;
+  }).join('');
+  // failed_ratio 汇总行
+  const frCell=(rows)=>{const vals=(rows||[]).map(r=>r.failed_ratio).filter(v=>v!=null);if(!vals.length)return '<td class="geo-r3p10-muted">—</td>';const mx=Math.max(...vals);return `<td class="${mx>0?'geo-r3p10-fr-bad':'geo-r3p10-zero'}">${mx.toFixed(3)}</td>`};
+  const frRow=`<tr><td><b>failed_ratio (max)</b></td>${frCell(data.baseline.rows)}${series.map(s=>frCell(s.rows)).join('')}</tr>`;
+  const _r3tb=document.getElementById('geo-r3p10-table');if(_r3tb)_r3tb.innerHTML=`${head}<tbody>${body}${frRow}</tbody>`;
+}
+async function renderGeo3dR3P10(){
+  const errorBox=document.getElementById('geo-r3p10-error');
+  try{
+    const response=await fetch('geo3d_r3_p10_live.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    errorBox.hidden=true;
+    renderGeo3dR3P10View(data);
+  }catch(error){
+    errorBox.hidden=false;
+    errorBox.innerHTML=`<b>Geo3D R3 P10 数据加载失败。</b> ${geoEsc(error.message)}`;
+  }
+}
+function renderPgNoorigView(data){
+  const visibleSeries=data.series||[];
+  document.getElementById('pgnoorig-legend').innerHTML=[data.baseline,...visibleSeries].map(item=>{
+    const isBase=item.key==='control';
+    const extra=(!isBase&&item.n_questions)?` <span class="geo-r3p10-muted">(${item.n_questions.toLocaleString('en-US')} 题)</span>`:'';
+    return `<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(isBase?'0710 baseline (control)':item.label)}${extra}</span>`;
+  }).join('');
+  const sub=document.getElementById('pgnoorig-subtitle');if(sub&&data.subtitle)sub.textContent=data.subtitle;
+  const lastStep=item=>Math.max(0,...(item.rows||[]).map(row=>Number(row.step)||0));
+  const vf=document.getElementById('pgnoorig-verified');if(vf)vf.textContent='本臂已真值核验到 step '+(data.verified_through||lastStep(visibleSeries[0]||{rows:[]})||'—');
+  const up=document.getElementById('pgnoorig-updated');if(up)up.textContent=`更新时间：${geoEsc(data.updated_at||'')}`;
+  geokg137kChart(document.getElementById('pgnoorig-chart-solid'),'SolidGeoPerceptionCircularV1',data,visibleSeries);
+  geokg137kChart(document.getElementById('pgnoorig-chart-geometry'),'Perception-geometry-mc-circular-v1',data,visibleSeries);
+  geokg137kChart(document.getElementById('pgnoorig-chart-natural'),'NaturalPerceptionCircularV3',data,visibleSeries);
+}
+async function renderPgNoorig(){
+  const errorBox=document.getElementById('pgnoorig-error');
+  try{
+    const response=await fetch('perceptiongeo_noorig_p10_live.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    errorBox.hidden=true;
+    renderPgNoorigView(data);
+  }catch(error){
+    errorBox.hidden=false;
+    errorBox.innerHTML=`<b>PerceptionGeo NoOrig P10 数据加载失败。</b> ${geoEsc(error.message)}`;
+  }
+}
+function renderG3v4fmtView(data){
+  const series=data.series||[];
+  document.getElementById('g3v4fmt-legend').innerHTML=[data.baseline,...series].map(item=>{
+    const isBase=item.key==='control';
+    const extra=(!isBase&&item.n_questions)?` <span class="geo-r3p10-muted">(${item.n_questions.toLocaleString('en-US')} 题)</span>`:'';
+    return `<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(isBase?'0710 baseline (control)':item.label)}${extra}</span>`;
+  }).join('');
+  const sub=document.getElementById('g3v4fmt-subtitle');if(sub&&data.subtitle)sub.textContent=data.subtitle;
+  const v4=series.find(s=>s.key==='v4fmt');
+  const lastStep=item=>Math.max(0,...(item.rows||[]).map(row=>Number(row.step)||0));
+  const vf=document.getElementById('g3v4fmt-verified');if(vf)vf.textContent='v4 臂已真值核验到 step '+(data.verified_through||lastStep(v4||{rows:[]})||'—');
+  const up=document.getElementById('g3v4fmt-updated');if(up)up.textContent=`更新时间：${geoEsc(data.updated_at||'')}`;
+  geokg137kChart(document.getElementById('g3v4fmt-chart'),'SolidGeoPerceptionCircularV2',data,series);
+  // 数据表：step × 臂（V2 分 + delta），末行 failed_ratio
+  const baseByStep=new Map((data.baseline.rows||[]).map(r=>[r.step,r['SolidGeoPerceptionCircularV2']]));
+  const steps=(data.step_targets||[]).filter(step=>baseByStep.has(step)||series.some(s=>(s.rows||[]).some(r=>r.step===step)));
+  const armCell=(s,step)=>{
+    const row=(s.rows||[]).find(r=>r.step===step);
+    if(!row||row['SolidGeoPerceptionCircularV2']==null)return '<td class="geo-r3p10-muted">—</td>';
+    const score=(row['SolidGeoPerceptionCircularV2']*100).toFixed(2);
+    let d='';
+    if(baseByStep.has(step)){
+      const dv=row['SolidGeoPerceptionCircularV2']*100-baseByStep.get(step)*100;
+      d=` <span class="${geoR3p10DeltaClass(dv)}">(${geoR3p10Pp(dv)})</span>`;
+    }
+    const frBad=(row.failed_ratio!=null&&row.failed_ratio>0)?` <span class="geo-r3p10-fr-bad" title="failed_ratio=${row.failed_ratio}">⚠</span>`:'';
+    return `<td><span class="geo-r3p10-score">${score}</span>${d}${frBad}</td>`;
+  };
+  const head=`<thead><tr><th>step</th><th>0710 baseline</th>${series.map(s=>`<th class="arm-head" style="color:${s.color}">${geoEsc(s.label)}</th>`).join('')}</tr></thead>`;
+  const body=steps.map(step=>{
+    const b=baseByStep.has(step)?`<td><span class="geo-r3p10-score">${(baseByStep.get(step)*100).toFixed(2)}</span></td>`:'<td class="geo-r3p10-muted">—</td>';
+    return `<tr><td><b>${step}</b></td>${b}${series.map(s=>armCell(s,step)).join('')}</tr>`;
+  }).join('');
+  const frCell=(rows)=>{const vals=(rows||[]).map(r=>r.failed_ratio).filter(v=>v!=null);if(!vals.length)return '<td class="geo-r3p10-muted">—</td>';const mx=Math.max(...vals);return `<td class="${mx>0?'geo-r3p10-fr-bad':'geo-r3p10-zero'}">${mx.toFixed(3)}</td>`};
+  const frRow=`<tr><td><b>failed_ratio (max)</b></td>${frCell(data.baseline.rows)}${series.map(s=>frCell(s.rows)).join('')}</tr>`;
+  const _tb=document.getElementById('g3v4fmt-table');if(_tb)_tb.innerHTML=`${head}<tbody>${body}${frRow}</tbody>`;
+}
+async function renderG3v4fmt(){
+  const errorBox=document.getElementById('g3v4fmt-error');
+  try{
+    const response=await fetch('geo3d_r3_v4fmt_p10_live.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    errorBox.hidden=true;
+    renderG3v4fmtView(data);
+  }catch(error){
+    errorBox.hidden=false;
+    errorBox.innerHTML=`<b>Geo3D R3 v4fmt 数据加载失败。</b> ${geoEsc(error.message)}`;
+  }
+}
+function activateDashboardTab(tab){
+  const btn=document.querySelector(`[data-tab="${tab}"]`);
+  const pane=document.getElementById('tab-'+tab);
+  if(!btn || !pane) return;
+  document.querySelectorAll('[data-tab]').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.pane').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  pane.classList.add('active');
+}
+document.querySelectorAll('[data-tab]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    activateDashboardTab(btn.dataset.tab);
+    history.replaceState(null,'','#'+btn.dataset.tab);
+  });
+});
+renderGeoB1000();
+renderGeokg137k();
+renderGeo3dR3P10();
+renderG3v4fmt();
+renderPgNoorig();
+activateDashboardTab(location.hash ? location.hash.slice(1) : 'geo3d-r3-p10');
+</script>
+</body></html>

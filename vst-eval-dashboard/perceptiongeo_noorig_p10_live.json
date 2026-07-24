@@ -1,0 +1,169 @@
+{
+ "title": "PerceptionGeo V1V2 NoOrig P10 · 三榜",
+ "subtitle": "2D 平面几何感知（冗余渲染变体对照）· 边训边测 vs 0710 baseline",
+ "updated_at": "2026-07-24 06:30 UTC",
+ "verified_through": 900,
+ "step_targets": [
+  100,
+  200,
+  300,
+  400,
+  500,
+  600,
+  700,
+  800,
+  900,
+  1000
+ ],
+ "baseline": {
+  "key": "control",
+  "label": "0710 baseline (control) · g3s0710ctrl",
+  "color": "#5f6368",
+  "dash": "7 5",
+  "rows": [
+   {
+    "step": 100,
+    "NaturalPerceptionCircularV3": 0.2413793103448276,
+    "SolidGeoPerceptionCircularV1": 0.25874867444326616,
+    "Perception-geometry-mc-circular-v1": 0.24285714285714285,
+    "failed_ratio": 0.0
+   },
+   {
+    "step": 200,
+    "NaturalPerceptionCircularV3": 0.2946708463949843,
+    "SolidGeoPerceptionCircularV1": 0.31601272534464475,
+    "Perception-geometry-mc-circular-v1": 0.3080952380952381,
+    "failed_ratio": 0.0
+   },
+   {
+    "step": 300,
+    "NaturalPerceptionCircularV3": 0.30825496342737724,
+    "SolidGeoPerceptionCircularV1": 0.31919406150583246,
+    "Perception-geometry-mc-circular-v1": 0.3242857142857143,
+    "failed_ratio": 0.0
+   },
+   {
+    "step": 400,
+    "NaturalPerceptionCircularV3": 0.3218390804597701,
+    "SolidGeoPerceptionCircularV1": 0.344644750795334,
+    "Perception-geometry-mc-circular-v1": 0.3352380952380952,
+    "failed_ratio": 0.0
+   },
+   {
+    "step": 500,
+    "NaturalPerceptionCircularV3": 0.3270637408568443,
+    "SolidGeoPerceptionCircularV1": 0.3457051961823966,
+    "Perception-geometry-mc-circular-v1": 0.33,
+    "failed_ratio": 0.0
+   },
+   {
+    "step": 600,
+    "NaturalPerceptionCircularV3": 0.32497387669801464,
+    "SolidGeoPerceptionCircularV1": 0.33828207847295866,
+    "Perception-geometry-mc-circular-v1": 0.3352380952380952,
+    "failed_ratio": 0.0
+   },
+   {
+    "step": 700,
+    "NaturalPerceptionCircularV3": 0.33646812957157785,
+    "SolidGeoPerceptionCircularV1": 0.3552492046659597,
+    "Perception-geometry-mc-circular-v1": 0.3404761904761905,
+    "failed_ratio": 0.0
+   },
+   {
+    "step": 800,
+    "NaturalPerceptionCircularV3": 0.35214211076280044,
+    "SolidGeoPerceptionCircularV1": 0.3552492046659597,
+    "Perception-geometry-mc-circular-v1": 0.35,
+    "failed_ratio": 0.0
+   },
+   {
+    "step": 900,
+    "NaturalPerceptionCircularV3": 0.3510971786833856,
+    "SolidGeoPerceptionCircularV1": 0.35418875927889715,
+    "Perception-geometry-mc-circular-v1": 0.3514285714285714,
+    "failed_ratio": 0.0
+   },
+   {
+    "step": 1000,
+    "NaturalPerceptionCircularV3": 0.3343782654127482,
+    "SolidGeoPerceptionCircularV1": 0.35949098621421,
+    "Perception-geometry-mc-circular-v1": 0.3495238095238095,
+    "failed_ratio": 0.0
+   }
+  ]
+ },
+ "series": [
+  {
+   "key": "noorig",
+   "label": "NoOrig p10",
+   "color": "#7c3aed",
+   "n_questions": 2231714,
+   "rows": [
+    {
+     "step": 100,
+     "NaturalPerceptionCircularV3": 0.23719958202716823,
+     "SolidGeoPerceptionCircularV1": 0.24708377518557795,
+     "Perception-geometry-mc-circular-v1": 0.23714285714285716,
+     "failed_ratio": 0.0
+    },
+    {
+     "step": 200,
+     "NaturalPerceptionCircularV3": 0.30303030303030304,
+     "SolidGeoPerceptionCircularV1": 0.3266171792152704,
+     "Perception-geometry-mc-circular-v1": 0.30428571428571427,
+     "failed_ratio": 0.0
+    },
+    {
+     "step": 300,
+     "NaturalPerceptionCircularV3": 0.3019853709508882,
+     "SolidGeoPerceptionCircularV1": 0.30965005302226933,
+     "Perception-geometry-mc-circular-v1": 0.31,
+     "failed_ratio": 0.0
+    },
+    {
+     "step": 400,
+     "NaturalPerceptionCircularV3": 0.30407523510971785,
+     "SolidGeoPerceptionCircularV1": 0.32025450689289503,
+     "Perception-geometry-mc-circular-v1": 0.31952380952380954,
+     "failed_ratio": 0.0
+    },
+    {
+     "step": 500,
+     "NaturalPerceptionCircularV3": 0.30825496342737724,
+     "SolidGeoPerceptionCircularV1": 0.32767762460233296,
+     "Perception-geometry-mc-circular-v1": 0.3304761904761905,
+     "failed_ratio": 0.0
+    },
+    {
+     "step": 600,
+     "NaturalPerceptionCircularV3": 0.322884012539185,
+     "SolidGeoPerceptionCircularV1": 0.3361611876988335,
+     "Perception-geometry-mc-circular-v1": 0.3304761904761905,
+     "failed_ratio": 0.0
+    },
+    {
+     "step": 700,
+     "NaturalPerceptionCircularV3": 0.30929989550679204,
+     "SolidGeoPerceptionCircularV1": 0.33934252386002123,
+     "Perception-geometry-mc-circular-v1": 0.33714285714285713,
+     "failed_ratio": 0.0
+    },
+    {
+     "step": 800,
+     "NaturalPerceptionCircularV3": 0.3343782654127482,
+     "SolidGeoPerceptionCircularV1": 0.35418875927889715,
+     "Perception-geometry-mc-circular-v1": 0.3376190476190476,
+     "failed_ratio": 0.0
+    },
+    {
+     "step": 900,
+     "NaturalPerceptionCircularV3": 0.3448275862068966,
+     "SolidGeoPerceptionCircularV1": 0.3457051961823966,
+     "Perception-geometry-mc-circular-v1": 0.3333333333333333,
+     "failed_ratio": 0.0
+    }
+   ]
+  }
+ ]
+}

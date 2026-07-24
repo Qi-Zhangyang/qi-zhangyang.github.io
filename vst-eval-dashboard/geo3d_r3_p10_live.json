@@ -1,0 +1,352 @@
+{
+ "title": "Geo3D R3 P10 四臂 · SolidGeo V2",
+ "subtitle": "规则造题数据 · 边训边测 vs 0710 baseline",
+ "metric": "SolidGeoPerceptionCircularV2",
+ "metric_label": "SolidGeo V2",
+ "updated_at": "2026-07-24 07:35 UTC",
+ "verified_through": 1000,
+ "step_targets": [
+  100,
+  200,
+  300,
+  400,
+  500,
+  600,
+  700,
+  800,
+  900,
+  1000
+ ],
+ "baseline": {
+  "key": "control",
+  "label": "0710 baseline (control) · g3ctrlv2fix1",
+  "color": "#5f6368",
+  "dash": "7 5",
+  "rows": [
+   {
+    "step": 100,
+    "SolidGeoPerceptionCircularV2": 0.2654822335025381,
+    "failed_ratio": 0.0
+   },
+   {
+    "step": 200,
+    "SolidGeoPerceptionCircularV2": 0.3015228426395939,
+    "failed_ratio": 0.0
+   },
+   {
+    "step": 300,
+    "SolidGeoPerceptionCircularV2": 0.3177664974619289,
+    "failed_ratio": 0.0
+   },
+   {
+    "step": 400,
+    "SolidGeoPerceptionCircularV2": 0.33401015228426395,
+    "failed_ratio": 0.0
+   },
+   {
+    "step": 500,
+    "SolidGeoPerceptionCircularV2": 0.34213197969543147,
+    "failed_ratio": 0.0
+   },
+   {
+    "step": 600,
+    "SolidGeoPerceptionCircularV2": 0.34060913705583756,
+    "failed_ratio": 0.0
+   },
+   {
+    "step": 700,
+    "SolidGeoPerceptionCircularV2": 0.3416243654822335,
+    "failed_ratio": 0.0
+   },
+   {
+    "step": 800,
+    "SolidGeoPerceptionCircularV2": 0.34822335025380713,
+    "failed_ratio": 0.0
+   },
+   {
+    "step": 900,
+    "SolidGeoPerceptionCircularV2": 0.3538071065989848,
+    "failed_ratio": 0.0
+   },
+   {
+    "step": 1000,
+    "SolidGeoPerceptionCircularV2": 0.3548223350253807,
+    "failed_ratio": 0.0
+   }
+  ]
+ },
+ "series": [
+  {
+   "key": "se0",
+   "label": "SE0",
+   "color": "#2563eb",
+   "n_questions": 34779,
+   "rows": [
+    {
+     "step": 100,
+     "SolidGeoPerceptionCircularV2": 0.2568527918781726,
+     "failed_ratio": 0.0,
+     "delta": -0.8629
+    },
+    {
+     "step": 200,
+     "SolidGeoPerceptionCircularV2": 0.2949238578680203,
+     "failed_ratio": 0.0,
+     "delta": -0.6599
+    },
+    {
+     "step": 300,
+     "SolidGeoPerceptionCircularV2": 0.3182741116751269,
+     "failed_ratio": 0.0,
+     "delta": 0.0508
+    },
+    {
+     "step": 400,
+     "SolidGeoPerceptionCircularV2": 0.3284263959390863,
+     "failed_ratio": 0.0,
+     "delta": -0.5584
+    },
+    {
+     "step": 500,
+     "SolidGeoPerceptionCircularV2": 0.3197969543147208,
+     "failed_ratio": 0.0,
+     "delta": -2.2335
+    },
+    {
+     "step": 600,
+     "SolidGeoPerceptionCircularV2": 0.3304568527918782,
+     "failed_ratio": 0.0,
+     "delta": -1.0152
+    },
+    {
+     "step": 700,
+     "SolidGeoPerceptionCircularV2": 0.3284263959390863,
+     "failed_ratio": 0.0,
+     "delta": -1.3198
+    },
+    {
+     "step": 800,
+     "SolidGeoPerceptionCircularV2": 0.3426395939086294,
+     "failed_ratio": 0.0,
+     "delta": -0.5584
+    },
+    {
+     "step": 900,
+     "SolidGeoPerceptionCircularV2": 0.33604060913705586,
+     "failed_ratio": 0.0,
+     "delta": -1.7766
+    },
+    {
+     "step": 1000,
+     "SolidGeoPerceptionCircularV2": 0.33248730964467005,
+     "failed_ratio": 0.0,
+     "delta": -2.2335
+    }
+   ]
+  },
+  {
+   "key": "se1",
+   "label": "SE1",
+   "color": "#f59e0b",
+   "n_questions": 40903,
+   "rows": [
+    {
+     "step": 100,
+     "SolidGeoPerceptionCircularV2": 0.23908629441624366,
+     "failed_ratio": 0.0,
+     "delta": -2.6396
+    },
+    {
+     "step": 200,
+     "SolidGeoPerceptionCircularV2": 0.28883248730964467,
+     "failed_ratio": 0.0,
+     "delta": -1.269
+    },
+    {
+     "step": 300,
+     "SolidGeoPerceptionCircularV2": 0.3086294416243655,
+     "failed_ratio": 0.0,
+     "delta": -0.9137
+    },
+    {
+     "step": 400,
+     "SolidGeoPerceptionCircularV2": 0.32741116751269034,
+     "failed_ratio": 0.0,
+     "delta": -0.6599
+    },
+    {
+     "step": 500,
+     "SolidGeoPerceptionCircularV2": 0.34517766497461927,
+     "failed_ratio": 0.0,
+     "delta": 0.3046
+    },
+    {
+     "step": 600,
+     "SolidGeoPerceptionCircularV2": 0.35126903553299493,
+     "failed_ratio": 0.0,
+     "delta": 1.066
+    },
+    {
+     "step": 700,
+     "SolidGeoPerceptionCircularV2": 0.33604060913705586,
+     "failed_ratio": 0.0,
+     "delta": -0.5584
+    },
+    {
+     "step": 800,
+     "SolidGeoPerceptionCircularV2": 0.3522842639593909,
+     "failed_ratio": 0.0,
+     "delta": 0.4061
+    },
+    {
+     "step": 900,
+     "SolidGeoPerceptionCircularV2": 0.35736040609137054,
+     "failed_ratio": 0.0,
+     "delta": 0.3553
+    },
+    {
+     "step": 1000,
+     "SolidGeoPerceptionCircularV2": 0.3477157360406091,
+     "failed_ratio": 0.0,
+     "delta": -0.7107
+    }
+   ]
+  },
+  {
+   "key": "se2345",
+   "label": "SE2/3/4/5",
+   "color": "#0f9f86",
+   "n_questions": 26163,
+   "rows": [
+    {
+     "step": 100,
+     "SolidGeoPerceptionCircularV2": 0.2467005076142132,
+     "failed_ratio": 0.0,
+     "delta": -1.8782
+    },
+    {
+     "step": 200,
+     "SolidGeoPerceptionCircularV2": 0.2868020304568528,
+     "failed_ratio": 0.0,
+     "delta": -1.4721
+    },
+    {
+     "step": 300,
+     "SolidGeoPerceptionCircularV2": 0.3086294416243655,
+     "failed_ratio": 0.0,
+     "delta": -0.9137
+    },
+    {
+     "step": 400,
+     "SolidGeoPerceptionCircularV2": 0.3111675126903553,
+     "failed_ratio": 0.0,
+     "delta": -2.2843
+    },
+    {
+     "step": 500,
+     "SolidGeoPerceptionCircularV2": 0.33096446700507615,
+     "failed_ratio": 0.0,
+     "delta": -1.1168
+    },
+    {
+     "step": 600,
+     "SolidGeoPerceptionCircularV2": 0.3385786802030457,
+     "failed_ratio": 0.0,
+     "delta": -0.203
+    },
+    {
+     "step": 700,
+     "SolidGeoPerceptionCircularV2": 0.33096446700507615,
+     "failed_ratio": 0.0,
+     "delta": -1.066
+    },
+    {
+     "step": 800,
+     "SolidGeoPerceptionCircularV2": 0.33553299492385785,
+     "failed_ratio": 0.0,
+     "delta": -1.269
+    },
+    {
+     "step": 900,
+     "SolidGeoPerceptionCircularV2": 0.33908629441624366,
+     "failed_ratio": 0.0,
+     "delta": -1.4721
+    },
+    {
+     "step": 1000,
+     "SolidGeoPerceptionCircularV2": 0.34060913705583756,
+     "failed_ratio": 0.0,
+     "delta": -1.4213
+    }
+   ]
+  },
+  {
+   "key": "full",
+   "label": "全量",
+   "color": "#a855f7",
+   "n_questions": 101845,
+   "rows": [
+    {
+     "step": 100,
+     "SolidGeoPerceptionCircularV2": 0.24568527918781727,
+     "failed_ratio": 0.0,
+     "delta": -1.9797
+    },
+    {
+     "step": 200,
+     "SolidGeoPerceptionCircularV2": 0.3065989847715736,
+     "failed_ratio": 0.0,
+     "delta": 0.5076
+    },
+    {
+     "step": 300,
+     "SolidGeoPerceptionCircularV2": 0.3401015228426396,
+     "failed_ratio": 0.0,
+     "delta": 2.2335
+    },
+    {
+     "step": 400,
+     "SolidGeoPerceptionCircularV2": 0.3477157360406091,
+     "failed_ratio": 0.0,
+     "delta": 1.3706
+    },
+    {
+     "step": 500,
+     "SolidGeoPerceptionCircularV2": 0.35634517766497464,
+     "failed_ratio": 0.0,
+     "delta": 1.4213
+    },
+    {
+     "step": 600,
+     "SolidGeoPerceptionCircularV2": 0.3517766497461929,
+     "failed_ratio": 0.0,
+     "delta": 1.1168
+    },
+    {
+     "step": 700,
+     "SolidGeoPerceptionCircularV2": 0.3487309644670051,
+     "failed_ratio": 0.0,
+     "delta": 0.7107
+    },
+    {
+     "step": 800,
+     "SolidGeoPerceptionCircularV2": 0.34974619289340103,
+     "failed_ratio": 0.0,
+     "delta": 0.1523
+    },
+    {
+     "step": 900,
+     "SolidGeoPerceptionCircularV2": 0.3598984771573604,
+     "failed_ratio": 0.0,
+     "delta": 0.6091
+    },
+    {
+     "step": 1000,
+     "SolidGeoPerceptionCircularV2": 0.3629441624365482,
+     "failed_ratio": 0.0,
+     "delta": 0.8122
+    }
+   ]
+  }
+ ]
+}
