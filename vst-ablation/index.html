@@ -85,6 +85,14 @@ body{zoom:1.22}
 </head><body>
 <header><h1>多图是否有益实验验证 🔬</h1><div class='meta'>从 VST 中观测到有意思的涨点。双维度验证：场景消融（10 个新源场景各自成臂，哪个场景有效）× 题型消融（native MI 9 题型解构 11 臂，哪个题型/形态驱动）。同 p10 配方、六项 full eval、逐 ckpt WebDAV 真值验收；对照 = exact SN6V0710 baseline + native MI。本页不访问任何内网服务。</div></header>
 <main>
+<div class='tabs-row new-baseline' style='margin-top:16px;padding-top:14px;border-top:2px solid #cfd8e3'>
+  <span class='tabs-row-label'>场景合并 · Merge 🔗</span>
+  <div class='tabs'>
+    <button class='tab' data-tab='current-scenemerge-m1'><span>M1（3源）</span><small>ScanNet+HyperSim+Taskonomy</small></button>
+    <button class='tab' data-tab='current-scenemerge-m2'><span>M2（4源）</span><small>M1+ScanNet++</small></button>
+    <button class='tab' data-tab='current-scenemerge-m3'><span>M3（7源宽合并）</span><small>M2+Waymo+MegaDepth+DL3DV</small></button>
+  </div>
+</div>
 <div class='step-caption plain'>对照组：原生 native MI 120K（9 题型混合）+ exact SN6V0710 baseline——<span style='color:#b91c1c;font-weight:800'>从 VST 中观测到的涨点：geometry-mc 35.10 → 36.14（s900 峰值 36.76），本页所有曲线以此为基准</span></div>
 <div class='tabs-row new-baseline'>
   <span class='tabs-row-label'>原生 VST-ScanNet-多图 🎉</span>
@@ -392,6 +400,9 @@ D. 大约 11484 像素</div>
 <section id='tab-current-waymo-outdoor-mi-v1' class='pane'><div id='current-waymo-outdoor-mi-v1-root'></div></section>
 <section id='tab-current-replica-mi-v1' class='pane'><div id='current-replica-mi-v1-root'></div></section>
 <section id='tab-current-mp3d-mi-v1' class='pane'><div id='current-mp3d-mi-v1-root'></div></section>
+<section id='tab-current-scenemerge-m1' class='pane'><div id='current-scenemerge-m1-root'></div></section>
+<section id='tab-current-scenemerge-m2' class='pane'><div id='current-scenemerge-m2-root'></div></section>
+<section id='tab-current-scenemerge-m3' class='pane'><div id='current-scenemerge-m3-root'></div></section>
 <section id='tab-current-camgeo-cam-trans' class='pane'><div id='current-camgeo-cam-trans-root'></div></section>
 <section id='tab-current-camgeo-cam-rot' class='pane'><div id='current-camgeo-cam-rot-root'></div></section>
 <section id='tab-current-camgeo-cam-view-direction' class='pane'><div id='current-camgeo-cam-view-direction-root'></div></section>
