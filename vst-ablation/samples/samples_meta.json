@@ -2104,5 +2104,311 @@
     ]
    }
   ]
+ },
+ "native-mi-v2-1": {
+  "samples": [
+   {
+    "images": [
+     "s1/img1.jpg",
+     "s1/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "Images are acquired in a continuous stream from a first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options:\nA. front\nB. uncertain\nC. right\nD. back left\nAnswer the question using a single word or phrase."
+     },
+     {
+      "role": "assistant",
+      "content": "A. front"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s2/img1.jpg",
+     "s2/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "Given that bottle (indicated by the red point) is east of mouse (highlighted at the blue point), what is the direction of socket (shown by the gold point) relative to mouse (highlighted at the blue point)? Options:\nA. southwest\nB. northwest\nC. west\nD. southeast\nAnswer the question using a single word or phrase."
+     },
+     {
+      "role": "assistant",
+      "content": "B. northwest"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s3/img1.jpg",
+     "s3/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "A point is highlighted with a cyan circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple cyan-circled points labeled 'A, B, C, D'. Which matches the original point?\nA point-A\nB point-B\nC point-C\nD point-D"
+     },
+     {
+      "role": "assistant",
+      "content": "C point-C"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s4/img1.jpg",
+     "s4/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "A point is highlighted with a yellow circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple yellow-circled points labeled 'A, B, C, D'. Which matches the original point?\nA point-A\nB point-B\nC point-C\nD point-D"
+     },
+     {
+      "role": "assistant",
+      "content": "B point-B"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s5/img1.jpg",
+     "s5/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "The images are taken continuously from a first-person perspective. How does the camera's location change through space? Options: A. rightward and downward, B. leftward, C. backward, D. forward\nAnswer the question using a single word or phrase."
+     },
+     {
+      "role": "assistant",
+      "content": "B. leftward"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s6/img1.jpg",
+     "s6/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "When the person stands at the camera position of the second image and looks at shelf (indicated by the orange point) (which is front), what is the direction of socket (linked to the purple point) from the person? Options: A. front-left, B. back-right, C. back-left, D. front\nPlease select the correct answer from the options above."
+     },
+     {
+      "role": "assistant",
+      "content": "A. front-left"
+     }
+    ]
+   }
+  ]
+ },
+ "snv60710-41k": {
+  "samples": [
+   {
+    "images": [
+     "s1/img1.jpg",
+     "s1/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "Images are acquired in a continuous stream from a first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options:\nA. front\nB. uncertain\nC. right\nD. back left\nAnswer the question using a single word or phrase."
+     },
+     {
+      "role": "assistant",
+      "content": "A. front"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s2/img1.jpg",
+     "s2/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "Given that door (in frame 2) is on the back side of sign (in frame 1), what is the direction of toy (in frame 2) relative to sign (in frame 1)? Options: A. back-right, B. back-left, C. left, D. front-left\nPlease select the correct answer from the options above."
+     },
+     {
+      "role": "assistant",
+      "content": "A. back-right"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s3/img1.jpg",
+     "s3/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "Given that bottle (indicated by the red point) is east of mouse (highlighted at the blue point), what is the direction of socket (shown by the gold point) relative to mouse (highlighted at the blue point)? Options:\nA. southwest\nB. northwest\nC. west\nD. southeast\nAnswer the question using a single word or phrase."
+     },
+     {
+      "role": "assistant",
+      "content": "B. northwest"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s4/img1.jpg",
+     "s4/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "Each frame is taken in turn, providing a continuous first-person perspective. How does the camera's location change through space? Options:\nA. rightward and upward\nB. rightward\nC. leftward\nD. leftward and downward\nPlease select the correct answer from the options above."
+     },
+     {
+      "role": "assistant",
+      "content": "A. rightward and upward"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s5/img1.jpg",
+     "s5/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "A point is highlighted with a cyan circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple cyan-circled points labeled 'A, B, C, D'. Which matches the original point?\nA point-A\nB point-B\nC point-C\nD point-D"
+     },
+     {
+      "role": "assistant",
+      "content": "C point-C"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s6/img1.jpg",
+     "s6/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "If, at the camera position of the first image, the person considers the direction to ledge (indicated by the blue point) as southeast, what direction is curtain (positioned at the orange point) relative to the person? Options: A. east, B. northeast, C. west, D. south\nAnswer the question using a single word or phrase."
+     },
+     {
+      "role": "assistant",
+      "content": "A. east"
+     }
+    ]
+   }
+  ]
+ },
+ "rpqa": {
+  "samples": [
+   {
+    "images": [
+     "s1/img1.jpg",
+     "s1/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "In the 2D image projection, using the current camera's straight-ahead direction as 0 degrees, what horizontal bearing is the first grinding wheel from right to left closest to?\n\nOptions:\nA. about 35 degrees to the right of straight ahead\nB. about 35 degrees to the left of straight ahead\nC. about 20 degrees to the right of straight ahead\nD. about 20 degrees to the left of straight ahead"
+     },
+     {
+      "role": "assistant",
+      "content": "C"
+     }
+    ],
+    "scheme": "A"
+   },
+   {
+    "images": [
+     "s2/img1.jpg",
+     "s2/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "In the image projection, what is the approximate visible-size ratio of the first ring from left to right to the second ring from left to right?\n\nOptions:\nA. about 0.8x\nB. about 1.1x\nC. about 1.4x\nD. about 1.7x"
+     },
+     {
+      "role": "assistant",
+      "content": "B"
+     }
+    ],
+    "scheme": "A"
+   },
+   {
+    "images": [
+     "s3/img1.jpg",
+     "s3/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "In the 2D image projection, using the current camera's straight-ahead direction as 0 degrees, what horizontal bearing is the object shown in Image 2 closest to?\n\nOptions:\nA. about 35 degrees to the right of straight ahead\nB. about 35 degrees to the left of straight ahead\nC. about 20 degrees to the right of straight ahead\nD. about 20 degrees to the left of straight ahead"
+     },
+     {
+      "role": "assistant",
+      "content": "C"
+     }
+    ],
+    "scheme": "B"
+   },
+   {
+    "images": [
+     "s4/img1.jpg",
+     "s4/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "In the image projection, what is the approximate visible-size ratio of the object shown in Image 2 to the second ring from left to right?\n\nOptions:\nA. about 0.8x\nB. about 1.1x\nC. about 1.4x\nD. about 1.7x"
+     },
+     {
+      "role": "assistant",
+      "content": "B"
+     }
+    ],
+    "scheme": "B"
+   },
+   {
+    "images": [
+     "s5/img1.jpg",
+     "s5/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "In the image projection, what is the approximate visible-size ratio of the first ring from left to right to the second ring from left to right?\n\nOptions:\nA. about 0.8x\nB. about 1.1x\nC. about 1.4x\nD. about 1.7x"
+     },
+     {
+      "role": "assistant",
+      "content": "B"
+     }
+    ],
+    "scheme": "C"
+   },
+   {
+    "images": [
+     "s6/img1.jpg",
+     "s6/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "About how many times is the visible size of the first person from right to left compared with the second person from right to left?\n\nOptions:\nA. about 9417 px\nB. about 15618 px\nC. about 13551 px\nD. about 11484 px"
+     },
+     {
+      "role": "assistant",
+      "content": "D"
+     }
+    ],
+    "scheme": "C"
+   }
+  ]
  }
 }

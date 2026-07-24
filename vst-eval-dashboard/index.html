@@ -53,8 +53,21 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 @media(max-width:1100px){.grid3,.snv6-chart-grid,.geo-chart-grid,.geo-best-grid,.geo-r15-chart-grid,.geo-lineage-grid,.geo-r13-chart-grid{grid-template-columns:1fr}.geo-r15-metric-grid,.geo-r13-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.geo-r15-metric:nth-child(2),.geo-r13-kpi:nth-child(2){border-right:0}.geo-r15-metric:nth-child(-n+2),.geo-r13-kpi:nth-child(-n+2){border-bottom:1px solid #e7e7e1}.geo-best{border-right:0;border-bottom:1px solid #e7e7e1}.geo-best:last-child{border-bottom:0}.geo-final-head{align-items:flex-start}.geo-r13-case-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.geo-r13-case:nth-child(2){border-right:0}.geo-r13-case:nth-child(-n+2){border-bottom:1px solid #e7e7e1}}
 @media(max-width:720px){header{position:static;padding:17px 16px 12px}h1{font-size:21px}main{padding:14px 12px 32px}.tabs-row{display:block}.tabs-row-label{display:block;width:max-content;min-width:0;margin-bottom:7px}.tabs{padding-bottom:3px}.tab{padding:8px 11px;font-size:13px}.section-title{font-size:17px;margin-top:20px}th,td{padding:7px 8px}.current-empty{padding:22px 14px}.geo-r15-metric-grid,.geo-r13-kpis,.geo-r13-case-grid,.geo-r13-summary-grid{grid-template-columns:1fr}.geo-r15-metric,.geo-r13-kpi,.geo-r13-case{border-right:0;border-bottom:1px solid #e7e7e1}.geo-r15-metric:last-child,.geo-r13-kpi:last-child,.geo-r13-case:last-child{border-bottom:0}.geo-final-head{display:block}.geo-final-badge{display:inline-block;margin-top:9px}.geo-r13-hero-head h2{font-size:18px}}
 </style><style>.step-caption{margin:18px 0 0;padding-top:10px;border-top:2px solid #cfd8e3;font-size:13.5px;font-weight:800;color:#47617a}.step-caption.plain{border-top:0;margin-top:6px;padding-top:0}</style>
+<style>
+.sample-card{background:#fff;border:1px solid #deded8;padding:12px 14px;margin:14px 0}
+.sample-title{font-size:15px;color:#33506a;font-weight:700;margin-bottom:8px}
+.sample-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.sample-item{border:1px solid #e3e8ee;border-radius:8px;padding:9px;background:#fbfcfe}
+.sample-imgs{display:flex;flex-direction:row;gap:6px;margin-bottom:7px}
+.sample-imgs a{flex:1;min-width:0;display:block}
+.sample-imgs img{width:100%;height:auto;border:1px solid #d5dde4;border-radius:4px;cursor:zoom-in;display:block;background:#f2f5f8}
+.sample-qa{font-size:14px;color:#3f4f5d;line-height:1.65;margin-top:5px;word-break:break-word;white-space:pre-wrap}
+.sample-qa.zh{color:#176231}
+@media(max-width:960px){.sample-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.sample-grid{grid-template-columns:1fr}}
+</style>
 </head><body>
-<header><h1>VST 评测曲线</h1><div class='meta'>VST 与 Geo3D 验证图版的公网静态快照。Geo3D 主图按研究问题拆分，每次只比较两条实验曲线，并对齐真实的 lijia-line 100–1000 checkpoint 基线。本页不访问任何内网服务。</div></header>
+<header><h1>VST 评测曲线</h1><div class='meta'>VST 与 Geo3D 验证图版的公网静态快照。Geo3D 主图按研究问题拆分，每次只比较两条实验曲线，并对齐真实的 lijia-line 100–1000 checkpoint 基线。</div></header>
 <main>
 <div class='tabs-row'>
   <span class='tabs-row-label'>老基线</span>
@@ -231,6 +244,86 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 <h2 class='section-title'>原生 VST-ScanNet Multi-Image V1（41K）：SN V6 0710 严格复验</h2>
 <div class='geo-note'>蓝线为 0710 新基线，橙线为 0710 + 10% VST 多图组。两组使用相同的 iter216 起点、训练参数和 no-thinking 评测配置；多图组加入 10% VST-ScanNet MI。</div>
 <div class='snv6-chart-grid' id='snv60710-metric-charts'></div>
+<div class="sample-card">
+<div class="sample-title">真实训练样本 ×6 <span style="font-weight:400;color:#8a97a5">（V1 41K core 与 V2.1-120K 同分布，样本取自 120K 前段 shard；Q/A 中英对照）</span></div>
+<div class="sample-grid"><div class="sample-item">
+  <div class="sample-imgs"><a href="s1/img1.jpg" target="_blank" rel="noopener"><img src="s1/img1.jpg" loading="lazy"></a><a href="s1/img2.jpg" target="_blank" rel="noopener"><img src="s1/img2.jpg" loading="lazy"></a></div>
+  <div class="sample-qa"><b>Q1：</b>Images are acquired in a continuous stream from a first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options:
+A. front
+B. uncertain
+C. right
+D. back left
+Answer the question using a single word or phrase.</div>
+  <div class="sample-qa zh"><b>问题1：</b>图像是以第一人称视角连续采集的。如果第一张照片是在我所在的位置拍摄的，那么第二台相机相对于那个位置在哪里？选项：
+A. 前方
+B. 不确定
+C. 右方
+D. 左后方
+请用一个词或短语回答问题。</div>
+  <div class="sample-qa"><b>A1：</b>A. front</div>
+  <div class="sample-qa zh"><b>答案1：</b>A. 前方</div>
+</div><div class="sample-item">
+  <div class="sample-imgs"><a href="s2/img1.jpg" target="_blank" rel="noopener"><img src="s2/img1.jpg" loading="lazy"></a><a href="s2/img2.jpg" target="_blank" rel="noopener"><img src="s2/img2.jpg" loading="lazy"></a></div>
+  <div class="sample-qa"><b>Q2：</b>Given that door (in frame 2) is on the back side of sign (in frame 1), what is the direction of toy (in frame 2) relative to sign (in frame 1)? Options: A. back-right, B. back-left, C. left, D. front-left
+Please select the correct answer from the options above.</div>
+  <div class="sample-qa zh"><b>问题2：</b>已知门（在第 2 帧中）位于标志（在第 1 帧中）的后方，请问玩具（在第 2 帧中）相对于标志（在第 1 帧中）的方向是什么？选项：A. 右后方，B. 左后方，C. 左侧，D. 左前方。请从以上选项中选择正确答案。</div>
+  <div class="sample-qa"><b>A2：</b>A. back-right</div>
+  <div class="sample-qa zh"><b>答案2：</b>A. 右后方</div>
+</div><div class="sample-item">
+  <div class="sample-imgs"><a href="s3/img1.jpg" target="_blank" rel="noopener"><img src="s3/img1.jpg" loading="lazy"></a><a href="s3/img2.jpg" target="_blank" rel="noopener"><img src="s3/img2.jpg" loading="lazy"></a></div>
+  <div class="sample-qa"><b>Q3：</b>Given that bottle (indicated by the red point) is east of mouse (highlighted at the blue point), what is the direction of socket (shown by the gold point) relative to mouse (highlighted at the blue point)? Options:
+A. southwest
+B. northwest
+C. west
+D. southeast
+Answer the question using a single word or phrase.</div>
+  <div class="sample-qa zh"><b>问题3：</b>已知瓶子（由红点标出）位于鼠标（由蓝点标出）的东面，那么插座（由金点显示）相对于鼠标（由蓝点标出）的方向是什么？选项：
+A. 西南
+B. 西北
+C. 西面
+D. 东南
+请用一个词或短语回答问题。</div>
+  <div class="sample-qa"><b>A3：</b>B. northwest</div>
+  <div class="sample-qa zh"><b>答案3：</b>B. 西北</div>
+</div><div class="sample-item">
+  <div class="sample-imgs"><a href="s4/img1.jpg" target="_blank" rel="noopener"><img src="s4/img1.jpg" loading="lazy"></a><a href="s4/img2.jpg" target="_blank" rel="noopener"><img src="s4/img2.jpg" loading="lazy"></a></div>
+  <div class="sample-qa"><b>Q4：</b>Each frame is taken in turn, providing a continuous first-person perspective. How does the camera&#x27;s location change through space? Options:
+A. rightward and upward
+B. rightward
+C. leftward
+D. leftward and downward
+Please select the correct answer from the options above.</div>
+  <div class="sample-qa zh"><b>问题4：</b>每一帧按顺序拍摄，提供连续的第一人称视角。摄像机的位置在空间中是如何变化的？选项：
+A. 向右且向上
+B. 向右
+C. 向左
+D. 向左且向下
+请从以上选项中选择正确答案。</div>
+  <div class="sample-qa"><b>A4：</b>A. rightward and upward</div>
+  <div class="sample-qa zh"><b>答案4：</b>A. 向右且向上</div>
+</div><div class="sample-item">
+  <div class="sample-imgs"><a href="s5/img1.jpg" target="_blank" rel="noopener"><img src="s5/img1.jpg" loading="lazy"></a><a href="s5/img2.jpg" target="_blank" rel="noopener"><img src="s5/img2.jpg" loading="lazy"></a></div>
+  <div class="sample-qa"><b>Q5：</b>A point is highlighted with a cyan circle (marked &#x27;REF&#x27;) in image one. After adjusting the camera, image two presents multiple cyan-circled points labeled &#x27;A, B, C, D&#x27;. Which matches the original point?
+A point-A
+B point-B
+C point-C
+D point-D</div>
+  <div class="sample-qa zh"><b>问题5：</b>图 1 中用青色圆圈（标记为“REF”）标出了一个点。在调整相机角度后，图 2 显示了多个标有“A、B、C、D”的青色圆圈点。请问哪一个点与原始点相匹配？
+A 点-A
+B 点-B
+C 点-C
+D 点-D</div>
+  <div class="sample-qa"><b>A5：</b>C point-C</div>
+  <div class="sample-qa zh"><b>答案5：</b>C 点-C</div>
+</div><div class="sample-item">
+  <div class="sample-imgs"><a href="s6/img1.jpg" target="_blank" rel="noopener"><img src="s6/img1.jpg" loading="lazy"></a><a href="s6/img2.jpg" target="_blank" rel="noopener"><img src="s6/img2.jpg" loading="lazy"></a></div>
+  <div class="sample-qa"><b>Q6：</b>If, at the camera position of the first image, the person considers the direction to ledge (indicated by the blue point) as southeast, what direction is curtain (positioned at the orange point) relative to the person? Options: A. east, B. northeast, C. west, D. south
+Answer the question using a single word or phrase.</div>
+  <div class="sample-qa zh"><b>问题6：</b>如果在第一张图像的相机位置，某人将指向窗台（由蓝点标出）的方向视为东南方向，那么窗帘（位于橙点处）相对于此人是在什么方向？选项：A. 东，B. 东北，C. 西，D. 南。请用一个词或短语回答问题。</div>
+  <div class="sample-qa"><b>A6：</b>A. east</div>
+  <div class="sample-qa zh"><b>答案6：</b>A. 东</div>
+</div></div>
+</div>
 </section>
 
 <section id='tab-geokg137k' class='pane'>
@@ -263,6 +356,118 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV2</h2><div id='rpqa-chart-solid'></div></div>
   <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='rpqa-chart-geometry'></div></div>
   <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='rpqa-chart-natural'></div></div>
+</div>
+<div class="sample-card">
+<div class="sample-title">RPQA 双图构造真实样本 ×6 <span style="font-weight:400;color:#8a97a5">（A/B/C 各 2 条，来自 qianxun_k26_v1 release；Q/A 中英对照）</span></div>
+<div class="sample-grid"><div class="sample-item">
+  <div class="sample-imgs"><a href="s1/img1.jpg" target="_blank" rel="noopener"><img src="s1/img1.jpg" loading="lazy"></a><a href="s1/img2.jpg" target="_blank" rel="noopener"><img src="s1/img2.jpg" loading="lazy"></a></div>
+  <div class="sample-qa"><b>Q1：</b>In the 2D image projection, using the current camera&#x27;s straight-ahead direction as 0 degrees, what horizontal bearing is the first grinding wheel from right to left closest to?
+
+Options:
+A. about 35 degrees to the right of straight ahead
+B. about 35 degrees to the left of straight ahead
+C. about 20 degrees to the right of straight ahead
+D. about 20 degrees to the left of straight ahead</div>
+  <div class="sample-qa zh"><b>问题1：</b>在二维图像投影中，以当前摄像机的正前方方向为 0 度，从右往左数第一个砂轮最接近哪个水平方位角？
+
+选项：
+A. 正前方右侧约 35 度
+B. 正前方左侧约 35 度
+C. 正前方右侧约 20 度
+D. 正前方左侧约 20 度</div>
+  <div class="sample-qa"><b>A1：</b>C</div>
+  <div class="sample-qa zh"><b>答案1：</b>C</div>
+</div><div class="sample-item">
+  <div class="sample-imgs"><a href="s2/img1.jpg" target="_blank" rel="noopener"><img src="s2/img1.jpg" loading="lazy"></a><a href="s2/img2.jpg" target="_blank" rel="noopener"><img src="s2/img2.jpg" loading="lazy"></a></div>
+  <div class="sample-qa"><b>Q2：</b>In the image projection, what is the approximate visible-size ratio of the first ring from left to right to the second ring from left to right?
+
+Options:
+A. about 0.8x
+B. about 1.1x
+C. about 1.4x
+D. about 1.7x</div>
+  <div class="sample-qa zh"><b>问题2：</b>在图像投影中，从左往右数第一个圆环与第二个圆环的视觉大小比例大约是多少？
+
+选项：
+A. 大约 0.8 倍
+B. 大约 1.1 倍
+C. 大约 1.4 倍
+D. 大约 1.7 倍</div>
+  <div class="sample-qa"><b>A2：</b>B</div>
+  <div class="sample-qa zh"><b>答案2：</b>B</div>
+</div><div class="sample-item">
+  <div class="sample-imgs"><a href="s3/img1.jpg" target="_blank" rel="noopener"><img src="s3/img1.jpg" loading="lazy"></a><a href="s3/img2.jpg" target="_blank" rel="noopener"><img src="s3/img2.jpg" loading="lazy"></a></div>
+  <div class="sample-qa"><b>Q3：</b>In the 2D image projection, using the current camera&#x27;s straight-ahead direction as 0 degrees, what horizontal bearing is the object shown in Image 2 closest to?
+
+Options:
+A. about 35 degrees to the right of straight ahead
+B. about 35 degrees to the left of straight ahead
+C. about 20 degrees to the right of straight ahead
+D. about 20 degrees to the left of straight ahead</div>
+  <div class="sample-qa zh"><b>问题3：</b>在二维图像投影中，以当前摄像机的正前方方向为 0 度，图 2 中显示的物体最接近哪个水平方位角？
+
+选项：
+A. 正前方右侧约 35 度
+B. 正前方左侧约 35 度
+C. 正前方右侧约 20 度
+D. 正前方左侧约 20 度</div>
+  <div class="sample-qa"><b>A3：</b>C</div>
+  <div class="sample-qa zh"><b>答案3：</b>C</div>
+</div><div class="sample-item">
+  <div class="sample-imgs"><a href="s4/img1.jpg" target="_blank" rel="noopener"><img src="s4/img1.jpg" loading="lazy"></a><a href="s4/img2.jpg" target="_blank" rel="noopener"><img src="s4/img2.jpg" loading="lazy"></a></div>
+  <div class="sample-qa"><b>Q4：</b>In the image projection, what is the approximate visible-size ratio of the object shown in Image 2 to the second ring from left to right?
+
+Options:
+A. about 0.8x
+B. about 1.1x
+C. about 1.4x
+D. about 1.7x</div>
+  <div class="sample-qa zh"><b>问题4：</b>在图像投影中，图 2 所示物体与从左往右数第二个圆环的视觉大小比例大约是多少？
+
+选项：
+A. 大约 0.8 倍
+B. 大约 1.1 倍
+C. 大约 1.4 倍
+D. 大约 1.7 倍</div>
+  <div class="sample-qa"><b>A4：</b>B</div>
+  <div class="sample-qa zh"><b>答案4：</b>B</div>
+</div><div class="sample-item">
+  <div class="sample-imgs"><a href="s5/img1.jpg" target="_blank" rel="noopener"><img src="s5/img1.jpg" loading="lazy"></a><a href="s5/img2.jpg" target="_blank" rel="noopener"><img src="s5/img2.jpg" loading="lazy"></a></div>
+  <div class="sample-qa"><b>Q5：</b>In the image projection, what is the approximate visible-size ratio of the first ring from left to right to the second ring from left to right?
+
+Options:
+A. about 0.8x
+B. about 1.1x
+C. about 1.4x
+D. about 1.7x</div>
+  <div class="sample-qa zh"><b>问题5：</b>在图像投影中，从左往右数第一个圆环与第二个圆环的视觉大小比例大约是多少？
+
+选项：
+A. 大约 0.8 倍
+B. 大约 1.1 倍
+C. 大约 1.4 倍
+D. 大约 1.7 倍</div>
+  <div class="sample-qa"><b>A5：</b>B</div>
+  <div class="sample-qa zh"><b>答案5：</b>B</div>
+</div><div class="sample-item">
+  <div class="sample-imgs"><a href="s6/img1.jpg" target="_blank" rel="noopener"><img src="s6/img1.jpg" loading="lazy"></a><a href="s6/img2.jpg" target="_blank" rel="noopener"><img src="s6/img2.jpg" loading="lazy"></a></div>
+  <div class="sample-qa"><b>Q6：</b>About how many times is the visible size of the first person from right to left compared with the second person from right to left?
+
+Options:
+A. about 9417 px
+B. about 15618 px
+C. about 13551 px
+D. about 11484 px</div>
+  <div class="sample-qa zh"><b>问题6：</b>从右往左数第一个人的可见尺寸大约是从右往左数第二个人的多少倍？
+
+选项：
+A. 大约 9417 像素
+B. 大约 15618 像素
+C. 大约 13551 像素
+D. 大约 11484 像素</div>
+  <div class="sample-qa"><b>A6：</b>D</div>
+  <div class="sample-qa zh"><b>答案6：</b>D</div>
+</div></div>
 </div>
 </section>
 
