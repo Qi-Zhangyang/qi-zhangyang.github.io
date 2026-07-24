@@ -80,14 +80,14 @@ body{zoom:1.22}
     <button class='tab' data-tab='current-native-mi-v2-1'><span>原生 VST-ScanNet Multi-Image V1 120K</span><small>V1 core + 稳定 seed 新增</small></button>
   </div>
 </div>
-<div class='step-caption'>Step 1 · 先验证「多图是否有益」：单图 vs 多图受控对比（RPQA 双图构造）</div>
+<div class='step-caption'>Step 1 · 先验证「多图是否有益」：单图 vs 多图受控对比（RPQA 双图构造）—— 结论：单纯加双图增益有限，多图虽全胜单图但仍未超 baseline</div>
 <div class='tabs-row perceptiongeo-noorig'>
   <span class='tabs-row-label'>RPQA 单图 vs 多图 🔀</span>
   <div class='tabs'>
     <button class='tab' data-tab='rpqa'><span>RPQA 单图 vs 多图</span><small>双图构造验证</small></button>
   </div>
 </div>
-<div class='step-caption'>Step 2 · 拆「涨点由谁驱动」：native MI 9 题型解构——组1 相机单题型 ×5 ｜ 组2 三图/视频新形态 ×2 ｜ 组3 对象单题型 ×4</div>
+<div class='step-caption'>Step 2 · 拆「涨点由谁驱动」：native MI 9 题型解构——组1 相机单题型 ×5 ｜ 组2 三图/视频新形态 ×2 ｜ 组3 对象单题型 ×4—— 结论：B2 视频形态单臂即超混合；相机题是主力，纯对象题≈没加，耦合相机才有效</div>
 <div class='tabs-row current-vst'>
   <span class='tabs-row-label'>组1·相机单题型消融 📷<br><span style='font-size:10px;font-weight:700;color:#58758d'>ScanNet · 2图</span></span>
   <div class='tabs'>
@@ -114,7 +114,7 @@ body{zoom:1.22}
     <button class='tab' data-tab='current-objtask-obj-orientation-vp'><span>对象朝向×指点</span><small>obj_orientation_vp</small></button>
   </div>
 </div>
-<div class='step-caption'>Step 3 · 验证「场景是否关键」：10 个新源场景各自成臂（室内 / 户外 / 合成）</div>
+<div class='step-caption'>Step 3 · 验证「场景是否关键」：10 个新源场景各自成臂（室内 / 户外 / 合成）—— 结论：场景选择比题型混合更关键，HyperSim/Taskonomy 单场景即超混合</div>
 <div class='tabs-row new-baseline'>
   <span class='tabs-row-label'>场景消融 · 新源验证 🗺</span>
   <div class='tabs'>
@@ -130,7 +130,7 @@ body{zoom:1.22}
     <button class='tab' data-tab='current-mp3d-mi-v1'><span>MP3D（Habitat）</span></button>
   </div>
 </div>
-<div class='step-caption'>附 · 相对失败的尝试（Video 系列），留档参考</div>
+<div class='step-caption'>附 · 相对失败的尝试（Video 系列），留档参考—— 结论：原始视频直接输入走不通</div>
 <div class='tabs-row archived'>
   <span class='tabs-row-label'>归档 · 相对失败 🗄</span>
   <div class='tabs'>
