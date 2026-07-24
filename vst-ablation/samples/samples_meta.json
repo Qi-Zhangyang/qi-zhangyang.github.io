@@ -1231,11 +1231,11 @@
     "texts": [
      {
       "role": "user",
-      "content": "A point is highlighted with a orange circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple orange-circled points labeled '1, 2, 3, 4'. Which matches the original point?\nA point-1\nB point-2\nC point-3\nD point-4"
+      "content": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. When focusing on the camera's horizontal rotation, does it pan to the left or right from image-1 to image-2? Options: A. panning to the left, B. panning to the right\nPlease try to answer the question with short words or phrases if possible."
      },
      {
       "role": "assistant",
-      "content": "A point-1"
+      "content": "A. panning to the left"
      }
     ]
    },
@@ -1247,11 +1247,59 @@
     "texts": [
      {
       "role": "user",
+      "content": "A point is highlighted with a orange circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple orange-circled points labeled '1, 2, 3, 4'. Which matches the original point?\nA point-1\nB point-2\nC point-3\nD point-4"
+     },
+     {
+      "role": "assistant",
+      "content": "A point-1"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s4/img1.jpg",
+     "s4/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "Given that chair (positioned at the blue point) is to the left of cabinet (indicated by the yellow point), what is the direction of table (shown by the purple point) relative to cabinet (indicated by the yellow point)? Options:\nA. left\nB. back\nC. front-right\nD. right\nPlease try to answer the question with short words or phrases if possible."
+     },
+     {
+      "role": "assistant",
+      "content": "A. left"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s5/img1.jpg",
+     "s5/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
       "content": "Images are acquired in a continuous stream from a first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options:\nA. right\nB. front right\nC. uncertain\nD. front\nPlease try to answer the question with short words or phrases if possible."
      },
      {
       "role": "assistant",
       "content": "D. front"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s6/img1.jpg",
+     "s6/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "Images are acquired in a continuous stream from a first-person perspective. Assuming the first shot was taken facing north, what is the camera's facing direction for the second shot? Options:\nA. south\nB. north\nC. it cannot be determined\nD. southwest\nPlease select the correct answer from the options above."
+     },
+     {
+      "role": "assistant",
+      "content": "B. north"
      }
     ]
    }
@@ -1774,6 +1822,86 @@
       "content": "A. right"
      }
     ]
+   },
+   {
+    "images": [
+     "s2/img1.jpg",
+     "s2/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "A point is highlighted with a cyan circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple cyan-circled points labeled 'A, B, C, D'. Which matches the original point?\nA point-A\nB point-B\nC point-C\nD point-D"
+     },
+     {
+      "role": "assistant",
+      "content": "A point-A"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s3/img1.jpg",
+     "s3/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. When focusing on the camera's horizontal rotation, does it pan to the left or right from image-1 to image-2? Options:\nA. panning to the right\nB. panning to the left\nPlease select the correct answer from the options above."
+     },
+     {
+      "role": "assistant",
+      "content": "A. panning to the right"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s4/img1.jpg",
+     "s4/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "A point is highlighted with a blue circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple blue-circled points labeled '1, 2, 3, 4'. Which matches the original point?\nA point-1\nB point-2\nC point-3\nD point-4"
+     },
+     {
+      "role": "assistant",
+      "content": "A point-1"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s5/img1.jpg",
+     "s5/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. When focusing on the camera's horizontal rotation, does it pan to the left or right from image-1 to image-2? Options:\nA. panning to the right\nB. panning to the left\nAnswer the question using a single word or phrase."
+     },
+     {
+      "role": "assistant",
+      "content": "B. panning to the left"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s6/img1.jpg",
+     "s6/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "Each frame is taken in turn, providing a continuous first-person perspective. If the second photo was taken from my spot, where is the first camera relative to that? Options:\nA. left\nB. back left\nC. uncertain\nD. back right\nPlease select the correct answer from the options above."
+     },
+     {
+      "role": "assistant",
+      "content": "A. left"
+     }
+    ]
    }
   ]
  },
@@ -1903,11 +2031,75 @@
     "texts": [
      {
       "role": "user",
+      "content": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. When focusing on the camera's horizontal rotation, does it pan to the left or right from image-1 to image-2? Options:\nA. panning to the right\nB. panning to the left\nPlease try to answer the question with short words or phrases if possible."
+     },
+     {
+      "role": "assistant",
+      "content": "A. panning to the right"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s3/img1.jpg",
+     "s3/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "Images are acquired in a continuous stream from a first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options:\nA. front\nB. left\nC. back right\nD. the result cannot be determined\nPlease try to answer the question with short words or phrases if possible."
+     },
+     {
+      "role": "assistant",
+      "content": "C. back right"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s4/img1.jpg",
+     "s4/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
       "content": "A point is highlighted with a green circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple green-circled points labeled 'A, B, C, D'. Which matches the original point?\nA point-A\nB point-B\nC point-C\nD point-D"
      },
      {
       "role": "assistant",
       "content": "B point-B"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s5/img1.jpg",
+     "s5/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "The images are taken continuously from a first-person perspective. How does the camera's location change through space? Options:\nA. backward and rightward\nB. backward and leftward\nC. downward\nD. forward and leftward\nAnswer the question using a single word or phrase."
+     },
+     {
+      "role": "assistant",
+      "content": "B. backward and leftward"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s6/img1.jpg",
+     "s6/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "Each frame is taken in turn, providing a continuous first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options: A. back left, B. cannot say for sure, C. front right, D. back right\nPlease try to answer the question with short words or phrases if possible."
+     },
+     {
+      "role": "assistant",
+      "content": "D. back right"
      }
     ]
    }
