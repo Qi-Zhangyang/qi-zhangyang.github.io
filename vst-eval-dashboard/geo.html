@@ -65,7 +65,21 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
 .sample-card .sample-qa.zh{color:#176231}
 @media(max-width:720px){.sample-grid{grid-template-columns:1fr}}
 
-</style></head><body>
+</style><style>.step-caption{margin:18px 0 0;padding-top:10px;border-top:2px solid #cfd8e3;font-size:13.5px;font-weight:800;color:#47617a}.step-caption.plain{border-top:0;margin-top:6px;padding-top:0}</style>
+<style>
+.sample-card{background:#fff;border:1px solid #deded8;padding:12px 14px;margin:14px 0}
+.sample-title{font-size:15px;color:#33506a;font-weight:700;margin-bottom:8px}
+.sample-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.sample-item{border:1px solid #e3e8ee;border-radius:8px;padding:9px;background:#fbfcfe}
+.sample-imgs{display:flex;flex-direction:row;gap:6px;margin-bottom:7px}
+.sample-imgs a{flex:1;min-width:0;display:block}
+.sample-imgs img{width:100%;height:auto;border:1px solid #d5dde4;border-radius:4px;cursor:zoom-in;display:block;background:#f2f5f8}
+.sample-qa{font-size:14px;color:#3f4f5d;line-height:1.65;margin-top:5px;word-break:break-word;white-space:pre-wrap}
+.sample-qa.zh{color:#176231}
+@media(max-width:960px){.sample-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.sample-grid{grid-template-columns:1fr}}
+</style>
+</head><body>
 <header><h1>Geo 几何评测专题 🔬</h1><div class='meta'>几何线专版：Geo3D（R5 老基线 / B1000 对比 / R3 P10 四臂 / R3 v4fmt 答案格式消融）· PerceptionGeo NoOrig · Geo-KG 137K 训练验证。与 VST 母版同源的公网静态快照，已剔除全部 VST 与 RPQA 内容；Geo3D 主图按研究问题拆分，每次只比较两条实验曲线，并对齐真实的 lijia-line 100–1000 checkpoint 基线。本页不访问任何内网服务。</div></header>
 <main>
 <div class='tabs-row'>
@@ -233,7 +247,7 @@ D. 两个二面角均为锐二面角</div><div class='sample-qa'><b>A5：</b>答
 </section>
 <section id='tab-perceptiongeo-noorig-p10' class='pane'>
 <h2 class='section-title'>PerceptionGeo V1V2 NoOrig P10 · 三榜</h2>
-<div class='arm-info'><b>实验配置：</b>2D 平面几何感知 NoOrig（去冗余原图渲染）变体 p10 验证，故意设置的冗余对照臂。<br><b>数据预览（m3）：</b><a href='https://m3.app.msh.team?prefix=s3%2Bm2%3A%2F%2Fm2-intern-visual-input-data%2Fdongmengfan%2Fgeo%2Fv1v2_223w_no_orig%2F&start_idx=0&num_data=8' target='_blank' rel='noopener'>NoOrig 223 万</a></div>
+<div class='arm-info'><b>实验配置：</b>dongmengfan（梦凡）造的 2D 平面几何感知训练数据（PerceptionGeo V1V2，223 万题）的 NoOrig 冗余变体 p10 验证 —— NoOrig 与 0710 baseline 已含的 AugBg 是<b>同 QA、不同渲染</b>的冗余数据，本来就是故意设置的冗余对照臂；实测在新 baseline（0710）上同样掉点（step100–900 三榜 macro 大多 −0.3~−1.9pp），符合预期。<br><b>数据预览（m3）：</b><a href='https://m3.app.msh.team?prefix=s3%2Bm2%3A%2F%2Fm2-intern-visual-input-data%2Fdongmengfan%2Fgeo%2Fv1v2_223w_no_orig%2F&start_idx=0&num_data=8' target='_blank' rel='noopener'>NoOrig 223 万</a></div>
 <div class='sample-card'><div class='sample-title'>真实训练样本 ×6（NoOrig 多轮 QA，各附前 2 轮，点击看大图）</div><div class='sample-grid'><div class='sample-item'><div class='sample-imgs'><a href='geo-samples/perceptiongeo-noorig-p10/s1.png' target='_blank' rel='noopener'><img src='geo-samples/perceptiongeo-noorig-p10/s1.png' loading='lazy'></a></div><div class='sample-badge'>NoOrig 2D 平面几何</div><div class='sample-qa'><b>Q1：</b>△ABC 和 △ECD 哪个面积更大？</div><div class='sample-qa'><b>A1：</b>△ABC</div><div class='sample-qa'><b>Q1'：</b>图中的线段把画布划分成了几个区域？（图形外的空白也算一个区域）</div><div class='sample-qa'><b>A1'：</b>5</div></div><div class='sample-item'><div class='sample-imgs'><a href='geo-samples/perceptiongeo-noorig-p10/s2.png' target='_blank' rel='noopener'><img src='geo-samples/perceptiongeo-noorig-p10/s2.png' loading='lazy'></a></div><div class='sample-badge'>NoOrig 2D 平面几何</div><div class='sample-qa'><b>Q2：</b>点 D 是 △BAC 的什么点？（重心 / 外心 / 内心 / 垂心）</div><div class='sample-qa'><b>A2：</b>外心</div><div class='sample-qa'><b>Q2'：</b>点 D 与点 A、C 的位置关系是什么？</div><div class='sample-qa'><b>A2'：</b>中点附近</div></div><div class='sample-item'><div class='sample-imgs'><a href='geo-samples/perceptiongeo-noorig-p10/s3.png' target='_blank' rel='noopener'><img src='geo-samples/perceptiongeo-noorig-p10/s3.png' loading='lazy'></a></div><div class='sample-badge'>NoOrig 2D 平面几何</div><div class='sample-qa'><b>Q3：</b>△FEG 和 △ABC 哪个面积更大？</div><div class='sample-qa'><b>A3：</b>△FEG</div><div class='sample-qa'><b>Q3'：</b>线段 CA 和线段 EH 是否相交？</div><div class='sample-qa'><b>A3'：</b>否</div></div><div class='sample-item'><div class='sample-imgs'><a href='geo-samples/perceptiongeo-noorig-p10/s4.png' target='_blank' rel='noopener'><img src='geo-samples/perceptiongeo-noorig-p10/s4.png' loading='lazy'></a></div><div class='sample-badge'>NoOrig 2D 平面几何</div><div class='sample-qa'><b>Q4：</b>△ABC 和 △DAE 哪个面积更大？</div><div class='sample-qa'><b>A4：</b>△ABC</div><div class='sample-qa'><b>Q4'：</b>图中一共有几个三角形（包括组合三角形）？</div><div class='sample-qa'><b>A4'：</b>8</div></div><div class='sample-item'><div class='sample-imgs'><a href='geo-samples/perceptiongeo-noorig-p10/s5.png' target='_blank' rel='noopener'><img src='geo-samples/perceptiongeo-noorig-p10/s5.png' loading='lazy'></a></div><div class='sample-badge'>NoOrig 2D 平面几何</div><div class='sample-qa'><b>Q5：</b>点 B 与点 D 的中点在图中的归一化坐标 (0-1) 大约是多少？（归一化坐标，左上 (0,0)，右下 (1,1)，容差 ±0.05）</div><div class='sample-qa'><b>A5：</b>[0.45, 0.50]</div><div class='sample-qa'><b>Q5'：</b>图中哪两个点之间的距离最近？</div><div class='sample-qa'><b>A5'：</b>C、E</div></div><div class='sample-item'><div class='sample-imgs'><a href='geo-samples/perceptiongeo-noorig-p10/s6.png' target='_blank' rel='noopener'><img src='geo-samples/perceptiongeo-noorig-p10/s6.png' loading='lazy'></a></div><div class='sample-badge'>NoOrig 2D 平面几何</div><div class='sample-qa'><b>Q6：</b>图中的线段把画布划分成了几个区域？（图形外的空白也算一个区域）</div><div class='sample-qa'><b>A6：</b>5</div><div class='sample-qa'><b>Q6'：</b>图中哪些线段与 BF 相交？</div><div class='sample-qa'><b>A6'：</b>无</div></div></div></div>
 <div class='geokg-toolbar'>
   <span class='geokg-verified' id='pgnoorig-verified'>边训边测中</span>
