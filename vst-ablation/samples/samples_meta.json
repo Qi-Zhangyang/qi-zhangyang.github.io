@@ -25,6 +25,22 @@
     "texts": [
      {
       "role": "user",
+      "content": "Images are acquired in a continuous stream from a first-person perspective. How does the camera's location change through space? Options: A. downward, B. forward, C. rightward and upward, D. backward\nAnswer the question using a single word or phrase."
+     },
+     {
+      "role": "assistant",
+      "content": "D. backward"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s3/img1.jpg",
+     "s3/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
       "content": "Each frame is taken in turn, providing a continuous first-person perspective. The objective is to recognize the primary movement direction of the camera, ignoring slight jitters. Which way does the camera's position move? Options: A. rightward, B. leftward\nPlease try to answer the question with short words or phrases if possible."
      },
      {
@@ -35,8 +51,8 @@
    },
    {
     "images": [
-     "s3/img1.jpg",
-     "s3/img2.jpg"
+     "s4/img1.jpg",
+     "s4/img2.jpg"
     ],
     "texts": [
      {
@@ -51,8 +67,24 @@
    },
    {
     "images": [
-     "s4/img1.jpg",
-     "s4/img2.jpg"
+     "s5/img1.jpg",
+     "s5/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "The images are taken continuously from a first-person perspective. How does the camera's location change through space? Options: A. leftward and downward, B. backward and rightward, C. downward, D. rightward and upward\nPlease select the correct answer from the options above."
+     },
+     {
+      "role": "assistant",
+      "content": "B. backward and rightward"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s6/img1.jpg",
+     "s6/img2.jpg"
     ],
     "texts": [
      {
@@ -93,6 +125,22 @@
     "texts": [
      {
       "role": "user",
+      "content": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. When focusing on the camera's horizontal rotation, does it pan to the left or right from image-1 to image-2? Options: A. panning to the right, B. panning to the left\nPlease try to answer the question with short words or phrases if possible."
+     },
+     {
+      "role": "assistant",
+      "content": "B. panning to the left"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s3/img1.jpg",
+     "s3/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
       "content": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. When focusing on the camera's horizontal rotation, does it pan to the left or right from image-1 to image-2? Options: A. panning to the left, B. panning to the right\nPlease select the correct answer from the options above."
      },
      {
@@ -103,8 +151,8 @@
    },
    {
     "images": [
-     "s3/img1.jpg",
-     "s3/img2.jpg"
+     "s4/img1.jpg",
+     "s4/img2.jpg"
     ],
     "texts": [
      {
@@ -119,8 +167,24 @@
    },
    {
     "images": [
-     "s4/img1.jpg",
-     "s4/img2.jpg"
+     "s5/img1.jpg",
+     "s5/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. When focusing on the camera's horizontal rotation, does it pan to the left or right from image-1 to image-2? Options: A. panning to the left, B. panning to the right\nPlease select the correct answer from the options above."
+     },
+     {
+      "role": "assistant",
+      "content": "B. panning to the right"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s6/img1.jpg",
+     "s6/img2.jpg"
     ],
     "texts": [
      {
@@ -161,6 +225,22 @@
     "texts": [
      {
       "role": "user",
+      "content": "Each frame is taken in turn, providing a continuous first-person perspective. If the camera faced 3 o'clock direction when the second picture was taken, what is its direction for the first picture? Options:\nA. 9 o'clock\nB. 6 o'clock\nC. indeterminable\nD. 3 o'clock\nPlease try to answer the question with short words or phrases if possible."
+     },
+     {
+      "role": "assistant",
+      "content": "D. 3 o'clock"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s3/img1.jpg",
+     "s3/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
       "content": "Each frame is taken in turn, providing a continuous first-person perspective. Assuming the first shot was taken facing north, what is the camera's facing direction for the second shot? Options:\nA. northeast\nB. north\nC. the result cannot be determined\nD. south\nPlease try to answer the question with short words or phrases if possible."
      },
      {
@@ -171,8 +251,8 @@
    },
    {
     "images": [
-     "s3/img1.jpg",
-     "s3/img2.jpg"
+     "s4/img1.jpg",
+     "s4/img2.jpg"
     ],
     "texts": [
      {
@@ -187,8 +267,24 @@
    },
    {
     "images": [
-     "s4/img1.jpg",
-     "s4/img2.jpg"
+     "s5/img1.jpg",
+     "s5/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "The images are taken continuously from a first-person perspective. Assuming the second shot was taken facing north, what is the camera's facing direction for the first shot? Options: A. north, B. south, C. northeast, D. it cannot be determined\nAnswer the question using a single word or phrase."
+     },
+     {
+      "role": "assistant",
+      "content": "A. north"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s6/img1.jpg",
+     "s6/img2.jpg"
     ],
     "texts": [
      {
@@ -229,6 +325,22 @@
     "texts": [
      {
       "role": "user",
+      "content": "Images are acquired in a continuous stream from a first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options: A. front right, B. left, C. the result cannot be determined, D. back right\nAnswer the question using a single word or phrase."
+     },
+     {
+      "role": "assistant",
+      "content": "A. front right"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s3/img1.jpg",
+     "s3/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
       "content": "Each frame is taken in turn, providing a continuous first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options:\nA. right\nB. back left\nC. front\nD. cannot say for sure\nAnswer the question using a single word or phrase."
      },
      {
@@ -239,8 +351,8 @@
    },
    {
     "images": [
-     "s3/img1.jpg",
-     "s3/img2.jpg"
+     "s4/img1.jpg",
+     "s4/img2.jpg"
     ],
     "texts": [
      {
@@ -255,8 +367,24 @@
    },
    {
     "images": [
-     "s4/img1.jpg",
-     "s4/img2.jpg"
+     "s5/img1.jpg",
+     "s5/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "Each frame is taken in turn, providing a continuous first-person perspective. If the second photo was taken from my spot, where is the first camera relative to that? Options: A. front right, B. uncertain, C. right, D. left\nPlease select the correct answer from the options above."
+     },
+     {
+      "role": "assistant",
+      "content": "D. left"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s6/img1.jpg",
+     "s6/img2.jpg"
     ],
     "texts": [
      {
@@ -297,6 +425,22 @@
     "texts": [
      {
       "role": "user",
+      "content": "A point is highlighted with a green circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple green-circled points labeled '1, 2, 3, 4'. Which matches the original point?\nA point-1\nB point-2\nC point-3\nD point-4"
+     },
+     {
+      "role": "assistant",
+      "content": "A point-1"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s3/img1.jpg",
+     "s3/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
       "content": "A point is highlighted with a cyan circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple cyan-circled points labeled 'A, B, C, D'. Which matches the original point?\nA point-A\nB point-B\nC point-C\nD point-D"
      },
      {
@@ -307,8 +451,24 @@
    },
    {
     "images": [
-     "s3/img1.jpg",
-     "s3/img2.jpg"
+     "s4/img1.jpg",
+     "s4/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "A point is highlighted with a green circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple green-circled points labeled 'A, B, C, D'. Which matches the original point?\nA point-A\nB point-B\nC point-C\nD point-D"
+     },
+     {
+      "role": "assistant",
+      "content": "C point-C"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s5/img1.jpg",
+     "s5/img2.jpg"
     ],
     "texts": [
      {
@@ -323,8 +483,8 @@
    },
    {
     "images": [
-     "s4/img1.jpg",
-     "s4/img2.jpg"
+     "s6/img1.jpg",
+     "s6/img2.jpg"
     ],
     "texts": [
      {
@@ -367,11 +527,11 @@
     "texts": [
      {
       "role": "user",
-      "content": "Three images are captured in order (view-1, view-2, view-3) from a moving first-person camera. Combining both turns, what is the net change in the direction the camera is facing from view-1 to view-3 (ignore small jitter)? Options: A. about 30 degrees to the left (counter-clockwise), B. about 15 degrees to the left (counter-clockwise), C. about 75 degrees to the right (clockwise), D. about 45 degrees to the left (counter-clockwise)\nPlease try to answer the question with short words or phrases if possible."
+      "content": "A camera moves through the room and takes three shots in sequence (view-1, then view-2, then view-3). Combining both turns, what is the net change in the direction the camera is facing from view-1 to view-3 (ignore small jitter)? Options: A. about 75 degrees to the right (clockwise), B. about 30 degrees to the right (clockwise), C. about 90 degrees to the left (counter-clockwise), D. about 60 degrees to the right (clockwise)\nAnswer the question using a single word or phrase."
      },
      {
       "role": "assistant",
-      "content": "A. about 30 degrees to the left (counter-clockwise)"
+      "content": "B. about 30 degrees to the right (clockwise)"
      }
     ]
    },
@@ -384,11 +544,11 @@
     "texts": [
      {
       "role": "user",
-      "content": "Three images are captured in order (view-1, view-2, view-3) from a moving first-person camera. Combining both turns, what is the net change in the direction the camera is facing from view-1 to view-3 (ignore small jitter)? Options: A. about 15 degrees to the left (counter-clockwise), B. about 15 degrees to the right (clockwise), C. about 90 degrees to the right (clockwise), D. about 30 degrees to the left (counter-clockwise)\nPlease try to answer the question with short words or phrases if possible."
+      "content": "Three images are captured in order (view-1, view-2, view-3) from a moving first-person camera. Combining both turns, what is the net change in the direction the camera is facing from view-1 to view-3 (ignore small jitter)? Options:\nA. about 75 degrees to the right (clockwise)\nB. about 75 degrees to the left (counter-clockwise)\nC. about 45 degrees to the left (counter-clockwise)\nD. about 60 degrees to the right (clockwise)\nAnswer the question using a single word or phrase."
      },
      {
       "role": "assistant",
-      "content": "D. about 30 degrees to the left (counter-clockwise)"
+      "content": "A. about 75 degrees to the right (clockwise)"
      }
     ]
    },
@@ -397,6 +557,40 @@
      "s4/img1.jpg",
      "s4/img2.jpg",
      "s4/img3.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "A camera moves through the room and takes three shots in sequence (view-1, then view-2, then view-3). Imagine standing at the view-2 camera and looking toward the view-3 camera. Relative to that line of sight, where is the view-1 camera? Options: A. on the right side, B. on the left side, C. directly on the line between them\nPlease select the correct answer from the options above."
+     },
+     {
+      "role": "assistant",
+      "content": "B. on the left side"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s5/img1.jpg",
+     "s5/img2.jpg",
+     "s5/img3.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "A camera moves through the room and takes three shots in sequence (view-1, then view-2, then view-3). Order the three camera positions along the back-to-front axis of the room, from the back-most to the front-most. Options: A. view-2 -> view-1 -> view-3, B. view-3 -> view-1 -> view-2, C. view-2 -> view-3 -> view-1, D. view-3 -> view-2 -> view-1\nPlease select the correct answer from the options above."
+     },
+     {
+      "role": "assistant",
+      "content": "A. view-2 -> view-1 -> view-3"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s6/img1.jpg",
+     "s6/img2.jpg",
+     "s6/img3.jpg"
     ],
     "texts": [
      {
@@ -437,11 +631,11 @@
     "texts": [
      {
       "role": "user",
-      "content": "Images are acquired in a continuous stream from a first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options:\nA. it cannot be determined\nB. left\nC. back\nD. front right\nPlease select the correct answer from the options above."
+      "content": "Images are acquired in a continuous stream from a first-person perspective. The objective is to recognize the primary movement direction of the camera, ignoring slight jitters. Which way does the camera's position move? Options:\nA. backward\nB. forward\nAnswer the question using a single word or phrase."
      },
      {
       "role": "assistant",
-      "content": "A. it cannot be determined"
+      "content": "B. forward"
      }
     ]
    },
@@ -453,11 +647,11 @@
     "texts": [
      {
       "role": "user",
-      "content": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. When focusing on the camera's horizontal rotation, does it pan to the left or right from image-1 to image-2? Options:\nA. panning to the left\nB. panning to the right\nPlease try to answer the question with short words or phrases if possible."
+      "content": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. When focusing on the camera's horizontal rotation, does it pan to the left or right from image-1 to image-2? Options:\nA. panning to the right\nB. panning to the left\nAnswer the question using a single word or phrase."
      },
      {
       "role": "assistant",
-      "content": "A. panning to the left"
+      "content": "A. panning to the right"
      }
     ]
    },
@@ -465,6 +659,38 @@
     "images": [
      "s4/img1.jpg",
      "s4/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. When focusing on the camera's horizontal rotation, does it pan to the left or right from image-1 to image-2? Options: A. panning to the right, B. panning to the left\nPlease try to answer the question with short words or phrases if possible."
+     },
+     {
+      "role": "assistant",
+      "content": "B. panning to the left"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s5/img1.jpg",
+     "s5/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "A point is highlighted with a purple circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple purple-circled points labeled '1, 2, 3, 4'. Which matches the original point?\nA point-1\nB point-2\nC point-3\nD point-4"
+     },
+     {
+      "role": "assistant",
+      "content": "B point-2"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s6/img1.jpg",
+     "s6/img2.jpg"
     ],
     "texts": [
      {
@@ -505,6 +731,22 @@
     "texts": [
      {
       "role": "user",
+      "content": "Given that bathtub (in frame 1) is south of clothes (in frame 2), what is the direction of bag (in frame 2) relative to clothes (in frame 2)? Options:\nA. southeast\nB. northeast\nC. east\nD. southwest\nAnswer the question using a single word or phrase."
+     },
+     {
+      "role": "assistant",
+      "content": "A. southeast"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s3/img1.jpg",
+     "s3/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
       "content": "Given that paper (in frame 2) is to the front-left of curtain (in frame 1), what is the direction of table (in frame 2) relative to curtain (in frame 1)? Options: A. back, B. back-left, C. left, D. front-left\nPlease try to answer the question with short words or phrases if possible."
      },
      {
@@ -515,8 +757,24 @@
    },
    {
     "images": [
-     "s3/img1.jpg",
-     "s3/img2.jpg"
+     "s4/img1.jpg",
+     "s4/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "Given that board (in frame 2) is on the back side of box (in frame 1), what is the direction of carpet (in frame 2) relative to box (in frame 1)? Options: A. back, B. front-right, C. back-right, D. back-left\nPlease try to answer the question with short words or phrases if possible."
+     },
+     {
+      "role": "assistant",
+      "content": "A. back"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s5/img1.jpg",
+     "s5/img2.jpg"
     ],
     "texts": [
      {
@@ -531,8 +789,8 @@
    },
    {
     "images": [
-     "s4/img1.jpg",
-     "s4/img2.jpg"
+     "s6/img1.jpg",
+     "s6/img2.jpg"
     ],
     "texts": [
      {
@@ -573,6 +831,22 @@
     "texts": [
      {
       "role": "user",
+      "content": "When the person stands at the camera position of the second image and looks at stall (in frame 2) (which is front), what is the direction of toilet (in frame 1) from the person? Options: A. front, B. back-right, C. front-right, D. front-left\nPlease select the correct answer from the options above."
+     },
+     {
+      "role": "assistant",
+      "content": "A. front"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s3/img1.jpg",
+     "s3/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
       "content": "When the person stands at the camera position of the second image and looks at sink (in frame 2) (which is front), what is the direction of microwave (in frame 1) from the person? Options: A. back, B. front-left, C. front-right, D. back-right\nPlease select the correct answer from the options above."
      },
      {
@@ -583,8 +857,8 @@
    },
    {
     "images": [
-     "s3/img1.jpg",
-     "s3/img2.jpg"
+     "s4/img1.jpg",
+     "s4/img2.jpg"
     ],
     "texts": [
      {
@@ -599,8 +873,24 @@
    },
    {
     "images": [
-     "s4/img1.jpg",
-     "s4/img2.jpg"
+     "s5/img1.jpg",
+     "s5/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "If, at the camera position of the first image, the person considers the direction to paper (in frame 2) as southwest, what direction is shelf (in frame 1) relative to the person? Options: A. west, B. south, C. east, D. southwest\nAnswer the question using a single word or phrase."
+     },
+     {
+      "role": "assistant",
+      "content": "A. west"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s6/img1.jpg",
+     "s6/img2.jpg"
     ],
     "texts": [
      {
@@ -641,6 +931,22 @@
     "texts": [
      {
       "role": "user",
+      "content": "When the person stands at the camera position of the second image and looks at windowsill (shown by the purple point) (which is front), what is the direction of pillow (linked to the gold point) from the person? Options:\nA. front\nB. right\nC. front-left\nD. left\nPlease try to answer the question with short words or phrases if possible."
+     },
+     {
+      "role": "assistant",
+      "content": "A. front"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s3/img1.jpg",
+     "s3/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
       "content": "If, at the camera position of the first image, the person considers the direction to switch (linked to the cyan point) as south, what direction is door (linked to the green point) relative to the person? Options: A. south, B. east, C. north, D. northwest\nPlease try to answer the question with short words or phrases if possible."
      },
      {
@@ -651,8 +957,8 @@
    },
    {
     "images": [
-     "s3/img1.jpg",
-     "s3/img2.jpg"
+     "s4/img1.jpg",
+     "s4/img2.jpg"
     ],
     "texts": [
      {
@@ -667,8 +973,24 @@
    },
    {
     "images": [
-     "s4/img1.jpg",
-     "s4/img2.jpg"
+     "s5/img1.jpg",
+     "s5/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "If, at the camera position of the first image, the person considers the direction to desk (denoted by the red point) as north, what direction is radiator (denoted by the green point) relative to the person? Options:\nA. northeast\nB. north\nC. southeast\nD. east\nPlease try to answer the question with short words or phrases if possible."
+     },
+     {
+      "role": "assistant",
+      "content": "A. northeast"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s6/img1.jpg",
+     "s6/img2.jpg"
     ],
     "texts": [
      {
@@ -709,6 +1031,22 @@
     "texts": [
      {
       "role": "user",
+      "content": "Given that counter (linked to the gold point) is east of door (shown by the blue point), what is the direction of microwave (denoted by the red point) relative to door (shown by the blue point)? Options: A. east, B. northwest, C. west, D. south\nPlease try to answer the question with short words or phrases if possible."
+     },
+     {
+      "role": "assistant",
+      "content": "A. east"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s3/img1.jpg",
+     "s3/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
       "content": "Given that cart (positioned at the cyan point) is southwest of radiator (denoted by the yellow point), what is the direction of socket (highlighted at the gold point) relative to radiator (denoted by the yellow point)? Options: A. southeast, B. west, C. south, D. northwest\nPlease select the correct answer from the options above."
      },
      {
@@ -719,8 +1057,24 @@
    },
    {
     "images": [
-     "s3/img1.jpg",
-     "s3/img2.jpg"
+     "s4/img1.jpg",
+     "s4/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "Given that couch (highlighted at the purple point) is south of table (indicated by the yellow point), what is the direction of chair (linked to the orange point) relative to table (indicated by the yellow point)? Options:\nA. southwest\nB. north\nC. west\nD. east\nAnswer the question using a single word or phrase."
+     },
+     {
+      "role": "assistant",
+      "content": "C. west"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s5/img1.jpg",
+     "s5/img2.jpg"
     ],
     "texts": [
      {
@@ -735,8 +1089,8 @@
    },
    {
     "images": [
-     "s4/img1.jpg",
-     "s4/img2.jpg"
+     "s6/img1.jpg",
+     "s6/img2.jpg"
     ],
     "texts": [
      {
@@ -777,11 +1131,11 @@
     "texts": [
      {
       "role": "user",
-      "content": "When the person stands at the camera position of the second image and looks at cabinet (in frame 1) (which is front), what is the direction of pc tower (in frame 2) from the person? Options:\nA. front\nB. back\nC. right\nD. back-left\nPlease select the correct answer from the options above."
+      "content": "Given that bottle (shown by the orange point) is on the front side of key reader (indicated by the gold point), what is the direction of exit sign (highlighted at the yellow point) relative to key reader (indicated by the gold point)? Options:\nA. right\nB. back-right\nC. back\nD. back-left\nAnswer the question using a single word or phrase."
      },
      {
       "role": "assistant",
-      "content": "A. front"
+      "content": "B. back-right"
      }
     ]
    },
@@ -793,11 +1147,11 @@
     "texts": [
      {
       "role": "user",
-      "content": "The images are taken continuously from a first-person perspective. If the camera faced 12 o'clock direction when the first picture was taken, what is its direction for the second picture? Options: A. the result cannot be determined, B. 11 o'clock, C. 3 o'clock, D. 10 o'clock\nPlease try to answer the question with short words or phrases if possible."
+      "content": "If, at the camera position of the second image, the person considers the direction to structure (denoted by the red point) as southeast, what direction is eraser (highlighted at the blue point) relative to the person? Options:\nA. south\nB. southwest\nC. west\nD. northeast\nPlease try to answer the question with short words or phrases if possible."
      },
      {
       "role": "assistant",
-      "content": "B. 11 o'clock"
+      "content": "A. south"
      }
     ]
    },
@@ -805,6 +1159,38 @@
     "images": [
      "s4/img1.jpg",
      "s4/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "If, at the camera position of the first image, the person considers the direction to doorframe (highlighted at the gold point) as southeast, what direction is blinds (linked to the cyan point) relative to the person? Options: A. west, B. northwest, C. south, D. southeast\nAnswer the question using a single word or phrase."
+     },
+     {
+      "role": "assistant",
+      "content": "D. southeast"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s5/img1.jpg",
+     "s5/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "Images are acquired in a continuous stream from a first-person perspective. How does the camera's location change through space? Options: A. downward, B. forward and leftward, C. leftward and downward, D. forward\nPlease try to answer the question with short words or phrases if possible."
+     },
+     {
+      "role": "assistant",
+      "content": "B. forward and leftward"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s6/img1.jpg",
+     "s6/img2.jpg"
     ],
     "texts": [
      {
@@ -897,11 +1283,11 @@
     "texts": [
      {
       "role": "user",
-      "content": "Given that books (denoted by the purple point) is to the left of lamp (linked to the blue point), what is the direction of blinds (indicated by the orange point) relative to lamp (linked to the blue point)? Options: A. front-right, B. back-right, C. left, D. back\nAnswer the question using a single word or phrase."
+      "content": "Given that window (denoted by the purple point) is on the front side of counter (indicated by the cyan point), what is the direction of sofa (denoted by the green point) relative to counter (indicated by the cyan point)? Options:\nA. left\nB. front\nC. back-left\nD. back-right\nPlease select the correct answer from the options above."
      },
      {
       "role": "assistant",
-      "content": "D. back"
+      "content": "B. front"
      }
     ]
    },
@@ -913,11 +1299,11 @@
     "texts": [
      {
       "role": "user",
-      "content": "When the person stands at the camera position of the second image and looks at sofa (denoted by the purple point) (which is front), what is the direction of door (positioned at the cyan point) from the person? Options:\nA. back-right\nB. front-left\nC. back\nD. right\nPlease try to answer the question with short words or phrases if possible."
+      "content": "Given that chair (denoted by the red point) is on the back side of television (linked to the yellow point), what is the direction of window (highlighted at the purple point) relative to television (linked to the yellow point)? Options:\nA. back-right\nB. back\nC. front\nD. front-left\nAnswer the question using a single word or phrase."
      },
      {
       "role": "assistant",
-      "content": "B. front-left"
+      "content": "B. back"
      }
     ]
    },
@@ -925,6 +1311,38 @@
     "images": [
      "s4/img1.jpg",
      "s4/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "Each frame is taken in turn, providing a continuous first-person perspective. If the camera faced 3 o'clock direction when the second picture was taken, what is its direction for the first picture? Options:\nA. 3 o'clock\nB. 7 o'clock\nC. 4 o'clock\nD. cannot say for sure\nPlease select the correct answer from the options above."
+     },
+     {
+      "role": "assistant",
+      "content": "A. 3 o'clock"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s5/img1.jpg",
+     "s5/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "Each frame is taken in turn, providing a continuous first-person perspective. How does the camera's location change through space? Options:\nA. forward and rightward\nB. forward and leftward\nC. backward and leftward\nD. forward\nPlease try to answer the question with short words or phrases if possible."
+     },
+     {
+      "role": "assistant",
+      "content": "C. backward and leftward"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s6/img1.jpg",
+     "s6/img2.jpg"
     ],
     "texts": [
      {
@@ -965,11 +1383,11 @@
     "texts": [
      {
       "role": "user",
-      "content": "A point is highlighted with a orange circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple orange-circled points labeled 'A, B, C, D'. Which matches the original point?\nA point-A\nB point-B\nC point-C\nD point-D"
+      "content": "The images are taken continuously from a first-person perspective. Assuming the second shot was taken facing northwest, what is the camera's facing direction for the first shot? Options: A. southeast, B. northwest, C. uncertain, D. east\nAnswer the question using a single word or phrase."
      },
      {
       "role": "assistant",
-      "content": "C point-C"
+      "content": "B. northwest"
      }
     ]
    },
@@ -981,11 +1399,11 @@
     "texts": [
      {
       "role": "user",
-      "content": "The images are taken continuously from a first-person perspective. If the camera faced 12 o'clock direction when the first picture was taken, what is its direction for the second picture? Options:\nA. 11 o'clock\nB. 12 o'clock\nC. indeterminable\nD. 4 o'clock\nPlease select the correct answer from the options above."
+      "content": "Each frame is taken in turn, providing a continuous first-person perspective. Assuming the second shot was taken facing east, what is the camera's facing direction for the first shot? Options:\nA. the result cannot be determined\nB. northeast\nC. northwest\nD. east\nAnswer the question using a single word or phrase."
      },
      {
       "role": "assistant",
-      "content": "B. 12 o'clock"
+      "content": "D. east"
      }
     ]
    },
@@ -993,6 +1411,38 @@
     "images": [
      "s4/img1.jpg",
      "s4/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "A point is highlighted with a yellow circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple yellow-circled points labeled '1, 2, 3, 4'. Which matches the original point?\nA point-1\nB point-2\nC point-3\nD point-4"
+     },
+     {
+      "role": "assistant",
+      "content": "A point-1"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s5/img1.jpg",
+     "s5/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "A point is highlighted with a orange circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple orange-circled points labeled 'A, B, C, D'. Which matches the original point?\nA point-A\nB point-B\nC point-C\nD point-D"
+     },
+     {
+      "role": "assistant",
+      "content": "C point-C"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s6/img1.jpg",
+     "s6/img2.jpg"
     ],
     "texts": [
      {
@@ -1033,11 +1483,11 @@
     "texts": [
      {
       "role": "user",
-      "content": "Images are acquired in a continuous stream from a first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options: A. front, B. front left, C. back left, D. uncertain\nAnswer the question using a single word or phrase."
+      "content": "A point is highlighted with a green circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple green-circled points labeled '1, 2, 3, 4'. Which matches the original point?\nA point-1\nB point-2\nC point-3\nD point-4"
      },
      {
       "role": "assistant",
-      "content": "B. front left"
+      "content": "C point-3"
      }
     ]
    },
@@ -1049,11 +1499,11 @@
     "texts": [
      {
       "role": "user",
-      "content": "Each frame is taken in turn, providing a continuous first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options: A. front, B. right, C. front left, D. the result cannot be determined\nPlease try to answer the question with short words or phrases if possible."
+      "content": "Images are acquired in a continuous stream from a first-person perspective. If the second photo was taken from my spot, where is the first camera relative to that? Options:\nA. right\nB. the result cannot be determined\nC. front left\nD. front right\nAnswer the question using a single word or phrase."
      },
      {
       "role": "assistant",
-      "content": "A. front"
+      "content": "D. front right"
      }
     ]
    },
@@ -1061,6 +1511,38 @@
     "images": [
      "s4/img1.jpg",
      "s4/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "Each frame is taken in turn, providing a continuous first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options: A. uncertain, B. front right, C. front, D. back left\nAnswer the question using a single word or phrase."
+     },
+     {
+      "role": "assistant",
+      "content": "C. front"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s5/img1.jpg",
+     "s5/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "The images are taken continuously from a first-person perspective. If the camera faced 12 o'clock direction when the second picture was taken, what is its direction for the first picture? Options:\nA. 10 o'clock\nB. 12 o'clock\nC. 3 o'clock\nD. cannot say for sure\nAnswer the question using a single word or phrase."
+     },
+     {
+      "role": "assistant",
+      "content": "B. 12 o'clock"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s6/img1.jpg",
+     "s6/img2.jpg"
     ],
     "texts": [
      {
@@ -1101,11 +1583,11 @@
     "texts": [
      {
       "role": "user",
-      "content": "When the person stands at the camera position of the first image and looks at oven (in frame 2) (which is front), what is the direction of tv (in frame 1) from the person? Options: A. front-left, B. back, C. front, D. left\nPlease try to answer the question with short words or phrases if possible."
+      "content": "Images are acquired in a continuous stream from a first-person perspective. If the second photo was taken from my spot, where is the first camera relative to that? Options:\nA. back right\nB. back\nC. the result cannot be determined\nD. front\nPlease try to answer the question with short words or phrases if possible."
      },
      {
       "role": "assistant",
-      "content": "A. front-left"
+      "content": "C. the result cannot be determined"
      }
     ]
    },
@@ -1117,11 +1599,11 @@
     "texts": [
      {
       "role": "user",
-      "content": "The camera records a series of images from a first-person perspective. Identify the deliberate camera rotation, ignoring small shakes. 'Pan' is horizontal (left/right) rotation, 'Tilt' is vertical (up/down) rotation, and 'Roll' is spinning around the forward axis. Considering only vertical rotation, does the camera tilt upward or downward from image-1 to image-2? Options: A. tilting upward, B. tilting downward\nAnswer the question using a single word or phrase."
+      "content": "A point is highlighted with a yellow circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple yellow-circled points labeled '1, 2, 3, 4'. Which matches the original point?\nA point-1\nB point-2\nC point-3\nD point-4"
      },
      {
       "role": "assistant",
-      "content": "B. tilting downward"
+      "content": "C point-3"
      }
     ]
    },
@@ -1129,6 +1611,38 @@
     "images": [
      "s4/img1.jpg",
      "s4/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "The images are taken continuously from a first-person perspective. If the first photo was taken from my spot, where is the second camera relative to that? Options: A. it cannot be determined, B. back, C. back left, D. right\nPlease select the correct answer from the options above."
+     },
+     {
+      "role": "assistant",
+      "content": "A. it cannot be determined"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s5/img1.jpg",
+     "s5/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "The images are taken continuously from a first-person perspective. Assuming the first shot was taken facing northeast, what is the camera's facing direction for the second shot? Options:\nA. southwest\nB. southeast\nC. northeast\nD. cannot say for sure\nPlease try to answer the question with short words or phrases if possible."
+     },
+     {
+      "role": "assistant",
+      "content": "D. cannot say for sure"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s6/img1.jpg",
+     "s6/img2.jpg"
     ],
     "texts": [
      {
@@ -1169,6 +1683,22 @@
     "texts": [
      {
       "role": "user",
+      "content": "Images are acquired in a continuous stream from a first-person perspective. Assuming the first shot was taken facing southeast, what is the camera's facing direction for the second shot? Options:\nA. south\nB. the result cannot be determined\nC. north\nD. southeast\nPlease try to answer the question with short words or phrases if possible."
+     },
+     {
+      "role": "assistant",
+      "content": "D. southeast"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s3/img1.jpg",
+     "s3/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
       "content": "The images are taken continuously from a first-person perspective. How does the camera's location change through space? Options:\nA. leftward and downward\nB. forward\nC. backward\nD. forward and rightward\nAnswer the question using a single word or phrase."
      },
      {
@@ -1179,8 +1709,24 @@
    },
    {
     "images": [
-     "s3/img1.jpg",
-     "s3/img2.jpg"
+     "s4/img1.jpg",
+     "s4/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "A point is highlighted with a green circle (marked 'REF') in image one. After adjusting the camera, image two presents multiple green-circled points labeled 'A, B, C, D'. Which matches the original point?\nA point-A\nB point-B\nC point-C\nD point-D"
+     },
+     {
+      "role": "assistant",
+      "content": "D point-D"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s5/img1.jpg",
+     "s5/img2.jpg"
     ],
     "texts": [
      {
@@ -1195,8 +1741,8 @@
    },
    {
     "images": [
-     "s4/img1.jpg",
-     "s4/img2.jpg"
+     "s6/img1.jpg",
+     "s6/img2.jpg"
     ],
     "texts": [
      {
@@ -1257,11 +1803,11 @@
     "texts": [
      {
       "role": "user",
-      "content": "The two images were captured in order by the same calibrated front camera. From the first camera position to the second, what is the primary direction of the metric camera displacement? Options:\nA. backward and leftward\nB. downward\nC. backward and rightward\nD. forward\nPlease try to answer the question with short words or phrases if possible."
+      "content": "At the camera position of the second image, define the direction toward the object marked by the gold point in image two as east. What direction is the object marked by the purple point in image one from that camera position? Options:\nA. south\nB. west\nC. northwest\nD. east\nPlease select the correct answer from the options above."
      },
      {
       "role": "assistant",
-      "content": "D. forward"
+      "content": "D. east"
      }
     ]
    },
@@ -1273,11 +1819,11 @@
     "texts": [
      {
       "role": "user",
-      "content": "Standing at the camera position of the second image and looking toward the object marked by the cyan point in image one (defined as front), what is the direction of the object marked by the blue point in image two? Options:\nA. front-right\nB. back-right\nC. front\nD. left\nAnswer the question using a single word or phrase."
+      "content": "The two images were captured in order by the same calibrated front camera. If the second photo was taken from my spot, where is the first camera relative to that? Options:\nA. back\nB. back left\nC. the result cannot be determined\nD. front left\nAnswer the question using a single word or phrase."
      },
      {
       "role": "assistant",
-      "content": "C. front"
+      "content": "A. back"
      }
     ]
    },
@@ -1285,6 +1831,38 @@
     "images": [
      "s4/img1.jpg",
      "s4/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "A source LiDAR point is marked with a blue circle labeled 'REF' in the first synchronized camera image. The second synchronized camera image shows four blue-circled candidates. Which candidate is the same source-projected point?\nA. point-1\nB. point-2\nC. point-3\nD. point-4\nPlease select the correct answer from the options above."
+     },
+     {
+      "role": "assistant",
+      "content": "D. point-4"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s5/img1.jpg",
+     "s5/img2.jpg"
+    ],
+    "texts": [
+     {
+      "role": "user",
+      "content": "The two images were captured in order by the same calibrated front camera. If the first photo was taken from my spot, where is the second camera relative to that? Options: A. it cannot be determined, B. front, C. front left, D. back\nPlease select the correct answer from the options above."
+     },
+     {
+      "role": "assistant",
+      "content": "B. front"
+     }
+    ]
+   },
+   {
+    "images": [
+     "s6/img1.jpg",
+     "s6/img2.jpg"
     ],
     "texts": [
      {
