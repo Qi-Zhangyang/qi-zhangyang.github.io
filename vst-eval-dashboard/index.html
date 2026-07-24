@@ -68,6 +68,12 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
     <button class='tab' data-tab='geo3d-r3-p10'><span>Geo3D R3 P10 四臂 · SolidGeo V2</span><small>规则造题数据 · 边训边测 vs 0710 baseline</small></button>
   </div>
 </div>
+<div class='tabs-row perceptiongeo-noorig'>
+  <span class='tabs-row-label'>PerceptionGeo NoOrig P10 🔬</span>
+  <div class='tabs'>
+    <button class='tab' data-tab='perceptiongeo-noorig-p10'><span>PerceptionGeo NoOrig P10 · 三榜</span><small>2D 平面几何感知（冗余对照）· 边训边测 vs 0710 baseline</small></button>
+  </div>
+</div>
 <div class='tabs-row new-baseline'>
   <span class='tabs-row-label'>RPQA 单图vs多图 🔬</span>
   <div class='tabs'>
@@ -257,6 +263,23 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   </div>
 </div>
 <p class='geo-table-note' id='geo-r3p10-updated'></p>
+</section>
+
+<section id='tab-perceptiongeo-noorig-p10' class='pane'>
+<h2 class='section-title'>PerceptionGeo V1V2 NoOrig P10 · 三榜</h2>
+<div class='geokg-toolbar'>
+  <span class='geokg-mode' id='pgnoorig-subtitle'>2D 平面几何感知（冗余渲染变体对照）· 边训边测 vs 0710 baseline</span>
+  <span class='geokg-verified' id='pgnoorig-verified'>边训边测中</span>
+</div>
+<div class='geo-note' id='pgnoorig-error' hidden></div>
+<div class='geo-r3p10-note'>口径：臂 = 0710 baseline 90% + 10% <b>NoOrig</b>（2D 平面几何感知题，与 baseline 已含的 AugBg 为<b>同 QA、不同渲染</b>的冗余变体，预期增益≈0）；三榜（SolidGeoPerceptionCircularV1 / Perception-geometry-mc-circular-v1 / NaturalPerceptionCircularV3）每 100 步一测，对照 <b>同 step 的 0710 baseline (control)</b>；单步噪声约 ±0.5–1pp，<b>step500+ 才好下结论</b>；failed_ratio 应为 0。数据来源已逐档在 moonfs 真值核验（progress total=pred=eval、jsonl 行数相符）。</div>
+<div class='geo-legend' id='pgnoorig-legend'></div>
+<div class='snv6-chart-grid'>
+  <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV1</h2><div id='pgnoorig-chart-solid'></div></div>
+  <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='pgnoorig-chart-geometry'></div></div>
+  <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='pgnoorig-chart-natural'></div></div>
+</div>
+<p class='geo-table-note' id='pgnoorig-updated'></p>
 </section>
 
 
@@ -942,6 +965,34 @@ async function renderGeo3dR3P10(){
     errorBox.innerHTML=`<b>Geo3D R3 P10 数据加载失败。</b> ${geoEsc(error.message)}`;
   }
 }
+function renderPgNoorigView(data){
+  const visibleSeries=data.series||[];
+  document.getElementById('pgnoorig-legend').innerHTML=[data.baseline,...visibleSeries].map(item=>{
+    const isBase=item.key==='control';
+    const extra=(!isBase&&item.n_questions)?` <span class="geo-r3p10-muted">(${item.n_questions.toLocaleString('en-US')} 题)</span>`:'';
+    return `<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(isBase?'0710 baseline (control)':item.label)}${extra}</span>`;
+  }).join('');
+  const sub=document.getElementById('pgnoorig-subtitle');if(sub&&data.subtitle)sub.textContent=data.subtitle;
+  const lastStep=item=>Math.max(0,...(item.rows||[]).map(row=>Number(row.step)||0));
+  const vf=document.getElementById('pgnoorig-verified');if(vf)vf.textContent='本臂已真值核验到 step '+(data.verified_through||lastStep(visibleSeries[0]||{rows:[]})||'—');
+  const up=document.getElementById('pgnoorig-updated');if(up)up.textContent=`更新时间：${geoEsc(data.updated_at||'')}`;
+  geokg137kChart(document.getElementById('pgnoorig-chart-solid'),'SolidGeoPerceptionCircularV1',data,visibleSeries);
+  geokg137kChart(document.getElementById('pgnoorig-chart-geometry'),'Perception-geometry-mc-circular-v1',data,visibleSeries);
+  geokg137kChart(document.getElementById('pgnoorig-chart-natural'),'NaturalPerceptionCircularV3',data,visibleSeries);
+}
+async function renderPgNoorig(){
+  const errorBox=document.getElementById('pgnoorig-error');
+  try{
+    const response=await fetch('perceptiongeo_noorig_p10_live.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    errorBox.hidden=true;
+    renderPgNoorigView(data);
+  }catch(error){
+    errorBox.hidden=false;
+    errorBox.innerHTML=`<b>PerceptionGeo NoOrig P10 数据加载失败。</b> ${geoEsc(error.message)}`;
+  }
+}
 function activateDashboardTab(tab){
   const btn=document.querySelector(`[data-tab="${tab}"]`);
   const pane=document.getElementById('tab-'+tab);
@@ -964,6 +1015,7 @@ renderGeoB1000();
 renderGeokg137k();
 renderRpqa();
 renderGeo3dR3P10();
+renderPgNoorig();
 activateDashboardTab(location.hash ? location.hash.slice(1) : 'current-video-v1');
 </script>
 </body></html>
