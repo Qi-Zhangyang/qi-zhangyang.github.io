@@ -284,7 +284,7 @@ function renderCurrentArm(data,arm){
 }
 async function renderCurrentVst(){
   try{
-    const response=await fetch('vst_scannet_current_live.json',{cache:'no-store'});
+    const response=await fetch('ablation_data.json',{cache:'no-store'});
     if(!response.ok)throw new Error(`HTTP ${response.status}`);
     const data=await response.json();
     data.arms.forEach(arm=>renderCurrentArm(data,arm));
