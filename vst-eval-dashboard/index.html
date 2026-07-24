@@ -11,6 +11,8 @@ main{max-width:1680px;margin:0 auto;padding:20px 24px 44px}
 .tabs-row.failed-results .tabs-row-label{background:#f6e3e3;border-color:#e3bcbc;color:#8b2929}.tabs-row.failed-results .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.failed-results .tab small{font-size:10px;font-weight:700;color:#8c6262;white-space:nowrap}.tabs-row.failed-results .tab.active{background:#8b2929;border-color:#8b2929;color:#fff}.tabs-row.failed-results .tab.active small{color:#f4dede}
 .tabs-row.geo3d-freshfix .tabs-row-label{background:#f3eadb;border-color:#dec9a7;color:#684710}.tabs-row.geo3d-freshfix .tab.active{background:#684710;border-color:#684710;color:#fff}
 .tabs-row.geo3d-r3p10 .tabs-row-label{background:#f3eadb;border-color:#dec9a7;color:#684710}.tabs-row.geo3d-r3p10 .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.geo3d-r3p10 .tab small{font-size:10px;font-weight:700;color:#8a6a2e;white-space:nowrap}.tabs-row.geo3d-r3p10 .tab.active{background:#684710;border-color:#684710;color:#fff}.tabs-row.geo3d-r3p10 .tab.active small{color:#f3eadb}
+.tabs-row.perceptiongeo-noorig .tabs-row-label{background:#e9e8fb;border-color:#ccc9ef;color:#5b21b6}.tabs-row.perceptiongeo-noorig .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1;max-width:100%}.tabs-row.perceptiongeo-noorig .tab small{font-size:10px;font-weight:700;color:#6d5aa8;white-space:nowrap}.tabs-row.perceptiongeo-noorig .tab.active{background:#5b21b6;border-color:#5b21b6;color:#fff}.tabs-row.perceptiongeo-noorig .tab.active small{color:#e9e8fb}
+@media(max-width:720px){.tabs-row.perceptiongeo-noorig .tab{max-width:100%;overflow:hidden}.tabs-row.perceptiongeo-noorig .tab span,.tabs-row.perceptiongeo-noorig .tab small{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis}}
 .geo-r3p10-note{background:#fffdf8;border-left:4px solid #8a5d18;padding:11px 14px;margin:0 0 14px;font-size:13px;line-height:1.6;color:#5f4a18}.geo-r3p10-note b{color:#493811}
 .geo-r3p10-table-wrap{overflow:auto;background:#fff;border:1px solid #deded8;border-radius:6px;padding:2px 2px 0}.geo-r3p10-table{font-size:13px}.geo-r3p10-table th:not(:first-child),.geo-r3p10-table td:not(:first-child){text-align:right;white-space:nowrap}.geo-r3p10-table .arm-head{font-weight:900}.geo-r3p10-score{font-weight:900}.geo-r3p10-pos{color:#176231;font-weight:800}.geo-r3p10-neg{color:#9a3d31;font-weight:800}.geo-r3p10-zero{color:#666;font-weight:800}.geo-r3p10-muted{color:#9a9a94}.geo-r3p10-fr-bad{color:#9a3d31;font-weight:900}
 .tabs-row.geokg-3arm .tabs-row-label{background:#e9e8fb;border-color:#ccc9ef;color:#443c88}.tabs-row.geokg-3arm .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}.tabs-row.geokg-3arm .tab small{font-size:10px;font-weight:700;color:#6d6798;white-space:nowrap}.tabs-row.geokg-3arm .tab.active{background:#51489a;border-color:#51489a;color:#fff}.tabs-row.geokg-3arm .tab.active small{color:#e9e8fb}
@@ -66,6 +68,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <span class='tabs-row-label'>Geo3D R3 P10 四臂 🔬</span>
   <div class='tabs'>
     <button class='tab' data-tab='geo3d-r3-p10'><span>Geo3D R3 P10 四臂 · SolidGeo V2</span><small>规则造题数据 · 边训边测 vs 0710 baseline</small></button>
+    <button class='tab' data-tab='geo3d-r3-v4fmt-p10'><span>Geo3D R3 答案格式消融 · SolidGeo V2</span><small>单变量 v4 点号 vs v1 双字段 · 边训边测 vs 0710 baseline</small></button>
   </div>
 </div>
 <div class='tabs-row perceptiongeo-noorig'>
@@ -263,6 +266,25 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   </div>
 </div>
 <p class='geo-table-note' id='geo-r3p10-updated'></p>
+</section>
+
+<section id='tab-geo3d-r3-v4fmt-p10' class='pane'>
+<h2 class='section-title'>Geo3D R3 Full 答案格式消融 · SolidGeo V2</h2>
+<div class='geokg-toolbar'>
+  <span class='geokg-mode' id='g3v4fmt-subtitle'>单变量：仅答案格式不同（v4 点号 vs v1 双字段）· 边训边测 vs 0710 baseline</span>
+  <span class='geokg-verified' id='g3v4fmt-verified'>边训边测中</span>
+</div>
+<div class='geo-note' id='g3v4fmt-error' hidden></div>
+<div class='geo-r3p10-note'>口径：两臂同为 0710 baseline 90% + 10% Geo3D R3 full（101,845 题），<b>唯一变量是训练 target 的答案格式</b>：v1 = 旧双字段（<code>答案：15</code> + 冗余 <code>答案内容：15</code> 第二行、选择题格式不一致）；v4 = 新规范（选择题 <code>答案：B. 选项原文</code>、其余单行 <code>答案：15</code>）。只测 SolidGeo V2（SolidGeoPerceptionCircularV2），每 100 步一测，对照 <b>同 step 的 0710 baseline (control)</b>；delta = 臂 − baseline（pp）。单步噪声约 ±0.5–1pp，<b>step500+ 才好下结论</b>；failed_ratio 应为 0。step100 配对 McNemar：v4−v1=+3.50pp（p=1.4e-07）、v4−control=+1.52pp（p=0.04）。</div>
+<div class='geo-legend' id='g3v4fmt-legend'></div>
+<div class='snv6-chart-grid'>
+  <div class='snv6-chart'>
+    <h2>答案格式消融（v4fmt / v1full + baseline）</h2>
+    <div id='g3v4fmt-chart'></div>
+  </div>
+</div>
+<table class='geo-table' id='g3v4fmt-table'></table>
+<p class='geo-table-note' id='g3v4fmt-updated'></p>
 </section>
 
 <section id='tab-perceptiongeo-noorig-p10' class='pane'>
@@ -993,6 +1015,56 @@ async function renderPgNoorig(){
     errorBox.innerHTML=`<b>PerceptionGeo NoOrig P10 数据加载失败。</b> ${geoEsc(error.message)}`;
   }
 }
+function renderG3v4fmtView(data){
+  const series=data.series||[];
+  document.getElementById('g3v4fmt-legend').innerHTML=[data.baseline,...series].map(item=>{
+    const isBase=item.key==='control';
+    const extra=(!isBase&&item.n_questions)?` <span class="geo-r3p10-muted">(${item.n_questions.toLocaleString('en-US')} 题)</span>`:'';
+    return `<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(isBase?'0710 baseline (control)':item.label)}${extra}</span>`;
+  }).join('');
+  const sub=document.getElementById('g3v4fmt-subtitle');if(sub&&data.subtitle)sub.textContent=data.subtitle;
+  const v4=series.find(s=>s.key==='v4fmt');
+  const lastStep=item=>Math.max(0,...(item.rows||[]).map(row=>Number(row.step)||0));
+  const vf=document.getElementById('g3v4fmt-verified');if(vf)vf.textContent='v4 臂已真值核验到 step '+(data.verified_through||lastStep(v4||{rows:[]})||'—');
+  const up=document.getElementById('g3v4fmt-updated');if(up)up.textContent=`更新时间：${geoEsc(data.updated_at||'')}`;
+  geokg137kChart(document.getElementById('g3v4fmt-chart'),'SolidGeoPerceptionCircularV2',data,series);
+  // 数据表：step × 臂（V2 分 + delta），末行 failed_ratio
+  const baseByStep=new Map((data.baseline.rows||[]).map(r=>[r.step,r['SolidGeoPerceptionCircularV2']]));
+  const steps=(data.step_targets||[]).filter(step=>baseByStep.has(step)||series.some(s=>(s.rows||[]).some(r=>r.step===step)));
+  const armCell=(s,step)=>{
+    const row=(s.rows||[]).find(r=>r.step===step);
+    if(!row||row['SolidGeoPerceptionCircularV2']==null)return '<td class="geo-r3p10-muted">—</td>';
+    const score=(row['SolidGeoPerceptionCircularV2']*100).toFixed(2);
+    let d='';
+    if(baseByStep.has(step)){
+      const dv=row['SolidGeoPerceptionCircularV2']*100-baseByStep.get(step)*100;
+      d=` <span class="${geoR3p10DeltaClass(dv)}">(${geoR3p10Pp(dv)})</span>`;
+    }
+    const frBad=(row.failed_ratio!=null&&row.failed_ratio>0)?` <span class="geo-r3p10-fr-bad" title="failed_ratio=${row.failed_ratio}">⚠</span>`:'';
+    return `<td><span class="geo-r3p10-score">${score}</span>${d}${frBad}</td>`;
+  };
+  const head=`<thead><tr><th>step</th><th>0710 baseline</th>${series.map(s=>`<th class="arm-head" style="color:${s.color}">${geoEsc(s.label)}</th>`).join('')}</tr></thead>`;
+  const body=steps.map(step=>{
+    const b=baseByStep.has(step)?`<td><span class="geo-r3p10-score">${(baseByStep.get(step)*100).toFixed(2)}</span></td>`:'<td class="geo-r3p10-muted">—</td>';
+    return `<tr><td><b>${step}</b></td>${b}${series.map(s=>armCell(s,step)).join('')}</tr>`;
+  }).join('');
+  const frCell=(rows)=>{const vals=(rows||[]).map(r=>r.failed_ratio).filter(v=>v!=null);if(!vals.length)return '<td class="geo-r3p10-muted">—</td>';const mx=Math.max(...vals);return `<td class="${mx>0?'geo-r3p10-fr-bad':'geo-r3p10-zero'}">${mx.toFixed(3)}</td>`};
+  const frRow=`<tr><td><b>failed_ratio (max)</b></td>${frCell(data.baseline.rows)}${series.map(s=>frCell(s.rows)).join('')}</tr>`;
+  const _tb=document.getElementById('g3v4fmt-table');if(_tb)_tb.innerHTML=`${head}<tbody>${body}${frRow}</tbody>`;
+}
+async function renderG3v4fmt(){
+  const errorBox=document.getElementById('g3v4fmt-error');
+  try{
+    const response=await fetch('geo3d_r3_v4fmt_p10_live.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    errorBox.hidden=true;
+    renderG3v4fmtView(data);
+  }catch(error){
+    errorBox.hidden=false;
+    errorBox.innerHTML=`<b>Geo3D R3 v4fmt 数据加载失败。</b> ${geoEsc(error.message)}`;
+  }
+}
 function activateDashboardTab(tab){
   const btn=document.querySelector(`[data-tab="${tab}"]`);
   const pane=document.getElementById('tab-'+tab);
@@ -1015,6 +1087,7 @@ renderGeoB1000();
 renderGeokg137k();
 renderRpqa();
 renderGeo3dR3P10();
+renderG3v4fmt();
 renderPgNoorig();
 activateDashboardTab(location.hash ? location.hash.slice(1) : 'current-video-v1');
 </script>
