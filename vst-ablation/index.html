@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VST-ScanNet 消融专题 · 场景 × 题型</title>
+<style>
+:root{--ink:#1f2733;--sub:#5b6b7c;--line:#e3e8ee;--card:#fff;--bg:#f5f7fa;--accent:#c53030;--blue:#244f73}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+header{background:linear-gradient(135deg,#173e5d,#244f73);color:#fff;padding:26px 22px 20px}
+header h1{font-size:23px;font-weight:800;letter-spacing:.3px}
+header p{margin-top:6px;font-size:13px;color:#cfdfec}
+header .links{margin-top:10px;font-size:12.5px}
+header .links a{color:#9ec5e8;text-decoration:none;margin-right:14px}
+header .links a:hover{text-decoration:underline}
+main{max-width:1180px;margin:0 auto;padding:20px 16px 60px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin-bottom:18px;box-shadow:0 1px 2px rgba(20,40,60,.04)}
+.card h2{font-size:17px;font-weight:800;margin-bottom:10px}
+.card h2 small{font-size:12px;font-weight:600;color:var(--sub);margin-left:8px}
+.dim{font-size:12px;font-weight:800;padding:2px 9px;border-radius:20px;background:#e8f0f7;color:#244f73;margin-left:8px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin-bottom:18px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.kpi .v{font-size:24px;font-weight:900;margin:2px 0}
+.kpi .t{font-size:12px;color:var(--sub);font-weight:700}
+.kpi .d{font-size:12px;margin-top:2px}
+.up{color:#c53030;font-weight:800}.down{color:#2f855a;font-weight:800}.flat{color:#718096;font-weight:800}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{background:#f0f4f8;font-weight:800;color:#33506a}
+tr:hover td{background:#f8fafc}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:8px 0 4px;font-size:12px}
+.legend span{display:inline-flex;align-items:center;gap:5px;color:#3d4c5c;cursor:pointer;user-select:none}
+.legend span.off{opacity:.32}
+.dot{display:inline-block;width:11px;height:11px;border-radius:3px}
+.chart-wrap{width:100%;overflow-x:auto}
+svg text{font-family:inherit}
+.grid6{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:14px}
+.mini{background:#fbfcfe;border:1px solid var(--line);border-radius:8px;padding:10px}
+.mini h3{font-size:13px;font-weight:800;margin-bottom:4px}
+.arm-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.badge{font-size:11px;font-weight:800;padding:2px 8px;border-radius:20px;background:#e8f0f7;color:#244f73}
+.badge.g2{background:#fdecea;color:#c53030}.badge.g3{background:#e9f7ef;color:#276749}.badge.sc{background:#fff4e0;color:#b7791f}
+.stat{font-size:12.5px;color:var(--sub)}
+.note{font-size:12.5px;color:var(--sub);margin-top:8px}
+footer{text-align:center;font-size:12px;color:#8a97a5;margin-top:26px}
+.updated{font-size:12px;color:#cfe0ee;margin-top:4px}
+@media(max-width:720px){header h1{font-size:19px}th,td{padding:6px 7px;font-size:12px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>VST-ScanNet 消融专题看板 🔬</h1>
+  <p>双维度解构：<b>场景维度</b>（10 个新源场景各自成臂，哪个场景的数据有效）× <b>题型维度</b>（native MI 9 题型解构 11 臂，哪个题型/形态驱动）· 同 p10 配方 · 六项 full eval · 逐 ckpt WebDAV 真值验收</p>
+  <div class="links">
+    <a href="https://moonshot.feishu.cn/docx/HGIsdk84oonI3pxsOh9cbXqknFc">📄 分析文档（飞书）</a>
+    <a href="../vst-eval-dashboard/index.html">📊 完整 VST 评测大盘</a>
+    <a href="#dim-scene">🗺 场景维度</a>
+    <a href="#dim-task">🧩 题型维度</a>
+    <a href="#arms">📈 各臂曲线</a>
+  </div>
+  <div class="updated" id="updated">数据加载中…</div>
+</header>
+<main>
+  <div class="kpis" id="kpis"></div>
+
+  <div class="card" id="dim-scene">
+    <h2>维度一 · 场景消融总览<small>10 个新源场景各自成臂 vs native MI（ScanNet 混合场景）vs baseline；点击图例隐藏/显示</small></h2>
+    <div class="legend" id="sceneLegend"></div>
+    <div class="chart-wrap" id="sceneChart"></div>
+    <div style="overflow-x:auto;margin-top:12px"><table id="sceneTable"></table></div>
+  </div>
+
+  <div class="card" id="dim-task">
+    <h2>维度二 · 题型消融总览<small>native MI 9 题型解构 11 臂（组1 相机 ×5｜组2 新形态 ×2｜组3 对象 ×4）；点击图例隐藏/显示</small></h2>
+    <div class="legend" id="taskLegend"></div>
+    <div class="chart-wrap" id="taskChart"></div>
+    <div style="overflow-x:auto;margin-top:12px"><table id="taskTable"></table></div>
+  </div>
+
+  <div class="card">
+    <h2>六项 benchmark · 最新已验收点（%）<small>各臂取各自最新 verified step</small></h2>
+    <div style="overflow-x:auto"><table id="sixTable"></table></div>
+  </div>
+
+  <div class="card">
+    <h2>结论速览</h2>
+    <div style="font-size:13.5px;line-height:1.9" id="findings">
+      1. 🗺 <b>场景维度</b>：HyperSim（峰值 37.24）与 Taskonomy（终点 36.95）单场景即超 native MI，ScanNet++/Waymo 也强劲；Replica/MP3D（Habitat 系）最弱（&lt;34）——<b>场景选择比混合更关键，合成/多任务场景迁移性最好</b>；<br>
+      2. 🏆 <b>题型维度 · B2 视频几何双杀 native MI</b>（峰值 36.90 / 终点 36.52 vs 36.76 / 36.14）——唯一终点超过混合臂的题型臂；<br>
+      3. 📷 <b>相机五题型互补</b>：最强 cam_rot 终点 35.76 仍低于混合，混合收益 = 相机主体 ~+0.7 + 题型互补 ~+0.3；<br>
+      4. 🧊 <b>纯对象题 ≈ 没加</b>（终点 34.95 vs baseline 35.10），但 <b>对象×相机耦合立刻有效</b>（obj_cam 峰值 35.76）；<br>
+      5. ⏱ <b>对象臂后段才发力</b>（obj_cam s600 33.90 → s900 35.76），早停会误判；多数臂 s900 &gt; s1000，下游建议按验证集选点。
+    </div>
+  </div>
+
+  <div id="arms"></div>
+
+  <footer>
+    <p>分数逐 ckpt 读自 m0 tensorboard results 的 all_benchmark_scores.json；每个入表点均通过 WebDAV 验收：六项 32,032/32,032 全量、prediction 非空、model/usage 正确、0 API failure。</p>
+    <p id="footUpdated"></p>
+  </footer>
+</main>
+<script>
+const TASK_PALETTE={
+ 'camgeo-cam-trans':'#4c8bf5','camgeo-cam-rot':'#1d4ed8','camgeo-cam-view-direction':'#63b3ed',
+ 'camgeo-cam-position':'#805ad5','camgeo-correspondence':'#94a3b8',
+ 'multiimgcamgeo-b1':'#ed8936','videocamgeo-b2':'#e53e3e',
+ 'objtask-obj-orientation':'#68d391','objtask-obj-orientation-camera':'#276749',
+ 'objtask-obj-orientation-camera-vp':'#9f7aea','objtask-obj-orientation-vp':'#d69e2e'};
+const SCENE_PALETTE={
+ 'scannetpp-mi-v1':'#3182ce','arkitscenes-mi-v1':'#63b3ed','taskonomy-mi-v1':'#dd6b20',
+ 'dl3dv-mi-v1':'#38b2ac','arkitscenes-mi-v2':'#4299e1','hypersim-mi-v1-m3h20':'#b794f4',
+ 'megadepth-mi-v1':'#f6ad55','waymo-outdoor-mi-v1':'#fc8181','replica-mi-v1':'#68d391','mp3d-mi-v1':'#4fd1c5'};
+const GROUP_CLASS={'组1·相机单题型':'','组2·新几何形态':'g2','组3·对象单题型':'g3'};
+const BASE_COLOR='#9aa0a6', REF_COLOR='#1a202c';
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pct=v=>(v*100).toFixed(2);
+const GEO='Perception-geometry-mc-cat-circular-v1';
+const seriesOf=(results,bm)=>results.map(r=>[r.step,r.scores[bm]]).filter(p=>p[1]!=null);
+const peakOf=r=>r.length?r.reduce((a,b)=>b.scores[GEO]>a.scores[GEO]?b:a):null;
+const latestOf=r=>r.length?r[r.length-1]:null;
+const d=(a,b)=>((a-b)>=0?'+':'')+((a-b)*100).toFixed(2);
+
+function svgChart(series,{w=760,h=300}={}){
+  const pad={l:46,r:10,t:8,b:26};const xs=[100,1000];let ymin=Infinity,ymax=-Infinity;
+  series.forEach(s=>s.points.forEach(p=>{if(p[1]<ymin)ymin=p[1];if(p[1]>ymax)ymax=p[1]}));
+  if(!isFinite(ymin)){ymin=0;ymax=1}
+  const span=Math.max(ymax-ymin,0.005);ymin-=span*0.12;ymax+=span*0.12;
+  const X=v=>pad.l+(v-xs[0])/(xs[1]-xs[0])*(w-pad.l-pad.r);
+  const Y=v=>h-pad.b-(v-ymin)/(ymax-ymin)*(h-pad.t-pad.b);
+  let g='';
+  for(let i=0;i<=4;i++){const v=ymin+(ymax-ymin)*i/4,y=Y(v);
+    g+=`<line x1="${pad.l}" y1="${y}" x2="${w-pad.r}" y2="${y}" stroke="#e8edf2" stroke-width="1"/><text x="${pad.l-6}" y="${y+3.5}" font-size="10" fill="#8a97a5" text-anchor="end">${(v*100).toFixed(1)}</text>`}
+  for(let s=100;s<=1000;s+=200){const x=X(s);g+=`<text x="${x}" y="${h-8}" font-size="10" fill="#8a97a5" text-anchor="middle">${s}</text>`}
+  series.forEach(s=>{
+    const pts=s.points.map(p=>`${X(p[0]).toFixed(1)},${Y(p[1]).toFixed(1)}`).join(' ');
+    g+=`<polyline points="${pts}" fill="none" stroke="${s.color}" stroke-width="${s.width||2}" ${s.dash?'stroke-dasharray="6 4"':''} stroke-linejoin="round" stroke-linecap="round"/>`;
+    const last=s.points[s.points.length-1];
+    if(last&&s.endLabel)g+=`<text x="${X(last[0])+4}" y="${Y(last[1])+3}" font-size="9.5" fill="${s.color}" font-weight="700">${esc(s.endLabel)}</text>`;
+  });
+  return `<svg viewBox="0 0 ${w} ${h}" style="width:100%;min-width:560px;display:block">${g}</svg>`;
+}
+
+function overviewBlock(arms,palette,base,ref,legendId,chartId,tableId,extraCol){
+  const series=[
+    {label:base.label,color:BASE_COLOR,dash:true,width:2,points:seriesOf(base.results,GEO)},
+    {label:ref.label,color:REF_COLOR,width:3.2,points:seriesOf(ref.results,GEO)},
+    ...arms.map(a=>({label:a.label,color:palette[a.key],width:a.key==='videocamgeo-b2'?3.4:1.8,points:seriesOf(a.results,GEO)}))
+  ];
+  const legendEl=document.getElementById(legendId), chartEl=document.getElementById(chartId);
+  legendEl.innerHTML=series.map((s,i)=>`<span data-i="${i}"><i class="dot" style="background:${s.color}"></i>${esc(s.label)}</span>`).join('');
+  const hidden=new Set();
+  const draw=()=>{chartEl.innerHTML=svgChart(series.filter((s,i)=>!hidden.has(i)),{w:1060,h:400})};
+  legendEl.querySelectorAll('span').forEach(sp=>sp.onclick=()=>{const i=+sp.dataset.i;hidden.has(i)?hidden.delete(i):hidden.add(i);sp.classList.toggle('off');draw()});
+  draw();
+  // table
+  const refPeak=peakOf(ref.results),basePeak=peakOf(base.results);
+  const rows=arms.map(a=>({a,p:peakOf(a.results),l:latestOf(a.results)})).sort((x,y)=>(y.p?y.p.scores[GEO]:0)-(x.p?x.p.scores[GEO]:0));
+  const allRows=[{a:{label:ref.label,[extraCol]:'—'},p:refPeak,l:latestOf(ref.results),ref:true},
+    ...rows,
+    {a:{label:base.label,[extraCol]:'—'},p:basePeak,l:latestOf(base.results),base:true}];
+  let html=`<tr><th>#</th><th>臂</th><th>${extraCol==='group'?'组':'备注'}</th><th>峰值 (step)</th><th>最新 (step)</th><th>Δ vs baseline峰</th><th>Δ vs native峰</th><th>进度</th></tr>`;
+  let rank=0;
+  allRows.forEach(r=>{
+    const pv=r.p?r.p.scores[GEO]:null, lv=r.l?r.l.scores[GEO]:null;
+    const style=r.ref?'background:#fff8e6;font-weight:700':r.base?'background:#f5f5f5;color:#666':'';
+    const extra=r.a[extraCol]||r.a.note||'—';
+    if(!r.ref&&!r.base)rank++;
+    html+=`<tr style="${style}"><td>${r.ref||r.base?'':rank}</td><td>${esc(r.a.label)}</td><td>${esc(extra)}</td>`+
+      `<td><b>${pv!=null?pct(pv):'—'}</b>${r.p?` (s${r.p.step})`:''}</td>`+
+      `<td>${lv!=null?pct(lv):'—'}${r.l?` (s${r.l.step})`:''}</td>`+
+      `<td>${pv!=null?d(pv,basePeak.scores[GEO]):'—'}</td><td>${pv!=null?d(pv,refPeak.scores[GEO]):'—'}</td>`+
+      `<td>${r.a.results?r.a.results.length:10}/10</td></tr>`;
+  });
+  document.getElementById(tableId).innerHTML=html;
+}
+
+async function main(){
+  const resp=await fetch('ablation_live.json',{cache:'no-store'});
+  const data=await resp.json();
+  document.getElementById('updated').textContent='数据更新于 '+data.updated_at+'（每 3 分钟自动刷新，题型臂收官自动补全 10/10）';
+  document.getElementById('footUpdated').textContent='updated_at: '+data.updated_at;
+  const base={label:data.baseline_label,results:data.baseline_results};
+  const ref={label:data.reference.label,results:data.reference.results};
+  const baseLatest=latestOf(base.results), refLatest=latestOf(ref.results), refPeak=peakOf(ref.results);
+
+  // ---- KPI ----
+  const b2=data.task_arms.find(a=>a.key==='videocamgeo-b2');
+  const objPure=data.task_arms.find(a=>a.key==='objtask-obj-orientation');
+  const objCam=data.task_arms.find(a=>a.key==='objtask-obj-orientation-camera');
+  const hyper=data.scene_arms.find(a=>a.key==='hypersim-mi-v1-m3h20');
+  const task=data.scene_arms.find(a=>a.key==='taskonomy-mi-v1');
+  const b2f=latestOf(b2.results),b2p=peakOf(b2.results),refF=latestOf(ref.results);
+  const objF=latestOf(objPure.results),objCamP=peakOf(objCam.results);
+  const hyperP=peakOf(hyper.results),taskF=latestOf(task.results);
+  document.getElementById('kpis').innerHTML=`
+   <div class="kpi"><div class="t">🗺 场景最强 · HyperSim 峰值 s${hyperP.step}</div><div class="v up">${pct(hyperP.scores[GEO])}%</div><div class="d">Taskonomy 终点 ${pct(taskF.scores[GEO])}% —— 单场景即超 native MI</div></div>
+   <div class="kpi"><div class="t">🏆 B2 视频 · 终点 s${b2f.step}</div><div class="v up">${pct(b2f.scores[GEO])}%</div><div class="d">vs native MI 终点 ${pct(refF.scores[GEO])}%（<span class="up">${d(b2f.scores[GEO],refF.scores[GEO])}</span>）</div></div>
+   <div class="kpi"><div class="t">🚀 B2 视频 · 峰值 s${b2p.step}</div><div class="v up">${pct(b2p.scores[GEO])}%</div><div class="d">native MI 峰值 ${pct(refPeak.scores[GEO])}%（s${refPeak.step}）</div></div>
+   <div class="kpi"><div class="t">🧊 纯对象题 · 终点</div><div class="v flat">${pct(objF.scores[GEO])}%</div><div class="d">vs baseline ${pct(baseLatest.scores[GEO])}%（≈无贡献）；耦合后 obj_cam 峰值 ${pct(objCamP.scores[GEO])}%</div></div>`;
+
+  overviewBlock(data.scene_arms,SCENE_PALETTE,base,ref,'sceneLegend','sceneChart','sceneTable','note');
+  overviewBlock(data.task_arms,TASK_PALETTE,base,ref,'taskLegend','taskChart','taskTable','group');
+
+  // ---- six-benchmark table ----
+  let six=`<tr><th>维度</th><th>臂</th>${data.benchmarks.map(b=>`<th>${esc(b[1])}</th>`).join('')}<th>step</th></tr>`;
+  const sixRows=[{dim:'对照',label:ref.label,results:ref.results,ref:true},
+    ...data.scene_arms.map(a=>({dim:'场景',label:a.label,results:a.results})),
+    ...data.task_arms.map(a=>({dim:'题型',label:a.label,results:a.results})),
+    {dim:'对照',label:base.label,results:base.results,base:true}];
+  sixRows.forEach(r=>{
+    const l=latestOf(r.results);if(!l)return;
+    const style=r.ref?'background:#fff8e6;font-weight:700':r.base?'background:#f5f5f5;color:#666':'';
+    six+=`<tr style="${style}"><td>${r.dim}</td><td>${esc(r.label)}</td>${data.benchmarks.map(b=>`<td>${l.scores[b[0]]!=null?pct(l.scores[b[0]]):'—'}</td>`).join('')}<td>s${l.step}</td></tr>`;
+  });
+  document.getElementById('sixTable').innerHTML=six;
+
+  // ---- per-arm sections ----
+  const armCard=(a,palette,badgeHtml)=>`
+    <div class="card" id="arm-${a.key}">
+      <div class="arm-head"><h2 style="margin:0">${esc(a.label)}</h2>${badgeHtml}
+      <span class="stat">峰值 <b>${peakOf(a.results)?pct(peakOf(a.results).scores[GEO]):'—'}</b>（s${peakOf(a.results)?peakOf(a.results).step:'—'}）· 最新 <b>${latestOf(a.results)?pct(latestOf(a.results).scores[GEO]):'—'}</b>（s${latestOf(a.results)?latestOf(a.results).step:'—'}）· ${a.results.length}/10</span></div>
+      <div class="grid6" style="margin-top:10px">${data.benchmarks.map(b=>{
+        const l=latestOf(a.results);
+        return `<div class="mini"><h3>${esc(b[1])}</h3>${svgChart([
+          {label:base.label,color:BASE_COLOR,dash:true,width:1.6,points:seriesOf(base.results,b[0])},
+          {label:ref.label,color:REF_COLOR,width:1.8,points:seriesOf(ref.results,b[0])},
+          {label:a.label,color:palette[a.key],width:2.4,points:seriesOf(a.results,b[0]),endLabel:l?pct(l.scores[b[0]]):''}
+        ],{w:520,h:190})}</div>`}).join('')}</div>
+      <div class="note">灰虚线 = baseline（exact SN6V0710）｜黑实线 = native MI（9题型混合）｜彩线 = 本臂</div>
+    </div>`;
+  document.getElementById('arms').innerHTML=
+    `<h2 style="margin:6px 0 12px;font-size:19px" id="arms">🗺 场景维度 · 各臂六项曲线</h2>`+
+    data.scene_arms.map(a=>armCard(a,SCENE_PALETTE,`<span class="badge sc">场景源</span><span class="badge">${esc(a.note||'')}</span>`)).join('')+
+    `<h2 style="margin:22px 0 12px;font-size:19px">🧩 题型维度 · 各臂六项曲线</h2>`+
+    data.task_arms.map(a=>armCard(a,TASK_PALETTE,`<span class="badge ${GROUP_CLASS[a.group]||''}">${esc(a.group)}</span><span class="badge">${esc(a.shape)}</span>`)).join('');
+}
+main().catch(e=>{document.getElementById('updated').textContent='数据加载失败：'+e.message});
+</script>
+</body>
+</html>
