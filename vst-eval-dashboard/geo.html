@@ -133,6 +133,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <span class='tabs-row-label'>Geo-KG 训练验证</span>
   <div class='tabs'>
     <button class='tab' data-tab='geokg137k'><span>Geo-KG 137K · V2 三种 setting</span><small>Baseline + MC / Fill / Half 同图 · 30/30</small></button>
+    <button class='tab' data-tab='answerfmtv2r1'><span>SolidGeo-V2 197K · AnswerFmt V2 R1</span><small>MC / Fill / Half vs Baseline · 27/30</small></button>
   </div>
 </div>
 
@@ -186,6 +187,23 @@ D. α 和 β</div><div class='sample-qa'><b>A6：</b>答案：B
   <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV2</h2><div id='geokg137k-chart-solid'></div></div>
   <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='geokg137k-chart-geometry'></div></div>
   <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='geokg137k-chart-natural'></div></div>
+</div>
+</section>
+<section id='tab-answerfmtv2r1' class='pane'>
+<h2 class='section-title'>SolidGeo-V2 197K · AnswerFmt V2 R1 三臂 vs SN6V0710 Baseline</h2>
+<div class='arm-info'><b>实验配置：</b>SolidGeo-V2 197K 管道生产数据（最终 landed 184,509），答案格式 V2 R1，三臂对照 MC / Fill / Half；基线 SN6V0710 control（无 SolidGeo-V2 数据）。<br>
+<b>训练：</b>4×P10，1000 steps，mcv2=33shrw / fillv2=33shs3 / halfv2=33shsf，全部 Succeeded。<br>
+<b>数据预览（m3）：</b><a href='https://m3.app.msh.team?prefix=s3%2Bm2%3A%2F%2Fm2-visual-input-data%2Fm3data%2Fqizhangyang%2Fgeo_kg%2Fsolid3d_delivery_mcv2_20260718%2F&start_idx=0&num_data=8' target='_blank' rel='noopener'>MC v2</a> · <a href='https://m3.app.msh.team?prefix=s3%2Bm2%3A%2F%2Fm2-visual-input-data%2Fm3data%2Fqizhangyang%2Fgeo_kg%2Fsolid3d_delivery_fillv2_20260718%2F&start_idx=0&num_data=8' target='_blank' rel='noopener'>Fill v2</a> · <a href='https://m3.app.msh.team?prefix=s3%2Bm2%3A%2F%2Fm2-visual-input-data%2Fm3data%2Fqizhangyang%2Fgeo_kg%2Fsolid3d_delivery_halfv2_20260718%2F&start_idx=0&num_data=8' target='_blank' rel='noopener'>Half v2</a></div>
+<div class='geokg-toolbar'>
+  <span class='geokg-verified'>27/30 · step100–1000 已真验收（mcv2 s100/s200、fillv2 s100 待完成）</span>
+</div>
+<div class='geo-note' id='answerfmtv2r1-error' hidden></div>
+<div class='geo-legend' id='answerfmtv2r1-legend'></div>
+<p class='geokg-caption' id='answerfmtv2r1-caption'>三张图均保留 SN6V0710 Baseline（虚线），并叠加 AnswerFmt V2 R1 的 MC、Fill、Half 三种 setting。<b>mcv2 SolidGeo 达 40.2% (+4.5pp)，但 PercGeo / NatPerc 回退 ~3pp。</b></p>
+<div class='geo-chart-grid'>
+  <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV2</h2><div id='answerfmtv2r1-chart-solid'></div></div>
+  <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='answerfmtv2r1-chart-geometry'></div></div>
+  <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='answerfmtv2r1-chart-natural'></div></div>
 </div>
 </section>
 <section id='tab-geo3d-r3-p10' class='pane'>
@@ -464,6 +482,26 @@ async function renderGeokg137k(){
     errorBox.innerHTML=`<b>Geo-KG 三臂数据加载失败。</b> ${geoEsc(error.message)}`;
   }
 }
+function renderAnswerfmtv2r1View(data){
+  const visibleSeries=data.series||[];
+  document.getElementById('answerfmtv2r1-legend').innerHTML=[data.baseline,...visibleSeries].map(item=>`<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.key==='control'?'Baseline · SN6V0710':item.label)}</span>`).join('');
+  geokg137kChart(document.getElementById('answerfmtv2r1-chart-solid'),'SolidGeoPerceptionCircularV2',data,visibleSeries);
+  geokg137kChart(document.getElementById('answerfmtv2r1-chart-geometry'),'Perception-geometry-mc-circular-v1',data,visibleSeries);
+  geokg137kChart(document.getElementById('answerfmtv2r1-chart-natural'),'NaturalPerceptionCircularV3',data,visibleSeries);
+}
+async function renderAnswerfmtv2r1(){
+  const errorBox=document.getElementById('answerfmtv2r1-error');
+  try{
+    const response=await fetch('answerfmtv2r1_3arm_autoeval.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    errorBox.hidden=true;
+    renderAnswerfmtv2r1View(data);
+  }catch(error){
+    errorBox.hidden=false;
+    errorBox.innerHTML=`<b>AnswerFmt V2 R1 数据加载失败。</b> ${geoEsc(error.message)}`;
+  }
+}
 const GEO_R3P10_METRIC='SolidGeoPerceptionCircularV2';
 function geoR3p10DeltaClass(v){return v>0?'geo-r3p10-pos':v<0?'geo-r3p10-neg':'geo-r3p10-zero'}
 function geoR3p10Pp(v){return `${v>0?'+':''}${Number(v).toFixed(2)}pp`}
@@ -649,6 +687,7 @@ document.querySelectorAll('[data-tab]').forEach(btn=>{
 });
 renderGeoB1000AllViews();
 renderGeokg137k();
+renderAnswerfmtv2r1();
 renderGeo3dR3P10();
 renderG3v4fmt();
 renderPgNoorig();
