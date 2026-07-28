@@ -151,22 +151,21 @@ body{zoom:1.22}
     <button class='tab' data-tab='current-scenemerge-m3'><span>M3（7源宽合并）</span><small>M2+Waymo+MegaDepth+DL3DV</small></button>
   </div>
 </div>
-<div class='step-caption'>Step 4 · 验证「同数据双形态」：VM-Cap Bilibili 4FPS 运动描述（120K）拆图片序列 vs 视频片段受控对照（1000 步全程，10/10 上站）<span style='color:#b91c1c;font-weight:800'>—— 结论：双形态等效（终值 图版33.29 ≈ 视频版33.67，视频输入不掉分且末段更稳）；但 VM-Cap 源在 p10 下未超任何对照（B2 视频 36.52 / B1 三图 35.67 / native MI 36.14），判定负结果</span></div>
-<div class='tabs-row new-baseline'>
-  <span class='tabs-row-label'>双格式验证 · VM-Cap 🎞</span>
-  <div class='tabs'>
-    <button class='tab' data-tab='current-vmcap-imgfmt'><span>VM-Cap 4FPS 图版</span><small>Bilibili motion · 120K</small></button>
-    <button class='tab' data-tab='current-vmcap-vidfmt'><span>VM-Cap 4FPS 视频版</span><small>Bilibili motion · 120K</small></button>
-  </div>
-</div>
-<div class='step-caption'>附 · 相对失败的尝试（Video 系列），留档参考<span style='color:#b91c1c;font-weight:800'>—— 结论：原始视频直接输入走不通</span></div>
+<div class='step-caption'>附 · 相对失败的尝试（Video 系列 ｜ VM-Cap 双格式），留档参考<span style='color:#b91c1c;font-weight:800'>—— 结论：原始视频直接输入走不通；VM-Cap 双形态等效（终值 图版33.29 ≈ 视频版33.67，视频输入不掉分），但该源在 p10 下未超任何对照（B2 视频 36.52 / B1 三图 35.67 / native MI 36.14），判定负结果</span></div>
 <div class='tabs-row archived'>
-  <span class='tabs-row-label'>归档 · 相对失败 🗄</span>
+  <span class='tabs-row-label'>归档 · Video 系列 🗄</span>
   <div class='tabs'>
     <button class='tab' data-tab='current-video-v1'><span>Video v1（MP4 · 4,823 条）</span><small>原始视频输入</small></button>
     <button class='tab' data-tab='current-video2mi-v1'><span>Video→Multi-Image v1（8 图 · 4,823 条）</span><small>1fps / 480px</small></button>
     <button class='tab' data-tab='current-video-v2'><span>Video v2（MP4 · 120K 条）</span><small>统一 V2 全量</small></button>
     <button class='tab' data-tab='current-video2mi-v2'><span>Video→Multi-Image v2（8 图 · 120K 条）</span><small>1fps / 480px · 统一 V2 全量</small></button>
+  </div>
+</div>
+<div class='tabs-row archived'>
+  <span class='tabs-row-label'>归档 · VM-Cap 双格式 🗄</span>
+  <div class='tabs'>
+    <button class='tab' data-tab='current-vmcap-imgfmt'><span>VM-Cap 4FPS 图版</span><small>Bilibili motion · 120K · 终值 33.29</small></button>
+    <button class='tab' data-tab='current-vmcap-vidfmt'><span>VM-Cap 4FPS 视频版</span><small>Bilibili motion · 120K · 终值 33.67</small></button>
   </div>
 </div>
 
