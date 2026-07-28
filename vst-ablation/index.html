@@ -150,6 +150,12 @@ body{zoom:1.22}
     <button class='tab' data-tab='current-scenemerge-m1'><span>M1（3源）</span><small>ScanNet+HyperSim+Taskonomy</small></button>
     <button class='tab' data-tab='current-scenemerge-m2'><span>M2（4源）</span><small>M1+ScanNet++</small></button>
     <button class='tab' data-tab='current-scenemerge-m3'><span>M3（7源宽合并）</span><small>M2+Waymo+MegaDepth+DL3DV</small></button>
+  </div>
+</div>
+<div class='step-caption'>Step 4 · 验证「同数据双形态」：VM-Cap Bilibili 4FPS 运动描述（120K）拆图片序列 vs 视频片段受控对照（1000 步全程，10/10 上站）<span style='color:#b91c1c;font-weight:800'>—— 结论：双形态等效（终值 图版33.29 ≈ 视频版33.67，视频输入不掉分且末段更稳）；但 VM-Cap 源在 p10 下未超任何对照（B2 视频 36.52 / B1 三图 35.67 / native MI 36.14），判定负结果</span></div>
+<div class='tabs-row new-baseline'>
+  <span class='tabs-row-label'>双格式验证 · VM-Cap 🎞</span>
+  <div class='tabs'>
     <button class='tab' data-tab='current-vmcap-imgfmt'><span>VM-Cap 4FPS 图版</span><small>Bilibili motion · 120K</small></button>
     <button class='tab' data-tab='current-vmcap-vidfmt'><span>VM-Cap 4FPS 视频版</span><small>Bilibili motion · 120K</small></button>
   </div>
