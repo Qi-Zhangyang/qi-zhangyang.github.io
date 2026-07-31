@@ -17,59 +17,60 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am Zhangyang Qi (Nicky name: Alex Chi, Chinese name: **戚张扬**), a third-year _Ph.D. student in [computer science at The University of Hong Kong (HKU)](https://www.cs.hku.hk/)_ since Sep 2022, advised by Prof. [Hengshuang Zhao](https://hszhao.github.io/) and Prof. [Yizhou Yu](https://scholar.google.com/citations?user=e38fTZQAAAAJ&hl=en). I also work as _a Research Intern at [Shanghai AI Laboratory](https://www.shlab.org.cn/)_, supervised by [Jiaqi Wang](https://myownskyw7.github.io/) and [Tong Wu](https://wutong16.github.io/).
+I am Zhangyang Qi (Nickname: Alex Chi, Chinese name: **戚张扬**). I received my _Ph.D. in [computer science from The University of Hong Kong (HKU)](https://www.cs.hku.hk/)_, advised by Prof. [Hengshuang Zhao](https://hszhao.github.io/) and Prof. [Yizhou Yu](https://scholar.google.com/citations?user=e38fTZQAAAAJ&hl=en).
+
+I am currently a _Research Intern at [Kimi (Moonshot AI)](https://www.kimi.com/)_, working on multimodal large language models, where I contributed to [**Kimi K3**](https://github.com/MoonshotAI/Kimi-K3) and [**PerceptionBench**](https://github.com/MoonshotAI/PerceptionBench). Previously, I was a _Research Intern at [Shanghai AI Laboratory](https://www.shlab.org.cn/)_, supervised by [Jiaqi Wang](https://myownskyw7.github.io/) and [Tong Wu](https://wutong16.github.io/).
 
 My research interest includes **multimodal language models for 3D scene understanding and interactions**.
+- Multimodal large language models
+- Visual perception and evaluation
+- 3D scene understanding
 - Video language models
 - 3D point language models
-- Large language models
-- 3D scene understanding
 
-I am set to graduate in August 2026 and am actively exploring opportunities in my career. I welcome any inquiries to reach out to me via <span style="color:red;">**WeChat: qi-zhangyang**</span>. Attached are my [English Resume](images/Zhangyang_Qi_Eng_Resume_20250310.pdf) and [Chinese Resume](images/Qi_Zhangyang_CHN_CV_20250310.pdf) for your reference.
+I welcome any inquiries to reach out to me via <span style="color:red;">**WeChat: qi-zhangyang**</span> or [LinkedIn](https://hk.linkedin.com/in/alexzyqi). Attached are my [English Resume](images/Zhangyang_Qi_Eng_Resume_20250310.pdf) and [Chinese Resume](images/Qi_Zhangyang_CHN_CV_20250310.pdf) for your reference.
 
 # 🔥 News
+- *2026.07*: &nbsp;🎉🎉 [PerceptionBench](https://github.com/MoonshotAI/PerceptionBench) is released, a benchmark for atomic visual perception in MLLMs.
+- *2026.07*: &nbsp;🎉🎉 [Kimi K3](https://github.com/MoonshotAI/Kimi-K3) is released, with open weights available for download.
+- *2026.02*: &nbsp;🎉🎉 Joined [Kimi (Moonshot AI)](https://www.kimi.com/) as a Research Intern.
+- *2026.01*: &nbsp;🎉🎉 GPT4Scene has been accepted by [ICLR 2026](https://iclr.cc/).
+- *2025*: &nbsp;🎉🎉 GPT4Point++ has been accepted by *IEEE TPAMI*. <!-- TODO: 补上具体月份，改成 *2025.0X* -->
+- *2025.06*: &nbsp;🎉🎉 [VLN-R1](https://vlnr1.github.io/) is released on arXiv.
 - *2024.03*: &nbsp;🎉🎉 GPT4Point has been accept by [CVPR 2024](https://cvpr.thecvf.com/Conferences/2024/AcceptedPapers). 
 - *2023.10*: &nbsp;🎉🎉 OCBEV has been accept by [3DV 2024](https://3dvconf.github.io/2024/).
 - *2022.09*: &nbsp;🎉🎉 Join HKU as a Ph.D. student.
 - *2022.07*: &nbsp;🎉🎉 Got bachelor's degree from HIT with *Top Ten Outstanding Students* and *Outstanding Graduate*.
 
 # 📖 Educations
-- *2022.09 - present*, Ph.D. in Computer Science, The University of Hong Kong (HKU). 
+- *2022.09 - 2026.08*, Ph.D. in Computer Science, The University of Hong Kong (HKU). 
 - *2018.08 - 2022.07*, Bachelor in Information Engineering, Harbin Institute of Technology (HIT).
+
+# 🚀 Work at Kimi
+
+[**Kimi K3: Open Frontier Intelligence**](https://github.com/MoonshotAI/Kimi-K3) &nbsp;·&nbsp; *Contributor*
+
+- An open-weight, natively multimodal agentic model: 2.8T total parameters (104B activated) in a Mixture-of-Experts architecture, a 1M-token context window, and native vision via MoonViT-V2.
+- Released in July 2026 with full open weights, the largest open-weight model released to date.
+
+[**[Blog]**](https://www.kimi.com/blog/kimi-k3)&nbsp;
+[**[Tech Report]**](https://github.com/MoonshotAI/Kimi-K3/blob/main/k3_tech_report.pdf)&nbsp;
+[**[Code]**](https://github.com/MoonshotAI/Kimi-K3)&nbsp;
+[**[Model]**](https://huggingface.co/moonshotai/Kimi-K3)&nbsp;
+
+[**PerceptionBench: Evaluating Atomic Visual Perception in Multimodal Large Language Models**](https://github.com/MoonshotAI/PerceptionBench) &nbsp;·&nbsp; *Contributor*
+
+- A benchmark that separates perception from reasoning: 3,000 verified questions covering ten atomic perceptual capabilities, distilled from real model failures across 42 existing benchmarks.
+- The ten capabilities are visual relation, counting, attribute, depth & 3D, localization, comparison, fine-grained recognition, context integration, OCR, and hallucination.
+- Across frontier MLLMs, no model reaches 60% accuracy, and perception-related hallucination is the weakest capability on average.
+
+[**[Blog]**](https://www.kimi.com/blog/perception-bench)&nbsp;
+[**[Code]**](https://github.com/MoonshotAI/PerceptionBench)&nbsp;
+[**[Data]**](https://huggingface.co/datasets/moonshotai/PerceptionBench)&nbsp;
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2024 Highlight</div><img src='images/GPT4Point.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[GPT4Point: A Unified Framework for Point-Language Understanding and Generation](https://gpt4point.github.io/)
-
-**Zhangyang Qi**, Ye Fang, Zeyi Sun, Xiaoyang Wu, Tong Wu, Jiaqi Wang, Dahua Lin, Hengshuang Zhao
-
-- The first object-level 3D point cloud multimodal large language model, unifying both point cloud understanding and generation tasks.
-
-[**[Project]**](https://gpt4point.github.io/)&nbsp;
-[**[Paper]**](https://arxiv.org/abs/2312.02980)&nbsp;
-[**[Code]**](https://github.com/Pointcept/GPT4Point)&nbsp;
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">3DV 2024</div><img src='images/OCBEV.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[OCBEV: Object-Centric BEV Transformer for Multi-View 3D Object Detection](https://arxiv.org/abs/2306.01738)
-
-**Zhangyang Qi**, Jiaqi Wang, Xiaoyang Wu, Hengshuang Zhao
-
-- An object-centric BEV (Bird's Eye View) autonomous driving 3D object detection framework, achieving performance improvements on the nuScenes dataset with half the training data.
-
-[**[Paper]**](https://arxiv.org/abs/2306.01738)&nbsp;
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv 2025</div><img src='images/GPT4Scene.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/GPT4Scene.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [GPT4Scene: Understand 3D Scenes from Videos with Vision-Language Models](https://gpt4scene.github.io/)
@@ -80,7 +81,25 @@ I am set to graduate in August 2026 and am actively exploring opportunities in m
 
 [**[Project]**](https://gpt4scene.github.io/)&nbsp;
 [**[Paper]**](https://arxiv.org/abs/2501.01428)&nbsp;
+[**[Code]**](https://github.com/Qi-Zhangyang/GPT4Scene-and-VLN-R1)&nbsp;
+
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2024 Highlight</div><img src='images/GPT4Point.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[GPT4Point: A Unified Framework for Point-Language Understanding and Generation](https://gpt4point.github.io/)
+
+**Zhangyang Qi**, Ye Fang, Zeyi Sun, Xiaoyang Wu, Tong Wu, Jiaqi Wang, Dahua Lin, Hengshuang Zhao
+
+- The first object-level 3D point cloud multimodal large language model, unifying both point cloud understanding and generation tasks.
+- Extended to **GPT4Point++**, published in *IEEE TPAMI 2025*.
+
+[**[Project]**](https://gpt4point.github.io/)&nbsp;
+[**[Paper]**](https://arxiv.org/abs/2312.02980)&nbsp;
 [**[Code]**](https://github.com/Pointcept/GPT4Point)&nbsp;
+[**[TPAMI Extension]**](https://ieeexplore.ieee.org/document/11122591)&nbsp;
 
 </div>
 </div>
@@ -101,11 +120,39 @@ I am set to graduate in August 2026 and am actively exploring opportunities in m
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">3DV 2024</div><img src='images/OCBEV.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[OCBEV: Object-Centric BEV Transformer for Multi-View 3D Object Detection](https://arxiv.org/abs/2306.01738)
+
+**Zhangyang Qi**, Jiaqi Wang, Xiaoyang Wu, Hengshuang Zhao
+
+- An object-centric BEV (Bird's Eye View) autonomous driving 3D object detection framework, achieving performance improvements on the nuScenes dataset with half the training data.
+
+[**[Paper]**](https://arxiv.org/abs/2306.01738)&nbsp;
+
+</div>
+</div>
+
+### Other Publications
+
+- [**GPT4Point++: Advancing Unified Point-Language Understanding and Generation**](https://ieeexplore.ieee.org/document/11122591), *IEEE TPAMI 2025*.  
+  **Zhangyang Qi**, Ye Fang, Zeyi Sun, Xiaoyang Wu, Tong Wu, Jiaqi Wang, Dahua Lin, Hengshuang Zhao.  
+  The journal extension of GPT4Point, replacing the two-stage pipeline with a unified end-to-end training scheme.
+
+- [**VLN-R1: Vision-Language Navigation via Reinforcement Fine-Tuning**](https://vlnr1.github.io/), *Arxiv 2025*. &nbsp;[**[Paper]**](https://arxiv.org/abs/2506.17221)&nbsp;[**[Code]**](https://github.com/Qi-Zhangyang/GPT4Scene-and-VLN-R1)  
+  **Zhangyang Qi**, Zhixiong Zhang, Yizhou Yu, Jiaqi Wang, Hengshuang Zhao.  
+  An end-to-end framework turning egocentric video streams into continuous navigation actions via GRPO-based reinforcement fine-tuning with a time-decayed reward.
 
 # 🌐 Experiences
-  
+
+**Kimi (Moonshot AI)**, Beijing, China  
+*2026.02 – Present*  
+- ​**Research Intern**
+- Research on multimodal large language models, contributing to Kimi K3 and PerceptionBench.
+
 **Shanghai AI Laboratory**, Shanghai, China  
-*2022.07 – Present*  
+*2022.07 – 2026.01*  
 - ​**Research Intern, Supervisors**: [Jiaqi Wang](https://myownskyw7.github.io/), [Tong Wu](https://wutong16.github.io/) 
 - Research on 3D and video language models, developing the GPT4Point, GPT4Point++, and GPT4Scene.
 - Curated training data for [InternLM-XComposer](https://github.com/InternLM/InternLM-XComposer) series and [V3Det](https://v3det.openxlab.org.cn) dataset.
