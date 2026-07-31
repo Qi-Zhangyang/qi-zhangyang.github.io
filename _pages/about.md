@@ -48,7 +48,7 @@ I welcome any inquiries to reach out to me via <span style="color:red;">**WeChat
 - *2022.09 - 2026.08*, Ph.D. in Computer Science, The University of Hong Kong (HKU). 
 - *2018.08 - 2022.07*, Bachelor in Information Engineering, Harbin Institute of Technology (HIT).
 
-# 🚀 Work at Kimi
+# 📄 Tech Reports
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Moonshot AI 2026</div><img src='images/KimiK3.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -83,6 +83,22 @@ Kimi Team &nbsp;(**Zhangyang Qi**, Contributor)
 [**[Tech Report]**](https://github.com/MoonshotAI/PerceptionBench/blob/master/paper/PerceptionBench.pdf)&nbsp;
 [**[Code]**](https://github.com/MoonshotAI/PerceptionBench)&nbsp;
 [**[Data]**](https://huggingface.co/datasets/moonshotai/PerceptionBench)&nbsp;
+
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv 2026</div><img src='images/VLMEvalKit.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[VLMEvalKit: An Open-Source Toolkit for Evaluating Large Multi-Modality Models](https://arxiv.org/abs/2407.11691)
+
+Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo Li, Tianhao Liang, Lin Zhu, Amit Agarwal, Xiaozhe Li, Shengyuan Ding, Jiazi Bu, Ziyu Liu, **Zhangyang Qi**, *et al.*, Pan Zhang, Jiaqi Wang, Dahua Lin, Kai Chen
+
+- The open-source evaluation toolkit behind OpenCompass, supporting 450+ multi-modality models and 330+ benchmarks behind a single unified interface.
+- I contributed the spatial-grounding evaluations, including DA-2K, ERQA, and RefSpatialBench.
+
+[**[Paper]**](https://arxiv.org/abs/2407.11691)&nbsp;
+[**[Code]**](https://github.com/open-compass/VLMEvalKit)&nbsp;
 
 </div>
 </div>
@@ -177,10 +193,6 @@ Kimi Team &nbsp;(**Zhangyang Qi**, Contributor)
 - [**VLN-R1: Vision-Language Navigation via Reinforcement Fine-Tuning**](https://vlnr1.github.io/), *Arxiv 2025*. &nbsp;[**[Paper]**](https://arxiv.org/abs/2506.17221)&nbsp;[**[Code]**](https://github.com/Qi-Zhangyang/GPT4Scene-and-VLN-R1)  
   **Zhangyang Qi**, Zhixiong Zhang, Yizhou Yu, Jiaqi Wang, Hengshuang Zhao.  
   An end-to-end framework turning egocentric video streams into continuous navigation actions via GRPO-based reinforcement fine-tuning with a time-decayed reward.
-
-- [**VLMEvalKit: An Open-Source Toolkit for Evaluating Large Multi-Modality Models**](https://arxiv.org/abs/2407.11691), *Technical Report, 2026*. &nbsp;[**[Paper]**](https://arxiv.org/abs/2407.11691)&nbsp;[**[Code]**](https://github.com/open-compass/VLMEvalKit)  
-  Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo Li, Tianhao Liang, Lin Zhu, Amit Agarwal, Xiaozhe Li, Shengyuan Ding, Jiazi Bu, Ziyu Liu, **Zhangyang Qi**, *et al.*, Pan Zhang, Jiaqi Wang, Dahua Lin, Kai Chen.  
-  The open-source evaluation toolkit behind OpenCompass, supporting 450+ multi-modality models and 330+ benchmarks. I contributed the spatial-grounding evaluations, including DA-2K, ERQA, and RefSpatialBench.
 
 # 🌐 Experiences
 
