@@ -48,7 +48,12 @@ I welcome any inquiries to reach out to me via <span style="color:red;">**WeChat
 
 # 🚀 Work at Kimi
 
-[**Kimi K3: Open Frontier Intelligence**](https://github.com/MoonshotAI/Kimi-K3) &nbsp;·&nbsp; *Contributor*
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Moonshot AI 2026</div><img src='images/KimiK3.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Kimi K3: Open Frontier Intelligence](https://github.com/MoonshotAI/Kimi-K3)
+
+Kimi Team &nbsp;(**Zhangyang Qi**, Contributor)
 
 - An open-weight, natively multimodal agentic model: 2.8T total parameters (104B activated) in a Mixture-of-Experts architecture, a 1M-token context window, and native vision via MoonViT-V2.
 - Released in July 2026 with full open weights, the largest open-weight model released to date.
@@ -58,15 +63,27 @@ I welcome any inquiries to reach out to me via <span style="color:red;">**WeChat
 [**[Code]**](https://github.com/MoonshotAI/Kimi-K3)&nbsp;
 [**[Model]**](https://huggingface.co/moonshotai/Kimi-K3)&nbsp;
 
-[**PerceptionBench: Evaluating Atomic Visual Perception in Multimodal Large Language Models**](https://github.com/MoonshotAI/PerceptionBench) &nbsp;·&nbsp; *Contributor*
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Moonshot AI 2026</div><img src='images/PerceptionBench.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[PerceptionBench: Evaluating Atomic Visual Perception in Multimodal Large Language Models](https://github.com/MoonshotAI/PerceptionBench)
+
+Kimi Team &nbsp;(**Zhangyang Qi**, Contributor)
 
 - A benchmark that separates perception from reasoning: 3,000 verified questions covering ten atomic perceptual capabilities, distilled from real model failures across 42 existing benchmarks.
 - The ten capabilities are visual relation, counting, attribute, depth & 3D, localization, comparison, fine-grained recognition, context integration, OCR, and hallucination.
 - Across frontier MLLMs, no model reaches 60% accuracy, and perception-related hallucination is the weakest capability on average.
 
 [**[Blog]**](https://www.kimi.com/blog/perception-bench)&nbsp;
+[**[Tech Report]**](https://github.com/MoonshotAI/PerceptionBench/blob/master/paper/PerceptionBench.pdf)&nbsp;
 [**[Code]**](https://github.com/MoonshotAI/PerceptionBench)&nbsp;
 [**[Data]**](https://huggingface.co/datasets/moonshotai/PerceptionBench)&nbsp;
+
+</div>
+</div>
 
 # 📝 Publications 
 
