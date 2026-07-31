@@ -34,7 +34,9 @@ I welcome any inquiries to reach out to me via <span style="color:red;">**WeChat
 - *2026.07*: &nbsp;🎉🎉 [PerceptionBench](https://github.com/MoonshotAI/PerceptionBench) is released, a benchmark for atomic visual perception in MLLMs.
 - *2026.07*: &nbsp;🎉🎉 [Kimi K3](https://github.com/MoonshotAI/Kimi-K3) is released, with open weights available for download.
 - *2026.02*: &nbsp;🎉🎉 Joined [Kimi (Moonshot AI)](https://www.kimi.com/) as a Research Intern.
+- *2026.07*: &nbsp;🎉🎉 The [VLMEvalKit](https://arxiv.org/abs/2407.11691) technical report is updated on arXiv, now covering 450+ models and 330+ benchmarks.
 - *2026.01*: &nbsp;🎉🎉 GPT4Scene has been accepted by [ICLR 2026](https://iclr.cc/).
+- *2025.12*: &nbsp;🎉🎉 GGBench has been accepted by [AAAI 2026](https://aaai.org/conference/aaai/aaai-26/). <!-- TODO: 月份按 camera-ready 提交时间推的，录用通知月份自己核一下 -->
 - *2025*: &nbsp;🎉🎉 GPT4Point++ has been accepted by *IEEE TPAMI*. <!-- TODO: 补上具体月份，改成 *2025.0X* -->
 - *2025.06*: &nbsp;🎉🎉 [VLN-R1](https://vlnr1.github.io/) is released on arXiv.
 - *2024.03*: &nbsp;🎉🎉 GPT4Point has been accept by [CVPR 2024](https://cvpr.thecvf.com/Conferences/2024/AcceptedPapers). 
@@ -103,6 +105,21 @@ Kimi Team &nbsp;(**Zhangyang Qi**, Contributor)
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAAI 2026</div><img src='images/GGBench.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Game Ground Bench: Probing the Limits of LVLMs in Complex Semantic Grounding Across Game Universes](https://ojs.aaai.org/index.php/AAAI/article/view/37800)
+
+**Zhangyang Qi**, Jinsong Li, Hongjian Wu, Jiaqi Wang, Hengshuang Zhao
+
+- GGBench, a large-scale cross-genre benchmark for visual grounding in interactive game environments: 10 genres from card games to first-person shooters and RPGs, 1,335 test images requiring reasoning over game mechanics and UI rather than direct noun-to-object matching.
+- We further propose **Game-R1**, a Grounded Reinforcement Policy Optimization (GRPO) method that reaches strong few-shot generalization and outperforms both open- and closed-source LVLMs on GGBench.
+
+[**[Paper]**](https://ojs.aaai.org/index.php/AAAI/article/view/37800)&nbsp;
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2024 Highlight</div><img src='images/GPT4Point.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -160,6 +177,10 @@ Kimi Team &nbsp;(**Zhangyang Qi**, Contributor)
 - [**VLN-R1: Vision-Language Navigation via Reinforcement Fine-Tuning**](https://vlnr1.github.io/), *Arxiv 2025*. &nbsp;[**[Paper]**](https://arxiv.org/abs/2506.17221)&nbsp;[**[Code]**](https://github.com/Qi-Zhangyang/GPT4Scene-and-VLN-R1)  
   **Zhangyang Qi**, Zhixiong Zhang, Yizhou Yu, Jiaqi Wang, Hengshuang Zhao.  
   An end-to-end framework turning egocentric video streams into continuous navigation actions via GRPO-based reinforcement fine-tuning with a time-decayed reward.
+
+- [**VLMEvalKit: An Open-Source Toolkit for Evaluating Large Multi-Modality Models**](https://arxiv.org/abs/2407.11691), *Technical Report, 2026*. &nbsp;[**[Paper]**](https://arxiv.org/abs/2407.11691)&nbsp;[**[Code]**](https://github.com/open-compass/VLMEvalKit)  
+  Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo Li, Tianhao Liang, Lin Zhu, Amit Agarwal, Xiaozhe Li, Shengyuan Ding, Jiazi Bu, Ziyu Liu, **Zhangyang Qi**, *et al.*, Pan Zhang, Jiaqi Wang, Dahua Lin, Kai Chen.  
+  The open-source evaluation toolkit behind OpenCompass, supporting 450+ multi-modality models and 330+ benchmarks. I contributed the spatial-grounding evaluations, including DA-2K, ERQA, and RefSpatialBench.
 
 # 🌐 Experiences
 
