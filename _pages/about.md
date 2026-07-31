@@ -35,9 +35,9 @@ I welcome any inquiries to reach out to me via <span style="color:red;">**WeChat
 # 🔥 News
 - *2026.07*: &nbsp;🎉🎉 [PerceptionBench](https://github.com/MoonshotAI/PerceptionBench) is released, a benchmark for atomic visual perception in MLLMs.
 - *2026.07*: &nbsp;🎉🎉 [Kimi K3](https://github.com/MoonshotAI/Kimi-K3) is released, with open weights available for download.
+- *2026.07*: &nbsp;🎉🎉 The [VLMEvalKit](https://arxiv.org/abs/2407.11691) technical report is updated on arXiv, now covering 450+ models and 330+ benchmarks.
 - *2026.06*: &nbsp;🎉🎉 Received my Ph.D. in Computer Science from [HKU](https://www.cs.hku.hk/).
 - *2026.02*: &nbsp;🎉🎉 Joined [Kimi (Moonshot AI)](https://www.kimi.com/) as a Research Intern.
-- *2026.07*: &nbsp;🎉🎉 The [VLMEvalKit](https://arxiv.org/abs/2407.11691) technical report is updated on arXiv, now covering 450+ models and 330+ benchmarks.
 - *2026.01*: &nbsp;🎉🎉 GPT4Scene has been accepted by [ICLR 2026](https://iclr.cc/).
 - *2025.12*: &nbsp;🎉🎉 GGBench has been accepted by [AAAI 2026](https://aaai.org/conference/aaai/aaai-26/). <!-- TODO: 月份按 camera-ready 提交时间推的，录用通知月份自己核一下 -->
 - *2025*: &nbsp;🎉🎉 GPT4Point++ has been accepted by *IEEE TPAMI*. <!-- TODO: 补上具体月份，改成 *2025.0X* -->
@@ -135,7 +135,7 @@ Kimi Team &nbsp;(**Zhangyang Qi**, Contributor)
 
 [VLMEvalKit: An Open-Source Toolkit for Evaluating Large Multi-Modality Models](https://arxiv.org/abs/2407.11691)
 
-Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo Li, Tianhao Liang, Lin Zhu, Amit Agarwal, Xiaozhe Li, Shengyuan Ding, Jiazi Bu, Ziyu Liu, **Zhangyang Qi**, *et al.*, Pan Zhang, Jiaqi Wang, Dahua Lin, Kai Chen
+Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo Li, Tianhao Liang, Lin Zhu, Amit Agarwal, Xiaozhe Li, Shengyuan Ding, Jiazi Bu, Ziyu Liu, **Zhangyang Qi**, *et al.*, Pan Zhang, [Jiaqi Wang](https://myownskyw7.github.io/), [Dahua Lin](http://dahua.site/), Kai Chen
 
 - The open-source evaluation toolkit behind OpenCompass, supporting 450+ multi-modality models and 330+ benchmarks behind a single unified interface.
 - I contributed the spatial-grounding evaluations, including DA-2K, ERQA, and RefSpatialBench.
@@ -153,7 +153,7 @@ Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo 
 
 [GPT4Scene: Understand 3D Scenes from Videos with Vision-Language Models](https://gpt4scene.github.io/)
 
-**Zhangyang Qi**, Zhixiong Zhang, Ye Fang, Jiaqi Wang, Hengshuang Zhao
+**Zhangyang Qi**, [Zhixiong Zhang](https://scholar.google.com/citations?user=XBzscD0AAAAJ&hl=en), [Ye Fang](https://aleafy.github.io/), [Jiaqi Wang](https://myownskyw7.github.io/), [Hengshuang Zhao](https://hszhao.github.io/)
 
 - The first to utilize a video-based large language model for indoor scene understanding.
 
@@ -169,7 +169,7 @@ Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo 
 
 [Game Ground Bench: Probing the Limits of LVLMs in Complex Semantic Grounding Across Game Universes](https://ojs.aaai.org/index.php/AAAI/article/view/37800)
 
-**Zhangyang Qi**, Jinsong Li, Hongjian Wu, Jiaqi Wang, Hengshuang Zhao
+**Zhangyang Qi**, Jinsong Li, Hongjian Wu, [Jiaqi Wang](https://myownskyw7.github.io/), [Hengshuang Zhao](https://hszhao.github.io/)
 
 - GGBench, a large-scale cross-genre benchmark for visual grounding in interactive game environments: 10 genres from card games to first-person shooters and RPGs, 1,335 test images requiring reasoning over game mechanics and UI rather than direct noun-to-object matching.
 - We further propose **Game-R1**, a Grounded Reinforcement Policy Optimization (GRPO) method that reaches strong few-shot generalization and outperforms both open- and closed-source LVLMs on GGBench.
@@ -184,7 +184,7 @@ Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo 
 
 [GPT4Point: A Unified Framework for Point-Language Understanding and Generation](https://gpt4point.github.io/)
 
-**Zhangyang Qi**, Ye Fang, Zeyi Sun, Xiaoyang Wu, Tong Wu, Jiaqi Wang, Dahua Lin, Hengshuang Zhao
+**Zhangyang Qi**, [Ye Fang](https://aleafy.github.io/), [Zeyi Sun](https://github.com/SunzeY), [Xiaoyang Wu](https://xywu.me/), [Tong Wu](https://wutong16.github.io/), [Jiaqi Wang](https://myownskyw7.github.io/), [Dahua Lin](http://dahua.site/), [Hengshuang Zhao](https://hszhao.github.io/)
 
 - The first object-level 3D point cloud multimodal large language model, unifying both point cloud understanding and generation tasks.
 - Extended to **GPT4Point++**, published in *IEEE TPAMI 2025*.
@@ -202,7 +202,7 @@ Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo 
 
 [Tailor3D: Customized 3D Assets Editing and Generation with Dual-Side Images](https://tailor3d-2024.github.io/)
 
-**Zhangyang Qi**, Yunhan Yang, Mengchen Zhang, Long Xing, Xiaoyang Wu, Tong Wu, Dahua Lin, Xihui Liu, Jiaqi Wang, Hengshuang Zhao
+**Zhangyang Qi**, [Yunhan Yang](https://yhyang-myron.github.io/), [Mengchen Zhang](https://kszpxxzmc.github.io/), Long Xing, [Xiaoyang Wu](https://xywu.me/), [Tong Wu](https://wutong16.github.io/), [Dahua Lin](http://dahua.site/), [Xihui Liu](https://xh-liu.github.io/), [Jiaqi Wang](https://myownskyw7.github.io/), [Hengshuang Zhao](https://hszhao.github.io/)
 
 - Our work introduces a novel framework for 3D object generation and editing, leveraging dual-view image manipulation.
 
@@ -218,7 +218,7 @@ Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo 
 
 [OCBEV: Object-Centric BEV Transformer for Multi-View 3D Object Detection](https://arxiv.org/abs/2306.01738)
 
-**Zhangyang Qi**, Jiaqi Wang, Xiaoyang Wu, Hengshuang Zhao
+**Zhangyang Qi**, [Jiaqi Wang](https://myownskyw7.github.io/), [Xiaoyang Wu](https://xywu.me/), [Hengshuang Zhao](https://hszhao.github.io/)
 
 - An object-centric BEV (Bird's Eye View) autonomous driving 3D object detection framework, achieving performance improvements on the nuScenes dataset with half the training data.
 
@@ -230,11 +230,11 @@ Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo 
 ### Other Publications
 
 - [**GPT4Point++: Advancing Unified Point-Language Understanding and Generation**](https://ieeexplore.ieee.org/document/11122591), *IEEE TPAMI 2025*.  
-  **Zhangyang Qi**, Ye Fang, Zeyi Sun, Xiaoyang Wu, Tong Wu, Jiaqi Wang, Dahua Lin, Hengshuang Zhao.  
+  **Zhangyang Qi**, [Ye Fang](https://aleafy.github.io/), [Zeyi Sun](https://github.com/SunzeY), [Xiaoyang Wu](https://xywu.me/), [Tong Wu](https://wutong16.github.io/), [Jiaqi Wang](https://myownskyw7.github.io/), [Dahua Lin](http://dahua.site/), [Hengshuang Zhao](https://hszhao.github.io/).  
   The journal extension of GPT4Point, replacing the two-stage pipeline with a unified end-to-end training scheme.
 
 - [**VLN-R1: Vision-Language Navigation via Reinforcement Fine-Tuning**](https://vlnr1.github.io/), *Arxiv 2025*. &nbsp;[**[Paper]**](https://arxiv.org/abs/2506.17221)&nbsp;[**[Code]**](https://github.com/Qi-Zhangyang/GPT4Scene-and-VLN-R1)  
-  **Zhangyang Qi**, Zhixiong Zhang, Yizhou Yu, Jiaqi Wang, Hengshuang Zhao.  
+  **Zhangyang Qi**, [Zhixiong Zhang](https://scholar.google.com/citations?user=XBzscD0AAAAJ&hl=en), [Yizhou Yu](https://i.cs.hku.hk/~yzyu/), [Jiaqi Wang](https://myownskyw7.github.io/), [Hengshuang Zhao](https://hszhao.github.io/).  
   An end-to-end framework turning egocentric video streams into continuous navigation actions via GRPO-based reinforcement fine-tuning with a time-decayed reward.
 
 # 🎖 Awards
