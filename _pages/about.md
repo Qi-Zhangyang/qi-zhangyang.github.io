@@ -17,7 +17,9 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am Zhangyang Qi (Nickname: Alex Chi, Chinese name: **戚张扬**). I received my _Ph.D. in [computer science from The University of Hong Kong (HKU)](https://www.cs.hku.hk/)_, advised by Prof. [Hengshuang Zhao](https://hszhao.github.io/) and Prof. [Yizhou Yu](https://scholar.google.com/citations?user=e38fTZQAAAAJ&hl=en).
+<div style="text-align:right;font-size:0.92em;margin-top:-10px;"><a href="/zh/">中文版 →</a></div>
+
+I am Zhangyang Qi (Nickname: Alex Chi, Chinese name: **戚张扬**). I received my _Ph.D. in [computer science from The University of Hong Kong (HKU)](https://www.cs.hku.hk/)_ in **June 2026**, advised by Prof. [Hengshuang Zhao](https://hszhao.github.io/) and Prof. [Yizhou Yu](https://scholar.google.com/citations?user=e38fTZQAAAAJ&hl=en). Before that, I received my B.Eng. from [Harbin Institute of Technology (HIT)](https://en.hit.edu.cn/) in **July 2022**.
 
 I am currently a _Research Intern at [Kimi (Moonshot AI)](https://www.kimi.com/)_, working on multimodal large language models, where I contributed to [**Kimi K3**](https://github.com/MoonshotAI/Kimi-K3) and [**PerceptionBench**](https://github.com/MoonshotAI/PerceptionBench). Previously, I was a _Research Intern at [Shanghai AI Laboratory](https://www.shlab.org.cn/)_, supervised by [Jiaqi Wang](https://myownskyw7.github.io/) and [Tong Wu](https://wutong16.github.io/).
 
@@ -33,6 +35,7 @@ I welcome any inquiries to reach out to me via <span style="color:red;">**WeChat
 # 🔥 News
 - *2026.07*: &nbsp;🎉🎉 [PerceptionBench](https://github.com/MoonshotAI/PerceptionBench) is released, a benchmark for atomic visual perception in MLLMs.
 - *2026.07*: &nbsp;🎉🎉 [Kimi K3](https://github.com/MoonshotAI/Kimi-K3) is released, with open weights available for download.
+- *2026.06*: &nbsp;🎉🎉 Received my Ph.D. in Computer Science from [HKU](https://www.cs.hku.hk/).
 - *2026.02*: &nbsp;🎉🎉 Joined [Kimi (Moonshot AI)](https://www.kimi.com/) as a Research Intern.
 - *2026.07*: &nbsp;🎉🎉 The [VLMEvalKit](https://arxiv.org/abs/2407.11691) technical report is updated on arXiv, now covering 450+ models and 330+ benchmarks.
 - *2026.01*: &nbsp;🎉🎉 GPT4Scene has been accepted by [ICLR 2026](https://iclr.cc/).
@@ -44,8 +47,48 @@ I welcome any inquiries to reach out to me via <span style="color:red;">**WeChat
 - *2022.09*: &nbsp;🎉🎉 Join HKU as a Ph.D. student.
 - *2022.07*: &nbsp;🎉🎉 Got bachelor's degree from HIT with *Top Ten Outstanding Students* and *Outstanding Graduate*.
 
+# 🌐 Experiences
+
+<div style="display:flex;align-items:center;gap:22px;padding:18px 0;border-bottom:1px solid rgba(128,128,128,0.35);">
+<div style="flex:0 0 92px;text-align:center;"><img src='images/logos/kimi.png' alt="Kimi (Moonshot AI)" style="width:92px;height:92px;object-fit:contain;"></div>
+<div style="flex:1;min-width:0;" markdown="1">
+
+**Kimi (Moonshot AI)**, Beijing, China &nbsp;·&nbsp; *2026.02 – Present*
+
+- ​**Research Intern**
+- Research on multimodal large language models, contributing to Kimi K3 and PerceptionBench.
+
+</div>
+</div>
+
+<div style="display:flex;align-items:center;gap:22px;padding:18px 0;border-bottom:1px solid rgba(128,128,128,0.35);">
+<div style="flex:0 0 92px;text-align:center;"><img src='images/logos/shlab.png' alt="Shanghai AI Laboratory" style="width:92px;height:92px;object-fit:contain;"></div>
+<div style="flex:1;min-width:0;" markdown="1">
+
+**Shanghai AI Laboratory**, Shanghai, China &nbsp;·&nbsp; *2022.07 – 2026.01*
+
+- ​**Research Intern, Supervisors**: [Jiaqi Wang](https://myownskyw7.github.io/), [Tong Wu](https://wutong16.github.io/)
+- Research on 3D and video language models, developing the GPT4Point, GPT4Point++, and GPT4Scene.
+- Curated training data for [InternLM-XComposer](https://github.com/InternLM/InternLM-XComposer) series and [V3Det](https://v3det.openxlab.org.cn) dataset.
+
+</div>
+</div>
+
+<div style="display:flex;align-items:center;gap:22px;padding:18px 0;border-bottom:1px solid rgba(128,128,128,0.35);">
+<div style="flex:0 0 92px;text-align:center;"><img src='images/logos/tencent.png' alt="Tencent PCG" style="width:92px;height:92px;object-fit:contain;"></div>
+<div style="flex:1;min-width:0;" markdown="1">
+
+**Tencent PCG**, Shenzhen, China &nbsp;·&nbsp; *2021.12 – 2022.05*
+
+- ​**Research Intern**
+- Built CLIP-based cross-modal alignment via contrastive learning for image-text matching.
+- Designed joint training paradigms enhancing embedding alignment in multimodal retrieval.
+
+</div>
+</div>
+
 # 📖 Educations
-- *2022.09 - 2026.08*, Ph.D. in Computer Science, The University of Hong Kong (HKU). 
+- *2022.09 - 2026.06*, Ph.D. in Computer Science, The University of Hong Kong (HKU). 
 - *2018.08 - 2022.07*, Bachelor in Information Engineering, Harbin Institute of Technology (HIT).
 
 # 📄 Tech Reports
@@ -193,26 +236,6 @@ Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo 
 - [**VLN-R1: Vision-Language Navigation via Reinforcement Fine-Tuning**](https://vlnr1.github.io/), *Arxiv 2025*. &nbsp;[**[Paper]**](https://arxiv.org/abs/2506.17221)&nbsp;[**[Code]**](https://github.com/Qi-Zhangyang/GPT4Scene-and-VLN-R1)  
   **Zhangyang Qi**, Zhixiong Zhang, Yizhou Yu, Jiaqi Wang, Hengshuang Zhao.  
   An end-to-end framework turning egocentric video streams into continuous navigation actions via GRPO-based reinforcement fine-tuning with a time-decayed reward.
-
-# 🌐 Experiences
-
-**Kimi (Moonshot AI)**, Beijing, China  
-*2026.02 – Present*  
-- ​**Research Intern**
-- Research on multimodal large language models, contributing to Kimi K3 and PerceptionBench.
-
-**Shanghai AI Laboratory**, Shanghai, China  
-*2022.07 – 2026.01*  
-- ​**Research Intern, Supervisors**: [Jiaqi Wang](https://myownskyw7.github.io/), [Tong Wu](https://wutong16.github.io/) 
-- Research on 3D and video language models, developing the GPT4Point, GPT4Point++, and GPT4Scene.
-- Curated training data for [InternLM-XComposer](https://github.com/InternLM/InternLM-XComposer) series and [V3Det](https://v3det.openxlab.org.cn) dataset.
-  
-**Tencent PCG**, Shenzhen, China  
-*2021.12 – 2022.05*  
-- ​**Research Intern**
-- Built CLIP-based cross-modal alignment via contrastive learning for image-text matching.
-- Designed joint training paradigms enhancing embedding alignment in multimodal retrieval.
-
 
 # 🎖 Awards
 - Hong Kong PhD Fellowship Scheme (HKPFS), 2022.
