@@ -175,6 +175,9 @@
 .greedy-nav {
   position: relative;
   min-width: 250px;
+  /* Reserve room for .masthead__lang so the links never run underneath it.
+     jQuery .width() reports the content box, so the greedy-nav script picks this up. */
+  padding-right: 5rem;
   background: $background-color;
 
   a {
@@ -192,13 +195,37 @@
   button {
     position: absolute;
     height: 100%;
-    right: 0;
+    right: 5rem; /* sits just left of the language switch */
     padding: 0 0.5rem;
     border: 0;
     outline: none;
     background-color: $primary-color;
     color: #fff;
     cursor: pointer;
+  }
+
+  /* Language switch, pinned to the right end of the nav row */
+  .masthead__lang {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    margin: 0;
+    padding: 0.2rem 0.7rem;
+    border: 1px solid mix(#fff, $primary-color, 55%); /* $border-color is too faint to read as a button */
+    border-radius: $border-radius;
+    font-size: $type-size-6;
+    font-weight: 600;
+    line-height: 1.5;
+    white-space: nowrap;
+    color: $masthead-link-color;
+
+    &:hover {
+      border-color: $primary-color;
+      background-color: $primary-color;
+      color: #fff;
+    }
   }
 
   .visible-links {

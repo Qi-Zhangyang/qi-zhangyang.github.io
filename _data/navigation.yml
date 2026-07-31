@@ -20,3 +20,28 @@ main:
 
   - title: "Professional Services"
     url: "/#-professional-services"
+
+# main links (Chinese) — keep the same order as `main` above.
+# Targets are the explicit ASCII <span class='anchor'> markers in _pages/about_zh.md,
+# because the auto-generated ids there are Chinese (e.g. #-近况) and would be percent-encoded.
+main_zh:
+  - title: "关于我"
+    url: "/zh/#about-me"
+
+  - title: "近况"
+    url: "/zh/#news"
+
+  - title: "教育经历"
+    url: "/zh/#educations"
+
+  - title: "学术论文"
+    url: "/zh/#publications"
+
+  - title: "工作经历"
+    url: "/zh/#experiences"
+
+  - title: "荣誉与奖励"
+    url: "/zh/#awards"
+
+  - title: "学术服务"
+    url: "/zh/#professional-services"

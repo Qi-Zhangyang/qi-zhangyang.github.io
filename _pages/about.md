@@ -17,8 +17,6 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-<div style="text-align:right;font-size:0.92em;margin-top:-10px;"><a href="/zh/">中文版 →</a></div>
-
 I am Zhangyang Qi (Nickname: Alex Chi, Chinese name: **戚张扬**). I received my _Ph.D. in [computer science from The University of Hong Kong (HKU)](https://www.cs.hku.hk/)_ in **June 2026**, advised by Prof. [Hengshuang Zhao](https://hszhao.github.io/) and Prof. [Yizhou Yu](https://scholar.google.com/citations?user=e38fTZQAAAAJ&hl=en). Before that, I received my B.Eng. from [Harbin Institute of Technology (HIT)](https://en.hit.edu.cn/) in **July 2022**.
 
 I am currently a _Research Intern at [Kimi (Moonshot AI)](https://www.kimi.com/)_, working on multimodal large language models, where I contributed to [**Kimi K3**](https://github.com/MoonshotAI/Kimi-K3) and [**PerceptionBench**](https://github.com/MoonshotAI/PerceptionBench). Previously, I was a _Research Intern at [Shanghai AI Laboratory](https://www.shlab.org.cn/)_, supervised by [Jiaqi Wang](https://myownskyw7.github.io/) and [Tong Wu](https://wutong16.github.io/).

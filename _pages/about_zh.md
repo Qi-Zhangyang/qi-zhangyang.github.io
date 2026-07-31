@@ -5,13 +5,11 @@ excerpt: ""
 author_profile: true
 ---
 
-<div style="text-align:right;font-size:0.92em;margin-top:-10px;"><a href="/">English →</a></div>
-
 <span class='anchor' id='about-me'></span>
 
 我是**戚张扬**（英文名 Zhangyang Qi，昵称 Alex Chi）。我于 **2026 年 6 月**在[香港大学计算机科学系](https://www.cs.hku.hk/)获得**博士学位**，导师为 [Hengshuang Zhao](https://hszhao.github.io/) 教授与 [Yizhou Yu](https://scholar.google.com/citations?user=e38fTZQAAAAJ&hl=en) 教授；此前于 **2022 年 7 月**在[哈尔滨工业大学](http://www.hit.edu.cn/)获得学士学位。
 
-我目前在 [Kimi（月之暗面）](https://www.kimi.com/)担任_研究实习生_，从事多模态大语言模型研究，参与了 [**Kimi K3**](https://github.com/MoonshotAI/Kimi-K3) 与 [**PerceptionBench**](https://github.com/MoonshotAI/PerceptionBench)。在此之前，我在[上海人工智能实验室](https://www.shlab.org.cn/)担任_研究实习生_，由 [Jiaqi Wang](https://myownskyw7.github.io/) 与 [Tong Wu](https://wutong16.github.io/) 指导。
+我目前在 [Kimi（月之暗面）](https://www.kimi.com/)担任*研究实习生*，从事多模态大语言模型研究，参与了 [**Kimi K3**](https://github.com/MoonshotAI/Kimi-K3) 与 [**PerceptionBench**](https://github.com/MoonshotAI/PerceptionBench)。在此之前，我在[上海人工智能实验室](https://www.shlab.org.cn/)担任*研究实习生*，由 [Jiaqi Wang](https://myownskyw7.github.io/) 与 [Tong Wu](https://wutong16.github.io/) 指导。
 
 我的研究方向是**面向三维场景理解与交互的多模态语言模型**。
 - 多模态大语言模型
@@ -21,6 +19,8 @@ author_profile: true
 - 三维点云语言模型
 
 欢迎通过 <span style="color:red;">**微信：qi-zhangyang**</span> 或 [LinkedIn](https://hk.linkedin.com/in/alexzyqi) 与我联系。这里是我的[英文简历](/images/Zhangyang_Qi_Eng_Resume_20250310.pdf)与[中文简历](/images/Qi_Zhangyang_CHN_CV_20250310.pdf)。
+
+<span class='anchor' id='news'></span>
 
 # 🔥 近况
 - *2026.07*：&nbsp;🎉🎉 [PerceptionBench](https://github.com/MoonshotAI/PerceptionBench) 发布，一个面向多模态大模型原子级视觉感知能力的评测基准。
@@ -36,6 +36,8 @@ author_profile: true
 - *2023.10*：&nbsp;🎉🎉 OCBEV 被 [3DV 2024](https://3dvconf.github.io/2024/) 接收。
 - *2022.09*：&nbsp;🎉🎉 入学香港大学，开始博士研究。
 - *2022.07*：&nbsp;🎉🎉 于哈尔滨工业大学获得学士学位，获*十佳大学生*与*优秀毕业生*称号。
+
+<span class='anchor' id='experiences'></span>
 
 # 🌐 工作经历
 
@@ -77,9 +79,13 @@ author_profile: true
 </div>
 </div>
 
+<span class='anchor' id='educations'></span>
+
 # 📖 教育经历
 - *2022.09 - 2026.06*，香港大学（HKU），计算机科学，博士。
 - *2018.08 - 2022.07*，哈尔滨工业大学（HIT），信息工程，学士。
+
+<span class='anchor' id='tech-reports'></span>
 
 # 📄 技术报告
 
@@ -135,6 +141,8 @@ Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo 
 
 </div>
 </div>
+
+<span class='anchor' id='publications'></span>
 
 # 📝 学术论文
 
@@ -227,11 +235,15 @@ Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo 
   **戚张扬**, [Zhixiong Zhang](https://scholar.google.com/citations?user=XBzscD0AAAAJ&hl=en), [Yizhou Yu](https://i.cs.hku.hk/~yzyu/), [Jiaqi Wang](https://myownskyw7.github.io/), [Hengshuang Zhao](https://hszhao.github.io/)。  
   端到端框架，通过基于 GRPO 的强化微调与时间衰减奖励，将第一人称视频流直接转化为连续导航动作。
 
+<span class='anchor' id='awards'></span>
+
 # 🎖 荣誉与奖励
 - 香港博士研究生奖学金计划（HKPFS），2022。
 - 香港大学校长奖学金（HKUPS），2022。
 - 哈尔滨工业大学十佳大学生，2021。
 - 国家奖学金，2020。
+
+<span class='anchor' id='professional-services'></span>
 
 # 💻 学术服务
 - **会议审稿人**：CVPR'24、'25，ICCV'25。

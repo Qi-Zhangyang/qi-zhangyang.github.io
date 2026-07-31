@@ -8,7 +8,7 @@
 # Site Settings
 title                    : "Qi Zhangyang"
 description              : ""
-repository               : "https://qi-zhangyang.github.io/"
+repository               : "qi-zhangyang/qi-zhangyang.github.io"  # must be user/repo, not a URL
 google_scholar_stats_use_cdn : true
 
 # google analytics
@@ -22,7 +22,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 # Site Author
 author:
   name             : "Zhangyang Qi"
-  avatar           : "images/qzy.jpg"
+  avatar           : "/images/qzy.jpg"
   bio              : "Ph.D. Student @ HKU"
   location         : "Hong Kong"
   employer         :
