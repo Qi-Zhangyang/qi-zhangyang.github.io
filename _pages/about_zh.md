@@ -125,7 +125,7 @@ Kimi Team &nbsp;（**戚张扬**，贡献者）
 
 [VLMEvalKit: An Open-Source Toolkit for Evaluating Large Multi-Modality Models](https://arxiv.org/abs/2407.11691)
 
-Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo Li, Tianhao Liang, Lin Zhu, Amit Agarwal, Xiaozhe Li, Shengyuan Ding, Jiazi Bu, Ziyu Liu, **Zhangyang Qi**, *et al.*, Pan Zhang, Jiaqi Wang, Dahua Lin, Kai Chen
+Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo Li, Tianhao Liang, Lin Zhu, Amit Agarwal, Xiaozhe Li, Shengyuan Ding, Jiazi Bu, Ziyu Liu, **戚张扬**, *et al.*, Pan Zhang, [Jiaqi Wang](https://myownskyw7.github.io/), [Dahua Lin](http://dahua.site/), Kai Chen
 
 - OpenCompass 背后的开源评测工具包，以统一接口支持 450+ 多模态模型与 330+ 评测基准。
 - 我贡献了空间定位相关的评测支持，包括 DA-2K、ERQA 与 RefSpatialBench。
@@ -143,7 +143,7 @@ Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo 
 
 [GPT4Scene: Understand 3D Scenes from Videos with Vision-Language Models](https://gpt4scene.github.io/)
 
-**戚张扬**, Zhixiong Zhang, Ye Fang, Jiaqi Wang, Hengshuang Zhao
+**戚张扬**, [Zhixiong Zhang](https://scholar.google.com/citations?user=XBzscD0AAAAJ&hl=en), [Ye Fang](https://aleafy.github.io/), [Jiaqi Wang](https://myownskyw7.github.io/), [Hengshuang Zhao](https://hszhao.github.io/)
 
 - 首个将基于视频的大语言模型用于室内场景理解的工作。
 
@@ -159,7 +159,7 @@ Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo 
 
 [Game Ground Bench: Probing the Limits of LVLMs in Complex Semantic Grounding Across Game Universes](https://ojs.aaai.org/index.php/AAAI/article/view/37800)
 
-**戚张扬**, Jinsong Li, Hongjian Wu, Jiaqi Wang, Hengshuang Zhao
+**戚张扬**, Jinsong Li, Hongjian Wu, [Jiaqi Wang](https://myownskyw7.github.io/), [Hengshuang Zhao](https://hszhao.github.io/)
 
 - GGBench，面向交互式游戏环境视觉定位的大规模跨品类评测基准：涵盖卡牌、第一人称射击、角色扮演等 10 类游戏共 1,335 张测试图像，要求模型理解游戏机制与界面元素，而非简单的名词—物体匹配。
 - 进一步提出 **Game-R1**，基于 Grounded Reinforcement Policy Optimization (GRPO) 的训练方法，以少样本实现强泛化，在 GGBench 上超越开源与闭源视觉语言模型。
@@ -174,7 +174,7 @@ Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo 
 
 [GPT4Point: A Unified Framework for Point-Language Understanding and Generation](https://gpt4point.github.io/)
 
-**戚张扬**, Ye Fang, Zeyi Sun, Xiaoyang Wu, Tong Wu, Jiaqi Wang, Dahua Lin, Hengshuang Zhao
+**戚张扬**, [Ye Fang](https://aleafy.github.io/), [Zeyi Sun](https://github.com/SunzeY), [Xiaoyang Wu](https://xywu.me/), [Tong Wu](https://wutong16.github.io/), [Jiaqi Wang](https://myownskyw7.github.io/), [Dahua Lin](http://dahua.site/), [Hengshuang Zhao](https://hszhao.github.io/)
 
 - 首个物体级三维点云多模态大语言模型，统一了点云理解与生成任务。
 - 期刊扩展版 **GPT4Point++** 发表于 *IEEE TPAMI 2025*。
@@ -192,7 +192,7 @@ Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo 
 
 [Tailor3D: Customized 3D Assets Editing and Generation with Dual-Side Images](https://tailor3d-2024.github.io/)
 
-**戚张扬**, Yunhan Yang, Mengchen Zhang, Long Xing, Xiaoyang Wu, Tong Wu, Dahua Lin, Xihui Liu, Jiaqi Wang, Hengshuang Zhao
+**戚张扬**, [Yunhan Yang](https://yhyang-myron.github.io/), [Mengchen Zhang](https://kszpxxzmc.github.io/), Long Xing, [Xiaoyang Wu](https://xywu.me/), [Tong Wu](https://wutong16.github.io/), [Dahua Lin](http://dahua.site/), [Xihui Liu](https://xh-liu.github.io/), [Jiaqi Wang](https://myownskyw7.github.io/), [Hengshuang Zhao](https://hszhao.github.io/)
 
 - 提出基于双视图图像操作的三维物体生成与编辑框架。
 
@@ -208,7 +208,7 @@ Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo 
 
 [OCBEV: Object-Centric BEV Transformer for Multi-View 3D Object Detection](https://arxiv.org/abs/2306.01738)
 
-**戚张扬**, Jiaqi Wang, Xiaoyang Wu, Hengshuang Zhao
+**戚张扬**, [Jiaqi Wang](https://myownskyw7.github.io/), [Xiaoyang Wu](https://xywu.me/), [Hengshuang Zhao](https://hszhao.github.io/)
 
 - 以物体为中心的鸟瞰图（BEV）自动驾驶三维目标检测框架，在 nuScenes 数据集上以一半训练数据取得性能提升。
 
@@ -220,11 +220,11 @@ Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo 
 ### 其他论文
 
 - [**GPT4Point++: Advancing Unified Point-Language Understanding and Generation**](https://ieeexplore.ieee.org/document/11122591)，*IEEE TPAMI 2025*。  
-  **戚张扬**, Ye Fang, Zeyi Sun, Xiaoyang Wu, Tong Wu, Jiaqi Wang, Dahua Lin, Hengshuang Zhao。  
+  **戚张扬**, [Ye Fang](https://aleafy.github.io/), [Zeyi Sun](https://github.com/SunzeY), [Xiaoyang Wu](https://xywu.me/), [Tong Wu](https://wutong16.github.io/), [Jiaqi Wang](https://myownskyw7.github.io/), [Dahua Lin](http://dahua.site/), [Hengshuang Zhao](https://hszhao.github.io/)。  
   GPT4Point 的期刊扩展版，以统一的端到端训练方案取代原有的两阶段流程。
 
 - [**VLN-R1: Vision-Language Navigation via Reinforcement Fine-Tuning**](https://vlnr1.github.io/)，*Arxiv 2025*。&nbsp;[**[论文]**](https://arxiv.org/abs/2506.17221)&nbsp;[**[代码]**](https://github.com/Qi-Zhangyang/GPT4Scene-and-VLN-R1)  
-  **戚张扬**, Zhixiong Zhang, Yizhou Yu, Jiaqi Wang, Hengshuang Zhao。  
+  **戚张扬**, [Zhixiong Zhang](https://scholar.google.com/citations?user=XBzscD0AAAAJ&hl=en), [Yizhou Yu](https://i.cs.hku.hk/~yzyu/), [Jiaqi Wang](https://myownskyw7.github.io/), [Hengshuang Zhao](https://hszhao.github.io/)。  
   端到端框架，通过基于 GRPO 的强化微调与时间衰减奖励，将第一人称视频流直接转化为连续导航动作。
 
 # 🎖 荣誉与奖励
