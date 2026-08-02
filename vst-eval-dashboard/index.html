@@ -1136,7 +1136,7 @@ async function renderGeokg137k(){
   }
 }
 function percgeo210kSeries(data){
-  const order=['mcv2','fillv2','halfv2','x5fill'];
+  const order=['mcv2','fillv2','halfv2','x5mc','x5fill','x5half'];
   return order.map(key=>(data.series||[]).find(item=>item.key===key)).filter(Boolean);
 }
 function renderPercgeo210kView(data){

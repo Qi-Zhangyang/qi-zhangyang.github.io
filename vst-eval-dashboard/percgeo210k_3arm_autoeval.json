@@ -293,9 +293,23 @@
    ]
   },
   {
+   "key": "x5mc",
+   "label": "PercGeo ×5子集 · MC",
+   "color": "#7c3aed",
+   "dash": null,
+   "rows": []
+  },
+  {
    "key": "x5fill",
    "label": "PercGeo ×5子集 · Fill",
    "color": "#b02ad1",
+   "dash": null,
+   "rows": []
+  },
+  {
+   "key": "x5half",
+   "label": "PercGeo ×5子集 · Half",
+   "color": "#db2777",
    "dash": null,
    "rows": []
   }
