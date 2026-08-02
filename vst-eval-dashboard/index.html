@@ -153,6 +153,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <span class='tabs-row-label'>Geo-KG 训练验证</span>
   <div class='tabs'>
     <button class='tab' data-tab='geokg137k'><span>Geo-KG 137K · V2 三种 setting</span><small>Baseline + MC / Fill / Half 同图 · 30/30</small></button>
+    <button class='tab' data-tab='percgeo210k'><span>PercGeo 210K 三臂 · 平面几何</span><small>母题派生 205K · 边训边测 vs 0710 baseline</small></button>
   </div>
 </div>
 <div class='tabs-row archived'>
@@ -349,6 +350,23 @@ Answer the question using a single word or phrase.</div>
   <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV2</h2><div id='geokg137k-chart-solid'></div></div>
   <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='geokg137k-chart-geometry'></div></div>
   <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='geokg137k-chart-natural'></div></div>
+</div>
+</section>
+
+
+<section id='tab-percgeo210k' class='pane'>
+<h2 class='section-title'>PercGeo 210K：平面几何母题派生三臂 vs Baseline</h2>
+<div class='geokg-toolbar'>
+  <span class='geokg-mode'>205,056 题（2,096 母题 ×100 IID 派生）· 蓝=MC 橙=Fill 绿=Half · 灰虚线 = SN6V0710 baseline</span>
+  <span class='geokg-verified' id='percgeo210k-verified'></span>
+</div>
+<div class='geo-note' id='percgeo210k-error' hidden></div>
+<div class='geo-legend' id='percgeo210k-legend'></div>
+<p class='geokg-caption' id='percgeo210k-caption'>三张图均保留 SN6V0710 Baseline。目标榜 = Perception-geometry-mc（中）；SolidGeo V2（左）与 NatPerc V3（右）观测迁移/泛化。</p>
+<div class='geo-chart-grid'>
+  <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV2</h2><div id='percgeo210k-chart-solid'></div></div>
+  <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='percgeo210k-chart-geometry'></div></div>
+  <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='percgeo210k-chart-natural'></div></div>
 </div>
 </section>
 
@@ -1117,6 +1135,32 @@ async function renderGeokg137k(){
     errorBox.innerHTML=`<b>Geo-KG 三臂数据加载失败。</b> ${geoEsc(error.message)}`;
   }
 }
+function percgeo210kSeries(data){
+  const order=['mcv2','fillv2','halfv2'];
+  return order.map(key=>(data.series||[]).find(item=>item.key===key)).filter(Boolean);
+}
+function renderPercgeo210kView(data){
+  const visibleSeries=percgeo210kSeries(data);
+  document.getElementById('percgeo210k-legend').innerHTML=[data.baseline,...visibleSeries].map(item=>`<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.key==='control'?'Baseline · SN6V0710':item.label.replace('PercGeo 210K · ',''))}</span>`).join('');
+  const vf=document.getElementById('percgeo210k-verified');
+  if(vf){const lastStep=item=>Math.max(0,...(item.rows||[]).map(row=>Number(row.step)||0));vf.textContent='各臂最新：'+visibleSeries.map(item=>`${item.label.replace('PercGeo 210K · ','')} ${lastStep(item)||'待评'}`).join(' · ')+` · 更新 ${geoEsc(data.updated_at||'')}`;}
+  geokg137kChart(document.getElementById('percgeo210k-chart-solid'),'SolidGeoPerceptionCircularV2',data,visibleSeries);
+  geokg137kChart(document.getElementById('percgeo210k-chart-geometry'),'Perception-geometry-mc-circular-v1',data,visibleSeries);
+  geokg137kChart(document.getElementById('percgeo210k-chart-natural'),'NaturalPerceptionCircularV3',data,visibleSeries);
+}
+async function renderPercgeo210k(){
+  const errorBox=document.getElementById('percgeo210k-error');
+  try{
+    const response=await fetch('percgeo210k_3arm_autoeval.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    errorBox.hidden=true;
+    renderPercgeo210kView(data);
+  }catch(error){
+    errorBox.hidden=false;
+    errorBox.innerHTML=`<b>PercGeo 210K 三臂数据加载失败。</b> ${geoEsc(error.message)}`;
+  }
+}
 function renderRpqaView(data){
   const visibleSeries=data.series||[];
   document.getElementById('rpqa-legend').innerHTML=[data.baseline,...visibleSeries].map(item=>`<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.key==='control'?'Baseline · SN6V0710':item.label)}</span>`).join('');
@@ -1326,6 +1370,7 @@ renderSnv60710();
 renderCurrentVst();
 renderGeoB1000();
 renderGeokg137k();
+renderPercgeo210k();
 renderRpqa();
 renderGeo3dR3P10();
 renderG3v4fmt();
