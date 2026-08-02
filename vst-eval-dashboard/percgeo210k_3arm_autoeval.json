@@ -3,7 +3,7 @@
  "subtitle": "205,056 题（2,096 母题 ×100 IID 派生）· MC / Fill / Half 三臂 1000 步 · 边训边测 vs SN6V0710 baseline",
  "updated_at": "2026-08-02",
  "verified_through": 1000,
- "verified_points": 10,
+ "verified_points": 29,
  "total_points": 30,
  "benchmarks": [
   {
@@ -161,14 +161,130 @@
    "label": "PercGeo 210K · Fill",
    "color": "#f97316",
    "dash": null,
-   "rows": []
+   "rows": [
+    {
+     "step": 100,
+     "SolidGeoPerceptionCircularV2": 0.2786802030456853,
+     "Perception-geometry-mc-circular-v1": 0.2904761904761905,
+     "NaturalPerceptionCircularV3": 0.2330198537095089
+    },
+    {
+     "step": 200,
+     "SolidGeoPerceptionCircularV2": 0.28375634517766496,
+     "Perception-geometry-mc-circular-v1": 0.2895238095238095,
+     "NaturalPerceptionCircularV3": 0.28735632183908044
+    },
+    {
+     "step": 300,
+     "SolidGeoPerceptionCircularV2": 0.31522842639593907,
+     "Perception-geometry-mc-circular-v1": 0.3252380952380952,
+     "NaturalPerceptionCircularV3": 0.296760710553814
+    },
+    {
+     "step": 400,
+     "SolidGeoPerceptionCircularV2": 0.33451776649746195,
+     "Perception-geometry-mc-circular-v1": 0.34095238095238095,
+     "NaturalPerceptionCircularV3": 0.3218390804597701
+    },
+    {
+     "step": 500,
+     "SolidGeoPerceptionCircularV2": 0.3365482233502538,
+     "Perception-geometry-mc-circular-v1": 0.3404761904761905,
+     "NaturalPerceptionCircularV3": 0.31347962382445144
+    },
+    {
+     "step": 600,
+     "SolidGeoPerceptionCircularV2": 0.3385786802030457,
+     "Perception-geometry-mc-circular-v1": 0.35619047619047617,
+     "NaturalPerceptionCircularV3": 0.31974921630094044
+    },
+    {
+     "step": 700,
+     "SolidGeoPerceptionCircularV2": 0.32741116751269034,
+     "Perception-geometry-mc-circular-v1": 0.36142857142857143,
+     "NaturalPerceptionCircularV3": 0.3019853709508882
+    },
+    {
+     "step": 800,
+     "SolidGeoPerceptionCircularV2": 0.33248730964467005,
+     "Perception-geometry-mc-circular-v1": 0.36095238095238097,
+     "NaturalPerceptionCircularV3": 0.3072100313479624
+    },
+    {
+     "step": 900,
+     "SolidGeoPerceptionCircularV2": 0.3416243654822335,
+     "Perception-geometry-mc-circular-v1": 0.3680952380952381,
+     "NaturalPerceptionCircularV3": 0.3113897596656217
+    }
+   ]
   },
   {
    "key": "halfv2",
    "label": "PercGeo 210K · Half",
    "color": "#0f9f86",
    "dash": null,
-   "rows": []
+   "rows": [
+    {
+     "step": 100,
+     "SolidGeoPerceptionCircularV2": 0.3030456852791878,
+     "Perception-geometry-mc-circular-v1": 0.2914285714285714,
+     "NaturalPerceptionCircularV3": 0.24869383490073146
+    },
+    {
+     "step": 200,
+     "SolidGeoPerceptionCircularV2": 0.2802030456852792,
+     "Perception-geometry-mc-circular-v1": 0.2704761904761905,
+     "NaturalPerceptionCircularV3": 0.296760710553814
+    },
+    {
+     "step": 300,
+     "SolidGeoPerceptionCircularV2": 0.31218274111675126,
+     "Perception-geometry-mc-circular-v1": 0.29285714285714287,
+     "NaturalPerceptionCircularV3": 0.296760710553814
+    },
+    {
+     "step": 400,
+     "SolidGeoPerceptionCircularV2": 0.32131979695431473,
+     "Perception-geometry-mc-circular-v1": 0.31142857142857144,
+     "NaturalPerceptionCircularV3": 0.3072100313479624
+    },
+    {
+     "step": 500,
+     "SolidGeoPerceptionCircularV2": 0.3177664974619289,
+     "Perception-geometry-mc-circular-v1": 0.319047619047619,
+     "NaturalPerceptionCircularV3": 0.30094043887147337
+    },
+    {
+     "step": 600,
+     "SolidGeoPerceptionCircularV2": 0.3197969543147208,
+     "Perception-geometry-mc-circular-v1": 0.3323809523809524,
+     "NaturalPerceptionCircularV3": 0.3155694879832811
+    },
+    {
+     "step": 700,
+     "SolidGeoPerceptionCircularV2": 0.333502538071066,
+     "Perception-geometry-mc-circular-v1": 0.32904761904761903,
+     "NaturalPerceptionCircularV3": 0.322884012539185
+    },
+    {
+     "step": 800,
+     "SolidGeoPerceptionCircularV2": 0.3223350253807107,
+     "Perception-geometry-mc-circular-v1": 0.3323809523809524,
+     "NaturalPerceptionCircularV3": 0.3155694879832811
+    },
+    {
+     "step": 900,
+     "SolidGeoPerceptionCircularV2": 0.3365482233502538,
+     "Perception-geometry-mc-circular-v1": 0.34285714285714286,
+     "NaturalPerceptionCircularV3": 0.31452455590386624
+    },
+    {
+     "step": 1000,
+     "SolidGeoPerceptionCircularV2": 0.3269035532994924,
+     "Perception-geometry-mc-circular-v1": 0.33,
+     "NaturalPerceptionCircularV3": 0.3166144200626959
+    }
+   ]
   }
  ]
 }
