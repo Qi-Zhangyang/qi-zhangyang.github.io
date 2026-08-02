@@ -169,6 +169,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <span class='tabs-row-label'>另一条线 · Geo-KG 197k 🔬</span>
   <div class='tabs'>
     <button class='tab' data-tab='geokg197k'><span>Geo-KG 197k · 73K快照 + 184K全量</span><small>1970 BMK 母题 ×100 · MC/Fill/Half 三臂</small></button>
+    <button class='tab' data-tab='percgeo210k'><span>PercGeo 210K · 2D平面几何三臂 + ×5子集</span><small>2096 BMK 母题 ×100 · MC/Fill/Half + ×5fill 验证臂</small></button>
   </div>
 </div>
 <div class='step-caption'>附 · mengfan 外部 2D 数据验证（非主线番外）：223 万 NoOrig 冗余对照（与 baseline 同 QA、不同渲染）<span style='color:#b91c1c;font-weight:800'>—— 结论：新 baseline 上同样掉点，符合冗余对照预期</span></div>
@@ -437,6 +438,18 @@ D. 3</div><div class='sample-qa'><b>A6：</b>答案：A. 2</div></div></div></di
   <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='geokg197k-chart-natural'></div></div>
 </div>
 </section>
+
+<section id='tab-percgeo210k' class='pane'>
+<h2 class='section-title'>PercGeo 210K 母题派生 · 2D 平面几何三臂 + ×5 子集验证臂 vs Baseline</h2>
+<div class='origin-card'><h2>210K 数据咋来的（2D 版母题派生 · 三臂 + 子集终审）</h2><div class='genflow'><div class='gen-node'><h4>2096 母题 ×100<span>直接对 BMK 造题</span></h4><p><b>Perception-geometry-mc-v1 真题当母题</b>· 每道派生 100 道 = 209,600（交付 205,056）<br>· ⚠️ 逐题带污染标记：定向拟合口径</p></div><div class='gen-arrow'>→</div><div class='gen-node'><h4>210K 生产<span>native engine2 单 pod</span></h4><p><b>07-28 启动 · 07-31 完结</b>· 197,857 主线 + recovery 6,909 救回<br>· 9,515 死项审计归档</p></div><div class='gen-arrow'>→</div><div class='gen-node'><h4>三臂验证<span>205,056 题 p10</span></h4><p><b>08-01 三臂</b>· PercGeo@900：<b>Fill 36.8</b> / Half 34.3 / MC 31.9<br>· 对照组 35.1 —— <b>Fill 压线、MC 掉点</b></p></div><div class='gen-arrow'>→</div><div class='gen-node'><h4>×5 子集 + 终审<span>质量回头查</span></h4><p><b>2095 题 claude 独立重解</b>· 问题率 22%（gold错 16% 主犯）<br>· ×5 fill 验证臂训练中（紫线）· 三维/曲线题是重灾区</p></div></div><div class='flow'><b>和 197k 的关系</b>：同法（BMK 母题 ×100 派生）从 3D SolidGeo 搬到 2D 平面几何。<b>结果分裂</b>：格式效应巨大 —— Fill 最优（36.8 压对照 35.1）、<b>MC 被对照反超（31.9 vs 35.1）= 掉点实锤</b>；终审定位主因为 gold 错（三维/曲线类 K2.6 盲区，出题/评审同源没拦住）。</div></div>
+<div class='arm-info'><b>实验配置：</b>PercGeo 210K —— 2,096 道 BMK 真题母题 ×100 派生（205,056 题交付），MC/Fill/Half 三臂 p10 1000 步；×5 子集（每母题 5 变体 gold 均衡抽 10,475 题）fill 臂验证中。<b>结论：</b>Fill 36.8 > 对照 35.1 ≈ Half 34.3 > MC 31.9（@900）；格式效应 + 数据质量（22% 问题率）双重作用。<br><b>数据预览：</b><a href='https://m3.app.msh.team?prefix=s3%2Bm2%3A%2F%2Fm2-visual-input-data%2Fm3data%2Fqizhangyang%2Fpercgeo_210k_mcv2_20260801%2F&start_idx=0&num_data=8' target='_blank' rel='noopener'>m3 三臂 WDS</a> · <a href='https://b6.app.msh.work/s3+m2/m2-intern-visual-input-data/m3data/qizhangyang/percgeo_2100x5/site/index.html' target='_blank' rel='noopener'>b6 ×5 子集浏览器</a> · <a href='https://b6.app.msh.work/s3+m2/m2-intern-visual-input-data/m3data/qizhangyang/percgeo_2100x5/audit/failures.html' target='_blank' rel='noopener'>b6 终审失败题（441）</a></div>
+<div class='geo-legend' id='percgeo210k-legend'></div>
+<div class='snv6-chart-grid'>
+  <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV2</h2><div id='percgeo210k-chart-v2'></div></div>
+  <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='percgeo210k-chart-geometry'></div></div>
+  <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='percgeo210k-chart-natural'></div></div>
+</div>
+</section>
 </main>
 <script>
 const geoB1000Catalog = {
@@ -686,6 +699,20 @@ async function renderGeoCaption(){
   }
 }
 
+async function renderPercgeo210k(){
+  try{
+    const response=await fetch('percgeo210k_3arm_autoeval.json',{cache:'no-store'});
+    if(!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    const sel=data.series||[];
+    document.getElementById('percgeo210k-legend').innerHTML=[{label:'0710 baseline (control)',color:'#4f555c',dash:'4 5'},...sel].map(item=>`<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.label)}</span>`).join('');
+    geoB1000Chart(document.getElementById('percgeo210k-chart-v2'),'SolidGeoPerceptionCircularV2',data,sel);
+    geoB1000Chart(document.getElementById('percgeo210k-chart-geometry'),'Perception-geometry-mc-circular-v1',data,sel);
+    geoB1000Chart(document.getElementById('percgeo210k-chart-natural'),'NaturalPerceptionCircularV3',data,sel);
+  }catch(error){
+    const lg=document.getElementById('percgeo210k-legend');if(lg)lg.textContent=`数据加载失败：${error.message}`;
+  }
+}
 async function renderGeokg197k(){
   try{
     const response=await fetch('geokg197k_live.json',{cache:'no-store'});
@@ -940,6 +967,7 @@ renderGeoCells42();
 renderGeoV7qa();
 renderGeoCaption();
 renderGeokg197k();
+renderPercgeo210k();
 renderGeokg137k();
 renderGeo3dR3P10();
 renderG3v4fmt();
