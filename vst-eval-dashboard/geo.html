@@ -705,10 +705,10 @@ async function renderPercgeo210k(){
     if(!response.ok) throw new Error(`HTTP ${response.status}`);
     const data=await response.json();
     const sel=data.series||[];
-    document.getElementById('percgeo210k-legend').innerHTML=[{label:'0710 baseline (control)',color:'#4f555c',dash:'4 5'},...sel].map(item=>`<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.label)}</span>`).join('');
-    geoB1000Chart(document.getElementById('percgeo210k-chart-v2'),'SolidGeoPerceptionCircularV2',data,sel);
-    geoB1000Chart(document.getElementById('percgeo210k-chart-geometry'),'Perception-geometry-mc-circular-v1',data,sel);
-    geoB1000Chart(document.getElementById('percgeo210k-chart-natural'),'NaturalPerceptionCircularV3',data,sel);
+    document.getElementById('percgeo210k-legend').innerHTML=[data.baseline,...sel].map(item=>`<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.label)}</span>`).join('');
+    geokg137kChart(document.getElementById('percgeo210k-chart-v2'),'SolidGeoPerceptionCircularV2',data,sel);
+    geokg137kChart(document.getElementById('percgeo210k-chart-geometry'),'Perception-geometry-mc-circular-v1',data,sel);
+    geokg137kChart(document.getElementById('percgeo210k-chart-natural'),'NaturalPerceptionCircularV3',data,sel);
   }catch(error){
     const lg=document.getElementById('percgeo210k-legend');if(lg)lg.textContent=`数据加载失败：${error.message}`;
   }
