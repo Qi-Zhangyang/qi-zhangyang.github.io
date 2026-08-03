@@ -1,9 +1,9 @@
 {
  "title": "PercGeo 210K 三臂 · 平面几何母题派生",
  "subtitle": "205,056 题（2,096 母题 ×100 IID 派生）· MC / Fill / Half 三臂 1000 步 · 边训边测 vs SN6V0710 baseline",
- "updated_at": "2026-08-02",
+ "updated_at": "2026-08-03",
  "verified_through": 1000,
- "verified_points": 30,
+ "verified_points": 32,
  "total_points": 30,
  "benchmarks": [
   {
@@ -297,14 +297,28 @@
    "label": "PercGeo ×5子集 · MC",
    "color": "#7c3aed",
    "dash": null,
-   "rows": []
+   "rows": [
+    {
+     "step": 100,
+     "SolidGeoPerceptionCircularV2": 0.3116751269035533,
+     "Perception-geometry-mc-circular-v1": 0.2966666666666667,
+     "NaturalPerceptionCircularV3": 0.25182863113897597
+    }
+   ]
   },
   {
    "key": "x5fill",
    "label": "PercGeo ×5子集 · Fill",
    "color": "#b02ad1",
    "dash": null,
-   "rows": []
+   "rows": [
+    {
+     "step": 100,
+     "SolidGeoPerceptionCircularV2": 0.2862944162436548,
+     "Perception-geometry-mc-circular-v1": 0.2919047619047619,
+     "NaturalPerceptionCircularV3": 0.23510971786833856
+    }
+   ]
   },
   {
    "key": "x5half",
