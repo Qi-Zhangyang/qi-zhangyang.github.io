@@ -3,7 +3,7 @@
  "subtitle": "205,056 题（2,096 母题 ×100 IID 派生）· MC / Fill / Half 三臂 1000 步 · 边训边测 vs SN6V0710 baseline",
  "updated_at": "2026-08-03",
  "verified_through": 1000,
- "verified_points": 40,
+ "verified_points": 44,
  "total_points": 30,
  "benchmarks": [
   {
@@ -327,6 +327,18 @@
      "SolidGeoPerceptionCircularV2": 0.3197969543147208,
      "Perception-geometry-mc-circular-v1": 0.2842857142857143,
      "NaturalPerceptionCircularV3": 0.3187042842215256
+    },
+    {
+     "step": 600,
+     "SolidGeoPerceptionCircularV2": 0.3101522842639594,
+     "Perception-geometry-mc-circular-v1": 0.3,
+     "NaturalPerceptionCircularV3": 0.3333333333333333
+    },
+    {
+     "step": 700,
+     "SolidGeoPerceptionCircularV2": 0.31218274111675126,
+     "Perception-geometry-mc-circular-v1": 0.30428571428571427,
+     "NaturalPerceptionCircularV3": 0.329153605015674
     }
    ]
   },
@@ -365,6 +377,18 @@
      "SolidGeoPerceptionCircularV2": 0.3253807106598985,
      "Perception-geometry-mc-circular-v1": 0.34095238095238095,
      "NaturalPerceptionCircularV3": 0.3207941483803553
+    },
+    {
+     "step": 600,
+     "SolidGeoPerceptionCircularV2": 0.332994923857868,
+     "Perception-geometry-mc-circular-v1": 0.3404761904761905,
+     "NaturalPerceptionCircularV3": 0.32497387669801464
+    },
+    {
+     "step": 700,
+     "SolidGeoPerceptionCircularV2": 0.3233502538071066,
+     "Perception-geometry-mc-circular-v1": 0.34714285714285714,
+     "NaturalPerceptionCircularV3": 0.322884012539185
     }
    ]
   },
