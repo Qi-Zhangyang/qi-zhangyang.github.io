@@ -3,7 +3,7 @@
  "subtitle": "205,056 题（2,096 母题 ×100 IID 派生）· MC / Fill / Half 三臂 1000 步 · 边训边测 vs SN6V0710 baseline",
  "updated_at": "2026-08-03",
  "verified_through": 1000,
- "verified_points": 32,
+ "verified_points": 34,
  "total_points": 30,
  "benchmarks": [
   {
@@ -303,6 +303,12 @@
      "SolidGeoPerceptionCircularV2": 0.3116751269035533,
      "Perception-geometry-mc-circular-v1": 0.2966666666666667,
      "NaturalPerceptionCircularV3": 0.25182863113897597
+    },
+    {
+     "step": 200,
+     "SolidGeoPerceptionCircularV2": 0.2969543147208122,
+     "Perception-geometry-mc-circular-v1": 0.2757142857142857,
+     "NaturalPerceptionCircularV3": 0.2998955067920585
     }
    ]
   },
@@ -317,6 +323,12 @@
      "SolidGeoPerceptionCircularV2": 0.2862944162436548,
      "Perception-geometry-mc-circular-v1": 0.2919047619047619,
      "NaturalPerceptionCircularV3": 0.23510971786833856
+    },
+    {
+     "step": 200,
+     "SolidGeoPerceptionCircularV2": 0.29644670050761424,
+     "Perception-geometry-mc-circular-v1": 0.29095238095238096,
+     "NaturalPerceptionCircularV3": 0.3019853709508882
     }
    ]
   },
