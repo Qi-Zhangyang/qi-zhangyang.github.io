@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-03（bmk1970 边训边测：step600 SolidGeoV2 0.640,0.68 epoch 已拿下 96% 涨幅,1-3.4 epoch 只磨 +0.02 —— 泄漏便宜且早期）",
+  "updated_at": "2026-08-03（bmk1970 收官：训练 Succeeded,10/10 eval。最终 SolidGeoV2 0.6548 = +30.0pp vs control(平均 +28.9pp);0.68 epoch 拿 96% 涨幅;GeoMC +0.3 中性,NatPercV3 −1.0 轻负 —— 泄漏标尺,不是能力)",
   "baseline_label": "0710 baseline (control)",
   "baseline_results": [
     {
@@ -142,6 +142,46 @@
         "SolidGeoPerceptionCircularV2": 0.6395939086294417,
         "Perception-geometry-mc-circular-v1": 0.3404761904761905,
         "NaturalPerceptionCircularV3": 0.3281086729362591
+      }
+    },
+    {
+      "experiment": "bmk1970",
+      "label": "BMK 真题 10% 臂",
+      "step": 700,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.6461928934010153,
+        "Perception-geometry-mc-circular-v1": 0.35,
+        "NaturalPerceptionCircularV3": 0.322884012539185
+      }
+    },
+    {
+      "experiment": "bmk1970",
+      "label": "BMK 真题 10% 臂",
+      "step": 800,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.6416243654822334,
+        "Perception-geometry-mc-circular-v1": 0.34285714285714286,
+        "NaturalPerceptionCircularV3": 0.3187042842215256
+      }
+    },
+    {
+      "experiment": "bmk1970",
+      "label": "BMK 真题 10% 臂",
+      "step": 900,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.6543147208121828,
+        "Perception-geometry-mc-circular-v1": 0.3519047619047619,
+        "NaturalPerceptionCircularV3": 0.329153605015674
+      }
+    },
+    {
+      "experiment": "bmk1970",
+      "label": "BMK 真题 10% 臂",
+      "step": 1000,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.6548223350253807,
+        "Perception-geometry-mc-circular-v1": 0.3442857142857143,
+        "NaturalPerceptionCircularV3": 0.3270637408568443
       }
     },
     {
