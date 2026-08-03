@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-03（bmk1970 真题 10% 臂·边训边测：step400 SolidGeoV2 已达 0.648 = +31pp vs control —— 泄漏标尺）",
+  "updated_at": "2026-08-03（bmk1970 边训边测：step600 SolidGeoV2 0.640,0.68 epoch 已拿下 96% 涨幅,1-3.4 epoch 只磨 +0.02 —— 泄漏便宜且早期）",
   "baseline_label": "0710 baseline (control)",
   "baseline_results": [
     {
@@ -132,6 +132,16 @@
         "SolidGeoPerceptionCircularV2": 0.6492385786802031,
         "Perception-geometry-mc-circular-v1": 0.33666666666666667,
         "NaturalPerceptionCircularV3": 0.3239289446185998
+      }
+    },
+    {
+      "experiment": "bmk1970",
+      "label": "BMK 真题 10% 臂",
+      "step": 600,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.6395939086294417,
+        "Perception-geometry-mc-circular-v1": 0.3404761904761905,
+        "NaturalPerceptionCircularV3": 0.3281086729362591
       }
     },
     {
