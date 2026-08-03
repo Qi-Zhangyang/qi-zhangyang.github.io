@@ -1,0 +1,252 @@
+{
+  "updated_at": "2026-08-03（bmk1970 真题 10% 臂·边训边测：step400 SolidGeoV2 已达 0.648 = +31pp vs control —— 泄漏标尺）",
+  "baseline_label": "0710 baseline (control)",
+  "baseline_results": [
+    {
+      "step": 100,
+      "scores": {
+        "Perception-geometry-mc-circular-v1": 0.24285714285714285,
+        "NaturalPerceptionCircularV3": 0.2413793103448276,
+        "SolidGeoPerceptionCircularV2": 0.2654822335025381
+      }
+    },
+    {
+      "step": 200,
+      "scores": {
+        "Perception-geometry-mc-circular-v1": 0.3080952380952381,
+        "NaturalPerceptionCircularV3": 0.2946708463949843,
+        "SolidGeoPerceptionCircularV2": 0.3015228426395939
+      }
+    },
+    {
+      "step": 300,
+      "scores": {
+        "Perception-geometry-mc-circular-v1": 0.3242857142857143,
+        "NaturalPerceptionCircularV3": 0.30825496342737724,
+        "SolidGeoPerceptionCircularV2": 0.3177664974619289
+      }
+    },
+    {
+      "step": 400,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.33401015228426395,
+        "Perception-geometry-mc-circular-v1": 0.3352380952380952,
+        "NaturalPerceptionCircularV3": 0.3218390804597701
+      }
+    },
+    {
+      "step": 500,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.34213197969543147,
+        "Perception-geometry-mc-circular-v1": 0.33,
+        "NaturalPerceptionCircularV3": 0.3270637408568443
+      }
+    },
+    {
+      "step": 600,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.34060913705583756,
+        "Perception-geometry-mc-circular-v1": 0.3352380952380952,
+        "NaturalPerceptionCircularV3": 0.32497387669801464
+      }
+    },
+    {
+      "step": 700,
+      "scores": {
+        "Perception-geometry-mc-circular-v1": 0.3404761904761905,
+        "NaturalPerceptionCircularV3": 0.33646812957157785,
+        "SolidGeoPerceptionCircularV2": 0.3416243654822335
+      }
+    },
+    {
+      "step": 800,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.34822335025380713,
+        "Perception-geometry-mc-circular-v1": 0.35,
+        "NaturalPerceptionCircularV3": 0.35214211076280044
+      }
+    },
+    {
+      "step": 900,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.3538071065989848,
+        "Perception-geometry-mc-circular-v1": 0.3514285714285714,
+        "NaturalPerceptionCircularV3": 0.3510971786833856
+      }
+    },
+    {
+      "step": 1000,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.3548223350253807,
+        "Perception-geometry-mc-circular-v1": 0.3495238095238095,
+        "NaturalPerceptionCircularV3": 0.3343782654127482
+      }
+    }
+  ],
+  "results": [
+    {
+      "experiment": "bmk1970",
+      "label": "BMK 真题 10% 臂",
+      "step": 100,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.4015228426395939,
+        "Perception-geometry-mc-circular-v1": 0.2719047619047619,
+        "NaturalPerceptionCircularV3": 0.2560083594566353
+      }
+    },
+    {
+      "experiment": "bmk1970",
+      "label": "BMK 真题 10% 臂",
+      "step": 200,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.6258883248730964,
+        "Perception-geometry-mc-circular-v1": 0.30714285714285716,
+        "NaturalPerceptionCircularV3": 0.28422152560083597
+      }
+    },
+    {
+      "experiment": "bmk1970",
+      "label": "BMK 真题 10% 臂",
+      "step": 300,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.6304568527918781,
+        "Perception-geometry-mc-circular-v1": 0.3219047619047619,
+        "NaturalPerceptionCircularV3": 0.2998955067920585
+      }
+    },
+    {
+      "experiment": "bmk1970",
+      "label": "BMK 真题 10% 臂",
+      "step": 400,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.6477157360406092,
+        "Perception-geometry-mc-circular-v1": 0.33,
+        "NaturalPerceptionCircularV3": 0.3051201671891327
+      }
+    },
+    {
+      "experiment": "bmk1970",
+      "label": "BMK 真题 10% 臂",
+      "step": 500,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.6492385786802031,
+        "Perception-geometry-mc-circular-v1": 0.33666666666666667,
+        "NaturalPerceptionCircularV3": 0.3239289446185998
+      }
+    },
+    {
+      "experiment": "cells42",
+      "label": "cells42 独立 spec",
+      "step": 100,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.300507614213198,
+        "Perception-geometry-mc-circular-v1": 0.2795238095238095,
+        "NaturalPerceptionCircularV3": 0.26541274817136884
+      }
+    },
+    {
+      "experiment": "cells42",
+      "label": "cells42 独立 spec",
+      "step": 200,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.3192893401015228,
+        "Perception-geometry-mc-circular-v1": 0.2980952380952381,
+        "NaturalPerceptionCircularV3": 0.30094043887147337
+      }
+    },
+    {
+      "experiment": "cells42",
+      "label": "cells42 独立 spec",
+      "step": 300,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.3350253807106599,
+        "Perception-geometry-mc-circular-v1": 0.30333333333333334,
+        "NaturalPerceptionCircularV3": 0.29780564263322884
+      }
+    },
+    {
+      "experiment": "cells42",
+      "label": "cells42 独立 spec",
+      "step": 400,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.34416243654822337,
+        "Perception-geometry-mc-circular-v1": 0.31238095238095237,
+        "NaturalPerceptionCircularV3": 0.3176593521421108
+      }
+    },
+    {
+      "experiment": "cells42",
+      "label": "cells42 独立 spec",
+      "step": 500,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.34517766497461927,
+        "Perception-geometry-mc-circular-v1": 0.3280952380952381,
+        "NaturalPerceptionCircularV3": 0.3113897596656217
+      }
+    },
+    {
+      "experiment": "cells42",
+      "label": "cells42 独立 spec",
+      "step": 600,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.3401015228426396,
+        "Perception-geometry-mc-circular-v1": 0.32761904761904764,
+        "NaturalPerceptionCircularV3": 0.3124346917450366
+      }
+    },
+    {
+      "experiment": "cells42",
+      "label": "cells42 独立 spec",
+      "step": 700,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.3522842639593909,
+        "Perception-geometry-mc-circular-v1": 0.33714285714285713,
+        "NaturalPerceptionCircularV3": 0.31347962382445144
+      }
+    },
+    {
+      "experiment": "cells42",
+      "label": "cells42 独立 spec",
+      "step": 800,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.35279187817258884,
+        "Perception-geometry-mc-circular-v1": 0.3404761904761905,
+        "NaturalPerceptionCircularV3": 0.32601880877742945
+      }
+    },
+    {
+      "experiment": "cells42",
+      "label": "cells42 独立 spec",
+      "step": 900,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.349238578680203,
+        "Perception-geometry-mc-circular-v1": 0.3461904761904762,
+        "NaturalPerceptionCircularV3": 0.3281086729362591
+      }
+    },
+    {
+      "experiment": "cells42",
+      "label": "cells42 独立 spec",
+      "step": 1000,
+      "scores": {
+        "SolidGeoPerceptionCircularV2": 0.3680203045685279,
+        "Perception-geometry-mc-circular-v1": 0.33666666666666667,
+        "NaturalPerceptionCircularV3": 0.3375130616509927
+      }
+    }
+  ],
+  "series": [
+    {
+      "key": "bmk1970",
+      "label": "BMK 真题 1970 ×10% 臂(定向拟合)",
+      "color": "#dc2626",
+      "dash": ""
+    },
+    {
+      "key": "cells42",
+      "label": "cells42 独立 spec(干净对照)",
+      "color": "#1769aa",
+      "dash": "8 5"
+    }
+  ]
+}
