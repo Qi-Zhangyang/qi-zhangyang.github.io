@@ -3,7 +3,7 @@
  "subtitle": "3,131 题（2,897 母题 ×5 交付，产率 21.6%）· MC / Fill / Half 三臂 1000 步 · 边训边测 vs SN6V0710 baseline · base=control@100 顶班",
  "updated_at": "2026-08-04",
  "verified_through": 500,
- "verified_points": 11,
+ "verified_points": 13,
  "total_points": 30,
  "benchmarks": [
   {
@@ -149,6 +149,12 @@
      "BabyVPerceptionCircularV1": 0.2519848118743528,
      "NaturalPerceptionCircularV3": 0.2884012539184953,
      "Perception-geometry-mc-circular-v1": 0.28523809523809524
+    },
+    {
+     "step": 400,
+     "BabyVPerceptionCircularV1": 0.25509147393855713,
+     "NaturalPerceptionCircularV3": 0.30094043887147337,
+     "Perception-geometry-mc-circular-v1": 0.2995238095238095
     }
    ]
   },
@@ -175,6 +181,12 @@
      "BabyVPerceptionCircularV1": 0.2143596824301001,
      "NaturalPerceptionCircularV3": 0.27586206896551724,
      "Perception-geometry-mc-circular-v1": 0.20857142857142857
+    },
+    {
+     "step": 400,
+     "BabyVPerceptionCircularV1": 0.20987228167069383,
+     "NaturalPerceptionCircularV3": 0.30303030303030304,
+     "Perception-geometry-mc-circular-v1": 0.21095238095238095
     }
    ]
   }
