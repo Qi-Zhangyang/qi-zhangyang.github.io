@@ -2,8 +2,8 @@
  "title": "BabyV 2897×5 三臂 · 母题派生",
  "subtitle": "3,131 题（2,897 母题 ×5 交付，产率 21.6%）· MC / Fill / Half 三臂 1000 步 · 边训边测 vs SN6V0710 baseline · base=control@100 顶班",
  "updated_at": "2026-08-04",
- "verified_through": 200,
- "verified_points": 2,
+ "verified_through": 300,
+ "verified_points": 5,
  "total_points": 30,
  "benchmarks": [
   {
@@ -24,7 +24,68 @@
   "label": "SN6V0710 control",
   "color": "#5f6368",
   "dash": "7 5",
-  "rows": []
+  "rows": [
+   {
+    "step": 100,
+    "BabyVPerceptionCircularV1": 0.23196410079392474,
+    "NaturalPerceptionCircularV3": 0.23824451410658307,
+    "Perception-geometry-mc-circular-v1": 0.24142857142857144
+   },
+   {
+    "step": 200,
+    "BabyVPerceptionCircularV1": 0.2647566448049707,
+    "NaturalPerceptionCircularV3": 0.2884012539184953,
+    "Perception-geometry-mc-circular-v1": 0.310952380952381
+   },
+   {
+    "step": 300,
+    "BabyVPerceptionCircularV1": 0.26337590610976874,
+    "NaturalPerceptionCircularV3": 0.30094043887147337,
+    "Perception-geometry-mc-circular-v1": 0.3219047619047619
+   },
+   {
+    "step": 400,
+    "BabyVPerceptionCircularV1": 0.2682084915429755,
+    "NaturalPerceptionCircularV3": 0.3270637408568443,
+    "Perception-geometry-mc-circular-v1": 0.3380952380952381
+   },
+   {
+    "step": 500,
+    "BabyVPerceptionCircularV1": 0.27511218501898516,
+    "NaturalPerceptionCircularV3": 0.3187042842215256,
+    "Perception-geometry-mc-circular-v1": 0.3323809523809524
+   },
+   {
+    "step": 600,
+    "BabyVPerceptionCircularV1": 0.2647566448049707,
+    "NaturalPerceptionCircularV3": 0.33124346917450365,
+    "Perception-geometry-mc-circular-v1": 0.3361904761904762
+   },
+   {
+    "step": 700,
+    "BabyVPerceptionCircularV1": 0.26268553676216777,
+    "NaturalPerceptionCircularV3": 0.33646812957157785,
+    "Perception-geometry-mc-circular-v1": 0.3395238095238095
+   },
+   {
+    "step": 800,
+    "BabyVPerceptionCircularV1": 0.2761477390403866,
+    "NaturalPerceptionCircularV3": 0.35841170323928945,
+    "Perception-geometry-mc-circular-v1": 0.35
+   },
+   {
+    "step": 900,
+    "BabyVPerceptionCircularV1": 0.2682084915429755,
+    "NaturalPerceptionCircularV3": 0.3437826541274817,
+    "Perception-geometry-mc-circular-v1": 0.35
+   },
+   {
+    "step": 1000,
+    "BabyVPerceptionCircularV1": 0.2720055229547808,
+    "NaturalPerceptionCircularV3": 0.3437826541274817,
+    "Perception-geometry-mc-circular-v1": 0.3476190476190476
+   }
+  ]
  },
  "series": [
   {
@@ -44,6 +105,12 @@
      "BabyVPerceptionCircularV1": 0.1977908180876769,
      "NaturalPerceptionCircularV3": 0.28213166144200624,
      "Perception-geometry-mc-circular-v1": 0.18619047619047618
+    },
+    {
+     "step": 300,
+     "BabyVPerceptionCircularV1": 0.21125302036589574,
+     "NaturalPerceptionCircularV3": 0.2716823406478579,
+     "Perception-geometry-mc-circular-v1": 0.22095238095238096
     }
    ]
   },
@@ -52,14 +119,28 @@
    "label": "BabyV ×5 · Fill",
    "color": "#f97316",
    "dash": null,
-   "rows": []
+   "rows": [
+    {
+     "step": 100,
+     "BabyVPerceptionCircularV1": 0.25612702795995856,
+     "NaturalPerceptionCircularV3": 0.2800417972831766,
+     "Perception-geometry-mc-circular-v1": 0.2866666666666667
+    }
+   ]
   },
   {
    "key": "half",
    "label": "BabyV ×5 · Half",
    "color": "#0f9f86",
    "dash": null,
-   "rows": []
+   "rows": [
+    {
+     "step": 100,
+     "BabyVPerceptionCircularV1": 0.2222989299275112,
+     "NaturalPerceptionCircularV3": 0.2612330198537095,
+     "Perception-geometry-mc-circular-v1": 0.22904761904761906
+    }
+   ]
   }
  ]
 }
