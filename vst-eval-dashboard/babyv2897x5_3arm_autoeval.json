@@ -2,8 +2,8 @@
  "title": "BabyV 2897×5 三臂 · 母题派生",
  "subtitle": "3,131 题（2,897 母题 ×5 交付，产率 21.6%）· MC / Fill / Half 三臂 1000 步 · 边训边测 vs SN6V0710 baseline · base=control@100 顶班",
  "updated_at": "2026-08-04",
- "verified_through": 600,
- "verified_points": 16,
+ "verified_through": 700,
+ "verified_points": 19,
  "total_points": 30,
  "benchmarks": [
   {
@@ -129,6 +129,12 @@
      "BabyVPerceptionCircularV1": 0.22920262340352088,
      "NaturalPerceptionCircularV3": 0.3103448275862069,
      "Perception-geometry-mc-circular-v1": 0.23809523809523808
+    },
+    {
+     "step": 700,
+     "BabyVPerceptionCircularV1": 0.22160856057991024,
+     "NaturalPerceptionCircularV3": 0.2946708463949843,
+     "Perception-geometry-mc-circular-v1": 0.2357142857142857
     }
    ]
   },
@@ -167,6 +173,12 @@
      "BabyVPerceptionCircularV1": 0.24784259578874698,
      "NaturalPerceptionCircularV3": 0.2998955067920585,
      "Perception-geometry-mc-circular-v1": 0.2995238095238095
+    },
+    {
+     "step": 600,
+     "BabyVPerceptionCircularV1": 0.2575077666551605,
+     "NaturalPerceptionCircularV3": 0.29780564263322884,
+     "Perception-geometry-mc-circular-v1": 0.3233333333333333
     }
    ]
   },
@@ -205,6 +217,12 @@
      "BabyVPerceptionCircularV1": 0.21125302036589574,
      "NaturalPerceptionCircularV3": 0.30407523510971785,
      "Perception-geometry-mc-circular-v1": 0.20666666666666667
+    },
+    {
+     "step": 600,
+     "BabyVPerceptionCircularV1": 0.22471522264411462,
+     "NaturalPerceptionCircularV3": 0.3103448275862069,
+     "Perception-geometry-mc-circular-v1": 0.22428571428571428
     }
    ]
   }
