@@ -1,0 +1,65 @@
+{
+ "title": "BabyV 2897×5 三臂 · 母题派生",
+ "subtitle": "3,131 题（2,897 母题 ×5 交付，产率 21.6%）· MC / Fill / Half 三臂 1000 步 · 边训边测 vs SN6V0710 baseline · base=control@100 顶班",
+ "updated_at": "2026-08-04",
+ "verified_through": 200,
+ "verified_points": 2,
+ "total_points": 30,
+ "benchmarks": [
+  {
+   "key": "BabyVPerceptionCircularV1",
+   "label": "BabyV（目标）"
+  },
+  {
+   "key": "NaturalPerceptionCircularV3",
+   "label": "NatPerc V3（同源泛化）"
+  },
+  {
+   "key": "Perception-geometry-mc-circular-v1",
+   "label": "PercGeo（跨域迁移）"
+  }
+ ],
+ "baseline": {
+  "key": "control",
+  "label": "SN6V0710 control",
+  "color": "#5f6368",
+  "dash": "7 5",
+  "rows": []
+ },
+ "series": [
+  {
+   "key": "mc",
+   "label": "BabyV ×5 · MC",
+   "color": "#2563eb",
+   "dash": null,
+   "rows": [
+    {
+     "step": 100,
+     "BabyVPerceptionCircularV1": 0.2167759751467035,
+     "NaturalPerceptionCircularV3": 0.2716823406478579,
+     "Perception-geometry-mc-circular-v1": 0.22047619047619046
+    },
+    {
+     "step": 200,
+     "BabyVPerceptionCircularV1": 0.1977908180876769,
+     "NaturalPerceptionCircularV3": 0.28213166144200624,
+     "Perception-geometry-mc-circular-v1": 0.18619047619047618
+    }
+   ]
+  },
+  {
+   "key": "fill",
+   "label": "BabyV ×5 · Fill",
+   "color": "#f97316",
+   "dash": null,
+   "rows": []
+  },
+  {
+   "key": "half",
+   "label": "BabyV ×5 · Half",
+   "color": "#0f9f86",
+   "dash": null,
+   "rows": []
+  }
+ ]
+}

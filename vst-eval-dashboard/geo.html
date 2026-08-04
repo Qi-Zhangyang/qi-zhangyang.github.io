@@ -171,6 +171,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <div class='tabs'>
     <button class='tab' data-tab='geokg197k'><span>Geo-KG 197k · 73K快照 + 184K全量</span><small>1970 BMK 母题 ×100 · MC/Fill/Half 三臂</small></button>
     <button class='tab' data-tab='percgeo210k'><span>PercGeo 210K · 2D平面几何三臂 + ×5子集</span><small>2096 BMK 母题 ×100 · MC/Fill/Half + ×5fill 验证臂</small></button>
+    <button class='tab' data-tab='babyv2897x5'><span>BabyV 2897×5 三臂</span><small>2897 BMK 母题 ×5 · MC/Fill/Half · base=control@100</small></button>
   </div>
 </div>
 <div class='step-caption'>附 · mengfan 外部 2D 数据验证（非主线番外）：223 万 NoOrig 冗余对照（与 baseline 同 QA、不同渲染）<span style='color:#b91c1c;font-weight:800'>—— 结论：新 baseline 上同样掉点，符合冗余对照预期</span></div>
@@ -492,6 +493,22 @@ H. (4,2)</div><div class='sample-qa'><b>A2：</b>答案：B. (-4,2)</div></div><
   <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='percgeo210k-chart-natural'></div></div>
 </div>
 </section>
+
+<section id='tab-babyv2897x5' class='pane'>
+<h2 class='section-title'>BabyV 2897×5 母题派生三臂 vs Baseline</h2>
+<div class='geokg-toolbar'>
+  <span class='geokg-mode'>3,131 题（2,897 母题 ×5，产率 21.6%）· 蓝=MC 橙=Fill 绿=Half · 灰虚线 = SN6V0710 baseline</span>
+  <span class='geokg-verified' id='babyv2897x5-verified'></span>
+</div>
+<div class='geo-note' id='babyv2897x5-error' hidden></div>
+<div class='geo-legend' id='babyv2897x5-legend'></div>
+<p class='geokg-caption' id='babyv2897x5-caption'>主榜 = BabyVPerceptionCircularV1（中）；NatPerc V3（左，同源泛化）与 PercGeo（右，跨域迁移）。base=control@100 顶班（原 SN6V0710 base 被 GC）。</p>
+<div class='geo-chart-grid'>
+  <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='babyv2897x5-chart-solid'></div></div>
+  <div class='snv6-chart'><h2>BabyVPerceptionCircularV1</h2><div id='babyv2897x5-chart-geometry'></div></div>
+  <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='babyv2897x5-chart-natural'></div></div>
+</div>
+</section>
 </main>
 <script>
 const geoB1000Catalog = {
@@ -773,6 +790,22 @@ async function renderPercgeo210k(){
     const lg=document.getElementById('percgeo210k-legend');if(lg)lg.textContent=`数据加载失败：${error.message}`;
   }
 }
+async function renderBabyv2897x5(){
+  try{
+    const response=await fetch('babyv2897x5_3arm_autoeval.json',{cache:'no-store'});
+    if(!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    const sel=data.series||[];
+    document.getElementById('babyv2897x5-legend').innerHTML=[data.baseline,...sel].map(item=>`<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.label)}</span>`).join('');
+    const vf=document.getElementById('babyv2897x5-verified');
+    if(vf){const lastStep=item=>Math.max(0,...(item.rows||[]).map(row=>Number(row.step)||0));vf.textContent='各臂最新：'+sel.map(item=>`${item.label.replace('BabyV ×5 · ','')} ${lastStep(item)||'待评'}`).join(' · ')+` · 更新 ${geoEsc(data.updated_at||'')}`;}
+    geokg137kChart(document.getElementById('babyv2897x5-chart-solid'),'NaturalPerceptionCircularV3',data,sel);
+    geokg137kChart(document.getElementById('babyv2897x5-chart-geometry'),'BabyVPerceptionCircularV1',data,sel);
+    geokg137kChart(document.getElementById('babyv2897x5-chart-natural'),'Perception-geometry-mc-circular-v1',data,sel);
+  }catch(error){
+    const lg=document.getElementById('babyv2897x5-legend');if(lg)lg.textContent=`数据加载失败：${error.message}`;
+  }
+}
 async function renderGeokg197k(){
   try{
     const response=await fetch('geokg197k_live.json',{cache:'no-store'});
@@ -1029,6 +1062,7 @@ renderGeoBmk1970();
 renderGeoCaption();
 renderGeokg197k();
 renderPercgeo210k();
+renderBabyv2897x5();
 renderGeokg137k();
 renderGeo3dR3P10();
 renderG3v4fmt();
