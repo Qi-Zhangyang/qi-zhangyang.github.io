@@ -171,7 +171,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <div class='tabs'>
     <button class='tab' data-tab='geokg197k'><span>Geo-KG 197k · 73K快照 + 184K全量</span><small>1970 BMK 母题 ×100 · MC/Fill/Half 三臂</small></button>
     <button class='tab' data-tab='percgeo210k'><span>PercGeo 210K · 2D平面几何三臂 + ×5子集</span><small>2096 BMK 母题 ×100 · MC/Fill/Half + ×5fill 验证臂</small></button>
-    <button class='tab' data-tab='babyv2897x5'><span>BabyV 2897×5 三臂</span><small>2897 BMK 母题 ×5 · MC/Fill/Half · base=control@100</small></button>
+    <button class='tab' data-tab='babyv2897x5'><span>BabyVision v1 2897×5 三臂</span><small>2897 BMK 母题 ×5 · MC/Fill/Half · v1 数据（坐标系 bug 版）· 已收官</small></button>
   </div>
 </div>
 <div class='step-caption'>附 · mengfan 外部 2D 数据验证（非主线番外）：223 万 NoOrig 冗余对照（与 baseline 同 QA、不同渲染）<span style='color:#b91c1c;font-weight:800'>—— 结论：新 baseline 上同样掉点，符合冗余对照预期</span></div>
@@ -495,10 +495,10 @@ H. (4,2)</div><div class='sample-qa'><b>A2：</b>答案：B. (-4,2)</div></div><
 </section>
 
 <section id='tab-babyv2897x5' class='pane'>
-<h2 class='section-title'>BabyV 2897×5 母题派生三臂 vs Baseline（已收官）</h2>
+<h2 class='section-title'>BabyVision v1 · 2897×5 母题派生三臂 vs Baseline（已收官）</h2>
 <div class='arm-info'><b>终版结论（08-05 收官，fill/half 按拍板提前停在 @650）：</b>①<b>格式效应 BabyV 域复验</b>：fill 25.5 > mc 23.0（+2.5pp），四线同向，平面几何只用 fill；②<b>小数据不涨点两域复现</b>：三臂全水下（对照 27.2）——与 PercGeo ×5（34.2 < 35.0）同构，唯一涨点的是 205K 全量（36.1 > 35.0），<b>分水岭在规模不在方向</b>；③half 臂本域偏弱（22.1，端点不齐 650 vs 1000，仅供参考）；④<b>续训无损实锤</b>：被抢后从 iter_600 恢复续训，r1@650=25.54 vs r3@650=25.44（Δ=0.1 噪声内）；⑤v2（3,266 题修正版，E3 复活）/v3（64K+多样性硬门）数据训练验取消——小数据不涨点已两域实锤，等上量方案。</div>
 <div class='geokg-toolbar'>
-  <span class='geokg-mode'>3,131 题（2,897 母题 ×5，产率 21.6%）· 蓝=MC 橙=Fill 绿=Half · 灰虚线 = SN6V0710 baseline</span>
+  <span class='geokg-mode'>BabyVision <b>v1</b> 数据：3,131 题（2,897 母题 ×5，产率 21.6%，坐标系 bug 致 E3 灭族；v2 修正版另见交付清单）· 蓝=MC 橙=Fill 绿=Half · 灰虚线 = SN6V0710 baseline</span>
   <span class='geokg-verified' id='babyv2897x5-verified'></span>
 </div>
 <div class='geo-note' id='babyv2897x5-error' hidden></div>
