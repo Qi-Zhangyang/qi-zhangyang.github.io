@@ -89,6 +89,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <span class='tabs-row-label'>PerceptionGeo NoOrig P10 🔬</span>
   <div class='tabs'>
     <button class='tab' data-tab='perceptiongeo-noorig-p10'><span>PerceptionGeo NoOrig P10 · 三榜</span><small>2D 平面几何感知（冗余对照）· 边训边测 vs 0710 baseline</small></button>
+    <button class='tab' data-tab='solidgeo20k-p10'><span>🔺 Solidgeo 20K P10 · 三榜</span><small>合成立体几何题（construct-then-render）· 终版 1000 步 vs 0710 baseline</small></button>
   </div>
 </div>
 <div class='step-caption plain'>对照组：原生 native MI 120K（9 题型混合）+ exact SN6V0710 baseline——<span style='color:#b91c1c;font-weight:800'>从 VST 中观测到的涨点：geometry-mc 35.10 → 36.14（s900 峰值 36.76），本页所有曲线以此为基准</span></div>
@@ -556,6 +557,23 @@ D. 大约 11484 像素</div>
   <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='pgnoorig-chart-natural'></div></div>
 </div>
 <p class='geo-table-note' id='pgnoorig-updated'></p>
+</section>
+
+<section id='tab-solidgeo20k-p10' class='pane'>
+<h2 class='section-title'>Solidgeo 20K P10 · 三榜</h2>
+<div class='geokg-toolbar'>
+  <span class='geokg-mode' id='sg20k-subtitle'>合成立体几何题（construct-then-render）· 边训边测 vs 0710 baseline</span>
+  <span class='geokg-verified' id='sg20k-verified'>已完成 1000 步</span>
+</div>
+<div class='geo-note' id='sg20k-error' hidden></div>
+<div class='geo-r3p10-note'>口径：臂 = 0710 baseline 90% + 10% <b>tools_solidgeo 合成题</b>（22 种题型 / 47 分支 / 20,910 题，construct-then-render 合成，verify 独立复算全过）；三榜（SolidGeoPerceptionCircularV2 / Perception-geometry-mc-circular-v1 / NaturalPerceptionCircularV3）每 100 步一测，对照 <b>同 step 的 0710 baseline (control)</b>；failed_ratio 全 0。结果：<b>SolidGeoV2 全程 10/10 个 checkpoint 领先（终值 +4.0pt、峰值 +7.8pt）</b>，geometry-mc 终值 +4.0pt，NaturalV3 无拖累——数据有效，可放量。展示站 http://10.102.16.99:8922/ ；m3 预览 prefix s3+m2://m2-intern-visual-input-data/qizhangyang/solidgeo-20k-preview/ 。</div>
+<div class='geo-legend' id='sg20k-legend'></div>
+<div class='snv6-chart-grid'>
+  <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV2</h2><div id='sg20k-chart-solid'></div></div>
+  <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='sg20k-chart-geometry'></div></div>
+  <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='sg20k-chart-natural'></div></div>
+</div>
+<p class='geo-table-note' id='sg20k-updated'></p>
 </section>
 
 
@@ -1287,6 +1305,33 @@ function renderPgNoorigView(data){
   geokg137kChart(document.getElementById('pgnoorig-chart-geometry'),'Perception-geometry-mc-circular-v1',data,visibleSeries);
   geokg137kChart(document.getElementById('pgnoorig-chart-natural'),'NaturalPerceptionCircularV3',data,visibleSeries);
 }
+function renderSolidgeo20kView(data){
+  const visibleSeries=data.series||[];
+  document.getElementById('sg20k-legend').innerHTML=[data.baseline,...visibleSeries].map(item=>{
+    const isBase=item.key==='control';
+    const extra=(!isBase&&item.n_questions)?` <span class="geo-r3p10-muted">(${item.n_questions.toLocaleString('en-US')} 题)</span>`:'';
+    return `<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(isBase?'0710 baseline (control)':item.label)}${extra}</span>`;
+  }).join('');
+  const sub=document.getElementById('sg20k-subtitle');if(sub&&data.subtitle)sub.textContent=data.subtitle;
+  const vf=document.getElementById('sg20k-verified');if(vf)vf.textContent='已真值核验到 step '+(data.verified_through||'—');
+  const up=document.getElementById('sg20k-updated');if(up)up.textContent=`更新时间：${geoEsc(data.updated_at||'')}`;
+  geokg137kChart(document.getElementById('sg20k-chart-solid'),'SolidGeoPerceptionCircularV2',data,visibleSeries);
+  geokg137kChart(document.getElementById('sg20k-chart-geometry'),'Perception-geometry-mc-circular-v1',data,visibleSeries);
+  geokg137kChart(document.getElementById('sg20k-chart-natural'),'NaturalPerceptionCircularV3',data,visibleSeries);
+}
+async function renderSolidgeo20k(){
+  const errorBox=document.getElementById('sg20k-error');
+  try{
+    const response=await fetch('solidgeo20k_p10_live.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    errorBox.hidden=true;
+    renderSolidgeo20kView(data);
+  }catch(error){
+    errorBox.hidden=false;
+    errorBox.innerHTML=`<b>Solidgeo 20K P10 数据加载失败。</b> ${geoEsc(error.message)}`;
+  }
+}
 async function renderPgNoorig(){
   const errorBox=document.getElementById('pgnoorig-error');
   try{
@@ -1375,6 +1420,7 @@ renderRpqa();
 renderGeo3dR3P10();
 renderG3v4fmt();
 renderPgNoorig();
+renderSolidgeo20k();
 activateDashboardTab(location.hash ? location.hash.slice(1) : 'current-video-v1');
 </script>
 </body></html>
