@@ -185,6 +185,25 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
     <button class='tab' data-tab='solidgeo20k-p10'><span>Solidgeo 20K · 合成出题管线</span><small>construct-then-render · 20,910 题 · 全程领先</small></button>
   </div>
 </div>
+<div class='step-caption'>路线五 · BabyV 母题派生干净数据（strict+loose+rescued 三分区，产率 98.5%）：fill 格式 10% 掺 0710 基线，v3 看图 ×2 vs ×3 text-plan 同配方对拍<span style='color:#b91c1c;font-weight:800'>—— 结论：A/B 打平（干净度 >> 出题范式）；终步 25.7/26.1 > v1 脏数据 25.5，但仍低于对照（稀释税 -1.1~-1.5pt）</span></div>
+<div class='tabs-row geokg-3arm'>
+  <span class='tabs-row-label'>路线五 · BabyV 干净数据双臂 🔬</span>
+  <div class='tabs'>
+    <button class='tab' data-tab='babyv2arm-p10'><span>BabyV 干净数据 · v3看图 vs ×3text-plan</span><small>4,080/5,962 题 fill · 1000 步三榜 · vs 对照</small></button>
+  </div>
+</div>
+
+<section id='tab-babyv2arm-p10' class='pane'>
+<h2 class='section-title'>BabyV 干净数据双臂 · v3 看图 ×2 vs ×3 text-plan（p10 · 1000 步 · 三榜）</h2>
+<div class='arm-info'><b>实验配置：</b>BabyV 2,897 母题派生（四轮管线爬坡至 98.5% 产率：64K 治截断 → 全门放宽带旗标 → 死题救援 92.2%），取推荐干净子集转 fill 格式，10% 掺 0710 基线——<b>A 臂 v3 看图 ×2（4,080 题）vs B 臂 ×3 text-plan（5,962 题）</b>同配方对拍，边训边测。<b>结论：</b>①A/B 打平收敛同一包络——text-plan 范式训练端无优势，<b>数据干净度 >> 出题范式</b>；②终步 BabyV 25.7/26.1，> v1 脏数据 fill 臂 25.5（干净数据增益 +0.4~0.6pt 真实但温和），仍低于对照 27.2——小数据稀释税收窄但未消除，涨目标榜需更大量级；③迁移榜两臂同步爬升但全程略低于对照爬升（终步 NatPerc 32.0/33.2 vs 34.4、PercGeo 32.4/32.6 vs 34.8）；④A 臂 step900 BabyV 27.2 为全场唯一一次摸平对照线（未守住）。<br><b>独立曲线页（5min 自刷）：</b><a href='https://qi-zhangyang.github.io/babyv-2arm-eval-curves/' target='_blank' rel='noopener'>qi-zhangyang.github.io/babyv-2arm-eval-curves</a>　<b>拒收案卷审计站（内网）：</b><a href='http://10.102.16.99:8901/' target='_blank' rel='noopener'>10.102.16.99:8901</a></div>
+<div class='geo-legend' id='babyv2arm-legend'></div>
+<div class='snv6-chart-grid'>
+  <div class='snv6-chart'><h2>BabyVPerceptionCircularV1（目标榜）</h2><div id='babyv2arm-chart-babyv'></div></div>
+  <div class='snv6-chart'><h2>NaturalPerceptionCircularV3（同源泛化）</h2><div id='babyv2arm-chart-natural'></div></div>
+  <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1（跨域迁移）</h2><div id='babyv2arm-chart-geometry'></div></div>
+</div>
+<div id='babyv2arm-error' hidden></div>
+</section>
 
 <section id='tab-geo3d-b1000' class='pane'>
 <h2 class='section-title'>Geo3D B1000 · 四个单变量对比 vs lijia-line 基线</h2>
@@ -979,6 +998,27 @@ async function renderSolidgeo20k(){
     errorBox.innerHTML=`<b>Solidgeo 20K P10 数据加载失败。</b> ${geoEsc(error.message)}`;
   }
 }
+function renderBabyv2armView(data){
+  const order=['v3img','x3text'];
+  const visibleSeries=order.map(key=>(data.series||[]).find(item=>item.key===key)).filter(Boolean);
+  document.getElementById('babyv2arm-legend').innerHTML=[data.baseline,...visibleSeries].map(item=>`<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(item.key==='control'?'Baseline · SN6V0710':item.label)}</span>`).join('');
+  geokg137kChart(document.getElementById('babyv2arm-chart-babyv'),'BabyVPerceptionCircularV1',data,visibleSeries);
+  geokg137kChart(document.getElementById('babyv2arm-chart-natural'),'NaturalPerceptionCircularV3',data,visibleSeries);
+  geokg137kChart(document.getElementById('babyv2arm-chart-geometry'),'Perception-geometry-mc-circular-v1',data,visibleSeries);
+}
+async function renderBabyv2arm(){
+  const errorBox=document.getElementById('babyv2arm-error');
+  try{
+    const response=await fetch('babyv2arm_2arm_autoeval.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    errorBox.hidden=true;
+    renderBabyv2armView(data);
+  }catch(error){
+    errorBox.hidden=false;
+    errorBox.innerHTML=`<b>BabyV 干净数据双臂数据加载失败。</b> ${geoEsc(error.message)}`;
+  }
+}
 async function renderPgNoorig(){
   const errorBox=document.getElementById('pgnoorig-error');
   try{
@@ -1068,6 +1108,7 @@ renderGeo3dR3P10();
 renderG3v4fmt();
 renderPgNoorig();
 renderSolidgeo20k();
+renderBabyv2arm();
 activateDashboardTab(location.hash ? location.hash.slice(1) : 'geo3d-r3-p10');
 window.addEventListener('hashchange',()=>activateDashboardTab(location.hash.slice(1)));
 </script>

@@ -1,0 +1,240 @@
+{
+ "title": "BabyV 干净数据双臂 · v3看图 vs ×3text-plan",
+ "subtitle": "strict+loose+rescued 三分区推荐集 fill 格式（v3 4,080 / ×3 5,962 题，产率 98.5%）· 10% 掺 0710 基线 1000 步 · 边训边测 vs SN6V0710 baseline",
+ "updated_at": "2026-08-08",
+ "verified_through": 1000,
+ "verified_points": 22,
+ "total_points": 20,
+ "benchmarks": [
+  {
+   "key": "BabyVPerceptionCircularV1",
+   "label": "BabyV（目标）"
+  },
+  {
+   "key": "NaturalPerceptionCircularV3",
+   "label": "NatPerc V3（同源泛化）"
+  },
+  {
+   "key": "Perception-geometry-mc-circular-v1",
+   "label": "PercGeo（跨域迁移）"
+  }
+ ],
+ "baseline": {
+  "key": "control",
+  "label": "SN6V0710 control",
+  "color": "#5f6368",
+  "dash": "7 5",
+  "rows": [
+   {
+    "step": 100,
+    "BabyVPerceptionCircularV1": 0.23196410079392474,
+    "NaturalPerceptionCircularV3": 0.23824451410658307,
+    "Perception-geometry-mc-circular-v1": 0.24142857142857144
+   },
+   {
+    "step": 200,
+    "BabyVPerceptionCircularV1": 0.2647566448049707,
+    "NaturalPerceptionCircularV3": 0.2884012539184953,
+    "Perception-geometry-mc-circular-v1": 0.310952380952381
+   },
+   {
+    "step": 300,
+    "BabyVPerceptionCircularV1": 0.26337590610976874,
+    "NaturalPerceptionCircularV3": 0.30094043887147337,
+    "Perception-geometry-mc-circular-v1": 0.3219047619047619
+   },
+   {
+    "step": 400,
+    "BabyVPerceptionCircularV1": 0.2682084915429755,
+    "NaturalPerceptionCircularV3": 0.3270637408568443,
+    "Perception-geometry-mc-circular-v1": 0.3380952380952381
+   },
+   {
+    "step": 500,
+    "BabyVPerceptionCircularV1": 0.27511218501898516,
+    "NaturalPerceptionCircularV3": 0.3187042842215256,
+    "Perception-geometry-mc-circular-v1": 0.3323809523809524
+   },
+   {
+    "step": 600,
+    "BabyVPerceptionCircularV1": 0.2647566448049707,
+    "NaturalPerceptionCircularV3": 0.33124346917450365,
+    "Perception-geometry-mc-circular-v1": 0.3361904761904762
+   },
+   {
+    "step": 700,
+    "BabyVPerceptionCircularV1": 0.26268553676216777,
+    "NaturalPerceptionCircularV3": 0.33646812957157785,
+    "Perception-geometry-mc-circular-v1": 0.3395238095238095
+   },
+   {
+    "step": 800,
+    "BabyVPerceptionCircularV1": 0.2761477390403866,
+    "NaturalPerceptionCircularV3": 0.35841170323928945,
+    "Perception-geometry-mc-circular-v1": 0.35
+   },
+   {
+    "step": 900,
+    "BabyVPerceptionCircularV1": 0.2682084915429755,
+    "NaturalPerceptionCircularV3": 0.3437826541274817,
+    "Perception-geometry-mc-circular-v1": 0.35
+   },
+   {
+    "step": 1000,
+    "BabyVPerceptionCircularV1": 0.2720055229547808,
+    "NaturalPerceptionCircularV3": 0.3437826541274817,
+    "Perception-geometry-mc-circular-v1": 0.3476190476190476
+   }
+  ]
+ },
+ "series": [
+  {
+   "key": "v3img",
+   "label": "BabyV 干净数据 · v3 看图 ×2",
+   "color": "#2563eb",
+   "dash": null,
+   "rows": [
+    {
+     "step": 100,
+     "BabyVPerceptionCircularV1": 0.24266482568173972,
+     "NaturalPerceptionCircularV3": 0.2476489028213166,
+     "Perception-geometry-mc-circular-v1": 0.27285714285714285
+    },
+    {
+     "step": 200,
+     "BabyVPerceptionCircularV1": 0.2599240593717639,
+     "NaturalPerceptionCircularV3": 0.30616509926854757,
+     "Perception-geometry-mc-circular-v1": 0.2714285714285714
+    },
+    {
+     "step": 300,
+     "BabyVPerceptionCircularV1": 0.2592336900241629,
+     "NaturalPerceptionCircularV3": 0.2988505747126437,
+     "Perception-geometry-mc-circular-v1": 0.29904761904761906
+    },
+    {
+     "step": 400,
+     "BabyVPerceptionCircularV1": 0.26682775284777355,
+     "NaturalPerceptionCircularV3": 0.30825496342737724,
+     "Perception-geometry-mc-circular-v1": 0.31285714285714283
+    },
+    {
+     "step": 500,
+     "BabyVPerceptionCircularV1": 0.26095961339316537,
+     "NaturalPerceptionCircularV3": 0.30825496342737724,
+     "Perception-geometry-mc-circular-v1": 0.32142857142857145
+    },
+    {
+     "step": 600,
+     "BabyVPerceptionCircularV1": 0.25612702795995856,
+     "NaturalPerceptionCircularV3": 0.3113897596656217,
+     "Perception-geometry-mc-circular-v1": 0.319047619047619
+    },
+    {
+     "step": 650,
+     "BabyVPerceptionCircularV1": 0.2592336900241629,
+     "NaturalPerceptionCircularV3": 0.30303030303030304,
+     "Perception-geometry-mc-circular-v1": 0.3242857142857143
+    },
+    {
+     "step": 700,
+     "BabyVPerceptionCircularV1": 0.2564722126337591,
+     "NaturalPerceptionCircularV3": 0.3155694879832811,
+     "Perception-geometry-mc-circular-v1": 0.31857142857142856
+    },
+    {
+     "step": 800,
+     "BabyVPerceptionCircularV1": 0.26061442871936485,
+     "NaturalPerceptionCircularV3": 0.3218390804597701,
+     "Perception-geometry-mc-circular-v1": 0.319047619047619
+    },
+    {
+     "step": 900,
+     "BabyVPerceptionCircularV1": 0.2720055229547808,
+     "NaturalPerceptionCircularV3": 0.33019853709508884,
+     "Perception-geometry-mc-circular-v1": 0.3314285714285714
+    },
+    {
+     "step": 1000,
+     "BabyVPerceptionCircularV1": 0.25681739730755954,
+     "NaturalPerceptionCircularV3": 0.31974921630094044,
+     "Perception-geometry-mc-circular-v1": 0.3238095238095238
+    }
+   ]
+  },
+  {
+   "key": "x3text",
+   "label": "BabyV 干净数据 · ×3 text-plan",
+   "color": "#dc2626",
+   "dash": null,
+   "rows": [
+    {
+     "step": 100,
+     "BabyVPerceptionCircularV1": 0.24818778046254747,
+     "NaturalPerceptionCircularV3": 0.2413793103448276,
+     "Perception-geometry-mc-circular-v1": 0.2704761904761905
+    },
+    {
+     "step": 200,
+     "BabyVPerceptionCircularV1": 0.25267518122195376,
+     "NaturalPerceptionCircularV3": 0.28631138975966564,
+     "Perception-geometry-mc-circular-v1": 0.2695238095238095
+    },
+    {
+     "step": 300,
+     "BabyVPerceptionCircularV1": 0.247152226441146,
+     "NaturalPerceptionCircularV3": 0.3019853709508882,
+     "Perception-geometry-mc-circular-v1": 0.29
+    },
+    {
+     "step": 400,
+     "BabyVPerceptionCircularV1": 0.26268553676216777,
+     "NaturalPerceptionCircularV3": 0.3072100313479624,
+     "Perception-geometry-mc-circular-v1": 0.31238095238095237
+    },
+    {
+     "step": 500,
+     "BabyVPerceptionCircularV1": 0.25785295132896097,
+     "NaturalPerceptionCircularV3": 0.3155694879832811,
+     "Perception-geometry-mc-circular-v1": 0.3157142857142857
+    },
+    {
+     "step": 600,
+     "BabyVPerceptionCircularV1": 0.2592336900241629,
+     "NaturalPerceptionCircularV3": 0.30825496342737724,
+     "Perception-geometry-mc-circular-v1": 0.3271428571428571
+    },
+    {
+     "step": 650,
+     "BabyVPerceptionCircularV1": 0.2537107352433552,
+     "NaturalPerceptionCircularV3": 0.3051201671891327,
+     "Perception-geometry-mc-circular-v1": 0.3161904761904762
+    },
+    {
+     "step": 700,
+     "BabyVPerceptionCircularV1": 0.25854332067656194,
+     "NaturalPerceptionCircularV3": 0.31347962382445144,
+     "Perception-geometry-mc-circular-v1": 0.32571428571428573
+    },
+    {
+     "step": 800,
+     "BabyVPerceptionCircularV1": 0.2592336900241629,
+     "NaturalPerceptionCircularV3": 0.3103448275862069,
+     "Perception-geometry-mc-circular-v1": 0.33
+    },
+    {
+     "step": 900,
+     "BabyVPerceptionCircularV1": 0.26061442871936485,
+     "NaturalPerceptionCircularV3": 0.3187042842215256,
+     "Perception-geometry-mc-circular-v1": 0.3238095238095238
+    },
+    {
+     "step": 1000,
+     "BabyVPerceptionCircularV1": 0.2613047980669658,
+     "NaturalPerceptionCircularV3": 0.3322884012539185,
+     "Perception-geometry-mc-circular-v1": 0.3261904761904762
+    }
+   ]
+  }
+ ]
+}
