@@ -183,7 +183,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <span class='tabs-row-label'>路线四 · tools_solidgeo 合成题 🔺</span>
   <div class='tabs'>
     <button class='tab' data-tab='solidgeo20k-p10'><span>Solidgeo 20K · 合成出题管线</span><small>construct-then-render · 20,910 题 · 全程领先</small></button>
-    <button class='tab' data-tab='solidgeo3arm-p10'><span>Solidgeo 三臂对拍 · 熵源消融</span><small>plain / 混款 / spec79k · 同配方 p10 · 三榜</small></button>
+    <button class='tab' data-tab='solidgeo3arm-p10'><span>Solidgeo × Geo-KG 熵源对拍 · 五臂</span><small>合成/LLM/母题派生 · 同配方 p10 · 三榜</small></button>
   </div>
 </div>
 <div class='step-caption'>路线五 · BabyV 母题派生干净数据（strict+loose+rescued 三分区，产率 98.5%）：fill 格式 10% 掺 0710 基线，v3 看图 ×2 vs ×3 text-plan 同配方对拍<span style='color:#b91c1c;font-weight:800'>—— 结论：A/B 打平（干净度 >> 出题范式）；终步 25.7/26.1 > v1 脏数据 25.5，但仍低于对照（稀释税 -1.1~-1.5pt）</span></div>
@@ -395,8 +395,8 @@ D. α 和 β</div><div class='sample-qa'><b>A6：</b>答案：B
 <p class='geo-table-note' id='sg20k-updated'></p>
 </section>
 <section id='tab-solidgeo3arm-p10' class='pane'>
-<h2 class='section-title'>Solidgeo 三臂对拍 · 熵源消融（plain / 混款 / spec79k）</h2>
-<div class='arm-info'><b>实验配置：</b>tools_solidgeo 合成管线三臂同配方对拍——<b>plain 20K</b>（20,910 题 · 单一课本款式）、<b>混款 20K</b>（同 20,910 题 · 多款式重渲）、<b>spec79k</b>（真实 spec 池出题 29,102 题 · 0-LLM · 但题型偏斜：计数题占 89%）。均 10% 掺 0710 baseline 训 1000 步，三榜边训边测，全部 Succeeded 且逐 checkpoint 真值核验。<br><b>结论（终值 vs 同步对照 control@1000）：</b><b>混款综合最优</b>——主榜 SolidGeoV2 与 plain 打平（均 <b>+4.0pt</b>），两副榜全胜：平面几何 <b>+6.0pt</b>（plain +4.1）、自然感知 <b>+3.2pt</b>（plain +0.9）；款式混合不损主榜、泛化/抗遗忘更好。<b>spec79k 三榜全落后</b>（V2 仅 +1.3pt）——主因是出题分布偏斜（计数 89%），熵源本身的价值需修正题型配比后重测。三臂主榜均在 step 200 即跳到 ~0.38 平台，数据本身收益（vs control 0.26→0.35 的自然上涨）远大于臂间差异。</div>
+<h2 class='section-title'>Solidgeo × Geo-KG 熵源对拍 · 五臂（plain / 混款 / spec79k / 137k / 197k）</h2>
+<div class='arm-info'><b>实验配置：</b>五臂同配方对拍（均 10% 掺 0710 baseline 训 1000 步，三榜边训边测同协议）。三类熵源——<b>0-LLM 合成</b>：plain 20K（20,910 题 · 单一课本款式）、混款 20K（同题多款式重渲）、spec79k（真实 spec 池 29,102 题 · 题型偏斜：89% 计数）；<b>LLM 出题</b>：Geo-KG 137K v2fix · MC 臂（113,475 题 · KG 1376 cell 驱动）；<b>母题派生</b>：Geo-KG 197K 全量 · MC 臂（184K 题 · 1970 道 SolidGeoV2 母题 ×100）。<br><b>结论（主榜 SolidGeoV2 终值，同步对照 control@1000 = 0.355）：</b>混款 / plain 并列最强（0.394，+4.0pt）＞ spec79k（0.368，+1.3pt；题型偏斜拖累）＞ <b>137k MC（0.333，−2.2pt，比不掺还差——LLM 出题 MC 格式是负资产，与 PercGeo ×5「全 MC 负资产」结论互证；137k 的正确打开方式是 Fill 格式 0.357）</b>。197k MC 表面最高（0.430）但<b>属定向拟合/泄漏口径</b>（对着 benchmark 母题造题），只能当泄漏标尺、不能当泛化证据。<b>干净熵源里：0-LLM 合成管线（plain/混款）显著最强。</b></div>
 <div class='geokg-toolbar'>
   <span class='geokg-verified' id='sg3arm-verified'>已完成 1000 步</span>
 </div>
