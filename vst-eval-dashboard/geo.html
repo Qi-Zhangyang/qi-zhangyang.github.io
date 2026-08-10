@@ -183,6 +183,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px
   <span class='tabs-row-label'>路线四 · tools_solidgeo 合成题 🔺</span>
   <div class='tabs'>
     <button class='tab' data-tab='solidgeo20k-p10'><span>Solidgeo 20K · 合成出题管线</span><small>construct-then-render · 20,910 题 · 全程领先</small></button>
+    <button class='tab' data-tab='solidgeo3arm-p10'><span>Solidgeo 三臂对拍 · 熵源消融</span><small>plain / 混款 / spec79k · 同配方 p10 · 三榜</small></button>
   </div>
 </div>
 <div class='step-caption'>路线五 · BabyV 母题派生干净数据（strict+loose+rescued 三分区，产率 98.5%）：fill 格式 10% 掺 0710 基线，v3 看图 ×2 vs ×3 text-plan 同配方对拍<span style='color:#b91c1c;font-weight:800'>—— 结论：A/B 打平（干净度 >> 出题范式）；终步 25.7/26.1 > v1 脏数据 25.5，但仍低于对照（稀释税 -1.1~-1.5pt）</span></div>
@@ -392,6 +393,21 @@ D. α 和 β</div><div class='sample-qa'><b>A6：</b>答案：B
   <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='sg20k-chart-natural'></div></div>
 </div>
 <p class='geo-table-note' id='sg20k-updated'></p>
+</section>
+<section id='tab-solidgeo3arm-p10' class='pane'>
+<h2 class='section-title'>Solidgeo 三臂对拍 · 熵源消融（plain / 混款 / spec79k）</h2>
+<div class='arm-info'><b>实验配置：</b>tools_solidgeo 合成管线三臂同配方对拍——<b>plain 20K</b>（20,910 题 · 单一课本款式）、<b>混款 20K</b>（同 20,910 题 · 多款式重渲）、<b>spec79k</b>（真实 spec 池出题 29,102 题 · 0-LLM · 但题型偏斜：计数题占 89%）。均 10% 掺 0710 baseline 训 1000 步，三榜边训边测，全部 Succeeded 且逐 checkpoint 真值核验。<br><b>结论（终值 vs 同步对照 control@1000）：</b><b>混款综合最优</b>——主榜 SolidGeoV2 与 plain 打平（均 <b>+4.0pt</b>），两副榜全胜：平面几何 <b>+6.0pt</b>（plain +4.1）、自然感知 <b>+3.2pt</b>（plain +0.9）；款式混合不损主榜、泛化/抗遗忘更好。<b>spec79k 三榜全落后</b>（V2 仅 +1.3pt）——主因是出题分布偏斜（计数 89%），熵源本身的价值需修正题型配比后重测。三臂主榜均在 step 200 即跳到 ~0.38 平台，数据本身收益（vs control 0.26→0.35 的自然上涨）远大于臂间差异。</div>
+<div class='geokg-toolbar'>
+  <span class='geokg-verified' id='sg3arm-verified'>已完成 1000 步</span>
+</div>
+<div class='geo-note' id='sg3arm-error' hidden></div>
+<div class='geo-legend' id='sg3arm-legend'></div>
+<div class='snv6-chart-grid'>
+  <div class='snv6-chart'><h2>SolidGeoPerceptionCircularV2</h2><div id='sg3arm-chart-solid'></div></div>
+  <div class='snv6-chart'><h2>Perception-geometry-mc-circular-v1</h2><div id='sg3arm-chart-geometry'></div></div>
+  <div class='snv6-chart'><h2>NaturalPerceptionCircularV3</h2><div id='sg3arm-chart-natural'></div></div>
+</div>
+<p class='geo-table-note' id='sg3arm-updated'></p>
 </section>
 <section id='tab-geo3d-r15' class='pane'>
 <h2 class='section-title'>Geo3D R14/R15 过渡轮 · 0710 首轮</h2>
@@ -1019,6 +1035,30 @@ async function renderBabyv2arm(){
     errorBox.innerHTML=`<b>BabyV 干净数据双臂数据加载失败。</b> ${geoEsc(error.message)}`;
   }
 }
+async function renderSg3arm(){
+  const errorBox=document.getElementById('sg3arm-error');
+  try{
+    const response=await fetch('solidgeo3arm_p10_live.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    errorBox.hidden=true;
+    const visibleSeries=data.series||[];
+    document.getElementById('sg3arm-legend').innerHTML=[data.baseline,...visibleSeries].map(item=>{
+      const isBase=item.key==='control';
+      const extra=(!isBase&&item.n_questions)?` <span class="geo-r3p10-muted">(${item.n_questions.toLocaleString('en-US')} 题)</span>`:'';
+      return `<span class="geo-legend-item"><i class="geo-swatch ${item.dash?'dashed':''}" style="background:${item.color};color:${item.color}"></i>${geoEsc(isBase?'0710 baseline (control)':item.label)}${extra}</span>`;
+    }).join('');
+    const sub=document.getElementById('sg3arm-subtitle');if(sub&&data.subtitle)sub.textContent=data.subtitle;
+    const vf=document.getElementById('sg3arm-verified');if(vf)vf.textContent='已真值核验到 step '+(data.verified_through||'—');
+    const up=document.getElementById('sg3arm-updated');if(up)up.textContent=`更新时间：${geoEsc(data.updated_at||'')}`;
+    geokg137kChart(document.getElementById('sg3arm-chart-solid'),'SolidGeoPerceptionCircularV2',data,visibleSeries);
+    geokg137kChart(document.getElementById('sg3arm-chart-geometry'),'Perception-geometry-mc-circular-v1',data,visibleSeries);
+    geokg137kChart(document.getElementById('sg3arm-chart-natural'),'NaturalPerceptionCircularV3',data,visibleSeries);
+  }catch(error){
+    errorBox.hidden=false;
+    errorBox.innerHTML=`<b>Solidgeo 三臂对拍数据加载失败。</b> ${geoEsc(error.message)}`;
+  }
+}
 async function renderPgNoorig(){
   const errorBox=document.getElementById('pgnoorig-error');
   try{
@@ -1109,6 +1149,7 @@ renderG3v4fmt();
 renderPgNoorig();
 renderSolidgeo20k();
 renderBabyv2arm();
+renderSg3arm();
 activateDashboardTab(location.hash ? location.hash.slice(1) : 'geo3d-r3-p10');
 window.addEventListener('hashchange',()=>activateDashboardTab(location.hash.slice(1)));
 </script>
