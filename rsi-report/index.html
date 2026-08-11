@@ -1,0 +1,1212 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Recursive Self-Improvement / AI 自进化研究调研报告：文献、技术谱系、研究问题与发文路线。">
+  <title>RSI 研究雷达 · 递归自我改进</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --page: #0d0d0d;
+      --surface: #1a1a19;
+      --surface-2: #22221f;
+      --surface-3: #2c2c2a;
+      --ink: #ffffff;
+      --ink-2: #c3c2b7;
+      --muted: #898781;
+      --line: rgba(255,255,255,.11);
+      --blue: #3987e5;
+      --orange: #d95926;
+      --aqua: #199e70;
+      --yellow: #c98500;
+      --violet: #9085e9;
+      --red: #e66767;
+      --good: #0ca30c;
+      --warning: #fab219;
+      --serious: #ec835a;
+      --critical: #d03b3b;
+      --radius: 8px;
+      --max: 1240px;
+      font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    [data-theme="light"] {
+      color-scheme: light;
+      --page: #f9f9f7;
+      --surface: #fcfcfb;
+      --surface-2: #f1f1ee;
+      --surface-3: #e8e8e3;
+      --ink: #0b0b0b;
+      --ink-2: #52514e;
+      --muted: #6e6d68;
+      --line: rgba(11,11,11,.12);
+      --blue: #2a78d6;
+      --orange: #eb6834;
+      --aqua: #1baf7a;
+      --yellow: #eda100;
+      --violet: #4a3aa7;
+      --red: #e34948;
+      --good: #006300;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--page); color: var(--ink); line-height: 1.65; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    button, input, select { font: inherit; }
+    button { cursor: pointer; }
+    .skip { position: fixed; left: 12px; top: -100px; z-index: 10; background: var(--ink); color: var(--page); padding: 8px 12px; border-radius: 8px; }
+    .skip:focus { top: 12px; }
+    .shell { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+    .topbar { position: sticky; top: 0; z-index: 5; backdrop-filter: blur(18px); background: color-mix(in srgb, var(--page) 88%, transparent); border-bottom: 1px solid var(--line); }
+    .topbar-inner { height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: 0; color: var(--ink); }
+    .brand-mark { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 10px; background: linear-gradient(135deg, var(--blue), var(--aqua)); color: white; font-size: 15px; }
+    .nav { display: flex; gap: 5px; overflow-x: auto; white-space: nowrap; }
+    .nav a { color: var(--ink-2); padding: 8px 10px; border-radius: 8px; font-size: 13px; }
+    .nav a:hover, .nav a:focus { color: var(--ink); background: var(--surface-2); text-decoration: none; }
+    .actions { display: flex; gap: 8px; }
+    .icon-btn, .pill-btn { border: 1px solid var(--line); background: var(--surface); color: var(--ink-2); border-radius: 10px; padding: 8px 11px; }
+    .icon-btn:hover, .pill-btn:hover { color: var(--ink); border-color: var(--blue); }
+    .hero { padding: 70px 0 42px; display: grid; grid-template-columns: 1.25fr .75fr; gap: 42px; align-items: end; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--aqua); font-size: 12px; font-weight: 800; letter-spacing: 0; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--aqua); }
+    h1 { font-size: clamp(38px, 6vw, 76px); line-height: .98; letter-spacing: 0; margin: 18px 0 22px; max-width: 780px; }
+    .hero h1 em { color: var(--blue); font-style: normal; }
+    .lede { color: var(--ink-2); font-size: 18px; max-width: 720px; margin: 0; }
+    .hero-note { border-left: 2px solid var(--orange); padding: 16px 0 16px 20px; color: var(--ink-2); }
+    .hero-note strong { display: block; color: var(--ink); margin-bottom: 6px; }
+    .updated { color: var(--muted); font-size: 12px; margin-top: 20px; }
+    .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 18px 0 62px; }
+    .kpi { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; min-height: 140px; }
+    .kpi-value { font-size: 32px; line-height: 1; font-weight: 800; letter-spacing: 0; color: var(--ink); }
+    .kpi-label { color: var(--ink-2); font-size: 13px; margin-top: 12px; }
+    .kpi-note { color: var(--muted); font-size: 11px; margin-top: 6px; }
+    .section { padding: 55px 0; border-top: 1px solid var(--line); }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 26px; }
+    .section-kicker { color: var(--blue); font-size: 12px; font-weight: 800; letter-spacing: 0; text-transform: uppercase; }
+    h2 { font-size: clamp(27px, 4vw, 44px); line-height: 1.1; letter-spacing: 0; margin: 7px 0 0; }
+    h3 { line-height: 1.2; letter-spacing: 0; margin: 0 0 9px; }
+    .section-intro { color: var(--ink-2); max-width: 690px; margin: 0; }
+    .callout { background: linear-gradient(135deg, color-mix(in srgb, var(--blue) 14%, var(--surface)), var(--surface)); border: 1px solid color-mix(in srgb, var(--blue) 40%, var(--line)); border-radius: var(--radius); padding: 22px; }
+    .callout p { margin: 0; color: var(--ink-2); }
+    .callout strong { color: var(--ink); }
+    .timeline { position: relative; display: grid; gap: 12px; margin-top: 30px; }
+    .timeline::before { content: ""; position: absolute; left: 104px; top: 12px; bottom: 12px; width: 1px; background: var(--line); }
+    .time-row { display: grid; grid-template-columns: 88px 1fr; gap: 32px; position: relative; }
+    .time-year { color: var(--muted); font-size: 13px; padding-top: 18px; text-align: right; font-variant-numeric: tabular-nums; }
+    .time-card { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px 16px 22px; }
+    .time-card::before { content: ""; position: absolute; left: -37px; top: 22px; width: 9px; height: 9px; border: 3px solid var(--page); border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 1px var(--blue); }
+    .time-card[data-color="aqua"]::before { background: var(--aqua); box-shadow: 0 0 0 1px var(--aqua); }
+    .time-card[data-color="orange"]::before { background: var(--orange); box-shadow: 0 0 0 1px var(--orange); }
+    .time-card[data-color="violet"]::before { background: var(--violet); box-shadow: 0 0 0 1px var(--violet); }
+    .time-card p { margin: 0; color: var(--ink-2); font-size: 14px; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 11px; }
+    .tag { display: inline-flex; padding: 3px 8px; border-radius: 999px; background: var(--surface-3); color: var(--ink-2); font-size: 11px; }
+    .tag.blue { color: var(--blue); }
+    .tag.aqua { color: var(--aqua); }
+    .tag.orange { color: var(--orange); }
+    .tag.violet { color: var(--violet); }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card { min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+    .card p { color: var(--ink-2); margin: 0 0 12px; font-size: 14px; }
+    .card small { color: var(--muted); }
+    .card-head { display: flex; justify-content: space-between; gap: 14px; align-items: start; margin-bottom: 15px; }
+    .card-index { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+    .status { display: inline-flex; gap: 6px; align-items: center; color: var(--warning); font-size: 11px; }
+    .status::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+    .status.solid { color: var(--good); }
+    .source-line { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 11px; font-size: 12px; }
+    .source-line a { color: var(--ink-2); }
+    .matrix-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+    table { border-collapse: collapse; width: 100%; min-width: 760px; font-size: 13px; }
+    .benchmark-table { min-width: 980px; }
+    .benchmark-table td:first-child { min-width: 190px; }
+    .benchmark-table td:nth-child(2) { min-width: 260px; }
+    .comparison-table { min-width: 900px; }
+    .visibility-table { min-width: 920px; }
+    .domain-table { min-width: 1180px; }
+    .subsection { margin-top: 38px; }
+    .subsection-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 15px; }
+    .subsection-head h3 { font-size: 23px; margin: 0; }
+    .subsection-head p { color: var(--ink-2); max-width: 700px; margin: 0; font-size: 14px; }
+    .loop-map { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 10px; align-items: stretch; margin-top: 16px; }
+    .loop-node { display: grid; align-content: center; min-height: 104px; padding: 16px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+    .loop-node strong { color: var(--ink); font-size: 14px; }
+    .loop-node span { color: var(--ink-2); font-size: 12px; margin-top: 5px; }
+    .loop-arrow { align-self: center; color: var(--muted); font-size: 20px; }
+    .phase-label { display: inline-flex; margin-bottom: 8px; color: var(--blue); font-size: 11px; font-weight: 800; text-transform: uppercase; }
+    .definition-list { display: grid; grid-template-columns: 180px 1fr; gap: 0; margin: 14px 0 0; border-top: 1px solid var(--line); }
+    .definition-list dt, .definition-list dd { margin: 0; padding: 13px 0; border-bottom: 1px solid var(--line); }
+    .definition-list dt { color: var(--ink); font-weight: 700; font-size: 13px; }
+    .definition-list dd { color: var(--ink-2); font-size: 13px; }
+    th, td { text-align: left; padding: 14px 15px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { background: var(--surface-2); color: var(--ink); font-size: 11px; text-transform: uppercase; letter-spacing: 0; }
+    tbody tr:last-child td { border-bottom: 0; }
+    td { color: var(--ink-2); }
+    td:first-child { color: var(--ink); font-weight: 700; min-width: 150px; }
+    .level { display: inline-flex; align-items: center; gap: 7px; color: var(--ink); font-weight: 700; }
+    .level-dot { width: 9px; height: 9px; border-radius: 3px; background: var(--blue); }
+    .level-dot.aqua { background: var(--aqua); }
+    .level-dot.orange { background: var(--orange); }
+    .level-dot.violet { background: var(--violet); }
+    .bar-chart { display: grid; gap: 16px; margin: 22px 0; }
+    .bar-row { display: grid; grid-template-columns: 175px 1fr 86px; align-items: center; gap: 12px; font-size: 13px; }
+    .bar-label { color: var(--ink-2); }
+    .bar-track { height: 11px; background: var(--surface-3); border-radius: 999px; overflow: hidden; }
+    .bar-fill { height: 100%; width: var(--value); background: var(--blue); border-radius: 999px; }
+    .bar-fill.orange { background: var(--orange); }
+    .bar-value { color: var(--ink); text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; }
+    .bar-caption { color: var(--muted); font-size: 12px; margin-top: 3px; }
+    .research-card { position: relative; overflow: hidden; }
+    .research-card::after { content: attr(data-code); position: absolute; right: -8px; top: -20px; color: color-mix(in srgb, var(--blue) 12%, transparent); font-size: 90px; font-weight: 900; letter-spacing: 0; pointer-events: none; }
+    .research-card > * { position: relative; z-index: 1; }
+    .research-card ol { padding-left: 20px; color: var(--ink-2); font-size: 14px; }
+    .research-card li { margin: 7px 0; }
+    .research-card .fit { display: inline-block; margin-top: 5px; color: var(--aqua); font-size: 12px; font-weight: 700; }
+    .proposal { display: grid; grid-template-columns: .8fr 1.2fr; gap: 16px; }
+    .proposal-title { background: linear-gradient(160deg, color-mix(in srgb, var(--aqua) 18%, var(--surface)), var(--surface)); }
+    .proposal-title .big { color: var(--aqua); font-size: 58px; font-weight: 900; line-height: 1; letter-spacing: 0; margin: 15px 0 26px; }
+    .checklist { display: grid; gap: 9px; padding: 0; margin: 0; list-style: none; }
+    .checklist li { position: relative; padding-left: 25px; color: var(--ink-2); font-size: 14px; }
+    .checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--aqua); font-weight: 800; }
+    .metric-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .metric { padding: 13px; background: var(--surface-2); border-radius: 8px; }
+    .metric strong { display: block; color: var(--ink); font-size: 14px; }
+    .metric span { display: block; color: var(--muted); font-size: 12px; margin-top: 4px; }
+    .layer-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--line); }
+    .layer-block { background: var(--surface); padding: 20px; min-height: 178px; }
+    .layer-block strong { display: block; color: var(--ink); margin: 8px 0 7px; }
+    .layer-block p { color: var(--ink-2); font-size: 13px; margin: 0; }
+    .equation { max-width: 100%; overflow-x: auto; margin: 14px 0 0; padding: 14px 16px; border-left: 3px solid var(--aqua); background: var(--surface-2); color: var(--ink); font: 600 13px/1.7 ui-monospace, SFMono-Regular, Consolas, monospace; white-space: nowrap; }
+    .verdict { margin-top: 12px; padding: 13px 15px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink-2); font-size: 13px; }
+    .verdict strong { color: var(--ink); }
+    .flow-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; margin-top: 16px; }
+    .flow-step { position: relative; min-height: 142px; padding: 17px; border-top: 3px solid var(--blue); background: var(--surface); }
+    .flow-step:nth-child(2) { border-color: var(--aqua); }
+    .flow-step:nth-child(3) { border-color: var(--orange); }
+    .flow-step:nth-child(4) { border-color: var(--violet); }
+    .flow-step strong { display: block; margin: 7px 0; font-size: 14px; }
+    .flow-step p { color: var(--ink-2); font-size: 12px; margin: 0; }
+    .flow-step span { color: var(--muted); font-size: 11px; }
+    .compact-list { margin: 8px 0 0; padding-left: 18px; color: var(--ink-2); font-size: 13px; }
+    .compact-list li { margin: 6px 0; }
+    .grid-2 > *, .grid-3 > *, .proposal > *, .flow-grid > *, .layer-strip > * { min-width: 0; }
+    .publication { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .pub { border-left: 3px solid var(--blue); padding: 4px 0 4px 16px; }
+    .pub:nth-child(2) { border-color: var(--aqua); }
+    .pub:nth-child(3) { border-color: var(--orange); }
+    .pub strong { display: block; color: var(--ink); margin-bottom: 5px; }
+    .pub p { margin: 0; color: var(--ink-2); font-size: 13px; }
+    .source-grid { display: grid; gap: 9px; }
+    .source-item { display: grid; grid-template-columns: 45px 1fr; gap: 13px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .source-id { color: var(--blue); font-weight: 800; font-size: 12px; }
+    .source-item strong { color: var(--ink); font-size: 14px; }
+    .source-item p { color: var(--ink-2); font-size: 12px; margin: 2px 0 0; }
+    .controls { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 19px; }
+    .search { flex: 1 1 240px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 10px; padding: 10px 13px; }
+    .filter { border: 1px solid var(--line); background: var(--surface); color: var(--ink-2); border-radius: 10px; padding: 10px 13px; }
+    .idea-summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 16px 0 22px; }
+    .idea-stat { padding: 15px 17px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .idea-stat strong { display: block; color: var(--ink); font-size: 23px; line-height: 1.1; }
+    .idea-stat span { display: block; color: var(--muted); font-size: 11px; margin-top: 6px; }
+    .idea-toolbar { position: sticky; top: 72px; z-index: 4; display: flex; flex-wrap: wrap; gap: 8px; padding: 12px; margin: 18px 0; border: 1px solid var(--line); border-radius: var(--radius); background: color-mix(in srgb, var(--page) 92%, transparent); backdrop-filter: blur(15px); }
+    .idea-toolbar .search { min-width: 250px; }
+    .idea-toolbar button { border: 1px solid var(--line); background: var(--surface-2); color: var(--ink-2); border-radius: 9px; padding: 9px 12px; }
+    .idea-count { display: flex; align-items: center; margin-left: auto; color: var(--ink-2); font-size: 12px; font-variant-numeric: tabular-nums; }
+    .idea-cluster { margin-top: 30px; scroll-margin-top: 150px; }
+    .idea-cluster-head { display: flex; justify-content: space-between; gap: 18px; align-items: end; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+    .idea-cluster-head h3 { margin: 0; font-size: 22px; }
+    .idea-cluster-head p { max-width: 690px; margin: 0; color: var(--muted); font-size: 12px; }
+    .idea-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+    details.idea-card { min-width: 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); overflow: hidden; }
+    details.idea-card[data-priority="A"] { border-left: 3px solid var(--aqua); }
+    details.idea-card[data-priority="B"] { border-left: 3px solid var(--blue); }
+    details.idea-card[data-priority="C"] { border-left: 3px solid var(--violet); }
+    details.idea-card[data-priority="D"] { border-left: 3px solid var(--orange); }
+    details.idea-card summary { display: grid; grid-template-columns: auto 1fr auto; gap: 11px; align-items: start; padding: 16px; cursor: pointer; list-style: none; }
+    details.idea-card summary::-webkit-details-marker { display: none; }
+    details.idea-card summary::after { content: "+"; color: var(--muted); font-size: 19px; line-height: 1; }
+    details.idea-card[open] summary::after { content: "−"; }
+    .idea-id { color: var(--blue); font: 800 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .idea-title { display: block; color: var(--ink); font-weight: 750; line-height: 1.3; }
+    .idea-question { display: block; color: var(--ink-2); font-size: 12px; margin-top: 5px; }
+    .idea-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 9px; }
+    .idea-chip { padding: 2px 7px; border-radius: 999px; background: var(--surface-3); color: var(--muted); font-size: 10px; }
+    .idea-body { display: grid; gap: 11px; padding: 0 16px 17px 50px; border-top: 1px solid var(--line); }
+    .idea-body p { margin: 0; color: var(--ink-2); font-size: 12px; }
+    .idea-body p:first-child { padding-top: 14px; }
+    .idea-body strong { color: var(--ink); }
+    .idea-gate { padding: 9px 11px; border-left: 2px solid var(--orange); background: var(--surface-2); }
+    .idea-legend { color: var(--muted); font-size: 12px; }
+    .hidden { display: none !important; }
+    footer { padding: 35px 0 70px; color: var(--muted); font-size: 12px; }
+    .footer-line { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--line); padding-top: 18px; }
+    kbd { border: 1px solid var(--line); background: var(--surface-2); border-radius: 5px; padding: 1px 5px; font-size: 11px; }
+    @media (max-width: 900px) {
+      .hero, .proposal { grid-template-columns: 1fr; }
+      .kpis, .grid-3, .publication, .flow-grid, .idea-summary-grid, .idea-list { grid-template-columns: repeat(2, 1fr); }
+      .layer-strip { grid-template-columns: 1fr; }
+      .nav { display: none; }
+    }
+    @media (max-width: 620px) {
+      .shell { width: min(calc(100% - 28px), var(--max)); }
+      .hero { padding-top: 45px; }
+      .kpis, .grid-2, .grid-3, .publication, .metric-list, .flow-grid, .idea-summary-grid, .idea-list { grid-template-columns: 1fr; }
+      .section { padding: 38px 0; }
+      .section-head { display: block; }
+      .timeline::before { left: 8px; }
+      .time-row { grid-template-columns: 1fr; gap: 5px; padding-left: 28px; }
+      .time-year { text-align: left; padding-top: 0; }
+      .time-card::before { left: -26px; top: 18px; }
+      .bar-row { grid-template-columns: 1fr; gap: 4px; }
+      .bar-value { text-align: left; }
+      .actions .pill-btn { display: none; }
+      .subsection-head { display: block; }
+      .subsection-head p { margin-top: 8px; }
+      .loop-map { grid-template-columns: 1fr; }
+      .loop-arrow { transform: rotate(90deg); justify-self: center; line-height: 1; }
+      .definition-list { grid-template-columns: 1fr; }
+      .definition-list dt { padding-bottom: 3px; border-bottom: 0; }
+      .definition-list dd { padding-top: 0; }
+      .idea-toolbar { position: static; }
+      .idea-count { width: 100%; margin-left: 0; }
+      .idea-cluster-head { display: block; }
+      .idea-cluster-head p { margin-top: 6px; }
+      .idea-body { padding-left: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+    @media print {
+      :root, [data-theme="light"] {
+        --page: #ffffff;
+        --surface: #ffffff;
+        --surface-2: #f2f2ef;
+        --surface-3: #e8e8e4;
+        --ink: #000000;
+        --ink-2: #333333;
+        --muted: #555555;
+        --line: rgba(0,0,0,.18);
+        --blue: #145fae;
+        --orange: #9b3c18;
+        --aqua: #087651;
+        --violet: #4a3aa7;
+      }
+      .topbar, .controls, .actions, .idea-toolbar { display: none; }
+      .section { break-inside: auto; }
+      .card, .time-card, .source-item { break-inside: avoid; }
+      body { background: white; color: black; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">跳到主要内容</a>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#top"><span class="brand-mark">↻</span><span>RSI 研究雷达</span></a>
+      <nav class="nav" aria-label="页面导航">
+        <a href="#layers">三层</a><a href="#ideas">选题</a><a href="#map">地图</a><a href="#benchmarks">基准</a><a href="#papers">文献</a><a href="#sources">来源</a>
+      </nav>
+      <div class="actions"><button class="pill-btn" id="printBtn" type="button">打印 / 导出 PDF</button><button class="icon-btn" id="themeBtn" type="button" aria-label="切换浅色与深色主题">☼</button></div>
+    </div>
+  </header>
+  <main id="main">
+    <div class="shell" id="top">
+      <section class="hero" aria-labelledby="title">
+        <div>
+          <div class="eyebrow">研究简报 · 2026.08</div>
+          <h1 id="title">AI 如何<br><em>改进自己</em>？</h1>
+          <p class="lede">围绕 Recursive Self-Improvement（RSI，递归自我改进）的技术谱系、最新文献、可验证研究问题与发文路线。这里的核心判断是：<strong>真正可做的科研，不是宣称“智能爆炸”，而是把“改进”拆成可审计、可复现、能迁移的闭环。</strong></p>
+          <p class="updated">研究截点：2026 年 8 月 9 日 · 中文研究导航版 · 结论按证据强度分层</p>
+        </div>
+        <aside class="hero-note" aria-label="核心结论">
+          <strong>一句话结论</strong>
+          <span>RSI 目前最有证据的形态是“受约束的自进化”：系统改写代码、提示词、记忆、数据或评估器，并在外部任务上验证增益；开放式、自动设计下一代 AI 的证据仍不足。</span>
+        </aside>
+      </section>
+      <section class="kpis" aria-label="研究快照">
+        <div class="kpi"><div class="kpi-value">3 层</div><div class="kpi-label">内容 / 组成 / 拓扑</div><div class="kpi-note">被称作 RSI 的工作绝大多数只动了第 1 层</div></div>
+        <div class="kpi"><div class="kpi-value">17</div><div class="kpi-label">已占据第 2、3 层的工作</div><div class="kpi-note">其中 10 篇 harness 自演化、7 篇拓扑自演化，多数发表于 2026 年 3–8 月</div></div>
+        <div class="kpi"><div class="kpi-value">20→50%</div><div class="kpi-label">DGM 的 SWE-bench 报告结果</div><div class="kpi-note">摘要口径；需要注意成本、方差与迁移性</div></div>
+        <div class="kpi"><div class="kpi-value">33 / 33</div><div class="kpi-label">引用核验结果：全部为真</div><div class="kpi-note">arXiv API 逐条核对，0 条虚构；另检索 563 篇候选，三波定向追踪</div></div>
+      </section>
+
+      <section class="section" id="thesis" aria-labelledby="thesis-title">
+        <div class="section-head"><div><div class="section-kicker">01 / 核心观点</div><h2 id="thesis-title">先把“自我改进”定义清楚</h2></div></div>
+        <div class="callout"><p><strong>RSI 不是单一算法，也不是“模型多想几遍”。</strong>本文把它定义为：一个 AI 系统在多轮运行中，利用自身或外部反馈，更新其可影响后续性能的组件，并在相对独立的任务/环境上验证改进。更新对象可以是输出策略，也可以是记忆、工具、代码、权重、数据、评估器，乃至选择研究问题的流程。</p></div>
+        <div class="grid-3" style="margin-top:16px">
+          <article class="card"><h3>不算 RSI 的情况</h3><p>一次性自我反思（self-reflection）、固定提示链（prompt chain）、只在同一道题上重采样、没有跨任务或跨轮次积累的“看起来更聪明”。</p><span class="status">需谨慎命名</span></article>
+          <article class="card"><h3>最低证据标准</h3><p>改进前后要有冻结的外部测试集、明确的更新对象、完整轨迹、成本与失败统计，并排除评估器泄漏（evaluator leakage）和基准过拟合（benchmark overfitting）。</p><span class="status solid">可复现证据</span></article>
+          <article class="card"><h3>最值得研究的缺口</h3><p>如何让评估器（evaluator）不被智能体（agent）反向优化？如何证明能力迁移，而不是只学会“迎合评估器”？</p><span class="status">开放问题</span></article>
+        </div>
+      </section>
+
+      <section class="section" id="layers" aria-labelledby="layers-title">
+        <div class="section-head"><div><div class="section-kicker">调研核心 · 2026.08.11 新增</div><h2 id="layers-title">内容、组成、拓扑：<br>现有工作卡在哪一层</h2></div><p class="section-intro">把"框架会变化"拆成三层，才能说清楚谁做过什么。绝大多数被称作 RSI 的工作只动了第一层；第二、三层各只被做了一半，而且都不是由系统自己驱动的。</p></div>
+
+        <div class="layer-strip">
+          <div class="layer-block"><span class="phase-label">第 1 层 · Content</span><strong>内容演化</strong><p>组件里的代码、提示词、权重变了，但<strong>有哪些组件、怎么连</strong>不变。STOP、Gödel Agent、DGM、HGM 全在这层。</p></div>
+          <div class="layer-block"><span class="phase-label">第 2 层 · Composition</span><strong>组成演化</strong><p>系统由哪些组件构成、每个组件允不允许被改。AgentSquare 做了一半——模块可换，但"就是这四类"是人定的。</p></div>
+          <div class="layer-block"><span class="phase-label">第 3 层 · Topology</span><strong>拓扑演化</strong><p>组件之间怎么连、执行顺序、谁控制谁。AFlow 做了一半——图结构可搜，但算子表是人给的。</p></div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>可修改边界表：每篇论文到底把什么写死了</h3><p>"固定了什么"比"做了什么"更重要——它直接决定这篇工作答不了哪个问题，也就是你的机会所在。</p></div>
+          <div class="matrix-wrap">
+            <table class="benchmark-table"><caption class="hidden">代表工作的可修改边界对照</caption><thead><tr><th>工作</th><th>允许改</th><th>写死不许改</th><th>落在哪一层</th></tr></thead><tbody>
+              <tr><td>STOP<br><small>arXiv:2310.02304</small></td><td>improver 程序的代码，<strong>包括它自己</strong></td><td>模型权重、元效用函数、"把改进器喂给自己"的外层循环、任务分布；改进器<strong>永远是一个函数</strong>，签名不变</td><td><span class="level"><span class="level-dot"></span>1（改的是 U 本身）</span></td></tr>
+              <tr><td>Gödel Agent<br><small>ACL 2025</small></td><td>运行时逻辑，含"负责改写"的那段</td><td>模型、环境、目标；<strong>只有一个 agent，没有群体</strong>，改坏了回不去</td><td><span class="level"><span class="level-dot"></span>1（单线自我重写）</span></td></tr>
+              <tr><td>DGM<br><small>arXiv:2505.22954</small></td><td>agent 自己的 Python 代码库（工具、流程、提示词）</td><td><strong>档案结构、父代选择规则、接受规则、benchmark、模型、整个外层演化循环</strong>——研究者写死，agent 碰不到</td><td><span class="level"><span class="level-dot"></span>1 + 群体</span></td></tr>
+              <tr><td>HGM<br><small>arXiv:2510.21614</small></td><td>同 DGM</td><td>同 DGM。CMP 是<strong>研究者提出的</strong>新选择规则，不是系统自己发现的</td><td><span class="level"><span class="level-dot"></span>1（把 Q 变成研究对象）</span></td></tr>
+              <tr><td>ADAS<br><small>arXiv:2408.08435</small></td><td>被设计出来的 agent 的代码，可写任意 workflow</td><td><strong>元 agent 本身永不改变</strong>（固定模型 + 固定提示词）、搜索循环、档案、产出物必须塞进固定的 <code>forward()</code> 接口</td><td><span class="level"><span class="level-dot"></span>1，产出物有结构自由</span></td></tr>
+              <tr><td>AFlow<br><small>arXiv:2410.10762</small></td><td><strong>workflow 的图结构</strong>：节点、边、控制流</td><td><strong>算子集合是人预先定义的</strong>、MCTS 搜索算法、优化目标、节点接口</td><td><span class="level"><span class="level-dot orange"></span>3 的一半</span></td></tr>
+              <tr><td>AgentSquare<br><small>arXiv:2410.06153</small></td><td>规划 / 推理 / 工具 / 记忆<strong>四类模块的选择与重组</strong></td><td><strong>"就是这四类"这个划分本身</strong>、模块间接口、搜索算法、性能预测器</td><td><span class="level"><span class="level-dot orange"></span>2 的一半</span></td></tr>
+            </tbody></table>
+          </div>
+          <p class="updated">证据等级提示：本表来自模型知识截点内的记忆，<strong>每一行都需回原文核验</strong>，其中 AFlow 的算子集合是否真的固定、AgentSquare 的四类划分是否真的写死，是整个 gap 陈述的地基，必须优先确认。</p>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>因此，它们各自答不了什么</h3><p>这六段可以直接改写成 related work——每段的最后一句就是你和它的分界线。</p></div>
+          <div class="grid-3">
+            <article class="card"><div class="card-head"><div><span class="tag blue">第 1 层</span><h3 style="margin-top:10px">STOP</h3></div></div><p>手写一个改进器函数，然后<strong>把它喂给它自己</strong>。模型冻结，只有脚手架代码在变；模型自己摸索出了 beam search、遗传算法、模拟退火。论文里还记录了改进器试图关掉沙箱标志位。</p><div class="verdict"><strong>答不了：</strong>整个系统就是一个函数，没有"由哪些部件组成"的概念，所以"该有哪些组件"这个问题在它的设定里无法提出。</div></article>
+            <article class="card"><div class="card-head"><div><span class="tag blue">第 1 层</span><h3 style="margin-top:10px">Gödel Agent</h3></div></div><p>运行时读自己的代码、改写自己的逻辑，包括改写负责改写的那段。给高层目标，没有预设的改进套路。</p><div class="verdict"><strong>答不了：</strong>没有档案就没有选择，没有选择就无法研究"什么样的改动值得保留"。和 STOP 一样是单体，没有组件划分。</div></article>
+            <article class="card"><div class="card-head"><div><span class="tag blue">第 1 层</span><h3 style="margin-top:10px">DGM</h3></div></div><p>编程 agent 改自己的代码，每一版都进档案，下一轮从档案里挑父代分叉而非只从最新版往下走。80 轮，SWE-bench 20.0→50.0%。</p><div class="verdict"><strong>答不了：</strong>证明了 agent 能改自己的代码并越改越好，但<strong>演化机制本身不在演化空间里</strong>。"谁决定该有哪些部件、这个决定权能否传给后代"没有位置可放。</div></article>
+            <article class="card"><div class="card-head"><div><span class="tag blue">第 1 层</span><h3 style="margin-top:10px">ADAS / Meta Agent Search</h3></div></div><p>一个元 agent 反复用代码编写新 agent，存进不断增长的档案，并以档案为上下文启发下一次设计。产出的 agent 能跨领域跨模型迁移。</p><div class="verdict"><strong>答不了：</strong>"U₀ 永远是 U₀"的最纯粹形态。能造出结构任意的 agent，但<strong>造它的那个东西从不进化</strong>——这恰好是 MAC 的多代版本。</div></article>
+            <article class="card"><div class="card-head"><div><span class="tag orange">最近的邻居</span><h3 style="margin-top:10px">AFlow</h3></div></div><p>把 workflow 表示成图：节点是调用 LLM 的算子，边是控制流，用 MCTS 在图空间里搜，靠执行反馈和树结构经验指导。</p><div class="verdict"><strong>答不了：</strong>拓扑确实在变，但是在<strong>一张人给的词汇表</strong>里排列组合，而且是<strong>外部搜索器</strong>在排。系统发明不出新算子，也不会把"怎么搜"传给后代。</div></article>
+            <article class="card"><div class="card-head"><div><span class="tag orange">最近的邻居</span><h3 style="margin-top:10px">AgentSquare</h3></div></div><p>把设计空间模块化成规划、推理、工具、记忆四类，在其上做进化与重组，另配性能预测器剪枝。</p><div class="verdict"><strong>答不了：</strong>组成确实在变，但<strong>角色词汇表是人定的、且恒为四个</strong>。系统不能说"我觉得该多一个诊断器"，也不能说"记忆和推理应该合并"。</div></article>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top:26px;border-color:color-mix(in srgb, var(--red) 45%, var(--line));background:linear-gradient(135deg, color-mix(in srgb, var(--red) 10%, var(--surface)), var(--surface))"><p><strong style="color:var(--red)">⚠ 2026-08-11 更新：原 gap 陈述已作废。</strong><br><br>原文写的是"没有工作让系统自己决定应该有哪些组件、它们怎么连，并把这个决定权传递给后代"。<strong>补充检索（563 篇）证明这句话不成立</strong>——2026 年 3–8 月出现了至少 17 篇工作占据这两层，见下一节。<br><br><strong>修正后仍然成立的主张：</strong>已有工作各自让某个部件可演化并报告性能提升，但<strong>没有一篇做过角色级的因果干预</strong>——哪些组件必须可演化、哪些只是锦上添花、哪些反而有害。能力 <code>c</code> 与可演化性 <code>μ</code> 的分离测量仍是空白。</p></div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>补充检索结果：空白已被填掉大半</h3><p>2026-08-11 执行，共检索 563 篇候选（15 组主题词 + 3 波定向追踪），并对全部 33 条既有引用做了 arXiv API 核验。<strong>结论：0 条虚构引用，但原 gap 陈述被推翻。</strong></p></div>
+
+          <div class="matrix-wrap">
+            <table class="benchmark-table"><caption class="hidden">2026 年 harness 自演化工作一览</caption><thead><tr><th>Harness / 框架自演化（10 篇）</th><th>日期</th><th>做了什么</th></tr></thead><tbody>
+              <tr><td>Meta-Harness<br><small>arXiv:2603.28052</small></td><td>2026-03-30</td><td>端到端优化 harness——即"决定存什么、取什么、如何呈现给模型"的那段代码。</td></tr>
+              <tr><td>Adaptive Auto-Harness<br><small>arXiv:2606.01770</small></td><td>2026-06-01</td><td>开放式任务流上的持续自改进。<strong>文中点名 A-Evolve、GEPA、Meta-Harness 三个同类系统</strong>，说明这已是一个有名字的子领域。</td></tr>
+              <tr><td>Harness-Aware Self-Evolving (HASE)<br><small>arXiv:2607.03935</small></td><td>2026-07-04</td><td><strong>同时演化模型权重、harness 与任务解</strong>；单个 Qwen3-8B 追平 GPT-OSS-120B。</td></tr>
+              <tr><td>Recursive Harness Self-Improvement<br><small>arXiv:2607.15524</small></td><td>2026-07-17</td><td>harness-in-the-loop：把 harness 当作数据生成组件，兼顾当前性能与未来训练轨迹质量。</td></tr>
+              <tr><td>DarwinX<br><small>arXiv:2608.07545</small></td><td>2026-07-31</td><td><strong>对 harness 种群做自然选择</strong>，模型冻结；明确批评单谱系搜索的路径依赖与局部收益导致的跨任务退化。</td></tr>
+              <tr><td>EvolveNet<br><small>arXiv:2608.04968</small></td><td>2026-08-05</td><td>指出既有方法都假设"所有执行经验汇入单一优化器演化一个 harness"，改为协同演化。</td></tr>
+              <tr><td>Hierarchical Self-Improvement<br><small>arXiv:2608.08466</small></td><td>2026-08-09</td><td><strong>每个任务族维护自己的可演化 harness，迭代之间热插拔</strong>。</td></tr>
+              <tr><td>GEPA<br><small>arXiv:2507.19457</small></td><td>2025-07-25</td><td>反思式提示词演化，效果超过强化学习。</td></tr>
+              <tr><td>FlashEvolve<br><small>arXiv:2605.08520</small></td><td>2026-05-08</td><td>异步阶段编排，解决 agent 自演化的墙钟成本瓶颈。</td></tr>
+              <tr><td>Mendel Gödel Machine<br><small>arXiv:2608.07645</small></td><td>2026-08-07</td><td>用档案中的<strong>比较信号</strong>而非单条失败轨迹驱动自我修改。</td></tr>
+            </tbody></table>
+          </div>
+
+          <div class="matrix-wrap" style="margin-top:16px">
+            <table class="benchmark-table"><caption class="hidden">拓扑自演化工作一览</caption><thead><tr><th>拓扑自演化（7 篇）</th><th>日期</th><th>做了什么</th></tr></thead><tbody>
+              <tr><td>MANTA<br><small>arXiv:2607.28527</small></td><td>2026-07-30</td><td><strong>最直接的撞车。</strong>原文开篇即指出"现有系统把通信拓扑当作固定设计选择或离线优化目标"，然后让通信结构<strong>在线自演化</strong>。这句 motivation 与本项目高度重合。</td></tr>
+              <tr><td>TopoEvo<br><small>arXiv:2605.15611</small></td><td>2026-05-15</td><td>拓扑感知的自演化多智能体框架（微服务根因分析域）。</td></tr>
+              <tr><td>SkillGraph<br><small>arXiv:2604.17503</small></td><td>2026-04-19</td><td>自演化多模态图拓扑；批评"通信拓扑在推理前就被固定"。</td></tr>
+              <tr><td>GPTSwarm<br><small>arXiv:2402.16823</small></td><td>2024-02-26</td><td>把 agent 表示成可优化计算图，节点提示词与边连接同时优化，<strong>图可递归组合</strong>。</td></tr>
+              <tr><td>MaAS / Agentic Supernet<br><small>arXiv:2502.04180</small></td><td>2025-02-06</td><td>批评既有方法只找"静态、一刀切"的系统，改为从超网按查询采样架构。</td></tr>
+              <tr><td>MASS<br><small>arXiv:2502.02533</small></td><td>2025-02-04</td><td>联合优化提示词与拓扑。</td></tr>
+              <tr><td>AgentPrune<br><small>arXiv:2410.02506</small></td><td>2024-10-03</td><td>通信拓扑剪枝，降低多智能体通信开销。</td></tr>
+            </tbody></table>
+          </div>
+
+          <div class="grid-3" style="margin-top:16px">
+            <article class="card"><div class="card-head"><div><span class="tag violet">理论侧也有人</span><h3 style="margin-top:10px">On The Statistical Limits of Self-Improving Agents</h3></div><span class="card-index">2510.04399</span></div><p>前提是"agent 可以沿自身设计的每一个方面自我改进"，给出<strong>五轴分解 + 决策层</strong>，证明了自修改系统中的"效用—学习张力"。</p><div class="verdict"><strong>撞车提示：</strong>这与本项目的十角色分解、"哪些维度可演化"直接重叠，且已有形式化结果。任何角色分解方案必须先与它对齐。</div></article>
+            <article class="card"><div class="card-head"><div><span class="tag violet">理论侧也有人</span><h3 style="margin-top:10px">A mathematical theory of evolution for self-designing AIs</h3></div><span class="card-index">2604.05142</span></div><p>用 Fisher 基本定理为框架，建模"由递归自我改进产生的 AI"其性状如何被祖先设计后代的成功率塑造。</p><div class="verdict">谱系生产力的理论对应物，与 HGM 的 CMP 是同一问题的两种处理。</div></article>
+            <article class="card"><div class="card-head"><div><span class="tag aqua">意外的礼物</span><h3 style="margin-top:10px">Phantom Guardrails</h3></div><span class="card-index">2607.13083</span></div><p>自改进的 harness 会去修复<strong>根本没发生过的失败</strong>——提议器编辑脚手架以消除"观察到的失败"，却从不先问"真的失败了吗"。</p><div class="verdict"><strong>可直接用作动机：</strong>这是 harness 自演化这条线的第一个负面结果，与"结构自由度可能不划算"同向。</div></article>
+          </div>
+
+          <div class="callout" style="margin-top:20px"><p><strong>对「思路 1」的直接威胁：</strong><a href="https://arxiv.org/abs/2607.14004" target="_blank" rel="noreferrer">Do Agent Optimizers Compound? A Continual-Learning Evaluation on Terminal-Bench 2.0（arXiv:2607.14004, 2026-07-15）</a>已经在问"agent 优化的收益能否复利"，并指出多数报告的增益是一次性的。<br><br>但它测的是<strong>优化器是否复利</strong>，不是<strong>结构自由度值不值</strong>。"只改内容 vs 也改组成/拓扑，等预算对照"这个具体设计仍未被做——不过投稿时必须正面处理这篇。</p></div>
+
+          <div class="callout" style="margin-top:16px;border-color:color-mix(in srgb, var(--red) 45%, var(--line));background:linear-gradient(135deg, color-mix(in srgb, var(--red) 10%, var(--surface)), var(--surface))"><p><strong>仍需注意的老先例：AutoML-Zero（ICML 2020, arXiv:2003.03384）。</strong>从空程序出发、只给基本数学算子，演化出完整的机器学习算法并重新发现了反向传播。novelty 不能表述为"首次让系统决定组件构成"。</p></div>
+
+          <p class="updated">检索方法：15 组主题检索词（拓扑与架构搜索 / 自修改与结构演化 / RSI 本体 / 提示词与程序演化 / 开放式演化与质量多样性 / 架构搜索方法论 / 自改进补漏）+ 16 项按标题精确定位 + 8 项定向追踪，共 563 篇去重候选，原始结果保存在 <code>search_results.md</code> 与 <code>search_results2.md</code>。上表条目的 arXiv 编号与日期均由 arXiv API 返回，<strong>但"做了什么"一栏基于摘要，尚未读全文</strong>；投稿前需回原文确认各自的可修改边界。</p>
+        </div>
+      </section>
+
+      <section class="section" id="ideas" aria-labelledby="ideas-title">
+        <div class="section-head"><div><div class="section-kicker">论文选题 · 2026.08.11 新增</div><h2 id="ideas-title">五条可落地的选题</h2></div><p class="section-intro">全部从上面那个空白推导而来，按"该不该先做"排序。每条都写明了为什么它是好论文、以及它的风险在哪——这五条用来替代此前 100 条模板化候选作为决策依据。</p></div>
+
+        <div class="grid-2">
+          <article class="card research-card" data-code="1"><div class="card-head"><div><span class="tag aqua">建议做主线</span><h3 style="margin-top:10px">结构自由度到底值不值？</h3></div><span class="card-index">正反都能发</span></div><p><strong>问题：</strong>允许改组成/拓扑，比只改内容，在<strong>同等预算</strong>下多赚了什么？</p><ol><li>同任务、同模型、同 token 预算，三组对照：只改内容 / 可增删组件 / 可改连接与顺序。</li><li>主指标：隐藏集增益 ÷ 单位算力。</li><li>AFlow 与 AgentSquare 都<strong>假定</strong>结构搜索有用，但没人把它和"只改内容"在同算力下对比过。</li></ol><span class="fit">这是整个方向的前提 · 若答案是"不值"，后面所有设计都要变</span><div class="verdict" style="border-color:color-mix(in srgb, var(--red) 40%, var(--line))"><strong style="color:var(--red)">⚠ 直接竞品：</strong><code>arXiv:2607.14004</code> Do Agent Optimizers Compound?（2026-07-15）已在问"优化收益能否复利"，并指出多数报告增益是一次性的。本思路必须把问题收窄到<strong>结构自由度的等预算对照</strong>，并在 related work 正面处理它。</div><div class="verdict"><strong>为什么是好论文：</strong>正反都能发。有用 → 你有了第一个证据；没用 → "结构搜索在 X 预算以下不划算"，同样会被大量引用。这种题不会做废。</div></article>
+
+          <article class="card research-card" data-code="2"><div class="card-head"><div><span class="tag orange">上限最高 · 风险最大</span><h3 style="margin-top:10px">不给词汇表，系统会长出什么？</h3></div><span class="card-index">探针是硬骨头</span></div><p><strong>问题：</strong>AgentSquare 的四类模块是人定的。如果不给，系统自己会分化出哪些角色？</p><ol><li>F₀ 是一个单体程序，让它自己演化。</li><li>用<strong>行为探针</strong>检测功能是否出现——看行为，不能看文件名。</li><li>观察是否自发分化出诊断、选择、记忆这类分工。</li></ol><span class="fit">跨 run 若总收敛到相似分工 → 一条经验规律；若每次都不同 → 人定的四类划分是任意的</span><div class="verdict"><strong>风险：</strong>探针设计是硬骨头。功能涌现了但测不出来，整篇就废了——五条里技术风险最高的一条。</div></article>
+
+          <article class="card research-card" data-code="3"><div class="card-head"><div><span class="tag violet">故事最好 · 建议第二篇</span><h3 style="margin-top:10px">把演化机制本身交给系统</h3></div><span class="card-index">需先复现 DGM</span></div><p><strong>问题：</strong>DGM 的父代选择规则由研究者写死。让系统自己改这条规则会怎样？</p><ol><li>两组：选择规则固定 vs 可被系统修改。</li><li>看长期谱系生产力。</li><li>重点看系统会不会把规则<strong>改成对自己有利的</strong>（例如"永远选我自己"）。</li></ol><span class="fit">HGM 已证明选择规则很重要（CMP 优于当前分数）· 下一个自然问题就是系统能否自己找到好规则</span><div class="verdict" style="border-color:color-mix(in srgb, var(--red) 40%, var(--line))"><strong style="color:var(--red)">⚠ 已被部分做掉：</strong>DarwinX（<code>2608.07545</code>）已对 harness 种群做自然选择，Mendel Gödel Machine（<code>2608.07645</code>）已用档案比较信号驱动自我修改。剩余空间只在「<strong>选择规则本身可否被系统修改，以及会不会腐化</strong>」，必须这样表述。</div><div class="verdict"><strong>自带负面故事：</strong>给了自由度之后选择器会腐化——这是 reward hacking 在选择层的对应物，安全侧会很买账。代价是要先复现 DGM，工程量大。</div></article>
+
+          <article class="card research-card" data-code="4"><div class="card-head"><div><span class="tag blue">最便宜 · 可并入思路 1</span><h3 style="margin-top:10px">越强的系统越难改吗？</h3></div><span class="card-index">"演化债"</span></div><p><strong>问题：</strong>当前分数高的系统，是不是反而更难被继续改进？</p><ol><li>取一批能力分层的父代。</li><li>用同一个改进器去改。</li><li>画"改进量 vs 父代基线分"的曲线。</li></ol><span class="fit">HGM 的 metaproductivity-performance mismatch 是相邻观察，但没系统研究这条曲线</span><div class="verdict"><strong>为什么划算：</strong>便宜、干净、可证伪。若呈倒 U 型就是个漂亮结果，对所有做 agent 自演化的人都有直接指导意义。可作为思路 1 实验的顺带数据分析，不必单独设计实验。</div></article>
+
+          <article class="card research-card" data-code="5"><div class="card-head"><div><span class="tag aqua">建议与主线并行</span><h3 style="margin-top:10px">三层框架的综述 / 立场文</h3></div><span class="card-index">成本最低</span></div><p><strong>问题：</strong>把"内容 / 组成 / 拓扑"立成这个领域的坐标系。</p><ol><li>材料已有大半，几乎不占额外精力——调研本来就要做。</li><li>领域正在成型期，综述最容易被引。</li><li>为后续所有实验论文提供统一话语，可先挂 arXiv 占坑。</li></ol><span class="fit">代价：不是强实验成果，但当前性价比最高</span><div class="verdict" style="border-color:color-mix(in srgb, var(--aqua) 40%, var(--line))"><strong style="color:var(--aqua)">↑ 价值上调：</strong>2026 年 3–8 月有 17 篇工作涌入这两层，<strong>至今无人整理</strong>。563 篇检索底稿已在手，三层框架是现成的组织坐标。这是目前最快能落地的产出。</div><div class="verdict"><strong>建议：</strong>与思路 1 并行推进，而不是二选一。</div></article>
+
+          <article class="card"><div class="card-head"><div><span class="tag orange">优先级结论</span><h3 style="margin-top:10px">建议：主线做 1，同时写 5</h3></div></div><p><strong>思路 1</strong> 验证的是整个方向能不能成立，不做它后面都是空中楼阁；成本可控、正反都能发。<strong>思路 5</strong> 并行，几乎不增加负担，还能建立话语权。</p><ul class="compact-list"><li><strong>思路 3</strong> 故事最好但依赖复现 DGM，放第二篇。</li><li><strong>思路 2</strong> 上限最高但探针风险大，等有人手再说。</li><li><strong>思路 4</strong> 不用单独设计实验，并入思路 1 的数据分析即可。</li></ul><div class="verdict"><strong>此前的 100 条候选池不再作为决策依据。</strong>模板化条目给不了取舍信息；保留为头脑风暴存档即可。</div></article>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>调研已完成 · 修订后的优先级</h3><p>2026-08-11 的检索与核验已执行完毕，下面是据此调整后的判断。</p></div>
+          <div class="grid-3">
+            <article class="card"><div class="card-head"><div><span class="tag aqua">已完成</span><h3 style="margin-top:10px">引用核验</h3></div><span class="card-index">33 / 33</span></div><p>全部 arXiv 编号逐条核对，<strong>0 条虚构</strong>。仅两处标题转述不准：<code>2606.09498</code> 实为 <em>Self-Harness: Harnesses That Improve Themselves</em>，<code>2601.13518</code> 实为 <em>AgenticRed: Evolving Agentic Systems for Red-Teaming</em>；<code>2606.26294</code> 在账本中重复登记。</p></article>
+            <article class="card"><div class="card-head"><div><span class="tag aqua">已完成</span><h3 style="margin-top:10px">补充检索</h3></div><span class="card-index">563 篇</span></div><p>15 组主题词 + 16 项标题定位 + 8 项定向追踪。结论：原 gap 陈述作废，第 2、3 层已有 17 篇工作占据。底稿见 <code>search_results.md</code> 与 <code>search_results2.md</code>。</p></article>
+            <article class="card"><div class="card-head"><div><span class="tag orange">下一步</span><h3 style="margin-top:10px">读全文，确认可修改边界</h3></div><span class="card-index">优先 6 篇</span></div><p>上表的"做了什么"仅基于摘要。必须回原文确认边界的六篇：<strong>MANTA</strong>（拓扑是否真的在线自演化）、<strong>DarwinX</strong>、<strong>Hierarchical Self-Improvement</strong>、<strong>HASE</strong>、<strong>On The Statistical Limits</strong>（五轴分解与十角色的关系）、<strong>Do Agent Optimizers Compound?</strong>。</p></article>
+          </div>
+
+          <div class="callout" style="margin-top:18px"><p><strong>修订后的建议：把思路 5 提到与思路 1 同级，甚至优先。</strong><br><br>理由是领域在三个月内涌入 17 篇却无人整理，而「内容 / 组成 / 拓扑」三层框架正好是现成的组织坐标，563 篇检索底稿也已在手。<br><br>实验侧唯一确定还空着的是<strong>角色级因果干预</strong>——现有工作全部是"我让 X 可演化，性能涨了"，没有一篇做过"逐个角色加入 / 删除 / 冻结，测哪些必须可演化"。能力 <code>c</code> 与可演化性 <code>μ</code> 的分离测量应作为主实验主张，而不是"框架可以演化"这件事本身。</p></div>
+        </div>
+      </section>
+
+      <section class="section" id="map" aria-labelledby="map-title">
+        <div class="section-head"><div><div class="section-kicker">02 / 领域地图</div><h2 id="map-title">RSI 研究地图：五层能力梯度</h2></div><p class="section-intro">越往下，系统改变的对象越接近“自身”；但证据要求、成本和安全风险也同步上升。科研上应先从 L1–L2 做出可复现实验，再向 L3–L4 扩展。</p></div>
+        <div class="matrix-wrap">
+          <table><caption class="hidden">RSI 五层研究地图</caption><thead><tr><th>层级</th><th>改什么</th><th>反馈与闭环</th><th>典型工作</th><th>关键验证</th></tr></thead><tbody>
+            <tr><td><span class="level"><span class="level-dot"></span>L0 行为自修正</span></td><td>答案、计划、推理轨迹</td><td>自我批评（self-critique）/ 多次采样 / 验证器（verifier）</td><td>锐化机制（Sharpening）、Crescent 方法（Crescent）、测试时自我改进（test-time self-improvement）</td><td>留出集准确率（held-out accuracy）；防止只优化同题</td></tr>
+            <tr><td><span class="level"><span class="level-dot aqua"></span>L1 经验与工具</span></td><td>记忆、技能库、工具调用策略</td><td>跨任务回合（episode）反馈；经验写入与检索</td><td>自进化智能体（self-evolving agents）、长期编程智能体（long-term coding agents）</td><td>新任务迁移；删除或污染记忆后的鲁棒性</td></tr>
+            <tr><td><span class="level"><span class="level-dot orange"></span>L2 代码与架构</span></td><td>智能体源代码（agent source code）、提示词（prompt）、工作流（workflow）</td><td>执行测试；分支、回滚、档案选择</td><td>自改进编程智能体（A Self-Improving Coding Agent）、达尔文哥德尔机（Darwin Gödel Machine, DGM）、哥德尔智能体（Gödel Agent）</td><td>跨基准迁移（cross-benchmark transfer）；成本、方差、审计轨迹</td></tr>
+            <tr><td><span class="level"><span class="level-dot violet"></span>L3 模型/数据/评估器</span></td><td>权重、训练数据、优化器（optimizer）、评估器（evaluator）</td><td>训练或合成数据；弱到强验证</td><td>算法发明（algorithm invention）、模型融合（model merging）、评估器协同进化（co-evolving evaluator）</td><td>独立评估器、分布外安全、模型塌缩</td></tr>
+            <tr><td><span class="level"><span class="level-dot" style="background:var(--red)"></span>L4 AI 研究流程</span></td><td>研究方向、实验设计、下一代系统</td><td>自动提出假设→实验→复现→选择方向</td><td>AI 研究伙伴（AI as research partner）、开放式递归自我改进（open-ended RSI）</td><td>科学新颖性、外部复现、人的方向性监督</td></tr>
+          </tbody></table>
+        </div>
+        <p class="updated">方法论提示：L0–L1 的“自适应”与 L2 的“自改代码”已有较多可运行案例；L3–L4 更像研究议程，不应把演示结果写成已解决的 RSI。</p>
+      </section>
+
+      <section class="section" id="benchmarks" aria-labelledby="benchmarks-title">
+        <div class="section-head"><div><div class="section-kicker">03 / RSI 评测基准</div><h2 id="benchmarks-title">RSI 到底该怎么测？</h2></div><p class="section-intro">截至 2026 年 8 月，尚没有一个被广泛接受、能完整衡量递归自我改进的统一基准。关键不是再造一个排行榜，而是把“系统如何利用反馈改自己”和“改完后是否真的变强”拆开测。</p></div>
+        <div class="callout"><p><strong>先纠正一个容易混淆的前提：目前没有公认的 RSI base agent，也没有唯一的“后继系统必须怎样接管”的实现。</strong>强 RSI（strong RSI）要求后继系统继续产生下一代；现有工作还包括固定元智能体、档案式进化和组件级自适应。benchmark 应声明测哪一种，并把规则、执行基础设施和被测改进算法分开。</p></div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>三层必须分开：定义协议、运行 harness、被测 RSI 框架</h3><p>动态 benchmark 确实需要软件来运行多代系统，但 harness 只执行规则；一旦它决定如何生成、选择或修改后继版本，它就成为被测方法的一部分。</p></div>
+          <div class="layer-strip">
+            <div class="layer-block"><span class="phase-label">规则层 · Protocol</span><strong>RSI 评测协议</strong><p>规定“自我”的边界、可修改组件、反馈可见性、代数、预算、隐藏任务、停止规则和指标。它回答“什么证据算改进”。</p></div>
+            <div class="layer-block"><span class="phase-label">执行层 · Harness</span><strong>中立运行与留证</strong><p>启动容器、交接后继制品、隔离 evaluator、记录哈希和谱系、执行预算与回滚。它不替参赛系统提出修改。</p></div>
+            <div class="layer-block"><span class="phase-label">方法层 · Framework</span><strong>被比较的 RSI 系统</strong><p>固定元智能体、单链自改、DGM/HGM 式档案搜索、记忆或数据自进化都可以接入。它们决定“如何改”。</p></div>
+          </div>
+          <div class="equation">被测系统 S_t = 任务智能体 A_t + 改进器 U_t + 持久状态 K_t　｜　U_t(A_t, K_t, feedback) → (A_t+1, U_t+1, K_t+1)</div>
+          <div class="grid-3" style="margin-top:16px">
+            <article class="card"><h3>弱模式：固定改进器</h3><p><code>U₀</code> 每一代都负责修改任务智能体。可以测自动智能体开发，但不能证明改进器自身变强。</p><span class="status">MAC 更接近此类</span></article>
+            <article class="card"><h3>中间模式：档案进化</h3><p>从多条 lineage 选择父代并产生后代。可以研究长期生产力，但外层选择器和效用通常仍是固定的。</p><span class="status solid">DGM / HGM 类</span></article>
+            <article class="card"><h3>强模式：后继接管</h3><p><code>U_t</code> 也被继承或修改，并由后继系统产生下一代。它是强 RSI 的可测条件，不是当前唯一公认架构。</p><span class="status">重要开放问题</span></article>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>普通基准与 RSI 基准，差别不只是“测一次还是测两次”</h3><p>普通基准也可以有开发集（development set）和测试集（test set）。RSI 的特殊之处是：系统反复读取环内反馈，并据此产生下一代系统，因此评价本身成为了学习过程的一部分。</p></div>
+          <div class="matrix-wrap">
+            <table class="comparison-table"><caption class="hidden">普通基准与 RSI 评测协议对比</caption><thead><tr><th>比较项</th><th>普通/静态基准（Conventional benchmark）</th><th>RSI 评测协议（RSI evaluation protocol）</th></tr></thead><tbody>
+              <tr><td>被测对象（Object）</td><td>一个相对固定的模型或智能体，回答一组任务。</td><td>基线系统、改进机制、连续候选版本及其完整谱系（lineage）。</td></tr>
+              <tr><td>适应轮次（Adaptive rounds）</td><td>通常按固定配置跑一次或若干独立重复；分数不应在本次正式测试中驱动持久自修改。</td><td>明确允许多轮“诊断→修改→评估→选择”，下一轮候选依赖上一轮反馈。</td></tr>
+              <tr><td>反馈的作用（Feedback effect）</td><td>开发集可用于调参，但正式报告常聚焦最终测试分数。</td><td>反馈是系统演化的输入，必须记录它如何改变后续版本，不能只展示胜出的最后一个点。</td></tr>
+              <tr><td>开发/搜索侧（Dev / search side）</td><td>用于选模型、提示词或超参数。</td><td>是正式被测机制的一部分：限制查询次数、预算、可见日志、可修改组件和停止条件。</td></tr>
+              <tr><td>隐藏/最终侧（Hidden / final side）</td><td>估计固定系统在未见样本上的泛化表现。</td><td>比较冻结基线与冻结最终候选的隐藏增益，并检验搜索过程是否产生可迁移的真实改进。</td></tr>
+              <tr><td>主要输出（Outputs）</td><td>最终分数、置信区间、按任务切片结果。</td><td>完整改进轨迹 + 最终隐藏增益 + 因果归因 + 成本/时间 + 安全事件 + 失败分支。</td></tr>
+              <tr><td>主要失真（Main threats）</td><td>训练污染（contamination）、测试泄漏、抽样偏差。</td><td>还增加自适应过拟合（adaptive overfitting）、评估器投机（evaluator gaming）、改分数而非改能力，以及无法归因增益。</td></tr>
+            </tbody></table>
+          </div>
+          <p class="updated"><strong>关于 GroundBench：</strong>这里按 RHIO 论文提出的 GroundBench 理解，它汇集五个长文本问答（long-form question answering, LFQA）数据集，测上下文忠实性（contextual faithfulness）。它本身是普通的结果型基准，不直接测 RSI；但可以被嵌入 RSI 协议，作为环内任务集或隔离的环外任务集。只有加上多轮自修改、可见性契约、冻结候选和前后对照，它才成为 RSI 证据的一部分。[S14]</p>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>模型能看到什么，由谁规定？</h3><p>没有一条自然法则规定“环内优化评估器一定公开”或“评分代码一定隐藏”。可见性是评测协议中的访问契约（access contract），由设计者声明、基础设施执行、审计者核验。</p></div>
+          <div class="grid-2">
+            <article class="card"><span class="phase-label">规则层（Specification）</span><h3>1. 基准/协议设计者（Benchmark &amp; protocol designer）</h3><p>定义任务分布、开发与隐藏划分、模型/元智能体各自可见的信息、允许修改的组件、查询预算、停止规则和主指标。若研究者既设计又参赛，应预先注册协议并引入独立保管方。</p></article>
+            <article class="card"><span class="phase-label">执行层（Enforcement）</span><h3>2. 环境与权限系统（Environment &amp; access control）</h3><p>通过容器、网络策略、只读挂载、受限 API、密钥、进程权限和时间锁真正落实契约。文字上说“不能看”不够，系统必须让读取或修改隐藏资产在技术上失败。</p></article>
+            <article class="card"><span class="phase-label">证据层（Evidence custody）</span><h3>3. 评估基础设施（Evaluator infrastructure）</h3><p>保管隐藏任务、答案、测试和评分日志，记录查询、镜像、随机种子、版本哈希与时间戳。开发预算结束后才挂载最终验证器，是一种可操作的时间隔离。</p></article>
+            <article class="card"><span class="phase-label">复核层（Independent review）</span><h3>4. 独立审计者（Independent auditor）</h3><p>检查是否泄漏、越权、替换评估器、挑选幸运种子或隐去失败谱系，并使用另一套任务、验证器或专家盲评复核结论。设计者规定契约，审计者判断契约是否可信地执行。</p></article>
+          </div>
+          <div class="matrix-wrap" style="margin-top:16px">
+            <table class="visibility-table"><caption class="hidden">RSI 搜索阶段与隐藏阶段的信息可见性矩阵</caption><thead><tr><th>信息/能力</th><th>搜索阶段（Search phase）</th><th>隐藏阶段（Hidden phase）</th><th>为什么这样设计</th></tr></thead><tbody>
+              <tr><td>当前任务输入（Task input）</td><td>开发任务题面通常可见。</td><td>最终候选在作答时当然能接收该题输入；但负责改系统的控制器（improvement controller）已经冻结，不能据此再发布新版本。</td><td>区分“看见要回答的问题”和“看见答案后继续改系统”。</td></tr>
+              <tr><td>开发样例（Development examples）</td><td>可见，并明确属于搜索数据。</td><td>不再增加；不能把隐藏案例回流成新开发样例。</td><td>防止自适应污染隐藏集。</td></tr>
+              <tr><td>聚合分数（Aggregate score）</td><td>可见或限频返回，可加噪声/分桶。</td><td>在候选冻结和运行结束后发布；发布后不得回到本轮改进。</td><td>分数一旦驱动修改，就属于搜索信号。</td></tr>
+              <tr><td>失败日志（Failure logs）</td><td>由协议配置：可给完整日志、错误类别或只给通过/失败。</td><td>通常封存到最终结束；之后可用于分析，不用于重跑选优。</td><td>控制反馈带宽（feedback bandwidth）和过拟合速度。</td></tr>
+              <tr><td>评分规则/代码（Rubric / scoring code）</td><td>可以公开规则，也可以只开放 API；公开规则不等于公开隐藏案例。</td><td>协议可公开抽象规则，但隐藏测试、密钥和逐题标签仍隔离。</td><td>真正关键的是不可利用的隐藏实例与不可篡改执行，而非一概保密所有规则。</td></tr>
+              <tr><td>隐藏答案/测试（Hidden labels / tests）</td><td>绝不应可见，也不可由侧信道推断。</td><td>候选只接收必要输入；答案和断言由隔离执行器持有。</td><td>这是环外证据成立的最低边界。</td></tr>
+              <tr><td>修改权限（Write access）</td><td>只能改协议白名单中的提示词、记忆、工具、代码、数据或权重。</td><td>候选版本、依赖和环境全部只读冻结。</td><td>防止“测评时继续进化”以及修改测试/评分器。</td></tr>
+              <tr><td>外部审计（External audit）</td><td>可以公开审计原则，但不开放具体新题与人工判定。</td><td>由独立方执行；结果与方法在审计完成后发布。</td><td>避免同一个评估器同时充当老师、考官和证明人。</td></tr>
+            </tbody></table>
+          </div>
+          <p class="updated">具体例子：Meta-Agent Challenge（MAC）允许元智能体读取任务、编辑 <code>agent.py</code> 并查询开发集评估 API；测试集加密存放在另一容器中，开发预算结束后才挂载验证器。模型“看得到反馈”指 API 返回被允许的信息，不表示它能读取测试集、答案或验证器内部实现。[S10]</p>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>三种角色：谁参与改进，谁负责证明</h3><p>最低可信设计是 E<sub>search</sub> + E<sub>hidden</sub> 双轨；E<sub>audit</sub> 是更强的第三方复核。一个数据集也可以被切成这些角色，但数据、权限和时间必须隔离。</p></div>
+        <div class="grid-3" style="margin-top:16px">
+          <article class="card"><div class="card-head"><div><span class="tag blue">循环内 · 可提供反馈</span><h3 style="margin-top:10px">环内优化评估器（Search evaluator）</h3></div><span class="card-index">E<sub>search</sub></span></div><p>这里的 search 指“在候选系统空间中搜索”：系统尝试不同提示词、代码、数据、权重或工作流，评估器返回适应度信号，帮助选择下一代；不是网络搜索。若实验只有常规迭代调优，没有显式候选搜索，称开发评估器（development evaluator）会更直观。</p><span class="status">用于优化，不是最终证据</span></article>
+          <article class="card"><div class="card-head"><div><span class="tag aqua">循环外 · 必须隔离</span><h3 style="margin-top:10px">冻结隐藏评估器（Frozen hidden evaluator）</h3></div><span class="card-index">E<sub>hidden</sub></span></div><p>在自我改进期间保持任务、答案和评分逻辑不可见，用来判断改进是否迁移到未见任务。可以冻结规则，也可以冻结评估协议并定期更换隐藏题目。</p><span class="status solid">能力提升的主要证据</span></article>
+          <article class="card"><div class="card-head"><div><span class="tag orange">独立复核</span><h3 style="margin-top:10px">外部审计（External audit）</h3></div><span class="card-index">E<sub>audit</sub></span></div><p>由独立基准、另一套验证器或人类专家复核，检查测试污染、评分投机（reward hacking）、成本膨胀和安全回退。它回答的是“换一把尺子，改进还成立吗？”</p><span class="status solid">最强可信度检查</span></article>
+        </div>
+          <div class="loop-map" aria-label="RSI 内循环与外部证明结构">
+            <div class="loop-node"><strong>内循环（Inner loop）</strong><span>诊断 → 修改 → 沙箱 → E<sub>search</sub> → 选择/归档 → 重复</span></div>
+            <div class="loop-arrow" aria-hidden="true">→</div>
+            <div class="loop-node"><strong>版本冻结（Candidate freeze）</strong><span>停止搜索；锁定代码、权重、配置、依赖、预算与哈希</span></div>
+            <div class="loop-arrow" aria-hidden="true">→</div>
+            <div class="loop-node"><strong>外部证明（Outer proof）</strong><span>E<sub>hidden</sub> → E<sub>audit</sub> → 与冻结基线比较</span></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>外部审计怎么加？它不是“再跑一次分数”</h3><p>冻结隐藏评测检验能力是否泛化；外部审计检验这份证据是否值得相信。审计是独立的保证过程（assurance process），可以包含另一套测试，但范围还包括数据、权限、谱系、成本、安全和复现。</p></div>
+          <div class="matrix-wrap">
+            <table class="comparison-table"><caption class="hidden">冻结隐藏评估与外部审计的职责对比</caption><thead><tr><th>比较项</th><th>冻结隐藏评估（E<sub>hidden</sub>）</th><th>外部审计（E<sub>audit</sub>）</th></tr></thead><tbody>
+              <tr><td>核心问题</td><td>最终候选在未见任务上，是否比冻结基线更强？</td><td>隐藏增益是否真实、可复现、无泄漏、无投机，并且没有用不可接受的成本或安全退化换取？</td></tr>
+              <tr><td>性质</td><td>正式评测协议中的一个评分阶段。</td><td>对完整实验及其证据链的独立复核，不一定压缩成单一分数。</td></tr>
+              <tr><td>执行者</td><td>可由基准官方或研究团队的隔离执行器自动运行。</td><td>最好由未参与候选开发的另一团队、第三方机构或领域专家执行。</td></tr>
+              <tr><td>输入</td><td>冻结基线、冻结最终候选、隐藏任务和预注册预算。</td><td>还需要协议、全部版本哈希、查询日志、失败分支、权限记录、成本账本、安全事件和人工干预记录。</td></tr>
+              <tr><td>主要方法</td><td>隐藏集、OOD 集、置信区间和同预算前后对照。</td><td>独立重跑、替代基准/验证器、污染扫描、日志取证、权限测试、随机种子复核、专家盲评和安全回归测试。</td></tr>
+              <tr><td>输出</td><td>hidden gain、迁移差距、方差和失败切片。</td><td>审计意见（audit opinion）、发现清单、严重性、未解决限制，以及“通过/有保留/不通过”的结论。</td></tr>
+            </tbody></table>
+          </div>
+          <dl class="definition-list">
+            <dt>1. 搜索前预注册</dt><dd>先确定审计方、独立性要求、审计范围、必须保留的证据、替代测试、通过阈值和利益冲突声明；不能等看到结果后临时挑一个有利审计。</dd>
+            <dt>2. 全程自动留证</dt><dd>每代候选自动保存父版本、diff、制品哈希、容器镜像、评估查询、返回反馈、成本、种子、权限告警、回滚与人工操作，形成只追加（append-only）的证据包。</dd>
+            <dt>3. 冻结后交付</dt><dd>开发团队在隐藏结果返回前签署 final manifest；审计方接收只读制品和日志副本，不允许开发方在审计中途替换候选或补跑选优。</dd>
+            <dt>4. 独立复核</dt><dd>审计方重放若干世代、复算主结果，再用不同题目、不同 evaluator 或专家盲评验证；同时检查数据污染、侧信道、测试篡改、漏报失败和能力—安全权衡。</dd>
+            <dt>5. 单独发布意见</dt><dd>主论文报告 E<sub>hidden</sub> 分数，审计报告单独说明证据是否可靠、发现了什么问题、哪些限制尚未排除。审计不替研究者背书，也不应只给一句“已验证”。</dd>
+          </dl>
+          <p class="updated"><strong>实践选择：</strong>早期原型至少做“内部独立审计”（由未参与改进循环的团队成员盲验）；准备公开 benchmark 或高影响结论时，再升级为真正的第三方审计。外部审计不是所有小实验的硬性门槛，但结论越接近“系统能够持续自我改进”，独立性要求就应越高。</p>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>一轮完整 RSI 实验：从协议冻结到公开报告</h3><p>下面不是概念图，而是一条可以直接转成实验清单、日志 schema 和论文方法章节的 0–12 阶段流程。</p></div>
+          <div class="timeline">
+            <div class="time-row"><div class="time-year">阶段 0</div><div class="time-card"><h3>冻结改进契约与威胁模型（Improvement contract &amp; threat model）</h3><p>先定义目标能力、允许修改的表面（modification surface）、禁止访问的资产、E<sub>search</sub>/E<sub>hidden</sub>/E<sub>audit</sub>、查询与算力预算、停止条件、污染假设、安全不变量和成功标准。此时就确定主指标，防止看结果后换口径。</p><div class="tag-row"><span class="tag blue">产物：预注册协议</span><span class="tag">权限矩阵</span><span class="tag">数据清单</span></div></div></div>
+            <div class="time-row"><div class="time-year">阶段 1</div><div class="time-card" data-color="aqua"><h3>登记冻结基线（Register frozen baseline）</h3><p>打包基线模型/智能体、系统提示词、工具、依赖、镜像、种子与推理预算；生成不可变哈希。基线不能在看到隐藏结果后被重新挑选。</p><div class="tag-row"><span class="tag aqua">产物：baseline artifact</span><span class="tag">环境哈希</span></div></div></div>
+            <div class="time-row"><div class="time-year">阶段 2</div><div class="time-card" data-color="orange"><h3>托管初始隐藏测量（Escrowed hidden baseline）</h3><p>独立执行器在 E<sub>hidden</sub> 上测基线并封存逐题结果。改进系统既看不到隐藏案例，也不应拿到可反推出案例的细粒度反馈；必要时连聚合基线分数也延迟公布。</p><div class="tag-row"><span class="tag orange">检查点：基线已测但未泄漏</span></div></div></div>
+            <div class="time-row"><div class="time-year">阶段 3</div><div class="time-card"><h3>在允许的搜索任务上诊断（Diagnose on allowed search tasks）</h3><p>收集 E<sub>search</sub> 的失败类型、错误日志、成本和环境状态，形成能力缺口，而不是直接记忆具体答案。区分模型能力、脚手架、工具、数据和评估噪声造成的失败。</p><div class="tag-row"><span class="tag blue">产物：failure taxonomy</span><span class="tag">诊断证据</span></div></div></div>
+            <div class="time-row"><div class="time-year">阶段 4</div><div class="time-card" data-color="violet"><h3>生成可证伪的修改假设（Falsifiable modification hypothesis）</h3><p>每个候选修改都写明“改什么、为什么、预计改善哪类错误、可能伤害什么、用什么消融验证”。一次混改多个组件会让因果归因失效。</p><div class="tag-row"><span class="tag violet">产物：hypothesis + expected effect</span></div></div></div>
+            <div class="time-row"><div class="time-year">阶段 5</div><div class="time-card"><h3>仅修改白名单组件（Modify allowlisted components）</h3><p>系统可以编辑被授权的提示词、记忆策略、工具路由、智能体代码、训练数据或权重；所有差异（diff）、父版本、操作者、模型调用和外部输入写入谱系。评估器、隐藏数据和审计日志保持只读。</p><div class="tag-row"><span class="tag blue">产物：candidate artifact</span><span class="tag">完整 diff</span></div></div></div>
+            <div class="time-row"><div class="time-year">阶段 6</div><div class="time-card" data-color="orange"><h3>沙箱、静态与安全门禁（Sandbox &amp; safety gates）</h3><p>在不接触隐藏集的环境里做构建、单元测试、恶意文件/网络访问检查、资源上限、权限不变量和可回滚性验证。门禁失败的候选应被拒绝，但仍保留失败记录。</p><div class="tag-row"><span class="tag orange">检查点：无越权、可复现、可回滚</span></div></div></div>
+            <div class="time-row"><div class="time-year">阶段 7</div><div class="time-card" data-color="aqua"><h3>查询环内优化评估器（Query E<sub>search</sub>）</h3><p>通过协议允许的接口运行候选；只返回约定粒度的分数、错误类别或日志。记录每次查询、返回值、时长、词元、GPU/API 成本和随机性，防止无限试错把基准变成训练集。</p><div class="tag-row"><span class="tag aqua">产物：search observation</span><span class="tag">预算账本</span></div></div></div>
+            <div class="time-row"><div class="time-year">阶段 8</div><div class="time-card"><h3>选择、归档或回滚（Select, archive, or rollback）</h3><p>按预注册的多目标规则比较能力、成本、安全和多样性；不要只保留单一路径的当前冠军。运行必要的消融或重复种子，判断增益是否来自目标修改，再决定归档、分支或回滚。</p><div class="tag-row"><span class="tag blue">产物：selection decision</span><span class="tag">失败谱系</span></div></div></div>
+            <div class="time-row"><div class="time-year">阶段 9</div><div class="time-card" data-color="violet"><h3>跨代重复直到预定停止（Iterate under stopping rule）</h3><p>回到阶段 3，形成第 1…N 代。停止必须由查询数、总算力、墙钟时间、连续无提升、风险阈值或预定代数触发，不能因为刚好出现最好分数而临时结束。</p><div class="tag-row"><span class="tag violet">输出：完整 improvement trajectory</span></div></div></div>
+            <div class="time-row"><div class="time-year">阶段 10</div><div class="time-card" data-color="orange"><h3>在隐藏测试前冻结最终候选（Freeze final candidate）</h3><p>依据 E<sub>search</sub> 规则选定一个或预注册数量的候选，锁定代码、权重、依赖、上下文、工具、推理预算和种子策略。此后即使发现问题，也不能为本次主结果修改并重测。</p><div class="tag-row"><span class="tag orange">检查点：final hash + signed manifest</span></div></div></div>
+            <div class="time-row"><div class="time-year">阶段 11</div><div class="time-card" data-color="aqua"><h3>运行隐藏、分布外与独立审计（Hidden, OOD &amp; audit evaluation）</h3><p>同预算比较冻结基线和最终候选的 E<sub>hidden</sub>；再用不同任务分布、不同验证器或专家盲评执行 E<sub>audit</sub>。检查是否出现搜索分数上升但隐藏/OOD 下降、成本暴涨或安全能力回退。</p><div class="tag-row"><span class="tag aqua">主证据：hidden delta</span><span class="tag">transfer gap</span><span class="tag">audit verdict</span></div></div></div>
+            <div class="time-row"><div class="time-year">阶段 12</div><div class="time-card"><h3>公开全轨迹而非只报冠军（Report the full trajectory）</h3><p>发布协议、基线与最终制品、所有候选谱系、查询日志、失败分支、种子、置信区间、算力/费用/时间、安全事件、人工干预和负结果。最终结论应分别写“搜索能力”“隐藏迁移”“成本效率”和“安全完整性”。</p><div class="tag-row"><span class="tag blue">产物：可复现实验包</span><span class="tag">局限性声明</span></div></div></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>RSI 有强领域性吗？机制可通用，证据高度领域化</h3><p>“生成候选→得到反馈→修改→选择”的协议可以跨领域复用；但真值是否明确、反馈多久返回、评估器能否被执行、现实分布是否变化，都强烈依赖领域。因此通用 RSI 更应报告能力向量（capability vector），而不是压成一个总分。</p></div>
+          <div class="matrix-wrap">
+            <table class="domain-table"><caption class="hidden">不同领域的 RSI 环内与环外评测设计</caption><thead><tr><th>领域</th><th>可能改什么</th><th>环内 E<sub>search</sub></th><th>环外 E<sub>hidden</sub> / E<sub>audit</sub></th><th>当前成熟度与主要瓶颈</th></tr></thead><tbody>
+              <tr><td>代码/软件（Code &amp; software）</td><td>提示词、工具路由、测试策略、智能体代码、修复知识库。</td><td>公开/开发单元测试、编译器、静态分析、开发仓库、性能剖析。</td><td>私有测试、新仓库、跨语言任务、真实用户验收与安全审计。</td><td><span class="status solid">相对最高</span><br>可执行真值强、反馈快；仍有测试投机、依赖污染和同仓库过拟合。</td></tr>
+              <tr><td>数学/算法（Math &amp; algorithms）</td><td>搜索启发式、程序、证明策略、算法组件。</td><td>样例、形式验证器、约束检查、复杂度与运行时。</td><td>未见实例、正式证明、新规模/新硬件、独立实现复现。</td><td><span class="status solid">较高</span><br>正确性可形式化；真正的新颖性、渐近优势和现实实现收益较难。</td></tr>
+              <tr><td>图形/视觉（Graphics &amp; vision）</td><td>渲染程序、场景表示、视觉提示、几何策略、生成管线。</td><td>几何误差、渲染指标、物理模拟器、可见场景和成对偏好。</td><td>未见场景/风格、遮挡和扰动鲁棒性、人工盲评、真实设备测试。</td><td><span class="status">中等</span><br>几何任务可验证，但审美、语义和感知质量常依赖学习型或人工评估器。</td></tr>
+              <tr><td>视频/多模态（Video &amp; multimodal）</td><td>时序规划、生成/编辑管线、记忆、跨模态工具。</td><td>重建、时序一致性、跟踪、音画同步和开发片段反馈。</td><td>未见身份/场景、长序列一致性、事实与版权审查、用户盲评。</td><td><span class="status">中低</span><br>输出昂贵且高维，自动指标与人感知偏差明显，长时延放慢演化。</td></tr>
+              <tr><td>科学研究（Scientific research）</td><td>假设、实验设计、分析代码、仪器控制、下一步研究选择。</td><td>模拟结果、开发数据、已知定律、实验中间结果和文献证据。</td><td>新数据、独立实验室复现、专家审稿、前瞻性预测和真实实验。</td><td><span class="status">较低且昂贵</span><br>实验反馈慢、噪声大；“做对任务”和“发现新知识”都难自动评分。PaperBench 可作 AI 研究能力外部锚点，但本身不测多代 RSI。[S15]</td></tr>
+              <tr><td>社会科学/社会系统（Social science &amp; social systems）</td><td>理论、政策/干预方案、调查工具、因果模型和决策流程。</td><td>历史数据、仿真、代理指标、预测回测和专家批评。</td><td>预注册前瞻研究、跨人群复制、真实人类结果、伦理与利益相关方审查。</td><td><span class="status">最低</span><br>真值弱、环境非平稳、反身性与价值判断强；优化代理指标可能改变被测系统本身。</td></tr>
+              <tr><td>模型/数据改进（Model &amp; data improvement）</td><td>训练数据、损失、优化器、架构、评估器或后训练流程。</td><td>验证损失、可见任务子集、小规模训练和行为诊断。</td><td>隐藏跨基准套件、污染审计、新模型规模、能力/安全联合评测。</td><td><span class="status">新兴</span><br>接近 RSI 核心，但训练成本、实验方差和评估器协同适应让归因最难。</td></tr>
+            </tbody></table>
+          </div>
+          <dl class="definition-list">
+            <dt>可通用的部分</dt><dd>访问契约、版本冻结、双轨评估、轨迹记录、因果消融、预算归一化、外部审计与安全不变量。</dd>
+            <dt>必须领域化的部分</dt><dd>任务分布、真值来源、评估器类型、反馈延迟、专家资格、伦理要求、危害模型和“迁移”究竟指什么。</dd>
+            <dt>通用 RSI 的报告方式</dt><dd>分别报告代码、数学、视觉、视频、科学、社会系统等领域的隐藏增益与成本，再报告跨域迁移；一个平均总分会掩盖“只在可执行验证领域进步”的事实。</dd>
+          </dl>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>目前有哪些接近 RSI 的基准？</h3><p>它们测到的是不同层级、不同改进对象和不同证据强度，不能直接排成一张单一能力排行榜。</p></div>
+        <div class="matrix-wrap" style="margin-top:22px">
+          <table class="benchmark-table"><caption class="hidden">RSI 相关评测基准及成熟度</caption><thead><tr><th>基准</th><th>实际测量什么</th><th>对应层级</th><th>成熟度判断</th></tr></thead><tbody>
+            <tr><td>PAST-Bench</td><td>用开启/关闭持久经验的配对实验，测量跨会话记忆、程序复用、信息收集和状态更新能否改善后续行为；覆盖 26 个场景、204 个任务回合。</td><td><span class="level"><span class="level-dot aqua"></span>L1 前置机制 / 归因</span></td><td>测固定持久经验策略是否有效，不产生新的记忆算法，也不测后继系统继续改进。作者明确将其称为完整 RSI 的基础，而非完整 RSI。</td></tr>
+            <tr><td>Meta-Agent Challenge（MAC）</td><td>固定元智能体通过开发集评估 API 反复编写和优化另一个任务智能体，最终在隔离隐藏测试集上跨五个领域评分。</td><td><span class="level"><span class="level-dot orange"></span>L2 单代元优化代理</span></td><td>直接测“自主开发智能体”的结果，但输出的任务智能体不会接替元智能体继续开发下一代；应称 empirical proxy，不应写成完整递归。</td></tr>
+            <tr><td>RSIBench-Data</td><td>固定模型训练、服务和评估栈，只允许智能体迭代修改训练数据策略，观察反馈能否转化为更好的后训练模型。</td><td><span class="level"><span class="level-dot violet"></span>L3 组件级评测</span></td><td>可审计、变量控制较清楚，但只是数据中心型 RSI。四类前沿智能体中，持续搜索经常不能保住中途最佳结果。</td></tr>
+            <tr><td>TangramSR</td><td>通过几何一致性反馈，让视觉语言模型在测试时循环修正位置、角度和尺度预测。</td><td><span class="level"><span class="level-dot"></span>L0 窄域评测</span></td><td>能测迭代修正，但依赖几何真值/验证反馈，不涉及跨会话积累、代码自改或后继系统能力。</td></tr>
+            <tr><td>RE-Bench</td><td>测量智能体在七个开放式机器学习研发环境中的研究工程能力，并与人类专家在不同时间预算下比较。</td><td><span class="level"><span class="level-dot" style="background:var(--red)"></span>L4 外部锚点</span></td><td>是高价值 AI 研发能力基准，但不是 RSI 专用基准：它主要测单次任务能力，不直接测多代自修改后的改进轨迹。</td></tr>
+            <tr><td>GroundBench</td><td>汇集五个 LFQA 数据集，评估检索增强模型生成内容相对于给定上下文的忠实性。</td><td><span class="level"><span class="level-dot"></span>结果型任务基准</span></td><td>不是 RSI 专用基准。可作为某一领域的 E<sub>search</sub> 或 E<sub>hidden</sub> 任务来源，但必须另加多代改进协议和隔离设计。</td></tr>
+            <tr><td>PaperBench</td><td>测量智能体从头复现 20 篇 ICML 2024 论文的 AI 研究工程能力，用分层 rubric 与自动 judge 评分。</td><td><span class="level"><span class="level-dot" style="background:var(--red)"></span>L4 外部锚点</span></td><td>适合测最终候选的研究复制能力；单独使用仍不测自我修改轨迹，复杂输出依赖 judge，官方也指出不能排除评分漏洞。</td></tr>
+            <tr><td>SWE-bench / Polyglot / MLE-Bench</td><td>作为终端任务或适应度函数，测量代码修复、程序生成或机器学习工程结果。</td><td><span class="level"><span class="level-dot orange"></span>L2/L3 间接评测</span></td><td>成熟度较高但只测“最后做得多好”，不能单独证明改进来自自诊断、自修改或递归过程。</td></tr>
+          </tbody></table>
+        </div>
+        </div>
+        <div class="grid-2" style="margin-top:16px">
+          <article class="card"><div class="card-head"><div><span class="tag aqua">PAST-Bench · 论文结果</span><h3 style="margin-top:10px">排名的是“持久经验增益”，不是 RSI 总能力</h3></div><span class="card-index">3 runs</span></div><ul class="compact-list"><li>固定 Hermes：GPT-5.4 的 persistence-on/off 总增益最高（<strong>+0.24</strong>），GLM-5.1 与 Claude Sonnet 4.6 为 +0.20，最低的 MiniMax-M2.7 为 +0.13。</li><li>固定 MiniMax-M2.7：Hermes+ 为 <strong>+0.15</strong>，Hermes 与 nanobot 为 +0.13，ZeroClaw 为 +0.12，Agent-Zero 为 -0.08。</li><li>Hermes+ 相对 Hermes 只多 +0.02，论文说明该差异小于运行间波动；不能把表格当稳定的“RSI 排名”。</li></ul><div class="verdict"><strong>它回答：</strong>同一系统打开持久经验后是否更好，以及改进是否真的经过写入、检索、更新路径。</div></article>
+          <article class="card"><div class="card-head"><div><span class="tag orange">MAC · 官方排行榜</span><h3 style="margin-top:10px">排名的是“单次自主开发智能体”的能力</h3></div><span class="card-index">39 configs</span></div><ul class="compact-list"><li>只有 <strong>5/39</strong> 个“模型 × 领域”配置超过对应人类框架基线；其中 4 个来自 Claude，1 个是 DeepSeek-v4-Pro。</li><li>最好非人类 / 人类基线：AIME 0.783 / 0.733，GPQA 0.572 / 0.597，LiveCodeBench 0.557 / 0.555。</li><li>SWE-Bench 0.609 / 0.637，Terminal-Bench 0.393 / 0.326；33% 配置的标准差超过 0.1，说明开发过程很不稳定。</li></ul><div class="verdict"><strong>它没有回答：</strong>生成的 <code>agent.py</code> 能否成为下一代改进器，也没有测 <code>U₀ → U₁ → U₂</code>。</div></article>
+        </div>
+        <div class="card" style="margin-top:16px"><div class="card-head"><div><span class="tag violet">尚未解决</span><h3 style="margin-top:10px">成熟的 RSI benchmark 至少要同时测六件事</h3></div></div><div class="metric-list"><div class="metric"><strong>隐藏能力增益（Hidden gain）</strong><span>未见任务上的前后差值</span></div><div class="metric"><strong>改进轨迹（Improvement trajectory）</strong><span>多轮斜率、平台期与退化</span></div><div class="metric"><strong>因果归因（Attribution）</strong><span>收益是否来自允许修改的组件</span></div><div class="metric"><strong>迁移能力（Transfer）</strong><span>跨任务、模型、工具与环境</span></div><div class="metric"><strong>资源效率（Efficiency）</strong><span>单位算力、词元、费用和时间的增益</span></div><div class="metric"><strong>完整性与安全（Integrity &amp; safety）</strong><span>评分投机、越权、回滚和失败分支</span></div></div><p class="updated">因此，当前更准确的结论不是“RSI 没有 benchmark”，而是“已经出现若干组件级和代理型 benchmark，但统一定义、隐藏评测、跨代可比性和安全测量仍不成熟”。代码/数学最容易形成强验证闭环；视频、科学和社会系统越依赖学习型 judge 或人类，评估器独立性就越难保证。</p></div>
+      </section>
+
+      <section class="section" id="papers" aria-labelledby="papers-title">
+        <div class="section-head"><div><div class="section-kicker">04 / 文献雷达</div><h2 id="papers-title">近期文献：从自修正走向自改代码</h2></div><p class="section-intro">可搜索、可筛选。数字优先采用论文摘要或官方页面口径；“待复核”表示需要阅读全文/代码后再作为论文结论使用。</p></div>
+        <div class="controls" role="search"><input class="search" id="paperSearch" type="search" placeholder="搜索论文、方法、benchmark…" aria-label="搜索文献"><select class="filter" id="paperFilter" aria-label="按证据强度筛选"><option value="all">全部证据</option><option value="solid">实验较实</option><option value="review">综述 / 议程</option><option value="verify">待全文复核</option></select></div>
+        <div class="grid-2" id="paperGrid">
+          <article class="card paper" data-evidence="solid" data-text="Darwin Godel Machine DGM self improving agents coding SWE bench Polyglot archive evolution">
+            <div class="card-head"><div><h3>达尔文哥德尔机（Darwin Gödel Machine）</h3><span class="tag orange">L2 · 自改代码</span></div><span class="card-index">2025.05</span></div>
+            <p>维护一组智能体档案（agent archive）：从已有智能体分支出新版本，由基础模型提出代码修改，再在编程基准（coding benchmark）上实测；不是证明式哥德尔机，而是经验验证式开放探索。</p>
+            <div class="bar-chart" aria-label="DGM 报告的基准结果"><div class="bar-row"><span class="bar-label">SWE-bench</span><span class="bar-track"><span class="bar-fill" style="--value:50%"></span></span><span class="bar-value">20 → 50%</span></div><div class="bar-row"><span class="bar-label">完整 Polyglot</span><span class="bar-track"><span class="bar-fill orange" style="--value:30.7%"></span></span><span class="bar-value">14.2 → 30.7%</span></div></div>
+            <div class="bar-caption">报告值；图形是比较辅助，不代表两个基准（benchmark）同尺度、同成本。</div>
+            <p><strong>科研启发：</strong>档案分支（archive + branching）比“只保留最新版本”更适合研究开放式探索；但必须报告接口调用成本、选择策略、回滚与跨基准迁移。</p>
+            <div class="source-line"><a href="https://arxiv.org/abs/2505.22954" target="_blank" rel="noreferrer">[S1] Zhang et al., arXiv:2505.22954 ↗</a> · <span class="status solid">摘要有量化结果</span></div>
+          </article>
+          <article class="card paper" data-evidence="solid" data-text="AlphaEvolve coding agent scientific algorithmic discovery Google DeepMind evolutionary evaluator">
+            <div class="card-head"><div><h3>阿尔法进化（AlphaEvolve）</h3><span class="tag blue">L2/L3 · 算法进化</span></div><span class="card-index">2025.05</span></div>
+            <p>用大语言模型（LLM）生成代码候选，用自动评估器（evaluator）测试，以进化式搜索持续选择；重点是算法和系统组件的发现，不等同于修改基础模型本身。</p>
+            <ul class="checklist"><li>应用于调度、硬件电路简化、训练系统与数学/计算机科学算法。</li><li>官方摘要强调发现 4×4 复矩阵乘法的 48 次标量乘法方案。</li><li>研究价值在“生成—执行—评分—变异”的可验证闭环。</li></ul>
+            <div class="source-line"><a href="https://arxiv.org/abs/2506.13131" target="_blank" rel="noreferrer">[S2] Novikov et al., AlphaEvolve ↗</a> · <a href="https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/" target="_blank" rel="noreferrer">官方介绍 ↗</a></div>
+          </article>
+          <article class="card paper" data-evidence="solid" data-text="Self Improving Coding Agent Robeyns Szummer Aitchison SWE Bench LiveCodeBench autonomous edit itself">
+            <div class="card-head"><div><h3>自改进编程智能体（A Self-Improving Coding Agent）</h3><span class="tag aqua">L2 · 智能体自修改</span></div><span class="card-index">2025.04</span></div>
+            <p>让编程智能体（coding agent）使用基础编码工具修改自己的智能体代码（agent code），以反思和代码更新驱动改进。摘要报告在 SWE-bench Verified 随机子集上从 17% 提升到 53%，并报告 LiveCodeBench 与合成智能体基准（agent benchmark）增益。</p>
+            <p><strong>需要追问：</strong>提升来自哪里？代码结构、提示词（prompt）、工具、模型调用次数，还是基准专项调优（benchmark-specific tuning）？应做组件级消融实验（ablation）与冻结评估器。</p>
+            <div class="source-line"><a href="https://arxiv.org/abs/2504.15228" target="_blank" rel="noreferrer">[S3] Robeyns et al., arXiv:2504.15228 ↗</a> · <span class="status solid">摘要有量化结果</span></div>
+          </article>
+          <article class="card paper" data-evidence="solid" data-text="Godel Agent self referential agent framework ACL 2025 recursive self improvement">
+            <div class="card-head"><div><h3>哥德尔智能体（Gödel Agent）</h3><span class="tag orange">L2 · 自指智能体</span></div><span class="card-index">ACL 2025</span></div>
+            <p>从高层目标出发，让大语言模型（LLM）动态修改智能体的逻辑与行为，而不是只执行人工预先写死的优化流程（pipeline）。它适合作为“自改逻辑”范式的概念基线。</p>
+            <p><strong>科研用法：</strong>可把它作为固定脚手架（fixed scaffold）、仅反思（reflection-only）、代码进化（code evolution）三种基线之一，比较“改进自由度”与可靠性之间的关系。</p>
+            <div class="source-line"><a href="https://aclanthology.org/2025.acl-long.1354/" target="_blank" rel="noreferrer">[S4] Gödel Agent, ACL 2025 ↗</a> · <span class="status">细节需读全文</span></div>
+          </article>
+          <article class="card paper" data-evidence="solid" data-text="Huxley Godel Machine HGM clade metaproductivity descendant productivity ICLR 2026">
+            <div class="card-head"><div><h3>赫胥黎哥德尔机（Huxley-Gödel Machine, HGM）</h3><span class="tag violet">L2 · 后代生产力</span></div><span class="card-index">ICLR 2026</span></div>
+            <p>指出“当前任务分高”不等于“后代更有潜力”，提出谱系元生产力（clade metaproductivity, CMP），用后代结果指导档案节点选择。这是本课题必须正面对比的最近工作。</p>
+            <p><strong>仍有缺口：</strong>HGM 主要优化固定效用下的谱系选择；我们要进一步用角色交换干预，区分任务智能体变强、改进器变强和固定外层搜索器贡献，并测试这种归因在 evaluator shift 下是否保持。</p>
+            <div class="source-line"><a href="https://arxiv.org/abs/2510.21614" target="_blank" rel="noreferrer">[S16] HGM, ICLR 2026 ↗</a> · <span class="status solid">主会近邻工作</span></div>
+          </article>
+          <article class="card paper" data-evidence="review" data-text="Survey Self Evolving Agents On Path to Artificial Super Intelligence taxonomy memory tools architecture">
+            <div class="card-head"><div><h3>自进化智能体综述（A Survey of Self-Evolving Agents）</h3><span class="tag blue">综述 · 分类体系（taxonomy）</span></div><span class="card-index">2025.07</span></div>
+            <p>将自进化按“改什么”（模型、记忆、工具、架构）、“何时改”（任务回合内/回合间）和“如何改”（奖励、文本反馈、单/多智能体）组织起来。</p>
+            <p><strong>可直接借用：</strong>把实验表格按进化对象（evolution target）× 时机（timing）× 反馈信号（feedback signal）三维记录，避免把提示词反思（prompt reflection）、持续学习（continual learning）和自改代码（self-modifying code）混成一个词。</p>
+            <div class="source-line"><a href="https://arxiv.org/abs/2507.21046" target="_blank" rel="noreferrer">[S5] Survey of Self-Evolving Agents ↗</a> · <span class="status solid">综述框架</span></div>
+          </article>
+          <article class="card paper" data-evidence="review" data-text="Recursive Self Improvement in AI From Bounded Self Refinement Autonomous Research Loops survey 2026 1250 papers">
+            <div class="card-head"><div><h3>RSI 综述：从自修正到研究循环</h3><span class="tag violet">议程 · 2026</span></div><span class="card-index">2026.07</span></div>
+            <p>近期综述声称覆盖 2024–2026 年 1,250 篇 arXiv 论文，区分部署行为（deployment behavior）、训练后策略（trained policy）、评估器（evaluator）和 AI 研究流程（AI research process）四类改进对象。</p>
+            <p><strong>关键判断：</strong>开放式 RSI 的瓶颈不是“会不会生成更多候选”，而是现实基础（grounding）、独立评估、塌缩与多样性、计算预算和研究方向选择。</p>
+            <div class="source-line"><a href="https://arxiv.org/abs/2607.07663" target="_blank" rel="noreferrer">[S6] 2026 RSI survey ↗</a> · <span class="status">新近 arXiv，全文复核</span></div>
+          </article>
+          <article class="card paper" data-evidence="verify" data-text="HyperAgents Red Queen Godel Machine co evolving evaluators 2026">
+            <div class="card-head"><div><h3>评估器（Evaluator）也会进化</h3><span class="tag violet">L3 · 协同进化（co-evolution）</span></div><span class="card-index">2026 线索</span></div>
+            <p>超级智能体（HyperAgents）与红皇后哥德尔机（Red Queen Gödel Machine）等工作把“改进智能体的元智能体（meta-agent）”和评估器纳入进化对象。方向很新，但核心问题是：如果评分标准也在变，如何定义真实进步？</p>
+            <p><strong>建议：</strong>先把评估器冻结作为主实验，再用协同进化（co-evolution）做扩展；否则很难区分能力提升、评分漂移和奖励投机（reward hacking）。</p>
+            <div class="source-line"><a href="https://ai.meta.com/research/publications/hyperagents/" target="_blank" rel="noreferrer">HyperAgents ↗</a> · <a href="https://arxiv.org/abs/2606.26294" target="_blank" rel="noreferrer">Red Queen Gödel Machine ↗</a> · <span class="status">待复核</span></div>
+          </article>
+          <article class="card paper" data-evidence="solid" data-text="Mind the Gap Sharpening Mechanism self improvement verifier ICLR 2025 safety">
+            <div class="card-head"><div><h3>自我验证的边界</h3><span class="tag aqua">L0 · 验证器（verifier）</span></div><span class="card-index">ICLR 2025</span></div>
+            <p>“注意差距（Mind the Gap）”与“锐化机制（Sharpening Mechanism）”提醒：模型自生成、自验证、自蒸馏可能带来局部提升，但不能凭空创造原模型完全没有的信息；生成—验证差距是核心测量。</p>
+            <p><strong>实验启发：</strong>同时报告生成器得分（generator score）、验证器得分（verifier score）和外部评审得分（external judge score），而不是只报自评结果；并保留分布外（out-of-domain）与对抗划分（adversarial split）。</p>
+            <div class="source-line"><a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/63943ee9fe347f3d95892cf87d9a42e6-Abstract-Conference.html" target="_blank" rel="noreferrer">Mind the Gap ↗</a> · <a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/bee8c2bc757f6bbc3efd7cf1b979f0c9-Abstract-Conference.html" target="_blank" rel="noreferrer">Sharpening ↗</a></div>
+          </article>
+          <article class="card paper" data-evidence="verify" data-text="reward hacking protocol validity HackDetect evaluator gaming agent benchmark environmental hardening">
+            <div class="card-head"><div><h3>评测协议有效性与奖励投机</h3><span class="tag orange">安全 · evaluator gaming</span></div><span class="card-index">2026 预印本</span></div>
+            <p>Reward Hacking Benchmark 把跳过验证、利用元数据和篡改评分相关函数做成工具任务；HackDetect 则把“暴露点→智能体如何利用→分数是否误导”组织成事后审计。</p>
+            <p><strong>科研用法：</strong>不要把另一个 LLM judge 当唯一防线。优先使用权限隔离、运行时拦截、程序化新题、异构 verifier、投机诱饵和配对反事实，审计模型只负责补充解释。</p>
+            <div class="source-line"><a href="https://arxiv.org/abs/2605.02964" target="_blank" rel="noreferrer">[S17] Reward Hacking Benchmark ↗</a> · <a href="https://arxiv.org/abs/2607.22368" target="_blank" rel="noreferrer">[S18] Protocol Validity / HackDetect ↗</a> · <span class="status">新近结果待独立复核</span></div>
+          </article>
+        </div>
+        <p id="noResults" class="updated hidden">没有匹配的文献。可以换一个关键词，或把证据筛选切换为“全部证据”。</p>
+      </section>
+
+      <section class="section hidden" id="directions" aria-labelledby="directions-title">
+        <div class="section-head"><div><div class="section-kicker">05 / 方向审计（再次纠偏）</div><h2 id="directions-title">“6→2→6”作废：它只是一次过早收缩，不是调研结论</h2></div><p class="section-intro">此前把候选空间、项目依赖和近期选题混成了一个数字，导致文献刚展开就被压成六篇。下面 A–E 只保留为 Full-Stack RSI 旗舰实验的组成审计；全部可做空间以本页后面的 100 篇候选池为准。</p></div>
+        <div class="callout" style="margin-bottom:16px"><p><strong>新的研究管理规则：</strong>候选池只因“已有工作已经完整回答”或“无法形成可证伪实验”而删除；资源、先后依赖和当前成熟度只影响排序，不再影响候选是否存在。100 篇不是承诺 100 篇都能直接中顶会，而是 100 个有近邻、有缺口、有实验、有成刊门槛的论文单元。</p></div>
+        <div class="grid-2">
+          <article class="card research-card" data-code="00"><div class="card-head"><div><span class="tag orange">旗舰集成主线 · 不是唯一候选</span><h3 style="margin-top:10px">Full-Stack RSI：哪些部分必须存在、哪些部分必须能变？</h3></div><span class="card-index">示范组合</span></div><p>中心问题是寻找递归自我改进的最小充分结构，并区分“当前会做”“后继能改”和“整个结构能重组”。</p><ol><li><code>F₀=∅</code> 的盲标量启动实验。</li><li>十类角色的加入、删除、冻结、交换和组合消融。</li><li>组件内容、组件集合与拓扑变化的跨代测量。</li></ol><span class="fit">它是 100 篇候选中的一条集成主线，不再代表全部研究空间</span></article>
+          <article class="card research-card" data-code="A"><div class="card-head"><div><span class="tag blue">A · 因果测量 → Paper 2</span><h3 style="margin-top:10px">改进能力能否脱离原谱系迁移？</h3></div><span class="card-index">不是独立首篇</span></div><p><strong>人话：</strong>一个系统自己越改越好，可能只是碰巧继承了更好的代码；把它的“改进办法”移植到陌生系统上，还能不能把对方改好？</p><ol><li>在未见父代上交换祖先/后继改进器。</li><li>跨模型、跨领域、跨框架做全交叉移植。</li><li>Paper 1 中先测 <code>M</code>；扩成 TransplantBench 后独立为 Paper 2。</li></ol><span class="fit">DGM/HGM/Hyperagents 已覆盖核心动机 · 新论文必须靠大规模迁移干预</span></article>
+          <article class="card research-card" data-code="B"><div class="card-head"><div><span class="tag orange">B · 必要基础设施</span><h3 style="margin-top:10px">Evaluator Firewall：别让练习题兼任最终考试</h3></div><span class="card-index">默认不是贡献</span></div><p><strong>人话：</strong>系统可以反复看练习分，但最终判断必须来自它没看过、不能修改、实现方式不同的考试；否则“进化”可能只是背题或改评分器。</p><ol><li>开发分用于搜索；隐藏/影子分只用于研究者验证。</li><li>测试密钥、grader 和运行权限与 agent 隔离。</li><li>投机攻击单独计数，不算能力收益。</li></ol><span class="fit">MAC 等工作已实现大量内容 · 本项目必须有，但不能单靠它发顶刊</span></article>
+          <article class="card research-card" data-code="C"><div class="card-head"><div><span class="tag violet">C · 与 B 组成 Paper 3</span><h3 style="margin-top:10px">换了尺子，原来的“好血统”还好吗？</h3></div><span class="card-index">HGM + RQGM 之后</span></div><p><strong>人话：</strong>某条谱系在评价标准 E₁ 下很会产生高分后代；当目标或 evaluator 换成 E₂，它是仍然会进化，还是整条谱系立刻失效？</p><ol><li>同一谱系在多个冻结 evaluator 上反事实重放。</li><li>区分当前分数、后代生产力和跨标准稳健生产力。</li><li>提出 robust metaproductivity 与选择算法。</li></ol><span class="fit">B 提供可信评估，C 提供新科学问题；两者合成才够独立论文</span></article>
+          <article class="card research-card" data-code="D"><div class="card-head"><div><span class="tag aqua">D · 后期 Paper 6</span><h3 style="margin-top:10px">Scientific RSI：拿真实研究检验框架是否只是会刷代码题</h3></div><span class="card-index">应用验证论文</span></div><p><strong>人话：</strong>把已经在可验证任务上建立的全框架，放到“提出假设—做实验—复现”的研究任务中，看它能不能继续演化。</p><ol><li>先做有真值的算法/小型 ML 任务。</li><li>再测新颖性、复现性、方向选择和负结果判断。</li><li>用独立实现与专家盲审，而不是只靠 LLM judge。</li></ol><span class="fit">必须证明结构演化迁移或产生可复现发现，才能独立为 Paper 6</span></article>
+          <article class="card research-card" data-code="E"><div class="card-head"><div><span class="tag violet">E · 可独立安全支线</span><h3 style="margin-top:10px">Proof-Carrying Successors：后继必须带着可验证安全证据出生</h3></div><span class="card-index">可独立论文</span></div><p><strong>人话：</strong>系统可以改自己，但每个新版本只有证明权限、预算、测试完整性和恢复条件仍成立，外部内核才允许它接管。</p><ol><li>不可变外部安全内核 + 可演化内部治理。</li><li>后继包携带 manifest、证明/测试证据和回滚点。</li><li>测安全门槛造成的能力税、存活率与攻击跨代持久性。</li></ol><span class="fit">有独立系统/安全论文潜力 · 但需要形式约束与攻击实验，不是普通沙箱工程</span></article>
+        </div>
+      </section>
+
+      <section class="section hidden" id="fullstack" aria-labelledby="fullstack-title">
+        <div class="section-head"><div><div class="section-kicker">06 / 旗舰研究议程</div><h2 id="fullstack-title">Full-Stack RSI：让整个实现框架成为演化对象</h2></div><p class="section-intro">核心不是“在固定流程里改一个提示词”，而是先定义 RSI 应表现出的行为，再测任意框架实现了多少、哪些部分能够继续变化，以及框架的节点与连接能否共同演化。</p></div>
+
+        <div class="callout"><p><strong>最关键的研究判断：</strong>RSI 描述的是行为；框架 <code>F</code> 是这种行为的一种实现。某个角色没有实现，其能力就是 0；实现了但写死，只代表当前能力，不代表可进化；只有组件内容、组件集合和组件关系都可改变，才接近“全框架 RSI”。</p></div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>先把“文献常用写法”和“本文提议”分开</h3><p>当前并不存在公认的 RSI 标准组件表。下面不是冒充已有标准，而是以近年文献的 agent/scaffold 表达为起点，提出一个可供实验比较的参考模型。</p></div>
+          <div class="grid-2">
+            <article class="card"><span class="phase-label">Literature baseline</span><h3>智能体 + 脚手架 + 更新算子</h3><div class="equation">A_t = (θ_t, Σ_t)<br>Σ_t = (p_t, m_t, T_t, g_t)<br>A_{t+1} = U_t(A_t; ℐ_t)</div><p style="margin-top:12px"><code>θ</code> 是模型/权重，<code>Σ</code> 是提示词、记忆、工具与控制逻辑组成的脚手架，<code>U</code> 根据本轮可见信息 <code>ℐ</code> 产生后继。这个写法足够描述“改 agent”，但还没有显式表示全部角色与拓扑演化。</p><div class="source-line"><a href="https://arxiv.org/abs/2607.13104" target="_blank" rel="noreferrer">[S19] Self-Improvements in Modern Agentic Systems ↗</a></div></article>
+            <article class="card"><span class="phase-label">Proposed reference model</span><h3>角色集合 + 实现图 + 演化算子</h3><div class="equation">R = {J,C,A,E,D,M,Q,K,G,H}<br>F_t = (V_t, L_t, φ_t)<br>F_{t+1} = Ω_t(F_t; Self_t, s_t)</div><p style="margin-top:12px"><code>R</code> 是 RSI 行为角色，<code>V</code> 是实际组件，<code>L</code> 是连接/执行关系，<code>φ</code> 把组件映射到角色；<code>Ω</code> 不只改参数，也可增删、拆并、重排与重连组件。</p></article>
+          </div>
+          <div class="verdict"><strong>新颖性应如何表述：</strong>现有工作已经出现自改逻辑、代码档案、meta-agent 与 evaluator 协同进化，因此不能声称“从没人想过框架会变”。更可信的贡献是：首次系统化提出并实证验证“行为—实现—能力—可演化性—拓扑”这一统一测量框架；“首次”仍须在投稿前完成系统检索后再写。</div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>RSI 行为定义：实现方式可以不同，但闭环行为必须可观察</h3><p>这是一份 behavioral specification，而不是要求所有系统都使用十个独立进程。一个节点可以承担多个角色，也可以多个节点共同实现同一角色。</p></div>
+          <div class="flow-grid">
+            <div class="flow-step"><span>01 · Attempt</span><strong>执行与获得结果</strong><p>系统在任务/环境中行动，形成可比较的结果与资源消耗。</p></div>
+            <div class="flow-step"><span>02 · Learn</span><strong>形成改进信号</strong><p>系统利用允许的信息决定什么值得改变；极限基线只有一个盲分数。</p></div>
+            <div class="flow-step"><span>03 · Rebuild</span><strong>产生可运行后继</strong><p>改变组件状态、算法、实现、组件集合或连接拓扑，而不只是当前答案。</p></div>
+            <div class="flow-step"><span>04 · Recur</span><strong>后继接管下一轮</strong><p>新系统被独立启动、验证并继续产生后代；允许提升、停滞或退化。</p></div>
+          </div>
+          <div class="equation">RSI behavior = Attempt → Signal → Modify → Verify → Select → Persist → Successor takeover → Repeat</div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>十类功能角色：这是完整分析坐标，不是十个必须存在的模块</h3><p>每项都可以为 0、固定或可演化；实验要记录“谁实现了它、实现到什么程度、下一代能否改变它”。</p></div>
+          <div class="matrix-wrap"><table class="comparison-table"><caption class="hidden">Full-Stack RSI 的十类功能角色</caption><thead><tr><th>符号 / 角色</th><th>负责什么</th><th>能力为 0 的含义</th><th>可演化时能改变什么</th></tr></thead><tbody>
+            <tr><td><code>J</code> · Goal / Utility</td><td>目标、约束、多目标权衡与停止条件。</td><td>没有内部目标表示，只被外部调用。</td><td>目标分解、权重、课程与停止规则；不代表允许任意改写安全边界。</td></tr>
+            <tr><td><code>C</code> · Curriculum / Experience</td><td>选择经历、任务、数据和探索顺序。</td><td>被动接受固定输入。</td><td>主动构造练习、选数据、安排难度和探索区域。</td></tr>
+            <tr><td><code>A</code> · Task Agent</td><td>在目标任务上感知、规划、调用工具并输出。</td><td>没有可执行任务策略。</td><td>提示词、策略、代码、工具使用，条件允许时包括权重。</td></tr>
+            <tr><td><code>E</code> · Evaluator</td><td>把行为与结果映射成证据或效用。</td><td>内部不能判断候选好坏。</td><td>测试生成、验证规则、代理指标与不确定性估计。</td></tr>
+            <tr><td><code>D</code> · Diagnoser</td><td>从证据定位瓶颈并形成改进假设。</td><td>只有分数，没有内部归因。</td><td>错误分类、因果假设、credit assignment 和实验设计。</td></tr>
+            <tr><td><code>M</code> · Modifier</td><td>提出并构造系统修改。</td><td>不能产生持久后继。</td><td>修改参数、程序、模块，或创建新的改进过程。</td></tr>
+            <tr><td><code>Q</code> · Selector</td><td>比较候选、选父代、回滚或保留多样性。</td><td>无内部选择；完全由外部壳决定。</td><td>接受规则、档案策略、多目标选择与分支预算。</td></tr>
+            <tr><td><code>K</code> · Memory / Archive</td><td>保存经验、制品、谱系和失败知识。</td><td>跨代没有可用内部状态。</td><td>存储结构、压缩、检索、遗忘和谱系表示。</td></tr>
+            <tr><td><code>G</code> · Governance / Safety</td><td>权限、资源、不变量、审计与恢复。</td><td>没有内部治理能力；仍受外部安全壳约束。</td><td>更好的自检、权限请求与安全策略；不可改的外部底线不属于它。</td></tr>
+            <tr><td><code>H</code> · Harness / Handoff</td><td>调度组件、封装后继、启动下一代。</td><td>不会自行完成代际交接。</td><td>工作流、通信协议、并发结构、模块边界与接管方式。</td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>怎样把“会不会”与“能不能继续变”分别量出来</h3><p>这是整篇研究的关键：当前能力高不代表框架可进化；框架会变化也不代表变化方向正确。</p></div>
+          <div class="grid-3">
+            <article class="card"><h3>实现能力向量</h3><div class="equation">c(F_t) = (c_J,…,c_H), c_i ∈ [0,1]</div><p style="margin-top:12px">角色缺失时 <code>c_i=0</code>。分值来自针对该角色的独立干预任务，而不是研究者看代码后主观打分。</p></article>
+            <article class="card"><h3>可演化掩码</h3><div class="equation">μ(F_t) = (μ_J,…,μ_H), μ_i ∈ {0,1}</div><p style="margin-top:12px"><code>μ_i=1</code> 表示后继可持久修改该角色的实现；固定但很强的 evaluator 可以 <code>c_E&gt;0, μ_E=0</code>。</p></article>
+            <article class="card"><h3>结构可变性</h3><div class="equation">τ_t = Δ(V_t, L_t, φ_t)</div><p style="margin-top:12px">记录增删、拆分、合并、重排和重连，不把文件 diff 大小误当结构创新；同时测变化后的真实增益与退化。</p></article>
+          </div>
+          <div class="equation">Full-Stack RSI profile P_t = [c(F_t), μ(F_t), τ_t, autonomy_t, integrity_t, cost_t]</div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>极限基线：F₀=∅，演化时只看自身信息与一个标量分数</h3><p>这是最干净、也最难的启动实验。它不是完整系统的默认配置，而是用来测“原始模型能否从零发明改进闭环”的下界。</p></div>
+          <div class="proposal">
+            <article class="card proposal-title"><span class="tag orange">Zero-scaffold / scalar-only</span><h3 style="font-size:25px;margin-top:18px">内部框架为 0，外部审计壳不计入能力</h3><div class="big">F₀ = ∅</div><p>基础模型 <code>θ₀</code> 仍然存在，但没有预置诊断器、改进器、记忆、候选选择、代际工作流或错误解释。外部壳 <code>O</code> 只负责安全地调用、评分、保存制品并启动后继，永远不向系统贡献改进建议。</p></article>
+            <article class="card"><h3>严格的信息可见性契约</h3><div class="equation">ℐ_t^evolve = {Self_t, s_t},　s_t ∈ ℝ</div><dl class="definition-list"><dt>可见：<code>Self_t</code></dt><dd>当前可执行制品、系统自身生成的源码/提示/配置/内部记忆、父代关系、剩余预算，以及最初给定的“提高盲分数并产出后继”目标。</dd><dt>可见：<code>s_t</code></dt><dd>一个不解释原因的聚合标量；可以规定方向与范围，但不返回分项得分。</dd><dt>不可见</dt><dd>测试题、答案、标签、失败样例、单测名、错误日志、执行轨迹摘要、grader 代码、评分理由、其他候选比较、人工诊断。</dd><dt>特别封存</dt><dd>候选在隐藏任务执行时会收到正常任务输入，但这段测试内容、输出与运行轨迹不回流到演化阶段；只释放聚合分数。</dd></dl></article>
+          </div>
+          <div class="grid-3" style="margin-top:16px">
+            <article class="card"><h3>第 0 次调用</h3><p>外部壳把基础模型作为一次普通调用启动。模型若只输出答案、解释或新提示而没有可执行后继，则 bootstrap 失败。</p></article>
+            <article class="card"><h3>唯一反馈</h3><p>外部壳在密封任务集上运行制品，只返回 <code>s₀</code>。系统必须自己决定是否需要记忆、诊断、搜索、模块或新工作流。</p></article>
+            <article class="card"><h3>递归成立条件</h3><p>只有当产出的 <code>F₁</code> 可独立启动、能读取同样的二元信息并继续产生 <code>F₂</code>，才记为闭环深度 1；之后同理。</p></article>
+          </div>
+          <div class="verdict"><strong>失败也有信息：</strong>如果多数模型在 <code>F₀=∅</code> 下无法启动，而加入一种最小能力后开始形成后继，就得到“RSI 的最小启动组件”边界；这比只展示一条成功 demo 更有科学价值。</div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>实验阶梯：从 0 到整个框架与拓扑都能变化</h3><p>每一级只开放一个新的自由度，才能判断收益究竟来自更多信息、更多组件，还是框架结构本身的演化。</p></div>
+          <div class="matrix-wrap"><table class="domain-table"><caption class="hidden">全框架 RSI 实验阶梯</caption><thead><tr><th>级别</th><th>初始框架 / 可见信息</th><th>允许改变</th><th>核心对照</th><th>回答的问题</th></tr></thead><tbody>
+            <tr><td>Z0 · 零脚手架</td><td><code>F₀=∅</code>；自身信息 + 盲标量。</td><td>模型自行产出第一个后继框架。</td><td>重复采样、等计算静态模型。</td><td>能否从零启动？第一种自发出现的角色是什么？</td></tr>
+            <tr><td>Z1 · 最小固定环</td><td>外给最小 propose→score→replace 循环；仍只有盲标量。</td><td>只改任务制品 <code>A</code>。</td><td>Z0、随机/进化搜索。</td><td>一个写死循环本身带来多少收益？</td></tr>
+            <tr><td>Z2 · 组件解锁</td><td>逐项开放 <code>K,D,M,Q</code> 等角色。</td><td>角色内容可改，拓扑固定。</td><td>单组件加入/移除和 factorial ablation。</td><td>哪些组件是必要、充分、互补或有害的？</td></tr>
+            <tr><td>Z3 · 全角色可变</td><td>十类角色均可实现与修改。</td><td>组件内容和算法；连接仍固定。</td><td>冻结某一角色、祖先/后继角色交换。</td><td>能力提升是否依赖改进器、评估器或治理共同变化？</td></tr>
+            <tr><td>Z4 · 拓扑演化</td><td>只规定输入/输出契约与外部安全壳。</td><td>节点增删拆并、顺序、通信和控制流。</td><td>等参数量/等预算的固定拓扑搜索。</td><td>结构自由度是否产生超出组件优化的复合增益？</td></tr>
+            <tr><td>Z5 · 迁移与扰动</td><td>冻结已演化谱系，切换模型、领域与 evaluator。</td><td>在新分布继续演化或保持冻结。</td><td>从零重启、人工框架、DGM/HGM/Hyperagents 类基线。</td><td>得到的是通用演化能力，还是特定任务的黑箱过拟合？</td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>六个核心研究问题，以及无论成败都能产出的结果</h3><p>不把“系统一定会越来越强”写成前提；提升、停滞与退化都应进入理论和数据集。</p></div>
+          <div class="matrix-wrap"><table class="comparison-table"><caption class="hidden">Full-Stack RSI 研究问题与预期结果</caption><thead><tr><th>研究问题</th><th>可证伪假设</th><th>预计能得到的成果</th></tr></thead><tbody>
+            <tr><td>RQ1 零框架能启动吗？</td><td>盲分数下，基础模型偶尔能构造 <code>F₁</code>，但稳定递归深度很低。</td><td>bootstrap rate、首次成环代数、失败类型与模型尺度关系。</td></tr>
+            <tr><td>RQ2 最小充分组件是什么？</td><td><code>M+Q+K</code> 比单独增加反思更能提升长期闭环，但组合效应依任务而变。</td><td>组件必要性/互补性图谱，而不是单一排行榜。</td></tr>
+            <tr><td>RQ3 框架能力和可演化性一致吗？</td><td>初始高分框架未必有高 descendant productivity。</td><td>能力—可演化性错配曲线与后代生产力预测器。</td></tr>
+            <tr><td>RQ4 拓扑自由度真的有用吗？</td><td>在同预算下，结构演化只在部分长程任务上超过固定拓扑。</td><td>结构创新的适用边界；可能得到高价值负结果。</td></tr>
+            <tr><td>RQ5 会不会同时退化或投机？</td><td>开发分上升时，完整性、迁移或某些角色能力可能下降。</td><td>退化率、能力向量 Pareto 面、投机谱系和恢复规律。</td></tr>
+            <tr><td>RQ6 演化能力能迁移吗？</td><td>框架结构的一部分可跨任务保留，但 evaluator/课程最易过拟合。</td><td>跨模型、跨领域、跨 evaluator 的 transfer matrix。</td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>不能只看总分：旗舰实验的主指标</h3><p>标量分数是系统在演化期唯一看到的反馈，不等于研究者只能记录一个指标；外部审计可以在不回流的条件下做丰富测量。</p></div>
+          <div class="metric-list">
+            <div class="metric"><strong>Bootstrap rate / time</strong><span>从 <code>F₀=∅</code> 产生首个可运行后继的比例与调用数</span></div>
+            <div class="metric"><strong>Closed-loop depth</strong><span>连续由后继接管并再产生后继的有效代数</span></div>
+            <div class="metric"><strong>Capability profile</strong><span>十类角色能力向量及跨代提升、停滞和退化</span></div>
+            <div class="metric"><strong>Framework emergence</strong><span>组件何时出现、消失、拆并或被另一组件接管</span></div>
+            <div class="metric"><strong>Blind-score efficiency</strong><span>每次标量查询、每百万 token 与每 GPU-hour 的隐藏增益</span></div>
+            <div class="metric"><strong>Structural causal gain</strong><span>在等预算反事实下，拓扑变化而非内容变化带来的增益</span></div>
+            <div class="metric"><strong>Descendant productivity</strong><span>当前框架产生高质量后代及后代继续改进的能力</span></div>
+            <div class="metric"><strong>Integrity / degeneration</strong><span>投机率、约束违反、角色丢失、回滚率与最差谱系</span></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>预计做出什么：不是一个 demo，而是一套研究基础设施</h3><p>真正足量的成果应同时包含定义、系统、数据和实证发现；任何一项单独拿出来都不足以支撑“完整 RSI 测评”主张。</p></div>
+          <div class="grid-3">
+            <article class="card"><span class="phase-label">Deliverable 1</span><h3>RSI Reference Model</h3><p>行为规范、十类角色、符号、system boundary、能力向量、可演化掩码和拓扑变更 schema。</p></article>
+            <article class="card"><span class="phase-label">Deliverable 2</span><h3>Open Evolution Harness</h3><p>统一运行零脚手架、固定环、组件可变和拓扑可变系统；支持盲标量 API、后继制品、预算与安全隔离。</p></article>
+            <article class="card"><span class="phase-label">Deliverable 3</span><h3>Full-Stack RSI Benchmark</h3><p>多任务族、逐级权限、组件干预、角色交换、跨 evaluator 隐藏测试与结构演化对照。</p></article>
+            <article class="card"><span class="phase-label">Deliverable 4</span><h3>Evolution Atlas</h3><p>发布全部成功与失败谱系、组件涌现顺序、退化模式、结构变化和成本，形成后续研究可复用的数据集。</p></article>
+            <article class="card"><span class="phase-label">Deliverable 5</span><h3>Empirical Laws / Boundaries</h3><p>回答最小启动条件、能力—可演化性错配、拓扑收益边界，以及哪些结论能跨模型和领域保持。</p></article>
+            <article class="card"><span class="phase-label">Deliverable 6</span><h3>Audit &amp; Reproduction Pack</h3><p>容器、任务生成器、外部审计日志、预注册分析与第三方复跑，防止把评估泄漏当成框架演化。</p></article>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>实验计划与体量：分三阶段，不一开始就烧完整矩阵</h3><p>数量是预算估算，不是为了堆运行次数。先用 pilot 测方差和协议有效性，再冻结主实验矩阵。</p></div>
+          <div class="grid-3">
+            <article class="card"><span class="phase-label">P0 · 4–6 周</span><h3>占坑与协议验证</h3><ul class="compact-list"><li>Z0/Z1 两级，2 个模型、3 seeds、4 代、2 candidates。</li><li>约 <strong>96 个 evolution episodes</strong>，外加静态等计算对照。</li><li>交付技术报告、形式化定义、schema、零脚手架 demo 与失败分类。</li><li>门槛：可重放率 ≥95%，演化期信息泄漏为 0。</li></ul></article>
+            <article class="card"><span class="phase-label">P1 · 3–5 个月</span><h3>组件因果图谱</h3><ul class="compact-list"><li>8 个解锁/消融配置 × 2 模型 × 4 seeds × 5 代 × 3 candidates。</li><li>约 <strong>960 个 evolution episodes</strong>，2 个程序化任务族 + 1 个 OOD 族。</li><li>交付组件必要性、互补性、能力/可演化性 profile 和首篇实证论文。</li><li>门槛：至少两个独立任务族复现主要交互效应。</li></ul></article>
+            <article class="card"><span class="phase-label">P2 · 6–12 个月</span><h3>旗舰全框架实验</h3><ul class="compact-list"><li>5 个体制 × 3 模型 × 3 领域 × 5 seeds × 6 代 × 4 candidates。</li><li>上限约 <strong>5,400 个 evolution episodes</strong>；按 P1 方差做功效分析后可缩减。</li><li>结构演化、跨 evaluator/模型/领域迁移、外部复跑和红队审计。</li><li>形成 benchmark/system 主会稿与适合长文持续维护的数据资产。</li></ul></article>
+          </div>
+          <div class="verdict"><strong>实验量判断：</strong>足够，而且很大。真正的瓶颈不是 episode 数，而是 ① 独立谱系数是否足够，② 每组预算是否配平，③ 隐藏评估是否真正不回流，④ 能否把结构变化做成可信的因果干预。</div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>实现难度：哪里最难，是否做得出来</h3><p>零脚手架 demo 不难；把“全框架演化”测得可信非常难。应把工程风险拆开，而不是用一个宏大系统同时解决所有问题。</p></div>
+          <div class="matrix-wrap"><table><caption class="hidden">Full-Stack RSI 实现难度</caption><thead><tr><th>工作包</th><th>难度</th><th>主要难点</th><th>现实判断</th></tr></thead><tbody>
+            <tr><td>参考模型、符号与 schema</td><td>3 / 5</td><td>避免角色重叠、保证不同架构都能映射、指标可操作化。</td><td>可做；需要迭代和外部评审，不需要大算力。</td></tr>
+            <tr><td>Z0 盲分数零脚手架</td><td>3 / 5</td><td>严格分离测试运行与演化信息，定义什么算可执行后继。</td><td>可先做出；很可能高失败率，正适合 pilot。</td></tr>
+            <tr><td>组件解锁与因果消融</td><td>4 / 5</td><td>组合数快速增长，角色实现不等价，需功效分析。</td><td>可作为第一篇完整实证论文。</td></tr>
+            <tr><td>任意拓扑演化</td><td>5 / 5</td><td>动态接口、失效恢复、结构等价判定、信用分配和预算公平。</td><td>最大技术风险；必须放到第二阶段。</td></tr>
+            <tr><td>跨领域隐藏评估</td><td>5 / 5</td><td>不同领域 verifier 可靠性差异大，容易泄漏或不可复现。</td><td>需要程序化任务优先，并引入独立审计者。</td></tr>
+            <tr><td>安全、成本与长期运行</td><td>5 / 5</td><td>容器逃逸、评分投机、API/GPU 成本、失败谱系存储。</td><td>可控但昂贵；外部壳必须始终不可变。</td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>内容够不够、意义够不够、为什么有顶会/顶刊潜力</h3><p>结论是：作为一篇只展示 <code>F₀=0</code> 的论文不够；作为“参考模型 + 开源 benchmark/harness + 大规模因果图谱”的研究计划，内容和意义都足够，甚至需要拆成多篇。</p></div>
+          <div class="matrix-wrap"><table class="comparison-table"><caption class="hidden">不同完成度的投稿潜力</caption><thead><tr><th>完成度</th><th>内容量</th><th>科学意义</th><th>合理出口</th><th>主要拒稿风险</th></tr></thead><tbody>
+            <tr><td>只有 Z0 演示</td><td>不足</td><td>有趣但证据窄</td><td>workshop / demo / technical report</td><td>像 prompt engineering；失败或成功都无法归因。</td></tr>
+            <tr><td>定义 + Z0/Z1 + protocol</td><td>中等</td><td>能建立新问题</td><td>position / benchmark workshop / arXiv 占坑</td><td>形式化漂亮但没有足量实证。</td></tr>
+            <tr><td>参考模型 + P1 组件图谱</td><td>充足</td><td>高：首次回答最小充分组件与能力/可演化性错配</td><td>ICLR / ICML / NeurIPS 主会潜力</td><td>组件定义偏向自家系统，跨模型/任务不成立。</td></tr>
+            <tr><td>P2 全框架 + 迁移 + 外部复跑</td><td>非常充足</td><td>很高：改变 RSI 的研究与测评单位</td><td>主会系统/benchmark 论文；TMLR / JAIR 长文</td><td>范围过大导致每个结论都浅，或成本无法独立复现。</td></tr>
+          </tbody></table></div>
+          <div class="grid-3" style="margin-top:16px">
+            <article class="card"><h3>为什么问题重要</h3><p>它区分“一个 agent 变强”“产生后代的能力变强”和“整个改进制度变强”，直接影响我们是否真的观察到递归能力。</p></article>
+            <article class="card"><h3>为什么不是纯概念</h3><p>每个抽象都有可执行接口、信息契约、干预组、指标与否证条件，可产生 benchmark、开源系统和谱系数据。</p></article>
+            <article class="card"><h3>为什么需要现在做</h3><p>自改代码、meta-agent、后代生产力和 evaluator 共演化已经分别出现，但比较单位仍碎片化；统一测量层会让后续结果可比。</p></article>
+          </div>
+          <div class="verdict"><strong>真正能打动顶级 venue 的中心主张：</strong>不是“我们让模型自己进化了”，而是“我们第一次把 RSI 的行为实现、组件能力、组件可演化性和拓扑演化放进同一可干预实验，并发现哪些最小条件产生递归、哪些高分系统其实不可继续进化”。</div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>旧六篇组合：保留为 Full-Stack RSI 的集成式示范路径</h3><p>它不再被称为“全部论文组合”。另可先发一份 Reference Model 技术报告；更广的独立问题见下一节 100 篇候选池。</p></div>
+          <div class="grid-3">
+            <article class="card"><span class="phase-label">Paper 1 · Foundation</span><h3>Minimum Conditions for RSI</h3><p>参考模型 + Z0–Z3 + 全角色组件因果图谱。回答“哪些部分必须存在、哪些部分必须能变”。</p><span class="status solid">当前定义最完整 · 第一优先</span></article>
+            <article class="card"><span class="phase-label">Paper 2 · A</span><h3>TransplantBench</h3><p>把祖先/后继修改器移植到未见父代，并跨模型、领域、框架测可迁移改进能力。</p><span class="status">依赖 Paper 1 接口 · 可独立扩展</span></article>
+            <article class="card"><span class="phase-label">Paper 3 · B+C</span><h3>Robust Metaproductivity</h3><p>用 Evaluator Firewall 支撑多代重放，研究谱系生产力在目标与 evaluator 改变后是否保持。</p><span class="status">需提出新指标/选择算法</span></article>
+            <article class="card"><span class="phase-label">Paper 4 · Structure</span><h3>Structural RSI</h3><p>从组件内容演化推进到节点增删、拆并、重排与重连，测拓扑自由度的因果收益。</p><span class="status">实现最难 · Z4 主论文</span></article>
+            <article class="card"><span class="phase-label">Paper 5 · E</span><h3>Proof-Carrying Successors</h3><p>每个后继携带机器可检查的接管证据，测跨代安全、攻击持久性与 evolvability tax。</p><span class="status">可独立安全论文</span></article>
+            <article class="card"><span class="phase-label">Paper 6 · D</span><h3>Scientific RSI Transfer</h3><p>把已经验证的框架迁移到算法与科学研究闭环，测演化能力是否跨到真实研究过程。</p><span class="status">高风险高回报 · 最后进行</span></article>
+          </div>
+          <div class="verdict"><strong>这六篇现在只回答“如何把旗舰集成项目拆开”。</strong>它们没有覆盖记忆演化、工具发明、合成数据、理论动力学、经济性、多智能体生态、人机共演化等大量独立缺口，因此不能再拿“六”表示调研产出。下一节把候选池恢复到 100 个论文单元。</div>
+        </div>
+      </section>
+
+      <section class="section hidden" id="idea-bank" aria-labelledby="idea-bank-title">
+        <div class="section-head"><div><div class="section-kicker">07 / 基于文献地图展开</div><h2 id="idea-bank-title">100 个 RSI 论文候选：先完整展开，再决定做哪篇</h2></div><p class="section-intro">十个研究簇各十篇。每篇都写研究问题、近邻与未覆盖缺口、最低实验、成刊门槛、规模、难度和依赖；标题相似不等于贡献相同，换模型/换数据集不单独计数。</p></div>
+        <div class="callout"><p><strong>如何读这 100 篇：</strong><code>A</code> 表示现有证据与基础设施足以近期冻结实验，<code>B</code> 表示问题成立但需先完成方法或基准，<code>C</code> 表示高风险高回报，<code>D</code> 表示更适合理论、负结果或立场稿。它们是成熟度/执行优先级，不是我替审稿人预测录用。任何候选只有跨过卡片中的“成刊门槛”才算一篇独立论文。</p></div>
+        <div class="idea-summary-grid" aria-label="论文候选池摘要">
+          <div class="idea-stat"><strong>100</strong><span>可证伪论文候选</span></div>
+          <div class="idea-stat"><strong>10</strong><span>文献与方法簇</span></div>
+          <div class="idea-stat"><strong id="priorityACount">—</strong><span>A 级近期候选</span></div>
+          <div class="idea-stat"><strong id="visibleIdeaCount">100</strong><span>当前筛选结果</span></div>
+        </div>
+        <div class="idea-toolbar" aria-label="筛选论文候选">
+          <input class="search" id="ideaSearch" type="search" placeholder="搜索问题、实验、角色、来源编号…" aria-label="搜索论文候选">
+          <select class="filter" id="ideaCluster" aria-label="按研究簇筛选"><option value="all">全部研究簇</option></select>
+          <select class="filter" id="ideaPriority" aria-label="按优先级筛选"><option value="all">全部优先级</option><option value="A">A · 近期可冻结</option><option value="B">B · 方法待补</option><option value="C">C · 高风险高回报</option><option value="D">D · 理论/负结果/立场</option></select>
+          <select class="filter" id="ideaScale" aria-label="按实验规模筛选"><option value="all">全部规模</option><option value="S">S · 小</option><option value="M">M · 中</option><option value="L">L · 大</option><option value="XL">XL · 超大</option></select>
+          <button id="expandIdeas" type="button">展开当前结果</button>
+          <span class="idea-count" id="ideaCountText" aria-live="polite">显示 100 / 100</span>
+        </div>
+        <p class="idea-legend">来源编号 S1–S40 对应页面末尾证据账本。候选卡中的“未覆盖缺口”是基于当前检索的投稿假设，不是未经系统综述即可使用的“首次”声明；正式投稿前仍需逐篇做 citation graph 与同期工作复核。</p>
+        <div id="ideaCatalog"></div>
+        <p id="ideaNoResults" class="updated hidden">没有匹配候选。请清空关键词或放宽研究簇、优先级、规模筛选。</p>
+      </section>
+
+      <section class="section hidden" id="proposal" aria-labelledby="proposal-title">
+        <div class="section-head"><div><div class="section-kicker">08 / 当前优先路线（不覆盖候选池）</div><h2 id="proposal-title">若资源只够先做一篇：测 RSI 的最小充分条件</h2></div><p class="section-intro">这是 100 篇中的当前首选，不是调研只剩这一篇。建议题目：What Must Evolve for Improvement to Recur? Component Causality and Transfer in Full-Stack RSI。</p></div>
+
+        <div class="callout"><p><strong>一句话论文：</strong>在统一且可干预的实验中，从 <code>F₀=∅</code> 开始逐项加入、冻结、删除和交换 RSI 功能角色，找出哪些组合能启动递归、哪些高分组合无法继续进化，以及这种可演化性能否跨父代、模型、任务和 evaluator 迁移。</p></div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>先公开承认重合：A–E 各自能不能单独成论文</h3><p>这张表是新的发文判断。工程上必要，不代表学术上新；应用很重要，也不代表换个任务域就形成贡献。</p></div>
+          <div class="matrix-wrap"><table class="comparison-table"><caption class="hidden">A 至 E 的近邻审计与处理结论</caption><thead><tr><th>工作包</th><th>最接近的已有工作</th><th>剩余新增点</th><th>处理结论</th></tr></thead><tbody>
+            <tr><td>A · 改进器迁移</td><td>DGM 已比较固定/自改 meta-agent；HGM 已定义任务分数—后代生产力错配；Hyperagents 已让 meta-procedure 自改并测跨域积累。</td><td>在未见父代上的随机化角色移植，以及跨模型/领域/框架的因果迁移矩阵。</td><td><strong>Paper 1 做小规模指标验证；</strong>扩展为 576+ 配对试验的 TransplantBench 后成为 Paper 2。</td></tr>
+            <tr><td>B · Evaluator Firewall</td><td>MAC 已有开发/隐藏集、双容器、限额与奖励投机审计；协议有效性研究也在覆盖暴露点。</td><td>为多代自适应搜索设计不回流的审计通道和污染账本。</td><td><strong>降级为基础设施。</strong>除非另做自适应 holdout 理论，否则不是论文中心。</td></tr>
+            <tr><td>C · 跨标准谱系生产力</td><td>HGM 已提出 CMP；RQGM 已研究非平稳 utility 与 evaluator 共演化。</td><td>同一谱系跨冻结 evaluator 的反事实重放、robust metaproductivity 和稳健选择算法。</td><td><strong>与 B 合成 Paper 3。</strong>B 保证测得可信，C 提供真正的新问题与方法。</td></tr>
+            <tr><td>D · Scientific RSI</td><td>AlphaEvolve、AI Scientist 类系统与 RQGM 已覆盖算法发现、论文写作/评审等科学闭环。</td><td>把同一套已验证的全框架迁移过去，测结构可演化性并产生独立复现的发现。</td><td><strong>作为最后的 Paper 6。</strong>仅换任务不够，必须证明迁移或真实科研产出。</td></tr>
+            <tr><td>E · 安全不变量</td><td>现有工作已提出安全不变量、proof-carrying agents 与自进化攻击面，但完整实证仍少。</td><td>不可变验收内核、后继携带证据、跨代攻击持久性与能力税的统一实验。</td><td><strong>保留为可独立安全支线。</strong>需要形式化与大规模攻击，而非普通容器工程。</td></tr>
+          </tbody></table></div>
+          <div class="source-line"><a href="https://arxiv.org/html/2505.22954" target="_blank" rel="noreferrer">DGM ↗</a> · <a href="https://arxiv.org/html/2510.21614" target="_blank" rel="noreferrer">HGM ↗</a> · <a href="https://arxiv.org/abs/2603.19461" target="_blank" rel="noreferrer">Hyperagents ↗</a> · <a href="https://arxiv.org/html/2606.04455" target="_blank" rel="noreferrer">MAC ↗</a> · <a href="https://arxiv.org/abs/2606.26294" target="_blank" rel="noreferrer">RQGM ↗</a></div>
+        </div>
+
+        <div class="subsection" id="transplantbench">
+          <div class="subsection-head"><h3>Paper 2 / TransplantBench：把“未见父代交换”完整展开</h3><p>旧符号 <code>U</code> 表示整个更新过程；在 Full-Stack RSI 中，更精确地把其中“构造修改”的功能角色记作 <code>M</code>。下面统一使用 <code>M₀</code>（祖先修改器）和 <code>Mₜ</code>（第 t 代后继修改器）。</p></div>
+
+          <div class="callout"><p><strong>中心问题：</strong>如果 <code>Mₜ</code> 只会修改与自己共同演化的那套系统，它得到的是 lineage-specific co-adaptation；只有它能在从未参与该谱系演化的父代上稳定产生增益，才能支持“修改能力本身变强并可迁移”。</p></div>
+
+          <div class="flow-grid">
+            <div class="flow-step"><span>01 · Evolve</span><strong>先产生一条源谱系</strong><p><code>F₀ᵃ → F₁ᵃ → … → Fₜᵃ</code>，冻结并提取 <code>M₀ᵃ</code> 与 <code>Mₜᵃ</code>。</p></div>
+            <div class="flow-step"><span>02 · Hold out</span><strong>再打开未见父代库</strong><p><code>P*={Fᵇ,Fᶜ,…}</code> 来自其他谱系，且在修改器冻结前从未暴露。</p></div>
+            <div class="flow-step"><span>03 · Randomize</span><strong>成对交换修改器</strong><p>对同一父代、同一证据、同一预算，随机分配 <code>M₀</code> 或 <code>Mₜ</code> 产生后继。</p></div>
+            <div class="flow-step"><span>04 · Audit</span><strong>隐藏评估并比较增量</strong><p>最终任务不回流；比较两个修改器给陌生父代带来的真实增益、退化与成本。</p></div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-head"><h3>1. “未见父代”具体是什么意思</h3><p>父代不是一条 prompt，而是一个可独立运行的完整系统制品；“未见”指它没有参与源修改器的训练/演化，不是测试时永远不让修改器读取目标代码。</p></div>
+            <div class="grid-2">
+              <article class="card"><h3>源谱系</h3><div class="equation">Lᵃ: F₀ᵃ → F₁ᵃ → … → Fₜᵃ<br>extract(M₀ᵃ, Mₜᵃ)</div><p style="margin-top:12px"><code>Mₜᵃ</code> 可能已经学会本谱系的目录、记忆格式、失败类型和协作方式，因此在自己后代上表现好不能证明通用性。</p></article>
+              <article class="card"><h3>未见父代库</h3><div class="equation">P* = {Pⱼ | lineage(Pⱼ) ≠ a}</div><p style="margin-top:12px">父代在修改器冻结后才解封；覆盖低/中/高能力，避免只抽到完全不可救或已经饱和的系统。移植时允许通过统一接口检查它，但不能读取隐藏任务与 grader。</p></article>
+            </div>
+            <div class="verdict"><strong>为什么必须未见：</strong>如果只在自家谱系上测，<code>Mₜ</code> 可能只是与自家文件结构、工具和记忆“长在一起”。陌生父代相当于把一个进化出来的医生送去治疗没见过的病人，才能测医生能力，而不是医患之间的暗号。</div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-head"><h3>2. 交换实验怎样做到真正公平</h3><p>同一个未见父代要形成配对反事实；除了修改器版本，其余条件必须相同。</p></div>
+            <div class="equation">C₀ⱼ = M₀(Pⱼ; evidenceⱼ, budget, seed)<br>Cₜⱼ = Mₜ(Pⱼ; evidenceⱼ, budget, seed)<br>Δ(Mᵢ,Pⱼ,Eₖ) = Score_hidden(Cᵢⱼ,Eₖ) − Score_hidden(Pⱼ,Eₖ)</div>
+            <div class="grid-3" style="margin-top:16px">
+              <article class="card"><h3>必须锁定</h3><ul class="compact-list"><li>同一父代快照与父哈希。</li><li>同一可见证据；盲标量条件下都只看同一分数。</li><li>同 token、时间、工具、候选数和随机种子。</li><li>同一 successor 接口与安全约束。</li></ul></article>
+              <article class="card"><h3>必须随机化</h3><ul class="compact-list"><li>父代分配顺序和修改器标签。</li><li>任务实例与 hidden evaluator seed。</li><li>同父代重复运行，消除 LLM 随机性。</li><li>分析前冻结排除与停止规则。</li></ul></article>
+              <article class="card"><h3>必须隔离</h3><ul class="compact-list"><li>诊断器 <code>D</code> 固定或提供标准化 evidence。</li><li>选择器 <code>Q</code> 固定，避免候选选择混入。</li><li>隐藏结果不回流修改器。</li><li>所有失败后继也进入统计。</li></ul></article>
+            </div>
+            <div class="verdict"><strong>最容易犯的错误：</strong>让 <code>Mₜ</code> 使用自己演化出来的诊断器、记忆和选择器，而 <code>M₀</code> 没有。这测到的是整个 bundle，不是 <code>M</code>。单测修改器时必须把 <code>D/Q/K</code> 固定；测完整 bundle 时再另开实验，并明确改成系统级结论。</div>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-head"><h3>3. “跨模型、跨领域、跨框架全交叉移植”分别跨什么</h3><p>这不是把一个 Python 文件硬塞进所有系统，而是通过统一 successor protocol 交换同一功能角色；先做完整小矩阵，再用平衡抽样扩展，避免组合爆炸。</p></div>
+            <div class="matrix-wrap"><table class="domain-table"><caption class="hidden">TransplantBench 的交叉移植维度</caption><thead><tr><th>维度</th><th>源端</th><th>目标端</th><th>控制问题</th><th>失败时说明什么</th></tr></thead><tbody>
+              <tr><td>修改器代际</td><td><code>M₀</code> 祖先</td><td><code>Mₜ</code> 后继</td><td>后继修改器是否优于祖先？</td><td><code>M</code> 没有可测的代际进步。</td></tr>
+              <tr><td>父代谱系</td><td>自己的后代</td><td>从未见过的其他谱系</td><td>收益是否依赖共同演化？</td><td>只得到 lineage-specific co-adaptation。</td></tr>
+              <tr><td>基础模型</td><td>修改器由模型 <code>θᵢ</code> 驱动</td><td>父代任务 agent 使用 <code>θⱼ</code></td><td>改进知识是否依赖某个模型习性？</td><td>它只是某个模型的 prompt/harness 调参器。</td></tr>
+              <tr><td>任务领域</td><td>代码域演化</td><td>数学、终端、算法或科学任务</td><td>修改策略是否超越源任务错误模式？</td><td>它学到的是领域修补模板，不是通用改进能力。</td></tr>
+              <tr><td>框架类型</td><td>单链 successor</td><td>archive、multi-agent、不同 harness</td><td>是否只认识一种控制流和文件布局？</td><td>能力被特定 scaffold 接口绑定。</td></tr>
+              <tr><td>评估标准</td><td>源 evaluator <code>E₁</code></td><td>隐藏/影子 evaluator <code>E₂</code></td><td>改进是否只迎合原评分器？</td><td>是 evaluator-specific optimization。</td></tr>
+            </tbody></table></div>
+            <div class="equation">建议最小确认矩阵：2 代际 × 2 父代关系 × 2 模型 × 3 领域 × 3 框架 × 4 seeds = 576 paired trials</div>
+            <p class="updated">这 576 次是 Paper 2 的确认实验，不混进 Paper 1 的 960 个演化 episode。真实全因子更大；先根据 Paper 1 选出 2–3 个代表性修改器，再运行预注册的平衡矩阵。</p>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-head"><h3>4. 怎样从这个实验得到 M 角色的能力和可演化性</h3><p>一个指标测“现在会不会修改”，另一个指标测“后继修改器是否真的比祖先更强”，再用迁移差距判断这种进步是不是只属于原谱系。</p></div>
+            <div class="grid-3">
+              <article class="card"><h3>修改能力 c<sub>M</sub></h3><div class="equation">c_M(Mᵢ)=E[Δ(Mᵢ,P*)]</div><p style="margin-top:12px">对未见父代平均能带来多少隐藏增益，并同时报告退化概率和成本。</p></article>
+              <article class="card"><h3>可迁移修改器优势 TMA</h3><div class="equation">TMA_t=E[Δ(Mₜ,P*)−Δ(M₀,P*)]</div><p style="margin-top:12px">若显著大于 0，才支持后继修改器在陌生对象上比祖先更会改。</p></article>
+              <article class="card"><h3>共适应差距 CAG</h3><div class="equation">CAG_t=Δ_own(Mₜ)−Δ_unseen(Mₜ)</div><p style="margin-top:12px">差距越大，越说明收益依赖自家谱系；接近 0 才支持广泛迁移。</p></article>
+            </div>
+            <div class="matrix-wrap" style="margin-top:16px"><table><caption class="hidden">TransplantBench 结果解释</caption><thead><tr><th>观测结果</th><th>允许得出的结论</th></tr></thead><tbody>
+              <tr><td>自己谱系提升，未见父代不提升</td><td><code>Mₜ</code> 与本谱系共适应；不能称通用修改能力提升。</td></tr>
+              <tr><td>未见父代提升，但跨框架失败</td><td>修改能力能跨对象，但被某种 scaffold/interface 绑定。</td></tr>
+              <tr><td>跨模型与框架成功，跨领域失败</td><td>得到领域级 transferable improver，而非通用 improver。</td></tr>
+              <tr><td>跨所有维度保持正 TMA，且 hidden/shadow 一致</td><td>较强证据支持 <code>M</code> 角色自身发生了可迁移的进化。</td></tr>
+              <tr><td>任务 agent 分数上涨，但 TMA≈0</td><td>系统找到了更强后代，但“产生改进的能力”没有随代际增强。</td></tr>
+            </tbody></table></div>
+          </div>
+
+          <div class="verdict"><strong>Paper 1 与 Paper 2 的边界：</strong>Paper 1 用少量未见父代确认 <code>M</code> 指标可用，但主问题是十类角色的最小充分条件；Paper 2 才把移植扩成 576+ 配对试验和独立 benchmark，中心主张是“可迁移改进能力是否真实存在、在哪些边界失效”。这样 A 不再只是三句话，也不会挤掉整个 Full-Stack RSI 主线。</div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>Paper 1 的四个真正贡献</h3><p>四项缺一项，论文都容易退化成术语文章、一个 demo 或普通 agent benchmark。</p></div>
+          <div class="grid-2">
+            <article class="card"><span class="phase-label">Contribution 1 · Definition</span><h3>可操作的 Full-Stack RSI profile</h3><p>不是只列十个名词，而是为每个角色建立独立任务、干预与分数，区分能力 <code>c</code>、可演化性 <code>μ</code> 和拓扑变化 <code>τ</code>。</p></article>
+            <article class="card"><span class="phase-label">Contribution 2 · Benchmark</span><h3>Z0–Z3 逐级开放基准</h3><p>从盲标量零框架开始，到最小固定环、组件解锁和全角色可变；每一级只新增一种自由度。</p></article>
+            <article class="card"><span class="phase-label">Contribution 3 · Causal map</span><h3>全角色干预，不只交换 U</h3><p>对 <code>J,C,A,E,D,M,Q,K,G,H</code> 做加入、删除、冻结、祖先替换和组合消融，估计必要性、互补性与负作用。</p></article>
+            <article class="card"><span class="phase-label">Contribution 4 · Transfer</span><h3>可演化性是否离开原环境仍成立</h3><p>把组件与框架移植到未见父代、基础模型、任务域和 evaluator；区分 lineage-specific trick 与 transferable evolvability。</p></article>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>主实验：960 episodes 只是起点，核心是 64 条独立谱系</h3><p>不再用“大量 episode”掩盖低独立样本数。主统计单位是 lineage；候选和代数是谱系内部重复。</p></div>
+          <div class="grid-2">
+            <article class="card"><h3>Pilot · 96 episodes</h3><ul class="checklist"><li>Z0/Z1 两级，2 模型 × 3 seeds × 4 代 × 2 candidates。</li><li>验证盲标量契约、后继接管、可重放与 bootstrap 指标。</li><li>不以 pilot 结果投稿主会，只用于淘汰无效协议。</li></ul></article>
+            <article class="card"><h3>Main · 960 episodes</h3><ul class="checklist"><li>8 个组件配置 × 2 模型 × 4 seeds = <strong>64 条独立谱系</strong>。</li><li>每条 5 代 × 3 candidates，覆盖 3 个任务族。</li><li>冻结主指标后，再做跨父代/模型/evaluator 的迁移确认集。</li><li>按谱系 bootstrap CI，报告失败和退化，不挑最好 lineage。</li></ul></article>
+          </div>
+          <div class="verdict"><strong>主会门槛：</strong>至少发现一个跨两种模型、两个任务族都稳定的组件因果关系，并证明它改变了我们对“哪个系统更具 RSI 能力”的排名；否则就诚实降级为 benchmark/negative-results 稿。</div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>为什么这版比原 A 足量</h3><p>原 A 只对一个角色做一次诊断；修订版同时提供新的研究对象、公共测量工具和能推翻假设的多因素实验。</p></div>
+          <div class="matrix-wrap"><table><caption class="hidden">原方向 A 与修订 Paper 1 对比</caption><thead><tr><th>维度</th><th>原 A</th><th>修订 Paper 1</th></tr></thead><tbody>
+            <tr><td>研究对象</td><td>任务智能体 <code>A</code> 与改进器 <code>U</code></td><td>十类角色、实现能力、可演化性和结构</td></tr>
+            <tr><td>干预</td><td><code>U₀/U_t</code> 角色交换</td><td>全角色加入/删除/冻结/交换 + 组合消融</td></tr>
+            <tr><td>已有重合</td><td>与 DGM/HGM/Hyperagents 很近</td><td>将近邻放入统一 profile，研究最小充分条件和跨实现迁移</td></tr>
+            <tr><td>产出</td><td>一个指标和 harness</td><td>参考模型、benchmark、开源 harness、因果图谱和谱系数据集</td></tr>
+            <tr><td>投稿判断</td><td>单独不足</td><td>满足跨模型/任务/迁移门槛后具备主会潜力；完整长期版再谈期刊</td></tr>
+          </tbody></table></div>
+        </div>
+      </section>
+
+      <section class="section hidden" id="proposal-archive" aria-labelledby="proposal-archive-title">
+        <div class="section-head"><div><div class="section-kicker">已撤回的旧方案</div><h2 id="proposal-archive-title">谁真正完成了改进？</h2></div><p class="section-intro">该方案已降级为 Paper 1 的局部实验，不再作为独立论文推荐。</p></div>
+        <div class="proposal">
+          <article class="card proposal-title"><span class="tag aqua">中心问题</span><h3 style="font-size:25px;margin-top:18px">任务智能体变强，不等于改进器变强</h3><p>一个固定元智能体可以不断产出更好的 <code>agent.py</code>；一个 archive 也可以找到高分后代。但这仍不能回答：后继版本是否更会产生下一代？</p><div class="big">A↑ ? U↑</div><p>我们用反事实角色交换分别测量任务能力 <code>A</code> 和改进能力 <code>U</code>，再验证两种提升是否能跨 evaluator 保持。</p></article>
+          <article class="card"><h3>最终要交付什么</h3><ul class="checklist"><li><strong>协议：</strong>明确 system boundary、后继交接、修改白名单、预算和隐藏反馈规则。</li><li><strong>开源 harness：</strong>同一接口运行 fixed-meta、latest-only、archive-based 和 successor-capable 方法。</li><li><strong>反事实实验：</strong>让 <code>U₀</code> 与 <code>U_t</code> 修改同一个标准化父代，隔离“谁在改”。</li><li><strong>评估器防火墙：</strong>开发、隐藏、影子、投机测试四路隔离。</li><li><strong>实证结论：</strong>哪些一次增益能复合、哪些只是 evaluator-specific optimization。</li></ul><div class="verdict"><strong>最小成功：</strong>即使没有发现持续正向递归，只要稳定证明“一次任务增益与后继改进能力脱钩”，并给出可复现边界条件，也是一条有价值的研究结论。</div></article>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>一眼看懂：一轮实验实际发生什么</h3><p>harness 不提出修改，只负责把同一任务、预算和反馈交给不同改进器，并在冻结后送入互相独立的评估通道。</p></div>
+          <div class="flow-grid">
+            <div class="flow-step"><span>01 · Diagnose</span><strong>运行 A<sub>t</sub>，形成失败证据</strong><p>只使用允许的开发任务；记录轨迹、成本、错误类型和工具状态。</p></div>
+            <div class="flow-step"><span>02 · Improve</span><strong>U<sub>t</sub> 产生完整后继包</strong><p>后继包同时包含新的任务智能体、改进器和持久状态，而不只是一个答案。</p></div>
+            <div class="flow-step"><span>03 · Intervene</span><strong>交换 U<sub>0</sub> 与 U<sub>t</sub></strong><p>在相同父代、反馈和预算上比较两个改进器，识别改进能力的因果贡献。</p></div>
+            <div class="flow-step"><span>04 · Verify</span><strong>冻结后运行三套外部证据</strong><p>隐藏任务、异构影子 verifier 和投机陷阱都不向本轮改进返回反馈。</p></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>四个研究问题与可证伪假设</h3><p>论文的价值来自可能被实验推翻的判断，而不是页面上预先写“系统会越来越强”。</p></div>
+          <div class="matrix-wrap"><table class="comparison-table"><caption class="hidden">研究问题、假设和否证条件</caption><thead><tr><th>研究问题</th><th>预注册假设</th><th>什么结果会推翻它</th><th>科学意义</th></tr></thead><tbody>
+            <tr><td>RQ1 一次增益能预测长期吗？</td><td>当前任务分数与后代生产力相关性弱，尤其在 evaluator shift 下。</td><td>所有方法、模型和任务上都高度相关，简单按当前分选父代已足够。</td><td>检验 HGM 所揭示的 mismatch 是否跨评估器成立。</td></tr>
+            <tr><td>RQ2 改进器自身变强了吗？</td><td><code>U_t</code> 在未见标准父代上产生的 hidden gain 高于 <code>U₀</code>。</td><td><code>U_t</code> 不优于祖先，或只会改自己的 lineage。</td><td>把“任务能力”与“产生后继系统的能力”分开。</td></tr>
+            <tr><td>RQ3 增益是否只迎合开发 evaluator？</td><td>真实改进同时提升 hidden 与 shadow，且 evaluator gap 不随代数扩大。</td><td>开发分持续上涨，shadow/OOD 停滞或下降。</td><td>测 Goodhart / adaptive overfitting，而不是靠主观判断。</td></tr>
+            <tr><td>RQ4 哪种体制更可靠？</td><td>archive-based 方法的 best-of-run 较高，但 successor handoff 的中位数和归因更清楚。</td><td>某一方法在能力、方差、成本和安全上全面占优。</td><td>给出“搜索性能—递归归因—成本”的可复现权衡。</td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>Harness 怎么实现：只定义接口，不规定改进算法</h3><p>每个后继版本是一个可独立启动、带哈希和父代信息的 artifact bundle；下一代只能从该 bundle 启动，避免偷偷回到祖先进程。</p></div>
+          <div class="grid-3">
+            <article class="card"><span class="phase-label">System API</span><h3>三个最小入口</h3><div class="equation">solve(task) → result<br>improve(evidence, budget) → successor_bundle<br>inspect() → manifest</div><p style="margin-top:12px">manifest 声明基础模型、可修改文件、改进器入口、依赖、父哈希和系统边界。</p></article>
+            <article class="card"><span class="phase-label">Orchestrator</span><h3>代际交接与预算</h3><ul class="compact-list"><li>为每代创建新容器并只挂载父代 bundle。</li><li>统一限制 token、工具调用、墙钟和候选数。</li><li>自动保存 diff、日志、失败分支、种子和成本。</li><li>任何隐藏结果返回前冻结 final manifest。</li></ul></article>
+            <article class="card"><span class="phase-label">Evaluator Service</span><h3>隔离评分与证据</h3><ul class="compact-list"><li>评估容器不挂载智能体工作区写权限。</li><li>测试密钥和 secret seed 只在远端评分服务。</li><li>隐藏结果延迟到整批实验结束后发布。</li><li>事件日志 append-only，并对制品签名。</li></ul></article>
+          </div>
+          <div class="equation">建议仓库：spec/　harness/controller/　harness/evaluator_proxy/　agents/　tasks/generators/　schemas/　experiments/　analysis/　audit/</div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>实验组：同模型、同任务、同预算，只改变“谁负责改进”</h3><p>主比较不能让更强方法获得更多 API、更多时间或更详细反馈。基础模型固定后再换模型复现，避免把模型差异写成框架贡献。</p></div>
+          <div class="matrix-wrap"><table class="comparison-table"><caption class="hidden">RSI 因果实验组</caption><thead><tr><th>实验组</th><th>谁产生下一代</th><th>持久修改</th><th>回答什么</th></tr></thead><tbody>
+            <tr><td>Static / no-update</td><td>无人，只重复运行</td><td>无</td><td>测随机波动、重复采样和额外计算本身的收益。</td></tr>
+            <tr><td>Reflection-only</td><td>同一模型做回合内反思</td><td>不跨代</td><td>排除“多想一次”被误写成 RSI。</td></tr>
+            <tr><td>Fixed improver</td><td>始终由祖先 <code>U₀</code> 修改 <code>A_t</code></td><td>只继承任务智能体/状态</td><td>对应 MAC 式固定元开发者，测自动优化上限。</td></tr>
+            <tr><td>Successor improver</td><td>由当前 <code>U_t</code> 产生 <code>A_t+1, U_t+1, K_t+1</code></td><td>完整继承</td><td>测试强 RSI 所需的后继接管是否带来额外收益。</td></tr>
+            <tr><td>Archive / branching</td><td>从档案选父代，再由其改进器产生分支</td><td>多谱系</td><td>与 DGM/HGM 类方法比较搜索广度和长期生产力。</td></tr>
+            <tr><td>Human-engineered update</td><td>研究者按相同证据和预算修改</td><td>人工版本</td><td>提供工程上界，并判断自动方法是否只是在消耗更多试错。</td></tr>
+          </tbody></table></div>
+          <div class="verdict"><strong>关键角色交换：</strong>从未参与演化的标准父代库抽取 <code>A*</code>，分别运行 <code>U₀(A*)</code> 和 <code>U_t(A*)</code>。如果 <code>U_t</code> 只会修改自己的后代而不能改善 <code>A*</code>，应报告 lineage-specific adaptation，而不是通用改进能力。</div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>“不迎合评估器”怎么实现：不能靠承诺，只能靠证据分离</h3><p>任何优化系统都会利用可见反馈。正确目标不是禁止它“让 evaluator 满意”，而是让同一种投机无法同时骗过来源、实现和权限都不同的评估通道。</p></div>
+          <div class="grid-2">
+            <article class="card"><span class="phase-label">E_dev · 可见老师</span><h3>开发评估（Development evaluator）</h3><p>返回分数、错误类别或受限日志；只用于搜索。限定查询次数和反馈粒度，所有返回值进入污染账本。</p></article>
+            <article class="card"><span class="phase-label">E_hidden · 一次性考官</span><h3>程序化隐藏评估</h3><p>最终制品冻结后才用 secret seed 生成新实例，优先采用编译器、属性测试、形式约束等可执行真值；结果不回流本轮。</p></article>
+            <article class="card"><span class="phase-label">E_shadow · 换尺复核</span><h3>异构影子评估</h3><p>由不同任务来源、不同 generator 和不同 verifier 实现同一能力要求。开发团队只知道能力定义，不知道具体构造。</p></article>
+            <article class="card"><span class="phase-label">E_attack · 主动找漏洞</span><h3>投机与篡改测试</h3><p>放置诱导读取测试文件、硬编码样例、跳过验证或修改 scorer 的机会，运行时监控是否触发；成功分要扣除 exploit-inflated 部分。</p></article>
+          </div>
+          <div class="grid-3" style="margin-top:16px">
+            <article class="card"><h3>数据侧</h3><ul class="compact-list"><li>隐藏实例在冻结后生成。</li><li>做等价改写、变形测试和 mutation testing。</li><li>跨仓库、语言、工具和难度分层。</li></ul></article>
+            <article class="card"><h3>系统侧</h3><ul class="compact-list"><li>agent/evaluator 双容器和默认断网。</li><li>测试、答案、密钥只在评分容器。</li><li>只读挂载、系统调用与网络审计、canary 文件。</li></ul></article>
+            <article class="card"><h3>统计侧</h3><ul class="compact-list"><li>预注册主指标与 final selection rule。</li><li>多随机种子，报告中位数、最差值和置信区间。</li><li>隐藏集只做一次确认；后续论文使用新版本任务。</li></ul></article>
+          </div>
+          <div class="matrix-wrap" style="margin-top:16px"><table><caption class="hidden">评估器结果判读</caption><thead><tr><th>观测模式</th><th>应该如何解释</th></tr></thead><tbody><tr><td>dev↑、hidden↑、shadow↑、attack exploit≈0</td><td>支持可迁移能力提升，但仍需报告成本、方差和修改归因。</td></tr><tr><td>dev↑、hidden≈0</td><td>开发集过拟合或反馈不足以形成通用能力。</td></tr><tr><td>dev↑、hidden↑、shadow↓</td><td>可能学会特定 evaluator / generator 的规律，不能称稳定能力提升。</td></tr><tr><td>分数↑且触发篡改/侧信道</td><td>协议无效；单独报告 exploit rate 和误导增益，不计为能力。</td></tr></tbody></table></div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>主指标：同时测任务能力、改进能力和评估器迁移</h3><p>只报最终 pass rate 会再次落回普通 agent benchmark。下面三个量才对应本课题的新问题。</p></div>
+          <div class="grid-3">
+            <article class="card"><h3>任务能力 C<sub>t</sub></h3><div class="equation">C_t = Score_hidden(A_t)</div><p style="margin-top:12px">每代任务智能体在冻结隐藏分布上的能力；报告整条曲线和 area under improvement curve。</p></article>
+            <article class="card"><h3>改进器能力 I<sub>t</sub></h3><div class="equation">I_t = E[ C(U_t(A*)) - C(A*) ]</div><p style="margin-top:12px"><code>A*</code> 来自未见标准父代库；这使改进器能力不与自身 lineage 的任务能力混在一起。</p></article>
+            <article class="card"><h3>递归优势 RA<sub>t</sub></h3><div class="equation">RA_t = I_t - I_0</div><p style="margin-top:12px">若任务分数提高但 RA 不提高，只能说发现了更强任务智能体，不能说自我改进能力复合。</p></article>
+          </div>
+          <div class="metric-list" style="margin-top:16px"><div class="metric"><strong>Evaluator transfer gap</strong><span>Δdev − min(Δhidden, Δshadow)，越小越可信</span></div><div class="metric"><strong>Exploit-adjusted gain</strong><span>隐藏增益扣除可归因于协议暴露的部分</span></div><div class="metric"><strong>Lineage robustness</strong><span>中位数、最差谱系、退化率与回滚率</span></div><div class="metric"><strong>Gain per compute</strong><span>每百万 token / GPU-hour / wall-clock 的隐藏增益</span></div></div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>实验规模、准备工作与停止条件</h3><p>先用小矩阵验证协议是否能区分各组，再扩展模型和任务。直接跑主实验会把大量预算浪费在基础设施错误上。</p></div>
+          <div class="grid-2">
+            <article class="card"><h3>MVP：验证问题可测</h3><ul class="checklist"><li>4 组：Static、Reflection、Fixed U₀、Successor U<sub>t</sub>。</li><li>2 个基础模型 × 3 seeds × 4 generations × 3 candidates。</li><li>总计约 <strong>288 个改进 episode</strong>，先用小型代码/终端任务。</li><li>2 个程序化任务族 + 1 个未见仓库族；hidden 与 shadow 各独立生成。</li><li>成功标准：完整重放率 ≥95%，角色交换能稳定产出 I<sub>t</sub>，权限泄漏为 0。</li></ul></article>
+            <article class="card"><h3>主实验：形成论文证据</h3><ul class="checklist"><li>6 组，加入 archive/HGM-style 与 human-engineered baseline。</li><li>3 个模型 × 5 seeds × 6 generations × 4 candidates，约 <strong>2,160 个改进 episode</strong>。</li><li>至少 3 个任务族，包含跨语言或跨工具 OOD；预算严格配平。</li><li>报告所有运行，不按最好 seed 选结果；主结论做 bootstrap CI 与多重比较校正。</li><li>若第 3 代后 RA 始终接近 0，则停止扩大代数，转向“任务增益与改进能力脱钩”的系统性负结果。</li></ul></article>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head"><h3>为什么有 ICLR 级别潜力，以及还差什么</h3><p>不能保证会议录用。竞争力来自问题定义、方法和实证同时成立，而不是 RSI 题目本身。</p></div>
+          <div class="matrix-wrap"><table class="comparison-table"><caption class="hidden">ICLR 级论文证据要求</caption><thead><tr><th>贡献</th><th>相对现有工作的新增点</th><th>必须拿出的证据</th><th>审稿人会拒绝的情况</th></tr></thead><tbody>
+            <tr><td>概念 / 指标</td><td>在 HGM 的后代生产力之外，因果拆分 <code>A_t</code> 与 <code>U_t</code>，定义 RA。</td><td>角色交换确实改变结论，指标与人工判断/真实隐藏增益一致。</td><td>只是给已有轨迹换一个名字，指标不影响任何科学判断。</td></tr>
+            <tr><td>方法 / Harness</td><td>统一运行 fixed-meta、successor 和 archive 三类系统，强制后继交接与 evaluator firewall。</td><td>开源、可重放、至少接入 3 种框架，接口没有偏向自家方法。</td><td>只能运行一个自制 agent，工程复杂但没有通用性。</td></tr>
+            <tr><td>实证发现</td><td>揭示一次增益、改进器能力和 evaluator transfer 之间的关系。</td><td>多模型、多任务、多 seeds、同预算、强基线和完整失败谱系。</td><td>只在一个模型、一个小 benchmark 上展示最好 run。</td></tr>
+            <tr><td>可信性 / 安全</td><td>定量而非口头地区分 genuine gain、overfitting 与 reward hacking。</td><td>程序化 hidden、异构 shadow、attack suite、权限日志与外部复跑。</td><td>同一个 LLM 既生成、评分又证明，或者 hidden 分数被反复用于选优。</td></tr>
+          </tbody></table></div>
+          <div class="verdict"><strong>数据支持后才可以写的论文主张：</strong>“我们提出针对后继改进器的因果评测协议，并发现任务能力提升并不自动意味着改进能力可继承；这种错配在 evaluator shift 下进一步扩大。”不能预设结论，也不能在没有系统检索近邻工作的情况下声称“首个”。</div>
+        </div>
+      </section>
+
+      <section class="section hidden" id="publish" aria-labelledby="publish-title">
+        <div class="section-head"><div><div class="section-kicker">09 / 发文策略</div><h2 id="publish-title">怎么把课题推进成论文</h2></div><p class="section-intro">按下一轮 ICLR / ICML / NeurIPS 官方 CFP 倒排；先完成可复现实验门槛，再决定主会、workshop 或长文路线，不根据截止日期压缩必要对照。</p></div>
+        <div class="publication">
+          <article class="pub"><strong>主会型：ICLR / ICML / NeurIPS</strong><p>在当前资源假设下，Full-Stack RSI Paper 1 是优先级最高的一篇；100 候选池中的其他 A 级题目也可独立立项。参考模型、Z0–Z3 benchmark、全角色因果图谱与跨实现迁移必须同时成立。</p></article>
+          <article class="pub"><strong>专题型：RSI / 智能体 / 科学智能研讨会</strong><p>适合早期议程、基准（benchmark）、失败分析和安全协议；专门的 ICLR 2026 RSI 研讨会（workshop）已明确聚焦经验学习（experience）、合成数据（synthetic data）、评估（evaluation）与治理（governance）。</p></article>
+          <article class="pub"><strong>可持续型：TMLR / JAIR / arXiv + 开源</strong><p>适合把评测协议、系统实现和完整失败分析做扎实；先开源代码、配置、轨迹和评估器（evaluator），再根据结果投会或长文。</p></article>
+        </div>
+        <div class="subsection">
+          <div class="subsection-head"><h3>修订后的 18 周执行节奏</h3><p>先证明十类角色可以被一致地干预和评分，再扩大谱系；不再围绕单个 <code>U₀/U_t</code> 实验组织全部工程。</p></div>
+          <div class="timeline">
+            <div class="time-row"><div class="time-year">第 1–2 周</div><div class="time-card"><h3>冻结定义、近邻差异与主张边界</h3><p>完成十角色 operational definition、能力/可演化性指标、Z0–Z3 访问契约、预注册假设；逐项对照 DGM、HGM、Hyperagents、MAC、RQGM 与 Self-Harness。</p></div></div>
+            <div class="time-row"><div class="time-year">第 3–5 周</div><div class="time-card" data-color="aqua"><h3>实现 Full-Stack Harness</h3><p>完成 successor bundle、角色 manifest、组件冻结/替换、盲标量 API、容器交接、哈希谱系和预算账本。</p></div></div>
+            <div class="time-row"><div class="time-year">第 6–7 周</div><div class="time-card" data-color="orange"><h3>接入并复算近邻基线</h3><p>统一封装 fixed-meta、latest-only、DGM/HGM-style、Hyperagents/Self-Harness-style 路径；验证角色映射不会偏向自家框架。</p></div></div>
+            <div class="time-row"><div class="time-year">第 8–10 周</div><div class="time-card" data-color="violet"><h3>96-episode Z0/Z1 Pilot</h3><p>验证零框架启动、后继接管、信息不泄漏和重放率；据 bootstrap 率与谱系方差确定主实验候选数。</p></div></div>
+            <div class="time-row"><div class="time-year">第 11–14 周</div><div class="time-card"><h3>960-episode 组件因果主实验</h3><p>运行 64 条独立谱系，对十类角色做预注册的加入、删除、冻结与组合消融；生成 capability/evolvability profile 和完整退化图谱。</p></div></div>
+            <div class="time-row"><div class="time-year">第 15–16 周</div><div class="time-card" data-color="aqua"><h3>迁移确认、外部复跑与安全审计</h3><p>把关键组件移植到未见父代、模型、任务和 evaluator；独立复跑部分谱系，并运行评分篡改与跨代攻击持久性测试。</p></div></div>
+            <div class="time-row"><div class="time-year">第 17–18 周</div><div class="time-card" data-color="orange"><h3>写作与可复现实验包</h3><p>发布论文、参考模型、schemas、代码、容器、任务生成器、全部配置与负结果；按预注册门槛决定主会、benchmark 稿或继续补实验。</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sources" aria-labelledby="sources-title">
+        <div class="section-head"><div><div class="section-kicker">10 / 证据账本</div><h2 id="sources-title">来源与证据账本</h2></div><p class="section-intro">建议读者从 S1–S4 开始，再读综述、RSI 评测基准和研讨会论文（workshop papers）。arXiv 摘要中的数字在正式引用前应回到 PDF、代码和补充材料（supplementary material）复核。</p></div>
+        <div class="source-grid">
+          <div class="source-item"><div class="source-id">S1</div><div><strong>达尔文哥德尔机：自改进智能体的开放式进化</strong><p>英文原题：Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents · <a href="https://arxiv.org/abs/2505.22954" target="_blank" rel="noreferrer">arXiv:2505.22954 ↗</a> · 2025-05-29 · 智能体源代码进化、档案分支、SWE-bench / Polyglot。</p></div></div>
+          <div class="source-item"><div class="source-id">S2</div><div><strong>AlphaEvolve：用于科学与算法发现的编程智能体</strong><p>英文原题：AlphaEvolve: A Coding Agent for Scientific and Algorithmic Discovery · <a href="https://arxiv.org/abs/2506.13131" target="_blank" rel="noreferrer">arXiv:2506.13131 ↗</a> · <a href="https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/" target="_blank" rel="noreferrer">Google DeepMind 官方介绍 ↗</a> · 2025-05/06。</p></div></div>
+          <div class="source-item"><div class="source-id">S3</div><div><strong>自改进编程智能体</strong><p>英文原题：A Self-Improving Coding Agent · <a href="https://arxiv.org/abs/2504.15228" target="_blank" rel="noreferrer">arXiv:2504.15228 ↗</a> · 2025-04-21 · 在 SWE-bench Verified 随机子集上报告 17%→53%。</p></div></div>
+          <div class="source-item"><div class="source-id">S4</div><div><strong>哥德尔智能体：递归自我改进的自指智能体框架</strong><p>英文原题：Gödel Agent: A Self-Referential Agent Framework for Recursively Self-Improvement · <a href="https://aclanthology.org/2025.acl-long.1354/" target="_blank" rel="noreferrer">ACL 论文集（Anthology）↗</a> · 2025 · 自指智能体逻辑与行为。</p></div></div>
+          <div class="source-item"><div class="source-id">S5</div><div><strong>自进化智能体综述：迈向人工超级智能</strong><p>英文原题：A Survey of Self-Evolving Agents: On Path to Artificial Super Intelligence · <a href="https://arxiv.org/abs/2507.21046" target="_blank" rel="noreferrer">arXiv:2507.21046 ↗</a> · 2025-07-28 · 进化对象 × 时机 × 反馈的分类体系。</p></div></div>
+          <div class="source-item"><div class="source-id">S6</div><div><strong>AI 递归自我改进：从受限自我修正到自主研究闭环</strong><p>英文原题：Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops · <a href="https://arxiv.org/abs/2607.07663" target="_blank" rel="noreferrer">arXiv:2607.07663 ↗</a> · 2026-07-08 · 近期综述，声称覆盖 1,250 篇论文；需全文复核。</p></div></div>
+          <div class="source-item"><div class="source-id">S7</div><div><strong>ICLR 2026 AI 递归自我改进研讨会</strong><p>英文原名：ICLR 2026 Workshop on AI with Recursive Self-Improvement · <a href="https://iclr.cc/virtual/2026/workshop/10000796" target="_blank" rel="noreferrer">研讨会页面（Workshop page）↗</a> · 研究议程涵盖经验、合成数据、评估、代码进化与治理。</p></div></div>
+          <div class="source-item"><div class="source-id">S8</div><div><strong>安全与验证锚点（Safety anchors）</strong><p><a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/63943ee9fe347f3d95892cf87d9a42e6-Abstract-Conference.html" target="_blank" rel="noreferrer">注意差距（Mind the Gap）↗</a> · <a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/bee8c2bc757f6bbc3efd7cf1b979f0c9-Abstract-Conference.html" target="_blank" rel="noreferrer">锐化机制（Sharpening Mechanism）↗</a> · 外部验证（external verification）与自我改进边界（self-improvement limits）。</p></div></div>
+          <div class="source-item"><div class="source-id">S9</div><div><strong>PAST-Bench：个人智能体递归自我改进基础评测</strong><p>英文原题：PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents · <a href="https://arxiv.org/abs/2608.04003" target="_blank" rel="noreferrer">arXiv:2608.04003 ↗</a> · 2026-08-04 · 26 个场景、204 个任务回合，含持久经验开启/关闭对照。</p></div></div>
+          <div class="source-item"><div class="source-id">S10</div><div><strong>元智能体挑战（Meta-Agent Challenge, MAC）</strong><p>英文原题：The Meta-Agent Challenge: Are Current Agents Capable of Autonomous Agent Development? · <a href="https://arxiv.org/abs/2606.04455" target="_blank" rel="noreferrer">arXiv:2606.04455 ↗</a> · <a href="https://meta-agent-challenge.com/" target="_blank" rel="noreferrer">项目与评测协议 ↗</a> · 开发集 API、隔离隐藏测试集与防评分投机设计。</p></div></div>
+          <div class="source-item"><div class="source-id">S11</div><div><strong>RSIBench-Data：面向递归自我改进的数据中心型研究评测</strong><p>英文原题：RSIBench-Data: Benchmarking Data-Centric Research for Recursive Self-Improvement · <a href="https://arxiv.org/abs/2607.25886" target="_blank" rel="noreferrer">arXiv:2607.25886 ↗</a> · 2026-07-28 · 固定后训练栈，只开放数据策略迭代。</p></div></div>
+          <div class="source-item"><div class="source-id">S12</div><div><strong>TangramSR：连续几何空间中的测试时自我修正</strong><p>英文原题：TangramSR: Can Vision-Language Models Reason in Continuous Geometric Space? · <a href="https://arxiv.org/abs/2602.05570" target="_blank" rel="noreferrer">arXiv:2602.05570 ↗</a> · 2026-02-05 · 几何反馈驱动的窄域递归修正。</p></div></div>
+          <div class="source-item"><div class="source-id">S13</div><div><strong>RE-Bench：前沿 AI 研发能力与人类专家比较</strong><p>英文原题：RE-Bench: Evaluating Frontier AI R&amp;D Capabilities of Language Model Agents Against Human Experts · <a href="https://arxiv.org/abs/2411.15114" target="_blank" rel="noreferrer">arXiv:2411.15114 ↗</a> · <a href="https://github.com/METR/RE-Bench" target="_blank" rel="noreferrer">METR 官方任务仓库 ↗</a> · 七个开放式机器学习研发环境。</p></div></div>
+          <div class="source-item"><div class="source-id">S14</div><div><strong>GroundBench：长文本问答的上下文忠实性基准</strong><p>来源论文英文原题：Improving Contextual Faithfulness of Large Language Models via Retrieval Heads-Induced Optimization · <a href="https://arxiv.org/abs/2501.13573" target="_blank" rel="noreferrer">arXiv:2501.13573 ↗</a> · GroundBench 汇集五个 LFQA 数据集；它是结果型任务基准，不是 RSI 专用基准。</p></div></div>
+          <div class="source-item"><div class="source-id">S15</div><div><strong>PaperBench：AI 研究论文复现能力评测</strong><p>英文原题：PaperBench: Evaluating AI's Ability to Replicate AI Research · <a href="https://openai.com/index/paperbench/" target="_blank" rel="noreferrer">OpenAI 官方页面与论文 ↗</a> · 20 篇 ICML 2024 论文、8,316 个可评分子任务；适合作为研究能力外部锚点，但不单独测量 RSI 的多代自修改。</p></div></div>
+          <div class="source-item"><div class="source-id">S16</div><div><strong>赫胥黎哥德尔机：谱系元生产力</strong><p>英文原题：Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine · <a href="https://arxiv.org/abs/2510.21614" target="_blank" rel="noreferrer">arXiv:2510.21614 ↗</a> · ICLR 2026 · 用后代结果估计 clade metaproductivity，是本方案最重要的近邻基线。</p></div></div>
+          <div class="source-item"><div class="source-id">S17</div><div><strong>奖励投机基准（Reward Hacking Benchmark）</strong><p>英文原题：Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use · <a href="https://arxiv.org/abs/2605.02964" target="_blank" rel="noreferrer">arXiv:2605.02964 ↗</a> · 2026-05-03 · 工具任务中的验证绕过、元数据利用和评分相关篡改；新近预印本。</p></div></div>
+          <div class="source-item"><div class="source-id">S18</div><div><strong>智能体 benchmark 的协议有效性</strong><p>英文原题：Do Agent Benchmarks Measure Capability? Protocol Validity in the Age of Agentic AI · <a href="https://arxiv.org/abs/2607.22368" target="_blank" rel="noreferrer">arXiv:2607.22368 ↗</a> · 2026-07-24 · HackDetect、exposure 与 Mislead gap；新近预印本，作为威胁模型来源而非已定论。</p></div></div>
+          <div class="source-item"><div class="source-id">S19</div><div><strong>现代智能体系统的自我改进综述</strong><p>英文原题：Self-Improvements in Modern Agentic Systems: A Survey · <a href="https://arxiv.org/abs/2607.13104" target="_blank" rel="noreferrer">arXiv:2607.13104 ↗</a> · 2026-07 · 用模型与脚手架表示智能体，并讨论整个脚手架的自指更新；同时指出术语与研究范围仍碎片化。</p></div></div>
+          <div class="source-item"><div class="source-id">S20</div><div><strong>Hyperagents：任务智能体与元智能体共同置于可编辑程序</strong><p>英文原题：Hyperagents · <a href="https://arxiv.org/abs/2603.19461" target="_blank" rel="noreferrer">arXiv:2603.19461 ↗</a> · 2026-03 · 将任务求解和改进过程放入统一可编辑程序，是全框架可变的重要近邻工作。</p></div></div>
+          <div class="source-item"><div class="source-id">S21</div><div><strong>红皇后哥德尔机：智能体与评估器协同进化</strong><p>英文原题：The Red Queen Gödel Machine · <a href="https://arxiv.org/abs/2606.26294" target="_blank" rel="noreferrer">arXiv:2606.26294 ↗</a> · 2026-06 · 把 evaluator 纳入演化对象，说明全框架研究不能默认评分机制永远固定；新近工作需阅读全文复核。</p></div></div>
+          <div class="source-item"><div class="source-id">S22</div><div><strong>Self-Harness：让智能体脚手架参与自我修改</strong><p>英文原题：Self-Harness: Recursive Self-Improvement by Learning the Agent Harness · <a href="https://arxiv.org/abs/2606.09498" target="_blank" rel="noreferrer">arXiv:2606.09498 ↗</a> · 2026-06 · 作为 harness 可学习/可修改的近邻证据；不能据此推断完整角色与拓扑已经被统一测量。</p></div></div>
+          <div class="source-item"><div class="source-id">S23</div><div><strong>自进化智能体的跨代攻击面</strong><p>英文原题：Safety in Self-Evolving LLM Agent Systems: Threats, Amplification, and Case Studies · <a href="https://arxiv.org/abs/2606.23075" target="_blank" rel="noreferrer">arXiv:2606.23075 ↗</a> · 2026-06 · 分析攻击如何被写入后继并跨代放大，是 Proof-Carrying Successors 的直接安全近邻。</p></div></div>
+          <div class="source-item"><div class="source-id">S24</div><div><strong>Proof-Carrying AI Agents</strong><p>英文原题：Safe, Untrusted, “Proof-Carrying” AI Agents · <a href="https://arxiv.org/abs/2510.09567" target="_blank" rel="noreferrer">arXiv:2510.09567 ↗</a> · 2025-10 · 展示不可信 agent 携带可检查正确性证据的概念验证；尚未解决递归后继接管。</p></div></div>
+          <div class="source-item"><div class="source-id">S25</div><div><strong>ADAS：自动设计智能体系统</strong><p>英文原题：Automated Design of Agentic Systems · <a href="https://arxiv.org/abs/2408.08435" target="_blank" rel="noreferrer">arXiv:2408.08435 ↗</a> · ICLR 2025 · 用 meta-agent 在代码表示的开放设计空间中发明智能体，并报告跨领域、跨模型迁移。</p></div></div>
+          <div class="source-item"><div class="source-id">S26</div><div><strong>AFlow：自动生成智能体工作流</strong><p>英文原题：AFlow: Automating Agentic Workflow Generation · <a href="https://arxiv.org/abs/2410.10762" target="_blank" rel="noreferrer">arXiv:2410.10762 ↗</a> · 用 MCTS 搜索代码表示的工作流、树结构经验与执行反馈。</p></div></div>
+          <div class="source-item"><div class="source-id">S27</div><div><strong>AgentSquare：模块化智能体搜索</strong><p>英文原题：AgentSquare: Automatic LLM Agent Search in Modular Design Space · <a href="https://arxiv.org/abs/2410.06153" target="_blank" rel="noreferrer">arXiv:2410.06153 ↗</a> · 规划、推理、工具与记忆模块的进化、重组和性能预测。</p></div></div>
+          <div class="source-item"><div class="source-id">S28</div><div><strong>Evo-Memory：自演化记忆的流式评测</strong><p>英文原题：Evo-Memory: Benchmarking LLM Agent Test-time Learning with Self-Evolving Memory · <a href="https://arxiv.org/abs/2511.20857" target="_blank" rel="noreferrer">arXiv:2511.20857 ↗</a> · 流式任务、十余种记忆模块与持续检索/整合/更新。</p></div></div>
+          <div class="source-item"><div class="source-id">S29</div><div><strong>MemSkill：学习并演化记忆技能</strong><p>英文原题：MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents · <a href="https://arxiv.org/abs/2602.02474" target="_blank" rel="noreferrer">arXiv:2602.02474 ↗</a> · 让记忆提取、整合、裁剪技能及其选择策略参与演化。</p></div></div>
+          <div class="source-item"><div class="source-id">S30</div><div><strong>经验驱动终身自进化</strong><p>英文原题：Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark · <a href="https://arxiv.org/abs/2508.19005" target="_blank" rel="noreferrer">arXiv:2508.19005 ↗</a> · 经验探索、长期记忆、技能学习与知识内化。</p></div></div>
+          <div class="source-item"><div class="source-id">S31</div><div><strong>MetaSkill-Evolve：双时间尺度元技能演化</strong><p>英文原题：MetaSkill-Evolve: Recursive Self-Improvement of LLM Agents via Two-Timescale Meta-Skill Evolution · <a href="https://arxiv.org/abs/2607.05297" target="_blank" rel="noreferrer">arXiv:2607.05297 ↗</a> · 快速任务技能与慢速改进元技能共同演化。</p></div></div>
+          <div class="source-item"><div class="source-id">S32</div><div><strong>自改进 Transformer 的 easy-to-hard 泛化</strong><p>英文原题：Self-Improving Transformers Overcome Easy-to-Hard and Length Generalization Challenges · <a href="https://proceedings.mlr.press/v267/lee25d.html" target="_blank" rel="noreferrer">ICML 2025 / PMLR ↗</a> · 正确自生成样本筛选、迭代训练与长度外推。</p></div></div>
+          <div class="source-item"><div class="source-id">S33</div><div><strong>SOAR：演化式程序合成中的模型自改进</strong><p>英文原题：Self-Improving Language Models for Evolutionary Program Synthesis: A Case Study on ARC-AGI · <a href="https://proceedings.mlr.press/v267/pourcel25a.html" target="_blank" rel="noreferrer">ICML 2025 / PMLR ↗</a> · 采样与精炼训练之间的跨轮正迁移。</p></div></div>
+          <div class="source-item"><div class="source-id">S34</div><div><strong>Multiagent Finetuning：多智能体推理链自改进</strong><p>英文原题：Multiagent Finetuning: Self Improvement with Diverse Reasoning Chains · <a href="https://openreview.net/forum?id=JtGPIZpOrz" target="_blank" rel="noreferrer">ICLR 2025 / OpenReview ↗</a> · 同源模型经多智能体交互生成的多样推理链独立专门化。</p></div></div>
+          <div class="source-item"><div class="source-id">S35</div><div><strong>SPaR：自博弈树搜索精炼</strong><p>英文原题：SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models · <a href="https://openreview.net/forum?id=9chRqsPOGL" target="_blank" rel="noreferrer">ICLR 2025 / OpenReview ↗</a> · 自博弈生成、树搜索精炼与多轮训练。</p></div></div>
+          <div class="source-item"><div class="source-id">S36</div><div><strong>自动智能体设计的效率边界</strong><p>英文原题：Inefficiencies of Meta Agents for Agent Design · <a href="https://arxiv.org/abs/2510.06711" target="_blank" rel="noreferrer">arXiv:2510.06711 ↗</a> · 分析常见 meta-agent 搜索的效率挑战与经济可行条件。</p></div></div>
+          <div class="source-item"><div class="source-id">S37</div><div><strong>MaMa：安全智能体系统的博弈式自动设计</strong><p>英文原题：MaMa: A Game-Theoretic Approach for Designing Safe Agentic Systems · <a href="https://arxiv.org/abs/2602.04431" target="_blank" rel="noreferrer">arXiv:2602.04431 ↗</a> · meta-agent 与 meta-adversary 共同搜索在部分节点受损时仍安全的设计。</p></div></div>
+          <div class="source-item"><div class="source-id">S38</div><div><strong>AgenticRed：为自动红队演化智能体系统</strong><p>英文原题：AgenticRed: Optimizing Agentic Systems for Automated Red-teaming · <a href="https://arxiv.org/abs/2601.13518" target="_blank" rel="noreferrer">arXiv:2601.13518 ↗</a> · 将自动系统设计用于红队搜索，提供安全共同演化近邻。</p></div></div>
+          <div class="source-item"><div class="source-id">S39</div><div><strong>ML 工程智能体的评估完整性</strong><p>英文原题：RewardHackingAgents: Benchmarking Evaluation Integrity for LLM ML-Engineering Agents · <a href="https://arxiv.org/abs/2603.11337" target="_blank" rel="noreferrer">arXiv:2603.11337 ↗</a> · 显式测量 evaluator tampering 与 train/test leakage。</p></div></div>
+          <div class="source-item"><div class="source-id">S40</div><div><strong>重复使用测试数据的序贯算法修改</strong><p>英文原题：Sequential algorithmic modification with test data reuse · <a href="https://proceedings.mlr.press/v180/feng22a.html" target="_blank" rel="noreferrer">UAI 2022 / PMLR ↗</a> · 为多轮自适应修改下的 holdout 复用和统计有效性提供基础。</p></div></div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer><div class="shell footer-line"><span>RSI 研究雷达 · 内部研究简报（internal research briefing）</span><span>快捷键：<kbd>/</kbd> 聚焦搜索 · <kbd>t</kbd> 切换主题</span></div></footer>
+  <script src="paper-ideas.js"></script>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const themeBtn = document.getElementById('themeBtn');
+      const saved = localStorage.getItem('rsi-theme');
+      if (saved) root.dataset.theme = saved;
+      const updateThemeLabel = () => { themeBtn.textContent = root.dataset.theme === 'light' ? '☾' : '☼'; };
+      updateThemeLabel();
+      themeBtn.addEventListener('click', () => { root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light'; localStorage.setItem('rsi-theme', root.dataset.theme); updateThemeLabel(); });
+      document.getElementById('printBtn').addEventListener('click', () => window.print());
+      const search = document.getElementById('paperSearch');
+      const ideaSearch = document.getElementById('ideaSearch');
+      const ideaSection = document.getElementById('idea-bank');
+      const filter = document.getElementById('paperFilter');
+      const cards = [...document.querySelectorAll('.paper')];
+      const noResults = document.getElementById('noResults');
+      const apply = () => {
+        const q = search.value.trim().toLowerCase();
+        const f = filter.value;
+        let visible = 0;
+        cards.forEach(card => {
+          const matchText = !q || card.dataset.text.toLowerCase().includes(q) || card.textContent.toLowerCase().includes(q);
+          const matchFilter = f === 'all' || card.dataset.evidence === f;
+          const show = matchText && matchFilter;
+          card.classList.toggle('hidden', !show);
+          if (show) visible += 1;
+        });
+        noResults.classList.toggle('hidden', visible !== 0);
+      };
+      search.addEventListener('input', apply); filter.addEventListener('change', apply);
+      document.addEventListener('keydown', event => { if (event.key === '/' && !['INPUT', 'SELECT', 'TEXTAREA'].includes(document.activeElement.tagName)) { event.preventDefault(); const target = window.scrollY >= ideaSection.offsetTop - window.innerHeight / 2 ? ideaSearch : search; target.focus(); } if (event.key.toLowerCase() === 't' && document.activeElement.tagName !== 'INPUT') themeBtn.click(); });
+    })();
+  </script>
+</body>
+</html>
