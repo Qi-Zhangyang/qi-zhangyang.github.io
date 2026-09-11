@@ -1,138 +1,218 @@
 <!doctype html>
-<html><head><meta charset='utf-8'><link rel='icon' href='data:,'>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="erqa-layout" content="geo-tabs-v1">
+<link rel="icon" href="data:,">
 <title>ERQA p10 数据验证</title>
 <style>
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif;background:#f7f7f5;color:#151515}
+/* Shared visual rules from geo.html: grouped tabs and compact chart cards. */
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif;background:#f7f7f5;color:#151515;letter-spacing:0}
 header{padding:20px 28px 14px;background:#fff;border-bottom:1px solid #deded8;position:sticky;top:0;z-index:2}
-h1{margin:0 0 6px;font-size:24px}.meta{font-size:13px;color:#565656;line-height:1.55}
-main{max-width:1280px;margin:0 auto;padding:20px 24px 44px}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
-.tab{border:1px solid #d8d8d2;background:#fff;border-radius:6px;padding:9px 14px;font-weight:700;cursor:pointer;color:#151515;font-size:13px}
+h1{margin:0 0 6px;font-size:24px;letter-spacing:0}.meta{font-size:13px;color:#565656;line-height:1.55}
+main{max-width:1680px;margin:0 auto;padding:20px 24px 44px}
+.tabs{display:flex;gap:8px;margin:0;flex-wrap:wrap;max-width:100%}
+.tab{flex:none;border:1px solid #d8d8d2;background:#fff;border-radius:6px;padding:9px 14px;font-weight:700;cursor:pointer;color:#151515}
 .tab.active{background:#151515;color:#fff;border-color:#151515}
+.tabs-row{display:flex;align-items:center;gap:10px;margin:0 0 10px}
+.tabs-row-label{flex:none;min-width:118px;text-align:center;font-size:12px;font-weight:900;color:#4c4c4c;background:#ecece7;border:1px solid #deded8;border-radius:5px;padding:7px 10px;white-space:nowrap}
+.tabs-row .tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:9px 10px;font-size:13px;line-height:1.1}
+.tabs-row .tab small{font-size:10px;font-weight:700;white-space:nowrap}
+.tabs-row.geo3d-r3p10 .tabs-row-label{background:#f3eadb;border-color:#dec9a7;color:#684710}
+.tabs-row.geo3d-r3p10 .tab small{color:#8a6a2e}
+.tabs-row.geo3d-r3p10 .tab.active{background:#684710;border-color:#684710;color:#fff}
+.tabs-row.geo3d-r3p10 .tab.active small{color:#f3eadb}
+.tabs-row.geokg-3arm .tabs-row-label{background:#e9e8fb;border-color:#ccc9ef;color:#443c88}
+.tabs-row.geokg-3arm .tab small{color:#6d6798}
+.tabs-row.geokg-3arm .tab.active{background:#51489a;border-color:#51489a;color:#fff}
+.tabs-row.geokg-3arm .tab.active small{color:#e9e8fb}
+.tab:focus-visible,summary:focus-visible{outline:2px solid #244f73;outline-offset:3px}
 .pane{display:none}.pane.active{display:block}
-.card{background:#fff;border:1px solid #deded8;border-radius:6px;padding:14px 16px;margin-bottom:16px}
-.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
-.kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid #deded8;border-radius:6px;background:#fff;overflow:hidden;margin-bottom:16px}
-.kpi{padding:14px 16px;border-right:1px solid #e7e7e1}.kpi:last-child{border-right:0}
-.kpi .label{font-size:12px;font-weight:900;color:#555}.kpi .value{font-size:25px;font-weight:900;line-height:1.2;margin:4px 0}.kpi .sub{font-size:12px;line-height:1.5;color:#666}
-.pos{color:#176231}.neg{color:#9a3d31}.muted{color:#767676}
-table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px solid #e7e7e1;padding:8px 10px;text-align:left;vertical-align:top}th{background:#fafafa}
-td.num,th.num{text-align:right;white-space:nowrap}
-.legend{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin:0 0 10px;font-size:12px;font-weight:800;color:#444}
-.swatch{width:20px;height:3px;display:inline-block;margin-right:6px}.swatch.dashed{height:0;background:transparent!important;border-top:3px dashed currentColor}
-.note{background:#fff;border-left:4px solid #202020;padding:11px 14px;margin:0 0 16px;font-size:13px;line-height:1.6;color:#4c4c4c}
-.badge{display:inline-block;border-radius:4px;padding:2px 8px;font-size:12px;font-weight:900}
-.badge.neg{background:#f8dddd;color:#8b2f2f}.badge.run{background:#fff0ca;color:#765300}.badge.pos{background:#dcefe1;color:#176231}
-.links a{color:#005ea8;text-decoration:none}.links a:hover{text-decoration:underline}
-h2{font-size:16px;margin:0 0 10px}
-.info-grid{display:grid;grid-template-columns:110px 1fr;gap:6px 12px;font-size:13px;line-height:1.6}
-.info-grid .k{font-weight:900;color:#555}
-@media(max-width:900px){.kpi-grid,.grid2{grid-template-columns:1fr}.kpi{border-right:0;border-bottom:1px solid #e7e7e1}.kpi:last-child{border-bottom:0}}
-</style></head>
+.section-title{font-size:18px;margin:24px 0 12px}
+.geo-chart-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}
+.card{background:#fff;border:1px solid #deded8;border-radius:6px;padding:12px;margin-bottom:16px;min-width:0}
+.card h2{font-size:16px;margin:0 0 8px}
+.card svg{width:100%;height:auto;display:block;background:#fff}
+.geo-legend{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin:0 0 12px;font-size:12px;font-weight:800;color:#444}
+.geo-legend-item{display:inline-flex;align-items:center;white-space:nowrap}
+.geo-swatch{width:20px;height:3px;display:inline-block;margin-right:6px;border-radius:0}
+.geo-swatch.dashed{height:0;background:transparent!important;border-top:3px dashed currentColor}
+.geo-table-note{font-size:12px;color:#666;margin:8px 0 0;line-height:1.55}
+.geo-audit summary{cursor:pointer;font-size:14px;font-weight:900;list-style-position:inside}
+.geo-audit[open] summary{margin-bottom:10px}
+.info-grid{display:grid;grid-template-columns:100px minmax(0,1fr);gap:6px 12px;font-size:13px;line-height:1.6;margin:0}
+.info-grid dt{font-weight:900;color:#555}.info-grid dd{margin:0;overflow-wrap:anywhere}
+.chart-empty{aspect-ratio:720 / 350;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#767676;font-size:13px;gap:8px}
+.chart-empty strong{font-size:15px;color:#555}
+.load-status{background:#fff;border:1px solid #deded8;padding:24px;color:#666;font-size:13px}
+.load-status[hidden]{display:none}
+.updated{font-size:12px;color:#767676;margin:10px 0 0}
+@media(max-width:720px){.card svg text.category-value{font-size:14px}}
+@media(max-width:1100px){.geo-chart-grid{grid-template-columns:1fr}}
+@media(max-width:720px){header{position:static;padding:17px 16px 12px}h1{font-size:21px}main{padding:14px 12px 32px}.tabs-row{display:block}.tabs-row-label{display:block;width:max-content;min-width:0;margin-bottom:7px}.tabs{padding-bottom:3px}.tab{padding:8px 11px;font-size:13px}.section-title{font-size:17px;margin-top:20px}.info-grid{grid-template-columns:76px minmax(0,1fr)}.card svg text{font-size:16px}.card svg .chart-caption{font-size:12px}}
+</style>
+</head>
 <body>
-<header><h1 id='title'>ERQA p10 数据验证</h1><div class='meta' id='subtitle'></div></header>
+<header><h1 id="title">ERQA p10 数据验证</h1><div class="meta" id="subtitle"></div></header>
 <main>
-<div class='tabs' id='tabs'></div>
-<div id='arm-panes'></div>
+  <nav id="tabs" aria-label="ERQA 实验"></nav>
+  <div class="load-status" id="load-status" role="status">正在加载评测结果…</div>
+  <div id="arm-panes"></div>
+  <p class="updated" id="updated"></p>
 </main>
 <script>
-const CAT_ORDER = ['Action Reasoning','Multi-view Reasoning','Other','Pointing','Spatial Reasoning','State Estimation','Task Reasoning','Trajectory Reasoning'];
-function pct(v){return (v*100).toFixed(2)}
-function svgLine(id, steps, baseline, seriesList, W=580, H=300){
-  const PL=46,PR=14,PT=12,PB=30;
-  const xs=i=>PL+(W-PL-PR)*i/(steps.length-1);
-  let ymin=1,ymax=0;
-  [...baseline.rows.map(r=>r.ERQA),...seriesList.flatMap(s=>s.rows.map(r=>r.ERQA))].forEach(v=>{ymin=Math.min(ymin,v);ymax=Math.max(ymax,v)});
-  const pad=Math.max(0.008,(ymax-ymin)*0.22); ymin-=pad; ymax+=pad;
-  const ys=v=>PT+(H-PT-PB)*(1-(v-ymin)/(ymax-ymin));
-  let s='';
-  for(let i=0;i<=3;i++){const v=ymin+(ymax-ymin)*i/3,y=ys(v);
-    s+=`<line x1='${PL}' y1='${y}' x2='${W-PR}' y2='${y}' stroke='#ecece7'/><text x='${PL-6}' y='${y+4}' font-size='10' fill='#888' text-anchor='end'>${(v*100).toFixed(1)}</text>`;}
-  steps.forEach((st,i)=>{s+=`<text x='${xs(i)}' y='${H-10}' font-size='10' fill='#888' text-anchor='middle'>${st}</text>`;});
-  const line=(rows,color,dash)=>{const pts=rows.filter(r=>steps.includes(r.step)).map(r=>`${xs(steps.indexOf(r.step))},${ys(r.ERQA)}`).join(' ');
-    let o=`<polyline points='${pts}' fill='none' stroke='${color}' stroke-width='2.2'${dash?` stroke-dasharray='${dash}'`:''}/>`;
-    rows.filter(r=>steps.includes(r.step)).forEach(r=>{o+=`<circle cx='${xs(steps.indexOf(r.step))}' cy='${ys(r.ERQA)}' r='3.4' fill='${color}'/>`;});
-    return o;};
-  s+=line(baseline.rows,baseline.color,baseline.dash);
-  seriesList.forEach(se=>{s+=line(se.rows,se.color,null);});
-  document.getElementById(id).innerHTML=s;
+const GROUPS = [
+  {label:'第一批 · p10', style:'geo3d-r3p10', arms:[['robo2vlm','Robo2VLM'],['robovqa','RoboVQA']]},
+  {label:'第二批 · p10', style:'geokg-3arm', arms:[['vlaser','Vlaser'],['sharerobot','ShareRobot']]}
+];
+const CATEGORIES = [
+  ['Action Reasoning','动作推理'],['Multi-view Reasoning','多视角推理'],['Other','其他'],['Pointing','指向'],
+  ['Spatial Reasoning','空间推理'],['State Estimation','状态估计'],['Task Reasoning','任务推理'],['Trajectory Reasoning','轨迹推理']
+];
+const W=720, H=350, M={l:56,r:20,t:22,b:46};
+const esc = value => String(value ?? '').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const color = (value, fallback='#2563eb') => /^#[0-9a-f]{3}([0-9a-f]{3})?$/i.test(value || '') ? value : fallback;
+const pp = value => `${value>0?'+':''}${value.toFixed(2)}`;
+const rowsOf = item => (item?.rows || []).filter(r=>Number.isFinite(r.step)&&Number.isFinite(r.ERQA)).slice().sort((a,b)=>a.step-b.step);
+function legend(arm, delta=false){
+  return `<div class="geo-legend"><span class="geo-legend-item"><i class="geo-swatch dashed" style="color:#5f6368"></i>${delta?'baseline = 0':'0710 baseline'}</span><span class="geo-legend-item"><i class="geo-swatch" style="background:${arm.color}"></i>${esc(arm.name)}</span></div>`;
 }
-function svgCats(id, ctrl, arm, armColor){
-  const W=580,H=300,PL=46,PR=14,PT=16,PB=52,BW=26,GAP=8;
-  const n=CAT_ORDER.length, slot=(W-PL-PR)/n;
-  const ys=v=>PT+(H-PT-PB)*(1-v/0.6);
-  let s='';
-  for(let i=0;i<=3;i++){const v=0.6*i/3,y=ys(v);
-    s+=`<line x1='${PL}' y1='${y}' x2='${W-PR}' y2='${y}' stroke='#ecece7'/><text x='${PL-6}' y='${y+4}' font-size='10' fill='#888' text-anchor='end'>${(v*100).toFixed(0)}</text>`;}
-  CAT_ORDER.forEach((t,i)=>{
-    const x0=PL+slot*i+(slot-2*BW-GAP)/2;
-    const cv=ctrl[t]||0, av=arm[t]||0;
-    s+=`<rect x='${x0}' y='${ys(cv)}' width='${BW}' height='${(H-PT-PB)*cv/0.6}' fill='#9a9a94'/>`;
-    s+=`<rect x='${x0+BW+GAP}' y='${ys(av)}' width='${BW}' height='${(H-PT-PB)*av/0.6}' fill='${armColor}'/>`;
-    const dv=(av-cv)*100;
-    s+=`<text x='${x0+BW+GAP/2}' y='${Math.min(ys(cv),ys(av))-5}' font-size='10' font-weight='800' fill='${dv>=0?'#176231':'#9a3d31'}' text-anchor='middle'>${dv>=0?'+':''}${dv.toFixed(1)}</text>`;
-    s+=`<text x='${x0+BW+GAP/2}' y='${H-36}' font-size='9.5' fill='#666' text-anchor='middle'>${t.replace(' Reasoning','')}</text>`;
-    s+=`<text x='${x0+BW+GAP/2}' y='${H-24}' font-size='9.5' fill='#999' text-anchor='middle'>Reasoning</text>`;
+function svg(content, label){
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label)}"><rect width="${W}" height="${H}" fill="#fff"/>${content}</svg>`;
+}
+function emptyChart(){
+  return '<div class="chart-empty"><strong>暂无评测结果</strong><span>出分后在此显示</span></div>';
+}
+function lineChart(data, arm, delta=false){
+  const baseline=rowsOf(data.baseline), rows=rowsOf(arm.series);
+  if(!rows.length && delta) return emptyChart();
+  const baseByStep=new Map(baseline.map(r=>[r.step,r.ERQA]));
+  const steps=[...new Set([...(data.step_targets || []),...baseline.map(r=>r.step),...rows.map(r=>r.step)])].sort((a,b)=>a-b);
+  if(!steps.length) return emptyChart();
+  const first=steps[0], span=steps[steps.length-1]-first || 1;
+  const x=step=>M.l+(step-first)/span*(W-M.l-M.r);
+  const points=rows.filter(r=>!delta||baseByStep.has(r.step)).map(r=>({step:r.step,v:delta?(r.ERQA-baseByStep.get(r.step))*100:r.ERQA*100,score:r.ERQA*100}));
+  const basePoints=delta?[]:baseline.map(r=>({step:r.step,v:r.ERQA*100}));
+  if(delta && !points.length) return emptyChart();
+  const values=[...basePoints,...points].map(p=>p.v);
+  if(!values.length) return emptyChart();
+  let min, max;
+  if(delta){max=Math.max(1,Math.ceil(Math.max(...values.map(Math.abs))*1.2));min=-max;}
+  else{const lo=Math.min(...values),hi=Math.max(...values),pad=Math.max((hi-lo)*0.18,1.2);min=Math.max(0,lo-pad);max=Math.min(100,hi+pad);}
+  const y=value=>M.t+(max-value)/(max-min || 1)*(H-M.t-M.b);
+  let content='';
+  const divisions=delta?4:3;
+  for(let i=0;i<=divisions;i++){
+    const value=min+(max-min)*i/divisions;
+    content+=`<line x1="${M.l}" x2="${W-M.r}" y1="${y(value)}" y2="${y(value)}" stroke="#deded8"/><text x="${M.l-9}" y="${y(value)+4}" text-anchor="end" font-size="12" fill="#555">${delta&&value>0?'+':''}${value.toFixed(1)}</text>`;
+  }
+  content+=`<line x1="${M.l}" x2="${W-M.r}" y1="${H-M.b}" y2="${H-M.b}" stroke="#bdbdb5"/><line x1="${M.l}" x2="${M.l}" y1="${M.t}" y2="${H-M.b}" stroke="#bdbdb5"/>`;
+  steps.forEach(step=>{content+=`<text x="${x(step)}" y="${H-16}" text-anchor="middle" font-size="11" fill="#555">${step}</text>`;});
+  function path(list, stroke, baselineLine=false){
+    const d=list.map((p,i)=>`${i?'L':'M'} ${x(p.step)} ${y(p.v)}`).join(' ');
+    return `<path d="${d}" fill="none" stroke="${stroke}" stroke-width="${baselineLine?'2.3':'3.2'}" stroke-linecap="round" stroke-linejoin="round" ${baselineLine?'stroke-dasharray="7 5"':''}/>`+list.map(p=>`<circle data-series="${baselineLine?'control':arm.key}" data-step="${p.step}" data-value="${p.v}" cx="${x(p.step)}" cy="${y(p.v)}" r="${baselineLine?'3.2':'4'}" fill="#fff" stroke="${stroke}" stroke-width="${baselineLine?'2':'2.4'}"><title>${esc(baselineLine?'0710 baseline':arm.name)} · step ${p.step}: ${delta?pp(p.v)+' pp':p.v.toFixed(2)+'%'}${delta?' · accuracy '+p.score.toFixed(2)+'%':''}</title></circle>`).join('');
+  }
+  if(delta) content+=`<line x1="${M.l}" x2="${W-M.r}" y1="${y(0)}" y2="${y(0)}" stroke="#5f6368" stroke-width="2.3" stroke-dasharray="7 5"/>`;
+  else content+=path(basePoints,'#5f6368',true);
+  content+=path(points,arm.color);
+  content+=`<text class="chart-caption" x="${W/2}" y="${H-2}" text-anchor="middle" font-size="12" fill="#555">checkpoint</text>`;
+  return svg(content,`${arm.name} ERQA ${delta?'相对同 step baseline 的差值，单位 pp':'准确率，单位 %'}`);
+}
+function categoryChart(data, arm){
+  const base=data.categories?.control, values=data.categories?.[arm.key];
+  if(!base || !values || !CATEGORIES.some(([key])=>Number.isFinite(values[key]))) return emptyChart();
+  const left=102,right=54,top=16,bottom=35;
+  const all=CATEGORIES.flatMap(([key])=>[base[key],values[key]]).filter(Number.isFinite);
+  const max=Math.max(0.1,Math.ceil(Math.max(...all)*10)/10);
+  const x=value=>left+value/max*(W-left-right), slot=(H-top-bottom)/CATEGORIES.length;
+  let content='';
+  for(let i=0;i<=3;i++){
+    const value=max*i/3;
+    content+=`<line x1="${x(value)}" x2="${x(value)}" y1="${top}" y2="${H-bottom}" stroke="#deded8"/><text x="${x(value)}" y="${H-13}" text-anchor="middle" font-size="12" fill="#555">${(value*100).toFixed(0)}</text>`;
+  }
+  CATEGORIES.forEach(([key,label],i)=>{
+    const mid=top+slot*(i+0.5);
+    content+=`<text x="${left-12}" y="${mid+4}" text-anchor="end" font-size="13" fill="#555">${label}<title>${key}</title></text>`;
+    [[base[key],'#9a9a94',mid-12,'0710 baseline'],[values[key],arm.color,mid+6,arm.name]].forEach(([value,fill,y,name])=>{
+      if(!Number.isFinite(value)) return;
+      content+=`<rect x="${left}" y="${y}" width="${x(value)-left}" height="7" fill="${fill}"><title>${esc(name)} · ${key}: ${(value*100).toFixed(2)}%</title></rect><text class="category-value" x="${x(value)+6}" y="${y+7}" font-size="11" fill="#555">${(value*100).toFixed(1)}</text>`;
+    });
   });
-  document.getElementById(id).innerHTML=s;
+  return svg(content,`${arm.name} ERQA 各题型聚合准确率，单位 %`);
 }
-function infoCard(e){
-  return `<div class='card links'><h2>数据与任务</h2><div class='info-grid'>
-    <div class='k'>数据</div><div><b>${e.name}</b></div>
-    <div class='k'>token 数</div><div>${e.tokens}</div>
-    <div class='k'>规模</div><div>${e.docs}</div>
-    <div class='k'>m3 预览</div><div>${e.m3_link?`<a href='${e.m3_link}'>打开（3 列）</a>`:'-'}</div>
-    <div class='k'>训练 job</div><div>${e.job_url?`<a href='${e.job_url}'>${e.job_id}</a>`:'-'}</div>
-    <div class='k'>结论</div><div><span class='badge ${e.verdict_kind}'>${e.verdict}</span></div>
-  </div></div>`;
-}
-function render(d){
-  document.getElementById('title').textContent=d.title;
-  document.getElementById('subtitle').textContent=d.subtitle+' · 更新于 '+d.updated_at;
-  // tabs
-  const arms = d.series.map(se=>se.key);
-  const expOf = k => d.experiments.find(e=>e.name.toLowerCase().includes(k==='robo2vlm'?'robo2vlm':k));
-  let tabs = '';
-  arms.forEach((k,i)=>{const se=d.series.find(s=>s.key===k); tabs+=`<button class='tab${i===0?' active':''}' data-tab='${k}'>${se.label}</button>`;});
-  ['Vlaser','ShareRobot'].forEach(n=>{tabs+=`<button class='tab' data-tab='${n.toLowerCase()}'>${n}</button>`;});
-  document.getElementById('tabs').innerHTML=tabs;
-  // arm panes
-  let panes='';
-  arms.forEach(k=>{
-    const se=d.series.find(s=>s.key===k);
-    const e=expOf(k)||{name:se.label,tokens:'-',docs:'-',m3_link:'',job_url:'',job_id:'',verdict:'-',verdict_kind:'run'};
-    panes+=`<div class='pane${k===arms[0]?' active':''}' id='pane-${k}'>
-      <div class='grid2'>
-        <div class='card'><h2>ERQA 曲线 · ${se.label}</h2>
-          <div class='legend'><span class='legend-item'><span class='swatch dashed' style='color:${d.baseline.color}'></span>control</span><span class='legend-item'><span class='swatch' style='background:${se.color}'></span>${se.label}</span></div>
-          <svg id='chart-${k}' viewBox='0 0 580 300' style='width:100%;height:auto;display:block;background:#fff'></svg></div>
-        <div class='card'><h2>题型分布 vs control（Δ pp）</h2>
-          <div class='legend'><span class='legend-item'><span class='swatch' style='background:#9a9a94'></span>control</span><span class='legend-item'><span class='swatch' style='background:${se.color}'></span>${se.label}</span></div>
-          <svg id='cats-${k}' viewBox='0 0 580 300' style='width:100%;height:auto;display:block;background:#fff'></svg></div>
+function render(data){
+  if(!Array.isArray(data.baseline?.rows) || !Array.isArray(data.series)) throw new Error('评测数据格式不完整');
+  document.getElementById('title').textContent=data.title || 'ERQA p10 数据验证';
+  document.getElementById('subtitle').textContent=data.subtitle || '';
+  document.getElementById('updated').textContent=data.updated_at?'数据更新时间：'+data.updated_at:'';
+  const arms=GROUPS.flatMap(g=>g.arms.map(([key,name])=>{
+    const series=data.series.find(s=>s.key.toLowerCase()===key);
+    const experiment=(data.experiments || []).find(e=>e.name.toLowerCase().includes(key)) || {};
+    return {key,name,series,experiment,color:color(series?.color,key==='robovqa'?'#d45b2c':key==='sharerobot'?'#2e8b57':'#2563eb')};
+  }));
+  document.getElementById('tabs').innerHTML=GROUPS.map(group=>`<div class="tabs-row ${group.style}"><span class="tabs-row-label">${group.label}</span><div class="tabs" role="tablist" aria-label="${group.label}">${group.arms.map(([key])=>{
+    const arm=arms.find(a=>a.key===key), count=rowsOf(arm.series).length;
+    const tokens=arm.experiment.tokens?.split('（')[0];
+    return `<button type="button" class="tab" id="tab-${key}" role="tab" aria-controls="pane-${key}" aria-selected="false" tabindex="-1" data-tab="${key}"><span>${esc(arm.experiment.name || arm.name)}</span><small>${esc(tokens?tokens+' token · ':'')}p10 · ${count?count+' 个评测点':'待出分'}</small></button>`;
+  }).join('')}</div></div>`).join('');
+  document.getElementById('arm-panes').innerHTML=arms.map(arm=>{
+    const rows=rowsOf(arm.series), e=arm.experiment;
+    return `<section class="pane" id="pane-${arm.key}" role="tabpanel" aria-labelledby="tab-${arm.key}" hidden>
+      <h2 class="section-title">${esc(e.name || arm.name)} · ERQA</h2>
+      <div class="geo-chart-grid">
+        <article class="card"><h2>ERQA · 准确率（%）</h2>${legend(arm)}<div data-chart="accuracy">${lineChart(data,arm)}</div>${!rows.length?'<p class="geo-table-note">当前仅显示 baseline；该实验暂无评测结果。</p>':''}</article>
+        <article class="card"><h2>ERQA · 相对 baseline（pp）</h2>${legend(arm,true)}<div data-chart="delta">${lineChart(data,arm,true)}</div><p class="geo-table-note">实验 − 同 step baseline；0 线表示持平。</p></article>
+        <article class="card"><h2>ERQA · 题型均值（%）</h2>${legend(arm)}<div data-chart="categories">${categoryChart(data,arm)}</div>${data.categories?.[arm.key]&&data.categories_note?`<p class="geo-table-note">${esc(data.categories_note)}。聚合范围不同。</p>`:''}</article>
       </div>
-      ${infoCard(e)}
-    </div>`;
+      <details class="card geo-audit"><summary>数据说明</summary><dl class="info-grid">
+        <dt>数据</dt><dd>${esc(e.name || arm.name)}</dd>
+        <dt>token 数</dt><dd>${esc(e.tokens || '—')}</dd>
+        <dt>规模</dt><dd>${esc(e.docs || '—')}</dd>
+        <dt>评测点</dt><dd>${rows.length?rows.map(r=>r.step).join(' / '):'暂无评测结果'}</dd>
+        ${arm.series?.stopped_at_step?`<dt>训练记录</dt><dd>已停训，step ${esc(arm.series.stopped_at_step)}</dd>`:''}
+      </dl></details>
+    </section>`;
+  }).join('');
+  const buttons=[...document.querySelectorAll('[role="tab"]')];
+  function activate(key,updateHash=false){
+    if(!arms.some(a=>a.key===key)) key=arms[0].key;
+    buttons.forEach(button=>{
+      const selected=button.dataset.tab===key;
+      button.classList.toggle('active',selected);
+      button.setAttribute('aria-selected',String(selected));
+      button.tabIndex=selected?0:-1;
+    });
+    document.querySelectorAll('.pane').forEach(pane=>{
+      const selected=pane.id==='pane-'+key;
+      pane.classList.toggle('active',selected);pane.hidden=!selected;
+    });
+    if(updateHash) history.replaceState(null,'','#'+key);
+  }
+  buttons.forEach((button,index)=>{
+    button.addEventListener('click',()=>activate(button.dataset.tab,true));
+    button.addEventListener('keydown',event=>{
+      let next;
+      if(event.key==='ArrowRight') next=(index+1)%buttons.length;
+      else if(event.key==='ArrowLeft') next=(index+buttons.length-1)%buttons.length;
+      else if(event.key==='Home') next=0;
+      else if(event.key==='End') next=buttons.length-1;
+      else return;
+      event.preventDefault();activate(buttons[next].dataset.tab,true);buttons[next].focus();
+    });
   });
-  ['vlaser','sharerobot'].forEach(n=>{
-    const e=d.experiments.find(x=>x.name.toLowerCase().includes(n))||{name:n,tokens:'-',docs:'-',m3_link:'',job_url:'',job_id:'',verdict:'-',verdict_kind:'run'};
-    panes+=`<div class='pane' id='pane-${n}'>${infoCard(e)}<div class='note'>该臂的 ERQA 曲线将在训练与评测推进后自动补充到本页（数据文件 erqa_p10_live.json 驱动）。</div></div>`;
-  });
-  document.getElementById('arm-panes').innerHTML=panes;
-  arms.forEach(k=>{
-    const se=d.series.find(s=>s.key===k);
-    svgLine('chart-'+k, d.step_targets, d.baseline, [se]);
-    if(d.categories) svgCats('cats-'+k, d.categories.control, d.categories[k]||{}, se.color);
-  });
-  // tab switching
-  document.querySelectorAll('.tab').forEach(btn=>{
-    btn.onclick=()=>{
-      document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
-      document.querySelectorAll('.pane').forEach(p=>p.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById('pane-'+btn.dataset.tab).classList.add('active');
-    };
-  });
+  window.addEventListener('hashchange',()=>activate(location.hash.slice(1)));
+  activate(location.hash.slice(1));
+  document.getElementById('load-status').hidden=true;
 }
-fetch('erqa_p10_live.json').then(r=>r.json()).then(render);
+fetch('erqa_p10_live.json').then(response=>{
+  if(!response.ok) throw new Error('HTTP '+response.status);
+  return response.json();
+}).then(render).catch(error=>{
+  const status=document.getElementById('load-status');
+  status.textContent='评测结果加载失败，请刷新重试。'+error.message;
+  status.setAttribute('role','alert');status.hidden=false;
+});
 </script>
-</body></html>
+</body>
+</html>
