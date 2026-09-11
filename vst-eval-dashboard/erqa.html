@@ -1,0 +1,101 @@
+<!doctype html>
+<html><head><meta charset='utf-8'><link rel='icon' href='data:,'>
+<title>ERQA p10 数据验证</title>
+<style>
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif;background:#f7f7f5;color:#151515}
+header{padding:20px 28px 14px;background:#fff;border-bottom:1px solid #deded8;position:sticky;top:0;z-index:2}
+h1{margin:0 0 6px;font-size:24px}.meta{font-size:13px;color:#565656;line-height:1.55}
+main{max-width:1280px;margin:0 auto;padding:20px 24px 44px}
+.card{background:#fff;border:1px solid #deded8;border-radius:6px;padding:14px 16px;margin-bottom:16px}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid #deded8;border-radius:6px;background:#fff;overflow:hidden;margin-bottom:16px}
+.kpi{padding:14px 16px;border-right:1px solid #e7e7e1}.kpi:last-child{border-right:0}
+.kpi .label{font-size:12px;font-weight:900;color:#555}.kpi .value{font-size:25px;font-weight:900;line-height:1.2;margin:4px 0}.kpi .sub{font-size:12px;line-height:1.5;color:#666}
+.pos{color:#176231}.neg{color:#9a3d31}.muted{color:#767676}
+table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px solid #e7e7e1;padding:8px 10px;text-align:left;vertical-align:top}th{background:#fafafa}
+td.num,th.num{text-align:right;white-space:nowrap}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin:0 0 10px;font-size:12px;font-weight:800;color:#444}
+.swatch{width:20px;height:3px;display:inline-block;margin-right:6px}.swatch.dashed{height:0;background:transparent!important;border-top:3px dashed currentColor}
+.note{background:#fff;border-left:4px solid #202020;padding:11px 14px;margin:0 0 16px;font-size:13px;line-height:1.6;color:#4c4c4c}
+.badge{display:inline-block;border-radius:4px;padding:2px 8px;font-size:12px;font-weight:900}
+.badge.neg{background:#f8dddd;color:#8b2f2f}.badge.run{background:#fff0ca;color:#765300}.badge.pos{background:#dcefe1;color:#176231}
+.links a{color:#005ea8;text-decoration:none}.links a:hover{text-decoration:underline}
+h2{font-size:17px;margin:0 0 10px}
+@media(max-width:900px){.kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.kpi:nth-child(2){border-right:0}.kpi:nth-child(-n+2){border-bottom:1px solid #e7e7e1}}
+</style></head>
+<body>
+<header><h1 id='title'>ERQA p10 数据验证</h1><div class='meta' id='subtitle'></div></header>
+<main>
+<div class='kpi-grid' id='kpis'></div>
+
+<div class='card'><h2>ERQA step 曲线</h2>
+<div class='legend' id='legend'></div>
+<svg id='chart' viewBox='0 0 1180 430' style='width:100%;height:auto;display:block;background:#fff'></svg>
+<div class='meta' style='margin-top:8px'>横轴 training step；纵轴 ERQA accuracy（400 题）。baseline 为 s_a1524e79 会话 10 点全验证曲线；实验臂为 p10 混训（10% 候选数据），两条均已按结论停训。</div>
+</div>
+
+<div class='card'><h2>逐步对照</h2><div style='overflow:auto'><table id='steps'></table></div></div>
+
+<div class='card links'><h2>候选数据验证记录</h2><div style='overflow:auto'><table id='exps'></table></div></div>
+
+<div class='note' id='protocol'></div>
+</main>
+<script>
+function renderChart(d){
+  const W=1180,H=430,PL=54,PR=20,PT=16,PB=38;
+  const steps=d.step_targets, xs=i=>PL+(W-PL-PR)*i/(steps.length-1);
+  let ymin=1,ymax=0;
+  const all=[...d.baseline.rows.map(r=>r.ERQA),...d.series.flatMap(s=>s.rows.map(r=>r.ERQA))];
+  all.forEach(v=>{ymin=Math.min(ymin,v);ymax=Math.max(ymax,v)});
+  const pad=Math.max(0.01,(ymax-ymin)*0.25); ymin-=pad; ymax+=pad;
+  const ys=v=>PT+(H-PT-PB)*(1-(v-ymin)/(ymax-ymin));
+  let s='';
+  for(let i=0;i<=4;i++){const v=ymin+(ymax-ymin)*i/4,y=ys(v);
+    s+=`<line x1='${PL}' y1='${y}' x2='${W-PR}' y2='${y}' stroke='#ecece7'/><text x='${PL-8}' y='${y+4}' font-size='11' fill='#888' text-anchor='end'>${(v*100).toFixed(1)}</text>`;}
+  steps.forEach((st,i)=>{s+=`<text x='${xs(i)}' y='${H-14}' font-size='11' fill='#888' text-anchor='middle'>${st}</text>`;});
+  const line=(rows,color,dash)=>{const pts=rows.map(r=>`${xs(steps.indexOf(r.step))},${ys(r.ERQA)}`).join(' ');
+    let o=`<polyline points='${pts}' fill='none' stroke='${color}' stroke-width='2.5'${dash?` stroke-dasharray='${dash}'`:''}/>`;
+    rows.forEach(r=>{o+=`<circle cx='${xs(steps.indexOf(r.step))}' cy='${ys(r.ERQA)}' r='4' fill='${color}'/>`;});
+    return o;};
+  s+=line(d.baseline.rows,d.baseline.color,d.baseline.dash);
+  d.series.forEach(se=>{s+=line(se.rows,se.color,null);});
+  document.getElementById('chart').innerHTML=s;
+  document.getElementById('legend').innerHTML=
+    `<span class='legend-item'><span class='swatch dashed' style='color:${d.baseline.color}'></span>${d.baseline.label}</span>`+
+    d.series.map(se=>`<span class='legend-item'><span class='swatch' style='background:${se.color}'></span>${se.label}</span>`).join('');
+}
+function pct(v){return (v*100).toFixed(2)}
+function render(d){
+  document.getElementById('title').textContent=d.title;
+  document.getElementById('subtitle').textContent=d.subtitle+' · 更新于 '+d.updated_at;
+  const bm=d.baseline.rows.reduce((a,r)=>a+r.ERQA,0)/d.baseline.rows.length;
+  const sm=d.series.map(se=>{
+    const paired=se.rows.map(r=>({e:r.ERQA,c:d.baseline.rows.find(b=>b.step===r.step).ERQA}));
+    const de=paired.reduce((a,p)=>a+p.e,0)/paired.length, dc=paired.reduce((a,p)=>a+p.c,0)/paired.length;
+    return {se, delta:(de-dc)*100};
+  });
+  document.getElementById('kpis').innerHTML=
+    `<div class='kpi'><div class='label'>Baseline 10 点均值</div><div class='value'>${pct(bm)}%</div><div class='sub'>40.25–43.00 波动（±1.4pp 噪声带）</div></div>`+
+    sm.map(({se,delta})=>`<div class='kpi'><div class='label'>${se.label}</div><div class='value ${delta>=0?'pos':'neg'}'>${delta>=0?'+':''}${delta.toFixed(2)}pp</div><div class='sub'>step-matched 均值差 vs control · 评测至 step ${Math.max(...se.rows.map(r=>r.step))}，训练已停</div></div>`).join('')+
+    `<div class='kpi'><div class='label'>当前结论</div><div class='value neg' style='font-size:19px'>均无显著效果</div><div class='sub'>两条臂 Δ 均在 baseline 自身波动带内；已停训换下一批（Vlaser / ShareRobot）</div></div>`;
+  let th=`<tr><th>step</th><th class='num'>control</th>${d.series.map(se=>`<th class='num'>${se.label}</th><th class='num'>Δ</th>`).join('')}</tr>`;
+  const usedSteps=[...new Set(d.series.flatMap(se=>se.rows.map(r=>r.step)))].sort((a,b)=>a-b);
+  th+=usedSteps.map(st=>{
+    const c=d.baseline.rows.find(b=>b.step===st);
+    return `<tr><td>${st}</td><td class='num'>${c?pct(c.ERQA):'-'}</td>`+d.series.map(se=>{
+      const r=se.rows.find(x=>x.step===st);
+      if(!r||!c) return `<td class='num'>-</td><td class='num'>-</td>`;
+      const dv=(r.ERQA-c.ERQA)*100;
+      return `<td class='num'>${pct(r.ERQA)}</td><td class='num ${dv>=0?'pos':'neg'}'>${dv>=0?'+':''}${dv.toFixed(2)}</td>`;
+    }).join('')+'</tr>';}).join('');
+  document.getElementById('steps').innerHTML=th;
+  document.getElementById('exps').innerHTML=`<tr><th>数据</th><th>token 数</th><th>规模</th><th>m3 预览</th><th>训练 job</th><th>结论</th></tr>`+
+    d.experiments.map(e=>`<tr><td><b>${e.name}</b></td><td>${e.tokens}</td><td>${e.docs}</td>`+
+      `<td>${e.m3_link?`<a href='${e.m3_link}'>预览</a>`:'-'}</td>`+
+      `<td>${e.job_url?`<a href='${e.job_url}'>${e.job_id}</a>`:'-'}</td>`+
+      `<td><span class='badge ${e.verdict_kind}'>${e.verdict}</span></td></tr>`).join('');
+  document.getElementById('protocol').innerHTML=`<b>评测协议</b>：与 baseline 严格同口径——ERQA 400 题（MD5 dbe8fd3b…）、judge=gpt-oss-120b-judge @ temperature 0、thinking disabled、max_tokens 16384、moonshot_multi_modal thinking_hybrid 模板。每个点独立重算与报告值一致，并抽看图人工复核过模型回答与判分。10% 混训配比经 post-deploy gate 断言（归一化 =0.1000）。`;
+  renderChart(d);
+}
+fetch('erqa_p10_live.json').then(r=>r.json()).then(render);
+</script>
+</body></html>

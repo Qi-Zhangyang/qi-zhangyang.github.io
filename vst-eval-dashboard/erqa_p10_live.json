@@ -1,0 +1,93 @@
+{
+  "title": "ERQA p10 数据验证",
+  "subtitle": "SN6V 0710 baseline 对照 · 90% 固定 baseline + 10% 候选数据 · judge=gpt-oss-120b @ temp0 · no-think · 400 题",
+  "updated_at": "2026-09-11 03:55 UTC",
+  "verified_through": 500,
+  "step_targets": [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],
+  "baseline": {
+    "key": "control",
+    "label": "0710 baseline (control, 10点已验证)",
+    "color": "#5f6368",
+    "dash": "7 5",
+    "rows": [
+      {"step": 100, "ERQA": 0.4175},
+      {"step": 200, "ERQA": 0.415},
+      {"step": 300, "ERQA": 0.4225},
+      {"step": 400, "ERQA": 0.4075},
+      {"step": 500, "ERQA": 0.43},
+      {"step": 600, "ERQA": 0.405},
+      {"step": 700, "ERQA": 0.4125},
+      {"step": 800, "ERQA": 0.41},
+      {"step": 900, "ERQA": 0.415},
+      {"step": 1000, "ERQA": 0.4025}
+    ]
+  },
+  "series": [
+    {
+      "key": "robo2vlm",
+      "label": "Robo2VLM native≥256 (62M)",
+      "color": "#2563eb",
+      "stopped_at_step": 650,
+      "rows": [
+        {"step": 200, "ERQA": 0.4125},
+        {"step": 300, "ERQA": 0.4075},
+        {"step": 400, "ERQA": 0.4125},
+        {"step": 500, "ERQA": 0.4075}
+      ]
+    },
+    {
+      "key": "robovqa",
+      "label": "RoboVQA (580M)",
+      "color": "#d45b2c",
+      "stopped_at_step": 540,
+      "rows": [
+        {"step": 200, "ERQA": 0.3925},
+        {"step": 300, "ERQA": 0.3875},
+        {"step": 400, "ERQA": 0.395},
+        {"step": 500, "ERQA": 0.395}
+      ]
+    }
+  ],
+  "experiments": [
+    {
+      "name": "Robo2VLM native≥256",
+      "tokens": "62M（抽样估算）",
+      "docs": "124,617 文档 / 591,733 QA",
+      "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-visual-input-data%2Fm3data%2Fqizhangyang%2Fspatial_embodied_v2%2Frobo2vlm_native_ge256_20260910%2F&start_idx=0&num_data=8&decode_method=%3CM3+Standard%3E&text_show_mode=text&show_roles=true&num_columns=3&epoch=0&doc_num_data=30",
+      "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091022-36xd8k",
+      "job_id": "mj-mb-2026091022-36xd8k",
+      "verdict": "无显著效果（step-matched Δ=-0.88pp，净 +2 题），已停训",
+      "verdict_kind": "neg"
+    },
+    {
+      "name": "RoboVQA",
+      "tokens": "580M（抽样估算）",
+      "docs": "1,601,352 文档",
+      "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-visual-input-data%2Fm3data%2Fqizhangyang%2Fspatial_embodied_v2%2Frobovqa%2F&start_idx=0&num_data=8&decode_method=%3CM3+Standard%3E&text_show_mode=text&show_roles=true&num_columns=3&epoch=0&doc_num_data=30",
+      "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091022-36xfob",
+      "job_id": "mj-mb-2026091022-36xfob",
+      "verdict": "无显著效果（step-matched Δ=-2.63pp，净 -5 题），已停训",
+      "verdict_kind": "neg"
+    },
+    {
+      "name": "Vlaser（新子集混合）",
+      "tokens": "转换中",
+      "docs": "8 子集（owmm_vlm / vlm_3r / refspatial×2 / robotwin×3 / egoplan 等）",
+      "m3_link": "",
+      "job_url": "",
+      "job_id": "",
+      "verdict": "kimiv 转换中（Ray m3h20）",
+      "verdict_kind": "run"
+    },
+    {
+      "name": "ShareRobot",
+      "tokens": "估算中",
+      "docs": "planning 1,025,940 文档 + affordance 6,522 + trajectory 6,870",
+      "m3_link": "",
+      "job_url": "",
+      "job_id": "",
+      "verdict": "转换完成，待挂 p10 训练",
+      "verdict_kind": "run"
+    }
+  ]
+}
