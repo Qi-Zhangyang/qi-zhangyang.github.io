@@ -33,14 +33,6 @@ h2{font-size:16px;margin:0 0 10px}
 <header><h1 id='title'>ERQA p10 数据验证</h1><div class='meta' id='subtitle'></div></header>
 <main>
 <div class='tabs' id='tabs'></div>
-<div class='pane active' id='pane-overview'>
-  <div class='kpi-grid' id='kpis'></div>
-  <div class='card'><h2>ERQA step 曲线（全部臂）</h2><div class='legend' id='legend'></div><svg id='chart' viewBox='0 0 1180 430' style='width:100%;height:auto;display:block;background:#fff'></svg>
-  <div class='meta' style='margin-top:8px'>横轴 training step；纵轴 ERQA accuracy（400 题）。baseline 为 10 点全验证曲线；实验臂为 p10 混训（10% 候选数据）。</div></div>
-  <div class='card'><h2>逐步对照</h2><div style='overflow:auto'><table id='steps'></table></div></div>
-  <div class='card links'><h2>候选数据验证记录</h2><div style='overflow:auto'><table id='exps'></table></div></div>
-  <div class='note' id='protocol'></div>
-</div>
 <div id='arm-panes'></div>
 </main>
 <script>
@@ -100,48 +92,16 @@ function render(d){
   // tabs
   const arms = d.series.map(se=>se.key);
   const expOf = k => d.experiments.find(e=>e.name.toLowerCase().includes(k==='robo2vlm'?'robo2vlm':k));
-  let tabs = `<button class='tab active' data-tab='overview'>总览</button>`;
-  arms.forEach(k=>{const se=d.series.find(s=>s.key===k); tabs+=`<button class='tab' data-tab='${k}'>${se.label}</button>`;});
+  let tabs = '';
+  arms.forEach((k,i)=>{const se=d.series.find(s=>s.key===k); tabs+=`<button class='tab${i===0?' active':''}' data-tab='${k}'>${se.label}</button>`;});
   ['Vlaser','ShareRobot'].forEach(n=>{tabs+=`<button class='tab' data-tab='${n.toLowerCase()}'>${n}</button>`;});
   document.getElementById('tabs').innerHTML=tabs;
-  // overview
-  const bm=d.baseline.rows.reduce((a,r)=>a+r.ERQA,0)/d.baseline.rows.length;
-  const sm=d.series.map(se=>{
-    const paired=se.rows.map(r=>({e:r.ERQA,c:d.baseline.rows.find(b=>b.step===r.step).ERQA}));
-    const de=paired.reduce((a,p)=>a+p.e,0)/paired.length, dc=paired.reduce((a,p)=>a+p.c,0)/paired.length;
-    return {se, delta:(de-dc)*100};
-  });
-  document.getElementById('kpis').innerHTML=
-    `<div class='kpi'><div class='label'>Baseline 10 点均值</div><div class='value'>${pct(bm)}%</div><div class='sub'>40.25–43.00 波动（±1.4pp 噪声带）</div></div>`+
-    sm.map(({se,delta})=>`<div class='kpi'><div class='label'>${se.label}</div><div class='value ${delta>=0?'pos':'neg'}'>${delta>=0?'+':''}${delta.toFixed(2)}pp</div><div class='sub'>step-matched 均值差 vs control · 评测至 step ${Math.max(...se.rows.map(r=>r.step))}，训练已停</div></div>`).join('')+
-    `<div class='kpi'><div class='label'>当前结论</div><div class='value neg' style='font-size:19px'>均无显著效果</div><div class='sub'>两条臂 Δ 均在 baseline 自身波动带内；已停训换 Vlaser / ShareRobot</div></div>`;
-  document.getElementById('legend').innerHTML=
-    `<span class='legend-item'><span class='swatch dashed' style='color:${d.baseline.color}'></span>${d.baseline.label}</span>`+
-    d.series.map(se=>`<span class='legend-item'><span class='swatch' style='background:${se.color}'></span>${se.label}</span>`).join('');
-  svgLine('chart', d.step_targets, d.baseline, d.series, 1180, 430);
-  let th=`<tr><th>step</th><th class='num'>control</th>${d.series.map(se=>`<th class='num'>${se.label}</th><th class='num'>Δ</th>`).join('')}</tr>`;
-  const usedSteps=[...new Set(d.series.flatMap(se=>se.rows.map(r=>r.step)))].sort((a,b)=>a-b);
-  th+=usedSteps.map(st=>{
-    const c=d.baseline.rows.find(b=>b.step===st);
-    return `<tr><td>${st}</td><td class='num'>${c?pct(c.ERQA):'-'}</td>`+d.series.map(se=>{
-      const r=se.rows.find(x=>x.step===st);
-      if(!r||!c) return `<td class='num'>-</td><td class='num'>-</td>`;
-      const dv=(r.ERQA-c.ERQA)*100;
-      return `<td class='num'>${pct(r.ERQA)}</td><td class='num ${dv>=0?'pos':'neg'}'>${dv>=0?'+':''}${dv.toFixed(2)}</td>`;
-    }).join('')+'</tr>';}).join('');
-  document.getElementById('steps').innerHTML=th;
-  document.getElementById('exps').innerHTML=`<tr><th>数据</th><th>token 数</th><th>规模</th><th>m3 预览</th><th>训练 job</th><th>结论</th></tr>`+
-    d.experiments.map(e=>`<tr><td><b>${e.name}</b></td><td>${e.tokens}</td><td>${e.docs}</td>`+
-      `<td>${e.m3_link?`<a href='${e.m3_link}'>预览</a>`:'-'}</td>`+
-      `<td>${e.job_url?`<a href='${e.job_url}'>${e.job_id}</a>`:'-'}</td>`+
-      `<td><span class='badge ${e.verdict_kind}'>${e.verdict}</span></td></tr>`).join('');
-  document.getElementById('protocol').innerHTML=`<b>评测协议</b>：与 baseline 严格同口径——ERQA 400 题、judge=gpt-oss-120b-judge @ temperature 0、thinking disabled、max_tokens 16384。每个点独立重算与报告值一致，并抽看图人工复核过模型回答与判分。10% 混训配比经 post-deploy gate 断言（归一化 =0.1000）。${d.categories_note||''}。`;
   // arm panes
   let panes='';
   arms.forEach(k=>{
     const se=d.series.find(s=>s.key===k);
     const e=expOf(k)||{name:se.label,tokens:'-',docs:'-',m3_link:'',job_url:'',job_id:'',verdict:'-',verdict_kind:'run'};
-    panes+=`<div class='pane' id='pane-${k}'>
+    panes+=`<div class='pane${k===arms[0]?' active':''}' id='pane-${k}'>
       <div class='grid2'>
         <div class='card'><h2>ERQA 曲线 · ${se.label}</h2>
           <div class='legend'><span class='legend-item'><span class='swatch dashed' style='color:${d.baseline.color}'></span>control</span><span class='legend-item'><span class='swatch' style='background:${se.color}'></span>${se.label}</span></div>
