@@ -6,7 +6,12 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang 
 header{padding:20px 28px 14px;background:#fff;border-bottom:1px solid #deded8;position:sticky;top:0;z-index:2}
 h1{margin:0 0 6px;font-size:24px}.meta{font-size:13px;color:#565656;line-height:1.55}
 main{max-width:1280px;margin:0 auto;padding:20px 24px 44px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+.tab{border:1px solid #d8d8d2;background:#fff;border-radius:6px;padding:9px 14px;font-weight:700;cursor:pointer;color:#151515;font-size:13px}
+.tab.active{background:#151515;color:#fff;border-color:#151515}
+.pane{display:none}.pane.active{display:block}
 .card{background:#fff;border:1px solid #deded8;border-radius:6px;padding:14px 16px;margin-bottom:16px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
 .kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid #deded8;border-radius:6px;background:#fff;overflow:hidden;margin-bottom:16px}
 .kpi{padding:14px 16px;border-right:1px solid #e7e7e1}.kpi:last-child{border-right:0}
 .kpi .label{font-size:12px;font-weight:900;color:#555}.kpi .value{font-size:25px;font-weight:900;line-height:1.2;margin:4px 0}.kpi .sub{font-size:12px;line-height:1.5;color:#666}
@@ -19,54 +24,87 @@ td.num,th.num{text-align:right;white-space:nowrap}
 .badge{display:inline-block;border-radius:4px;padding:2px 8px;font-size:12px;font-weight:900}
 .badge.neg{background:#f8dddd;color:#8b2f2f}.badge.run{background:#fff0ca;color:#765300}.badge.pos{background:#dcefe1;color:#176231}
 .links a{color:#005ea8;text-decoration:none}.links a:hover{text-decoration:underline}
-h2{font-size:17px;margin:0 0 10px}
-@media(max-width:900px){.kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.kpi:nth-child(2){border-right:0}.kpi:nth-child(-n+2){border-bottom:1px solid #e7e7e1}}
+h2{font-size:16px;margin:0 0 10px}
+.info-grid{display:grid;grid-template-columns:110px 1fr;gap:6px 12px;font-size:13px;line-height:1.6}
+.info-grid .k{font-weight:900;color:#555}
+@media(max-width:900px){.kpi-grid,.grid2{grid-template-columns:1fr}.kpi{border-right:0;border-bottom:1px solid #e7e7e1}.kpi:last-child{border-bottom:0}}
 </style></head>
 <body>
 <header><h1 id='title'>ERQA p10 数据验证</h1><div class='meta' id='subtitle'></div></header>
 <main>
-<div class='kpi-grid' id='kpis'></div>
-
-<div class='card'><h2>ERQA step 曲线</h2>
-<div class='legend' id='legend'></div>
-<svg id='chart' viewBox='0 0 1180 430' style='width:100%;height:auto;display:block;background:#fff'></svg>
-<div class='meta' style='margin-top:8px'>横轴 training step；纵轴 ERQA accuracy（400 题）。baseline 为 s_a1524e79 会话 10 点全验证曲线；实验臂为 p10 混训（10% 候选数据），两条均已按结论停训。</div>
+<div class='tabs' id='tabs'></div>
+<div class='pane active' id='pane-overview'>
+  <div class='kpi-grid' id='kpis'></div>
+  <div class='card'><h2>ERQA step 曲线（全部臂）</h2><div class='legend' id='legend'></div><svg id='chart' viewBox='0 0 1180 430' style='width:100%;height:auto;display:block;background:#fff'></svg>
+  <div class='meta' style='margin-top:8px'>横轴 training step；纵轴 ERQA accuracy（400 题）。baseline 为 10 点全验证曲线；实验臂为 p10 混训（10% 候选数据）。</div></div>
+  <div class='card'><h2>逐步对照</h2><div style='overflow:auto'><table id='steps'></table></div></div>
+  <div class='card links'><h2>候选数据验证记录</h2><div style='overflow:auto'><table id='exps'></table></div></div>
+  <div class='note' id='protocol'></div>
 </div>
-
-<div class='card'><h2>逐步对照</h2><div style='overflow:auto'><table id='steps'></table></div></div>
-
-<div class='card links'><h2>候选数据验证记录</h2><div style='overflow:auto'><table id='exps'></table></div></div>
-
-<div class='note' id='protocol'></div>
+<div id='arm-panes'></div>
 </main>
 <script>
-function renderChart(d){
-  const W=1180,H=430,PL=54,PR=20,PT=16,PB=38;
-  const steps=d.step_targets, xs=i=>PL+(W-PL-PR)*i/(steps.length-1);
+const CAT_ORDER = ['Action Reasoning','Multi-view Reasoning','Other','Pointing','Spatial Reasoning','State Estimation','Task Reasoning','Trajectory Reasoning'];
+function pct(v){return (v*100).toFixed(2)}
+function svgLine(id, steps, baseline, seriesList, W=580, H=300){
+  const PL=46,PR=14,PT=12,PB=30;
+  const xs=i=>PL+(W-PL-PR)*i/(steps.length-1);
   let ymin=1,ymax=0;
-  const all=[...d.baseline.rows.map(r=>r.ERQA),...d.series.flatMap(s=>s.rows.map(r=>r.ERQA))];
-  all.forEach(v=>{ymin=Math.min(ymin,v);ymax=Math.max(ymax,v)});
-  const pad=Math.max(0.01,(ymax-ymin)*0.25); ymin-=pad; ymax+=pad;
+  [...baseline.rows.map(r=>r.ERQA),...seriesList.flatMap(s=>s.rows.map(r=>r.ERQA))].forEach(v=>{ymin=Math.min(ymin,v);ymax=Math.max(ymax,v)});
+  const pad=Math.max(0.008,(ymax-ymin)*0.22); ymin-=pad; ymax+=pad;
   const ys=v=>PT+(H-PT-PB)*(1-(v-ymin)/(ymax-ymin));
   let s='';
-  for(let i=0;i<=4;i++){const v=ymin+(ymax-ymin)*i/4,y=ys(v);
-    s+=`<line x1='${PL}' y1='${y}' x2='${W-PR}' y2='${y}' stroke='#ecece7'/><text x='${PL-8}' y='${y+4}' font-size='11' fill='#888' text-anchor='end'>${(v*100).toFixed(1)}</text>`;}
-  steps.forEach((st,i)=>{s+=`<text x='${xs(i)}' y='${H-14}' font-size='11' fill='#888' text-anchor='middle'>${st}</text>`;});
-  const line=(rows,color,dash)=>{const pts=rows.map(r=>`${xs(steps.indexOf(r.step))},${ys(r.ERQA)}`).join(' ');
-    let o=`<polyline points='${pts}' fill='none' stroke='${color}' stroke-width='2.5'${dash?` stroke-dasharray='${dash}'`:''}/>`;
-    rows.forEach(r=>{o+=`<circle cx='${xs(steps.indexOf(r.step))}' cy='${ys(r.ERQA)}' r='4' fill='${color}'/>`;});
+  for(let i=0;i<=3;i++){const v=ymin+(ymax-ymin)*i/3,y=ys(v);
+    s+=`<line x1='${PL}' y1='${y}' x2='${W-PR}' y2='${y}' stroke='#ecece7'/><text x='${PL-6}' y='${y+4}' font-size='10' fill='#888' text-anchor='end'>${(v*100).toFixed(1)}</text>`;}
+  steps.forEach((st,i)=>{s+=`<text x='${xs(i)}' y='${H-10}' font-size='10' fill='#888' text-anchor='middle'>${st}</text>`;});
+  const line=(rows,color,dash)=>{const pts=rows.filter(r=>steps.includes(r.step)).map(r=>`${xs(steps.indexOf(r.step))},${ys(r.ERQA)}`).join(' ');
+    let o=`<polyline points='${pts}' fill='none' stroke='${color}' stroke-width='2.2'${dash?` stroke-dasharray='${dash}'`:''}/>`;
+    rows.filter(r=>steps.includes(r.step)).forEach(r=>{o+=`<circle cx='${xs(steps.indexOf(r.step))}' cy='${ys(r.ERQA)}' r='3.4' fill='${color}'/>`;});
     return o;};
-  s+=line(d.baseline.rows,d.baseline.color,d.baseline.dash);
-  d.series.forEach(se=>{s+=line(se.rows,se.color,null);});
-  document.getElementById('chart').innerHTML=s;
-  document.getElementById('legend').innerHTML=
-    `<span class='legend-item'><span class='swatch dashed' style='color:${d.baseline.color}'></span>${d.baseline.label}</span>`+
-    d.series.map(se=>`<span class='legend-item'><span class='swatch' style='background:${se.color}'></span>${se.label}</span>`).join('');
+  s+=line(baseline.rows,baseline.color,baseline.dash);
+  seriesList.forEach(se=>{s+=line(se.rows,se.color,null);});
+  document.getElementById(id).innerHTML=s;
 }
-function pct(v){return (v*100).toFixed(2)}
+function svgCats(id, ctrl, arm, armColor){
+  const W=580,H=300,PL=46,PR=14,PT=16,PB=52,BW=26,GAP=8;
+  const n=CAT_ORDER.length, slot=(W-PL-PR)/n;
+  const ys=v=>PT+(H-PT-PB)*(1-v/0.6);
+  let s='';
+  for(let i=0;i<=3;i++){const v=0.6*i/3,y=ys(v);
+    s+=`<line x1='${PL}' y1='${y}' x2='${W-PR}' y2='${y}' stroke='#ecece7'/><text x='${PL-6}' y='${y+4}' font-size='10' fill='#888' text-anchor='end'>${(v*100).toFixed(0)}</text>`;}
+  CAT_ORDER.forEach((t,i)=>{
+    const x0=PL+slot*i+(slot-2*BW-GAP)/2;
+    const cv=ctrl[t]||0, av=arm[t]||0;
+    s+=`<rect x='${x0}' y='${ys(cv)}' width='${BW}' height='${(H-PT-PB)*cv/0.6}' fill='#9a9a94'/>`;
+    s+=`<rect x='${x0+BW+GAP}' y='${ys(av)}' width='${BW}' height='${(H-PT-PB)*av/0.6}' fill='${armColor}'/>`;
+    const dv=(av-cv)*100;
+    s+=`<text x='${x0+BW+GAP/2}' y='${Math.min(ys(cv),ys(av))-5}' font-size='10' font-weight='800' fill='${dv>=0?'#176231':'#9a3d31'}' text-anchor='middle'>${dv>=0?'+':''}${dv.toFixed(1)}</text>`;
+    s+=`<text x='${x0+BW+GAP/2}' y='${H-36}' font-size='9.5' fill='#666' text-anchor='middle'>${t.replace(' Reasoning','')}</text>`;
+    s+=`<text x='${x0+BW+GAP/2}' y='${H-24}' font-size='9.5' fill='#999' text-anchor='middle'>Reasoning</text>`;
+  });
+  document.getElementById(id).innerHTML=s;
+}
+function infoCard(e){
+  return `<div class='card links'><h2>数据与任务</h2><div class='info-grid'>
+    <div class='k'>数据</div><div><b>${e.name}</b></div>
+    <div class='k'>token 数</div><div>${e.tokens}</div>
+    <div class='k'>规模</div><div>${e.docs}</div>
+    <div class='k'>m3 预览</div><div>${e.m3_link?`<a href='${e.m3_link}'>打开（3 列）</a>`:'-'}</div>
+    <div class='k'>训练 job</div><div>${e.job_url?`<a href='${e.job_url}'>${e.job_id}</a>`:'-'}</div>
+    <div class='k'>结论</div><div><span class='badge ${e.verdict_kind}'>${e.verdict}</span></div>
+  </div></div>`;
+}
 function render(d){
   document.getElementById('title').textContent=d.title;
   document.getElementById('subtitle').textContent=d.subtitle+' · 更新于 '+d.updated_at;
+  // tabs
+  const arms = d.series.map(se=>se.key);
+  const expOf = k => d.experiments.find(e=>e.name.toLowerCase().includes(k==='robo2vlm'?'robo2vlm':k));
+  let tabs = `<button class='tab active' data-tab='overview'>总览</button>`;
+  arms.forEach(k=>{const se=d.series.find(s=>s.key===k); tabs+=`<button class='tab' data-tab='${k}'>${se.label}</button>`;});
+  ['Vlaser','ShareRobot'].forEach(n=>{tabs+=`<button class='tab' data-tab='${n.toLowerCase()}'>${n}</button>`;});
+  document.getElementById('tabs').innerHTML=tabs;
+  // overview
   const bm=d.baseline.rows.reduce((a,r)=>a+r.ERQA,0)/d.baseline.rows.length;
   const sm=d.series.map(se=>{
     const paired=se.rows.map(r=>({e:r.ERQA,c:d.baseline.rows.find(b=>b.step===r.step).ERQA}));
@@ -76,7 +114,11 @@ function render(d){
   document.getElementById('kpis').innerHTML=
     `<div class='kpi'><div class='label'>Baseline 10 点均值</div><div class='value'>${pct(bm)}%</div><div class='sub'>40.25–43.00 波动（±1.4pp 噪声带）</div></div>`+
     sm.map(({se,delta})=>`<div class='kpi'><div class='label'>${se.label}</div><div class='value ${delta>=0?'pos':'neg'}'>${delta>=0?'+':''}${delta.toFixed(2)}pp</div><div class='sub'>step-matched 均值差 vs control · 评测至 step ${Math.max(...se.rows.map(r=>r.step))}，训练已停</div></div>`).join('')+
-    `<div class='kpi'><div class='label'>当前结论</div><div class='value neg' style='font-size:19px'>均无显著效果</div><div class='sub'>两条臂 Δ 均在 baseline 自身波动带内；已停训换下一批（Vlaser / ShareRobot）</div></div>`;
+    `<div class='kpi'><div class='label'>当前结论</div><div class='value neg' style='font-size:19px'>均无显著效果</div><div class='sub'>两条臂 Δ 均在 baseline 自身波动带内；已停训换 Vlaser / ShareRobot</div></div>`;
+  document.getElementById('legend').innerHTML=
+    `<span class='legend-item'><span class='swatch dashed' style='color:${d.baseline.color}'></span>${d.baseline.label}</span>`+
+    d.series.map(se=>`<span class='legend-item'><span class='swatch' style='background:${se.color}'></span>${se.label}</span>`).join('');
+  svgLine('chart', d.step_targets, d.baseline, d.series, 1180, 430);
   let th=`<tr><th>step</th><th class='num'>control</th>${d.series.map(se=>`<th class='num'>${se.label}</th><th class='num'>Δ</th>`).join('')}</tr>`;
   const usedSteps=[...new Set(d.series.flatMap(se=>se.rows.map(r=>r.step)))].sort((a,b)=>a-b);
   th+=usedSteps.map(st=>{
@@ -93,8 +135,43 @@ function render(d){
       `<td>${e.m3_link?`<a href='${e.m3_link}'>预览</a>`:'-'}</td>`+
       `<td>${e.job_url?`<a href='${e.job_url}'>${e.job_id}</a>`:'-'}</td>`+
       `<td><span class='badge ${e.verdict_kind}'>${e.verdict}</span></td></tr>`).join('');
-  document.getElementById('protocol').innerHTML=`<b>评测协议</b>：与 baseline 严格同口径——ERQA 400 题（MD5 dbe8fd3b…）、judge=gpt-oss-120b-judge @ temperature 0、thinking disabled、max_tokens 16384、moonshot_multi_modal thinking_hybrid 模板。每个点独立重算与报告值一致，并抽看图人工复核过模型回答与判分。10% 混训配比经 post-deploy gate 断言（归一化 =0.1000）。`;
-  renderChart(d);
+  document.getElementById('protocol').innerHTML=`<b>评测协议</b>：与 baseline 严格同口径——ERQA 400 题、judge=gpt-oss-120b-judge @ temperature 0、thinking disabled、max_tokens 16384。每个点独立重算与报告值一致，并抽看图人工复核过模型回答与判分。10% 混训配比经 post-deploy gate 断言（归一化 =0.1000）。${d.categories_note||''}。`;
+  // arm panes
+  let panes='';
+  arms.forEach(k=>{
+    const se=d.series.find(s=>s.key===k);
+    const e=expOf(k)||{name:se.label,tokens:'-',docs:'-',m3_link:'',job_url:'',job_id:'',verdict:'-',verdict_kind:'run'};
+    panes+=`<div class='pane' id='pane-${k}'>
+      <div class='grid2'>
+        <div class='card'><h2>ERQA 曲线 · ${se.label}</h2>
+          <div class='legend'><span class='legend-item'><span class='swatch dashed' style='color:${d.baseline.color}'></span>control</span><span class='legend-item'><span class='swatch' style='background:${se.color}'></span>${se.label}</span></div>
+          <svg id='chart-${k}' viewBox='0 0 580 300' style='width:100%;height:auto;display:block;background:#fff'></svg></div>
+        <div class='card'><h2>题型分布 vs control（Δ pp）</h2>
+          <div class='legend'><span class='legend-item'><span class='swatch' style='background:#9a9a94'></span>control</span><span class='legend-item'><span class='swatch' style='background:${se.color}'></span>${se.label}</span></div>
+          <svg id='cats-${k}' viewBox='0 0 580 300' style='width:100%;height:auto;display:block;background:#fff'></svg></div>
+      </div>
+      ${infoCard(e)}
+    </div>`;
+  });
+  ['vlaser','sharerobot'].forEach(n=>{
+    const e=d.experiments.find(x=>x.name.toLowerCase().includes(n))||{name:n,tokens:'-',docs:'-',m3_link:'',job_url:'',job_id:'',verdict:'-',verdict_kind:'run'};
+    panes+=`<div class='pane' id='pane-${n}'>${infoCard(e)}<div class='note'>该臂的 ERQA 曲线将在训练与评测推进后自动补充到本页（数据文件 erqa_p10_live.json 驱动）。</div></div>`;
+  });
+  document.getElementById('arm-panes').innerHTML=panes;
+  arms.forEach(k=>{
+    const se=d.series.find(s=>s.key===k);
+    svgLine('chart-'+k, d.step_targets, d.baseline, [se]);
+    if(d.categories) svgCats('cats-'+k, d.categories.control, d.categories[k]||{}, se.color);
+  });
+  // tab switching
+  document.querySelectorAll('.tab').forEach(btn=>{
+    btn.onclick=()=>{
+      document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.pane').forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('pane-'+btn.dataset.tab).classList.add('active');
+    };
+  });
 }
 fetch('erqa_p10_live.json').then(r=>r.json()).then(render);
 </script>

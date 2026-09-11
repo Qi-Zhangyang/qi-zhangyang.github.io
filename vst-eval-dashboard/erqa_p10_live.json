@@ -154,5 +154,38 @@
       "verdict": "排队中（P500，2026-09-11 重提）",
       "verdict_kind": "run"
     }
-  ]
+  ],
+  "categories": {
+    "control": {
+      "Action Reasoning": 0.4028,
+      "Multi-view Reasoning": 0.3054,
+      "Other": 0.2286,
+      "Pointing": 0.4441,
+      "Spatial Reasoning": 0.4369,
+      "State Estimation": 0.4636,
+      "Task Reasoning": 0.5342,
+      "Trajectory Reasoning": 0.3697
+    },
+    "robo2vlm": {
+      "Action Reasoning": 0.3993,
+      "Multi-view Reasoning": 0.3446,
+      "Other": 0.0893,
+      "Pointing": 0.3971,
+      "Spatial Reasoning": 0.4524,
+      "State Estimation": 0.4955,
+      "Task Reasoning": 0.4605,
+      "Trajectory Reasoning": 0.3788
+    },
+    "robovqa": {
+      "Action Reasoning": 0.4062,
+      "Multi-view Reasoning": 0.3378,
+      "Other": 0.1071,
+      "Pointing": 0.4338,
+      "Spatial Reasoning": 0.3929,
+      "State Estimation": 0.4682,
+      "Task Reasoning": 0.4013,
+      "Trajectory Reasoning": 0.3788
+    }
+  },
+  "categories_note": "control 为 10 步×400 题聚合；实验臂为 step 200-500×400 题聚合"
 }
