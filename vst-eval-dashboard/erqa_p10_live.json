@@ -1,7 +1,7 @@
 {
   "title": "ERQA p10 数据验证",
   "subtitle": "SN6V 0710 baseline 对照 · 90% 固定 baseline + 10% 候选数据 · judge=gpt-oss-120b @ temp0 · no-think · 400 题",
-  "updated_at": "2026-09-11 05:22 UTC",
+  "updated_at": "2026-09-11 06:35 UTC",
   "verified_through": 500,
   "step_targets": [
     100,
@@ -141,7 +141,7 @@
       "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-visual-input-data%2Fm3data%2Fqizhangyang%2Fspatial_embodied_v2%2Fvlaser_20260910%2Fowmm_vlm%2F&start_idx=0&num_data=8&decode_method=%3CM3+Standard%3E&text_show_mode=text&show_roles=true&num_columns=3&epoch=0&doc_num_data=30",
       "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091113-36z13y",
       "job_id": "mj-mb-2026091113-36z13y",
-      "verdict": "排队中（P500，2026-09-11 重提）",
+      "verdict": "训练中（P500，启动验收通过）",
       "verdict_kind": "run"
     },
     {
@@ -149,9 +149,9 @@
       "tokens": "1.69B（抽样估算）",
       "docs": "planning 1,025,940 文档 + affordance 6,522 + trajectory 6,870",
       "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-visual-input-data%2Fm3data%2Fqizhangyang%2Fspatial_embodied_v2%2Fsharerobot_20260910%2Fplanning%2F&start_idx=0&num_data=8&decode_method=%3CM3+Standard%3E&text_show_mode=text&show_roles=true&num_columns=3&epoch=0&doc_num_data=30",
-      "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091113-36z13u",
-      "job_id": "mj-mb-2026091113-36z13u",
-      "verdict": "排队中（P500，2026-09-11 重提）",
+      "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091114-36z658",
+      "job_id": "mj-mb-2026091114-36z658",
+      "verdict": "排队中（P500，读取字段修复后重提）",
       "verdict_kind": "run"
     }
   ],
