@@ -1,7 +1,7 @@
 {
   "title": "ERQA p10 数据验证",
   "subtitle": "SN6V 0710 baseline 对照 · 90% 固定 baseline + 10% 候选数据 · judge=gpt-oss-120b @ temp0 · no-think · 400 题",
-  "updated_at": "2026-09-12 03:33 UTC",
+  "updated_at": "2026-09-12 04:35 UTC",
   "verified_through": 500,
   "step_targets": [
     100,
@@ -197,6 +197,18 @@
           "ERQA": 0.4475
         }
       ]
+    },
+    {
+      "key": "vlaser-t10",
+      "label": "Vlaser turn10 (2.00B)",
+      "color": "#7c3aed",
+      "rows": []
+    },
+    {
+      "key": "sharerobot-t10",
+      "label": "ShareRobot turn10 (0.44B)",
+      "color": "#0d9488",
+      "rows": []
     }
   ],
   "experiments": [
@@ -238,6 +250,26 @@
       "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091114-36z658",
       "job_id": "mj-mb-2026091114-36z658",
       "verdict": "step-matched Δ -0.5/+3.0/-0.75/-0.25/-0.75/+0.25/-1.0/+1.0/-0.25pp（100-900），训练中",
+      "verdict_kind": "run"
+    },
+    {
+      "name": "Vlaser turn10 (vlaser-t10)",
+      "tokens": "2.00B（全量统计）",
+      "docs": "同图合并≤10轮：157 万条 → 81.9 万条，QA 逐子集守恒",
+      "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-visual-input-data%2Fm3data%2Fqizhangyang%2Fspatial_embodied_v2%2Fsame_image_turn10_20260911%2Fvlaser%2F&start_idx=0&num_data=8&num_columns=3&decode_method=%3CM3%20Standard%3E&text_show_mode=text&show_roles=true&epoch=0&doc_num_data=30",
+      "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091118-36zjax",
+      "job_id": "mj-mb-2026091118-36zjax",
+      "verdict": "训练中（P300，ERQA 边训边测已挂，step100 起评）",
+      "verdict_kind": "run"
+    },
+    {
+      "name": "ShareRobot turn10 (sharerobot-t10)",
+      "tokens": "0.44B（全量统计）",
+      "docs": "同图合并≤10轮：104 万条 → 21.9 万条，QA 逐子集守恒",
+      "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-visual-input-data%2Fm3data%2Fqizhangyang%2Fspatial_embodied_v2%2Fsame_image_turn10_20260911%2Fsharerobot%2F&start_idx=0&num_data=8&num_columns=3&decode_method=%3CM3%20Standard%3E&text_show_mode=text&show_roles=true&epoch=0&doc_num_data=30",
+      "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091118-36zj9x",
+      "job_id": "mj-mb-2026091118-36zj9x",
+      "verdict": "训练中（P500，ERQA 边训边测已挂，step100 起评）",
       "verdict_kind": "run"
     }
   ],
