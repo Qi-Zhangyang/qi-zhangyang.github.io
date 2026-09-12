@@ -1,7 +1,7 @@
 {
   "title": "ERQA p10 数据验证",
   "subtitle": "SN6V 0710 baseline 对照 · 90% 固定 baseline + 10% 候选数据 · judge=gpt-oss-120b @ temp0 · no-think · 400 题",
-  "updated_at": "2026-09-12 05:05 UTC",
+  "updated_at": "2026-09-12 05:10 UTC",
   "verified_through": 700,
   "step_targets": [
     100,
@@ -202,13 +202,59 @@
       "key": "vlaser-t10",
       "label": "Vlaser turn10 (2.00B)",
       "color": "#7c3aed",
-      "rows": []
+      "rows": [
+        {
+          "step": 300,
+          "ERQA": 0.4125
+        },
+        {
+          "step": 400,
+          "ERQA": 0.415
+        },
+        {
+          "step": 500,
+          "ERQA": 0.4
+        },
+        {
+          "step": 600,
+          "ERQA": 0.4025
+        }
+      ]
     },
     {
       "key": "sharerobot-t10",
       "label": "ShareRobot turn10 (0.44B)",
       "color": "#0d9488",
-      "rows": []
+      "rows": [
+        {
+          "step": 200,
+          "ERQA": 0.4075
+        },
+        {
+          "step": 300,
+          "ERQA": 0.36
+        },
+        {
+          "step": 400,
+          "ERQA": 0.405
+        },
+        {
+          "step": 500,
+          "ERQA": 0.405
+        },
+        {
+          "step": 600,
+          "ERQA": 0.405
+        },
+        {
+          "step": 700,
+          "ERQA": 0.39
+        },
+        {
+          "step": 800,
+          "ERQA": 0.4175
+        }
+      ]
     },
     {
       "key": "boxed3d",
@@ -306,7 +352,7 @@
       "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-visual-input-data%2Fm3data%2Fqizhangyang%2Fspatial_embodied_v2%2Fsame_image_turn10_20260911%2Fvlaser%2F&start_idx=0&num_data=8&num_columns=3&decode_method=%3CM3%20Standard%3E&text_show_mode=text&show_roles=true&epoch=0&doc_num_data=30",
       "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091118-36zjax",
       "job_id": "mj-mb-2026091118-36zjax",
-      "verdict": "训练中（P300，ERQA 边训边测已挂，step100 起评）",
+      "verdict": "step-matched Δ -1.0/+0.75/-3.0/-0.25pp（300-600），训练中评测中",
       "verdict_kind": "run"
     },
     {
@@ -316,7 +362,7 @@
       "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-visual-input-data%2Fm3data%2Fqizhangyang%2Fspatial_embodied_v2%2Fsame_image_turn10_20260911%2Fsharerobot%2F&start_idx=0&num_data=8&num_columns=3&decode_method=%3CM3%20Standard%3E&text_show_mode=text&show_roles=true&epoch=0&doc_num_data=30",
       "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091118-36zj9x",
       "job_id": "mj-mb-2026091118-36zj9x",
-      "verdict": "训练中（P500，ERQA 边训边测已挂，step100 起评）",
+      "verdict": "step-matched Δ -0.75/-6.25/-0.25/-2.5/0/-2.25/+0.75pp（200-800），训练中评测中",
       "verdict_kind": "run"
     },
     {
