@@ -1,7 +1,7 @@
 {
   "title": "ERQA p10 数据验证",
   "subtitle": "SN6V 0710 baseline 对照 · 90% 固定 baseline + 10% 候选数据 · judge=gpt-oss-120b @ temp0 · no-think · 400 题",
-  "updated_at": "2026-09-12 13:24 UTC",
+  "updated_at": "2026-09-12 13:56 UTC",
   "verified_through": 700,
   "step_targets": [
     100,
@@ -408,6 +408,24 @@
         }
       ],
       "stopped_at_step": 1000
+    },
+    {
+      "key": "synmulti-p10",
+      "label": "SynMultiImageQA 合成多图 (10%)",
+      "color": "#b45309",
+      "rows": []
+    },
+    {
+      "key": "miqa-p02",
+      "label": "MultiImageQA 自然多图 (2%)",
+      "color": "#0891b2",
+      "rows": []
+    },
+    {
+      "key": "mantis-p10",
+      "label": "mantis ×5 指令多图 (10%)",
+      "color": "#be185d",
+      "rows": []
     }
   ],
   "experiments": [
@@ -498,6 +516,33 @@
       "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091117-36zg9q",
       "job_id": "mj-mb-2026091117-36zg9q",
       "verdict": "全程：step-matched Δ -3.25/-1.5/-3.0/-0.75/-2.25/-1.0/-0.5/0/-0.25/+1.75pp（100-1000），已训完",
+      "verdict_kind": "run"
+    },
+    {
+      "name": "SynMultiImageQA 合成多图 (synmulti-p10)",
+      "docs": "191,831 docs：程序合成多图 QA（chart/table/doc/chemical/circuit/diagram/graphic/music 9 config），生成代码与 explanation 在 meta",
+      "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-visual-input-data%2Fm3data%2Fqizhangyang%2Fmolmo2_20260912%2Fsynmultiimageqa%2F&start_idx=0&num_data=8&num_columns=3&decode_method=%3CM3+Standard%3E&text_show_mode=text&show_roles=true&epoch=0&doc_num_data=30",
+      "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091221-373zya",
+      "job_id": "mj-mb-2026091221-373zya",
+      "verdict": "训练中（P300，ERQA 边训边测已挂，step100 起评）",
+      "verdict_kind": "run"
+    },
+    {
+      "name": "MultiImageQA 自然多图 (miqa-p02)",
+      "docs": "13,461 docs：自然图多图人工 QA（PixMo-AMA 多图扩展；死链损耗后成行 30.1%），2% 降权防过拟合",
+      "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-visual-input-data%2Fm3data%2Fqizhangyang%2Fmolmo2_20260912%2Fmultiimageqa%2F&start_idx=0&num_data=8&num_columns=3&decode_method=%3CM3+Standard%3E&text_show_mode=text&show_roles=true&epoch=0&doc_num_data=30",
+      "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091221-373zci",
+      "job_id": "mj-mb-2026091221-373zci",
+      "verdict": "训练中（P300，ERQA 边训边测已挂，step100 起评）",
+      "verdict_kind": "run"
+    },
+    {
+      "name": "mantis ×5 指令多图 (mantis-p10)",
+      "docs": "712,422 docs：nlvr2/spot-the-diff/nextqa/star/llava_665k_multi × mc+oe 双形态",
+      "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-visual-input-data%2Fm3data%2Fqizhangyang%2Fmolmo2_20260912%2Fmantis_instruct%2F&start_idx=0&num_data=8&num_columns=3&decode_method=%3CM3+Standard%3E&text_show_mode=text&show_roles=true&epoch=0&doc_num_data=30",
+      "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091221-373zii",
+      "job_id": "mj-mb-2026091221-373zii",
+      "verdict": "训练中（P300，ERQA 边训边测已挂，step100 起评）",
       "verdict_kind": "run"
     }
   ],
