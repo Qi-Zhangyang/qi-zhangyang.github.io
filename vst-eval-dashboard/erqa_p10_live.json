@@ -1,7 +1,7 @@
 {
   "title": "ERQA p10 数据验证",
   "subtitle": "SN6V 0710 baseline 对照 · 90% 固定 baseline + 10% 候选数据 · judge=gpt-oss-120b @ temp0 · no-think · 400 题",
-  "updated_at": "2026-09-12 16:56 UTC",
+  "updated_at": "2026-09-12 17:05 UTC",
   "verified_through": 700,
   "step_targets": [
     100,
@@ -435,6 +435,29 @@
       "label": "mantis ×5 指令多图 (10%)",
       "color": "#be185d",
       "rows": []
+    },
+    {
+      "key": "det2d",
+      "label": "det2d 检测指代 (~0.21B)",
+      "color": "#0891b2",
+      "rows": [
+        {
+          "step": 100,
+          "ERQA": 0.39
+        },
+        {
+          "step": 200,
+          "ERQA": 0.4
+        },
+        {
+          "step": 300,
+          "ERQA": 0.4025
+        },
+        {
+          "step": 400,
+          "ERQA": 0.405
+        }
+      ]
     }
   ],
   "experiments": [
@@ -552,6 +575,16 @@
       "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091221-373zii",
       "job_id": "mj-mb-2026091221-373zii",
       "verdict": "训练中（P300，ERQA 边训边测已挂，step100 起评）",
+      "verdict_kind": "run"
+    },
+    {
+      "name": "det2d 检测指代 (det2d)",
+      "tokens": "约 0.21B（估算，5 源各 2.22%）",
+      "docs": "Objects365 BboxQA 174万 + RefCOCO/+/g PolygonsQA 5.1万 + COCO2017 BboxQA 转换 117,266 文档 / 849,946 框",
+      "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-intern-visual-input-data%2Fqizhangyang%2Fm3data%2F260912%2Fdet2d%2Fcoco2017_detection_bboxqa%2Ftrain&start_idx=0&num_data=8&num_columns=3&decode_method=%3CM3+Standard%3E&text_show_mode=text&show_roles=true&epoch=0&doc_num_data=30",
+      "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091214-373cdx",
+      "job_id": "mj-mb-2026091214-373cdx",
+      "verdict": "训练中（P500，ERQA 边训边测，step100 起评）",
       "verdict_kind": "run"
     }
   ],
