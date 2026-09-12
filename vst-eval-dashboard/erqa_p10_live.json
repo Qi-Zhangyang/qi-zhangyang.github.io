@@ -1,7 +1,7 @@
 {
   "title": "ERQA p10 数据验证",
   "subtitle": "SN6V 0710 baseline 对照 · 90% 固定 baseline + 10% 候选数据 · judge=gpt-oss-120b @ temp0 · no-think · 400 题",
-  "updated_at": "2026-09-12 04:50 UTC",
+  "updated_at": "2026-09-12 04:57 UTC",
   "verified_through": 700,
   "step_targets": [
     100,
@@ -245,6 +245,12 @@
           "ERQA": 0.42
         }
       ]
+    },
+    {
+      "key": "pointing-p10",
+      "label": "PixMo+RoboPoint 点定位 (5%+5%)",
+      "color": "#dc2626",
+      "rows": []
     }
   ],
   "experiments": [
@@ -317,6 +323,15 @@
       "job_id": "mj-mb-2026091119-36zoad",
       "verdict": "与 control 持平（step-matched Δ=-0.36pp），729/1000 步用户要求停训",
       "verdict_kind": "neg"
+    },
+    {
+      "name": "PixMo+RoboPoint 点定位 (pointing-p10)",
+      "docs": "PixMo-Points 2,137,455 条 ×5% + RoboPoint pointing 556,130 条 ×5%（baseline 90% 固定）",
+      "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-visual-input-data%2Fm3data%2Fduchenzhuang%2Fpixmo%2Fpixmo-points-1207%2F&start_idx=0&num_data=8&num_columns=3&decode_method=%3CM3+Standard%3E&text_show_mode=text&show_roles=true&epoch=0&doc_num_data=30",
+      "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091200-3715pi",
+      "job_id": "mj-mb-2026091200-3715pi",
+      "verdict": "训练中（P300，ERQA 边训边测已挂，step100 起评）",
+      "verdict_kind": "run"
     }
   ],
   "categories": {
