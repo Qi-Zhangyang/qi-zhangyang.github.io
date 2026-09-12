@@ -167,13 +167,7 @@ function render(data){
       <div class="geo-chart-grid">
         <article class="card"><h2>ERQA · 准确率（%）</h2>${legend(arm)}<div data-chart="accuracy">${lineChart(data,arm)}</div>${!rows.length?'<p class="geo-table-note">当前仅显示 baseline；该实验暂无评测结果。</p>':''}</article>
       </div>
-      <details class="card geo-audit"><summary>数据说明</summary><dl class="info-grid">
-        <dt>数据</dt><dd>${esc(e.name || arm.name)}</dd>
-        <dt>token 数</dt><dd>${esc(e.tokens || '—')}</dd>
-        <dt>规模</dt><dd>${esc(e.docs || '—')}</dd>
-        <dt>评测点</dt><dd>${rows.length?rows.map(r=>r.step).join(' / '):'暂无评测结果'}</dd>
-        ${arm.series?.stopped_at_step?`<dt>训练记录</dt><dd>已停训，step ${esc(arm.series.stopped_at_step)}</dd>`:''}
-      </dl></details>
+      <p class="card geo-links">${e.m3_link?`<a href="${e.m3_link}" target="_blank" rel="noopener">训练数据预览（m3.app，含样本例子）</a>`:''}${e.m3_link&&e.job_url?' · ':''}${e.job_url?`训练 job：<a href="${e.job_url}" target="_blank" rel="noopener">${esc(e.job_id||'打开')}</a>`:''}</p>
     </section>`;
   }).join('');
   const buttons=[...document.querySelectorAll('[role="tab"]')];
