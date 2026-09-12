@@ -163,7 +163,6 @@ function render(data){
       <h2 class="section-title">${esc(e.name || arm.name)} · ERQA</h2>
       <div class="geo-chart-grid">
         <article class="card"><h2>ERQA · 准确率（%）</h2>${legend(arm)}<div data-chart="accuracy">${lineChart(data,arm)}</div>${!rows.length?'<p class="geo-table-note">当前仅显示 baseline；该实验暂无评测结果。</p>':''}</article>
-        <article class="card"><h2>ERQA · 题型均值（%）</h2>${legend(arm)}<div data-chart="categories">${categoryChart(data,arm)}</div>${data.categories?.[arm.key]&&data.categories_note?`<p class="geo-table-note">${esc(data.categories_note)}。聚合范围不同。</p>`:''}</article>
       </div>
       <details class="card geo-audit"><summary>数据说明</summary><dl class="info-grid">
         <dt>数据</dt><dd>${esc(e.name || arm.name)}</dd>
