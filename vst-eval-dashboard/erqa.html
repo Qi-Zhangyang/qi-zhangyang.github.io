@@ -39,6 +39,15 @@ main{max-width:1680px;margin:0 auto;padding:20px 24px 44px}
 .geo-swatch{width:20px;height:3px;display:inline-block;margin-right:6px;border-radius:0}
 .geo-swatch.dashed{height:0;background:transparent!important;border-top:3px dashed currentColor}
 .geo-table-note{font-size:12px;color:#666;margin:8px 0 0;line-height:1.55}
+.ex-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.ex-item{border:1px solid #e6e6e0;border-radius:6px;padding:8px;background:#fcfcf9;min-width:0}
+.ex-imgs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
+.ex-imgs img{max-width:100%;max-height:150px;border-radius:4px;border:1px solid #e0e0da}
+.ex-q{font-size:12px;line-height:1.5;margin:0 0 4px;white-space:pre-wrap;overflow-wrap:anywhere;max-height:120px;overflow-y:auto}
+.ex-a{font-size:12px;line-height:1.5;margin:0;color:#137333;white-space:pre-wrap;overflow-wrap:anywhere;max-height:90px;overflow-y:auto}
+.ex-meta{font-size:11px;color:#888;margin:0 0 4px}
+@media(max-width:1100px){.ex-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){.ex-grid{grid-template-columns:1fr}}
 .geo-audit summary{cursor:pointer;font-size:14px;font-weight:900;list-style-position:inside}
 .geo-audit[open] summary{margin-bottom:10px}
 .info-grid{display:grid;grid-template-columns:100px minmax(0,1fr);gap:6px 12px;font-size:13px;line-height:1.6;margin:0}
@@ -145,7 +154,7 @@ function categoryChart(data, arm){
   });
   return svg(content,`${arm.name} ERQA 各题型聚合准确率，单位 %`);
 }
-function render(data){
+function render(data, examples){
   if(!Array.isArray(data.baseline?.rows) || !Array.isArray(data.series)) throw new Error('评测数据格式不完整');
   document.getElementById('title').textContent=data.title || 'ERQA p10 数据验证';
   document.getElementById('subtitle').textContent=data.subtitle || '';
@@ -162,10 +171,13 @@ function render(data){
   }).join('')}</div></div>`).join('');
   document.getElementById('arm-panes').innerHTML=arms.map(arm=>{
     const rows=rowsOf(arm.series), e=arm.experiment;
+    const exs=(examples||{})[arm.key]||[];
+    const exCard=exs.length?`<article class="card"><h2>训练例子（${exs.length} 条）</h2><div class="ex-grid">${exs.map(ex=>`<div class="ex-item"><div class="ex-imgs">${ex.imgs.map(u=>`<img loading="lazy" src="${u}" alt="example">`).join('')}</div>${ex.turns>1?`<p class="ex-meta">${ex.turns} 轮 · ${ex.n_img} 图</p>`:''}<p class="ex-q">${esc(ex.q)}</p><p class="ex-a">${esc(ex.a)}</p></div>`).join('')}</div></article>`:'';
     return `<section class="pane" id="pane-${arm.key}" role="tabpanel" aria-labelledby="tab-${arm.key}" hidden>
       <h2 class="section-title">${esc(e.name || arm.name)} · ERQA</h2>
       <div class="geo-chart-grid">
         <article class="card"><h2>ERQA · 准确率（%）</h2>${legend(arm)}<div data-chart="accuracy">${lineChart(data,arm)}</div>${!rows.length?'<p class="geo-table-note">当前仅显示 baseline；该实验暂无评测结果。</p>':''}</article>
+        ${exCard}
       </div>
       <p class="card geo-links">${e.m3_link?`<a href="${e.m3_link}" target="_blank" rel="noopener">训练数据预览（m3.app，含样本例子）</a>`:''}${e.m3_link&&e.job_url?' · ':''}${e.job_url?`训练 job：<a href="${e.job_url}" target="_blank" rel="noopener">${esc(e.job_id||'打开')}</a>`:''}</p>
     </section>`;
@@ -201,10 +213,13 @@ function render(data){
   activate(location.hash.slice(1));
   document.getElementById('load-status').hidden=true;
 }
-fetch('erqa_p10_live.json').then(response=>{
-  if(!response.ok) throw new Error('HTTP '+response.status);
-  return response.json();
-}).then(render).catch(error=>{
+Promise.all([
+  fetch('erqa_p10_live.json').then(response=>{
+    if(!response.ok) throw new Error('HTTP '+response.status);
+    return response.json();
+  }),
+  fetch('examples.json').then(response=>response.ok?response.json():{}).catch(()=>({})),
+]).then(([data, examples])=>render(data, examples)).catch(error=>{
   const status=document.getElementById('load-status');
   status.textContent='评测结果加载失败，请刷新重试。'+error.message;
   status.setAttribute('role','alert');status.hidden=false;
