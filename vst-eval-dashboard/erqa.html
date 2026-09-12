@@ -42,7 +42,7 @@ main{max-width:1680px;margin:0 auto;padding:20px 24px 44px}
 .ex-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
 .ex-item{border:1px solid #e6e6e0;border-radius:6px;padding:8px;background:#fcfcf9;min-width:0}
 .ex-imgs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
-.ex-imgs img{max-width:100%;max-height:150px;border-radius:4px;border:1px solid #e0e0da}
+.ex-imgs img{max-width:100%;max-height:220px;border-radius:4px;border:1px solid #e0e0da}
 .ex-q{font-size:12px;line-height:1.5;margin:0 0 4px;white-space:pre-wrap;overflow-wrap:anywhere;max-height:120px;overflow-y:auto}
 .ex-a{font-size:12px;line-height:1.5;margin:0;color:#137333;white-space:pre-wrap;overflow-wrap:anywhere;max-height:90px;overflow-y:auto}
 .ex-meta{font-size:11px;color:#888;margin:0 0 4px}
@@ -177,8 +177,8 @@ function render(data, examples){
       <h2 class="section-title">${esc(e.name || arm.name)} · ERQA</h2>
       <div class="geo-chart-grid">
         <article class="card"><h2>ERQA · 准确率（%）</h2>${legend(arm)}<div data-chart="accuracy">${lineChart(data,arm)}</div>${!rows.length?'<p class="geo-table-note">当前仅显示 baseline；该实验暂无评测结果。</p>':''}</article>
-        ${exCard}
       </div>
+      ${exCard}
       <p class="card geo-links">${e.m3_link?`<a href="${e.m3_link}" target="_blank" rel="noopener">训练数据预览（m3.app，含样本例子）</a>`:''}${e.m3_link&&e.job_url?' · ':''}${e.job_url?`训练 job：<a href="${e.job_url}" target="_blank" rel="noopener">${esc(e.job_id||'打开')}</a>`:''}</p>
     </section>`;
   }).join('');
