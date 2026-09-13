@@ -1,7 +1,7 @@
 {
   "title": "ERQA p10 数据验证",
   "subtitle": "SN6V 0710 baseline 对照 · 90% 固定 baseline + 10% 候选数据 · judge=gpt-oss-120b @ temp0 · no-think · 400 题",
-  "updated_at": "2026-09-13 09:59 UTC",
+  "updated_at": "2026-09-13 10:05 UTC",
   "verified_through": 700,
   "step_targets": [
     100,
@@ -450,7 +450,8 @@
           "step": 500,
           "ERQA": 0.41
         }
-      ]
+      ],
+      "stopped_at_step": 522
     },
     {
       "key": "miqa-p02",
@@ -532,7 +533,8 @@
           "step": 700,
           "ERQA": 0.4075
         }
-      ]
+      ],
+      "stopped_at_step": 796
     },
     {
       "key": "det2d",
@@ -675,8 +677,8 @@
       "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-visual-input-data%2Fm3data%2Fqizhangyang%2Fmolmo2_20260912%2Fsynmultiimageqa%2F&start_idx=0&num_data=8&num_columns=3&decode_method=%3CM3+Standard%3E&text_show_mode=text&show_roles=true&epoch=0&doc_num_data=30",
       "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091221-373zya",
       "job_id": "mj-mb-2026091221-373zya",
-      "verdict": "训练中（P300，ERQA 边训边测已挂，step100 起评）",
-      "verdict_kind": "run"
+      "verdict": "无稳定收益，用户决定停训（~522/1000）。step-matched Δ -1.75/+1.25/-2.0/+0.75/-2.0pp（100-500），锯齿偏负",
+      "verdict_kind": "neg"
     },
     {
       "name": "MultiImageQA 自然多图 (miqa-p02)",
@@ -684,8 +686,8 @@
       "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-visual-input-data%2Fm3data%2Fqizhangyang%2Fmolmo2_20260912%2Fmultiimageqa%2F&start_idx=0&num_data=8&num_columns=3&decode_method=%3CM3+Standard%3E&text_show_mode=text&show_roles=true&epoch=0&doc_num_data=30",
       "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091221-373zci",
       "job_id": "mj-mb-2026091221-373zci",
-      "verdict": "训练收官（1000/1000）。step-matched Δ -2.75/+1.25/-2.75/0.0/-2.75/+0.75/-0.5/+0.25/+1.25/-0.75pp（100-1000），后半程 4 点 3 正",
-      "verdict_kind": "run"
+      "verdict": "无稳定显著收益（已收官 1000/1000）。step-matched Δ -2.75/+1.25/-2.75/0.0/-2.75/+0.75/-0.5/+0.25/+1.25/-0.75pp，末点回落",
+      "verdict_kind": "neg"
     },
     {
       "name": "mantis ×5 指令多图 (mantis-p10)",
@@ -693,8 +695,8 @@
       "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-visual-input-data%2Fm3data%2Fqizhangyang%2Fmolmo2_20260912%2Fmantis_instruct%2F&start_idx=0&num_data=8&num_columns=3&decode_method=%3CM3+Standard%3E&text_show_mode=text&show_roles=true&epoch=0&doc_num_data=30",
       "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091221-373zii",
       "job_id": "mj-mb-2026091221-373zii",
-      "verdict": "训练中（P300，ERQA 边训边测已挂，step100 起评）",
-      "verdict_kind": "run"
+      "verdict": "无稳定收益，用户决定停训（~796/1000）。step-matched Δ -2.5/+1.0/-1.0/0.0/-2.25/+2.0/-0.5pp（100-700），绕零锯齿",
+      "verdict_kind": "neg"
     },
     {
       "name": "det2d 检测指代 (det2d)",
