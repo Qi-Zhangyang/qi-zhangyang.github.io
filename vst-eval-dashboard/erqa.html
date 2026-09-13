@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="erqa-layout" content="geo-tabs-v1">
 <link rel="icon" href="data:,">
-<title>ERQA p10 数据验证</title>
+<title>ERQA 数据验证</title>
 <style>
 /* Shared visual rules from geo.html: grouped tabs and compact chart cards. */
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif;background:#f7f7f5;color:#151515;letter-spacing:0}
@@ -63,7 +63,7 @@ main{max-width:1680px;margin:0 auto;padding:20px 24px 44px}
 </style>
 </head>
 <body>
-<header><h1 id="title">ERQA p10 数据验证</h1><div class="meta" id="subtitle"></div></header>
+<header><h1 id="title">ERQA 数据验证</h1><div class="meta" id="subtitle"></div></header>
 <main>
   <nav id="tabs" aria-label="ERQA 实验"></nav>
   <div class="load-status" id="load-status" role="status">正在加载评测结果…</div>
@@ -79,7 +79,8 @@ const GROUPS = [
   {label:'第五批 · pointing p10', style:'geokg-3arm', arms:[['pointing-p10','PixMo+RoboPoint']]},
   {label:'第六批 · ruleqa', style:'geokg-3arm', arms:[['ruleqa','自建规则QA']]},
   {label:'第七批 · molmo2', style:'geokg-3arm', arms:[['synmulti-p10','SynMultiImageQA'],['miqa-p02','MultiImageQA'],['mantis-p10','mantis ×5']]},
-  {label:'第八批 · 2D 检测', style:'geokg-3arm', arms:[['det2d','det2d 检测指代']]}
+  {label:'第八批 · 2D 检测', style:'geokg-3arm', arms:[['det2d','det2d 检测指代']]},
+  {label:'第九批 · 原题上限', style:'geo3d-r3p10', arms:[['oracle-ceiling','ERQA 原题直训（上限）']]}
 ];
 const CATEGORIES = [
   ['Action Reasoning','动作推理'],['Multi-view Reasoning','多视角推理'],['Other','其他'],['Pointing','指向'],
@@ -91,7 +92,8 @@ const color = (value, fallback='#2563eb') => /^#[0-9a-f]{3}([0-9a-f]{3})?$/i.tes
 const pp = value => `${value>0?'+':''}${value.toFixed(2)}`;
 const rowsOf = item => (item?.rows || []).filter(r=>Number.isFinite(r.step)&&Number.isFinite(r.ERQA)).slice().sort((a,b)=>a.step-b.step);
 function legend(arm, delta=false){
-  return `<div class="geo-legend"><span class="geo-legend-item"><i class="geo-swatch dashed" style="color:#5f6368"></i>${delta?'baseline = 0':'0710 baseline'}</span><span class="geo-legend-item"><i class="geo-swatch" style="background:${arm.color}"></i>${esc(arm.name)}</span></div>`;
+  const control=arm.experiment.compare_baseline===false?'':`<span class="geo-legend-item"><i class="geo-swatch dashed" style="color:#5f6368"></i>${delta?'baseline = 0':'0710 baseline'}</span>`;
+  return `<div class="geo-legend">${control}<span class="geo-legend-item"><i class="geo-swatch" style="background:${arm.color}"></i>${esc(arm.name)}</span></div>`;
 }
 function svg(content, label){
   return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label)}"><rect width="${W}" height="${H}" fill="#fff"/>${content}</svg>`;
@@ -100,10 +102,10 @@ function emptyChart(){
   return '<div class="chart-empty"><strong>暂无评测结果</strong><span>出分后在此显示</span></div>';
 }
 function lineChart(data, arm, delta=false){
-  const baseline=rowsOf(data.baseline), rows=rowsOf(arm.series);
+  const baseline=arm.experiment.compare_baseline===false?[]:rowsOf(data.baseline), rows=rowsOf(arm.series);
   if(!rows.length && delta) return emptyChart();
   const baseByStep=new Map(baseline.map(r=>[r.step,r.ERQA]));
-  const steps=[...new Set([...(data.step_targets || []),...baseline.map(r=>r.step),...rows.map(r=>r.step)])].sort((a,b)=>a-b);
+  const steps=[...new Set([...(arm.experiment.step_targets || data.step_targets || []),...baseline.map(r=>r.step),...rows.map(r=>r.step)])].sort((a,b)=>a-b);
   if(!steps.length) return emptyChart();
   const first=steps[0], span=steps[steps.length-1]-first || 1;
   const x=step=>M.l+(step-first)/span*(W-M.l-M.r);
@@ -158,27 +160,28 @@ function categoryChart(data, arm){
 }
 function render(data, examples){
   if(!Array.isArray(data.baseline?.rows) || !Array.isArray(data.series)) throw new Error('评测数据格式不完整');
-  document.getElementById('title').textContent=data.title || 'ERQA p10 数据验证';
+  document.getElementById('title').textContent=data.title || 'ERQA 数据验证';
   document.getElementById('subtitle').textContent=data.subtitle || '';
   document.getElementById('updated').textContent=data.updated_at?'数据更新时间：'+data.updated_at:'';
   const arms=GROUPS.flatMap(g=>g.arms.map(([key,name])=>{
     const series=data.series.find(s=>s.key.toLowerCase()===key);
-    const experiment=(data.experiments || []).find(e=>e.name.toLowerCase().includes(key)) || {};
+    const experiment=(data.experiments || []).find(e=>e.key===key) || (data.experiments || []).find(e=>e.name.toLowerCase().includes(key)) || {};
     return {key,name,series,experiment,color:color(series?.color,key==='robovqa'?'#d45b2c':key==='sharerobot'?'#2e8b57':'#2563eb')};
   }));
   document.getElementById('tabs').innerHTML=GROUPS.map(group=>`<div class="tabs-row ${group.style}"><span class="tabs-row-label">${group.label}</span><div class="tabs" role="tablist" aria-label="${group.label}">${group.arms.map(([key])=>{
     const arm=arms.find(a=>a.key===key), count=rowsOf(arm.series).length;
     const tokens=arm.experiment.tokens?.split('（')[0];
-    return `<button type="button" class="tab" id="tab-${key}" role="tab" aria-controls="pane-${key}" aria-selected="false" tabindex="-1" data-tab="${key}"><span>${esc(arm.experiment.name || arm.name)}</span><small>${esc(tokens?tokens+' token · ':'')}p10 · ${count?count+' 个评测点':'待出分'}</small></button>`;
+    return `<button type="button" class="tab" id="tab-${key}" role="tab" aria-controls="pane-${key}" aria-selected="false" tabindex="-1" data-tab="${key}"><span>${esc(arm.experiment.name || arm.name)}</span><small>${esc(tokens?tokens+' token · ':'')}${esc(arm.experiment.protocol_label || 'p10')} · ${count?count+' 个评测点':'待出分'}</small></button>`;
   }).join('')}</div></div>`).join('');
   document.getElementById('arm-panes').innerHTML=arms.map(arm=>{
-    const rows=rowsOf(arm.series), e=arm.experiment;
+    const rows=rowsOf(arm.series), e=arm.experiment, latest=rows[rows.length-1];
+    const scopeNote=e.evaluation_note?`<p class="geo-table-note">${esc(e.evaluation_note)}${latest?`<br><strong>step ${latest.step} · ${(latest.ERQA*100).toFixed(2)}%</strong>`:''}${e.training_status?` · ${esc(e.training_status)}`:''}</p>`:'';
     const exs=(examples||{})[arm.key]||[];
     const exCard=exs.length?`<article class="card"><h2>训练例子（${exs.length} 条）</h2><div class="ex-grid">${exs.map(ex=>`<div class="ex-item"><div class="ex-imgs">${ex.imgs.map(u=>`<img loading="lazy" src="${u}" alt="example">`).join('')}</div>${ex.turns>1?`<p class="ex-meta">${ex.turns} 轮 · ${ex.n_img} 图</p>`:''}<p class="ex-q">${esc(ex.q)}</p><p class="ex-a">${esc(ex.a)}</p></div>`).join('')}</div></article>`:'';
     return `<section class="pane" id="pane-${arm.key}" role="tabpanel" aria-labelledby="tab-${arm.key}" hidden>
       <h2 class="section-title">${esc(e.name || arm.name)} · ERQA</h2>
       <div class="geo-chart-grid">
-        <article class="card"><h2>ERQA · 准确率（%）</h2>${legend(arm)}<div data-chart="accuracy">${lineChart(data,arm)}</div>${!rows.length?'<p class="geo-table-note">当前仅显示 baseline；该实验暂无评测结果。</p>':''}</article>
+        <article class="card"><h2>ERQA · 准确率（%）</h2>${legend(arm)}<div data-chart="accuracy">${lineChart(data,arm)}</div>${scopeNote}${!rows.length?'<p class="geo-table-note">当前仅显示 baseline；该实验暂无评测结果。</p>':''}</article>
       </div>
       ${exCard}
       <p class="card geo-links">${e.m3_link?`<a href="${e.m3_link}" target="_blank" rel="noopener">训练数据预览（m3.app，含样本例子）</a>`:''}${e.m3_link&&e.job_url?' · ':''}${e.job_url?`训练 job：<a href="${e.job_url}" target="_blank" rel="noopener">${esc(e.job_id||'打开')}</a>`:''}</p>
@@ -216,11 +219,11 @@ function render(data, examples){
   document.getElementById('load-status').hidden=true;
 }
 Promise.all([
-  fetch('erqa_p10_live.json').then(response=>{
+  fetch('erqa_p10_live.json', {cache:'no-cache'}).then(response=>{
     if(!response.ok) throw new Error('HTTP '+response.status);
     return response.json();
   }),
-  fetch('examples.json').then(response=>response.ok?response.json():{}).catch(()=>({})),
+  fetch('examples.json', {cache:'no-cache'}).then(response=>response.ok?response.json():{}).catch(()=>({})),
 ]).then(([data, examples])=>render(data, examples)).catch(error=>{
   const status=document.getElementById('load-status');
   status.textContent='评测结果加载失败，请刷新重试。'+error.message;
