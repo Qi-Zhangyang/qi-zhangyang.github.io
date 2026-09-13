@@ -1,7 +1,7 @@
 {
   "title": "ERQA p10 数据验证",
   "subtitle": "SN6V 0710 baseline 对照 · 90% 固定 baseline + 10% 候选数据 · judge=gpt-oss-120b @ temp0 · no-think · 400 题",
-  "updated_at": "2026-09-13 08:10 UTC",
+  "updated_at": "2026-09-13 08:41 UTC",
   "verified_through": 700,
   "step_targets": [
     100,
@@ -484,6 +484,10 @@
         {
           "step": 900,
           "ERQA": 0.4275
+        },
+        {
+          "step": 1000,
+          "ERQA": 0.395
         }
       ]
     },
@@ -668,7 +672,7 @@
       "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-visual-input-data%2Fm3data%2Fqizhangyang%2Fmolmo2_20260912%2Fmultiimageqa%2F&start_idx=0&num_data=8&num_columns=3&decode_method=%3CM3+Standard%3E&text_show_mode=text&show_roles=true&epoch=0&doc_num_data=30",
       "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091221-373zci",
       "job_id": "mj-mb-2026091221-373zci",
-      "verdict": "训练中（P300，ERQA 边训边测已挂，step100 起评）",
+      "verdict": "训练收官（1000/1000）。step-matched Δ -2.75/+1.25/-2.75/0.0/-2.75/+0.75/-0.5/+0.25/+1.25/-0.75pp（100-1000），后半程 4 点 3 正",
       "verdict_kind": "run"
     },
     {
