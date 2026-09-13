@@ -1,7 +1,7 @@
 {
   "title": "ERQA p10 数据验证",
   "subtitle": "SN6V 0710 baseline 对照 · 90% 固定 baseline + 10% 候选数据 · judge=gpt-oss-120b @ temp0 · no-think · 400 题",
-  "updated_at": "2026-09-13 06:53 UTC",
+  "updated_at": "2026-09-13 07:24 UTC",
   "verified_through": 700,
   "step_targets": [
     100,
@@ -476,6 +476,10 @@
         {
           "step": 800,
           "ERQA": 0.4125
+        },
+        {
+          "step": 900,
+          "ERQA": 0.4275
         }
       ]
     },
