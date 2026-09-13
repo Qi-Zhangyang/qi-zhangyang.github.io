@@ -43,6 +43,8 @@ main{max-width:1680px;margin:0 auto;padding:20px 24px 44px}
 .ex-item{border:1px solid #e6e6e0;border-radius:6px;padding:8px;background:#fcfcf9;min-width:0}
 .ex-imgs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
 .ex-imgs img{max-width:100%;max-height:220px;border-radius:4px;border:1px solid #e0e0da}
+.ex-imgs.ex-multi{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.ex-multi img{width:100%;height:auto;max-height:none;box-sizing:border-box}
 .ex-q{font-size:12px;line-height:1.5;margin:0 0 4px;white-space:pre-wrap;overflow-wrap:anywhere;max-height:120px;overflow-y:auto}
 .ex-a{font-size:12px;line-height:1.5;margin:0;color:#137333;white-space:pre-wrap;overflow-wrap:anywhere;max-height:90px;overflow-y:auto}
 .ex-meta{font-size:11px;color:#888;margin:0 0 4px}
@@ -80,7 +82,8 @@ const GROUPS = [
   {label:'第六批 · ruleqa', style:'geokg-3arm', arms:[['ruleqa','自建规则QA']]},
   {label:'第七批 · molmo2', style:'geokg-3arm', arms:[['synmulti-p10','SynMultiImageQA'],['miqa-p02','MultiImageQA'],['mantis-p10','mantis ×5']]},
   {label:'第八批 · 2D 检测', style:'geokg-3arm', arms:[['det2d','det2d 检测指代']]},
-  {label:'第九批 · 原题上限', style:'geo3d-r3p10', arms:[['oracle-ceiling','ERQA 原题直训（上限）']]}
+  {label:'第九批 · 原题上限', style:'geo3d-r3p10', arms:[['oracle-ceiling','ERQA 原题直训（上限）']]},
+  {label:'第十批 · IID p10', style:'geokg-3arm', arms:[['erqatask-iid','TaskReasoning-IID'],['erqatraj-iid','Trajectory-IID']]}
 ];
 const CATEGORIES = [
   ['Action Reasoning','动作推理'],['Multi-view Reasoning','多视角推理'],['Other','其他'],['Pointing','指向'],
@@ -177,7 +180,7 @@ function render(data, examples){
     const rows=rowsOf(arm.series), e=arm.experiment, latest=rows[rows.length-1];
     const scopeNote=e.evaluation_note?`<p class="geo-table-note">${esc(e.evaluation_note)}${latest?`<br><strong>step ${latest.step} · ${(latest.ERQA*100).toFixed(2)}%</strong>`:''}${e.training_status?` · ${esc(e.training_status)}`:''}</p>`:'';
     const exs=(examples||{})[arm.key]||[];
-    const exCard=exs.length?`<article class="card"><h2>训练例子（${exs.length} 条）</h2><div class="ex-grid">${exs.map(ex=>`<div class="ex-item"><div class="ex-imgs">${ex.imgs.map(u=>`<img loading="lazy" src="${u}" alt="example">`).join('')}</div>${ex.turns>1?`<p class="ex-meta">${ex.turns} 轮 · ${ex.n_img} 图</p>`:''}<p class="ex-q">${esc(ex.q)}</p><p class="ex-a">${esc(ex.a)}</p></div>`).join('')}</div></article>`:'';
+    const exCard=exs.length?`<article class="card"><h2>训练例子（${exs.length} 条）</h2><div class="ex-grid">${exs.map(ex=>`<div class="ex-item"><div class="ex-imgs${ex.imgs.length>2?' ex-multi':''}">${ex.imgs.map(u=>`<img loading="lazy" src="${u}" alt="example">`).join('')}</div>${ex.turns>1?`<p class="ex-meta">${ex.turns} 轮 · ${ex.n_img} 图</p>`:''}<p class="ex-q">${esc(ex.q)}</p><p class="ex-a">${esc(ex.a)}</p></div>`).join('')}</div></article>`:'';
     return `<section class="pane" id="pane-${arm.key}" role="tabpanel" aria-labelledby="tab-${arm.key}" hidden>
       <h2 class="section-title">${esc(e.name || arm.name)} · ERQA</h2>
       <div class="geo-chart-grid">
