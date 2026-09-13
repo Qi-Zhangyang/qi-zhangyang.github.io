@@ -1,7 +1,7 @@
 {
   "title": "ERQA p10 数据验证",
   "subtitle": "SN6V 0710 baseline 对照 · 90% 固定 baseline + 10% 候选数据 · judge=gpt-oss-120b @ temp0 · no-think · 400 题",
-  "updated_at": "2026-09-13 04:21 UTC",
+  "updated_at": "2026-09-13 04:52 UTC",
   "verified_through": 700,
   "step_targets": [
     100,
@@ -429,7 +429,12 @@
       "key": "synmulti-p10",
       "label": "SynMultiImageQA 合成多图 (10%)",
       "color": "#b45309",
-      "rows": []
+      "rows": [
+        {
+          "step": 100,
+          "ERQA": 0.4
+        }
+      ]
     },
     {
       "key": "miqa-p02",
