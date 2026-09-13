@@ -1,7 +1,7 @@
 {
   "title": "ERQA 数据验证",
   "subtitle": "SN6V 0710 baseline 对照 · 常规 p10：90% 固定 baseline + 10% 候选数据 · judge=gpt-oss-120b @ temp0 · no-think · 400 题",
-  "updated_at": "2026-09-13 15:56 UTC",
+  "updated_at": "2026-09-13 17:35 UTC",
   "verified_through": 700,
   "step_targets": [
     100,
@@ -585,7 +585,7 @@
       "label": "ERQA 原题直训（上限）",
       "color": "#b45309",
       "training_target": 300,
-      "verified_through": 100,
+      "verified_through": 200,
       "rows": [
         {
           "step": 100,
@@ -595,6 +595,16 @@
           "failed": 0,
           "eval_job_id": "mj-mb-2026091322-377hzc",
           "verified_at": "2026-09-13 15:04 UTC"
+        },
+        {
+          "step": 200,
+          "ERQA": 0.9975,
+          "total": 400,
+          "correct": 399,
+          "failed": 0,
+          "eval_job_id": null,
+          "results_path": "/mnt/moonfs/kimiv-m3/tensorboard/results/mj-mb-2026091312-375hao/kimiv-sft-mj-mb-2026091312-375hao-0000200-erqab_t0.0_mt16384_erqa-p10-no-think_thinking.type-disabled",
+          "verified_at": "2026-09-13 17:33 UTC"
         }
       ]
     },
@@ -754,7 +764,7 @@
       "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-intern-visual-input-data%2Fqizhangyang%2Fm3data%2F260913%2Ferqa_oracle_ceiling%2Ftrain%2F&start_idx=0&num_data=8&num_columns=3&decode_method=%3CM3+Standard%3E&text_show_mode=text&show_roles=true&epoch=0&doc_num_data=30",
       "job_id": "mj-mb-2026091312-375hao",
       "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091312-375hao",
-      "verdict": "step100 同题上限 98.25%（393/400，0 Failed）；训练中，目标 300 步",
+      "verdict": "step100 同题上限 98.25%（393/400）、step200 99.75%（399/400），均 0 Failed；训练中，目标 300 步",
       "verdict_kind": "run"
     },
     {
