@@ -1,7 +1,7 @@
 {
   "title": "ERQA p10 数据验证",
   "subtitle": "SN6V 0710 baseline 对照 · 90% 固定 baseline + 10% 候选数据 · judge=gpt-oss-120b @ temp0 · no-think · 400 题",
-  "updated_at": "2026-09-12 20:34 UTC",
+  "updated_at": "2026-09-12 21:29 UTC",
   "verified_through": 700,
   "step_targets": [
     100,
@@ -458,7 +458,12 @@
       "key": "mantis-p10",
       "label": "mantis ×5 指令多图 (10%)",
       "color": "#be185d",
-      "rows": []
+      "rows": [
+        {
+          "step": 100,
+          "ERQA": 0.3925
+        }
+      ]
     },
     {
       "key": "det2d",
