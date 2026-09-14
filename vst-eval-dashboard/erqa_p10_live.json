@@ -1,7 +1,7 @@
 {
   "title": "ERQA 数据验证",
   "subtitle": "SN6V 0710 baseline 对照 · 常规 p10：90% 固定 baseline + 10% 候选数据 · judge=gpt-oss-120b @ temp0 · no-think · 400 题",
-  "updated_at": "2026-09-14 05:45 UTC",
+  "updated_at": "2026-09-14 06:45 UTC",
   "verified_through": 700,
   "step_targets": [
     100,
@@ -664,9 +664,18 @@
           "failed": 0,
           "results_path": "/mnt/moonfs/kimiv-m3/tensorboard/results/mj-mb-2026091323-377rkb/kimiv-sft-mj-mb-2026091323-377rkb-0000400-erqab_t0.0_mt16384_erqa-p10-no-think_thinking.type-disabled",
           "verified_at": "2026-09-14 05:30 UTC"
+        },
+        {
+          "step": 500,
+          "ERQA": 0.4175,
+          "total": 400,
+          "correct": 167,
+          "failed": 0,
+          "results_path": "/mnt/moonfs/kimiv-m3/tensorboard/results/mj-mb-2026091323-377rkb/kimiv-sft-mj-mb-2026091323-377rkb-0000500-erqab_t0.0_mt16384_erqa-p10-no-think_thinking.type-disabled",
+          "verified_at": "2026-09-14 06:45 UTC"
         }
       ],
-      "verified_through": 400,
+      "verified_through": 500,
       "stopped_at_step": 500
     }
   ],
@@ -835,9 +844,9 @@
       "job_id": "mj-mb-2026091323-377rkb",
       "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091323-377rkb",
       "training_priority": 500,
-      "training_status": "已停训（500/1000 步，用户决定）；step500 ERQA 评测中",
+      "training_status": "已停训（500/1000 步，用户决定）；step100-500 ERQA 全部出齐",
       "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-intern-visual-input-data%2Fqizhangyang%2Ferqa-iid-task-wds-20260912-v3%2FA%2FTrajectory%2FIPEC-COMMUNITY_libero_90_no_noops_lerobot%2F&start_idx=0&num_data=8&num_columns=3&decode_method=%3CM3+Standard%3E&text_show_mode=text&show_roles=true&epoch=0&doc_num_data=30",
-      "verdict": "与 control 持平：step-matched Δ -1.75/+0.75/-2.25/0.0pp（100-400，均 0 Failed 已核验），锯齿绕零无收益，500/1000 步用户决定停训",
+      "verdict": "与 control 持平无收益：step-matched Δ -1.75/+0.75/-2.25/0.0/-1.25pp（100-500，均 400/400、0 Failed 已核验），锯齿绕零，500/1000 步用户决定停训；三榜缓升但 ERQA 无趋势",
       "verdict_kind": "neg"
     }
   ],
