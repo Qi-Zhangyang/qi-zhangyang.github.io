@@ -903,15 +903,15 @@
    "name": "Q2P 程序化错题IID",
    "tokens": "约15M（估算）",
    "docs": "14,000 题 / 7 原型×2000（239 错题 IID，生成器真值；records+抽样见 b6 产线站）",
-   "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-intern-visual-input-data%2Fqizhangyang%2Fm3data%2F260914%2Fq2p_erqa_iid%2Ftrain%2F&start_idx=0&num_data=8&decode_method=%3CM3+Standard%3E&text_show_mode=text&show_roles=true&num_columns=3&epoch=0&doc_num_data=30",
-   "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091423-37e5im"
+   "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-intern-visual-input-data%2Fqizhangyang%2Fm3data%2F260914%2Fq2p_erqa_iid_v3%2Ftrain&start_idx=0&num_data=8&decode_method=%3CM3+Standard%3E&text_show_mode=text&show_roles=true&num_columns=3&epoch=0&doc_num_data=30",
+   "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091510-37h6ou"
   },
   {
    "name": "Q2J 关节错题IID",
    "tokens": "约10M（估算）",
    "docs": "9,515 题 / 8 原型（239 错题 IID，URDF 关节真值；Ray 8000 + JM2 1499 + 覆盖 16）",
-   "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-intern-visual-input-data%2Fqizhangyang%2Fm3data%2F260914%2Fq2j_artic_iid%2Ftrain%2F&start_idx=0&num_data=8&decode_method=%3CM3+Standard%3E&text_show_mode=text&show_roles=true&num_columns=3&epoch=0&doc_num_data=30",
-   "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091423-37e5js"
+   "m3_link": "https://m3.app.msh.team/?prefix=s3%2Bm2%3A%2F%2Fm2-intern-visual-input-data%2Fqizhangyang%2Fm3data%2F260915%2Fq2j_fixed_iid%2Ftrain&start_idx=0&num_data=8&decode_method=%3CM3+Standard%3E&text_show_mode=text&show_roles=true&num_columns=3&epoch=0&doc_num_data=30",
+   "job_url": "https://launchpad.msh.team/jobinfo/mj-mb-2026091512-37hhos"
   }
  ],
  "categories": {
