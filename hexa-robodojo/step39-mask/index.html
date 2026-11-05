@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ko-step39-mask · 工具调用与执行画面</title>
+<style>
+  :root {
+    --bg: #f5f6f3;
+    --panel: #ffffff;
+    --ink: #1d2723;
+    --muted: #6b7a73;
+    --line: #dde3dc;
+    --accent: #2f6f5f;
+    --error: #b4483e;
+    --code: #f0f2ee;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.55 -apple-system, "PingFang SC", "Helvetica Neue", Arial, sans-serif; }
+  header { position: sticky; top: 0; z-index: 10; background: rgba(245,246,243,.94);
+    backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .bar { max-width: 1440px; margin: 0 auto; padding: 10px 18px; display: flex;
+    align-items: center; gap: 14px; flex-wrap: wrap; }
+  .bar h1 { font-size: 15px; margin: 0; font-weight: 600; letter-spacing: .2px; }
+  .bar .spacer { flex: 1; }
+  select { font: inherit; padding: 6px 10px; border-radius: 7px;
+    border: 1px solid var(--line); background: #fff; color: var(--ink); min-width: 260px; }
+  .tag { font-size: 12.5px; padding: 3px 9px; border-radius: 999px;
+    border: 1px solid var(--line); background: #fff; color: var(--muted); }
+  .tag.ok { color: #1d6b3f; border-color: #b8dcc4; background: #eef8f1; }
+  .tag.bad { color: var(--error); border-color: #e8c3be; background: #fdf2f0; }
+  main { max-width: 1440px; margin: 0 auto; padding: 16px 18px 60px;
+    display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 18px;
+    align-items: start; }
+  @media (max-width: 980px) { main { grid-template-columns: 1fr; } }
+  .stage { position: sticky; top: 58px; }
+  video { width: 100%; display: block; border-radius: 10px; background: #000;
+    border: 1px solid var(--line); }
+  .hint { color: var(--muted); font-size: 12.5px; margin: 8px 2px 0; }
+  .turns { display: flex; flex-direction: column; gap: 10px; }
+  .turn { background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px; cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+  .turn:hover { border-color: #b9c8bf; }
+  .turn.active { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(47,111,95,.14); }
+  .turn-head { display: flex; align-items: baseline; gap: 9px; }
+  .turn-no { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--accent);
+    font-size: 13px; }
+  .turn-name { font-weight: 600; font-size: 13.5px; }
+  .turn-step { margin-left: auto; font-size: 12px; color: var(--muted);
+    font-variant-numeric: tabular-nums; }
+  pre { margin: 8px 0 0; padding: 9px 11px; background: var(--code); border-radius: 7px;
+    overflow: auto; font: 12.5px/1.5 "SF Mono", ui-monospace, Menlo, monospace;
+    white-space: pre-wrap; word-break: break-word; max-height: 320px; }
+  .lbl { font-size: 11.5px; color: var(--muted); margin: 10px 0 -4px;
+    text-transform: uppercase; letter-spacing: .5px; }
+  .err { color: var(--error); }
+  details summary { cursor: pointer; font-size: 12.5px; color: var(--muted); margin-top: 8px; }
+  .empty { color: var(--muted); font-size: 13px; padding: 40px; text-align: center; }
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <h1>ko-step39-mask · 工具调用与执行画面</h1>
+    <span class="spacer"></span>
+    <select id="task" aria-label="选择任务"></select>
+    <span class="tag" id="badge">—</span>
+    <span class="tag" id="count">—</span>
+  </div>
+</header>
+
+<main>
+  <div class="stage">
+    <video id="video" controls preload="metadata" playsinline></video>
+    <p class="hint" id="hint">点右侧任意一轮，视频跳到那一步对应的画面。</p>
+  </div>
+  <div class="turns" id="turns"></div>
+</main>
+
+<script>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const video = $('video');
+  let run = null;
+  let selected = 0;
+
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+  function seekStep(step) {
+    if (!run || !run.fps) return;
+    const t = Math.max(0, step) / run.fps;
+    if (video.readyState >= 1) video.currentTime = Math.min(t, video.duration || t);
+    else video.addEventListener('loadedmetadata', () => { video.currentTime = Math.min(t, video.duration || t); }, { once: true });
+  }
+
+  function mark(n) {
+    selected = n;
+    document.querySelectorAll('.turn').forEach(el => el.classList.toggle('active', Number(el.dataset.req) === n));
+  }
+
+  function renderTurn(r) {
+    const call = (r.tool_calls || [])[0];
+    const name = call?.function?.name || (r.has_tool_call ? 'tool' : '无工具调用');
+    const args = call ? (call.function.arguments || '') : '';
+    const cells = (r.cells || []).map(c => `
+      <p class="lbl">代码${c.cell ? ' ' + c.cell : ''}</p>
+      <pre>${esc(c.code)}</pre>
+      ${c.output ? `<details><summary>执行回传 (${c.output.length} 字符)</summary><pre>${esc(c.output)}</pre></details>` : ''}
+      ${c.error ? `<p class="lbl err">报错</p><pre class="err">${esc(c.error)}</pre>` : ''}
+    `).join('');
+    return `<article class="turn" data-req="${r.req}" data-step="${r.step_before}">
+      <div class="turn-head">
+        <span class="turn-no">#${String(r.req).padStart(2,'0')}</span>
+        <span class="turn-name">${esc(name)}</span>
+        <span class="turn-step">${r.step_before} → ${r.step_after} 步</span>
+      </div>
+      ${args ? `<p class="lbl">tool_calls 原始参数</p><pre>${esc(args)}</pre>` : ''}
+      ${cells}
+    </article>`;
+  }
+
+  async function load(id) {
+    history.replaceState(null, '', `?run=${encodeURIComponent(id)}`);
+    $('turns').innerHTML = '<p class="empty">加载中…</p>';
+    const res = await fetch(`data/${id}.json`);
+    if (!res.ok) { $('turns').innerHTML = '<p class="empty">读取失败</p>'; return; }
+    run = await res.json();
+    video.src = run.video;
+    video.poster = run.poster ? run.poster : '';
+    video.load();
+    $('badge').textContent = run.success ? '成功' : '失败';
+    $('badge').className = 'tag ' + (run.success ? 'ok' : 'bad');
+    $('count').textContent = `${run.turns} 轮 · ${run.cell_count} 次代码`;
+    $('turns').innerHTML = run.requests.map(renderTurn).join('');
+    seekStep(0);
+    mark(run.requests[0]?.req || 1);
+  }
+
+  $('turns').addEventListener('click', e => {
+    const el = e.target.closest('.turn');
+    if (!el) return;
+    video.pause();
+    mark(Number(el.dataset.req));
+    seekStep(Number(el.dataset.step));
+    video.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+
+  video.addEventListener('timeupdate', () => {
+    if (!run || video.paused) return;
+    const step = Math.floor(video.currentTime * run.fps);
+    const hit = run.requests.find(r => step > r.step_before && step <= r.step_after);
+    if (hit) mark(hit.req);
+  });
+
+  fetch('data/index.json').then(r => r.json()).then(index => {
+    const list = index.episodes || [];
+    $('task').innerHTML = list.map(e =>
+      `<option value="${esc(e.id)}">${esc(e.label || e.task)} · ${e.success ? '成功' : '失败'} · ${e.turns} 轮</option>`).join('');
+    const wanted = new URLSearchParams(location.search).get('run');
+    const start = list.find(e => e.id === wanted)?.id || list[0]?.id;
+    if (!start) { $('turns').innerHTML = '<p class="empty">没有数据</p>'; return; }
+    $('task').value = start;
+    load(start);
+  }).catch(() => { $('turns').innerHTML = '<p class="empty">索引读取失败</p>'; });
+
+  $('task').addEventListener('change', e => load(e.target.value));
+})();
+</script>
+</body>
+</html>
